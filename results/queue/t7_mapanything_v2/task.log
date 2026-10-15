@@ -20,3 +20,15 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/rohit/e5_multibod
 checkpoint /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--map-anything/snapshots/6f3a25bfbb8fcc799176bb01e9d07dfb49d5416a
 GPU 1
 [00:32:36] mapanything: inference + internals
+Loading weights from local directory
+attention flags (all must be False for raw q.k summaries to be exact) {'custom_positional_encoding': False, 'use_scalable_softmax': False, 'use_entropy_scaling': False, 'qk_norm': False}
+blocks 24 heads 12 attn children {'qkv': 'Linear', 'q_norm': 'Identity', 'k_norm': 'Identity', 'attn_drop': 'Dropout', 'proj': 'Linear', 'proj_drop': 'Dropout'}
+peak GPU GB 2.26
+Traceback (most recent call last):
+  File "/home/rohit/e5_multibody/queue/src/e5_xm_gtpatch.py", line 15, in <module>
+    g = dict(np.load(os.path.join(gdir, f"{n}_gt.npz"), allow_pickle=True))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/workbench/zone_x/e5_multibody/models/venvs/xm/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/rohit/e5_multibody/data/v2/gt_patches/epi_aligned_s701_gt.npz'
