@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 01:53:47 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 01:55:55 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -23,9 +23,9 @@ Last updated 2026-10-16 01:53:47 (server time). Regenerated after every queue ev
 | 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | done | 1 | 2026-10-16 01:46:13 | 2026-10-16 01:49:51 |
 | 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | done | 1 | 2026-10-16 01:49:59 | 2026-10-16 01:53:36 |
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | queued | 0 |  |  |
-| 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | RUNNING | 1 | 2026-10-16 01:53:44 |  |
+| 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | done | 1 | 2026-10-16 01:53:44 | 2026-10-16 01:55:51 |
 
-Supervisor heartbeat: 2026-10-16 01:53:06 running t7_page4d_v2
+Supervisor heartbeat: 2026-10-16 01:55:21 running t7_any4d_v2_100
 
 ## v3_pilot
 
@@ -401,7 +401,5 @@ Status: **done**, attempt 1, started 2026-10-16 01:49:59, finished 2026-10-16 01
 
 Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results)
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 01:53:44. [Raw results](../results/queue/t7_any4d_v2_100/), [log](../results/queue/t7_any4d_v2_100/task.log).
-
-Partial results so far; the run is still going.
+Status: **done**, attempt 1, started 2026-10-16 01:53:44, finished 2026-10-16 01:55:51. [Raw results](../results/queue/t7_any4d_v2_100/), [log](../results/queue/t7_any4d_v2_100/task.log).
 

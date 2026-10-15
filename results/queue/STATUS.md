@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-16 01:53:44
+updated 2026-10-16 01:55:51
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -23,4 +23,4 @@ updated 2026-10-16 01:53:44
 | 17 | t7_vggt_v2: Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | done | 1 | 2026-10-16 01:46:13 | 2026-10-16 01:49:51 | True |
 | 18 | t7_page4d_v2: Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | done | 1 | 2026-10-16 01:49:59 | 2026-10-16 01:53:36 | True |
 | 19 | t7_xm_summary: Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | pending | 0 |  |  |  |
-| 20 | t7_any4d_v2_100: Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | running | 1 | 2026-10-16 01:53:44 |  | False |
+| 20 | t7_any4d_v2_100: Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | done | 1 | 2026-10-16 01:53:44 | 2026-10-16 01:55:51 | False |

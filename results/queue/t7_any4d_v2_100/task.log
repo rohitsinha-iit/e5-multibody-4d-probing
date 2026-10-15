@@ -2,3 +2,18 @@
 ===== 2026-10-16 01:53:44 attempt 1
 GPU 1
 [01:53:44] any4d: inference in the cross-model format
+Loading model from:  checkpoints/any4d_4v_combined.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[01:53:53] any4d: output metrics
+done 120
+[01:53:53] any4d: probes (P) + attention (A), layers 0,4,8,12,16,20,24
+E5-P layer 24
+done
+total 580
+drwxrwxr-x  2 rohit rohit   4096 Oct 16 01:55 .
+drwxrwxr-x 19 rohit rohit   4096 Oct 16 01:53 ..
+-rw-rw-r--  1 rohit rohit 355890 Oct 16 01:55 xm_internal_any4d_results.json
+-rw-rw-r--  1 rohit rohit 117183 Oct 16 01:53 xm_output_any4d.json
+-rw-rw-r--  1 rohit rohit 106348 Oct 16 00:15 xm_output_any4d.json.partial
+-rw-rw-r--  1 rohit rohit    974 Oct 16 01:53 xm_output_any4d_summary.md
