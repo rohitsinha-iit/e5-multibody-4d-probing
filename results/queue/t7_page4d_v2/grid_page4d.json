@@ -1,0 +1,11 @@
+{
+ "grid": 37,
+ "patch": 14,
+ "size": 518,
+ "n_blocks": 48,
+ "n_global": 24,
+ "heads": 16,
+ "dim": 1024,
+ "layer_def": "0 = aggregator input; l = output of block l-1; frame block i = block 2i, global block i = 2i+1",
+ "has_track": false
+}

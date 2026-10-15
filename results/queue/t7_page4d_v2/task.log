@@ -36,3 +36,21 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/rohit/e5_multibod
 checkpoint /media/workbench/zone_x/e5_multibody/models/hf/hub/datasets--zhouk777--PAGE4D/snapshots/69c86f898829ae9365469aa8e9f34b386844a4b5/checkpoint_nomask.pt
 GPU 1
 [01:50:00] page4d: inference + internals
+missing 394 ['track_head.feature_extractor.norm.weight', 'track_head.feature_extractor.norm.bias', 'track_head.feature_extractor.projects.0.weight', 'track_head.feature_extractor.projects.0.bias', 'track_head.feature_extractor.projects.1.weight', 'track_head.feature_extractor.projects.1.bias', 'track_head.feature_extractor.projects.2.weight', 'track_head.feature_extractor.projects.2.bias'] unexpected 6 ['aggregator.spatial_mask_head.head0.0.weight', 'aggregator.spatial_mask_head.head0.0.bias', 'aggregator.spatial_mask_head.head0.2.weight', 'aggregator.spatial_mask_head.head0.2.bias', 'aggregator.spatial_mask_head.head0.4.weight', 'aggregator.spatial_mask_head.head0.4.bias']
+blocks 48 global 24 heads 16 head_dim 64 track head False
+peak GPU GB 5.03
+gt patches 100
+[01:50:09] page4d: output metrics
+planar_s450 {}
+done 100
+[01:51:01] page4d: probes (P) + attention (A), layers 0,8,16,24,32,40,48
+E5-P layer 48
+done
+total 452
+drwxrwxr-x  2 rohit rohit   4096 Oct 16 01:53 .
+drwxrwxr-x 18 rohit rohit   4096 Oct 16 01:40 ..
+-rw-rw----  1 rohit rohit    238 Oct 16 01:53 grid_page4d.json
+-rw-rw-r--  1 rohit rohit 324854 Oct 16 01:53 xm_internal_page4d_results.json
+-rw-rw-r--  1 rohit rohit  57878 Oct 16 01:51 xm_output_page4d.json
+-rw-rw-r--  1 rohit rohit  53702 Oct 16 01:51 xm_output_page4d.json.partial
+-rw-rw-r--  1 rohit rohit    536 Oct 16 01:51 xm_output_page4d_summary.md
