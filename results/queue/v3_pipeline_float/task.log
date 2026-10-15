@@ -26,3 +26,43 @@ peak GPU GB 2.46
 ===== 2026-10-16 01:05:40 attempt 1
 GPU 1
 [01:05:40] v3float inference
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[01:05:49] v3float extraction
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[01:05:57] v3float step3
+[01:07:08] v3float gt patches
+[01:08:42] v3float internal analysis (A, F in background; P on GPU)
+total 1920
+drwxrwxr-x 2 rohit rohit   4096 Oct 16 01:09 .
+drwxrwxr-x 3 rohit rohit   4096 Oct 16 00:05 ..
+-rw-rw-r-- 1 rohit rohit 209343 Oct 16 01:09 adjacency_control.json
+-rw-rw-r-- 1 rohit rohit  30935 Oct 16 01:08 partA_results.json
+-rw-rw-r-- 1 rohit rohit 605687 Oct 16 00:09 partF1_results.json
+-rw-rw-r-- 1 rohit rohit 473366 Oct 16 00:09 partF2_results.json
+-rw-rw-r-- 1 rohit rohit 243349 Oct 16 00:10 partP1_results.json
+-rw-rw-r-- 1 rohit rohit 184188 Oct 16 00:11 partP2_results.json
+-rw-rw---- 1 rohit rohit  47639 Oct 16 01:09 scene_summary.json
+-rw-rw-r-- 1 rohit rohit 149062 Oct 16 01:07 step3_any4d_7v.json
+GPU 1
+[01:09:07] v2 inference
+epi_aligned_s720 1.03 s
+peak GPU GB 7.59
+[01:09:37] v2 extraction
+epi_aligned_s720 0.5s
+peak GPU GB 7.43
+[01:09:56] v2 step3
+[01:12:06] v2 gt patches
+[01:14:49] v2 internal analysis (A, F in background; P on GPU)
+total 4864
+drwxrwxr-x 2 rohit rohit    4096 Oct 16 01:22 .
+drwxrwxr-x 4 rohit rohit    4096 Oct 16 01:09 ..
+-rw-rw-r-- 1 rohit rohit  455136 Oct 16 01:22 adjacency_control.json
+-rw-rw-r-- 1 rohit rohit   47227 Oct 16 01:15 partA_results.json
+-rw-rw-r-- 1 rohit rohit 1541971 Oct 16 01:17 partF1_results.json
+-rw-rw-r-- 1 rohit rohit 1422536 Oct 16 01:17 partF2_results.json
+-rw-rw-r-- 1 rohit rohit  603978 Oct 16 01:18 partP1_results.json
+-rw-rw-r-- 1 rohit rohit  537641 Oct 16 01:21 partP2_results.json
+-rw-rw-r-- 1 rohit rohit   83639 Oct 16 01:22 scene_summary.json
+-rw-rw-r-- 1 rohit rohit  260108 Oct 16 01:12 step3_any4d_7v.json
