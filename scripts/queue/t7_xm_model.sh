@@ -11,7 +11,7 @@ subset_dir() {  # subset_dir SRC DST N: symlink the first N scenes' internals (a
 if [ $MODEL = any4d ]; then
   any4d_env; cp $SRC/e5_xm_any4d.py scripts/
   step "any4d: inference in the cross-model format"
-  python scripts/e5_xm_any4d.py --data $V2/out --out $OUT/pred --e5 $SRC $LIM 2>&1 | grep -v -i warn | tail -3
+  python scripts/e5_xm_any4d.py --data $V2/out100 --out $OUT/pred --e5 $SRC $LIM 2>&1 | grep -v -i warn | tail -3
   INT=$V2/internals; GTP=$V2/gt_patches; LAY=0,4,8,12,16,20,24
 else
   xm_setup; xm_weights > $OUT/weights.log 2>&1 || { tail $OUT/weights.log; exit 4; }
@@ -19,14 +19,14 @@ else
   XARGS=""; if [ -n "$TRKPAT" ]; then XARGS="--track_ckpt $(grep -E "$TRKPAT" $OUT/weights.log | tail -1)"; echo "track head: $XARGS"; fi
   xm_env; cd $SRC
   step "$MODEL: inference + internals"
-  python $SRC/$RUNNER --data $V2/out --out $OUT --ckpt "$CK" $XARGS $LIM 2>&1 | grep -v -i warn | tail -4
+  python $SRC/$RUNNER --data $V2/out100 --out $OUT --ckpt "$CK" $XARGS $LIM 2>&1 | grep -v -i warn | tail -4
   INT=$OUT/internals; GTP=$OUT/gt_patches; LAY=$XLAY
   python $SRC/e5_xm_gtpatch.py $V2/gt_patches $OUT/pred $GTP
   deactivate
   cd $A4 && source .venv/bin/activate
 fi
 step "$MODEL: output metrics"
-cd $SRC && python e5_xm_eval.py --data $V2/out --pred $OUT/pred --out $RESULT_DIR/xm_output_${MODEL}.json --model $MODEL $LIM | tail -2
+cd $SRC && python e5_xm_eval.py --data $V2/out100 --pred $OUT/pred --out $RESULT_DIR/xm_output_${MODEL}.json --model $MODEL $LIM | tail -2
 step "$MODEL: probes (P) + attention (A), layers $LAY"
 if [ -n "$XM_LIMIT" ]; then rm -rf $OUT/int_subset; subset_dir $INT $OUT/int_subset $XM_LIMIT; INT=$OUT/int_subset; fi
 export OMP_NUM_THREADS=8 MKL_NUM_THREADS=8

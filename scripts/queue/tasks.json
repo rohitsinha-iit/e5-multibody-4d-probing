@@ -199,10 +199,21 @@
    "t7_any4d_v2",
    "t7_mapanything_v2",
    "t7_vggt_v2",
-   "t7_page4d_v2"
+   "t7_page4d_v2",
+   "t7_any4d_v2_100"
   ],
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 1
+ },
+ {
+  "id": "t7_any4d_v2_100",
+  "title": "Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results)",
+  "script": "t7_any4d_v2_100.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
  }
 ]

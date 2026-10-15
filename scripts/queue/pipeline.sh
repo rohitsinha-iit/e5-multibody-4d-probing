@@ -15,7 +15,7 @@ ALL=$(python -c "import json,os;p='internals/stored_layers.json';print(','.join(
 L1=$(python -c "a='$ALL'.split(',');print(','.join(a[:len(a)//2+1]))"); L2=$(python -c "a='$ALL'.split(',');print(','.join(a[len(a)//2+1:]))")
 export OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4
 step "$DS internal analysis (A, F in background; P on GPU)"
-test -f $R/partA_results.json || (E5_PARTS=A python e5_internal_analysis.py internals gt_patches $R/partA > partA.log 2>&1) & a1=$!
+test -f $R/partA_results.json || (E5_PARTS=A E5_LAYERS=$ALL python e5_internal_analysis.py internals gt_patches $R/partA > partA.log 2>&1) & a1=$!
 test -f $R/partF1_results.json || (E5_PARTS=F E5_LAYERS=$L1 python e5_internal_analysis.py internals gt_patches $R/partF1 > partF1.log 2>&1) & a2=$!
 test -f $R/partF2_results.json || (E5_PARTS=F E5_LAYERS=$L2 python e5_internal_analysis.py internals gt_patches $R/partF2 > partF2.log 2>&1) & a3=$!
 test -f $R/partP1_results.json || E5_PARTS=P E5_LAYERS=$L1 python e5_internal_analysis.py internals gt_patches $R/partP1 > partP1.log 2>&1
