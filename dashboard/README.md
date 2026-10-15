@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-15 22:32:46 (server time). Regenerated after every queue event.
+Last updated 2026-10-15 23:32:57 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -24,7 +24,7 @@ Last updated 2026-10-15 22:32:46 (server time). Regenerated after every queue ev
 | 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | queued | 0 |  |  |
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-15 22:32:05 running t8_realdata_sintel
+Supervisor heartbeat: 2026-10-15 23:32:23 running v3_scale_float
 
 ## v3_pilot
 
