@@ -32,3 +32,8 @@ Traceback (most recent call last):
     fid = stack.enter_context(open(os.fspath(file), "rb"))
                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: '/home/rohit/e5_multibody/data/v2/gt_patches/epi_aligned_s701_gt.npz'
+
+===== 2026-10-16 01:43:28 attempt 1
+checkpoint /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--map-anything/snapshots/6f3a25bfbb8fcc799176bb01e9d07dfb49d5416a
+GPU 1
+[01:43:29] mapanything: inference + internals
