@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-15 21:40:23 (server time). Regenerated after every queue event.
+Last updated 2026-10-15 22:01:45 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -8,14 +8,18 @@ Last updated 2026-10-15 21:40:23 (server time). Regenerated after every queue ev
 | 2 | [t4_causal_v2](#t4_causal_v2): Item 4: five heads together, amplification, path patching into scene-flow decoder (v2) | done | 1 | 2026-10-15 20:00:44 | 2026-10-15 20:18:45 |
 | 3 | [t5_subspace_v2](#t5_subspace_v2): Item 5: LEACE erasure and steering along the motion subspace, layers 17-21 (v2) | done | 1 | 2026-10-15 20:19:23 | 2026-10-15 20:36:24 |
 | 4 | [t3_viewsweep_v2](#t3_viewsweep_v2): Item 3: 2, 3, 4, 7 input views, outputs + probes + attention (v2) | done | 1 | 2026-10-15 20:36:30 | 2026-10-15 21:01:31 |
-| 5 | [v3_scale](#v3_scale): Items 1+2: render 20 far-glued, 70 floating, 20 extra grounded epi scenes | waiting for approval (gate `v3_visual`) | 0 |  |  |
-| 6 | [v3_pipeline](#v3_pipeline): Items 1+2: Steps 3-6 + adjacency control on far-glued, floating, v2 with 30 epi | queued | 0 |  |  |
+| 5 | [v3_scale](#v3_scale): (split into v3_scale_float and v3_scale_far) | waiting for approval (gate `retired`) | 0 |  |  |
+| 6 | [v3_pipeline](#v3_pipeline): (split into v3_pipeline_float and v3_pipeline_far) | queued | 0 |  |  |
 | 7 | [v3_viewsweep](#v3_viewsweep): Items 2+3: view-count sweep on the floating set | queued | 0 |  |  |
 | 8 | [v3_pilot_far2](#v3_pilot_far2): Item 1 pilot re-render: far-glued pairs kept far apart in the image | done | 1 | 2026-10-15 21:35:58 | 2026-10-15 21:40:05 |
-| 9 | [t8_realdata_kitti](#t8_realdata_kitti): Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input | RUNNING | 1 | 2026-10-15 21:40:18 |  |
+| 9 | [t8_realdata_kitti](#t8_realdata_kitti): Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input | done | 1 | 2026-10-15 21:40:18 | 2026-10-15 22:01:41 |
 | 10 | [t8_realdata_sintel](#t8_realdata_sintel): Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input | queued | 0 |  |  |
+| 11 | [v3_scale_float](#v3_scale_float): Item 2: render 70 floating shadowless scenes + 20 extra grounded epi (v2) | queued | 0 |  |  |
+| 12 | [v3_pipeline_float](#v3_pipeline_float): Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi | queued | 0 |  |  |
+| 13 | [v3_scale_far](#v3_scale_far): Item 1: render 20 far-glued scenes (image-gap constraint) | queued | 0 |  |  |
+| 14 | [v3_pipeline_far](#v3_pipeline_far): Item 1: Steps 3-6 + adjacency control on the far-glued set | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-15 21:39:35 running v3_pilot_far2
+Supervisor heartbeat: 2026-10-15 22:01:11 running t8_realdata_kitti
 
 ## v3_pilot
 
@@ -197,7 +201,6 @@ Status: **done**, attempt 1, started 2026-10-15 21:35:58, finished 2026-10-15 21
 
 Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input
 
-Status: **RUNNING**, attempt 1, started 2026-10-15 21:40:18. [Raw results](../results/queue/t8_realdata_kitti/), [log](../results/queue/t8_realdata_kitti/task.log).
+Status: **done**, attempt 1, started 2026-10-15 21:40:18, finished 2026-10-15 22:01:41. [Raw results](../results/queue/t8_realdata_kitti/), [log](../results/queue/t8_realdata_kitti/task.log).
 
-Partial results so far; the run is still going.
-
+![gt_check_kitti15.png](assets/t8_realdata_kitti/gt_check_kitti15.png)

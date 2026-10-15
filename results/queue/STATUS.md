@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-15 21:40:18
+updated 2026-10-15 22:01:41
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -12,5 +12,5 @@ updated 2026-10-15 21:40:18
 | 6 | v3_pipeline: Items 1+2: Steps 3-6 + adjacency control on far-glued, floating, v2 with 30 epi | pending | 0 |  |  |  |
 | 7 | v3_viewsweep: Items 2+3: view-count sweep on the floating set | pending | 0 |  |  |  |
 | 8 | v3_pilot_far2: Item 1 pilot re-render: far-glued pairs kept far apart in the image | done | 1 | 2026-10-15 21:35:58 | 2026-10-15 21:40:05 | True |
-| 9 | t8_realdata_kitti: Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input | running | 1 | 2026-10-15 21:40:18 |  | False |
+| 9 | t8_realdata_kitti: Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input | done | 1 | 2026-10-15 21:40:18 | 2026-10-15 22:01:41 | False |
 | 10 | t8_realdata_sintel: Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input | pending | 0 |  |  |  |

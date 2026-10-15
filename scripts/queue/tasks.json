@@ -39,26 +39,25 @@
  },
  {
   "id": "v3_scale",
-  "title": "Items 1+2: render 20 far-glued, 70 floating, 20 extra grounded epi scenes",
+  "title": "(split into v3_scale_float and v3_scale_far)",
   "script": "v3_scale.sh",
   "deps": [
-   "v3_pilot",
-   "v3_pilot_far2"
+   "never_runs"
   ],
-  "gate": "v3_visual",
-  "max_attempts": 2,
+  "gate": "retired",
+  "max_attempts": 1,
   "min_free_gb": 40,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
  {
   "id": "v3_pipeline",
-  "title": "Items 1+2: Steps 3-6 + adjacency control on far-glued, floating, v2 with 30 epi",
+  "title": "(split into v3_pipeline_float and v3_pipeline_far)",
   "script": "v3_pipeline.sh",
   "deps": [
-   "v3_scale"
+   "never_runs"
   ],
-  "gate": null,
-  "max_attempts": 2,
+  "gate": "retired",
+  "max_attempts": 1,
   "min_free_gb": 30,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -67,7 +66,7 @@
   "title": "Items 2+3: view-count sweep on the floating set",
   "script": "v3_viewsweep.sh",
   "deps": [
-   "v3_pipeline"
+   "v3_pipeline_float"
   ],
   "gate": null,
   "max_attempts": 2,
@@ -102,6 +101,54 @@
   "gate": null,
   "max_attempts": 3,
   "min_free_gb": 40,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_scale_float",
+  "title": "Item 2: render 70 floating shadowless scenes + 20 extra grounded epi (v2)",
+  "script": "v3_scale_float.sh",
+  "deps": [
+   "v3_pilot"
+  ],
+  "gate": "v3_float_visual",
+  "max_attempts": 2,
+  "min_free_gb": 40,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_pipeline_float",
+  "title": "Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi",
+  "script": "v3_pipeline_float.sh",
+  "deps": [
+   "v3_scale_float"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_scale_far",
+  "title": "Item 1: render 20 far-glued scenes (image-gap constraint)",
+  "script": "v3_scale_far.sh",
+  "deps": [
+   "v3_pilot_far2"
+  ],
+  "gate": "v3_far_visual",
+  "max_attempts": 2,
+  "min_free_gb": 20,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_pipeline_far",
+  "title": "Item 1: Steps 3-6 + adjacency control on the far-glued set",
+  "script": "v3_pipeline_far.sh",
+  "deps": [
+   "v3_scale_far"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 20,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  }
 ]

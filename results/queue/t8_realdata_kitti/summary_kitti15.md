@@ -1,0 +1,12 @@
+# Item 8: real-data output-level metrics
+
+slope = fraction of GT object motion recovered (1 = full motion, 0 = treated as static); sep_ratio = predicted / GT multibody separation. Cells: mean [95% bootstrap CI], median, fraction of scenes below 1 of n scenes with a defined value (two-sided sign test vs 0.5). slope needs > 20 moving GT pixels with |d_true| > 2 px in the model's view; sep_ratio needs sep_gt > 1 px, which most KITTI scenes do not reach because cars mostly translate along the ego direction (epipole-aligned, as in the Kubric epi_aligned split). square = 518x518 centre crop as on Kubric (KITTI: only the central ~375 px of the 1242 px width); wide = Any4D fixed_mapping aspect bucket (KITTI 518x168, Sintel 518x252).
+
+| dataset | pass | views (offsets) | resize | scenes | slope | slope (per-instance median) | sep_ratio | EPE static px | EPE moving px | moving px in view | median sep_gt px |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| kitti15 | rgb | 2 (0,1) | square | 200 | 0.760 [0.662, 0.860], med 0.801, <1: 0.58 of 158 (p=0.046) | 0.716 [0.620, 0.808], med 0.713, <1: 0.63 of 158 (p=0.0018) | 1.272 [0.803, 1.814], med 0.726, <1: 0.65 of 31 (p=0.15) | 1.99 | 6.75 | 0.28 | 0.28 |
+| kitti15 | rgb | 2 (0,1) | wide | 200 | 0.575 [0.511, 0.636], med 0.572, <1: 0.84 of 195 (p=4.7e-23) | 0.451 [0.386, 0.513], med 0.410, <1: 0.89 of 195 (p=2.8e-30) | 1.545 [0.885, 2.384], med 0.740, <1: 0.61 of 23 (p=0.4) | 3.67 | 11.57 | 1.00 | 0.21 |
+| kitti15 | rgb | 4 (0,1,2,3) | square | 200 | 0.895 [0.793, 0.992], med 0.966, <1: 0.52 of 158 (p=0.69) | 0.884 [0.779, 0.981], med 0.939, <1: 0.54 of 158 (p=0.3) | 1.608 [1.038, 2.308], med 0.920, <1: 0.55 of 31 (p=0.72) | 1.96 | 6.88 | 0.28 | 0.28 |
+| kitti15 | rgb | 4 (0,1,2,3) | wide | 200 | 0.707 [0.637, 0.776], med 0.737, <1: 0.74 of 195 (p=1.8e-11) | 0.558 [0.484, 0.629], med 0.503, <1: 0.81 of 195 (p=5.3e-19) | 1.669 [1.080, 2.383], med 1.086, <1: 0.48 of 23 (p=1) | 4.26 | 12.66 | 1.00 | 0.21 |
+| kitti15 | rgb | 7 (0,1,2,3,4,5,6) | square | 200 | 0.811 [0.723, 0.899], med 0.922, <1: 0.56 of 158 (p=0.18) | 0.803 [0.717, 0.892], med 0.834, <1: 0.59 of 158 (p=0.021) | 1.475 [0.910, 2.163], med 0.783, <1: 0.58 of 31 (p=0.47) | 2.04 | 6.28 | 0.28 | 0.28 |
+| kitti15 | rgb | 7 (0,1,2,3,4,5,6) | wide | 200 | 0.654 [0.587, 0.725], med 0.681, <1: 0.79 of 195 (p=3.5e-17) | 0.524 [0.453, 0.592], med 0.482, <1: 0.86 of 195 (p=2.7e-25) | 1.709 [1.228, 2.227], med 1.516, <1: 0.39 of 23 (p=0.4) | 4.59 | 12.55 | 1.00 | 0.21 |

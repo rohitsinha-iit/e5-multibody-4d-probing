@@ -23,10 +23,11 @@ scene_list() {
   for s in $(seq 591 600); do echo "v3float confound_glued $s -"; done
   for s in $(seq 701 720); do echo "v2 epi_aligned $s -"; done
 }
-render_list() {  # render_list P|ALL : 4 renders in parallel
-  local running=0 ds sp seed tag D F
+render_list() {  # render_list P|ALL [dataset filter regex] : 4 renders in parallel
+  local running=0 ds sp seed tag D F FILT=${2:-.}
   while read ds sp seed tag; do
     [ "$1" = "P" ] && [ "$tag" != "P" ] && continue
+    echo "$ds" | grep -qE "^($FILT)$" || continue
     D=$(ds_dir $ds); mkdir -p $D; cp $SRC/kubric_e5_scene.py $D/
     if [ $ds = v3float ]; then F=$FLAGS_FLOAT; else F=$FLAGS_V2; fi
     render_one $D $sp $seed $F &

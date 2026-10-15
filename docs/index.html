@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-15 21:40:23 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-15 22:01:45 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -46,15 +46,15 @@
 </tr>
 <tr>
 <td>5</td>
-<td><a href="#v3_scale">v3_scale</a>: Items 1+2: render 20 far-glued, 70 floating, 20 extra grounded epi scenes</td>
-<td>waiting for approval (gate <code>v3_visual</code>)</td>
+<td><a href="#v3_scale">v3_scale</a>: (split into v3_scale_float and v3_scale_far)</td>
+<td>waiting for approval (gate <code>retired</code>)</td>
 <td>0</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>6</td>
-<td><a href="#v3_pipeline">v3_pipeline</a>: Items 1+2: Steps 3-6 + adjacency control on far-glued, floating, v2 with 30 epi</td>
+<td><a href="#v3_pipeline">v3_pipeline</a>: (split into v3_pipeline_float and v3_pipeline_far)</td>
 <td>queued</td>
 <td>0</td>
 <td></td>
@@ -79,10 +79,10 @@
 <tr>
 <td>9</td>
 <td><a href="#t8_realdata_kitti">t8_realdata_kitti</a>: Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input</td>
-<td>RUNNING</td>
+<td>done</td>
 <td>1</td>
 <td>2026-10-15 21:40:18</td>
-<td></td>
+<td>2026-10-15 22:01:41</td>
 </tr>
 <tr>
 <td>10</td>
@@ -92,9 +92,41 @@
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>11</td>
+<td><a href="#v3_scale_float">v3_scale_float</a>: Item 2: render 70 floating shadowless scenes + 20 extra grounded epi (v2)</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="#v3_pipeline_float">v3_pipeline_float</a>: Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="#v3_scale_far">v3_scale_far</a>: Item 1: render 20 far-glued scenes (image-gap constraint)</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="#v3_pipeline_far">v3_pipeline_far</a>: Item 1: Steps 3-6 + adjacency control on the far-glued set</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-15 21:39:35 running v3_pilot_far2</p>
+<p>Supervisor heartbeat: 2026-10-15 22:01:11 running t8_realdata_kitti</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -916,5 +948,5 @@
 <p><img src="assets/v3_pilot_far2/v3far__confound_farglued_s501.gif" width="200"> <img src="assets/v3_pilot_far2/v3far__confound_farglued_s502.gif" width="200"> <img src="assets/v3_pilot_far2/v3far__confound_farglued_s503.gif" width="200"></p>
 <h2>t8_realdata_kitti</h2>
 <p>Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input</p>
-<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-15 21:40:18. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t8_realdata_kitti/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t8_realdata_kitti/task.log">log</a>.</p>
-<p>Partial results so far; the run is still going.</p></body></html>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 21:40:18, finished 2026-10-15 22:01:41. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t8_realdata_kitti/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t8_realdata_kitti/task.log">log</a>.</p>
+<p><img alt="gt_check_kitti15.png" src="assets/t8_realdata_kitti/gt_check_kitti15.png" /></p></body></html>
