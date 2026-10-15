@@ -1,0 +1,5 @@
+claim,v1,v2,E8 causal,verdict
+C1 grouping built gradually,pair AUC 0.85->0.93; K 0.31->0.50,pair AUC 0.77->0.91 (p<1e-6); K 0.19->0.52,not tested,"supported, replicated"
+C2 pull toward camera motion,sep 0.61; slope 0.79; rigid hits <=0.05,sep 0.75; slope 0.77; rigid hits <=0.044,5 supply heads; no unit removes pull; replicated 29-30/30,"supported (under-supply), replicated"
+C3 copies split by motion,probe 0.26->0.52; km glued join 0.24->0.69,probe 0.12->0.58 (p=4e-5); MM diff probe join 0.90->0.60; km glued already 0.66 at L0,not tested,supported by probe; clustering not replicated
+C4 motion beyond epipolar,not testable (input AUC 0.99),input AUC 0.57 (epi 0.38) -> 0.998 (epi 0.998),not tested,supported internally; output epi IoU 0.53
