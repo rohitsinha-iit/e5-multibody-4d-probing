@@ -1,0 +1,5 @@
+model,slope3d,slope3d_track,slope2d,sep_ratio,epe_static,epe_moving,motion_auc_in,motion_auc_last,pair_auc_last,pair_auc_best,copies_sep_last,copies_sep_best,att_track,att_rigid,att_track_head_max,n_scenes_output,slope2d_set,pair_auc_best_layer,att_best_block
+any4d,0.984,0.579,0.605,0.826,4.034,36.556,0.979,1.000,0.942,0.942,0.649,0.649,0.538,0.002,0.538,120,all pixels,24,10
+mapanything,0.939,n/a,n/a,n/a,n/a,n/a,0.982,0.999,0.892,0.892,0.326,0.367,0.481,0.003,0.494,60,n/a,24,10
+vggt,1.026,0.452,0.402,0.296,12.655,52.961,0.949,1.000,0.980,0.980,0.832,0.832,0.565,0.000,0.565,60,query set,48,23
+page4d,1.063,n/a,n/a,n/a,n/a,n/a,0.949,1.000,0.967,0.978,0.599,0.654,0.548,0.000,0.548,60,n/a,32,23
