@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-16 00:11:50
+updated 2026-10-16 00:17:28
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -18,7 +18,7 @@ updated 2026-10-16 00:11:50
 | 12 | v3_pipeline_float: Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi | pending | 1 | 2026-10-16 00:03:42 | 2026-10-16 00:11:50 | False |
 | 13 | v3_scale_far: Item 1: render 20 far-glued scenes (image-gap constraint) | waiting_gate | 0 |  |  |  |
 | 14 | v3_pipeline_far: Item 1: Steps 3-6 + adjacency control on the far-glued set | pending | 0 |  |  |  |
-| 15 | t7_any4d_v2: Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | running | 1 | 2026-10-16 00:11:50 |  | False |
+| 15 | t7_any4d_v2: Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | done | 1 | 2026-10-16 00:11:50 | 2026-10-16 00:17:28 | False |
 | 16 | t7_mapanything_v2: Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | pending | 0 |  |  |  |
 | 17 | t7_vggt_v2: Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | pending | 0 |  |  |  |
 | 18 | t7_page4d_v2: Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | pending | 0 |  |  |  |

@@ -2,3 +2,19 @@
 ===== 2026-10-16 00:11:50 attempt 1
 GPU 1
 [00:11:50] any4d: inference in the cross-model format
+planar_s449 1.12 s
+planar_s450 1.08 s
+peak GPU GB 7.59
+[00:14:11] any4d: output metrics
+planar_s450 {'slope3d': 0.952, 'slope3d_flow': 0.932, 'slope2d': 0.994, 'sep_ratio': 1.696, 'slope2d_q': 1.006, 'sep_ratio_q': 1.696, 'slope3d_track': 0.697, 'slope3d_q': 0.952}
+done 120
+[00:15:40] any4d: probes (P) + attention (A), layers 0,4,8,12,16,20,24
+E5-P layer 24
+done
+total 528
+drwxrwxr-x  2 rohit rohit   4096 Oct 16 00:17 .
+drwxrwxr-x 12 rohit rohit   4096 Oct 16 00:11 ..
+-rw-rw-r--  1 rohit rohit 302142 Oct 16 00:17 xm_internal_any4d_results.json
+-rw-rw-r--  1 rohit rohit 117183 Oct 16 00:15 xm_output_any4d.json
+-rw-rw-r--  1 rohit rohit 106348 Oct 16 00:15 xm_output_any4d.json.partial
+-rw-rw-r--  1 rohit rohit    974 Oct 16 00:15 xm_output_any4d_summary.md

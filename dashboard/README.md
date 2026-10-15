@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 00:11:52 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 00:17:31 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -18,13 +18,13 @@ Last updated 2026-10-16 00:11:52 (server time). Regenerated after every queue ev
 | 12 | [v3_pipeline_float](#v3_pipeline_float): Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi | queued | 1 | 2026-10-16 00:03:42 |  |
 | 13 | [v3_scale_far](#v3_scale_far): Item 1: render 20 far-glued scenes (image-gap constraint) | waiting for approval (gate `v3_far_visual`) | 0 |  |  |
 | 14 | [v3_pipeline_far](#v3_pipeline_far): Item 1: Steps 3-6 + adjacency control on the far-glued set | queued | 0 |  |  |
-| 15 | [t7_any4d_v2](#t7_any4d_v2): Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | RUNNING | 1 | 2026-10-16 00:11:50 |  |
+| 15 | [t7_any4d_v2](#t7_any4d_v2): Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | done | 1 | 2026-10-16 00:11:50 | 2026-10-16 00:17:28 |
 | 16 | [t7_mapanything_v2](#t7_mapanything_v2): Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | queued | 0 |  |  |
 | 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | queued | 0 |  |  |
 | 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | queued | 0 |  |  |
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-16 00:11:20 running v3_pipeline_float
+Supervisor heartbeat: 2026-10-16 00:16:58 running t7_any4d_v2
 
 ## v3_pilot
 
@@ -229,7 +229,37 @@ Status: **done**, attempt 1, started 2026-10-15 22:32:43, finished 2026-10-16 00
 
 Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24)
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 00:11:50. [Raw results](../results/queue/t7_any4d_v2/), [log](../results/queue/t7_any4d_v2/task.log).
+Status: **done**, attempt 1, started 2026-10-16 00:11:50, finished 2026-10-16 00:17:28. [Raw results](../results/queue/t7_any4d_v2/), [log](../results/queue/t7_any4d_v2/task.log).
 
-Partial results so far; the run is still going.
+
+
+**xm_output_any4d_summary.md**
+
+# any4d: output metrics, 120 scenes
+
+| metric | mean | median | n |
+|---|---|---|---|
+| align_scale | 3.0688 | 3.0656 | 120 |
+| align_rmse | 0.1411 | 0.1249 | 120 |
+| median_true_disp3d | 2.3388 | 2.3434 | 118 |
+| slope3d | 0.9836 | 0.9844 | 117 |
+| epe3d_static | 0.1332 | 0.1225 | 120 |
+| epe3d_moving | 0.2579 | 0.1784 | 118 |
+| slope3d_flow | 0.5940 | 0.6580 | 117 |
+| epe3d_static_flow | 0.0034 | 0.0034 | 120 |
+| epe3d_moving_flow | 0.8628 | 0.6699 | 118 |
+| sep_gt | 21.1408 | 25.4433 | 118 |
+| slope2d | 0.6050 | 0.6619 | 117 |
+| epe_static | 4.0341 | 3.8025 | 120 |
+| epe_moving | 36.5558 | 30.0682 | 118 |
+| sep_pred | 16.5939 | 14.6443 | 118 |
+| sep_ratio | 0.8259 | 0.7512 | 89 |
+| slope2d_q | 0.6039 | 0.6614 | 117 |
+| epe_static_q | 4.0285 | 3.7729 | 120 |
+| epe_moving_q | 36.6064 | 30.1741 | 118 |
+| sep_pred_q | 16.5939 | 14.6443 | 118 |
+| sep_ratio_q | 0.8259 | 0.7512 | 89 |
+| slope3d_track | 0.5789 | 0.6499 | 117 |
+| slope3d_q | 0.9840 | 0.9866 | 117 |
+
 
