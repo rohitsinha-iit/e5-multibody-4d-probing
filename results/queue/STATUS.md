@@ -1,12 +1,12 @@
 # E5 queue status
 
-updated 2026-10-15 20:18:45
+updated 2026-10-15 20:36:24
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
 | 1 | v3_pilot: Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval | done | 1 | 2026-10-15 19:49:59 | 2026-10-15 20:00:30 | True |
-| 2 | t4_causal_v2: Item 4: five heads together, amplification, path patching into scene-flow decoder (v2) | done | 1 | 2026-10-15 20:00:44 | 2026-10-15 20:18:45 | False |
-| 3 | t5_subspace_v2: Item 5: LEACE erasure and steering along the motion subspace, layers 17-21 (v2) | pending | 0 |  |  |  |
+| 2 | t4_causal_v2: Item 4: five heads together, amplification, path patching into scene-flow decoder (v2) | done | 1 | 2026-10-15 20:00:44 | 2026-10-15 20:18:45 | True |
+| 3 | t5_subspace_v2: Item 5: LEACE erasure and steering along the motion subspace, layers 17-21 (v2) | done | 1 | 2026-10-15 20:19:23 | 2026-10-15 20:36:24 | False |
 | 4 | t3_viewsweep_v2: Item 3: 2, 3, 4, 7 input views, outputs + probes + attention (v2) | pending | 0 |  |  |  |
 | 5 | v3_scale: Items 1+2: render 20 far-glued, 70 floating, 20 extra grounded epi scenes | pending | 0 |  |  |  |
 | 6 | v3_pipeline: Items 1+2: Steps 3-6 + adjacency control on far-glued, floating, v2 with 30 epi | pending | 0 |  |  |  |
