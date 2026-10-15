@@ -34,3 +34,9 @@ Traceback (most recent call last):
     fid = stack.enter_context(open(os.fspath(file), "rb"))
                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: '/home/rohit/e5_multibody/data/v2/gt_patches/epi_aligned_s701_gt.npz'
+
+===== 2026-10-16 01:46:13 attempt 1
+checkpoint /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--VGGT-1B/snapshots/860abec7937da0a4c03c41d3c269c366e82abdf9/model.pt
+track head: --track_ckpt /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--VGGT_tracker_fixed/snapshots/4d9d9494b2211c90ab9cd3c8c6aa188fe363103d/model_tracker_fixed_e20.pt
+GPU 1
+[01:46:14] vggt: inference + internals
