@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-16 00:40:17
+updated 2026-10-16 00:48:25
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -16,10 +16,10 @@ updated 2026-10-16 00:40:17
 | 10 | t8_realdata_sintel: Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input | done | 1 | 2026-10-15 22:01:54 | 2026-10-15 22:32:35 | True |
 | 11 | v3_scale_float: Item 2: render 70 floating shadowless scenes + 20 extra grounded epi (v2) | done | 1 | 2026-10-15 22:32:43 | 2026-10-16 00:03:34 | True |
 | 12 | v3_pipeline_float: Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi | failed | 2 | 2026-10-16 00:17:36 | 2026-10-16 00:21:13 | True |
-| 13 | v3_scale_far: Item 1: render 20 far-glued scenes (image-gap constraint) | waiting_gate | 0 |  |  |  |
+| 13 | v3_scale_far: Item 1: render 20 far-glued scenes (image-gap constraint) | running | 1 | 2026-10-16 00:48:25 |  | False |
 | 14 | v3_pipeline_far: Item 1: Steps 3-6 + adjacency control on the far-glued set | pending | 0 |  |  |  |
 | 15 | t7_any4d_v2: Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | done | 1 | 2026-10-16 00:11:50 | 2026-10-16 00:17:28 | True |
 | 16 | t7_mapanything_v2: Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | failed | 2 | 2026-10-16 00:32:35 | 2026-10-16 00:33:11 | True |
 | 17 | t7_vggt_v2: Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | failed | 2 | 2026-10-16 00:37:26 | 2026-10-16 00:38:03 | True |
-| 18 | t7_page4d_v2: Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | failed | 2 | 2026-10-16 00:39:40 | 2026-10-16 00:40:17 | False |
+| 18 | t7_page4d_v2: Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | failed | 2 | 2026-10-16 00:39:40 | 2026-10-16 00:40:17 | True |
 | 19 | t7_xm_summary: Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | pending | 0 |  |  |  |
