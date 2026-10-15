@@ -37,3 +37,22 @@ FileNotFoundError: [Errno 2] No such file or directory: '/home/rohit/e5_multibod
 checkpoint /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--map-anything/snapshots/6f3a25bfbb8fcc799176bb01e9d07dfb49d5416a
 GPU 1
 [01:43:29] mapanything: inference + internals
+Loading weights from local directory
+attention flags (all must be False for raw q.k summaries to be exact) {'custom_positional_encoding': False, 'use_scalable_softmax': False, 'use_entropy_scaling': False, 'qk_norm': False}
+blocks 24 heads 12 attn children {'qkv': 'Linear', 'q_norm': 'Identity', 'k_norm': 'Identity', 'attn_drop': 'Dropout', 'proj': 'Linear', 'proj_drop': 'Dropout'}
+peak GPU GB 2.26
+gt patches 100
+[01:43:35] mapanything: output metrics
+planar_s450 {}
+done 100
+[01:44:26] mapanything: probes (P) + attention (A), layers 0,4,8,12,16,20,24
+E5-P layer 24
+done
+total 400
+drwxrwxr-x  2 rohit rohit   4096 Oct 16 01:46 .
+drwxrwxr-x 18 rohit rohit   4096 Oct 16 01:40 ..
+-rw-rw----  1 rohit rohit    210 Oct 16 01:46 grid_mapanything.json
+-rw-rw-r--  1 rohit rohit 296651 Oct 16 01:45 xm_internal_mapanything_results.json
+-rw-rw-r--  1 rohit rohit  48201 Oct 16 01:44 xm_output_mapanything.json
+-rw-rw-r--  1 rohit rohit  44740 Oct 16 01:44 xm_output_mapanything.json.partial
+-rw-rw-r--  1 rohit rohit    366 Oct 16 01:44 xm_output_mapanything_summary.md

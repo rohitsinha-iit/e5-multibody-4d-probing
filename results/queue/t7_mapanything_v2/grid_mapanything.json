@@ -1,0 +1,10 @@
+{
+ "grid": 37,
+ "patch": 14,
+ "size": 518,
+ "n_blocks": 24,
+ "n_global": 12,
+ "heads": 12,
+ "dim": 768,
+ "layer_def": "0 = transformer input; l = output of block l-1; even blocks global, odd frame (as Any4D)"
+}
