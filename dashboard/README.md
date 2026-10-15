@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-15 21:40:08 (server time). Regenerated after every queue event.
+Last updated 2026-10-15 21:40:23 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -12,7 +12,7 @@ Last updated 2026-10-15 21:40:08 (server time). Regenerated after every queue ev
 | 6 | [v3_pipeline](#v3_pipeline): Items 1+2: Steps 3-6 + adjacency control on far-glued, floating, v2 with 30 epi | queued | 0 |  |  |
 | 7 | [v3_viewsweep](#v3_viewsweep): Items 2+3: view-count sweep on the floating set | queued | 0 |  |  |
 | 8 | [v3_pilot_far2](#v3_pilot_far2): Item 1 pilot re-render: far-glued pairs kept far apart in the image | done | 1 | 2026-10-15 21:35:58 | 2026-10-15 21:40:05 |
-| 9 | [t8_realdata_kitti](#t8_realdata_kitti): Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input | queued | 0 |  |  |
+| 9 | [t8_realdata_kitti](#t8_realdata_kitti): Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input | RUNNING | 1 | 2026-10-15 21:40:18 |  |
 | 10 | [t8_realdata_sintel](#t8_realdata_sintel): Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input | queued | 0 |  |  |
 
 Supervisor heartbeat: 2026-10-15 21:39:35 running v3_pilot_far2
@@ -192,3 +192,12 @@ Status: **done**, attempt 1, started 2026-10-15 21:35:58, finished 2026-10-15 21
 ![v3far__confound_farglued_s503.png](assets/v3_pilot_far2/v3far__confound_farglued_s503.png)
 
 <img src="assets/v3_pilot_far2/v3far__confound_farglued_s501.gif" width="200"> <img src="assets/v3_pilot_far2/v3far__confound_farglued_s502.gif" width="200"> <img src="assets/v3_pilot_far2/v3far__confound_farglued_s503.gif" width="200">
+
+## t8_realdata_kitti
+
+Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input
+
+Status: **RUNNING**, attempt 1, started 2026-10-15 21:40:18. [Raw results](../results/queue/t8_realdata_kitti/), [log](../results/queue/t8_realdata_kitti/task.log).
+
+Partial results so far; the run is still going.
+
