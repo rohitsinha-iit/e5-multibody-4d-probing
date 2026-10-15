@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 01:05:36 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 01:05:42 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -15,13 +15,13 @@ Last updated 2026-10-16 01:05:36 (server time). Regenerated after every queue ev
 | 9 | [t8_realdata_kitti](#t8_realdata_kitti): Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input | done | 1 | 2026-10-15 21:40:18 | 2026-10-15 22:01:41 |
 | 10 | [t8_realdata_sintel](#t8_realdata_sintel): Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input | done | 1 | 2026-10-15 22:01:54 | 2026-10-15 22:32:35 |
 | 11 | [v3_scale_float](#v3_scale_float): Item 2: render 70 floating shadowless scenes + 20 extra grounded epi (v2) | done | 1 | 2026-10-15 22:32:43 | 2026-10-16 00:03:34 |
-| 12 | [v3_pipeline_float](#v3_pipeline_float): Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi | FAILED | 2 | 2026-10-16 00:17:36 | 2026-10-16 00:21:13 |
+| 12 | [v3_pipeline_float](#v3_pipeline_float): Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi | RUNNING | 1 | 2026-10-16 01:05:40 |  |
 | 13 | [v3_scale_far](#v3_scale_far): Item 1: render 20 far-glued scenes (image-gap constraint) | done | 1 | 2026-10-16 00:48:25 | 2026-10-16 01:05:33 |
 | 14 | [v3_pipeline_far](#v3_pipeline_far): Item 1: Steps 3-6 + adjacency control on the far-glued set | queued | 0 |  |  |
 | 15 | [t7_any4d_v2](#t7_any4d_v2): Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | done | 1 | 2026-10-16 00:11:50 | 2026-10-16 00:17:28 |
-| 16 | [t7_mapanything_v2](#t7_mapanything_v2): Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | FAILED | 2 | 2026-10-16 00:32:35 | 2026-10-16 00:33:11 |
-| 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | FAILED | 2 | 2026-10-16 00:37:26 | 2026-10-16 00:38:03 |
-| 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | FAILED | 2 | 2026-10-16 00:39:40 | 2026-10-16 00:40:17 |
+| 16 | [t7_mapanything_v2](#t7_mapanything_v2): Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | queued | 0 | 2026-10-16 00:32:35 |  |
+| 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | queued | 0 | 2026-10-16 00:37:26 |  |
+| 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | queued | 0 | 2026-10-16 00:39:40 |  |
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | queued | 0 |  |  |
 | 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | queued | 0 |  |  |
 
@@ -230,7 +230,9 @@ Status: **done**, attempt 1, started 2026-10-15 22:32:43, finished 2026-10-16 00
 
 Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi
 
-Status: **FAILED**, attempt 2, started 2026-10-16 00:17:36, finished 2026-10-16 00:21:13. [Raw results](../results/queue/v3_pipeline_float/), [log](../results/queue/v3_pipeline_float/task.log).
+Status: **RUNNING**, attempt 1, started 2026-10-16 01:05:40. [Raw results](../results/queue/v3_pipeline_float/), [log](../results/queue/v3_pipeline_float/task.log).
+
+Partial results so far; the run is still going.
 
 
 ## v3_scale_far
@@ -277,25 +279,4 @@ Status: **done**, attempt 1, started 2026-10-16 00:11:50, finished 2026-10-16 00
 | slope3d_track | 0.5789 | 0.6499 | 117 |
 | slope3d_q | 0.9840 | 0.9866 | 117 |
 
-
-
-## t7_mapanything_v2
-
-Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention
-
-Status: **FAILED**, attempt 2, started 2026-10-16 00:32:35, finished 2026-10-16 00:33:11. [Raw results](../results/queue/t7_mapanything_v2/), [log](../results/queue/t7_mapanything_v2/task.log).
-
-
-## t7_vggt_v2
-
-Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention
-
-Status: **FAILED**, attempt 2, started 2026-10-16 00:37:26, finished 2026-10-16 00:38:03. [Raw results](../results/queue/t7_vggt_v2/), [log](../results/queue/t7_vggt_v2/task.log).
-
-
-## t7_page4d_v2
-
-Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention
-
-Status: **FAILED**, attempt 2, started 2026-10-16 00:39:40, finished 2026-10-16 00:40:17. [Raw results](../results/queue/t7_page4d_v2/), [log](../results/queue/t7_page4d_v2/task.log).
 
