@@ -36,7 +36,7 @@ for d in sorted(glob.glob(os.path.join(data, "*"))):
     X = kp.backproject(meta, gt["depth"][0, ..., 0], 0)
     xs, _ = kp.project(meta, X, b)
     u, v = np.meshgrid(np.arange(W), np.arange(W))
-    pr = s3.pred_correspondences(dict(np.load(os.path.join(preds, f"{name}.npz"))), 6, 0.0)  # 518 grid, view 6 = frame 23
+    _P = dict(np.load(os.path.join(preds, f"{name}.npz"))); pr = s3.pred_correspondences(_P, len(_P["frames"]) - 1, 0.0)  # 518 grid, last view = frame 23
     P = dict(np.load(os.path.join(preds, f"{name}.npz")))
     off = np.array(s3.pixel_offset(P)); pr = pr - off
     T = G * G

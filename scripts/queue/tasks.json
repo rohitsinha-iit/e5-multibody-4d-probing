@@ -1,0 +1,76 @@
+[
+ {
+  "id": "v3_pilot",
+  "title": "Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval",
+  "script": "v3_pilot.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 20,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t4_causal_v2",
+  "title": "Item 4: five heads together, amplification, path patching into scene-flow decoder (v2)",
+  "script": "t4_causal_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 3
+ },
+ {
+  "id": "t5_subspace_v2",
+  "title": "Item 5: LEACE erasure and steering along the motion subspace, layers 17-21 (v2)",
+  "script": "t5_subspace_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 3
+ },
+ {
+  "id": "t3_viewsweep_v2",
+  "title": "Item 3: 2, 3, 4, 7 input views, outputs + probes + attention (v2)",
+  "script": "t3_viewsweep_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_scale",
+  "title": "Items 1+2: render 20 far-glued, 70 floating, 20 extra grounded epi scenes",
+  "script": "v3_scale.sh",
+  "deps": [
+   "v3_pilot"
+  ],
+  "gate": "v3_visual",
+  "max_attempts": 2,
+  "min_free_gb": 40,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_pipeline",
+  "title": "Items 1+2: Steps 3-6 + adjacency control on far-glued, floating, v2 with 30 epi",
+  "script": "v3_pipeline.sh",
+  "deps": [
+   "v3_scale"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_viewsweep",
+  "title": "Items 2+3: view-count sweep on the floating set",
+  "script": "v3_viewsweep.sh",
+  "deps": [
+   "v3_pipeline"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ }
+]

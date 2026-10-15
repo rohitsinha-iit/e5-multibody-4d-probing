@@ -44,6 +44,8 @@ scenes = sorted(d for d in glob.glob(os.path.join(args.data, "*")) if os.path.ex
 log = []
 for si, d in enumerate(scenes):
     name = os.path.basename(d)
+    if os.path.exists(os.path.join(args.out, f"{name}.npz")):
+        continue  # resumable
     paths = [os.path.join(d, f"rgba_{f:05d}.png") for f in FRAMES]
     t0 = time.time()
     views = load_images(paths, resize_mode="square", size=518, norm_type=cfg["data_norm_type"], patch_size=14)

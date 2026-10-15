@@ -1,0 +1,32 @@
+
+===== 2026-10-15 19:49:59 attempt 1
+[19:49:59] smoke renders
+INFO:root:shadows disabled on 4 objects
+[19:51:55] pilot renders
+confound_farglued_s501 EPE 0.00 sep 21.9 snr1 15.5
+confound_farglued_s502 EPE 0.00 sep 29.5 snr1 20.8
+confound_farglued_s503 EPE 0.00 sep 19.4 snr1 13.7
+epi_aligned_s532 EPE 0.00 sep 0.0 snr1 0.0
+n2_generic_s561 EPE 0.00 sep 20.7 snr1 14.7
+n3_generic_s581 EPE 0.00 sep 23.2 snr1 16.4
+/home/rohit/e5_multibody/queue/results/v3_pilot/v3far/:
+confound_farglued_s501.gif
+confound_farglued_s501.png
+confound_farglued_s502.gif
+confound_farglued_s502.png
+confound_farglued_s503.gif
+confound_farglued_s503.png
+scene_summary.json
+
+/home/rohit/e5_multibody/queue/results/v3_pilot/v3float/:
+confound_same_s571.gif
+confound_same_s571.png
+epi_aligned_s531.gif
+epi_aligned_s531.png
+epi_aligned_s532.gif
+epi_aligned_s532.png
+n2_generic_s561.gif
+n2_generic_s561.png
+n3_generic_s581.gif
+n3_generic_s581.png
+scene_summary.json

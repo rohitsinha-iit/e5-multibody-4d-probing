@@ -21,7 +21,11 @@ for n in names:
     g["pure"] = (g["purity"] >= 0.8) & g["vis"]; g["pidx"] = np.where(g["pure"])[0]; GT[n] = g
 seed_of = {n: int(n.split("_s")[-1]) for n in names}
 folds = {n: i % 5 for i, n in enumerate(sorted(names, key=lambda m: (GT[m]["split"], seed_of[m])))}
-TOK = {n: np.asarray(np.load(os.path.join(idir, f"{n}_tok.npy"), mmap_mode="r")[LAYERS][:, :, GT[n]["pidx"]]).astype(np.float32) for n in names}
+_sl = os.path.join(idir, "stored_layers.json")
+STORED = json.load(open(_sl)) if os.path.exists(_sl) else list(range(25))
+LAYERS = [l for l in LAYERS if l in STORED] or [STORED[0], STORED[len(STORED) // 3], STORED[2 * len(STORED) // 3], STORED[-1]]
+_pos = [STORED.index(l) for l in LAYERS]
+TOK = {n: np.asarray(np.load(os.path.join(idir, f"{n}_tok.npy"), mmap_mode="r")[_pos][:, :, GT[n]["pidx"]]).astype(np.float32) for n in names}
 
 def pairs_for(n, m):
     b = GT[n]["body"][GT[n]["pidx"]]; P = len(b)

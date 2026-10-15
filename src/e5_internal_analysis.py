@@ -141,9 +141,26 @@ print("E5-A done", flush=True)
 
 # =============================================================== load tokens for pure patches
 TOK = {}
+_sl = os.path.join(idir, "stored_layers.json")
+STORED = json.load(open(_sl)) if os.path.exists(_sl) else list(range(25))
+assert set(LAYERS) <= set(STORED), f"requested layers {LAYERS} not all stored {STORED}"
+
+
+class _LayerView:
+    """Index a stored-layer subset by true residual layer number."""
+    def __init__(self, arr):
+        self.arr = arr; self.pos = {l: i for i, l in enumerate(LAYERS)}
+    def __getitem__(self, key):
+        if isinstance(key, tuple):
+            return self.arr[(self.pos[key[0]],) + key[1:]]
+        return self.arr[self.pos[key]]
+
+
 for n in names:
     a = np.load(os.path.join(idir, f"{n}_tok.npy"), mmap_mode="r")
-    TOK[n] = np.asarray(a[:, :, GT[n]["pure"]]).astype(np.float32)  # (25, 2, P, 768)
+    keep = [STORED.index(l) for l in LAYERS]
+    sub = np.asarray(a[keep][:, :, GT[n]["pure"]]).astype(np.float32)
+    TOK[n] = _LayerView(sub)  # (len(LAYERS), 2, P, 768), indexed by true layer number
     GT[n]["pidx"] = np.where(GT[n]["pure"])[0]
 
 # =============================================================== E5-F

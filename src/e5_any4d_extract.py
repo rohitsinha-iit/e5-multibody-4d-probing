@@ -21,10 +21,13 @@ from any4d.utils.misc import seed_everything  # noqa: E402
 p = argparse.ArgumentParser()
 p.add_argument("--data", required=True); p.add_argument("--out", required=True)
 p.add_argument("--frames", default="0,4,8,12,16,20,23"); p.add_argument("--limit", type=int, default=0)
+p.add_argument("--layers", default="", help="store only these residual layers (0..24); written to <out>/stored_layers.json")
 args = p.parse_args()
 seed_everything(0)
 FRAMES = [int(x) for x in args.frames.split(",")]; V = len(FRAMES); TV = V - 1
 os.makedirs(args.out, exist_ok=True)
+STORE = [int(x) for x in args.layers.split(",")] if args.layers else list(range(25))
+json.dump(STORE, open(os.path.join(args.out, "stored_layers.json"), "w"))
 cfg = {"path": "configs/train.yaml",
        "config_overrides": ["machine=local", "model=any4d", "model.encoder.uses_torch_hub=false", "model/task=images_only"],
        "checkpoint_path": "checkpoints/any4d_4v_combined.pth", "trained_with_amp": True, "data_norm_type": "dinov2"}
@@ -75,12 +78,14 @@ if args.limit:
     scenes = scenes[: args.limit]
 for d in scenes:
     name = os.path.basename(d); t0 = time.time()
+    if os.path.exists(os.path.join(args.out, f"{name}_att.npz")):
+        continue  # resumable
     store.update(tok=[None] * 25, argmax=[None] * 12, soft=[None] * 12, pmax=[None] * 12)
     views = load_images([os.path.join(d, f"rgba_{f:05d}.png") for f in FRAMES], resize_mode="square", size=518,
                         norm_type=cfg["data_norm_type"], patch_size=14)
     sample_inference(model, views, torch.device("cuda"), use_amp=True)
     assert all(t is not None for t in store["tok"]) and all(a is not None for a in store["argmax"])
-    np.save(os.path.join(args.out, f"{name}_tok.npy"), torch.stack(store["tok"]).numpy())
+    np.save(os.path.join(args.out, f"{name}_tok.npy"), torch.stack([store["tok"][l] for l in STORE]).numpy())
     np.savez_compressed(os.path.join(args.out, f"{name}_att.npz"), argmax=torch.stack(store["argmax"]).numpy(),
                         soft=torch.stack(store["soft"]).numpy(), pmax=torch.stack(store["pmax"]).numpy())
     print(name, f"{time.time()-t0:.1f}s", flush=True)

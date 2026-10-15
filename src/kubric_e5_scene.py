@@ -12,6 +12,13 @@ Splits
   planar          arc camera, 1 moving thin textured card, 2 static
   confound_same   arc camera, two copies of the same asset: one moving, one static; + 2 static
   confound_glued  arc camera, two different objects glued into one rigid body; + 2 static
+  confound_farglued (v3, C3 adjacency control) two different objects A, B rigidly coupled but far apart
+                  (centre distance --far_lo..--far_hi m, invisible rigid offset) = group 1, plus an identical
+                  copy C of asset A with its own independent motion = group 2, + 1 static.
+                  Appearance says (A,C) belong together, motion says (A,B).
+v3 float set: --float_height h > 0 lifts every object (moving and static) to a random height in [h, h+0.5] m
+above the floor with the same planar motion as v2 (xy translation + yaw), and --no_shadows 1 disables shadow
+casting for all objects, so neither floor contact nor a floor shadow reveals motion.
 Outputs (job-dir): rgba_XXXXX.png, gt.npz (depth = ray distance, segmentation, forward_flow),
 e5_meta.json (K in pixels, per-frame 4x4 world matrices of camera and objects, motion groups).
 """
@@ -23,13 +30,18 @@ import kubric as kb
 from kubric.renderer.blender import Blender as KubricRenderer
 
 SPLITS = ["n2_generic", "n3_generic", "camrot", "epi_aligned", "planar",
-          "confound_same", "confound_glued"]
+          "confound_same", "confound_glued", "confound_farglued"]
 
 parser = kb.ArgumentParser()
 parser.add_argument("--split", type=str, required=True, choices=SPLITS)
 parser.add_argument("--samples", type=int, default=64)
 parser.add_argument("--grounded", type=int, default=0,
                     help="v2: moving objects rest on the floor and slide (planar rigid motion: xy translation + yaw)")
+parser.add_argument("--float_height", type=float, default=0.0,
+                    help="v3: >0 lifts all objects to [h, h+0.5] m above the floor (use with --grounded 1 motion)")
+parser.add_argument("--no_shadows", type=int, default=0, help="v3: objects cast no shadows")
+parser.add_argument("--far_lo", type=float, default=2.4, help="confound_farglued: min centre distance (m)")
+parser.add_argument("--far_hi", type=float, default=3.2, help="confound_farglued: max centre distance (m)")
 parser.add_argument("--size_lo", type=float, default=1.2)
 parser.add_argument("--size_hi", type=float, default=2.0)
 parser.add_argument("--min_sep_px", type=float, default=20.0,
@@ -192,7 +204,7 @@ def visible(traj, margin=0.12):
 def place_static(obj, size, near=None):
     for _ in range(300):
         xy = rng.uniform(-3.0, 3.0, 2) if near is None else near + rng.uniform(-2.5, 2.5, 2)
-        zb = -obj.bounds[0][2] * obj.scale[2] + 0.005
+        zb = -obj.bounds[0][2] * obj.scale[2] + 0.005 + lift()
         c = np.r_[xy, zb]
         traj = {f: c for f in FRAMES}
         if visible(traj, 0.08) and clear_of_others(traj, size / 2):
@@ -201,6 +213,10 @@ def place_static(obj, size, near=None):
             placed.append((traj, size / 2))
             return True
     return False
+
+def lift():
+    """v3 float set: extra height above the floor (0 for v1/v2)."""
+    return float(rng.uniform(FLAGS.float_height, FLAGS.float_height + 0.5)) if FLAGS.float_height > 0 else 0.0
 
 def rest_height(obj):
     """Height of the object origin above the floor when upright (yaw-only rotation)."""
@@ -225,8 +241,10 @@ def kinematics(members, kind):
         v, axis, ang = motion_params(kind)
         q0s = [quat_axis_angle(rand_unit(rng), rng.uniform(0, np.pi)) if (kind != "epi" and not FLAGS.grounded)
                else quat_axis_angle([0, 0, 1], rng.uniform(0, 2 * np.pi)) for _ in members]
-        if FLAGS.grounded:  # members rest on the floor: offset z = rest height, rotation about vertical only
-            members = [(o_, s_, np.r_[off_[:2], rest_height(o_)]) for (o_, s_, off_) in members]
+        if FLAGS.grounded:  # members rest on the floor (v3 float: lifted): offset z = rest height, yaw only
+            if not hasattr(kinematics, "lifts") or len(kinematics.lifts) != len(members):
+                kinematics.lifts = [lift() for _ in members]
+            members = [(o_, s_, np.r_[off_[:2], rest_height(o_) + lz]) for (o_, s_, off_), lz in zip(members, kinematics.lifts)]
         out, ok = [], True
         trajs = []
         for (obj, size, off), q0 in zip(members, q0s):
@@ -237,6 +255,19 @@ def kinematics(members, kind):
             trajs.append(tr)
         rad = max(s for _, s, _ in members) / 2 + max(np.linalg.norm(o) for *_, o in members)
         ctr = {f: np.mean([t[f][0] for t in trajs], 0) for f in FRAMES}
+        far = len(members) > 1 and max(np.linalg.norm(o[:2]) for *_, o in members) > 1.0
+        if far:  # far-apart rigid members: check each member separately, not one big circle
+            ok_far = all(visible({f: t[f][0] for f in FRAMES}) and clear_of_others({f: t[f][0] for f in FRAMES}, s_ / 2)
+                         for t, (_, s_, _) in zip(trajs, members))
+        if far and ok_far:
+            body = (v, axis, ang, pivot)
+            for t, (_, s_, _) in zip(trajs, members):
+                placed.append(({f: t[f][0] for f in FRAMES}, s_ / 2))
+            bodies.append((body, ctr[F0], rad))
+            return trajs, dict(v=v.tolist(), axis=axis.tolist(), angle=float(ang), pivot=pivot.tolist(),
+                               analytic_sep_px=float("nan"), sep_target_met=True)
+        if far:
+            continue
         if (FLAGS.grounded or all(c[2] > rad * 0.6 for c in ctr.values())) and visible(ctr) and clear_of_others(ctr, rad):
             body = (v, axis, ang, pivot)
             sep = body_sep(body, ctr[F0], rad)
@@ -331,6 +362,7 @@ def add(obj, asset_id, size, group, planar=False):
     objects.append(dict(obj=obj, asset_id=asset_id, size=float(size), group=group, planar=planar))
 
 def add_moving(members_spec, group, kind="generic"):
+    kinematics.lifts = []
     members = [(o, s, off) for (o, a, s, off, pl) in members_spec]
     trajs, params = kinematics(members, kind)
     for (o, a, s, off, pl), tr in zip(members_spec, trajs):
@@ -363,14 +395,35 @@ elif split == "confound_glued":
     off = rand_unit(rng); off[2] = 0; off = off / np.linalg.norm(off) * 0.5 * (sA + sB) * 0.55
     motions[1] = add_moving([(oA, aA, sA, off, False), (oB, aB, sB, -off, False)], 1)
 
+elif split == "confound_farglued":
+    oA, aA, sA = new_gso(); oB, aB, sB = new_gso()
+    dist = rng.uniform(FLAGS.far_lo, FLAGS.far_hi)
+    off = rand_unit(rng); off[2] = 0; off = off / np.linalg.norm(off) * dist / 2
+    motions[1] = add_moving([(oA, aA, sA, off, False), (oB, aB, sB, -off, False)], 1)
+    kinematics.lifts = []
+    oC, _, _ = new_gso(asset_id=aA, size=sA)  # identical-looking copy of A, independent motion
+    motions[2] = add_moving([(oC, aA, sA, np.zeros(3), False)], 2)
+
 n_static = {"n2_generic": 3, "n3_generic": 2, "camrot": 3, "epi_aligned": 3, "planar": 2,
-            "confound_same": 2, "confound_glued": 2}[split]
+            "confound_same": 2, "confound_glued": 2, "confound_farglued": 1}[split]
 for _ in range(n_static):
     o, a, s = new_gso()
     if place_static(o, s):
         add(o, a, s, 0)
 
 # ------------------------------------------------------------------ render
+if FLAGS.no_shadows:
+    n_off = 0
+    for o in objects:
+        bo = o["obj"].linked_objects.get(renderer) if hasattr(o["obj"], "linked_objects") else None
+        if bo is None:
+            continue
+        try:
+            bo.cycles_visibility.shadow = False; n_off += 1
+        except AttributeError:
+            bo.visible_shadow = False; n_off += 1
+    logging.info("shadows disabled on %d objects", n_off)
+
 data = renderer.render(return_layers=("rgba", "depth", "segmentation", "forward_flow"))
 kb.write_image_dict({"rgba": data["rgba"]}, output_dir)
 np.savez_compressed(output_dir / "gt.npz", depth=data["depth"].astype(np.float32),
@@ -381,7 +434,8 @@ def mw(asset, f):
     with asset.at_frame(f):
         return np.array(asset.matrix_world).tolist()
 
-meta = dict(split=split, seed=FLAGS.seed, grounded=int(FLAGS.grounded), size_range=[FLAGS.size_lo, FLAGS.size_hi], resolution=[W, H], frames=FRAMES,
+meta = dict(split=split, seed=FLAGS.seed, grounded=int(FLAGS.grounded), float_height=FLAGS.float_height,
+            no_shadows=int(FLAGS.no_shadows), size_range=[FLAGS.size_lo, FLAGS.size_hi], resolution=[W, H], frames=FRAMES,
             focal_length=FOCAL, sensor_width=SENSOR,
             K=[[fx, 0, W / 2], [0, fx, H / 2], [0, 0, 1]],
             camera_convention="blender (camera looks along -Z, +Y up); depth = distance along ray",
