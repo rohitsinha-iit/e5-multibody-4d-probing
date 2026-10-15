@@ -31,3 +31,8 @@ Traceback (most recent call last):
     fid = stack.enter_context(open(os.fspath(file), "rb"))
                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 FileNotFoundError: [Errno 2] No such file or directory: '/home/rohit/e5_multibody/data/v2/gt_patches/epi_aligned_s701_gt.npz'
+
+===== 2026-10-16 01:49:59 attempt 1
+checkpoint /media/workbench/zone_x/e5_multibody/models/hf/hub/datasets--zhouk777--PAGE4D/snapshots/69c86f898829ae9365469aa8e9f34b386844a4b5/checkpoint_nomask.pt
+GPU 1
+[01:50:00] page4d: inference + internals

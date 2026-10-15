@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 01:49:54 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 01:50:01 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -21,7 +21,7 @@ Last updated 2026-10-16 01:49:54 (server time). Regenerated after every queue ev
 | 15 | [t7_any4d_v2](#t7_any4d_v2): Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | done | 1 | 2026-10-16 00:11:50 | 2026-10-16 00:17:28 |
 | 16 | [t7_mapanything_v2](#t7_mapanything_v2): Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | done | 1 | 2026-10-16 01:43:28 | 2026-10-16 01:46:05 |
 | 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | done | 1 | 2026-10-16 01:46:13 | 2026-10-16 01:49:51 |
-| 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | queued | 0 | 2026-10-16 00:39:40 |  |
+| 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | RUNNING | 1 | 2026-10-16 01:49:59 |  |
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | queued | 0 |  |  |
 | 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | queued | 0 |  |  |
 
@@ -367,4 +367,13 @@ Status: **done**, attempt 1, started 2026-10-16 01:46:13, finished 2026-10-16 01
 | slope3d_track | 0.4518 | 0.4958 | 58 |
 | slope3d_q | 1.0271 | 1.0001 | 58 |
 
+
+
+## t7_page4d_v2
+
+Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention
+
+Status: **RUNNING**, attempt 1, started 2026-10-16 01:49:59. [Raw results](../results/queue/t7_page4d_v2/), [log](../results/queue/t7_page4d_v2/task.log).
+
+Partial results so far; the run is still going.
 
