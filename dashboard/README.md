@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 00:37:28 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 00:38:06 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -20,11 +20,11 @@ Last updated 2026-10-16 00:37:28 (server time). Regenerated after every queue ev
 | 14 | [v3_pipeline_far](#v3_pipeline_far): Item 1: Steps 3-6 + adjacency control on the far-glued set | queued | 0 |  |  |
 | 15 | [t7_any4d_v2](#t7_any4d_v2): Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | done | 1 | 2026-10-16 00:11:50 | 2026-10-16 00:17:28 |
 | 16 | [t7_mapanything_v2](#t7_mapanything_v2): Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | FAILED | 2 | 2026-10-16 00:32:35 | 2026-10-16 00:33:11 |
-| 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | RUNNING | 2 | 2026-10-16 00:37:26 |  |
+| 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | FAILED | 2 | 2026-10-16 00:37:26 | 2026-10-16 00:38:03 |
 | 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | queued | 1 | 2026-10-16 00:33:19 |  |
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-16 00:36:56 running t7_page4d_v2
+Supervisor heartbeat: 2026-10-16 00:37:33 running t7_vggt_v2
 
 ## v3_pilot
 
@@ -282,7 +282,5 @@ Status: **FAILED**, attempt 2, started 2026-10-16 00:32:35, finished 2026-10-16 
 
 Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention
 
-Status: **RUNNING**, attempt 2, started 2026-10-16 00:37:26. [Raw results](../results/queue/t7_vggt_v2/), [log](../results/queue/t7_vggt_v2/task.log).
-
-Partial results so far; the run is still going.
+Status: **FAILED**, attempt 2, started 2026-10-16 00:37:26, finished 2026-10-16 00:38:03. [Raw results](../results/queue/t7_vggt_v2/), [log](../results/queue/t7_vggt_v2/task.log).
 

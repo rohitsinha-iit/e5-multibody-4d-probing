@@ -22,3 +22,15 @@ checkpoint /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--
 track head: --track_ckpt /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--VGGT_tracker_fixed/snapshots/4d9d9494b2211c90ab9cd3c8c6aa188fe363103d/model_tracker_fixed_e20.pt
 GPU 1
 [00:37:27] vggt: inference + internals
+missing 0 [] unexpected 0 []
+track head replaced from /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--VGGT_tracker_fixed/snapshots/4d9d9494b2211c90ab9cd3c8c6aa188fe363103d/model_tracker_fixed_e20.pt 394 tensors
+blocks 48 global 24 heads 16 head_dim 64 track head True
+peak GPU GB 5.03
+Traceback (most recent call last):
+  File "/home/rohit/e5_multibody/queue/src/e5_xm_gtpatch.py", line 15, in <module>
+    g = dict(np.load(os.path.join(gdir, f"{n}_gt.npz"), allow_pickle=True))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/workbench/zone_x/e5_multibody/models/venvs/xm/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/rohit/e5_multibody/data/v2/gt_patches/epi_aligned_s701_gt.npz'
