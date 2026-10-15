@@ -2,3 +2,22 @@
 ===== 2026-10-16 01:40:13 attempt 1
 GPU 1
 [01:40:13] v3far inference
+confound_farglued_s520 1.12 s
+peak GPU GB 7.59
+[01:40:41] v3far extraction
+confound_farglued_s520 0.5s
+peak GPU GB 7.43
+[01:41:00] v3far step3
+[01:41:21] v3far gt patches
+[01:41:47] v3far internal analysis (A, F in background; P on GPU)
+total 632
+drwxrwxr-x 2 rohit rohit   4096 Oct 16 01:43 .
+drwxrwxr-x 3 rohit rohit   4096 Oct 16 01:41 ..
+-rw-rw-r-- 1 rohit rohit  87113 Oct 16 01:43 adjacency_control.json
+-rw-rw-r-- 1 rohit rohit  13674 Oct 16 01:41 partA_results.json
+-rw-rw-r-- 1 rohit rohit 187846 Oct 16 01:42 partF1_results.json
+-rw-rw-r-- 1 rohit rohit 146953 Oct 16 01:42 partF2_results.json
+-rw-rw-r-- 1 rohit rohit  72768 Oct 16 01:42 partP1_results.json
+-rw-rw-r-- 1 rohit rohit  55656 Oct 16 01:42 partP2_results.json
+-rw-rw---- 1 rohit rohit  16639 Oct 16 01:43 scene_summary.json
+-rw-rw-r-- 1 rohit rohit  43210 Oct 16 01:41 step3_any4d_7v.json

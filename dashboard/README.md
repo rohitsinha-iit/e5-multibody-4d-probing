@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 01:40:15 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 01:43:23 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -17,7 +17,7 @@ Last updated 2026-10-16 01:40:15 (server time). Regenerated after every queue ev
 | 11 | [v3_scale_float](#v3_scale_float): Item 2: render 70 floating shadowless scenes + 20 extra grounded epi (v2) | done | 1 | 2026-10-15 22:32:43 | 2026-10-16 00:03:34 |
 | 12 | [v3_pipeline_float](#v3_pipeline_float): Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi | done | 1 | 2026-10-16 01:05:40 | 2026-10-16 01:22:18 |
 | 13 | [v3_scale_far](#v3_scale_far): Item 1: render 20 far-glued scenes (image-gap constraint) | done | 1 | 2026-10-16 00:48:25 | 2026-10-16 01:05:33 |
-| 14 | [v3_pipeline_far](#v3_pipeline_far): Item 1: Steps 3-6 + adjacency control on the far-glued set | RUNNING | 1 | 2026-10-16 01:40:13 |  |
+| 14 | [v3_pipeline_far](#v3_pipeline_far): Item 1: Steps 3-6 + adjacency control on the far-glued set | done | 1 | 2026-10-16 01:40:13 | 2026-10-16 01:43:20 |
 | 15 | [t7_any4d_v2](#t7_any4d_v2): Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | done | 1 | 2026-10-16 00:11:50 | 2026-10-16 00:17:28 |
 | 16 | [t7_mapanything_v2](#t7_mapanything_v2): Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | queued | 0 | 2026-10-16 00:32:35 |  |
 | 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | queued | 0 | 2026-10-16 00:37:26 |  |
@@ -25,7 +25,7 @@ Last updated 2026-10-16 01:40:15 (server time). Regenerated after every queue ev
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | queued | 0 |  |  |
 | 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-16 01:39:34 running v3_viewsweep
+Supervisor heartbeat: 2026-10-16 01:42:50 running v3_pipeline_far
 
 ## v3_pilot
 
@@ -267,9 +267,7 @@ Status: **done**, attempt 1, started 2026-10-16 00:48:25, finished 2026-10-16 01
 
 Item 1: Steps 3-6 + adjacency control on the far-glued set
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 01:40:13. [Raw results](../results/queue/v3_pipeline_far/), [log](../results/queue/v3_pipeline_far/task.log).
-
-Partial results so far; the run is still going.
+Status: **done**, attempt 1, started 2026-10-16 01:40:13, finished 2026-10-16 01:43:20. [Raw results](../results/queue/v3_pipeline_far/), [log](../results/queue/v3_pipeline_far/task.log).
 
 
 ## t7_any4d_v2
