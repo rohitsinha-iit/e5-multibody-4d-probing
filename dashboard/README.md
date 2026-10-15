@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 01:56:02 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 01:56:10 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Last updated 2026-10-16 01:56:02 (server time). Regenerated after every queue ev
 | 16 | [t7_mapanything_v2](#t7_mapanything_v2): Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | done | 1 | 2026-10-16 01:43:28 | 2026-10-16 01:46:05 |
 | 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | done | 1 | 2026-10-16 01:46:13 | 2026-10-16 01:49:51 |
 | 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | done | 1 | 2026-10-16 01:49:59 | 2026-10-16 01:53:36 |
-| 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | RUNNING | 1 | 2026-10-16 01:55:59 |  |
+| 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | done | 1 | 2026-10-16 01:55:59 | 2026-10-16 01:56:07 |
 | 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | done | 1 | 2026-10-16 01:53:44 | 2026-10-16 01:55:51 |
 
 Supervisor heartbeat: 2026-10-16 01:55:21 running t7_any4d_v2_100
@@ -401,9 +401,7 @@ Status: **done**, attempt 1, started 2026-10-16 01:49:59, finished 2026-10-16 01
 
 Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D)
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 01:55:59. [Raw results](../results/queue/t7_xm_summary/), [log](../results/queue/t7_xm_summary/task.log).
-
-Partial results so far; the run is still going.
+Status: **done**, attempt 1, started 2026-10-16 01:55:59, finished 2026-10-16 01:56:07. [Raw results](../results/queue/t7_xm_summary/), [log](../results/queue/t7_xm_summary/task.log).
 
 
 ## t7_any4d_v2_100
