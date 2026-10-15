@@ -1,0 +1,15 @@
+claim,evidence,result,verdict
+C1 rigid-body structure emerges with depth,"E5-A attention multibody gain (log10, median, non-epi)","peaks at layer 2 (0.89, about 8x); 0.33 to 0.70 afterwards; outputs 1.04; GT 2.40",supports early cross-view separation
+C1,"E5-P pair probe AUC, object-object pairs","0.85 (layer 0) to 0.93 (layer 24); delta 0.072 [0.048, 0.097], p=1.7e-7, 67 scenes",supports gradual increase
+C1,E5-F k-means ARI vs rigid body (objects),"0.49 to 0.61; delta 0.115 [0.048, 0.186], p=0.003, 69 scenes",supports gradual increase
+C1,E5-P K from probe affinity (fraction correct),"0.31 to 0.50; delta 0.19 [0.04, 0.33], p=0.016; K under-counted (mean 1.6 vs 2.1)","supports, but weak"
+C2 moving bodies pulled toward camera motion,E5-C output separation ratio (pred/GT),"0.61 (IQR 0.23 to 0.95), lower in 77% of 60 scenes, p=1.7e-5",supports (output)
+C2,Output fraction of object motion recovered,"0.79 (IQR 0.58 to 0.88), 61 scenes",supports (output)
+C2,E5-A attention hit on static-hypothesis location (moving patches),"at most 0.05 vs true-track hits up to 0.44 (layer 10: delta 0.42, p=3e-11, 61 scenes)",contradicts at attention level: pull is not in matching
+C2,E5-P ridge probe of object motion,slope 0.06 to 0.57 with depth,uninformative for pull (ridge attenuation); shows decodability rises
+C3 grouping beyond appearance,E5-P same-asset copies separated,"0.26 to 0.52; delta 0.26 [0.10, 0.40], p=0.014, 10 scenes",supports (small n)
+C3,E5-F moving-object pairs joined: same motion vs different motion,layer 0: 0.24 vs 0.21; layer 24: 0.69 vs 0.13 (7 vs 8 pairs); not explained by adjacency,supports (very small n)
+C3,E5-F ARI(body) minus ARI(instance),"delta 0.025 [-0.035, 0.088], n.s.",does not support: overall grouping gain tracks instance gain
+C3,E5-F same-asset copies split by k-means,about 0.5 at all layers,does not support
+C4 epipolar-aligned motion detected,E5-C Any4D motion mask IoU on epi_aligned,0.58 (vs 0.57 to 0.71 other splits),supports (output only)
+C4,E5-P view-0 moving-vs-static probe (objects),AUC 0.99 already at layer 0,not testable: moving objects are larger and float (dataset confound)
