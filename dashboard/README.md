@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 00:17:31 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 00:17:38 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -15,7 +15,7 @@ Last updated 2026-10-16 00:17:31 (server time). Regenerated after every queue ev
 | 9 | [t8_realdata_kitti](#t8_realdata_kitti): Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input | done | 1 | 2026-10-15 21:40:18 | 2026-10-15 22:01:41 |
 | 10 | [t8_realdata_sintel](#t8_realdata_sintel): Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input | done | 1 | 2026-10-15 22:01:54 | 2026-10-15 22:32:35 |
 | 11 | [v3_scale_float](#v3_scale_float): Item 2: render 70 floating shadowless scenes + 20 extra grounded epi (v2) | done | 1 | 2026-10-15 22:32:43 | 2026-10-16 00:03:34 |
-| 12 | [v3_pipeline_float](#v3_pipeline_float): Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi | queued | 1 | 2026-10-16 00:03:42 |  |
+| 12 | [v3_pipeline_float](#v3_pipeline_float): Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi | RUNNING | 2 | 2026-10-16 00:17:36 |  |
 | 13 | [v3_scale_far](#v3_scale_far): Item 1: render 20 far-glued scenes (image-gap constraint) | waiting for approval (gate `v3_far_visual`) | 0 |  |  |
 | 14 | [v3_pipeline_far](#v3_pipeline_far): Item 1: Steps 3-6 + adjacency control on the far-glued set | queued | 0 |  |  |
 | 15 | [t7_any4d_v2](#t7_any4d_v2): Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | done | 1 | 2026-10-16 00:11:50 | 2026-10-16 00:17:28 |
@@ -223,6 +223,15 @@ Status: **done**, attempt 1, started 2026-10-15 22:01:54, finished 2026-10-15 22
 Item 2: render 70 floating shadowless scenes + 20 extra grounded epi (v2)
 
 Status: **done**, attempt 1, started 2026-10-15 22:32:43, finished 2026-10-16 00:03:34. [Raw results](../results/queue/v3_scale_float/), [log](../results/queue/v3_scale_float/task.log).
+
+
+## v3_pipeline_float
+
+Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi
+
+Status: **RUNNING**, attempt 2, started 2026-10-16 00:17:36. [Raw results](../results/queue/v3_pipeline_float/), [log](../results/queue/v3_pipeline_float/task.log).
+
+Partial results so far; the run is still going.
 
 
 ## t7_any4d_v2
