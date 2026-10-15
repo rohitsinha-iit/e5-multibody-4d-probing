@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 00:21:16 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 00:21:23 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -19,7 +19,7 @@ Last updated 2026-10-16 00:21:16 (server time). Regenerated after every queue ev
 | 13 | [v3_scale_far](#v3_scale_far): Item 1: render 20 far-glued scenes (image-gap constraint) | waiting for approval (gate `v3_far_visual`) | 0 |  |  |
 | 14 | [v3_pipeline_far](#v3_pipeline_far): Item 1: Steps 3-6 + adjacency control on the far-glued set | queued | 0 |  |  |
 | 15 | [t7_any4d_v2](#t7_any4d_v2): Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | done | 1 | 2026-10-16 00:11:50 | 2026-10-16 00:17:28 |
-| 16 | [t7_mapanything_v2](#t7_mapanything_v2): Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | queued | 0 |  |  |
+| 16 | [t7_mapanything_v2](#t7_mapanything_v2): Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | RUNNING | 1 | 2026-10-16 00:21:20 |  |
 | 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | queued | 0 |  |  |
 | 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | queued | 0 |  |  |
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | queued | 0 |  |  |
@@ -269,4 +269,13 @@ Status: **done**, attempt 1, started 2026-10-16 00:11:50, finished 2026-10-16 00
 | slope3d_track | 0.5789 | 0.6499 | 117 |
 | slope3d_q | 0.9840 | 0.9866 | 117 |
 
+
+
+## t7_mapanything_v2
+
+Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention
+
+Status: **RUNNING**, attempt 1, started 2026-10-16 00:21:20. [Raw results](../results/queue/t7_mapanything_v2/), [log](../results/queue/t7_mapanything_v2/task.log).
+
+Partial results so far; the run is still going.
 
