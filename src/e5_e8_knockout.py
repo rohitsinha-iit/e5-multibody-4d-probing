@@ -30,6 +30,7 @@ p.add_argument("--e5", required=True, help="dir with e5_multibody.py, e5_kubric_
 p.add_argument("--out", required=True); p.add_argument("--limit", type=int, default=0)
 p.add_argument("--screen", type=int, default=0, help="1 = single-unit mean-ablation screen (all heads, all blocks)")
 p.add_argument("--per_split", type=int, default=0, help="screen: scenes per non-degenerate split")
+p.add_argument("--heads", default="", help="replicate: comma list of block:head to mean-ablate one at a time")
 args = p.parse_args()
 sys.path.insert(0, args.e5)
 import e5_kubric_post as kp  # noqa: E402
@@ -121,10 +122,14 @@ for l, b in enumerate(blocks):
     b.attn.proj.register_forward_pre_hook(make_proj_prehook(l))
 
 conditions = [("base", set(), [])]
-if args.screen:
+if args.heads:
+    conditions = [("base", set(), [])] + [(f"mh_b{int(x.split(':')[0])}_h{int(x.split(':')[1])}", ("mh", int(x.split(':')[0]), int(x.split(':')[1])), [])
+                                         for x in args.heads.split(",")]
+    args.screen = 1  # reuse screen code path (no skip/ko conditions)
+elif args.screen:
     conditions = [("base", set(), [])] + [(f"mh_b{l}_h{h}", ("mh", l, h), []) for l in range(NB) for h in range(NH)] \
                  + [(f"mb_b{l}", ("mb", l), []) for l in range(NB)]
-for a in (range(0, NB, 4) if not args.screen else []):
+for a in (range(0, NB, 4) if not (args.screen or args.heads) else []):
     conditions.append((f"skip_b{a}-{a+3}", set(range(a, a + 4)), []))
 if not args.screen:
     conditions += [("ko_track_k12", set(), "track"), ("ko_static_k12", set(), "static")]
