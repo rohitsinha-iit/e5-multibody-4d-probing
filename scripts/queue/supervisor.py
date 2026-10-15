@@ -82,6 +82,20 @@ def push(tid, st):
     return rc == 0
 
 
+def read_rc(rcfile, fallback):
+    try:
+        return int(open(rcfile).read().strip())
+    except (OSError, ValueError):
+        return fallback if fallback is not None else 99
+
+
+def status_push():
+    """Rebuild and push the dashboard without touching any task's push state."""
+    with open(os.path.join(Q, "logs", "push.log"), "a") as lf:
+        lf.write(f"\n== {now()} status push\n"); lf.flush()
+        subprocess.call(["bash", os.path.join(Q, "push.sh"), "_status"], stdout=lf, stderr=subprocess.STDOUT)
+
+
 def write_status(tasks, state):
     lines = ["# E5 queue status", "", f"updated {now()}", "",
              "| # | task | status | attempts | started | finished | pushed |", "|---|---|---|---|---|---|---|"]
@@ -105,12 +119,38 @@ def main():
     event(f"supervisor start pid {os.getpid()}")
     spath = os.path.join(Q, "state.json")
     state = jload(spath, {})
-    for tid, st in state.items():  # crash recovery: re-queue anything that was running
+    adopt = None
+    for tid, st in state.items():  # crash recovery
         if st.get("status") == "running":
-            if alive(st.get("pid")):
-                kill_group(st["pid"])
-            st["status"] = "pending"; st["pid"] = None; event(f"recovered {tid} (was running) -> pending")
+            if alive(st.get("pid")) and adopt is None:
+                adopt = tid; event(f"adopting still-running task {tid} (pid {st['pid']})")
+            else:
+                if alive(st.get("pid")):
+                    kill_group(st["pid"])
+                st["status"] = "pending"; st["pid"] = None; event(f"recovered {tid} (was running) -> pending")
     jsave(spath, state)
+
+    if adopt:
+        st = state[adopt]; tasks = jload(os.path.join(Q, "tasks.json"), [])
+        t = next((x for x in tasks if x["id"] == adopt), {})
+        last_status = 0
+        while alive(st["pid"]):
+            with open(os.path.join(Q, "heartbeat"), "w") as fh:
+                fh.write(f"{now()} running {adopt} (adopted)\n")
+            if time.time() - last_status > 3600:
+                status_push(); last_status = time.time()
+            time.sleep(POLL)
+        rc = read_rc(os.path.join(Q, "work", adopt + ".rc"), None)
+        st.update(rc=rc, finished=now(), pid=None)
+        if rc == 0:
+            st["status"] = "done"; event(f"done {adopt} (adopted)")
+        elif st.get("attempts", 1) < t.get("max_attempts", 2):
+            st["status"] = "pending"; st["not_before"] = time.time() + 60; event(f"{adopt} ended rc {rc} (adopted), will retry")
+        else:
+            st["status"] = "failed"; event(f"{adopt} FAILED rc {rc} (adopted)")
+        jsave(spath, state)
+        if st["status"] in ("done", "failed"):
+            st["last_push_try"] = time.time(); push(adopt, st); jsave(spath, state)
 
     while True:
         if os.path.exists(os.path.join(Q, "STOP")):
@@ -151,21 +191,29 @@ def main():
             time.sleep(POLL); continue
 
         tid = nxt["id"]; st = state[tid]
+        rcfile = os.path.join(Q, "work", tid + ".rc")
+        if os.path.exists(rcfile):
+            os.remove(rcfile)
         work = os.path.join(Q, "work", tid); res = os.path.join(Q, "results", tid)
         os.makedirs(work, exist_ok=True); os.makedirs(res, exist_ok=True)
         env = dict(os.environ, TASK_ID=tid, RESULT_DIR=res, QDIR=Q, SRC=os.path.join(Q, "src"), PYTHONUNBUFFERED="1",
                    PATH=os.path.expanduser("~/.local/bin") + ":/usr/local/bin:/usr/bin:/bin:" + os.environ.get("PATH", ""))
         log = open(os.path.join(Q, "logs", f"{tid}.log"), "a")
         log.write(f"\n===== {now()} attempt {st['attempts'] + 1}\n"); log.flush()
-        p = subprocess.Popen(["bash", os.path.join(Q, "tasks", nxt["script"])], cwd=work, env=env,
+        script = os.path.join(Q, "tasks", nxt["script"])
+        p = subprocess.Popen(["bash", "-c", f'bash "{script}"; echo $? > "{rcfile}"'], cwd=work, env=env,
                              stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
         st.update(status="running", pid=p.pid, started=now(), finished="", attempts=st["attempts"] + 1, disk_warned=False, pushed=False)
         jsave(spath, state); write_status(tasks, state); event(f"start {tid} pid {p.pid} attempt {st['attempts']}")
+        status_push(); last_status = time.time()
         while p.poll() is None:
+            if time.time() - last_status > 3600:  # hourly dashboard refresh with partial results
+                status_push(); last_status = time.time()
             with open(os.path.join(Q, "heartbeat"), "w") as fh:
                 fh.write(f"{now()} running {tid}\n")
             time.sleep(POLL)
-        rc = p.returncode; log.close()
+        log.close()
+        rc = read_rc(rcfile, p.returncode)
         st.update(rc=rc, finished=now(), pid=None)
         if rc == 0:
             st["status"] = "done"; event(f"done {tid}")

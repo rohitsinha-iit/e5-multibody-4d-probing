@@ -11,15 +11,21 @@ git fetch -q origin || exit 3
 BR=$(git rev-parse --abbrev-ref HEAD)
 # the clone holds no local-only state (every push re-copies from the queue), so sync hard to the remote first
 git reset -q --hard origin/$BR
-mkdir -p results/queue/$TID scripts/queue src
-# results: skip big binary arrays and anything over 50 MB
-(cd $Q/results/$TID && find . -type f ! -name '*.npy' ! -name '*.npz' -size -50M) | while read f; do
-  mkdir -p "results/queue/$TID/$(dirname "$f")"; cp "$Q/results/$TID/$f" "results/queue/$TID/$f"; done
-test -f $Q/logs/$TID.log && tail -c 2000000 $Q/logs/$TID.log > results/queue/$TID/task.log
+mkdir -p results/queue scripts/queue src
+# results of every task (small, human-readable files only), so partial results of running tasks show up too
+for RD in $Q/results/*/; do
+  T=$(basename $RD); mkdir -p results/queue/$T
+  (cd $RD && find . -type f ! -name '*.npy' ! -name '*.npz' -size -50M) | while read f; do
+    mkdir -p "results/queue/$T/$(dirname "$f")"; cp "$RD/$f" "results/queue/$T/$f"; done
+  test -f $Q/logs/$T.log && tail -c 2000000 $Q/logs/$T.log > results/queue/$T/task.log
+done
 cp $Q/STATUS.md results/queue/STATUS.md 2>/dev/null
 cp $Q/supervisor.py $Q/push.sh $Q/enqueue.py $Q/tasks.json $Q/README.md scripts/queue/ 2>/dev/null
 cp $Q/tasks/*.sh scripts/queue/ 2>/dev/null
 cp $Q/src/*.py src/ 2>/dev/null
+# dashboard (dashboard/README.md renders privately in GitHub; docs/index.html is for GitHub Pages if enabled)
+DPY=$(cat $Q/dashboard_python 2>/dev/null || echo $HOME/e5_multibody/.venv-post/bin/python)
+$DPY $Q/src/e5_dashboard.py $Q $R > $Q/logs/dashboard.log 2>&1 || echo "dashboard build failed (see logs/dashboard.log)"
 git add -A
 git diff --cached --quiet && { echo "nothing to commit"; exit 0; }
 git commit -q -m "queue: $TID ($(date '+%Y-%m-%d %H:%M'))"

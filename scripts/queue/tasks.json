@@ -5,7 +5,7 @@
   "script": "v3_pilot.sh",
   "deps": [],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 3,
   "min_free_gb": 20,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },

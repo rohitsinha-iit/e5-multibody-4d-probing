@@ -1,0 +1,844 @@
+<!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
+<p>Last updated 2026-10-15 21:27:58 (server time). Regenerated after every queue event.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>run</th>
+<th>status</th>
+<th>attempts</th>
+<th>started</th>
+<th>finished</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="#v3_pilot">v3_pilot</a>: Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</td>
+<td>done</td>
+<td>1</td>
+<td>2026-10-15 19:49:59</td>
+<td>2026-10-15 20:00:30</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="#t4_causal_v2">t4_causal_v2</a>: Item 4: five heads together, amplification, path patching into scene-flow decoder (v2)</td>
+<td>done</td>
+<td>1</td>
+<td>2026-10-15 20:00:44</td>
+<td>2026-10-15 20:18:45</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="#t5_subspace_v2">t5_subspace_v2</a>: Item 5: LEACE erasure and steering along the motion subspace, layers 17-21 (v2)</td>
+<td>done</td>
+<td>1</td>
+<td>2026-10-15 20:19:23</td>
+<td>2026-10-15 20:36:24</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="#t3_viewsweep_v2">t3_viewsweep_v2</a>: Item 3: 2, 3, 4, 7 input views, outputs + probes + attention (v2)</td>
+<td>done</td>
+<td>1</td>
+<td>2026-10-15 20:36:30</td>
+<td>2026-10-15 21:01:31</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="#v3_scale">v3_scale</a>: Items 1+2: render 20 far-glued, 70 floating, 20 extra grounded epi scenes</td>
+<td>waiting for approval (gate <code>v3_visual</code>)</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="#v3_pipeline">v3_pipeline</a>: Items 1+2: Steps 3-6 + adjacency control on far-glued, floating, v2 with 30 epi</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="#v3_viewsweep">v3_viewsweep</a>: Items 2+3: view-count sweep on the floating set</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Supervisor heartbeat: 2026-10-15 21:01:01 running t3_viewsweep_v2</p>
+<h2>v3_pilot</h2>
+<p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
+<p><img alt="v3far__confound_farglued_s501.png" src="assets/v3_pilot/v3far__confound_farglued_s501.png" />
+<img alt="v3far__confound_farglued_s502.png" src="assets/v3_pilot/v3far__confound_farglued_s502.png" />
+<img alt="v3far__confound_farglued_s503.png" src="assets/v3_pilot/v3far__confound_farglued_s503.png" />
+<img alt="v3float__confound_same_s571.png" src="assets/v3_pilot/v3float__confound_same_s571.png" />
+<img alt="v3float__epi_aligned_s531.png" src="assets/v3_pilot/v3float__epi_aligned_s531.png" />
+<img alt="v3float__epi_aligned_s532.png" src="assets/v3_pilot/v3float__epi_aligned_s532.png" />
+<img alt="v3float__n2_generic_s561.png" src="assets/v3_pilot/v3float__n2_generic_s561.png" />
+<img alt="v3float__n3_generic_s581.png" src="assets/v3_pilot/v3float__n3_generic_s581.png" /></p>
+<p><img src="assets/v3_pilot/v3far__confound_farglued_s501.gif" width="200"> <img src="assets/v3_pilot/v3far__confound_farglued_s502.gif" width="200"> <img src="assets/v3_pilot/v3far__confound_farglued_s503.gif" width="200"> <img src="assets/v3_pilot/v3float__confound_same_s571.gif" width="200"> <img src="assets/v3_pilot/v3float__epi_aligned_s531.gif" width="200"> <img src="assets/v3_pilot/v3float__epi_aligned_s532.gif" width="200"> <img src="assets/v3_pilot/v3float__n2_generic_s561.gif" width="200"> <img src="assets/v3_pilot/v3float__n3_generic_s581.gif" width="200"></p>
+<h2>t4_causal_v2</h2>
+<p>Item 4: five heads together, amplification, path patching into scene-flow decoder (v2)</p>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 20:00:44, finished 2026-10-15 20:18:45. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t4_causal_v2/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t4_causal_v2/task.log">log</a>.</p>
+<p><img alt="causal_deltas.png" src="assets/t4_causal_v2/causal_deltas.png" />
+<img alt="causal_amplification.png" src="assets/t4_causal_v2/causal_amplification.png" /></p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>n</th>
+<th>change in slope [95% CI]</th>
+<th>change in epe_static [95% CI]</th>
+<th>change in epe_moving [95% CI]</th>
+<th>change in sep_ratio [95% CI]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abl5</td>
+<td>98</td>
+<td>-0.599 [-0.641, -0.552]</td>
+<td>+3.028 [+2.652, +3.418]</td>
+<td>+56.046 [+49.429, +62.922]</td>
+<td>-0.796 [-0.925, -0.677]</td>
+</tr>
+<tr>
+<td>rand5_r0</td>
+<td>98</td>
+<td>-0.603 [-0.688, -0.512]</td>
+<td>+82.527 [+77.073, +88.878]</td>
+<td>+65.643 [+56.554, +76.205]</td>
+<td>-0.614 [-0.729, -0.502]</td>
+</tr>
+<tr>
+<td>rand5_r1</td>
+<td>98</td>
+<td>+0.013 [+0.008, +0.017]</td>
+<td>+0.190 [+0.020, +0.356]</td>
+<td>-0.646 [-1.056, -0.281]</td>
+<td>-0.007 [-0.039, +0.022]</td>
+</tr>
+<tr>
+<td>rand5_r2</td>
+<td>98</td>
+<td>-0.021 [-0.032, -0.012]</td>
+<td>+0.026 [-0.027, +0.080]</td>
+<td>+1.060 [+0.273, +1.853]</td>
+<td>-0.048 [-0.160, +0.026]</td>
+</tr>
+<tr>
+<td>amp5_a1.5</td>
+<td>98</td>
+<td>+0.346 [+0.318, +0.372]</td>
+<td>+0.609 [+0.397, +0.836]</td>
+<td>+6.702 [+2.648, +10.877]</td>
+<td>+0.102 [-0.012, +0.212]</td>
+</tr>
+<tr>
+<td>amp5_a2</td>
+<td>98</td>
+<td>+0.565 [+0.509, +0.623]</td>
+<td>+2.413 [+1.900, +2.987]</td>
+<td>+35.210 [+28.445, +41.645]</td>
+<td>+0.090 [-0.055, +0.227]</td>
+</tr>
+<tr>
+<td>amp5_a3</td>
+<td>98</td>
+<td>+0.570 [+0.463, +0.670]</td>
+<td>+14.253 [+12.911, +15.775]</td>
+<td>+68.018 [+58.151, +77.788]</td>
+<td>+0.034 [-0.130, +0.193]</td>
+</tr>
+<tr>
+<td>amprand_a2_r0</td>
+<td>98</td>
+<td>-0.165 [-0.194, -0.134]</td>
+<td>+9.694 [+9.131, +10.274]</td>
+<td>+16.741 [+12.908, +21.048]</td>
+<td>-0.281 [-0.397, -0.184]</td>
+</tr>
+<tr>
+<td>amprand_a2_r1</td>
+<td>98</td>
+<td>-0.016 [-0.020, -0.012]</td>
+<td>+0.351 [+0.231, +0.482]</td>
+<td>+0.981 [+0.571, +1.431]</td>
+<td>-0.039 [-0.139, +0.025]</td>
+</tr>
+<tr>
+<td>amprand_a2_r2</td>
+<td>98</td>
+<td>-0.029 [-0.037, -0.022]</td>
+<td>+0.037 [-0.005, +0.085]</td>
+<td>+2.196 [+1.086, +3.594]</td>
+<td>-0.055 [-0.120, +0.010]</td>
+</tr>
+<tr>
+<td>abl5_sfonly</td>
+<td>98</td>
+<td>-0.597 [-0.637, -0.552]</td>
+<td>-0.033 [-0.044, -0.022]</td>
+<td>+55.862 [+49.374, +62.780]</td>
+<td>-0.789 [-0.900, -0.669]</td>
+</tr>
+<tr>
+<td>abl5_nonsf</td>
+<td>98</td>
+<td>+0.342 [+0.310, +0.374]</td>
+<td>+3.142 [+2.732, +3.543]</td>
+<td>+14.683 [+10.405, +18.671]</td>
+<td>+0.245 [+0.145, +0.337]</td>
+</tr>
+<tr>
+<td>abl5_tap0</td>
+<td>98</td>
+<td>+0.000 [+0.000, +0.000]</td>
+<td>+0.000 [+0.000, +0.000]</td>
+<td>+0.000 [+0.000, +0.000]</td>
+<td>+0.000 [+0.000, +0.000]</td>
+</tr>
+<tr>
+<td>abl5_tap1</td>
+<td>98</td>
+<td>-0.034 [-0.038, -0.031]</td>
+<td>+0.010 [+0.005, +0.016]</td>
+<td>+2.047 [+1.357, +2.957]</td>
+<td>-0.066 [-0.133, -0.023]</td>
+</tr>
+<tr>
+<td>abl5_tap2</td>
+<td>98</td>
+<td>-0.464 [-0.502, -0.428]</td>
+<td>-0.029 [-0.040, -0.018]</td>
+<td>+44.376 [+37.258, +50.982]</td>
+<td>-0.670 [-0.773, -0.571]</td>
+</tr>
+<tr>
+<td>abl5_tap3</td>
+<td>98</td>
+<td>-0.558 [-0.596, -0.520]</td>
+<td>-0.024 [-0.036, -0.012]</td>
+<td>+51.867 [+45.666, +58.910]</td>
+<td>-0.736 [-0.844, -0.629]</td>
+</tr>
+<tr>
+<td>amp5_a2_sfonly</td>
+<td>98</td>
+<td>+0.546 [+0.496, +0.601]</td>
+<td>+0.187 [+0.138, +0.241]</td>
+<td>+33.533 [+27.208, +39.827]</td>
+<td>+0.068 [-0.072, +0.212]</td>
+</tr>
+<tr>
+<td>amp5_a2_nonsf</td>
+<td>98</td>
+<td>+0.005 [-0.005, +0.015]</td>
+<td>+2.341 [+1.829, +2.883]</td>
+<td>+0.858 [-0.065, +2.004]</td>
+<td>+0.021 [-0.012, +0.052]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>causal_v2_summary.md</strong></p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>n</th>
+<th>d slope [95% CI] (p)</th>
+<th>d epe_static [95% CI] (p)</th>
+<th>d epe_moving [95% CI] (p)</th>
+<th>d sep_ratio [95% CI] (p)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base</td>
+<td>100</td>
+<td>0.607</td>
+<td>4.100</td>
+<td>34.957</td>
+<td>0.825</td>
+</tr>
+<tr>
+<td>abl5</td>
+<td>100</td>
+<td>-0.599 [-0.641, -0.552] (p=9.9e-25)</td>
+<td>+3.028 [+2.644, +3.418] (p=6.4e-24)</td>
+<td>+56.046 [+49.487, +63.222] (p=2.4e-23)</td>
+<td>-0.796 [-0.917, -0.685] (p=3.2e-27)</td>
+</tr>
+<tr>
+<td>rand5_r0</td>
+<td>100</td>
+<td>-0.603 [-0.691, -0.509] (p=4.5e-22)</td>
+<td>+82.527 [+76.484, +88.337] (p=1.6e-30)</td>
+<td>+65.643 [+56.134, +75.703] (p=9.9e-25)</td>
+<td>-0.614 [-0.748, -0.494] (p=2e-18)</td>
+</tr>
+<tr>
+<td>rand5_r1</td>
+<td>100</td>
+<td>+0.013 [+0.008, +0.017] (p=0.0032)</td>
+<td>+0.190 [+0.018, +0.356] (p=0.035)</td>
+<td>-0.646 [-1.033, -0.242] (p=0.02)</td>
+<td>-0.007 [-0.039, +0.022] (p=0.83)</td>
+</tr>
+<tr>
+<td>rand5_r2</td>
+<td>100</td>
+<td>-0.021 [-0.030, -0.012] (p=0.0016)</td>
+<td>+0.026 [-0.025, +0.078] (p=0.13)</td>
+<td>+1.060 [+0.307, +1.815] (p=0.02)</td>
+<td>-0.048 [-0.143, +0.026] (p=1)</td>
+</tr>
+<tr>
+<td>amp5_a1.5</td>
+<td>100</td>
+<td>+0.346 [+0.320, +0.371] (p=9.9e-25)</td>
+<td>+0.609 [+0.409, +0.842] (p=0.00041)</td>
+<td>+6.702 [+2.721, +10.861] (p=0.00077)</td>
+<td>+0.102 [-0.011, +0.215] (p=0.033)</td>
+</tr>
+<tr>
+<td>amp5_a2</td>
+<td>100</td>
+<td>+0.565 [+0.510, +0.621] (p=2.4e-23)</td>
+<td>+2.413 [+1.884, +3.011] (p=1.3e-11)</td>
+<td>+35.210 [+28.731, +41.926] (p=5.9e-15)</td>
+<td>+0.090 [-0.058, +0.227] (p=0.53)</td>
+</tr>
+<tr>
+<td>amp5_a3</td>
+<td>100</td>
+<td>+0.570 [+0.463, +0.683] (p=1.1e-17)</td>
+<td>+14.253 [+12.887, +15.741] (p=1.6e-30)</td>
+<td>+68.018 [+57.848, +77.329] (p=7.1e-21)</td>
+<td>+0.034 [-0.126, +0.188] (p=0.83)</td>
+</tr>
+<tr>
+<td>amprand_a2_r0</td>
+<td>100</td>
+<td>-0.165 [-0.194, -0.136] (p=2.5e-13)</td>
+<td>+9.694 [+9.141, +10.280] (p=1.6e-30)</td>
+<td>+16.741 [+13.008, +20.851] (p=2.5e-13)</td>
+<td>-0.281 [-0.399, -0.183] (p=3.2e-09)</td>
+</tr>
+<tr>
+<td>amprand_a2_r1</td>
+<td>100</td>
+<td>-0.016 [-0.020, -0.012] (p=3.6e-11)</td>
+<td>+0.351 [+0.227, +0.482] (p=1.3e-05)</td>
+<td>+0.981 [+0.574, +1.407] (p=2.6e-05)</td>
+<td>-0.039 [-0.140, +0.027] (p=0.14)</td>
+</tr>
+<tr>
+<td>amprand_a2_r2</td>
+<td>100</td>
+<td>-0.029 [-0.037, -0.021] (p=3.6e-11)</td>
+<td>+0.037 [-0.011, +0.086] (p=0.0066)</td>
+<td>+2.196 [+1.129, +3.689] (p=6.6e-05)</td>
+<td>-0.055 [-0.119, +0.008] (p=0.019)</td>
+</tr>
+<tr>
+<td>abl5_sfonly</td>
+<td>100</td>
+<td>-0.597 [-0.639, -0.552] (p=6.3e-30)</td>
+<td>-0.033 [-0.045, -0.021] (p=1.3e-11)</td>
+<td>+55.862 [+49.332, +63.123] (p=6.2e-28)</td>
+<td>-0.789 [-0.908, -0.681] (p=3.2e-27)</td>
+</tr>
+<tr>
+<td>abl5_nonsf</td>
+<td>100</td>
+<td>+0.342 [+0.307, +0.375] (p=6.3e-30)</td>
+<td>+3.142 [+2.751, +3.549] (p=6.4e-24)</td>
+<td>+14.683 [+10.535, +18.844] (p=3.7e-06)</td>
+<td>+0.245 [+0.149, +0.336] (p=1.3e-08)</td>
+</tr>
+<tr>
+<td>amp5_a2_sfonly</td>
+<td>100</td>
+<td>+0.546 [+0.492, +0.597] (p=3.1e-26)</td>
+<td>+0.187 [+0.136, +0.241] (p=2e-21)</td>
+<td>+33.533 [+27.535, +40.204] (p=4e-14)</td>
+<td>+0.068 [-0.071, +0.212] (p=0.83)</td>
+</tr>
+<tr>
+<td>amp5_a2_nonsf</td>
+<td>100</td>
+<td>+0.005 [-0.005, +0.015] (p=0.085)</td>
+<td>+2.341 [+1.807, +2.946] (p=1.1e-09)</td>
+<td>+0.858 [-0.108, +2.018] (p=0.054)</td>
+<td>+0.021 [-0.011, +0.054] (p=0.056)</td>
+</tr>
+<tr>
+<td>abl5_tap0</td>
+<td>100</td>
+<td>+0.000 [+0.000, +0.000] (p=nan)</td>
+<td>+0.000 [+0.000, +0.000] (p=nan)</td>
+<td>+0.000 [+0.000, +0.000] (p=nan)</td>
+<td>+0.000 [+0.000, +0.000] (p=nan)</td>
+</tr>
+<tr>
+<td>abl5_tap1</td>
+<td>100</td>
+<td>-0.034 [-0.039, -0.031] (p=9.9e-25)</td>
+<td>+0.010 [+0.005, +0.016] (p=1.6e-08)</td>
+<td>+2.047 [+1.326, +2.879] (p=4.2e-07)</td>
+<td>-0.066 [-0.133, -0.021] (p=6e-07)</td>
+</tr>
+<tr>
+<td>abl5_tap2</td>
+<td>100</td>
+<td>-0.464 [-0.502, -0.427] (p=6.2e-28)</td>
+<td>-0.029 [-0.041, -0.018] (p=1.1e-09)</td>
+<td>+44.376 [+38.115, +51.386] (p=6.2e-28)</td>
+<td>-0.670 [-0.778, -0.565] (p=3.8e-22)</td>
+</tr>
+<tr>
+<td>abl5_tap3</td>
+<td>100</td>
+<td>-0.558 [-0.597, -0.519] (p=6.3e-30)</td>
+<td>-0.024 [-0.037, -0.012] (p=1.6e-08)</td>
+<td>+51.867 [+45.332, +58.405] (p=6.2e-28)</td>
+<td>-0.736 [-0.847, -0.628] (p=2.9e-25)</td>
+</tr>
+</tbody>
+</table>
+<h2>t5_subspace_v2</h2>
+<p>Item 5: LEACE erasure and steering along the motion subspace, layers 17-21 (v2)</p>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 20:19:23, finished 2026-10-15 20:36:24. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t5_subspace_v2/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t5_subspace_v2/task.log">log</a>.</p>
+<p><img alt="subspace_deltas.png" src="assets/t5_subspace_v2/subspace_deltas.png" /></p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>n</th>
+<th>change in slope [95% CI]</th>
+<th>change in epe_moving [95% CI]</th>
+<th>change in epe_static_obj [95% CI]</th>
+<th>change in epe_bg [95% CI]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>leace_L17</td>
+<td>98</td>
+<td>-0.402 [-0.447, -0.348]</td>
+<td>+38.038 [+32.434, +43.697]</td>
+<td>+9.730 [+8.226, +11.254]</td>
+<td>+11.513 [+9.845, +13.571]</td>
+</tr>
+<tr>
+<td>leace_L18</td>
+<td>98</td>
+<td>-0.368 [-0.417, -0.317]</td>
+<td>+34.570 [+29.524, +39.565]</td>
+<td>+7.174 [+5.963, +8.542]</td>
+<td>+11.906 [+10.423, +13.435]</td>
+</tr>
+<tr>
+<td>leace_L19</td>
+<td>98</td>
+<td>-0.166 [-0.204, -0.130]</td>
+<td>+13.393 [+10.523, +16.318]</td>
+<td>+6.676 [+5.698, +7.692]</td>
+<td>+9.856 [+8.726, +11.113]</td>
+</tr>
+<tr>
+<td>leace_L20</td>
+<td>98</td>
+<td>-0.208 [-0.237, -0.177]</td>
+<td>+18.545 [+15.091, +22.181]</td>
+<td>+9.312 [+7.896, +10.942]</td>
+<td>+11.067 [+9.719, +12.466]</td>
+</tr>
+<tr>
+<td>leace_L21</td>
+<td>98</td>
+<td>-0.152 [-0.182, -0.123]</td>
+<td>+15.413 [+12.389, +18.300]</td>
+<td>+8.094 [+6.548, +9.835]</td>
+<td>+7.760 [+6.356, +9.285]</td>
+</tr>
+<tr>
+<td>leace_all</td>
+<td>98</td>
+<td>-0.528 [-0.582, -0.476]</td>
+<td>+49.998 [+43.372, +57.259]</td>
+<td>+14.456 [+12.472, +16.420]</td>
+<td>+17.634 [+15.746, +19.696]</td>
+</tr>
+<tr>
+<td>rand_L19</td>
+<td>98</td>
+<td>+0.002 [+0.002, +0.003]</td>
+<td>-0.054 [-0.106, +0.005]</td>
+<td>+0.079 [+0.043, +0.117]</td>
+<td>+0.069 [+0.030, +0.107]</td>
+</tr>
+<tr>
+<td>rand_all</td>
+<td>98</td>
+<td>-0.007 [-0.010, -0.005]</td>
+<td>+0.373 [+0.160, +0.591]</td>
+<td>+0.091 [-0.054, +0.221]</td>
+<td>+0.169 [+0.067, +0.271]</td>
+</tr>
+<tr>
+<td>steer_mov_b0.5</td>
+<td>98</td>
+<td>-0.039 [-0.050, -0.029]</td>
+<td>+2.284 [+1.457, +3.179]</td>
+<td>-0.164 [-0.239, -0.090]</td>
+<td>-0.102 [-0.149, -0.052]</td>
+</tr>
+<tr>
+<td>steer_mov_b1</td>
+<td>98</td>
+<td>-0.077 [-0.093, -0.061]</td>
+<td>+5.371 [+3.989, +6.980]</td>
+<td>-0.110 [-0.232, +0.006]</td>
+<td>-0.041 [-0.133, +0.051]</td>
+</tr>
+<tr>
+<td>steer_mov_b2</td>
+<td>98</td>
+<td>-0.108 [-0.131, -0.086]</td>
+<td>+9.446 [+7.487, +11.583]</td>
+<td>+0.808 [+0.487, +1.253]</td>
+<td>+0.677 [+0.450, +0.919]</td>
+</tr>
+<tr>
+<td>steer_stat_b1</td>
+<td>98</td>
+<td>-0.036 [-0.044, -0.028]</td>
+<td>+2.573 [+1.680, +3.609]</td>
+<td>+3.151 [+2.611, +3.756]</td>
+<td>+0.801 [+0.606, +1.012]</td>
+</tr>
+<tr>
+<td>steer_stat_b2</td>
+<td>98</td>
+<td>-0.060 [-0.071, -0.048]</td>
+<td>+4.325 [+3.000, +5.561]</td>
+<td>+6.357 [+5.555, +7.219]</td>
+<td>+1.557 [+1.233, +1.908]</td>
+</tr>
+<tr>
+<td>steerrand_mov_b2</td>
+<td>98</td>
+<td>-0.103 [-0.122, -0.084]</td>
+<td>+7.788 [+6.122, +9.671]</td>
+<td>+0.387 [+0.153, +0.638]</td>
+<td>+0.432 [+0.285, +0.604]</td>
+</tr>
+<tr>
+<td>steerrand_stat_b2</td>
+<td>98</td>
+<td>-0.002 [-0.010, +0.005]</td>
+<td>-0.031 [-0.809, +0.711]</td>
+<td>+4.499 [+3.590, +5.410]</td>
+<td>+0.914 [+0.683, +1.176]</td>
+</tr>
+<tr>
+<td>steer_mov_all_b1</td>
+<td>98</td>
+<td>-0.409 [-0.460, -0.360]</td>
+<td>+41.084 [+36.002, +46.727]</td>
+<td>+4.910 [+3.568, +6.472]</td>
+<td>+4.125 [+3.376, +4.954]</td>
+</tr>
+<tr>
+<td>steer_stat_all_b1</td>
+<td>98</td>
+<td>-0.195 [-0.228, -0.160]</td>
+<td>+15.861 [+12.403, +19.399]</td>
+<td>+8.973 [+7.629, +10.363]</td>
+<td>+3.818 [+3.154, +4.460]</td>
+</tr>
+</tbody>
+</table>
+<p>Eraser fits (training fold; linear R^2 of 'moving' before and after erasure):</p>
+<table>
+<thead>
+<tr>
+<th>fit</th>
+<th>before</th>
+<th>after</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fold0_L17</td>
+<td>0.595</td>
+<td>0.095</td>
+</tr>
+<tr>
+<td>fold0_L18</td>
+<td>0.592</td>
+<td>0.159</td>
+</tr>
+<tr>
+<td>fold0_L19</td>
+<td>0.652</td>
+<td>0.069</td>
+</tr>
+<tr>
+<td>fold0_L20</td>
+<td>0.696</td>
+<td>0.258</td>
+</tr>
+<tr>
+<td>fold0_L21</td>
+<td>0.750</td>
+<td>0.100</td>
+</tr>
+<tr>
+<td>fold1_L17</td>
+<td>0.573</td>
+<td>0.130</td>
+</tr>
+<tr>
+<td>fold1_L18</td>
+<td>0.570</td>
+<td>0.172</td>
+</tr>
+<tr>
+<td>fold1_L19</td>
+<td>0.627</td>
+<td>0.124</td>
+</tr>
+<tr>
+<td>fold1_L20</td>
+<td>0.677</td>
+<td>0.040</td>
+</tr>
+<tr>
+<td>fold1_L21</td>
+<td>0.719</td>
+<td>0.019</td>
+</tr>
+</tbody>
+</table>
+<p><strong>subspace_v2_summary.md</strong></p>
+<table>
+<thead>
+<tr>
+<th>condition</th>
+<th>n</th>
+<th>d slope [95% CI] (p)</th>
+<th>d epe_moving [95% CI] (p)</th>
+<th>d epe_static_obj [95% CI] (p)</th>
+<th>d epe_bg [95% CI] (p)</th>
+<th>d spurious_static_obj [95% CI] (p)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base</td>
+<td>100</td>
+<td>0.607</td>
+<td>34.957</td>
+<td>4.138</td>
+<td>4.125</td>
+<td>4.138</td>
+</tr>
+<tr>
+<td>leace_L17</td>
+<td>100</td>
+<td>-0.402 [-0.449, -0.351] (p=1.1e-18)</td>
+<td>+38.038 [+32.118, +43.972] (p=9.4e-20)</td>
+<td>+9.730 [+8.166, +11.271] (p=2.7e-20)</td>
+<td>+11.513 [+9.673, +13.375] (p=1.6e-28)</td>
+<td>+9.730 [+8.148, +11.251] (p=2.7e-20)</td>
+</tr>
+<tr>
+<td>leace_L18</td>
+<td>100</td>
+<td>-0.368 [-0.421, -0.313] (p=4e-14)</td>
+<td>+34.570 [+29.498, +39.969] (p=4.5e-22)</td>
+<td>+7.174 [+5.960, +8.460] (p=3.3e-18)</td>
+<td>+11.906 [+10.402, +13.403] (p=1.6e-30)</td>
+<td>+7.174 [+5.997, +8.453] (p=3.3e-18)</td>
+</tr>
+<tr>
+<td>leace_L19</td>
+<td>100</td>
+<td>-0.166 [-0.201, -0.130] (p=3.9e-08)</td>
+<td>+13.393 [+10.685, +16.170] (p=7.4e-12)</td>
+<td>+6.676 [+5.756, +7.681] (p=6.4e-24)</td>
+<td>+9.856 [+8.698, +11.076] (p=1.6e-28)</td>
+<td>+6.676 [+5.648, +7.671] (p=6.4e-24)</td>
+</tr>
+<tr>
+<td>leace_L20</td>
+<td>100</td>
+<td>-0.208 [-0.239, -0.179] (p=9.9e-17)</td>
+<td>+18.545 [+15.150, +22.090] (p=9.9e-17)</td>
+<td>+9.312 [+7.857, +10.820] (p=2.6e-25)</td>
+<td>+11.067 [+9.713, +12.587] (p=1.6e-28)</td>
+<td>+9.312 [+7.885, +10.824] (p=2.6e-25)</td>
+</tr>
+<tr>
+<td>leace_L21</td>
+<td>100</td>
+<td>-0.152 [-0.183, -0.123] (p=4e-14)</td>
+<td>+15.413 [+12.457, +18.483] (p=1.1e-18)</td>
+<td>+8.094 [+6.491, +9.684] (p=3.3e-18)</td>
+<td>+7.760 [+6.313, +9.208] (p=2.6e-25)</td>
+<td>+8.094 [+6.508, +9.836] (p=3.3e-18)</td>
+</tr>
+<tr>
+<td>leace_all</td>
+<td>100</td>
+<td>-0.528 [-0.580, -0.473] (p=7.1e-21)</td>
+<td>+49.998 [+43.168, +56.996] (p=4.5e-22)</td>
+<td>+14.456 [+12.475, +16.624] (p=8e-27)</td>
+<td>+17.634 [+15.719, +19.562] (p=1.6e-28)</td>
+<td>+14.456 [+12.530, +16.387] (p=8e-27)</td>
+</tr>
+<tr>
+<td>rand_L19</td>
+<td>100</td>
+<td>+0.002 [+0.001, +0.003] (p=1.3e-06)</td>
+<td>-0.054 [-0.111, +0.007] (p=0.61)</td>
+<td>+0.079 [+0.043, +0.118] (p=0.0018)</td>
+<td>+0.069 [+0.033, +0.106] (p=0.012)</td>
+<td>+0.079 [+0.040, +0.116] (p=0.0018)</td>
+</tr>
+<tr>
+<td>rand_all</td>
+<td>100</td>
+<td>-0.007 [-0.010, -0.005] (p=1e-05)</td>
+<td>+0.373 [+0.155, +0.598] (p=0.011)</td>
+<td>+0.091 [-0.037, +0.227] (p=0.089)</td>
+<td>+0.169 [+0.073, +0.264] (p=0.035)</td>
+<td>+0.091 [-0.039, +0.223] (p=0.089)</td>
+</tr>
+<tr>
+<td>steer_mov_b0.5</td>
+<td>100</td>
+<td>-0.039 [-0.050, -0.030] (p=2.9e-09)</td>
+<td>+2.284 [+1.430, +3.120] (p=0.00016)</td>
+<td>-0.164 [-0.244, -0.088] (p=0.0016)</td>
+<td>-0.102 [-0.151, -0.049] (p=1e-05)</td>
+<td>-0.164 [-0.242, -0.092] (p=0.0016)</td>
+</tr>
+<tr>
+<td>steer_mov_b1</td>
+<td>100</td>
+<td>-0.077 [-0.093, -0.062] (p=9.9e-17)</td>
+<td>+5.371 [+3.927, +6.817] (p=2.9e-09)</td>
+<td>-0.110 [-0.228, +0.015] (p=0.02)</td>
+<td>-0.041 [-0.128, +0.050] (p=0.19)</td>
+<td>-0.110 [-0.230, +0.010] (p=0.02)</td>
+</tr>
+<tr>
+<td>steer_mov_b2</td>
+<td>100</td>
+<td>-0.108 [-0.130, -0.084] (p=2.5e-13)</td>
+<td>+9.446 [+7.365, +11.576] (p=4e-14)</td>
+<td>+0.808 [+0.448, +1.191] (p=0.00077)</td>
+<td>+0.677 [+0.458, +0.917] (p=6.6e-05)</td>
+<td>+0.808 [+0.470, +1.229] (p=0.00077)</td>
+</tr>
+<tr>
+<td>steer_stat_b1</td>
+<td>100</td>
+<td>-0.036 [-0.045, -0.028] (p=8.1e-16)</td>
+<td>+2.573 [+1.699, +3.578] (p=3.7e-06)</td>
+<td>+3.151 [+2.584, +3.678] (p=3.1e-17)</td>
+<td>+0.801 [+0.593, +1.002] (p=1.6e-08)</td>
+<td>+3.151 [+2.582, +3.744] (p=3.1e-17)</td>
+</tr>
+<tr>
+<td>steer_stat_b2</td>
+<td>100</td>
+<td>-0.060 [-0.072, -0.048] (p=5.9e-15)</td>
+<td>+4.325 [+3.025, +5.785] (p=1e-05)</td>
+<td>+6.357 [+5.484, +7.242] (p=2.6e-25)</td>
+<td>+1.557 [+1.208, +1.897] (p=1.3e-14)</td>
+<td>+6.357 [+5.480, +7.306] (p=2.6e-25)</td>
+</tr>
+<tr>
+<td>steerrand_mov_b2</td>
+<td>100</td>
+<td>-0.103 [-0.122, -0.084] (p=1.1e-17)</td>
+<td>+7.788 [+5.914, +9.682] (p=7.1e-10)</td>
+<td>+0.387 [+0.174, +0.642] (p=0.0061)</td>
+<td>+0.432 [+0.284, +0.610] (p=4.2e-07)</td>
+<td>+0.387 [+0.174, +0.633] (p=0.0061)</td>
+</tr>
+<tr>
+<td>steerrand_stat_b2</td>
+<td>100</td>
+<td>-0.002 [-0.010, +0.005] (p=0.19)</td>
+<td>-0.031 [-0.813, +0.732] (p=0.48)</td>
+<td>+4.499 [+3.545, +5.490] (p=2e-21)</td>
+<td>+0.914 [+0.693, +1.174] (p=2.6e-12)</td>
+<td>+4.499 [+3.582, +5.459] (p=2e-21)</td>
+</tr>
+<tr>
+<td>steer_mov_all_b1</td>
+<td>100</td>
+<td>-0.409 [-0.457, -0.356] (p=9.9e-25)</td>
+<td>+41.084 [+35.862, +46.562] (p=3.1e-26)</td>
+<td>+4.910 [+3.573, +6.490] (p=4e-14)</td>
+<td>+4.125 [+3.349, +4.965] (p=6.3e-30)</td>
+<td>+4.910 [+3.608, +6.423] (p=4e-14)</td>
+</tr>
+<tr>
+<td>steer_stat_all_b1</td>
+<td>100</td>
+<td>-0.195 [-0.227, -0.165] (p=1.1e-17)</td>
+<td>+15.861 [+12.186, +19.571] (p=1.7e-10)</td>
+<td>+8.973 [+7.630, +10.420] (p=6.4e-24)</td>
+<td>+3.818 [+3.225, +4.499] (p=2e-21)</td>
+<td>+8.973 [+7.706, +10.336] (p=6.4e-24)</td>
+</tr>
+</tbody>
+</table>
+<h2>t3_viewsweep_v2</h2>
+<p>Item 3: 2, 3, 4, 7 input views, outputs + probes + attention (v2)</p>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 20:36:30, finished 2026-10-15 21:01:31. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t3_viewsweep_v2/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t3_viewsweep_v2/task.log">log</a>.</p>
+<p><img alt="viewsweep_probes.png" src="assets/t3_viewsweep_v2/viewsweep_probes.png" /></p>
+<table>
+<thead>
+<tr>
+<th>views</th>
+<th>separation ratio (frame 0 to 23)</th>
+<th>n scenes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>nan</td>
+<td>100</td>
+</tr>
+<tr>
+<td>3</td>
+<td>nan</td>
+<td>100</td>
+</tr>
+<tr>
+<td>4</td>
+<td>nan</td>
+<td>100</td>
+</tr>
+<tr>
+<td>7</td>
+<td>nan</td>
+<td>100</td>
+</tr>
+</tbody>
+</table></body></html>
