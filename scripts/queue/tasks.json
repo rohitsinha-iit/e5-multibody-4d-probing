@@ -83,5 +83,25 @@
   "max_attempts": 2,
   "min_free_gb": 20,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t8_realdata_kitti",
+  "title": "Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input",
+  "script": "t8_realdata_kitti.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 60,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t8_realdata_sintel",
+  "title": "Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input",
+  "script": "t8_realdata_sintel.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 40,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
  }
 ]
