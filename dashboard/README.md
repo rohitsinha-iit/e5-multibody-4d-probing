@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 01:22:29 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 01:40:07 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -10,7 +10,7 @@ Last updated 2026-10-16 01:22:29 (server time). Regenerated after every queue ev
 | 4 | [t3_viewsweep_v2](#t3_viewsweep_v2): Item 3: 2, 3, 4, 7 input views, outputs + probes + attention (v2) | done | 1 | 2026-10-15 20:36:30 | 2026-10-15 21:01:31 |
 | 5 | [v3_scale](#v3_scale): (split into v3_scale_float and v3_scale_far) | waiting for approval (gate `retired`) | 0 |  |  |
 | 6 | [v3_pipeline](#v3_pipeline): (split into v3_pipeline_float and v3_pipeline_far) | queued | 0 |  |  |
-| 7 | [v3_viewsweep](#v3_viewsweep): Items 2+3: view-count sweep on the floating set | RUNNING | 1 | 2026-10-16 01:22:26 |  |
+| 7 | [v3_viewsweep](#v3_viewsweep): Items 2+3: view-count sweep on the floating set | done | 1 | 2026-10-16 01:22:26 | 2026-10-16 01:40:04 |
 | 8 | [v3_pilot_far2](#v3_pilot_far2): Item 1 pilot re-render: far-glued pairs kept far apart in the image | done | 1 | 2026-10-15 21:35:58 | 2026-10-15 21:40:05 |
 | 9 | [t8_realdata_kitti](#t8_realdata_kitti): Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input | done | 1 | 2026-10-15 21:40:18 | 2026-10-15 22:01:41 |
 | 10 | [t8_realdata_sintel](#t8_realdata_sintel): Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input | done | 1 | 2026-10-15 22:01:54 | 2026-10-15 22:32:35 |
@@ -25,7 +25,7 @@ Last updated 2026-10-16 01:22:29 (server time). Regenerated after every queue ev
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | queued | 0 |  |  |
 | 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-16 01:21:48 running v3_pipeline_float
+Supervisor heartbeat: 2026-10-16 01:39:34 running v3_viewsweep
 
 ## v3_pilot
 
@@ -195,9 +195,23 @@ Status: **done**, attempt 1, started 2026-10-15 20:36:30, finished 2026-10-15 21
 
 Items 2+3: view-count sweep on the floating set
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 01:22:26. [Raw results](../results/queue/v3_viewsweep/), [log](../results/queue/v3_viewsweep/task.log).
+Status: **done**, attempt 1, started 2026-10-16 01:22:26, finished 2026-10-16 01:40:04. [Raw results](../results/queue/v3_viewsweep/), [log](../results/queue/v3_viewsweep/task.log).
 
-Partial results so far; the run is still going.
+![viewsweep_probes.png](assets/v3_viewsweep/viewsweep_probes.png)
+
+| views | moving vs static AUC, view 0 (all) (first / last layer) | moving vs static AUC, epipolar-aligned (first / last layer) | same-body pair AUC (object pairs) (first / last layer) | probe object-motion slope (first / last layer) |
+|---|---|---|---|---|
+| 2 | 0.565 / 0.977 | 0.513 / 0.995 | 0.781 / 0.948 | 0.061 / 0.505 |
+| 3 | 0.569 / 0.980 | 0.515 / 0.998 | 0.781 / 0.939 | 0.062 / 0.524 |
+| 4 | 0.569 / 0.974 | 0.515 / 0.999 | 0.782 / 0.938 | 0.062 / 0.525 |
+| 7 | 0.569 / 0.973 | 0.515 / 0.999 | 0.782 / 0.934 | 0.062 / 0.527 |
+
+| views | output separation ratio, frame 0 to 23 (median over scenes) | n scenes |
+|---|---|---|
+| 2 | 0.735 | 38 |
+| 3 | 0.680 | 38 |
+| 4 | 0.675 | 38 |
+| 7 | 0.681 | 38 |
 
 
 ## v3_pilot_far2

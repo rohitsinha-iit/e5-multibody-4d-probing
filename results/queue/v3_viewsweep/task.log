@@ -2,3 +2,53 @@
 ===== 2026-10-16 01:22:26 attempt 1
 GPU 1
 [01:22:26] v3float 2 views: inference
+n3_generic_s590 0.36 s
+peak GPU GB 4.63
+[01:23:01] v3float 2 views: extraction (layers 0,4,8,12,16,20,24)
+n3_generic_s590 0.3s
+peak GPU GB 4.58
+[01:23:28] v3float 2 views: step3 + gt patches
+[01:25:26] v3float 2 views: probes + attention
+E5-P layer 24
+done
+GPU 1
+[01:26:33] v3float 3 views: inference
+n3_generic_s590 0.52 s
+peak GPU GB 5.25
+[01:27:17] v3float 3 views: extraction (layers 0,4,8,12,16,20,24)
+n3_generic_s590 0.3s
+peak GPU GB 5.17
+[01:27:47] v3float 3 views: step3 + gt patches
+[01:29:50] v3float 3 views: probes + attention
+E5-P layer 24
+done
+GPU 1
+[01:30:57] v3float 4 views: inference
+n3_generic_s590 0.66 s
+peak GPU GB 5.82
+[01:31:50] v3float 4 views: extraction (layers 0,4,8,12,16,20,24)
+n3_generic_s590 0.4s
+peak GPU GB 5.73
+[01:32:24] v3float 4 views: step3 + gt patches
+[01:34:36] v3float 4 views: probes + attention
+E5-P layer 24
+done
+GPU 1
+[01:35:43] v3float 7 views: inference
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[01:35:51] v3float 7 views: step3 + gt patches
+[01:38:31] v3float 7 views: probes + attention
+E5-P layer 24
+done
+total 1196
+drwxrwxr-x  2 rohit rohit   4096 Oct 16 01:39 .
+drwxrwxr-x 17 rohit rohit   4096 Oct 16 01:22 ..
+-rw-rw-r--  1 rohit rohit  55308 Oct 16 01:23 step3_v3float_2v.json
+-rw-rw-r--  1 rohit rohit  73925 Oct 16 01:28 step3_v3float_3v.json
+-rw-rw-r--  1 rohit rohit  92839 Oct 16 01:33 step3_v3float_4v.json
+-rw-rw-r--  1 rohit rohit 148780 Oct 16 01:36 step3_v3float_7v.json
+-rw-rw-r--  1 rohit rohit 205454 Oct 16 01:26 vs_v3float_2v_results.json
+-rw-rw-r--  1 rohit rohit 205827 Oct 16 01:30 vs_v3float_3v_results.json
+-rw-rw-r--  1 rohit rohit 205824 Oct 16 01:35 vs_v3float_4v_results.json
+-rw-rw-r--  1 rohit rohit 205997 Oct 16 01:39 vs_v3float_7v_results.json
