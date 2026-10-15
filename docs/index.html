@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-15 22:01:58 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-15 22:32:38 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -87,10 +87,10 @@
 <tr>
 <td>10</td>
 <td><a href="#t8_realdata_sintel">t8_realdata_sintel</a>: Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input</td>
-<td>RUNNING</td>
+<td>done</td>
 <td>1</td>
 <td>2026-10-15 22:01:54</td>
-<td></td>
+<td>2026-10-15 22:32:35</td>
 </tr>
 <tr>
 <td>11</td>
@@ -124,9 +124,49 @@
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>15</td>
+<td><a href="#t7_any4d_v2">t7_any4d_v2</a>: Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24)</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="#t7_mapanything_v2">t7_mapanything_v2</a>: Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="#t7_vggt_v2">t7_vggt_v2</a>: Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="#t7_page4d_v2">t7_page4d_v2</a>: Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="#t7_xm_summary">t7_xm_summary</a>: Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D)</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-15 22:01:11 running t8_realdata_kitti</p>
+<p>Supervisor heartbeat: 2026-10-15 22:32:05 running t8_realdata_sintel</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -952,5 +992,5 @@
 <p><img alt="gt_check_kitti15.png" src="assets/t8_realdata_kitti/gt_check_kitti15.png" /></p>
 <h2>t8_realdata_sintel</h2>
 <p>Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input</p>
-<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-15 22:01:54. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t8_realdata_sintel/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t8_realdata_sintel/task.log">log</a>.</p>
-<p>Partial results so far; the run is still going.</p></body></html>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 22:01:54, finished 2026-10-15 22:32:35. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t8_realdata_sintel/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t8_realdata_sintel/task.log">log</a>.</p>
+<p><img alt="gt_check_sintel.png" src="assets/t8_realdata_sintel/gt_check_sintel.png" /></p></body></html>

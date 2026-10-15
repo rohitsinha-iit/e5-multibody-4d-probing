@@ -3,7 +3,7 @@
 Patch set: view-0 patches with purity >= 0.8 and a visible GT correspondence in frame 23.
 Moving-distinguishable set M: moving patches whose true and static-hypothesis locations in frame 23 differ by > 2 patches.
 
-E5-A (attention, 12 global blocks x 12 heads, view-0 queries vs view-6 = frame 23 keys)
+E5-A (attention, all global blocks x heads stored in <scene>_att.npz (Any4D: 12 x 12), view-0 queries vs last-view keys)
   static_hit / track_hit / rigid_hit : argmax lands within 1 patch (Chebyshev) of the GT match (static patches),
                                        the true moved location (M), or the static-hypothesis location (M).
   multibody gain (soft-argmax correspondences of a head chosen by static_hit on the other half of the scenes):
@@ -19,7 +19,11 @@ E5-P (trained probes, 5-fold cross-validation grouped by scene, features = conca
                 K estimate from spectral eigengap of the probe affinity.
   motion probe: linear moving-vs-static AUC (per split).
   object-motion probe: ridge regression of d_obj = x2_true - x2_static (px); R^2 and slope (fraction recovered)
-                on moving patches. Output-level slope from Any4D predictions for comparison.
+                on moving patches. Output-level slope from the model's x2_pred (in gt_patches) for comparison.
+Generalised for other models (item 7): the grid size comes from the GT patch files, the number of global blocks and
+heads from the attention files, the block index of each global block from <internals>/att_blocks.json (default 2*g,
+as in Any4D), and the per-view feature dim from the token files. Non-finite x2_pred (models without a 2D output)
+gives NaN output gains and no output slope. For Any4D files the results are identical to the original script.
 """
 import glob, json, os, sys
 import numpy as np
@@ -30,8 +34,12 @@ from sklearn.metrics import adjusted_rand_score, roc_auc_score
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import e5_multibody as mb
 
-G = 37; T = G * G; PATCH = 14
 idir, gdir, outp = sys.argv[1], sys.argv[2], sys.argv[3]
+_g0 = sorted(glob.glob(os.path.join(gdir, "*_gt.npz")))
+G = int(round(np.sqrt(len(np.load(_g0[0])["body"])))) if _g0 else 37; T = G * G
+PATCH = float(os.environ.get("E5_PATCH", 14)) if G == 37 else float(os.environ.get("E5_PATCH", 518 / G))
+if PATCH == int(PATCH):
+    PATCH = int(PATCH)
 rng = np.random.default_rng(0)
 QUICK = os.environ.get("E5_QUICK") == "1"
 LAYERS = [0, 12, 24] if QUICK else list(range(25))
@@ -93,11 +101,15 @@ if "A" not in PARTS:
 else:
     names_A = names
 ATT = {n: dict(np.load(os.path.join(idir, f"{n}_att.npz"))) for n in names_A}
-hits = {k: np.full((len(names), 12, 12), np.nan) for k in ["static", "track", "rigid"]}
+NG, NH = ATT[names_A[0]]["argmax"].shape[:2] if names_A else (12, 12)
+_ab = os.path.join(idir, "att_blocks.json")
+ATT_BLOCKS = json.load(open(_ab)) if os.path.exists(_ab) else [2 * gi for gi in range(NG)]
+assert len(ATT_BLOCKS) == NG, (ATT_BLOCKS, NG)
+hits = {k: np.full((len(names), NG, NH), np.nan) for k in ["static", "track", "rigid"]}
 for si, n in enumerate(names_A):
-    g = GT[n]; am = ATT[n]["argmax"].astype(int)  # (12,12,T)
-    for gi in range(12):
-        for h in range(12):
+    g = GT[n]; am = ATT[n]["argmax"].astype(int)  # (NG,NH,T)
+    for gi in range(NG):
+        for h in range(NH):
             a = am[gi, h]
             if g["S"].sum():
                 hits["static"][si, gi, h] = cheb_hit(a[g["S"]], g["x2_true"][g["S"]]).mean()
@@ -105,16 +117,16 @@ for si, n in enumerate(names_A):
                 hits["track"][si, gi, h] = cheb_hit(a[g["M"]], g["x2_true"][g["M"]]).mean()
                 hits["rigid"][si, gi, h] = cheb_hit(a[g["M"]], g["x2_static"][g["M"]]).mean()
 splits = np.array([GT[n]["split"] for n in names])
-res["A"]["layers"] = [2 * gi for gi in range(12)]
+res["A"]["layers"] = list(ATT_BLOCKS)
 for k, v in hits.items():
     res["A"][f"{k}_mean_heads"] = np.nanmean(np.nanmean(v, 2), 0).tolist()
     res["A"][f"{k}_max_heads"] = np.nanmax(np.nanmean(v, 0), 1).tolist()
 # head selected per layer by static hit on the other fold; then track/rigid of that head on this fold
-sel_track, sel_rigid, gains_att, gains_out, gains_gt = (np.full((len(names), 12), np.nan) for _ in range(5))
+sel_track, sel_rigid, gains_att, gains_out, gains_gt = (np.full((len(names), NG), np.nan) for _ in range(5))
 for si, n in enumerate(names_A):
     other = [j for j, m in enumerate(names) if fold2[m] != fold2[n]]
     g = GT[n]
-    for gi in range(12):
+    for gi in range(NG):
         h = int(np.nanargmax(np.nanmean(hits["static"][other, gi], 0)))
         sel_track[si, gi] = hits["track"][si, gi, h]; sel_rigid[si, gi] = hits["rigid"][si, gi, h]
         x2a = ATT[n]["soft"][gi, h].astype(float) * PATCH + 6.5
@@ -122,7 +134,7 @@ for si, n in enumerate(names_A):
         gl = multibody_gain(g["c518"][keep], x2a[keep], g["body"][keep], g["S"][keep])
         gains_att[si, gi] = np.mean(gl) if gl else np.nan
     keep = g["S"] | (g["pure"] & (g["body"] > 0))
-    go = multibody_gain(g["c518"][keep], g["x2_pred"][keep], g["body"][keep], g["S"][keep])
+    go = multibody_gain(g["c518"][keep], g["x2_pred"][keep], g["body"][keep], g["S"][keep]) if np.isfinite(g["x2_pred"][keep]).all() else []
     gg = multibody_gain(g["c518"][keep], g["x2_true"][keep], g["body"][keep], g["S"][keep])
     gains_out[si] = np.mean(go) if go else np.nan; gains_gt[si] = np.mean(gg) if gg else np.nan
 nonepi = splits != "epi_aligned"
@@ -160,7 +172,7 @@ for n in names:
     a = np.load(os.path.join(idir, f"{n}_tok.npy"), mmap_mode="r")
     keep = [STORED.index(l) for l in LAYERS]
     sub = np.asarray(a[keep][:, :, GT[n]["pure"]]).astype(np.float32)
-    TOK[n] = _LayerView(sub)  # (len(LAYERS), 2, P, 768), indexed by true layer number
+    TOK[n] = _LayerView(sub)  # (len(LAYERS), 2, P, D), indexed by true layer number
     GT[n]["pidx"] = np.where(GT[n]["pure"])[0]
 
 # =============================================================== E5-F
@@ -213,6 +225,9 @@ print("E5-F done", flush=True)
 # =============================================================== E5-P
 dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 folds = {n: i % 5 for i, n in enumerate(sorted(names, key=lambda m: (GT[m]["split"], seed_of[m])))}
+
+DV = TOK[names[0]].arr.shape[-1] if names else 768   # per-view feature dim (Any4D 768)
+
 
 def feats(n, l):
     return np.concatenate([TOK[n][l, 0], TOK[n][l, 1]], 1)
@@ -285,7 +300,7 @@ for l in (LAYERS if "P" in PARTS else []):
         Xtr = np.concatenate([Z[n] for n in tr]); ytr = np.concatenate([(GT[n]["body"][GT[n]["pidx"]] > 0).astype(float) for n in tr])
         dtr = np.concatenate([(GT[n]["x2_true"] - GT[n]["x2_static"])[GT[n]["pidx"]] for n in tr])
         R, alpha = ridge_gcv(Xtr, dtr)                       # object-motion probe on concat(v0, v6)
-        Xv0 = Xtr[:, :768]
+        Xv0 = Xtr[:, :DV]
         Rm, alpha_m = ridge_gcv(Xv0, (2 * ytr - 1)[:, None])  # moving-vs-static probe on view-0 token only
         for n in te:
             g = GT[n]; P = g["pidx"]; b = g["body"][P]; ins = g["inst"][P]
@@ -311,7 +326,7 @@ for l in (LAYERS if "P" in PARTS else []):
                 io = rng.choice(obj, 2000); jo = rng.choice(obj, 2000); yo = b[io] == b[jo]
                 row["pair_auc_obj"] = roc_auc_score(yo, S[io, jo]) if 0 < yo.mean() < 1 else np.nan
             dh = np.c_[Z[n], np.ones(len(P))] @ R
-            pm = (np.c_[Z[n][:, :768], np.ones(len(P))] @ Rm)[:, 0]
+            pm = (np.c_[Z[n][:, :DV], np.ones(len(P))] @ Rm)[:, 0]
             row["motion_auc_v0"] = roc_auc_score(b > 0, pm) if 0 < (b > 0).mean() < 1 else np.nan
             ob = ins >= 0
             row["motion_auc_v0_objects"] = roc_auc_score(b[ob] > 0, pm[ob]) if ob.sum() and 0 < (b[ob] > 0).mean() < 1 else np.nan
@@ -321,7 +336,7 @@ for l in (LAYERS if "P" in PARTS else []):
             if mv.sum() >= 5:
                 row["objmotion_slope"] = float((dh[mv] * dt[mv]).sum() / (dt[mv] ** 2).sum())
                 row["objmotion_relerr"] = float(np.median(np.linalg.norm(dh[mv] - dt[mv], axis=1) / np.linalg.norm(dt[mv], axis=1)))
-                if l == 0:
+                if l == 0 and np.isfinite(g["x2_pred"][P][mv]).all():
                     do = (g["x2_pred"] - g["x2_static"])[P]
                     row["output_slope"] = float((do[mv] * dt[mv]).sum() / (dt[mv] ** 2).sum())
                     row["output_relerr"] = float(np.median(np.linalg.norm(do[mv] - dt[mv], axis=1) / np.linalg.norm(dt[mv], axis=1)))
