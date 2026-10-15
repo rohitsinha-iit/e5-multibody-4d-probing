@@ -40,3 +40,22 @@ checkpoint /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--
 track head: --track_ckpt /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--VGGT_tracker_fixed/snapshots/4d9d9494b2211c90ab9cd3c8c6aa188fe363103d/model_tracker_fixed_e20.pt
 GPU 1
 [01:46:14] vggt: inference + internals
+missing 0 [] unexpected 0 []
+track head replaced from /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--VGGT_tracker_fixed/snapshots/4d9d9494b2211c90ab9cd3c8c6aa188fe363103d/model_tracker_fixed_e20.pt 394 tensors
+blocks 48 global 24 heads 16 head_dim 64 track head True
+peak GPU GB 5.03
+gt patches 100
+[01:46:24] vggt: output metrics
+planar_s450 {}
+done 100
+[01:47:17] vggt: probes (P) + attention (A), layers 0,8,16,24,32,40,48
+E5-P layer 48
+done
+total 484
+drwxrwxr-x  2 rohit rohit   4096 Oct 16 01:49 .
+drwxrwxr-x 18 rohit rohit   4096 Oct 16 01:40 ..
+-rw-rw----  1 rohit rohit    237 Oct 16 01:49 grid_vggt.json
+-rw-rw-r--  1 rohit rohit 329393 Oct 16 01:49 xm_internal_vggt_results.json
+-rw-rw-r--  1 rohit rohit  75051 Oct 16 01:47 xm_output_vggt.json
+-rw-rw-r--  1 rohit rohit  69437 Oct 16 01:47 xm_output_vggt.json.partial
+-rw-rw-r--  1 rohit rohit    854 Oct 16 01:47 xm_output_vggt_summary.md

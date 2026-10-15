@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 01:46:16 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 01:49:54 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -20,12 +20,12 @@ Last updated 2026-10-16 01:46:16 (server time). Regenerated after every queue ev
 | 14 | [v3_pipeline_far](#v3_pipeline_far): Item 1: Steps 3-6 + adjacency control on the far-glued set | done | 1 | 2026-10-16 01:40:13 | 2026-10-16 01:43:20 |
 | 15 | [t7_any4d_v2](#t7_any4d_v2): Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24) | done | 1 | 2026-10-16 00:11:50 | 2026-10-16 00:17:28 |
 | 16 | [t7_mapanything_v2](#t7_mapanything_v2): Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention | done | 1 | 2026-10-16 01:43:28 | 2026-10-16 01:46:05 |
-| 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | RUNNING | 1 | 2026-10-16 01:46:13 |  |
+| 17 | [t7_vggt_v2](#t7_vggt_v2): Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention | done | 1 | 2026-10-16 01:46:13 | 2026-10-16 01:49:51 |
 | 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | queued | 0 | 2026-10-16 00:39:40 |  |
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | queued | 0 |  |  |
 | 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-16 01:45:35 running t7_mapanything_v2
+Supervisor heartbeat: 2026-10-16 01:49:21 running t7_vggt_v2
 
 ## v3_pilot
 
@@ -337,7 +337,34 @@ Status: **done**, attempt 1, started 2026-10-16 01:43:28, finished 2026-10-16 01
 
 Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 01:46:13. [Raw results](../results/queue/t7_vggt_v2/), [log](../results/queue/t7_vggt_v2/task.log).
+Status: **done**, attempt 1, started 2026-10-16 01:46:13, finished 2026-10-16 01:49:51. [Raw results](../results/queue/t7_vggt_v2/), [log](../results/queue/t7_vggt_v2/task.log).
 
-Partial results so far; the run is still going.
+
+
+**xm_output_vggt_summary.md**
+
+# vggt: output metrics, 100 scenes
+
+| metric | mean | median | n |
+|---|---|---|---|
+| align_scale | 21.4023 | 21.8720 | 60 |
+| align_rmse | 0.1454 | 0.1086 | 60 |
+| median_true_disp3d | 2.3840 | 2.4061 | 58 |
+| slope3d | 1.0264 | 1.0003 | 58 |
+| epe3d_static | 0.1992 | 0.1069 | 60 |
+| epe3d_moving | 0.1949 | 0.1543 | 58 |
+| align_rmse_head | 0.1448 | 0.1088 | 60 |
+| slope3d_head | 1.0326 | 1.0010 | 58 |
+| epe3d_static_head | 0.1773 | 0.0914 | 60 |
+| epe3d_moving_head | 0.2017 | 0.1271 | 58 |
+| sep_gt | 23.6306 | 26.6735 | 58 |
+| slope2d_q | 0.4018 | 0.3625 | 58 |
+| epe_static_q | 12.6548 | 7.2452 | 60 |
+| epe_moving_q | 52.9611 | 47.7194 | 58 |
+| sep_pred_q | 5.4213 | 3.5117 | 58 |
+| sep_ratio_q | 0.2964 | 0.1416 | 49 |
+| track_self_offset | 0.0000 | 0.0000 | 60 |
+| slope3d_track | 0.4518 | 0.4958 | 58 |
+| slope3d_q | 1.0271 | 1.0001 | 58 |
+
 

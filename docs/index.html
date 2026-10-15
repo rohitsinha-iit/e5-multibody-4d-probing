@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-16 01:46:16 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-16 01:49:54 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -143,10 +143,10 @@
 <tr>
 <td>17</td>
 <td><a href="#t7_vggt_v2">t7_vggt_v2</a>: Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention</td>
-<td>RUNNING</td>
+<td>done</td>
 <td>1</td>
 <td>2026-10-16 01:46:13</td>
-<td></td>
+<td>2026-10-16 01:49:51</td>
 </tr>
 <tr>
 <td>18</td>
@@ -174,7 +174,7 @@
 </tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-16 01:45:35 running t7_mapanything_v2</p>
+<p>Supervisor heartbeat: 2026-10-16 01:49:21 running t7_vggt_v2</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -1300,5 +1300,132 @@
 </table>
 <h2>t7_vggt_v2</h2>
 <p>Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention</p>
-<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-16 01:46:13. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t7_vggt_v2/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t7_vggt_v2/task.log">log</a>.</p>
-<p>Partial results so far; the run is still going.</p></body></html>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-16 01:46:13, finished 2026-10-16 01:49:51. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t7_vggt_v2/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/t7_vggt_v2/task.log">log</a>.</p>
+<p><strong>xm_output_vggt_summary.md</strong></p>
+<h1>vggt: output metrics, 100 scenes</h1>
+<table>
+<thead>
+<tr>
+<th>metric</th>
+<th>mean</th>
+<th>median</th>
+<th>n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>align_scale</td>
+<td>21.4023</td>
+<td>21.8720</td>
+<td>60</td>
+</tr>
+<tr>
+<td>align_rmse</td>
+<td>0.1454</td>
+<td>0.1086</td>
+<td>60</td>
+</tr>
+<tr>
+<td>median_true_disp3d</td>
+<td>2.3840</td>
+<td>2.4061</td>
+<td>58</td>
+</tr>
+<tr>
+<td>slope3d</td>
+<td>1.0264</td>
+<td>1.0003</td>
+<td>58</td>
+</tr>
+<tr>
+<td>epe3d_static</td>
+<td>0.1992</td>
+<td>0.1069</td>
+<td>60</td>
+</tr>
+<tr>
+<td>epe3d_moving</td>
+<td>0.1949</td>
+<td>0.1543</td>
+<td>58</td>
+</tr>
+<tr>
+<td>align_rmse_head</td>
+<td>0.1448</td>
+<td>0.1088</td>
+<td>60</td>
+</tr>
+<tr>
+<td>slope3d_head</td>
+<td>1.0326</td>
+<td>1.0010</td>
+<td>58</td>
+</tr>
+<tr>
+<td>epe3d_static_head</td>
+<td>0.1773</td>
+<td>0.0914</td>
+<td>60</td>
+</tr>
+<tr>
+<td>epe3d_moving_head</td>
+<td>0.2017</td>
+<td>0.1271</td>
+<td>58</td>
+</tr>
+<tr>
+<td>sep_gt</td>
+<td>23.6306</td>
+<td>26.6735</td>
+<td>58</td>
+</tr>
+<tr>
+<td>slope2d_q</td>
+<td>0.4018</td>
+<td>0.3625</td>
+<td>58</td>
+</tr>
+<tr>
+<td>epe_static_q</td>
+<td>12.6548</td>
+<td>7.2452</td>
+<td>60</td>
+</tr>
+<tr>
+<td>epe_moving_q</td>
+<td>52.9611</td>
+<td>47.7194</td>
+<td>58</td>
+</tr>
+<tr>
+<td>sep_pred_q</td>
+<td>5.4213</td>
+<td>3.5117</td>
+<td>58</td>
+</tr>
+<tr>
+<td>sep_ratio_q</td>
+<td>0.2964</td>
+<td>0.1416</td>
+<td>49</td>
+</tr>
+<tr>
+<td>track_self_offset</td>
+<td>0.0000</td>
+<td>0.0000</td>
+<td>60</td>
+</tr>
+<tr>
+<td>slope3d_track</td>
+<td>0.4518</td>
+<td>0.4958</td>
+<td>58</td>
+</tr>
+<tr>
+<td>slope3d_q</td>
+<td>1.0271</td>
+<td>1.0001</td>
+<td>58</td>
+</tr>
+</tbody>
+</table></body></html>
