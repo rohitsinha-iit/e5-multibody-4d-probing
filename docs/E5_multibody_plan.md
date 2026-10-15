@@ -152,3 +152,98 @@ Status: done on all 70 scenes. Any4D's info-sharing transformer has 24 blocks (e
 
 - Regenerate a confound-free dataset: same size distribution for moving and static objects, moving objects resting on or sliding along the floor, more glued and n3 scenes. Then rerun C3 and C4.
 - E8: knock out late blocks or the scene-flow head inputs to localise where the C2 pull arises; the attention heads with highest track hits (global blocks at layers 2, 6, 10) are candidates for the opposite test.
+
+## 11. E8 results (causal ablations on Any4D)
+
+### First pass: blunt knockouts (v1, 70 scenes, 12 conditions)
+
+- Skipping windows of 4 blocks, or zeroing a set of 12 heads (top tracking heads, top static-hypothesis heads, random heads), broke the model in a non-specific way: static and moving errors both rose sharply. The tracking and static head sets also shared 6 of 12 heads, so these conditions could not separate the two hypotheses. We therefore moved to single-unit mean ablation.
+
+### Single-unit mean-ablation screen (v1, 18 scenes, 3 per non-degenerate split)
+
+- Each of the 288 attention heads was mean-ablated on its own (its output replaced with the dataset mean before the output projection), and each of the 24 blocks had its residual update replaced by its token mean. Read-outs: object-motion slope (predicted vs true object motion, 1 = full recovery), static EPE, moving EPE, separation ratio.
+- Base: slope 0.606, static EPE 3.64 px, moving EPE 34.7 px, separation ratio 0.50.
+- No single unit removes the pull toward camera motion. The largest slope increase that leaves static EPE within 1 px is +0.021.
+- Five heads supply object motion. Ablating any one of them lowers the slope and raises moving error a lot, while static error barely changes:
+
+| Head | Block type | d slope | d static (px) | d moving (px) | Scenes where slope fell |
+|---|---|---|---|---|---|
+| b2 h1 | global | -0.287 | +0.56 | +15.8 | 18/18 |
+| b22 h9 | global | -0.270 | -0.06 | +14.5 | 18/18 |
+| b17 h10 | frame | -0.248 | -0.09 | +12.2 | 18/18 |
+| b14 h6 | global | -0.181 | +0.14 | +7.8 | 18/18 |
+| b8 h11 | global | -0.171 | +0.36 | +7.2 | 16/18 |
+
+- Across global heads, a head's attention tracking hit rate predicts its ablation effect (Spearman -0.21, p = 0.012). b2 h1 has the 4th highest tracking hit rate (0.35 vs a mean of 0.07).
+- Blocks whose ablation is motion specific (d slope < -0.1 with d static < 3 px): 2, 8, 13, 15, 16, 17.
+
+### Replication on v2 (30 new scenes, 5 per non-degenerate split)
+
+| Head | d slope | d static (px) | d moving (px) | Scenes where slope fell |
+|---|---|---|---|---|
+| b2 h1 | -0.297 | +0.94 | +27.1 | 29/30 |
+| b22 h9 | -0.273 | -0.10 | +21.2 | 30/30 |
+| b17 h10 | -0.300 | -0.06 | +24.3 | 30/30 |
+| b14 h6 | -0.163 | +0.21 | +10.5 | 30/30 |
+| b8 h11 | -0.185 | +0.45 | +16.2 | 29/30 |
+
+Base slope on these scenes is 0.561. All five heads replicate on scenes they were not selected on, with effect sizes as large as or larger than in v1 (sign test p < 1e-7 for each).
+
+### Interpretation
+
+- The camera-motion pull reflects too little object motion being supplied by a small set of units. It does not come from a unit that actively pushes objects toward camera motion. Removing a supplier makes the pull worse; no single removal makes it better.
+- Caveat: mean ablation removes a unit's scene-specific contribution but keeps its average. Combined ablations and path patching into the scene-flow decoder have not been run yet.
+
+## 12. v2 replication on a confound-free dataset
+
+### Dataset
+
+- 100 Kubric scenes. Moving objects now slide along the floor (xy translation plus yaw), and every object, moving or static, is 1.4 to 2.2 m in size. n3, confound_same and confound_glued have 20 scenes each; the other splits have 10. Step 3 analysed 98 scenes; probe statistics use the scenes where each metric is defined (n per row below).
+- At the input layer, the view-0 moving-vs-static probe is now near chance (AUC 0.57; 0.38 on epipolar-aligned scenes), compared with 0.99 in v1. Object size and floating no longer give motion away.
+
+### Output level (Step 3)
+
+| Metric | v1 | v2 |
+|---|---|---|
+| Separation ratio (pred/GT) | 0.61 | 0.75 |
+| Fraction of scenes below GT | 0.77 | 0.78 |
+| EPE static / moving (px) | 3.70 / 31.99 | 3.82 / 30.72 |
+| Vidal segmentation error on Any4D matches | 0.32 | 0.32 |
+| Motion-mask IoU all / epi | 0.64 / 0.58 | 0.65 / 0.53 |
+
+### Internals, layer 0 vs layer 24 (scene-level paired; 95% bootstrap CI; Wilcoxon)
+
+| Read-out | L0 | L24 | Delta [95% CI] | n | p |
+|---|---|---|---|---|---|
+| Same-body pair AUC, object pairs | 0.770 | 0.914 | +0.144 [0.116, 0.173] | 93 | < 1e-6 |
+| Moving vs static AUC, view-0 objects | 0.569 | 0.998 | +0.429 [0.37, 0.49] | 93 | < 1e-6 |
+| Same, epipolar-aligned only | 0.379 | 0.998 | +0.619 [0.44, 0.78] | 9 | 0.004 |
+| Same-asset copies separated (probe) | 0.115 | 0.583 | +0.467 [0.33, 0.59] | 20 | 4e-5 |
+| K estimated correctly | 0.19 | 0.52 | +0.33 [0.22, 0.44] | 100 | 1e-6 |
+| k-means ARI, rigid body | 0.336 | 0.519 | +0.182 [0.12, 0.25] | 94 | < 1e-6 |
+| k-means ARI, instance | 0.527 | 0.662 | +0.136 [0.09, 0.19] | 94 | < 1e-6 |
+| ARI body minus instance | -0.190 | -0.143 | +0.047 [-0.01, 0.10] | 94 | 0.32 |
+| k-means copies split | 0.450 | 0.619 | +0.169 [0.06, 0.28] | 20 | 0.012 |
+
+- Motion decodability in view-0 tokens rises slowly through the stack. It passes 0.9 at layer 17 on epipolar-aligned scenes and at layer 19 overall.
+- Moving-object pairs (probe join rate, L0 / 8 / 16 / 24): same motion (glued, 18 pairs) 0.89 / 0.88 / 0.84 / 0.88; different motion (17 pairs) 0.90 / 0.75 / 0.50 / 0.60.
+- Attention: tracking hit rate peaks at 0.52 and static-hypothesis hit rate stays at or below 0.044. Multibody gain peaks at layer 2 (0.80).
+
+### Claim-level update
+
+- C1 (rigid-body grouping is built gradually): replicated. Pair AUC and K accuracy both rise with depth, and from a lower start than in v1.
+- C2 (output pull toward camera motion): replicated but smaller (separation 0.75 of GT, in 78% of scenes below GT; output slope 0.77). Attention still shows no static-hypothesis routing, and E8 points to too little supply of object motion.
+- C3 (identical copies are split by motion): the probe evidence replicates and is stronger. Copy separation rises from 0.12 to 0.58, and different-motion look-alike movers are pulled apart while same-motion pairs stay joined. The v1 k-means result for glued pairs does not replicate: in v2, glued pairs are already joined at layer 0 (0.66 vs 0.19 for different-motion pairs), probably because glued objects are adjacent (median gap 2.9 patches vs 7). Unsupervised clustering therefore does not show a motion effect beyond what instance identity explains (body minus instance ARI change +0.05, p = 0.32). C3 rests on the supervised probe, not on clustering.
+- C4 (motion is inferred beyond two-view epipolar geometry): now supported internally. With the input shortcut gone, the transformer makes object motion linearly decodable even for epipolar-aligned motion (0.38 to 0.998). The output-level mask IoU on epi scenes (0.53) is lower than overall, so the decoder uses this information only partly.
+
+### Remaining caveats
+
+- Epipolar-aligned scenes are few (n = 9 with defined probe AUC). The confound_same and confound_glued subsets have 20 scenes each.
+- Probes are linear and trained across scenes; a decodable signal does not prove the model uses it. E8 gives causal evidence for supply heads, not for the probe directions.
+- Grounded objects can reveal motion through floor contact over 7 views. This is beyond two-view geometry by design, but it is a cue the model could learn without multibody reasoning.
+
+### Next steps
+
+- Ablate the five supply heads together, and patch their outputs into the scene-flow decoder, to test whether they jointly explain the slope.
+- Steer along the probe motion direction at layers 17 to 21 to test whether the decodable motion signal is causally used.
+- Increase the number of epipolar-aligned scenes to tighten C4.
