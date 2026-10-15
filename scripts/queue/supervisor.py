@@ -110,12 +110,12 @@ def write_status(tasks, state):
 
 def main():
     os.makedirs(os.path.join(Q, "logs"), exist_ok=True)
-    lockf = open(os.path.join(Q, ".supervisor.lock"), "w")
+    lockf = open(os.path.join(Q, ".supervisor.lock"), "a+")  # never truncate before holding the lock
     try:
         fcntl.flock(lockf, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except BlockingIOError:
         return  # another supervisor is alive
-    lockf.write(str(os.getpid())); lockf.flush()
+    lockf.seek(0); lockf.truncate(); lockf.write(str(os.getpid())); lockf.flush()
     event(f"supervisor start pid {os.getpid()}")
     spath = os.path.join(Q, "state.json")
     state = jload(spath, {})

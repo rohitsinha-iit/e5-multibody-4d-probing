@@ -42,6 +42,7 @@ parser.add_argument("--float_height", type=float, default=0.0,
 parser.add_argument("--no_shadows", type=int, default=0, help="v3: objects cast no shadows")
 parser.add_argument("--far_lo", type=float, default=2.4, help="confound_farglued: min centre distance (m)")
 parser.add_argument("--far_hi", type=float, default=3.2, help="confound_farglued: max centre distance (m)")
+parser.add_argument("--far_px", type=float, default=0.22, help="confound_farglued: min image distance between coupled members, as a fraction of the width, in every frame")
 parser.add_argument("--size_lo", type=float, default=1.2)
 parser.add_argument("--size_hi", type=float, default=2.0)
 parser.add_argument("--min_sep_px", type=float, default=20.0,
@@ -259,6 +260,11 @@ def kinematics(members, kind):
         if far:  # far-apart rigid members: check each member separately, not one big circle
             ok_far = all(visible({f: t[f][0] for f in FRAMES}) and clear_of_others({f: t[f][0] for f in FRAMES}, s_ / 2)
                          for t, (_, s_, _) in zip(trajs, members))
+            if ok_far:  # members must also be far apart IN THE IMAGE in every frame (no adjacency, no occlusion)
+                for f in FRAMES:
+                    pa, _ = project(trajs[0][f][0], cams[f]); pb, _ = project(trajs[1][f][0], cams[f])
+                    if np.hypot(pa[0] - pb[0], pa[1] - pb[1]) < FLAGS.far_px * W:
+                        ok_far = False; break
         if far and ok_far:
             body = (v, axis, ang, pivot)
             for t, (_, s_, _) in zip(trajs, members):

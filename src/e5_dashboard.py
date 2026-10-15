@@ -124,16 +124,16 @@ def plot_subspace(tid, res, out):
     return md, [f1]
 
 
-def layer_series(P, key):
-    xs, ys = [], []
-    for l in sorted(int(x) for x in P if str(x).isdigit()):
-        v = P[str(l)]; val = v.get(key) if isinstance(v, dict) else None
-        if isinstance(val, dict):
-            nums = [x for x in val.values() if isinstance(x, (int, float))]
-            val = val.get("all", np.nanmean(nums) if nums else None)
-        if isinstance(val, (int, float)) and np.isfinite(val):
-            xs.append(l); ys.append(val)
-    return xs, ys
+def layer_means(P, key, split=None):
+    rows = P.get("rows", []) if isinstance(P, dict) else []
+    by = {}
+    for r in rows:
+        if split and r.get("split") != split:
+            continue
+        v = r.get(key)
+        if isinstance(v, (int, float)) and np.isfinite(v):
+            by.setdefault(r["layer"], []).append(float(v))
+    xs = sorted(by); return xs, [float(np.mean(by[x])) for x in xs]
 
 
 def plot_viewsweep(tid, res, out):
@@ -142,25 +142,33 @@ def plot_viewsweep(tid, res, out):
     if files:
         cols = {"2": RED, "3": ORANGE, "4": GREEN, "7": BLUE}
         J = {os.path.basename(f).split("_")[-2].rstrip("v"): jload(f, {}) for f in files}
-        fig, axs = plt.subplots(1, 3, figsize=(9.6, 2.6))
+        panels = [("motion_auc_v0_objects", None, "moving vs static AUC, view 0 (all)"),
+                  ("motion_auc_v0_objects", "epi_aligned", "moving vs static AUC, epipolar-aligned"),
+                  ("pair_auc_obj", None, "same-body pair AUC (object pairs)"),
+                  ("objmotion_slope", None, "probe object-motion slope")]
+        fig, axs = plt.subplots(1, 4, figsize=(12, 2.6))
+        tab = {}
         for nv, j in sorted(J.items(), key=lambda t: int(t[0]) if t[0].isdigit() else 99):
-            for ax, k, lab in zip(axs, ["motion_auc_v0_objects", "pair_auc_obj", "copies_separated"],
-                                  ["moving vs static AUC (view 0)", "same-body pair AUC", "copies separated"]):
-                xs, ys = layer_series(j.get("P", {}), k)
+            for ax, (k, sp, lab) in zip(axs, panels):
+                xs, ys = layer_means(j.get("P", {}), k, sp)
                 if xs:
                     ax.plot(xs, ys, "-o", ms=2.5, color=cols.get(nv, GREY), label=f"{nv} views")
-                ax.set_title(lab, fontsize=8, loc="left"); ax.set_xlabel("layer")
+                    tab.setdefault(nv, {})[lab] = (ys[0], ys[-1])
+                ax.set_title(lab, fontsize=7.5, loc="left"); ax.set_xlabel("layer")
         axs[0].legend(frameon=False, fontsize=6); fig.tight_layout()
         f1 = os.path.join(out, "viewsweep_probes.png"); fig.savefig(f1, bbox_inches="tight"); plt.close(fig); figs.append(f1)
+        md += "| views | " + " | ".join(f"{lab} (first / last layer)" for _, _, lab in panels) + " |\n|---|" + "---|" * len(panels) + "\n"
+        for nv in sorted(tab, key=int):
+            md += f"| {nv} | " + " | ".join(f"{tab[nv][lab][0]:.3f} / {tab[nv][lab][1]:.3f}" if lab in tab[nv] else "" for _, _, lab in panels) + " |\n"
     s3 = sorted(glob.glob(os.path.join(res, "step3_*v.json")))
     if s3:
-        md += "| views | separation ratio (frame 0 to 23) | n scenes |\n|---|---|---|\n"
+        md += "\n| views | output separation ratio, frame 0 to 23 (median over scenes) | n scenes |\n|---|---|---|\n"
         for f in s3:
             s = jload(f, {}); nv = os.path.basename(f).split("_")[-1].replace("v.json", "")
             rows = s.get("rows", s) if isinstance(s, dict) else s
             last = [r for r in (rows or []) if isinstance(r, dict) and r.get("target_frame") == 23]
-            vals = [r.get("sep_ratio") for r in last if isinstance(r.get("sep_ratio"), (int, float))]
-            md += f"| {nv} | {np.nanmean(vals) if vals else float('nan'):.3f} | {len(last)} |\n"
+            vals = [r.get("sep_pred", np.nan) / r["sep_gt"] for r in last if isinstance(r.get("sep_gt"), (int, float)) and r["sep_gt"] > 1]
+            md += f"| {nv} | {np.nanmedian(vals) if vals else float('nan'):.3f} | {len(vals)} |\n"
     return md, figs
 
 

@@ -5,6 +5,8 @@ Stored per sample (native resolution H x W) in <gt_root>/<dataset>/<name>.npz:
   x2_true   (H,W,2) float32  GT position in the target frame of each reference pixel (pixel centres, x right, y down)
   x2_static (H,W,2) float32  where the pixel would land if its 3D point were static (camera / ego motion only)
   group     (H,W)   int16    -1 = no GT or ignored, 0 = static, k > 0 = moving instance k
+  label     (H,W)   int16    dense motion label (KITTI: moving obj_map instance id at every pixel, else 0; Sintel:
+                             = group); used to exclude a band around motion boundaries in the evaluation
   valid     (H,W)   bool     x2_true and x2_static both defined
   meta      json string: K, frame image paths per pass and frame offset, ego motion, thresholds, per-instance stats
 Definitions follow e5_causal.py: d = x - x_static, slope = sum(d_pred . d_true) / sum(|d_true|^2) over moving pixels
@@ -154,6 +156,10 @@ def kitti_sample(root, idx, rng):
         if mov:
             group[m] = k
         inst.append(dict(id=int(k), n_px=int(m.sum()), med_d2_px=med2, med_res3_m=med3, moving=bool(mov)))
+    label = np.zeros((H, W), np.int16)
+    for it in inst:
+        if it["moving"]:
+            label[obj == it["id"]] = it["id"]
     frames = {"rgb": {}}
     for off in range(-10, 11):
         f = 10 + off
@@ -164,7 +170,8 @@ def kitti_sample(root, idx, rng):
     meta = dict(dataset="kitti15", name=s, H=H, W=W, K0=K.tolist(), K1=K.tolist(), baseline=B, frames=frames,
                 ego_R=R.tolist(), ego_t=t.tolist(), ego_rot_deg=egoang, ego_trans_m=float(np.linalg.norm(t)), tau_px=tau,
                 bg_d2_median=float(np.median(bgd)), bg_d2_p90=float(np.percentile(bgd, 90)), instances=inst, **st)
-    return dict(x2_true=x2_true.astype(np.float32), x2_static=x2_static.astype(np.float32), group=group, valid=valid), meta
+    return dict(x2_true=x2_true.astype(np.float32), x2_static=x2_static.astype(np.float32), group=group, valid=valid,
+                label=label), meta
 
 
 # ------------------------------------------------------------------ Sintel
@@ -254,7 +261,8 @@ def sintel_sample(root, seq, t, depth_mode="auto"):
                 static_d2_median=float(np.median(st)) if st.size else float("nan"),
                 static_d2_p90=float(np.percentile(st, 90)) if st.size else float("nan"),
                 cam_trans=float(np.linalg.norm(N1[:, :3].T @ N1[:, 3] - N0[:, :3].T @ N0[:, 3])))
-    return dict(x2_true=x2_true.astype(np.float32), x2_static=x2_static.astype(np.float32), group=group, valid=valid), meta
+    return dict(x2_true=x2_true.astype(np.float32), x2_static=x2_static.astype(np.float32), group=group, valid=valid,
+                label=group.copy()), meta
 
 
 def sintel_list(root, stride=4, need_after=3):

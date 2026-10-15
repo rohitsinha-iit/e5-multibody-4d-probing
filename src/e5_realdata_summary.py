@@ -37,7 +37,7 @@ for key, rs in sorted(groups.items()):
     for m in ("slope", "slope_inst_median", "sep_ratio"):
         for k, v in stats([r[m] for r in rs], rng).items():
             rec[f"{m}_{k}"] = v
-    for m in ("epe_static", "epe_moving", "frac_moving_in_view"):
+    for m in ("epe_static", "epe_moving", "frac_moving_in_view", "sep_gt"):
         x = np.array([float(r[m]) for r in rs if r[m] not in ("", None)], float); x = x[np.isfinite(x)]
         rec[f"{m}_median"] = float(np.median(x)) if len(x) else float("nan")
     recs.append(rec)
@@ -59,11 +59,15 @@ with open(out + ".md", "w") as fh:
     fh.write("# Item 8: real-data output-level metrics\n\n")
     fh.write("slope = fraction of GT object motion recovered (1 = full motion, 0 = treated as static); "
              "sep_ratio = predicted / GT multibody separation. Cells: mean [95% bootstrap CI], median, "
-             "fraction of scenes below 1 of n scenes with a defined value (two-sided sign test vs 0.5).\n\n")
+             "fraction of scenes below 1 of n scenes with a defined value (two-sided sign test vs 0.5). slope needs > 20 moving "
+             "GT pixels with |d_true| > 2 px in the model's view; sep_ratio needs sep_gt > 1 px, which most KITTI scenes do not "
+             "reach because cars mostly translate along the ego direction (epipole-aligned, as in the Kubric epi_aligned split). "
+             "square = 518x518 centre crop as on Kubric (KITTI: only the central ~375 px of the 1242 px width); "
+             "wide = Any4D fixed_mapping aspect bucket (KITTI 518x168, Sintel 518x252).\n\n")
     fh.write("| dataset | pass | views (offsets) | resize | scenes | slope | slope (per-instance median) | sep_ratio | "
-             "EPE static px | EPE moving px | moving px in view |\n|---|---|---|---|---|---|---|---|---|---|---|\n")
+             "EPE static px | EPE moving px | moving px in view | median sep_gt px |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n")
     for r in recs:
         fh.write(f"| {r['dataset']} | {r['pass_']} | {r['n_views']} ({r['offsets']}) | {r['resize']} | {r['n_scenes']} | "
                  f"{cell(r, 'slope')} | {cell(r, 'slope_inst_median')} | {cell(r, 'sep_ratio')} | "
-                 f"{r['epe_static_median']:.2f} | {r['epe_moving_median']:.2f} | {r['frac_moving_in_view_median']:.2f} |\n")
+                 f"{r['epe_static_median']:.2f} | {r['epe_moving_median']:.2f} | {r['frac_moving_in_view_median']:.2f} | {r['sep_gt_median']:.2f} |\n")
 print(open(out + ".md").read())

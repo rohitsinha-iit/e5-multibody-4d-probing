@@ -54,7 +54,7 @@ for fi, f in enumerate(files):
     if name in done:
         continue
     z = np.load(f, allow_pickle=False); meta = json.loads(str(z["meta"]))
-    gt = {k: z[k] for k in ("x2_true", "x2_static", "group", "valid")}
+    gt = {k: z[k] for k in ("x2_true", "x2_static", "group", "valid", "label") if k in z.files}
     fr = meta["frames"].get(a.pas, {})
     if not all(str(o) in fr for o in OFF):
         state["skipped"].append(dict(scene=name, reason="missing frames")); continue
@@ -93,7 +93,7 @@ for fi, f in enumerate(files):
 rows = state["rows"]
 keys = ["scene", "dataset", "pass_", "model", "resize", "offsets", "n_views", "slope", "slope_inst_median", "epe_static",
         "epe_moving", "sep_gt", "sep_pred", "sep_ratio", "n_eval", "n_moving_eval", "n_moving_total", "frac_moving_in_view",
-        "n_inst", "n_slope_px", "n_groups_sep", "d_true_moving_med", "tau_px", "ego_rot_deg", "ego_trans_m", "pixel_offset"]
+        "frac_edge", "n_inst", "n_slope_px", "n_groups_sep", "d_true_moving_med", "tau_px", "ego_rot_deg", "ego_trans_m", "pixel_offset"]
 with open(a.out + ".tmp", "w", newline="") as fh:
     wr = csv.DictWriter(fh, keys, extrasaction="ignore"); wr.writeheader()
     for r in rows:

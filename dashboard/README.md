@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-15 21:27:58 (server time). Regenerated after every queue event.
+Last updated 2026-10-15 21:36:00 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -11,6 +11,7 @@ Last updated 2026-10-15 21:27:58 (server time). Regenerated after every queue ev
 | 5 | [v3_scale](#v3_scale): Items 1+2: render 20 far-glued, 70 floating, 20 extra grounded epi scenes | waiting for approval (gate `v3_visual`) | 0 |  |  |
 | 6 | [v3_pipeline](#v3_pipeline): Items 1+2: Steps 3-6 + adjacency control on far-glued, floating, v2 with 30 epi | queued | 0 |  |  |
 | 7 | [v3_viewsweep](#v3_viewsweep): Items 2+3: view-count sweep on the floating set | queued | 0 |  |  |
+| 8 | [v3_pilot_far2](#v3_pilot_far2): Item 1 pilot re-render: far-glued pairs kept far apart in the image | RUNNING | 1 | 2026-10-15 21:35:58 |  |
 
 Supervisor heartbeat: 2026-10-15 21:01:01 running t3_viewsweep_v2
 
@@ -163,10 +164,26 @@ Status: **done**, attempt 1, started 2026-10-15 20:36:30, finished 2026-10-15 21
 
 ![viewsweep_probes.png](assets/t3_viewsweep_v2/viewsweep_probes.png)
 
-| views | separation ratio (frame 0 to 23) | n scenes |
+| views | moving vs static AUC, view 0 (all) (first / last layer) | moving vs static AUC, epipolar-aligned (first / last layer) | same-body pair AUC (object pairs) (first / last layer) | probe object-motion slope (first / last layer) |
+|---|---|---|---|---|
+| 2 | 0.567 / 0.989 | 0.369 / 0.993 | 0.768 / 0.915 | 0.069 / 0.432 |
+| 3 | 0.569 / 0.998 | 0.379 / 0.997 | 0.768 / 0.910 | 0.069 / 0.470 |
+| 4 | 0.569 / 0.998 | 0.379 / 0.998 | 0.768 / 0.907 | 0.069 / 0.492 |
+| 7 | 0.569 / 0.998 | 0.379 / 0.998 | 0.768 / 0.913 | 0.069 / 0.496 |
+
+| views | output separation ratio, frame 0 to 23 (median over scenes) | n scenes |
 |---|---|---|
-| 2 | nan | 100 |
-| 3 | nan | 100 |
-| 4 | nan | 100 |
-| 7 | nan | 100 |
+| 2 | 0.741 | 89 |
+| 3 | 0.721 | 89 |
+| 4 | 0.788 | 89 |
+| 7 | 0.726 | 89 |
+
+
+## v3_pilot_far2
+
+Item 1 pilot re-render: far-glued pairs kept far apart in the image
+
+Status: **RUNNING**, attempt 1, started 2026-10-15 21:35:58. [Raw results](../results/queue/v3_pilot_far2/), [log](../results/queue/v3_pilot_far2/task.log).
+
+Partial results so far; the run is still going.
 

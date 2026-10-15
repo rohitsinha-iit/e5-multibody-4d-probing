@@ -42,7 +42,8 @@
   "title": "Items 1+2: render 20 far-glued, 70 floating, 20 extra grounded epi scenes",
   "script": "v3_scale.sh",
   "deps": [
-   "v3_pilot"
+   "v3_pilot",
+   "v3_pilot_far2"
   ],
   "gate": "v3_visual",
   "max_attempts": 2,
@@ -71,6 +72,16 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_pilot_far2",
+  "title": "Item 1 pilot re-render: far-glued pairs kept far apart in the image",
+  "script": "v3_pilot_far2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 20,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  }
 ]
