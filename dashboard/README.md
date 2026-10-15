@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-15 22:01:45 (server time). Regenerated after every queue event.
+Last updated 2026-10-15 22:01:58 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -13,7 +13,7 @@ Last updated 2026-10-15 22:01:45 (server time). Regenerated after every queue ev
 | 7 | [v3_viewsweep](#v3_viewsweep): Items 2+3: view-count sweep on the floating set | queued | 0 |  |  |
 | 8 | [v3_pilot_far2](#v3_pilot_far2): Item 1 pilot re-render: far-glued pairs kept far apart in the image | done | 1 | 2026-10-15 21:35:58 | 2026-10-15 21:40:05 |
 | 9 | [t8_realdata_kitti](#t8_realdata_kitti): Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input | done | 1 | 2026-10-15 21:40:18 | 2026-10-15 22:01:41 |
-| 10 | [t8_realdata_sintel](#t8_realdata_sintel): Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input | queued | 0 |  |  |
+| 10 | [t8_realdata_sintel](#t8_realdata_sintel): Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input | RUNNING | 1 | 2026-10-15 22:01:54 |  |
 | 11 | [v3_scale_float](#v3_scale_float): Item 2: render 70 floating shadowless scenes + 20 extra grounded epi (v2) | queued | 0 |  |  |
 | 12 | [v3_pipeline_float](#v3_pipeline_float): Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi | queued | 0 |  |  |
 | 13 | [v3_scale_far](#v3_scale_far): Item 1: render 20 far-glued scenes (image-gap constraint) | queued | 0 |  |  |
@@ -204,3 +204,12 @@ Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4
 Status: **done**, attempt 1, started 2026-10-15 21:40:18, finished 2026-10-15 22:01:41. [Raw results](../results/queue/t8_realdata_kitti/), [log](../results/queue/t8_realdata_kitti/task.log).
 
 ![gt_check_kitti15.png](assets/t8_realdata_kitti/gt_check_kitti15.png)
+
+## t8_realdata_sintel
+
+Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input
+
+Status: **RUNNING**, attempt 1, started 2026-10-15 22:01:54. [Raw results](../results/queue/t8_realdata_sintel/), [log](../results/queue/t8_realdata_sintel/task.log).
+
+Partial results so far; the run is still going.
+
