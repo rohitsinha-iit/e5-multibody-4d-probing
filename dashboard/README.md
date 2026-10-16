@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 00:54:10 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 01:01:18 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -45,14 +45,14 @@ Last updated 2026-10-17 00:54:10 (server time). Regenerated after every queue ev
 | 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | queued | 0 |  |  |
 | 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | queued | 0 |  |  |
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
-| 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | RUNNING | 1 | 2026-10-16 22:53:45 |  |
+| 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 |
 | 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | queued | 0 |  |  |
 | 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | queued | 0 |  |  |
 | 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | queued | 0 |  |  |
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 00:53:37 running v4_scale_epi
+Supervisor heartbeat: 2026-10-17 01:00:45 running v4_scale_epi
 
 ## v3_pilot
 
@@ -865,7 +865,44 @@ How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 mi
 
 Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 22:53:45. [Raw results](../results/queue/v4_scale_epi/), [log](../results/queue/v4_scale_epi/task.log).
+Status: **done**, attempt 1, started 2026-10-16 22:53:45, finished 2026-10-17 01:01:15. [Raw results](../results/queue/v4_scale_epi/), [log](../results/queue/v4_scale_epi/task.log).
 
-Partial results so far; the run is still going.
+![v4_scale_epi.png](assets/v4_scale_epi/v4_scale_epi.png)
+
+
+**v4_scale_epi_summary.md**
+
+# v4_scale_epi: GT checks of the v4 epipolar set (120 scenes)
+
+Scenes checked: 120; scenes with errors: 0.
+
+All numbers come from Kubric ground truth (depth, segmentation, camera and object matrices).
+
+| split | n | sep GT 0 to 23 (px), median [min, max] | 3-view residual, moving, frame 12 (px), median [min, max] | 3-view residual, background, frame 12 (px) | max centre gap from static reading (px) | static objects per scene, mean |
+|---|---|---|---|---|---|---|
+| epi_accel | 30 | 0.00 [0.00, 0.00] | 41.9 [31.4, 61.3] | 0.00 | 41.2 | 2.57 |
+| epi_const | 30 | 0.00 [0.00, 0.00] | 0.0 [0.0, 0.0] | 0.00 | 0.0 | 2.57 |
+| epi_sizerand | 30 | 0.00 [0.00, 0.00] | 0.0 [0.0, 0.0] | 0.00 | 0.0 | 2.23 |
+| epi_sizematch | 30 | 0.00 [0.00, 0.00] | 0.0 [0.0, 0.0] | 0.00 | 0.0 | 1.77 |
+
+## Pairing check (epi_accel vs epi_const, same seed)
+
+- Pairs: 30. Largest pixel difference (0 to 255) in frame 0: 0; in frame 23: 0. Mean absolute difference in frame 12: 1.34 (only the moving object differs there).
+- A difference of 0 in frames 0 and 23 means the two-view input (frames 0 and 23) is identical within a pair.
+
+## Size cue
+
+| split | n | true moving size (m), median [min, max] | size if read as static (m), median [min, max] | max abs error of static scale vs 1/(1+k) |
+|---|---|---|---|---|
+| epi_accel | 30 | 1.73 [1.41, 2.19] | 1.02 [0.74, 1.34] | 1.0e-14 |
+| epi_const | 30 | 1.73 [1.41, 2.19] | 1.02 [0.74, 1.34] | 1.0e-14 |
+| epi_sizerand | 30 | 2.36 [0.81, 3.36] | 1.38 [0.47, 2.04] | 6.3e-15 |
+| epi_sizematch | 30 | 3.20 [2.28, 4.27] | 1.78 [1.41, 2.15] | 6.9e-15 |
+
+Static objects in every split are 1.4 to 2.2 m (the v3float range).
+
+![GT checks](v4_scale_epi.png)
+
+How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 misses the object in a third view by tens of pixels, while for epi_const and for the background it fits to about 0 px. (b) Two-view separation is about 0 in every split, so frames 0 and 23 alone are ambiguous. (c) The accelerated object's image track leaves the track of its static reading (the constant-velocity object stays on it). (d) Size randomisation decouples apparent size from the static interpretation.
+
 

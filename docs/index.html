@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-17 00:54:10 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-17 01:01:18 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -343,10 +343,10 @@
 <tr>
 <td>42</td>
 <td><a href="#v4_scale_epi">v4_scale_epi</a>: Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks</td>
-<td>RUNNING</td>
+<td>done</td>
 <td>1</td>
 <td>2026-10-16 22:53:45</td>
-<td></td>
+<td>2026-10-17 01:01:15</td>
 </tr>
 <tr>
 <td>43</td>
@@ -390,7 +390,7 @@
 </tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-17 00:53:37 running v4_scale_epi</p>
+<p>Supervisor heartbeat: 2026-10-17 01:00:45 running v4_scale_epi</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -3246,5 +3246,110 @@ Contact sheets and GIFs are in sheets/. The scaled task v4_scale_epi waits for t
 <p>How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 misses the object in a third view by tens of pixels, while for epi_const and for the background it fits to about 0 px. (b) Two-view separation is about 0 in every split, so frames 0 and 23 alone are ambiguous. (c) The accelerated object's image track leaves the track of its static reading (the constant-velocity object stays on it). (d) Size randomisation decouples apparent size from the static interpretation.</p>
 <h2>v4_scale_epi</h2>
 <p>Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks</p>
-<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-16 22:53:45. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_scale_epi/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_scale_epi/task.log">log</a>.</p>
-<p>Partial results so far; the run is still going.</p></body></html>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-16 22:53:45, finished 2026-10-17 01:01:15. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_scale_epi/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_scale_epi/task.log">log</a>.</p>
+<p><img alt="v4_scale_epi.png" src="assets/v4_scale_epi/v4_scale_epi.png" /></p>
+<p><strong>v4_scale_epi_summary.md</strong></p>
+<h1>v4_scale_epi: GT checks of the v4 epipolar set (120 scenes)</h1>
+<p>Scenes checked: 120; scenes with errors: 0.</p>
+<p>All numbers come from Kubric ground truth (depth, segmentation, camera and object matrices).</p>
+<table>
+<thead>
+<tr>
+<th>split</th>
+<th>n</th>
+<th>sep GT 0 to 23 (px), median [min, max]</th>
+<th>3-view residual, moving, frame 12 (px), median [min, max]</th>
+<th>3-view residual, background, frame 12 (px)</th>
+<th>max centre gap from static reading (px)</th>
+<th>static objects per scene, mean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>epi_accel</td>
+<td>30</td>
+<td>0.00 [0.00, 0.00]</td>
+<td>41.9 [31.4, 61.3]</td>
+<td>0.00</td>
+<td>41.2</td>
+<td>2.57</td>
+</tr>
+<tr>
+<td>epi_const</td>
+<td>30</td>
+<td>0.00 [0.00, 0.00]</td>
+<td>0.0 [0.0, 0.0]</td>
+<td>0.00</td>
+<td>0.0</td>
+<td>2.57</td>
+</tr>
+<tr>
+<td>epi_sizerand</td>
+<td>30</td>
+<td>0.00 [0.00, 0.00]</td>
+<td>0.0 [0.0, 0.0]</td>
+<td>0.00</td>
+<td>0.0</td>
+<td>2.23</td>
+</tr>
+<tr>
+<td>epi_sizematch</td>
+<td>30</td>
+<td>0.00 [0.00, 0.00]</td>
+<td>0.0 [0.0, 0.0]</td>
+<td>0.00</td>
+<td>0.0</td>
+<td>1.77</td>
+</tr>
+</tbody>
+</table>
+<h2>Pairing check (epi_accel vs epi_const, same seed)</h2>
+<ul>
+<li>Pairs: 30. Largest pixel difference (0 to 255) in frame 0: 0; in frame 23: 0. Mean absolute difference in frame 12: 1.34 (only the moving object differs there).</li>
+<li>A difference of 0 in frames 0 and 23 means the two-view input (frames 0 and 23) is identical within a pair.</li>
+</ul>
+<h2>Size cue</h2>
+<table>
+<thead>
+<tr>
+<th>split</th>
+<th>n</th>
+<th>true moving size (m), median [min, max]</th>
+<th>size if read as static (m), median [min, max]</th>
+<th>max abs error of static scale vs 1/(1+k)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>epi_accel</td>
+<td>30</td>
+<td>1.73 [1.41, 2.19]</td>
+<td>1.02 [0.74, 1.34]</td>
+<td>1.0e-14</td>
+</tr>
+<tr>
+<td>epi_const</td>
+<td>30</td>
+<td>1.73 [1.41, 2.19]</td>
+<td>1.02 [0.74, 1.34]</td>
+<td>1.0e-14</td>
+</tr>
+<tr>
+<td>epi_sizerand</td>
+<td>30</td>
+<td>2.36 [0.81, 3.36]</td>
+<td>1.38 [0.47, 2.04]</td>
+<td>6.3e-15</td>
+</tr>
+<tr>
+<td>epi_sizematch</td>
+<td>30</td>
+<td>3.20 [2.28, 4.27]</td>
+<td>1.78 [1.41, 2.15]</td>
+<td>6.9e-15</td>
+</tr>
+</tbody>
+</table>
+<p>Static objects in every split are 1.4 to 2.2 m (the v3float range).</p>
+<p><img alt="GT checks" src="v4_scale_epi.png" /></p>
+<p>How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 misses the object in a third view by tens of pixels, while for epi_const and for the background it fits to about 0 px. (b) Two-view separation is about 0 in every split, so frames 0 and 23 alone are ambiguous. (c) The accelerated object's image track leaves the track of its static reading (the constant-velocity object stays on it). (d) Size randomisation decouples apparent size from the static interpretation.</p></body></html>
