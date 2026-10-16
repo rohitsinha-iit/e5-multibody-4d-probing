@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 01:01:15
+updated 2026-10-17 01:01:23
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -32,7 +32,7 @@ updated 2026-10-17 01:01:15
 | 26 | ft_render_v2: Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | done | 1 | 2026-10-16 15:56:13 | 2026-10-16 19:20:03 | True |
 | 27 | ft_render_float: Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 | True |
 | 28 | ft_eval_base: Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | failed | 2 | 2026-10-16 22:53:21 | 2026-10-16 22:53:29 | True |
-| 29 | ft_pilot: Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | pending | 2 | 2026-10-16 22:53:37 | 2026-10-16 22:53:45 | False |
+| 29 | ft_pilot: Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | running | 3 | 2026-10-17 01:01:23 |  | False |
 | 30 | ft_train_heads: Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | pending | 0 |  |  |  |
 | 31 | ft_eval_heads: Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | pending | 0 |  |  |  |
 | 32 | ft_train_ctrl: Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | pending | 0 |  |  |  |
@@ -45,7 +45,7 @@ updated 2026-10-17 01:01:15
 | 39 | ft_eval_gain: Item 10: evaluate fine-tune (e) 5 learned per-head gains | pending | 0 |  |  |  |
 | 40 | ft_summary: Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | pending | 0 |  |  |  |
 | 41 | v4_pilot: Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 | True |
-| 42 | v4_scale_epi: Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 | False |
+| 42 | v4_scale_epi: Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 | True |
 | 43 | v4_viewsweep_epi: Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | pending | 0 |  |  |  |
 | 44 | r2_probe_extract: Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | pending | 0 |  |  |  |
 | 45 | r2_heads_null: Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | pending | 0 |  |  |  |
