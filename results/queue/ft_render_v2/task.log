@@ -3,3 +3,10 @@
 [15:56:13] render v2 training scenes
 render failed confound_glued_s2178
 render failed confound_glued_s2184
+render failed confound_glued_s2196
+[19:14:05] post-processing (flow check, SNR, contact sheets)
+planar_s2148 EPE 0.00 sep 26.4 snr1 18.7
+planar_s2149 EPE 0.00 sep 23.6 snr1 16.7
+planar_s2150 EPE 0.00 sep 33.6 snr1 23.8
+rendered 197 of 200
+14G	/media/workbench/zone_x/e5_multibody/data/ft_train_v2
