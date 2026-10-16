@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 04:41:24
+updated 2026-10-17 04:42:02
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -47,7 +47,7 @@ updated 2026-10-17 04:41:24
 | 41 | v4_pilot: Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 | True |
 | 42 | v4_scale_epi: Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 | True |
 | 43 | v4_viewsweep_epi: Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | pending | 2 | 2026-10-17 04:25:06 | 2026-10-17 04:40:45 | False |
-| 44 | r2_probe_extract: Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | running | 2 | 2026-10-17 04:41:24 |  | False |
-| 45 | r2_heads_null: Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | pending | 1 | 2026-10-17 04:23:57 | 2026-10-17 04:24:36 | False |
+| 44 | r2_probe_extract: Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | pending | 2 | 2026-10-17 04:41:24 | 2026-10-17 04:42:02 | False |
+| 45 | r2_heads_null: Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | running | 2 | 2026-10-17 04:42:02 |  | False |
 | 46 | r2_probe_linear: Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | pending | 0 |  |  |  |
 | 47 | r2_probe_mlp: Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | pending | 0 |  |  |  |
