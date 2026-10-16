@@ -443,7 +443,10 @@
   "deps": [
    "ft_eval_base",
    "ft_eval_heads",
-   "ft_eval_ctrl"
+   "ft_eval_ctrl",
+   "ft_eval_sf",
+   "ft_eval_heads_sf",
+   "ft_eval_gain"
   ],
   "gate": null,
   "max_attempts": 2,
@@ -482,6 +485,50 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 40,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "r2_probe_extract",
+  "title": "Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float",
+  "script": "r2_probe_extract.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 20,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "r2_heads_null",
+  "title": "Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100)",
+  "script": "r2_heads_null.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 8
+ },
+ {
+  "id": "r2_probe_linear",
+  "title": "Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float)",
+  "script": "r2_probe_linear.sh",
+  "deps": [
+   "r2_probe_extract"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 8,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "r2_probe_mlp",
+  "title": "Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float)",
+  "script": "r2_probe_mlp.sh",
+  "deps": [
+   "r2_probe_extract",
+   "r2_probe_linear"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 8,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  }
 ]

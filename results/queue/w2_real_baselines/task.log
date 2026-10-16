@@ -3,3 +3,38 @@
 co-tracker 82e02e8, weights /media/workbench/zone_x/e5_multibody/models/hf/hub/models--facebook--cotracker3/snapshots/bf55ea50d4390e1820a267f131cd6587240fb2c5/scaled_offline.pth
 GPU 1
 [15:46:43] raft kitti15
+raft /media/workbench/zone_x/e5_multibody/realdata/gt/kitti15 rgb new 200 43s
+[15:47:28] raft sintel clean
+raft /media/workbench/zone_x/e5_multibody/realdata/gt/sintel clean new 256 67s
+[15:48:37] raft sintel final
+raft /media/workbench/zone_x/e5_multibody/realdata/gt/sintel final new 256 56s
+[15:49:35] eval kitti15
+raft kitti15 rgb rows 200 skipped 0 mean slope 0.9509
+any4d kitti15 rgb rows 200 skipped 0 mean slope 0.5754
+[15:50:07] eval sintel clean
+raft sintel clean rows 256 skipped 0 mean slope 0.9142
+any4d sintel clean rows 256 skipped 0 mean slope 0.3137
+[15:52:22] eval sintel final
+raft sintel final rows 256 skipped 0 mean slope 0.9015
+any4d sintel final rows 256 skipped 0 mean slope 0.3267
+[15:54:32] summary
+| model | data | n | slope | epe_static | epe_moving | sep_ratio | paired slope diff vs Any4D [sign test p] |
+|---|---|---|---|---|---|---|---|
+| Any4D | kitti15_rgb | 200 | 0.58 [0.51, 0.64] | 4.23 [3.96, 4.52] | 17.77 [15.22, 20.69] | 1.55 [0.89, 2.38] | reference |
+| Any4D | sintel_clean | 256 | 0.31 [0.23, 0.39] | 4.98 [4.58, 5.42] | 18.01 [15.64, 20.59] | 0.84 [0.69, 1.02] | reference |
+| Any4D | sintel_final | 256 | 0.33 [0.24, 0.41] | 5.54 [5.07, 6.05] | 18.54 [16.14, 21.17] | 0.69 [0.59, 0.81] | reference |
+| raft | kitti15_rgb | 200 | 0.95 [0.94, 0.96] | 1.04 [0.69, 1.66] | 1.08 [0.91, 1.30] | 0.76 [0.57, 0.95] | 0.38 [0.31, 0.44] [p 9.0e-18, 156+/39-] |
+| raft | sintel_clean | 256 | 0.91 [0.89, 0.93] | 0.58 [0.13, 1.48] | 1.73 [0.97, 2.66] | 0.89 [0.81, 0.98] | 0.60 [0.52, 0.68] [p 2.3e-31, 190+/27-] |
+| raft | sintel_final | 256 | 0.90 [0.88, 0.92] | 0.21 [0.17, 0.25] | 3.53 [2.22, 5.07] | 0.93 [0.80, 1.08] | 0.57 [0.49, 0.66] [p 2.3e-27, 185+/32-] |
+total 1348
+drwxrwxr-x  2 rohit rohit   4096 Oct 16 15:54 .
+drwxrwxr-x 22 rohit rohit   4096 Oct 16 15:46 ..
+-rw-rw-r--  1 rohit rohit  62726 Oct 16 15:54 fig_w2_baselines_real.png
+-rw-rw-r--  1 rohit rohit   4620 Oct 16 15:54 w2_baselines_real_stats.json
+-rw-rw-r--  1 rohit rohit 185171 Oct 16 15:50 w2_real_any4d_kitti15_rgb.json
+-rw-rw-r--  1 rohit rohit 233807 Oct 16 15:52 w2_real_any4d_sintel_clean.json
+-rw-rw-r--  1 rohit rohit 233788 Oct 16 15:54 w2_real_any4d_sintel_final.json
+-rw-rw-r--  1 rohit rohit   1434 Oct 16 15:54 w2_real_baselines_summary.md
+-rw-rw-r--  1 rohit rohit 178250 Oct 16 15:49 w2_real_raft_kitti15_rgb.json
+-rw-rw-r--  1 rohit rohit 223088 Oct 16 15:51 w2_real_raft_sintel_clean.json
+-rw-rw-r--  1 rohit rohit 222956 Oct 16 15:53 w2_real_raft_sintel_final.json

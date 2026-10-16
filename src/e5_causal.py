@@ -14,6 +14,18 @@ Controls: 3 random sets of 5 heads matched in block type (4 global-attention hea
 Metrics per scene (frame 0 -> 23, 512 px GT frame), as in e5_e8_knockout.py:
   slope (fraction of object motion recovered), epe_static, epe_moving (median px), sep_ratio.
 Resumable: per-scene rows are checkpointed to <out>.partial.
+
+Round 2 (review W5), --protocol null (the default --protocol r1 runs exactly the round-1 conditions above):
+  random sets: --n_null matched 5-head sets (4 global + 1 frame head, excluding the five), drawn from the same
+               seeded stream as round 1, so rand5_r0..r2 are the round-1 sets.
+  mean ablation (as above): abl5 and rand5_r{0..n_null-1}.
+  resample ablation: each selected head's input to attn.proj (its per-head output before the output projection)
+               is replaced by the same head's output, at the same token positions, from a clean run on a donor
+               scene. Donor = a fixed random other scene per scene (seeded by --donor_seed, drawn over the full
+               scene list). Conditions res5 (the five together), res1_b{b}h{h} (each of the five alone),
+               resrand_r{0..n_resample-1}.
+  amplification x --amp: amp5_a{amp} and amprand_a{amp}_r{0..n_amp-1}.
+  No path patching in this protocol (done in round 1).
 """
 import argparse, dataclasses, glob, json, os, sys
 import numpy as np
@@ -29,6 +41,10 @@ p = argparse.ArgumentParser()
 p.add_argument("--data", required=True); p.add_argument("--e5", required=True); p.add_argument("--out", required=True)
 p.add_argument("--limit", type=int, default=0)
 p.add_argument("--heads", default="2:1,22:9,17:10,14:6,8:11")
+p.add_argument("--protocol", default="r1", choices=["r1", "null"])
+p.add_argument("--n_null", type=int, default=40); p.add_argument("--n_resample", type=int, default=10)
+p.add_argument("--n_amp", type=int, default=20); p.add_argument("--amp", type=float, default=1.5)
+p.add_argument("--donor_seed", type=int, default=0)
 args = p.parse_args()
 sys.path.insert(0, args.e5)
 import e5_kubric_post as kp  # noqa: E402
@@ -48,25 +64,32 @@ glob_pool = [(b, h) for b in range(0, NB, 2) for h in range(NH) if (b, h) not in
 frame_pool = [(b, h) for b in range(1, NB, 2) for h in range(NH) if (b, h) not in FIVE]
 n_frame = sum(b % 2 for b, _ in FIVE)
 RAND = []
-for r in range(3):
+for r in range(3 if args.protocol == "r1" else max(3, args.n_null)):
     g = [glob_pool[i] for i in rng.choice(len(glob_pool), len(FIVE) - n_frame, replace=False)]
     f = [frame_pool[i] for i in rng.choice(len(frame_pool), n_frame, replace=False)]
     RAND.append(g + f)
 
 # ------------------------------------------------ hooks
-active = {"scale": {}, "capture": None, "sf_in": None}   # scale: {block: [(head, alpha)]}
+active = {"scale": {}, "capture": None, "sf_in": None,   # scale: {block: [(head, alpha)]}
+          "resample": {}, "donor": None, "capture_proj": None}  # resample: {block: [head]}, donor: {block: tensor}
 
 
 def make_proj_prehook(l):
     def h(mod, inp):
-        hs = active["scale"].get(l)
-        if not hs:
+        if active["capture_proj"] is not None:
+            active["capture_proj"][l] = inp[0].detach().clone()
+        hs = active["scale"].get(l); rs = active["resample"].get(l)
+        if not hs and not rs:
             return None
         x = inp[0].clone()
-        for hh, a in hs:
+        for hh, a in hs or []:
             sl = x[..., hh * HD:(hh + 1) * HD]
             m = sl.mean(dim=-2, keepdim=True)
             x[..., hh * HD:(hh + 1) * HD] = m + a * (sl - m)
+        for hh in rs or []:
+            dn = active["donor"][l]
+            assert dn.shape == x.shape, (dn.shape, x.shape)
+            x[..., hh * HD:(hh + 1) * HD] = dn[..., hh * HD:(hh + 1) * HD].to(x.dtype)
         return (x,)
     return h
 
@@ -108,16 +131,38 @@ def scale_spec(heads, alpha):
     return d
 
 
+def res_spec(heads):
+    d = {}
+    for b, h in heads:
+        d.setdefault(b, []).append(h)
+    return d
+
+
 INTERVENTIONS = {"abl5": scale_spec(FIVE, 0.0)}
 for r, hs in enumerate(RAND):
     INTERVENTIONS[f"rand5_r{r}"] = scale_spec(hs, 0.0)
-for a in (1.5, 2.0, 3.0):
-    INTERVENTIONS[f"amp5_a{a:g}"] = scale_spec(FIVE, a)
-for r, hs in enumerate(RAND):
-    INTERVENTIONS[f"amprand_a2_r{r}"] = scale_spec(hs, 2.0)
-ROUTED = ["abl5", "amp5_a2"]
+RESAMPLE = {}
+if args.protocol == "r1":
+    for a in (1.5, 2.0, 3.0):
+        INTERVENTIONS[f"amp5_a{a:g}"] = scale_spec(FIVE, a)
+    for r, hs in enumerate(RAND):
+        INTERVENTIONS[f"amprand_a2_r{r}"] = scale_spec(hs, 2.0)
+    ROUTED = ["abl5", "amp5_a2"]
+else:
+    INTERVENTIONS[f"amp5_a{args.amp:g}"] = scale_spec(FIVE, args.amp)
+    for r in range(min(args.n_amp, len(RAND))):
+        INTERVENTIONS[f"amprand_a{args.amp:g}_r{r}"] = scale_spec(RAND[r], args.amp)
+    RESAMPLE["res5"] = res_spec(FIVE)
+    for b_, h_ in FIVE:
+        RESAMPLE[f"res1_b{b_}h{h_}"] = res_spec([(b_, h_)])
+    for r in range(min(args.n_resample, len(RAND))):
+        RESAMPLE[f"resrand_r{r}"] = res_spec(RAND[r])
+    ROUTED = []
 
 scenes = sorted(d for d in glob.glob(os.path.join(args.data, "*")) if os.path.exists(os.path.join(d, "e5_meta.json")))
+_drng = np.random.default_rng(args.donor_seed)
+DONOR = {os.path.basename(d): os.path.basename(scenes[(i + int(_drng.integers(1, len(scenes)))) % len(scenes)])
+         for i, d in enumerate(scenes)} if len(scenes) > 1 else {}
 if args.limit:
     scenes = scenes[: args.limit]
 rows = json.load(open(args.out + ".partial"))["rows"] if os.path.exists(args.out + ".partial") else []
@@ -139,7 +184,7 @@ for si, d in enumerate(scenes):
     views = load_images([os.path.join(d, f"rgba_{f:05d}.png") for f in FRAMES], resize_mode="square", size=518,
                         norm_type=cfg["data_norm_type"], patch_size=14)
 
-    def measure(cname, P):
+    def measure(cname, P, extra=None):
         off = np.array(s3.pixel_offset(P))
         xp = s3.pred_correspondences(P, TV, off)[v, u]; xp = (xp + 0.5) / s - 0.5
         err = np.linalg.norm(xp - c["x2"], axis=1); mv = grp > 0
@@ -148,15 +193,17 @@ for si, d in enumerate(scenes):
         rows.append(dict(scene=n, split=meta["split"], condition=cname,
                          slope=float((dp[big] * dt[big]).sum() / (dt[big] ** 2).sum()) if big.sum() > 20 else float("nan"),
                          epe_static=float(np.median(err[~mv])), epe_moving=float(np.median(err[mv])) if mv.any() else float("nan"),
-                         sep_gt=float(sep_gt), sep_pred=float(sep_pr), sep_ratio=float(sep_pr / sep_gt) if sep_gt > 1 else float("nan")))
+                         sep_gt=float(sep_gt), sep_pred=float(sep_pr), sep_ratio=float(sep_pr / sep_gt) if sep_gt > 1 else float("nan"),
+                         **(extra or {})))
 
-    def go(cname, scale=None, capture=None, sf_in=None):
+    def go(cname, scale=None, capture=None, sf_in=None, resample=None, vw=None, extra=None):
         active["scale"] = scale or {}; active["capture"] = capture; active["sf_in"] = sf_in
+        active["resample"] = resample or {}
         with torch.no_grad():
-            P = run(views)
-        active["scale"] = {}; active["capture"] = None; active["sf_in"] = None
+            P = run(vw if vw is not None else views)
+        active["scale"] = {}; active["capture"] = None; active["sf_in"] = None; active["resample"] = {}
         if cname:
-            measure(cname, P)
+            measure(cname, P, extra)
 
     clean = []; go("base", capture=clean)
     taps = {}
@@ -168,11 +215,25 @@ for si, d in enumerate(scenes):
     for name in ROUTED:
         go(f"{name}_sfonly", sf_in=taps[name])
         go(f"{name}_nonsf", scale=INTERVENTIONS[name], sf_in=clean)
-    for k in range(len(clean)):
-        mix = [taps["abl5"][j] if j == k else clean[j] for j in range(len(clean))]
-        go(f"abl5_tap{k}", sf_in=mix)
+    if args.protocol == "r1":
+        for k in range(len(clean)):
+            mix = [taps["abl5"][j] if j == k else clean[j] for j in range(len(clean))]
+            go(f"abl5_tap{k}", sf_in=mix)
+    if RESAMPLE:
+        dn = DONOR[n]
+        dviews = load_images([os.path.join(args.data, dn, f"rgba_{f:05d}.png") for f in FRAMES], resize_mode="square",
+                             size=518, norm_type=cfg["data_norm_type"], patch_size=14)
+        active["capture_proj"] = {}
+        go(None, vw=dviews)
+        active["donor"] = active["capture_proj"]; active["capture_proj"] = None
+        for name, spec in RESAMPLE.items():
+            go(name, resample=spec, extra=dict(donor=dn))
+        active["donor"] = None
+        del dviews
+        torch.cuda.empty_cache()
     json.dump(dict(rows=rows), open(args.out + ".partial.tmp", "w")); os.replace(args.out + ".partial.tmp", args.out + ".partial")
     print(n, len(rows), flush=True)
 
-json.dump(dict(rows=rows, five=FIVE, random_sets=RAND, taps=["encoder", "block11", "block17", "final"]), open(args.out, "w"))
+json.dump(dict(rows=rows, five=FIVE, random_sets=RAND, taps=["encoder", "block11", "block17", "final"], protocol=args.protocol,
+               donors=DONOR, amp=args.amp, conditions=["base"] + list(INTERVENTIONS) + list(RESAMPLE)), open(args.out, "w"))
 print("done", len(rows))

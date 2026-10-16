@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-16 15:46:44 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-16 15:54:52 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -183,10 +183,10 @@
 <tr>
 <td>22</td>
 <td><a href="#w2_real_baselines">w2_real_baselines</a>: Round 2 item 1 (W2): RAFT on KITTI 2015 and Sintel (2 views), metrics + alpha/beta vs Any4D cached</td>
-<td>RUNNING</td>
+<td>done</td>
 <td>1</td>
 <td>2026-10-16 15:46:42</td>
-<td></td>
+<td>2026-10-16 15:54:49</td>
 </tr>
 <tr>
 <td>23</td>
@@ -356,9 +356,41 @@
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>44</td>
+<td><a href="#r2_probe_extract">r2_probe_extract</a>: Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>45</td>
+<td><a href="#r2_heads_null">r2_heads_null</a>: Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100)</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>46</td>
+<td><a href="#r2_probe_linear">r2_probe_linear</a>: Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float)</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>47</td>
+<td><a href="#r2_probe_mlp">r2_probe_mlp</a>: Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float)</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-16 15:46:03 running w2_kubric_baselines</p>
+<p>Supervisor heartbeat: 2026-10-16 15:54:19 running w2_real_baselines</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -1869,5 +1901,85 @@
 <p><img alt="baselines" src="fig_w2_baselines_kubric.png" /></p>
 <h2>w2_real_baselines</h2>
 <p>Round 2 item 1 (W2): RAFT on KITTI 2015 and Sintel (2 views), metrics + alpha/beta vs Any4D cached</p>
-<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-16 15:46:42. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/w2_real_baselines/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/w2_real_baselines/task.log">log</a>.</p>
-<p>Partial results so far; the run is still going.</p></body></html>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-16 15:46:42, finished 2026-10-16 15:54:49. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/w2_real_baselines/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/w2_real_baselines/task.log">log</a>.</p>
+<p><img alt="fig_w2_baselines_real.png" src="assets/w2_real_baselines/fig_w2_baselines_real.png" /></p>
+<p><strong>w2_real_baselines_summary.md</strong></p>
+<h1>w2_real_baselines: RAFT vs Any4D on KITTI 2015 and Sintel (2 views)</h1>
+<p>RAFT: torchvision raft_large, C_T_V2 weights (FlyingChairs + FlyingThings; no KITTI or Sintel training), native resolution. Any4D: round-1 2-view wide-input predictions (cached). Metrics: e5_realdata_eval.evaluate on the same evaluation points (the alpha/beta decomposition is in w2_decomp). Bootstrap 95% CIs over scenes; paired sign test vs Any4D.</p>
+<table>
+<thead>
+<tr>
+<th>model</th>
+<th>data</th>
+<th>n</th>
+<th>slope</th>
+<th>epe_static</th>
+<th>epe_moving</th>
+<th>sep_ratio</th>
+<th>paired slope diff vs Any4D [sign test p]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Any4D</td>
+<td>kitti15_rgb</td>
+<td>200</td>
+<td>0.58 [0.51, 0.64]</td>
+<td>4.23 [3.96, 4.52]</td>
+<td>17.77 [15.22, 20.69]</td>
+<td>1.55 [0.89, 2.38]</td>
+<td>reference</td>
+</tr>
+<tr>
+<td>Any4D</td>
+<td>sintel_clean</td>
+<td>256</td>
+<td>0.31 [0.23, 0.39]</td>
+<td>4.98 [4.58, 5.42]</td>
+<td>18.01 [15.64, 20.59]</td>
+<td>0.84 [0.69, 1.02]</td>
+<td>reference</td>
+</tr>
+<tr>
+<td>Any4D</td>
+<td>sintel_final</td>
+<td>256</td>
+<td>0.33 [0.24, 0.41]</td>
+<td>5.54 [5.07, 6.05]</td>
+<td>18.54 [16.14, 21.17]</td>
+<td>0.69 [0.59, 0.81]</td>
+<td>reference</td>
+</tr>
+<tr>
+<td>raft</td>
+<td>kitti15_rgb</td>
+<td>200</td>
+<td>0.95 [0.94, 0.96]</td>
+<td>1.04 [0.69, 1.66]</td>
+<td>1.08 [0.91, 1.30]</td>
+<td>0.76 [0.57, 0.95]</td>
+<td>0.38 [0.31, 0.44] [p 9.0e-18, 156+/39-]</td>
+</tr>
+<tr>
+<td>raft</td>
+<td>sintel_clean</td>
+<td>256</td>
+<td>0.91 [0.89, 0.93]</td>
+<td>0.58 [0.13, 1.48]</td>
+<td>1.73 [0.97, 2.66]</td>
+<td>0.89 [0.81, 0.98]</td>
+<td>0.60 [0.52, 0.68] [p 2.3e-31, 190+/27-]</td>
+</tr>
+<tr>
+<td>raft</td>
+<td>sintel_final</td>
+<td>256</td>
+<td>0.90 [0.88, 0.92]</td>
+<td>0.21 [0.17, 0.25]</td>
+<td>3.53 [2.22, 5.07]</td>
+<td>0.93 [0.80, 1.08]</td>
+<td>0.57 [0.49, 0.66] [p 2.3e-27, 185+/32-]</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="real" src="fig_w2_baselines_real.png" /></p></body></html>

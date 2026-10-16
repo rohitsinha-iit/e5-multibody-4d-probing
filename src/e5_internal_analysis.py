@@ -34,13 +34,25 @@ from sklearn.metrics import adjusted_rand_score, roc_auc_score
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import e5_multibody as mb
 
-idir, gdir, outp = sys.argv[1], sys.argv[2], sys.argv[3]
+# Round 2 options (both off by default, so the default behaviour is unchanged):
+#   --seed N (or E5_SEED=N): seeds torch (probe init) and numpy (pair sampling), for seed-averaged probes.
+#   E5_SHUFFLE=patch|instance : label-shuffle control task (Hewitt and Liang style), see e5_probe_common.shuffle_labels.
+_argv = sys.argv[1:]
+SEED = None
+if "--seed" in _argv:
+    _k = _argv.index("--seed"); SEED = int(_argv[_k + 1]); del _argv[_k:_k + 2]
+elif os.environ.get("E5_SEED", "") != "":
+    SEED = int(os.environ["E5_SEED"])
+SHUFFLE = os.environ.get("E5_SHUFFLE", "")
+idir, gdir, outp = _argv[0], _argv[1], _argv[2]
 _g0 = sorted(glob.glob(os.path.join(gdir, "*_gt.npz")))
 G = int(round(np.sqrt(len(np.load(_g0[0])["body"])))) if _g0 else 37; T = G * G
 PATCH = float(os.environ.get("E5_PATCH", 14)) if G == 37 else float(os.environ.get("E5_PATCH", 518 / G))
 if PATCH == int(PATCH):
     PATCH = int(PATCH)
-rng = np.random.default_rng(0)
+rng = np.random.default_rng(0 if SEED is None else SEED)
+if SEED is not None:
+    np.random.seed(SEED); torch.manual_seed(SEED); torch.cuda.manual_seed_all(SEED)
 QUICK = os.environ.get("E5_QUICK") == "1"
 LAYERS = [0, 12, 24] if QUICK else list(range(25))
 if os.environ.get("E5_LAYERS"):
@@ -57,7 +69,10 @@ for n in names:
     g["S"] = g["pure"] & (g["body"] == 0)
 seed_of = {n: int(n.split("_s")[-1]) for n in names}
 fold2 = {n: seed_of[n] % 2 for n in names}
-print("scenes", len(names), flush=True)
+if SHUFFLE:
+    import e5_probe_common as pc
+    pc.shuffle_labels(GT, names, SHUFFLE, 1000 + (SEED or 0), PATCH)
+print("scenes", len(names), "seed", SEED, "shuffle", SHUFFLE or "none", flush=True)
 
 
 def cheb_hit(idx_or_xy, target_xy):
@@ -96,6 +111,8 @@ def multibody_gain(x1, x2, body, S):
 
 # =============================================================== E5-A
 res = {"A": {}, "F": {}, "P": {}, "layers": LAYERS, "parts": sorted(PARTS)}
+if SEED is not None or SHUFFLE:
+    res["seed"] = SEED; res["shuffle"] = SHUFFLE or None
 if "A" not in PARTS:
     names_A = []
 else:
