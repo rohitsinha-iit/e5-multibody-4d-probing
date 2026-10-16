@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 04:44:52 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 04:45:30 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -41,7 +41,7 @@ Last updated 2026-10-17 04:44:52 (server time). Regenerated after every queue ev
 | 35 | [ft_eval_sf](#ft_eval_sf): Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | queued | 0 |  |  |
 | 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | FAILED | 4 | 2026-10-17 03:04:34 | 2026-10-17 03:19:43 |
 | 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | queued | 0 |  |  |
-| 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | RUNNING | 4 | 2026-10-17 04:44:49 |  |
+| 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | FAILED | 4 | 2026-10-17 04:44:49 | 2026-10-17 04:45:27 |
 | 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | queued | 0 |  |  |
 | 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | queued | 0 |  |  |
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
@@ -52,7 +52,7 @@ Last updated 2026-10-17 04:44:52 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 04:44:19 running v4_viewsweep_epi
+Supervisor heartbeat: 2026-10-17 04:44:57 running ft_train_gain
 
 ## v3_pilot
 
@@ -862,9 +862,7 @@ Status: **FAILED**, attempt 4, started 2026-10-17 03:04:34, finished 2026-10-17 
 
 Item 10: fine-tune (e) 5 learned per-head gains
 
-Status: **RUNNING**, attempt 4, started 2026-10-17 04:44:49. [Raw results](../results/queue/ft_train_gain/), [log](../results/queue/ft_train_gain/task.log).
-
-Partial results so far; the run is still going.
+Status: **FAILED**, attempt 4, started 2026-10-17 04:44:49, finished 2026-10-17 04:45:27. [Raw results](../results/queue/ft_train_gain/), [log](../results/queue/ft_train_gain/task.log).
 
 
 ## v4_pilot
