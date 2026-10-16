@@ -1,0 +1,21 @@
+{
+ "n_ok": 194,
+ "expected": 200,
+ "failures": [
+  "confound_glued_s2397",
+  "confound_glued_s2398",
+  "confound_glued_s2400",
+  "n3_generic_s2272",
+  "n3_generic_s2285",
+  "n3_generic_s2296"
+ ],
+ "per_split": {
+  "camrot": 25,
+  "confound_glued": 22,
+  "confound_same": 25,
+  "epi_aligned": 40,
+  "n2_generic": 30,
+  "n3_generic": 27,
+  "planar": 25
+ }
+}

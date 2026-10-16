@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 22:20:55 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 22:48:07 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -30,7 +30,7 @@ Last updated 2026-10-16 22:20:55 (server time). Regenerated after every queue ev
 | 24 | [w2_dose](#w2_dose): Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence) | done | 1 | 2026-10-16 15:55:12 | 2026-10-16 15:55:49 |
 | 25 | [w2_summary](#w2_summary): Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | done | 1 | 2026-10-16 15:55:58 | 2026-10-16 15:56:05 |
 | 26 | [ft_render_v2](#ft_render_v2): Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | done | 1 | 2026-10-16 15:56:13 | 2026-10-16 19:20:03 |
-| 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | RUNNING | 1 | 2026-10-16 19:20:12 |  |
+| 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 |
 | 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | queued | 0 |  |  |
 | 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | queued | 0 |  |  |
 | 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
@@ -52,7 +52,7 @@ Last updated 2026-10-16 22:20:55 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-16 22:20:20 running ft_render_float
+Supervisor heartbeat: 2026-10-16 22:47:34 running ft_render_float
 
 ## v3_pilot
 
@@ -761,7 +761,29 @@ Training scenes for item 10 (fine-tuning), rendered with the approved generator 
 
 Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings)
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 19:20:12. [Raw results](../results/queue/ft_render_float/), [log](../results/queue/ft_render_float/task.log).
+Status: **done**, attempt 1, started 2026-10-16 19:20:12, finished 2026-10-16 22:48:04. [Raw results](../results/queue/ft_render_float/), [log](../results/queue/ft_render_float/task.log).
 
-Partial results so far; the run is still going.
+![ft_render_float_contact_sheets.png](assets/ft_render_float/ft_render_float_contact_sheets.png)
+
+
+**ft_render_float_summary.md**
+
+# ft_render_float
+
+Training scenes for item 10 (fine-tuning), rendered with the approved generator settings into `/media/workbench/zone_x/e5_multibody/data/ft_train_float`.
+
+- Rendered: 194 of 200 planned scenes; render failures: 6 (confound_glued_s2397, confound_glued_s2398, confound_glued_s2400, n3_generic_s2272, n3_generic_s2285, n3_generic_s2296).
+- Seeds 2201 to 2400 (all at or above 2001, disjoint from every evaluation set, whose seeds are at most 720).
+- GT flow self-check (geometric GT vs Kubric optical flow, frame 0 to 1): median EPE 0.000 px, max 0.000 px.
+
+| split | scenes | median sep (px) | median SNR at 1 px |
+|---|---|---|---|
+| camrot | 25 | 20.2 | 14.3 |
+| confound_glued | 22 | 23.3 | 16.5 |
+| confound_same | 25 | 32.9 | 23.2 |
+| epi_aligned | 40 | 0.0 | 0.0 |
+| n2_generic | 30 | 30.9 | 21.9 |
+| n3_generic | 27 | 25.1 | 17.7 |
+| planar | 25 | 34.5 | 24.4 |
+
 
