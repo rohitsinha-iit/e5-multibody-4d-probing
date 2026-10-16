@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 15:55:00 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 15:55:08 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Last updated 2026-10-16 15:55:00 (server time). Regenerated after every queue ev
 | 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | done | 1 | 2026-10-16 01:53:44 | 2026-10-16 01:55:51 |
 | 21 | [w2_kubric_baselines](#w2_kubric_baselines): Round 2 item 1 (W2): CoTracker3 + RAFT on Kubric v2 (100) and floating (70), same query sets as Any4D/VGGT; Any4D + VGGT on floating | done | 1 | 2026-10-16 15:11:22 | 2026-10-16 15:46:33 |
 | 22 | [w2_real_baselines](#w2_real_baselines): Round 2 item 1 (W2): RAFT on KITTI 2015 and Sintel (2 views), metrics + alpha/beta vs Any4D cached | done | 1 | 2026-10-16 15:46:42 | 2026-10-16 15:54:49 |
-| 23 | [w2_decomp](#w2_decomp): Round 2 item 1 (W2): alpha/beta decomposition and slope vs boundary distance, all models | RUNNING | 1 | 2026-10-16 15:54:57 |  |
+| 23 | [w2_decomp](#w2_decomp): Round 2 item 1 (W2): alpha/beta decomposition and slope vs boundary distance, all models | done | 1 | 2026-10-16 15:54:57 | 2026-10-16 15:55:05 |
 | 24 | [w2_dose](#w2_dose): Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence) | queued | 0 |  |  |
 | 25 | [w2_summary](#w2_summary): Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | queued | 0 |  |  |
 | 26 | [ft_render_v2](#ft_render_v2): Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | queued | 0 |  |  |
@@ -508,9 +508,7 @@ RAFT: torchvision raft_large, C_T_V2 weights (FlyingChairs + FlyingThings; no KI
 
 Round 2 item 1 (W2): alpha/beta decomposition and slope vs boundary distance, all models
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 15:54:57. [Raw results](../results/queue/w2_decomp/), [log](../results/queue/w2_decomp/task.log).
-
-Partial results so far; the run is still going.
+Status: **done**, attempt 1, started 2026-10-16 15:54:57, finished 2026-10-16 15:55:05. [Raw results](../results/queue/w2_decomp/), [log](../results/queue/w2_decomp/task.log).
 
 ![fig_w2_alpha_beta.png](assets/w2_decomp/fig_w2_alpha_beta.png)
 ![fig_w2_boundary.png](assets/w2_decomp/fig_w2_boundary.png)
