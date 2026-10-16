@@ -41,3 +41,10 @@ torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 918.00 MiB. GPU 0 
 GPU 1
 ok
 [02:44:48] base v2 inference
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[02:45:01] base v2 metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/base/pred_v2: 100 scenes ok, 0 errors; mean slope 0.607
+[02:45:02] base v3float inference
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 918.00 MiB. GPU 0 has a total capacity of 23.58 GiB of which 615.38 MiB is free. Process 1675453 has 2.38 GiB memory in use. Process 1692442 has 13.22 GiB memory in use. Including non-PyTorch memory, this process has 5.33 GiB memory in use. Of the allocated memory 4.43 GiB is allocated by PyTorch, and 661.24 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
