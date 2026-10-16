@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 22:53:32 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 22:53:40 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -32,7 +32,7 @@ Last updated 2026-10-16 22:53:32 (server time). Regenerated after every queue ev
 | 26 | [ft_render_v2](#ft_render_v2): Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | done | 1 | 2026-10-16 15:56:13 | 2026-10-16 19:20:03 |
 | 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 |
 | 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | FAILED | 2 | 2026-10-16 22:53:21 | 2026-10-16 22:53:29 |
-| 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | queued | 1 | 2026-10-16 22:48:21 |  |
+| 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | RUNNING | 2 | 2026-10-16 22:53:37 |  |
 | 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
 | 31 | [ft_eval_heads](#ft_eval_heads): Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
 | 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 |  |  |
@@ -793,6 +793,15 @@ Training scenes for item 10 (fine-tuning), rendered with the approved generator 
 Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel)
 
 Status: **FAILED**, attempt 2, started 2026-10-16 22:53:21, finished 2026-10-16 22:53:29. [Raw results](../results/queue/ft_eval_base/), [log](../results/queue/ft_eval_base/task.log).
+
+
+## ft_pilot
+
+Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps
+
+Status: **RUNNING**, attempt 2, started 2026-10-16 22:53:37. [Raw results](../results/queue/ft_pilot/), [log](../results/queue/ft_pilot/task.log).
+
+Partial results so far; the run is still going.
 
 
 ## v4_pilot
