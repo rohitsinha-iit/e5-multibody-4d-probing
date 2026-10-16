@@ -3,3 +3,34 @@
 scenes: 189 (new 120)
 GPU 1
 [03:22:29] 2 views: inference (new scenes; reference reused)
+epi_sizerand_s860 0.54 s
+peak GPU GB 4.63
+[03:23:53] 2 views: extraction (layers 0,4,8,12,16,20,24)
+epi_sizerand_s860 0.6s
+peak GPU GB 4.58
+[03:25:09] 2 views: gt patches (skip existing), step 3 (new scenes), output metrics (epi scenes)
+[03:37:28] 2 views: probes (pooled CV, paired scenes share a fold) + attention
+[03:47:29] 2 views: probes trained on v3float only (transfer)
+done
+done
+GPU 1
+[03:48:40] 3 views: inference (new scenes; reference reused)
+epi_sizerand_s860 0.78 s
+peak GPU GB 5.25
+[03:50:28] 3 views: extraction (layers 0,4,8,12,16,20,24)
+epi_sizerand_s860 0.6s
+peak GPU GB 5.17
+[03:51:49] 3 views: gt patches (skip existing), step 3 (new scenes), output metrics (epi scenes)
+[03:57:08] 3 views: probes (pooled CV, paired scenes share a fold) + attention
+[04:06:03] 3 views: probes trained on v3float only (transfer)
+done
+done
+GPU 1
+[04:07:19] 4 views: inference (new scenes; reference reused)
+epi_sizerand_s860 0.95 s
+peak GPU GB 5.83
+[04:09:31] 4 views: extraction (layers 0,4,8,12,16,20,24)
+epi_sizerand_s860 0.7s
+peak GPU GB 5.73
+[04:11:10] 4 views: gt patches (skip existing), step 3 (new scenes), output metrics (epi scenes)
+[04:17:10] 4 views: probes (pooled CV, paired scenes share a fold) + attention
