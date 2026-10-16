@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 02:47:21
+updated 2026-10-17 02:48:00
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -31,7 +31,7 @@ updated 2026-10-17 02:47:21
 | 25 | w2_summary: Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | done | 1 | 2026-10-16 15:55:58 | 2026-10-16 15:56:05 | True |
 | 26 | ft_render_v2: Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | done | 1 | 2026-10-16 15:56:13 | 2026-10-16 19:20:03 | True |
 | 27 | ft_render_float: Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 | True |
-| 28 | ft_eval_base: Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | pending | 3 | 2026-10-17 02:44:48 | 2026-10-17 02:45:26 | False |
+| 28 | ft_eval_base: Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | running | 4 | 2026-10-17 02:48:00 |  | False |
 | 29 | ft_pilot: Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | done | 3 | 2026-10-17 01:01:23 | 2026-10-17 02:31:45 | True |
 | 30 | ft_train_heads: Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | pending | 3 | 2026-10-17 02:45:26 | 2026-10-17 02:46:04 | False |
 | 31 | ft_eval_heads: Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | pending | 0 |  |  |  |
@@ -39,7 +39,7 @@ updated 2026-10-17 02:47:21
 | 33 | ft_eval_ctrl: Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | pending | 0 |  |  |  |
 | 34 | ft_train_sf: Item 10: fine-tune (b) scene-flow DPT head + adaptor | pending | 3 | 2026-10-17 02:46:43 | 2026-10-17 02:47:21 | False |
 | 35 | ft_eval_sf: Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | pending | 0 |  |  |  |
-| 36 | ft_train_heads_sf: Item 10: fine-tune (c) five-head LoRA + scene-flow head | running | 3 | 2026-10-17 02:47:21 |  | False |
+| 36 | ft_train_heads_sf: Item 10: fine-tune (c) five-head LoRA + scene-flow head | pending | 3 | 2026-10-17 02:47:21 | 2026-10-17 02:48:00 | False |
 | 37 | ft_eval_heads_sf: Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | pending | 0 |  |  |  |
 | 38 | ft_train_gain: Item 10: fine-tune (e) 5 learned per-head gains | pending | 0 |  |  |  |
 | 39 | ft_eval_gain: Item 10: evaluate fine-tune (e) 5 learned per-head gains | pending | 0 |  |  |  |
