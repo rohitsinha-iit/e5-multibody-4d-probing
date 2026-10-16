@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-17 02:42:18 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-17 02:42:57 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -247,7 +247,7 @@
 <tr>
 <td>30</td>
 <td><a href="#ft_train_heads">ft_train_heads</a>: Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices</td>
-<td>RUNNING</td>
+<td>queued</td>
 <td>2</td>
 <td>2026-10-17 02:42:15</td>
 <td></td>
@@ -263,9 +263,9 @@
 <tr>
 <td>32</td>
 <td><a href="#ft_train_ctrl">ft_train_ctrl</a>: Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads</td>
-<td>queued</td>
-<td>1</td>
-<td>2026-10-17 02:39:41</td>
+<td>RUNNING</td>
+<td>2</td>
+<td>2026-10-17 02:42:54</td>
 <td></td>
 </tr>
 <tr>
@@ -390,7 +390,7 @@
 </tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-17 02:41:45 running ft_eval_base</p>
+<p>Supervisor heartbeat: 2026-10-17 02:42:24 running ft_train_heads</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -3223,9 +3223,9 @@ If the dedicated trackers (CoTracker3, RAFT) recover close to all object motion 
 </tr>
 </tbody>
 </table>
-<h2>ft_train_heads</h2>
-<p>Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices</p>
-<p>Status: <strong>RUNNING</strong>, attempt 2, started 2026-10-17 02:42:15. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_heads/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_heads/task.log">log</a>.</p>
+<h2>ft_train_ctrl</h2>
+<p>Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads</p>
+<p>Status: <strong>RUNNING</strong>, attempt 2, started 2026-10-17 02:42:54. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_ctrl/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_ctrl/task.log">log</a>.</p>
 <p>Partial results so far; the run is still going.</p>
 <h2>v4_pilot</h2>
 <p>Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks</p>
