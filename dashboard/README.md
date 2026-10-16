@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 15:56:00 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 15:56:08 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -28,7 +28,7 @@ Last updated 2026-10-16 15:56:00 (server time). Regenerated after every queue ev
 | 22 | [w2_real_baselines](#w2_real_baselines): Round 2 item 1 (W2): RAFT on KITTI 2015 and Sintel (2 views), metrics + alpha/beta vs Any4D cached | done | 1 | 2026-10-16 15:46:42 | 2026-10-16 15:54:49 |
 | 23 | [w2_decomp](#w2_decomp): Round 2 item 1 (W2): alpha/beta decomposition and slope vs boundary distance, all models | done | 1 | 2026-10-16 15:54:57 | 2026-10-16 15:55:05 |
 | 24 | [w2_dose](#w2_dose): Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence) | done | 1 | 2026-10-16 15:55:12 | 2026-10-16 15:55:49 |
-| 25 | [w2_summary](#w2_summary): Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | RUNNING | 1 | 2026-10-16 15:55:58 |  |
+| 25 | [w2_summary](#w2_summary): Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | done | 1 | 2026-10-16 15:55:58 | 2026-10-16 15:56:05 |
 | 26 | [ft_render_v2](#ft_render_v2): Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | queued | 0 |  |  |
 | 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | queued | 0 |  |  |
 | 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | queued | 0 |  |  |
@@ -644,9 +644,7 @@ What each pattern implies:
 
 Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?)
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 15:55:58. [Raw results](../results/queue/w2_summary/), [log](../results/queue/w2_summary/task.log).
-
-Partial results so far; the run is still going.
+Status: **done**, attempt 1, started 2026-10-16 15:55:58, finished 2026-10-16 15:56:05. [Raw results](../results/queue/w2_summary/), [log](../results/queue/w2_summary/task.log).
 
 ![fig_w2_dose_regression.png](assets/w2_summary/fig_w2_dose_regression.png)
 ![fig_w2_dose_v2.png](assets/w2_summary/fig_w2_dose_v2.png)
