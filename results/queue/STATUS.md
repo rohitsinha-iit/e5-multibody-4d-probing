@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-16 22:53:21
+updated 2026-10-16 22:53:29
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -31,7 +31,7 @@ updated 2026-10-16 22:53:21
 | 25 | w2_summary: Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | done | 1 | 2026-10-16 15:55:58 | 2026-10-16 15:56:05 | True |
 | 26 | ft_render_v2: Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | done | 1 | 2026-10-16 15:56:13 | 2026-10-16 19:20:03 | True |
 | 27 | ft_render_float: Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 | True |
-| 28 | ft_eval_base: Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | running | 2 | 2026-10-16 22:53:21 |  | False |
+| 28 | ft_eval_base: Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | failed | 2 | 2026-10-16 22:53:21 | 2026-10-16 22:53:29 | False |
 | 29 | ft_pilot: Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | pending | 1 | 2026-10-16 22:48:21 | 2026-10-16 22:48:29 | False |
 | 30 | ft_train_heads: Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | pending | 0 |  |  |  |
 | 31 | ft_eval_heads: Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | pending | 0 |  |  |  |
