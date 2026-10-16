@@ -106,4 +106,41 @@ step 440 0.69 h lr 1.44e-04 sf_dyn 0.0360 sf_static 0.0017 sf 0.0070 geo_pts 0.0
 step 460 0.71 h lr 1.38e-04 sf_dyn 0.0365 sf_static 0.0013 sf 0.0066 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0074 peak 11.8 GB
 step 480 0.73 h lr 1.32e-04 sf_dyn 0.0374 sf_static 0.0014 sf 0.0069 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0077 peak 11.8 GB
 step 500 0.75 h lr 1.26e-04 sf_dyn 0.0459 sf_static 0.0013 sf 0.0061 geo_pts 0.0002 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0009 loss 0.0070 peak 11.8 GB
-val {"sf_dyn": 0.0517, "sf_static": 0.0014, "sf": 0.0093, "geo_pts": 0.0001, "geo_dept
+val {"sf_dyn": 0.0517, "sf_static": 0.0014, "sf": 0.0093, "geo_pts": 0.0001, "geo_depth": 0.0003, "geo_trans": 0.0001, "geo_quat": 0.0, "geo_scale": 0.0004, "geo": 0.001, "loss": 0.0102, "val_slope": 0.7737, "val_epe_static": 3.9805, "val_epe_moving": 34.152, "val_mask_iou": 0.5045, "step": 500, "hours": 0.7505} best step 400
+step 520 0.79 h lr 1.19e-04 sf_dyn 0.0482 sf_static 0.0014 sf 0.0071 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0008 loss 0.0079 peak 11.8 GB
+step 540 0.82 h lr 1.13e-04 sf_dyn 0.0388 sf_static 0.0015 sf 0.0069 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0077 peak 11.8 GB
+step 560 0.84 h lr 1.07e-04 sf_dyn 0.0344 sf_static 0.0016 sf 0.0064 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0071 peak 11.8 GB
+step 580 0.86 h lr 1.01e-04 sf_dyn 0.0346 sf_static 0.0013 sf 0.0064 geo_pts 0.0002 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0009 loss 0.0073 peak 11.8 GB
+step 600 0.88 h lr 9.44e-05 sf_dyn 0.0335 sf_static 0.0012 sf 0.0064 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0071 peak 11.8 GB
+val {"sf_dyn": 0.0522, "sf_static": 0.0013, "sf": 0.0093, "geo_pts": 0.0001, "geo_depth": 0.0003, "geo_trans": 0.0001, "geo_quat": 0.0, "geo_scale": 0.0003, "geo": 0.0008, "loss": 0.0101, "val_slope": 0.7689, "val_epe_static": 3.9557, "val_epe_moving": 35.6258, "val_mask_iou": 0.5377, "step": 600, "hours": 0.8806} best step 600
+step 620 0.92 h lr 8.82e-05 sf_dyn 0.0281 sf_static 0.0012 sf 0.0057 geo_pts 0.0002 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0009 loss 0.0066 peak 11.8 GB
+step 640 0.95 h lr 8.22e-05 sf_dyn 0.0434 sf_static 0.0013 sf 0.0082 geo_pts 0.0001 geo_depth 0.0002 geo_trans 0.0000 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0088 peak 11.8 GB
+step 660 0.97 h lr 7.63e-05 sf_dyn 0.0393 sf_static 0.0013 sf 0.0074 geo_pts 0.0002 geo_depth 0.0004 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0004 geo 0.0010 loss 0.0084 peak 11.8 GB
+step 680 0.99 h lr 7.05e-05 sf_dyn 0.0403 sf_static 0.0014 sf 0.0073 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0081 peak 11.8 GB
+step 700 1.01 h lr 6.50e-05 sf_dyn 0.0440 sf_static 0.0019 sf 0.0094 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0102 peak 11.8 GB
+val {"sf_dyn": 0.0509, "sf_static": 0.0014, "sf": 0.0092, "geo_pts": 0.0001, "geo_depth": 0.0003, "geo_trans": 0.0001, "geo_quat": 0.0, "geo_scale": 0.0002, "geo": 0.0007, "loss": 0.0099, "val_slope": 0.7912, "val_epe_static": 3.9605, "val_epe_moving": 35.3884, "val_mask_iou": 0.5353, "step": 700, "hours": 1.0106} best step 700
+step 720 1.05 h lr 5.97e-05 sf_dyn 0.0430 sf_static 0.0013 sf 0.0071 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0000 geo_quat 0.0000 geo_scale 0.0002 geo 0.0008 loss 0.0079 peak 11.8 GB
+step 740 1.08 h lr 5.46e-05 sf_dyn 0.0355 sf_static 0.0018 sf 0.0077 geo_pts 0.0001 geo_depth 0.0002 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0084 peak 11.8 GB
+step 760 1.10 h lr 4.98e-05 sf_dyn 0.0408 sf_static 0.0014 sf 0.0081 geo_pts 0.0002 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0009 loss 0.0090 peak 11.8 GB
+step 780 1.12 h lr 4.53e-05 sf_dyn 0.0326 sf_static 0.0015 sf 0.0058 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0066 peak 11.8 GB
+step 800 1.15 h lr 4.11e-05 sf_dyn 0.0351 sf_static 0.0015 sf 0.0082 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0090 peak 11.8 GB
+val {"sf_dyn": 0.0507, "sf_static": 0.0014, "sf": 0.0092, "geo_pts": 0.0001, "geo_depth": 0.0003, "geo_trans": 0.0001, "geo_quat": 0.0, "geo_scale": 0.0003, "geo": 0.0008, "loss": 0.01, "val_slope": 0.7952, "val_epe_static": 3.9577, "val_epe_moving": 36.4939, "val_mask_iou": 0.5198, "step": 800, "hours": 1.1474} best step 700
+step 820 1.22 h lr 3.72e-05 sf_dyn 0.0337 sf_static 0.0013 sf 0.0065 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0000 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0072 peak 11.8 GB
+step 840 1.25 h lr 3.37e-05 sf_dyn 0.0336 sf_static 0.0015 sf 0.0061 geo_pts 0.0001 geo_depth 0.0002 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0006 loss 0.0068 peak 11.8 GB
+step 860 1.28 h lr 3.05e-05 sf_dyn 0.0341 sf_static 0.0013 sf 0.0075 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0083 peak 11.8 GB
+step 880 1.31 h lr 2.78e-05 sf_dyn 0.0445 sf_static 0.0011 sf 0.0076 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0084 peak 11.8 GB
+step 900 1.34 h lr 2.54e-05 sf_dyn 0.0384 sf_static 0.0015 sf 0.0077 geo_pts 0.0001 geo_depth 0.0002 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0084 peak 11.8 GB
+val {"sf_dyn": 0.0505, "sf_static": 0.0014, "sf": 0.0092, "geo_pts": 0.0001, "geo_depth": 0.0003, "geo_trans": 0.0001, "geo_quat": 0.0, "geo_scale": 0.0003, "geo": 0.0008, "loss": 0.01, "val_slope": 0.8043, "val_epe_static": 3.9941, "val_epe_moving": 35.9826, "val_mask_iou": 0.5322, "step": 900, "hours": 1.3398} best step 700
+step 920 1.40 h lr 2.35e-05 sf_dyn 0.0336 sf_static 0.0012 sf 0.0060 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0000 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0067 peak 11.8 GB
+step 940 1.44 h lr 2.20e-05 sf_dyn 0.0318 sf_static 0.0019 sf 0.0068 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0000 geo_quat 0.0000 geo_scale 0.0003 geo 0.0007 loss 0.0075 peak 11.8 GB
+step 960 1.47 h lr 2.09e-05 sf_dyn 0.0345 sf_static 0.0014 sf 0.0070 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0077 peak 11.8 GB
+stopped: time limit 1.5 h at step 979
+done /media/workbench/zone_x/e5_multibody/ft/runs/pilot/any4d_ft.pth
+{
+ "max_steps": 1200,
+ "s90": 600,
+ "best_step": 700,
+ "sec_per_step": 5.3591861759291755,
+ "time_cap_steps": 2000,
+ "rule": "2 x (first validation step reaching 90% of the pilot's loss reduction), rounded up to 100, clipped to [400, 2500] and to 3 h at the pilot's speed"
+}

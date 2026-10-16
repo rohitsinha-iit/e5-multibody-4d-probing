@@ -1,0 +1,8 @@
+{
+ "max_steps": 1200,
+ "s90": 600,
+ "best_step": 700,
+ "sec_per_step": 5.3591861759291755,
+ "time_cap_steps": 2000,
+ "rule": "2 x (first validation step reaching 90% of the pilot's loss reduction), rounded up to 100, clipped to [400, 2500] and to 3 h at the pilot's speed"
+}

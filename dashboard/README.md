@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 02:02:09 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 02:31:48 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -32,7 +32,7 @@ Last updated 2026-10-17 02:02:09 (server time). Regenerated after every queue ev
 | 26 | [ft_render_v2](#ft_render_v2): Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | done | 1 | 2026-10-16 15:56:13 | 2026-10-16 19:20:03 |
 | 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 |
 | 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | FAILED | 2 | 2026-10-16 22:53:21 | 2026-10-16 22:53:29 |
-| 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | RUNNING | 3 | 2026-10-17 01:01:23 |  |
+| 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | done | 3 | 2026-10-17 01:01:23 | 2026-10-17 02:31:45 |
 | 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
 | 31 | [ft_eval_heads](#ft_eval_heads): Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
 | 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 |  |  |
@@ -52,7 +52,7 @@ Last updated 2026-10-17 02:02:09 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 02:01:36 running ft_pilot
+Supervisor heartbeat: 2026-10-17 02:31:15 running ft_pilot
 
 ## v3_pilot
 
@@ -799,9 +799,35 @@ Status: **FAILED**, attempt 2, started 2026-10-16 22:53:21, finished 2026-10-16 
 
 Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps
 
-Status: **RUNNING**, attempt 3, started 2026-10-17 01:01:23. [Raw results](../results/queue/ft_pilot/), [log](../results/queue/ft_pilot/task.log).
+Status: **done**, attempt 3, started 2026-10-17 01:01:23, finished 2026-10-17 02:31:45. [Raw results](../results/queue/ft_pilot/), [log](../results/queue/ft_pilot/task.log).
 
-Partial results so far; the run is still going.
+![ft_pilot_curves.png](assets/ft_pilot/ft_pilot_curves.png)
+
+
+**ft_pilot_summary.md**
+
+# ft_pilot
+
+Pilot run to choose the number of fine-tuning steps (variant heads_sf = five-head LoRA + scene-flow head, the largest variant).
+
+- Validation every 100 steps on 38 held-out training scenes (10%, never used for gradients).
+- Validation loss 0.0116 at step 0, minimum 0.0099 at step 700; 90% of the reduction reached at step 600.
+- Speed: 5.36 s per optimizer step (2 samples of 7 views).
+- Chosen max_steps for every variant: **1200** (rule: 2 x step-at-90%, rounded up to 100, within [400, 2500] and 3 h). Each run still early-stops on its own validation loss.
+
+| step | loss | slope | EPE moving | EPE static | mask IoU |
+|---|---|---|---|---|---|
+| 0 | 0.0116 | 0.676 | 36.2 | 3.94 | 0.508 |
+| 100 | 0.0110 | 0.804 | 31.5 | 4.04 | 0.471 |
+| 200 | 0.0105 | 0.742 | 36.7 | 3.96 | 0.514 |
+| 300 | 0.0108 | 0.860 | 33.4 | 4.04 | 0.460 |
+| 400 | 0.0102 | 0.772 | 39.6 | 4.03 | 0.458 |
+| 500 | 0.0102 | 0.774 | 34.2 | 3.98 | 0.504 |
+| 600 | 0.0101 | 0.769 | 35.6 | 3.96 | 0.538 |
+| 700 | 0.0099 | 0.791 | 35.4 | 3.96 | 0.535 |
+| 800 | 0.0100 | 0.795 | 36.5 | 3.96 | 0.520 |
+| 900 | 0.0100 | 0.804 | 36.0 | 3.99 | 0.532 |
+
 
 
 ## v4_pilot

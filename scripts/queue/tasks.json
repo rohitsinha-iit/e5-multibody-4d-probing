@@ -299,7 +299,7 @@
   "script": "ft_eval_base.sh",
   "deps": [],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -312,7 +312,7 @@
    "ft_render_float"
   ],
   "gate": null,
-  "max_attempts": 3,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -324,7 +324,7 @@
    "ft_pilot"
   ],
   "gate": null,
-  "max_attempts": 3,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -336,7 +336,7 @@
    "ft_train_heads"
   ],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -348,7 +348,7 @@
    "ft_pilot"
   ],
   "gate": null,
-  "max_attempts": 3,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -360,7 +360,7 @@
    "ft_train_ctrl"
   ],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -372,7 +372,7 @@
    "ft_pilot"
   ],
   "gate": null,
-  "max_attempts": 3,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -384,7 +384,7 @@
    "ft_train_sf"
   ],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -396,7 +396,7 @@
    "ft_pilot"
   ],
   "gate": null,
-  "max_attempts": 3,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -408,7 +408,7 @@
    "ft_train_heads_sf"
   ],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -420,7 +420,7 @@
    "ft_pilot"
   ],
   "gate": null,
-  "max_attempts": 3,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -432,7 +432,7 @@
    "ft_train_gain"
   ],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 15,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -449,7 +449,7 @@
    "ft_eval_gain"
   ],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 1,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -483,7 +483,7 @@
    "v4_scale_epi"
   ],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 40,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -493,7 +493,7 @@
   "script": "r2_probe_extract.sh",
   "deps": [],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 20,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -503,7 +503,7 @@
   "script": "r2_heads_null.sh",
   "deps": [],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 8
  },
  {
@@ -514,7 +514,7 @@
    "r2_probe_extract"
   ],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 8,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  },
@@ -527,7 +527,7 @@
    "r2_probe_linear"
   ],
   "gate": null,
-  "max_attempts": 2,
+  "max_attempts": 4,
   "min_free_gb": 8,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
  }
