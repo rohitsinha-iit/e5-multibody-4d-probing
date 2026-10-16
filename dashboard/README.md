@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 02:48:49 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 02:49:27 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -33,7 +33,7 @@ Last updated 2026-10-17 02:48:49 (server time). Regenerated after every queue ev
 | 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 |
 | 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | FAILED | 4 | 2026-10-17 02:48:00 | 2026-10-17 02:48:38 |
 | 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | done | 3 | 2026-10-17 01:01:23 | 2026-10-17 02:31:45 |
-| 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | RUNNING | 4 | 2026-10-17 02:48:46 |  |
+| 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | FAILED | 4 | 2026-10-17 02:48:46 | 2026-10-17 02:49:24 |
 | 31 | [ft_eval_heads](#ft_eval_heads): Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
 | 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 3 | 2026-10-17 02:46:04 |  |
 | 33 | [ft_eval_ctrl](#ft_eval_ctrl): Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 |  |  |
@@ -52,7 +52,7 @@ Last updated 2026-10-17 02:48:49 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 02:48:08 running ft_eval_base
+Supervisor heartbeat: 2026-10-17 02:48:54 running ft_train_heads
 
 ## v3_pilot
 
@@ -834,9 +834,7 @@ Pilot run to choose the number of fine-tuning steps (variant heads_sf = five-hea
 
 Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices
 
-Status: **RUNNING**, attempt 4, started 2026-10-17 02:48:46. [Raw results](../results/queue/ft_train_heads/), [log](../results/queue/ft_train_heads/task.log).
-
-Partial results so far; the run is still going.
+Status: **FAILED**, attempt 4, started 2026-10-17 02:48:46, finished 2026-10-17 02:49:24. [Raw results](../results/queue/ft_train_heads/), [log](../results/queue/ft_train_heads/task.log).
 
 
 ## v4_pilot
