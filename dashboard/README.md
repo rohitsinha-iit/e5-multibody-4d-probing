@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 04:25:09 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 04:40:48 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -41,18 +41,18 @@ Last updated 2026-10-17 04:25:09 (server time). Regenerated after every queue ev
 | 35 | [ft_eval_sf](#ft_eval_sf): Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | queued | 0 |  |  |
 | 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | FAILED | 4 | 2026-10-17 03:04:34 | 2026-10-17 03:19:43 |
 | 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | queued | 0 |  |  |
-| 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | queued | 2 | 2026-10-17 04:22:40 |  |
+| 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | RUNNING | 3 | 2026-10-17 04:40:45 |  |
 | 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | queued | 0 |  |  |
 | 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | queued | 0 |  |  |
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
 | 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 |
-| 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | RUNNING | 2 | 2026-10-17 04:25:06 |  |
+| 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | queued | 2 | 2026-10-17 04:25:06 |  |
 | 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | queued | 1 | 2026-10-17 04:23:19 |  |
 | 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | queued | 1 | 2026-10-17 04:23:57 |  |
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 04:24:06 running r2_heads_null
+Supervisor heartbeat: 2026-10-17 04:40:15 running v4_viewsweep_epi
 
 ## v3_pilot
 
@@ -858,6 +858,15 @@ Item 10: fine-tune (c) five-head LoRA + scene-flow head
 Status: **FAILED**, attempt 4, started 2026-10-17 03:04:34, finished 2026-10-17 03:19:43. [Raw results](../results/queue/ft_train_heads_sf/), [log](../results/queue/ft_train_heads_sf/task.log).
 
 
+## ft_train_gain
+
+Item 10: fine-tune (e) 5 learned per-head gains
+
+Status: **RUNNING**, attempt 3, started 2026-10-17 04:40:45. [Raw results](../results/queue/ft_train_gain/), [log](../results/queue/ft_train_gain/task.log).
+
+Partial results so far; the run is still going.
+
+
 ## v4_pilot
 
 Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks
@@ -968,13 +977,4 @@ Static objects in every split are 1.4 to 2.2 m (the v3float range).
 
 How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 misses the object in a third view by tens of pixels, while for epi_const and for the background it fits to about 0 px. (b) Two-view separation is about 0 in every split, so frames 0 and 23 alone are ambiguous. (c) The accelerated object's image track leaves the track of its static reading (the constant-velocity object stays on it). (d) Size randomisation decouples apparent size from the static interpretation.
 
-
-
-## v4_viewsweep_epi
-
-Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats
-
-Status: **RUNNING**, attempt 2, started 2026-10-17 04:25:06. [Raw results](../results/queue/v4_viewsweep_epi/), [log](../results/queue/v4_viewsweep_epi/task.log).
-
-Partial results so far; the run is still going.
 

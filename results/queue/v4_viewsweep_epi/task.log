@@ -39,3 +39,41 @@ peak GPU GB 5.73
 scenes: 189 (new 120)
 GPU 1
 [04:25:07] 2 views: inference (new scenes; reference reused)
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[04:25:21] 2 views: extraction (layers 0,4,8,12,16,20,24)
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[04:25:33] 2 views: gt patches (skip existing), step 3 (new scenes), output metrics (epi scenes)
+[04:25:33] 2 views: probes (pooled CV, paired scenes share a fold) + attention
+[04:25:33] 2 views: probes trained on v3float only (transfer)
+done
+done
+GPU 1
+[04:25:33] 3 views: inference (new scenes; reference reused)
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[04:25:45] 3 views: extraction (layers 0,4,8,12,16,20,24)
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[04:25:55] 3 views: gt patches (skip existing), step 3 (new scenes), output metrics (epi scenes)
+[04:25:55] 3 views: probes (pooled CV, paired scenes share a fold) + attention
+[04:25:55] 3 views: probes trained on v3float only (transfer)
+done
+done
+GPU 1
+[04:25:55] 4 views: inference (new scenes; reference reused)
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[04:26:07] 4 views: extraction (layers 0,4,8,12,16,20,24)
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.46
+[04:26:18] 4 views: gt patches (skip existing), step 3 (new scenes), output metrics (epi scenes)
+[04:26:18] 4 views: probes (pooled CV, paired scenes share a fold) + attention
+[04:39:10] 4 views: probes trained on v3float only (transfer)
+done
+done
+GPU 1
+[04:40:19] 7 views: inference (new scenes; reference reused)
+             ^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 918.00 MiB. GPU 0 has a total capacity of 23.58 GiB of which 163.38 MiB is free. Process 1675453 has 2.38 GiB memory in use. Process 1727729 has 12.45 GiB memory in use. Including non-PyTorch memory, this process has 6.54 GiB memory in use. Of the allocated memory 5.93 GiB is allocated by PyTorch, and 360.71 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
