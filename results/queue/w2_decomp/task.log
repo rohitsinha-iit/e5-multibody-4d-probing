@@ -1,0 +1,39 @@
+
+===== 2026-10-16 15:54:57 attempt 1
+| RAFT chain, 7 fr | v2 | 84 of 100 | 0.88 [0.84, 0.90] | 0.85 [0.81, 0.89] | 0.98 [0.93, 1.03] | 0.97 [0.95, 0.99] | -0.13 [-0.20, -0.07] [4.7e-07] | 40+/44- [0.744] | 0.64 | 0.90, 1.00 |
+| RAFT chain, 7 fr | v3float | 35 of 69 | 0.89 [0.85, 0.91] | 0.91 [0.87, 0.94] | 1.05 [0.99, 1.11] | 0.96 [0.92, 0.99] | -0.14 [-0.21, -0.08] [0.017] | 14+/21- [0.311] | 0.83 | 0.93, 0.98 |
+| RAFT chain, 24 fr | v2 | 84 of 100 | 0.82 [0.79, 0.85] | 0.78 [0.73, 0.82] | 0.99 [0.92, 1.05] | 0.95 [0.92, 0.97] | -0.21 [-0.29, -0.14] [3.5e-08] | 41+/43- [0.913] | 0.64 | 0.82, 1.01 |
+| RAFT chain, 24 fr | v3float | 35 of 69 | 0.85 [0.82, 0.88] | 0.85 [0.81, 0.89] | 1.06 [0.97, 1.15] | 0.94 [0.90, 0.98] | -0.21 [-0.30, -0.12] [0.017] | 14+/21- [0.311] | 0.83 | 0.90, 0.95 |
+| Any4D | kitti15_rgb | 42 of 200 | 0.58 [0.51, 0.64] | 0.18 [0.01, 0.36] | 0.88 [0.69, 1.07] | 0.84 [0.80, 0.87] | -0.70 [-0.85, -0.54] [4.4e-07] | 20+/22- [0.878] | 0.99 | 0.40, 0.77 |
+| Any4D | sintel_clean | 123 of 256 | 0.31 [0.23, 0.39] | 0.38 [0.29, 0.46] | 0.91 [0.73, 1.10] | 0.45 [0.37, 0.53] | -0.53 [-0.75, -0.33] [1.2e-05] | 48+/75- [0.019] | 0.51 | 0.29, 0.73 |
+| Any4D | sintel_final | 123 of 256 | 0.33 [0.24, 0.41] | 0.32 [0.24, 0.41] | 1.00 [0.79, 1.25] | 0.48 [0.39, 0.58] | -0.68 [-0.94, -0.45] [2.9e-10] | 44+/79- [0.002] | 0.51 | 0.25, 0.66 |
+| RAFT | kitti15_rgb | 41 of 200 | 0.95 [0.94, 0.96] | 0.94 [0.88, 0.98] | 0.97 [0.92, 1.01] | 0.91 [0.88, 0.92] | -0.03 [-0.06, -0.00] [0.028] | 13+/28- [0.028] | 0.99 | 0.97, 0.95 |
+| RAFT | sintel_clean | 122 of 256 | 0.91 [0.89, 0.93] | 0.86 [0.82, 0.90] | 0.87 [0.80, 0.93] | 0.92 [0.80, 0.99] | -0.01 [-0.05, 0.05] [0.001] | 36+/86- [6.9e-06] | 0.51 | 0.96, 0.96 |
+| RAFT | sintel_final | 122 of 256 | 0.90 [0.88, 0.92] | 0.86 [0.82, 0.90] | 0.89 [0.83, 0.95] | 0.98 [0.95, 1.01] | -0.03 [-0.08, 0.01] [0.085] | 39+/83- [8.4e-05] | 0.51 | 0.95, 0.95 |
+- Any4D, v2: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)
+- Any4D, v3float: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)
+- VGGT-1B tracker, v2: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)
+- VGGT-1B tracker, v3float: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)
+- CoTracker3, 24 fr, v2: no pull (slope CI above 0.9); camera motion kept (beta near 1); slope lower at object boundaries (spatial smoothing contributes)
+- CoTracker3, 24 fr, v3float: no pull (slope CI above 0.9); camera motion kept (beta near 1); slope lower at object boundaries (spatial smoothing contributes)
+- CoTracker3, 7 fr, v2: no pull (slope CI above 0.9); camera motion kept (beta near 1); slope lower at object boundaries (spatial smoothing contributes)
+- CoTracker3, 7 fr, v3float: no pull (slope CI above 0.9); camera motion kept (beta near 1); slope lower at object boundaries (spatial smoothing contributes)
+- RAFT, 0 to 23, v2: pull (slope CI below 0.9); shrinkage toward zero image motion (beta below 1 and alpha not different from beta); slope lower at object boundaries (spatial smoothing contributes)
+- RAFT, 0 to 23, v3float: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull
+- RAFT chain, 7 fr, v2: weak or unclear pull (slope CI includes 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)
+- RAFT chain, 7 fr, v3float: weak or unclear pull (slope CI includes 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)
+- RAFT chain, 24 fr, v2: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)
+- RAFT chain, 24 fr, v3float: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)
+- Any4D, kitti15_rgb: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull
+- Any4D, sintel_clean: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull
+- Any4D, sintel_final: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull
+- raft, kitti15_rgb: no pull (slope CI above 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha < 1): camera-motion pull
+- raft, sintel_clean: weak or unclear pull (slope CI includes 0.9); mixed (beta below 1 and alpha different from beta)
+- raft, sintel_final: weak or unclear pull (slope CI includes 0.9); shrinkage toward zero image motion (beta below 1 and alpha not different from beta)
+total 332
+drwxrwxr-x  2 rohit rohit   4096 Oct 16 15:54 .
+drwxrwxr-x 23 rohit rohit   4096 Oct 16 15:54 ..
+-rw-rw-r--  1 rohit rohit 131733 Oct 16 15:54 fig_w2_alpha_beta.png
+-rw-rw-r--  1 rohit rohit 126555 Oct 16 15:54 fig_w2_boundary.png
+-rw-rw-r--  1 rohit rohit  55755 Oct 16 15:54 w2_decomp_stats.json
+-rw-rw-r--  1 rohit rohit  11828 Oct 16 15:54 w2_decomp_summary.md
