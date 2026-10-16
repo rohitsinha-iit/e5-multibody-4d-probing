@@ -34,3 +34,8 @@ epi_sizerand_s860 0.7s
 peak GPU GB 5.73
 [04:11:10] 4 views: gt patches (skip existing), step 3 (new scenes), output metrics (epi scenes)
 [04:17:10] 4 views: probes (pooled CV, paired scenes share a fold) + attention
+
+===== 2026-10-17 04:25:06 attempt 2
+scenes: 189 (new 120)
+GPU 1
+[04:25:07] 2 views: inference (new scenes; reference reused)
