@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 19:20:06 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 19:20:15 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -30,7 +30,7 @@ Last updated 2026-10-16 19:20:06 (server time). Regenerated after every queue ev
 | 24 | [w2_dose](#w2_dose): Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence) | done | 1 | 2026-10-16 15:55:12 | 2026-10-16 15:55:49 |
 | 25 | [w2_summary](#w2_summary): Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | done | 1 | 2026-10-16 15:55:58 | 2026-10-16 15:56:05 |
 | 26 | [ft_render_v2](#ft_render_v2): Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | done | 1 | 2026-10-16 15:56:13 | 2026-10-16 19:20:03 |
-| 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | queued | 0 |  |  |
+| 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | RUNNING | 1 | 2026-10-16 19:20:12 |  |
 | 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | queued | 0 |  |  |
 | 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | queued | 0 |  |  |
 | 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
@@ -755,4 +755,13 @@ Training scenes for item 10 (fine-tuning), rendered with the approved generator 
 | n3_generic | 30 | 29.5 | 20.9 |
 | planar | 25 | 33.6 | 23.8 |
 
+
+
+## ft_render_float
+
+Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings)
+
+Status: **RUNNING**, attempt 1, started 2026-10-16 19:20:12. [Raw results](../results/queue/ft_render_float/), [log](../results/queue/ft_render_float/task.log).
+
+Partial results so far; the run is still going.
 
