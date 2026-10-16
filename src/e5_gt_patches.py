@@ -23,6 +23,8 @@ for d in sorted(glob.glob(os.path.join(data, "*"))):
     if not os.path.exists(os.path.join(d, "e5_meta.json")):
         continue
     name = os.path.basename(d)
+    if os.environ.get("E5_SKIP_EXISTING") == "1" and os.path.exists(os.path.join(out, f"{name}_gt.npz")):
+        continue  # v4: resumable / reuse of linked reference patches
     meta, gt, _ = kp.load_scene(d)
     W = meta["resolution"][0]; s = S518 / W
     b = len(meta["frames"]) - 1

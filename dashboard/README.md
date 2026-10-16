@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 15:11:26 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 15:46:36 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -24,13 +24,31 @@ Last updated 2026-10-16 15:11:26 (server time). Regenerated after every queue ev
 | 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | done | 1 | 2026-10-16 01:49:59 | 2026-10-16 01:53:36 |
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | done | 1 | 2026-10-16 01:55:59 | 2026-10-16 01:56:07 |
 | 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | done | 1 | 2026-10-16 01:53:44 | 2026-10-16 01:55:51 |
-| 21 | [w2_kubric_baselines](#w2_kubric_baselines): Round 2 item 1 (W2): CoTracker3 + RAFT on Kubric v2 (100) and floating (70), same query sets as Any4D/VGGT; Any4D + VGGT on floating | RUNNING | 1 | 2026-10-16 15:11:22 |  |
+| 21 | [w2_kubric_baselines](#w2_kubric_baselines): Round 2 item 1 (W2): CoTracker3 + RAFT on Kubric v2 (100) and floating (70), same query sets as Any4D/VGGT; Any4D + VGGT on floating | done | 1 | 2026-10-16 15:11:22 | 2026-10-16 15:46:33 |
 | 22 | [w2_real_baselines](#w2_real_baselines): Round 2 item 1 (W2): RAFT on KITTI 2015 and Sintel (2 views), metrics + alpha/beta vs Any4D cached | queued | 0 |  |  |
 | 23 | [w2_decomp](#w2_decomp): Round 2 item 1 (W2): alpha/beta decomposition and slope vs boundary distance, all models | queued | 0 |  |  |
 | 24 | [w2_dose](#w2_dose): Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence) | queued | 0 |  |  |
 | 25 | [w2_summary](#w2_summary): Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | queued | 0 |  |  |
+| 26 | [ft_render_v2](#ft_render_v2): Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | queued | 0 |  |  |
+| 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | queued | 0 |  |  |
+| 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | queued | 0 |  |  |
+| 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | queued | 0 |  |  |
+| 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
+| 31 | [ft_eval_heads](#ft_eval_heads): Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
+| 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 |  |  |
+| 33 | [ft_eval_ctrl](#ft_eval_ctrl): Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 |  |  |
+| 34 | [ft_train_sf](#ft_train_sf): Item 10: fine-tune (b) scene-flow DPT head + adaptor | queued | 0 |  |  |
+| 35 | [ft_eval_sf](#ft_eval_sf): Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | queued | 0 |  |  |
+| 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | queued | 0 |  |  |
+| 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | queued | 0 |  |  |
+| 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | queued | 0 |  |  |
+| 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | queued | 0 |  |  |
+| 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | queued | 0 |  |  |
+| 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | queued | 0 |  |  |
+| 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | queued | 0 |  |  |
+| 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-16 01:55:21 running t7_any4d_v2_100
+Supervisor heartbeat: 2026-10-16 15:46:03 running w2_kubric_baselines
 
 ## v3_pilot
 
@@ -420,7 +438,36 @@ Status: **done**, attempt 1, started 2026-10-16 01:53:44, finished 2026-10-16 01
 
 Round 2 item 1 (W2): CoTracker3 + RAFT on Kubric v2 (100) and floating (70), same query sets as Any4D/VGGT; Any4D + VGGT on floating
 
-Status: **RUNNING**, attempt 1, started 2026-10-16 15:11:22. [Raw results](../results/queue/w2_kubric_baselines/), [log](../results/queue/w2_kubric_baselines/task.log).
+Status: **done**, attempt 1, started 2026-10-16 15:11:22, finished 2026-10-16 15:46:33. [Raw results](../results/queue/w2_kubric_baselines/), [log](../results/queue/w2_kubric_baselines/task.log).
 
-Partial results so far; the run is still going.
+![fig_w2_baselines_kubric.png](assets/w2_kubric_baselines/fig_w2_baselines_kubric.png)
+
+
+**w2_kubric_baselines_summary.md**
+
+# w2_kubric_baselines: non-reconstruction baselines on Kubric (review item 1, W2)
+
+Same scenes and query sets as e5_xm_eval.py (slope2d_q, epe_*_q, sep_ratio_q). Mean over scenes with bootstrap 95% CI; last column is the paired per-scene difference (model minus Any4D) with a two-sided sign test.
+
+| model | data | n | slope2d_q | epe_static_q | epe_moving_q | sep_ratio_q | paired slope2d_q diff vs Any4D [sign test p] |
+|---|---|---|---|---|---|---|---|
+| Any4D | v2 | 100 | 0.61 [0.56, 0.65] | 4.10 [3.82, 4.39] | 35.03 [30.93, 39.64] | 0.83 [0.70, 0.96] | reference |
+| Any4D | v3float | 69 | 0.56 [0.47, 0.64] | 4.53 [4.11, 5.03] | 47.88 [38.97, 57.61] | 0.73 [0.57, 0.89] | reference |
+| VGGT-1B tracker | v2 | 100 | 0.34 [0.29, 0.41] | 9.68 [7.49, 12.32] | 57.55 [51.12, 63.95] | 0.23 [0.16, 0.33] | -0.26 [-0.34, -0.18] [p 3.7e-06, 26+/72-] |
+| VGGT-1B tracker | v3float | 69 | 0.57 [0.47, 0.68] | 12.95 [10.55, 15.68] | 50.48 [40.00, 61.35] | 0.27 [0.19, 0.35] | 0.02 [-0.10, 0.14] [p 0.620, 30+/35-] |
+| CoTracker3, 24 fr | v2 | 100 | 0.96 [0.93, 0.97] | 3.97 [2.29, 6.05] | 5.56 [3.98, 7.75] | 1.14 [0.88, 1.57] | 0.35 [0.31, 0.39] [p 9.9e-25, 95+/3-] |
+| CoTracker3, 24 fr | v3float | 69 | 0.97 [0.96, 0.98] | 4.21 [1.70, 7.76] | 3.43 [2.67, 4.31] | 0.96 [0.86, 1.07] | 0.41 [0.33, 0.50] [p 3.9e-14, 61+/4-] |
+| CoTracker3, 7 fr | v2 | 100 | 0.95 [0.92, 0.97] | 4.97 [2.77, 7.68] | 6.48 [4.51, 8.99] | 0.95 [0.84, 1.07] | 0.34 [0.30, 0.38] [p 2.4e-23, 94+/4-] |
+| CoTracker3, 7 fr | v3float | 69 | 0.96 [0.94, 0.97] | 5.76 [1.87, 10.96] | 4.31 [2.91, 6.31] | 1.04 [0.87, 1.25] | 0.40 [0.32, 0.49] [p 4.9e-13, 60+/5-] |
+| RAFT, 0 to 23 | v2 | 100 | 0.59 [0.48, 0.69] | 67.97 [55.41, 80.73] | 46.28 [35.49, 57.86] | 0.90 [0.66, 1.25] | -0.02 [-0.12, 0.08] [p 0.006, 63+/35-] |
+| RAFT, 0 to 23 | v3float | 69 | 0.50 [0.33, 0.65] | 65.34 [48.04, 83.46] | 68.74 [47.83, 91.31] | 0.80 [0.54, 1.17] | -0.06 [-0.20, 0.08] [p 0.136, 39+/26-] |
+| RAFT chain, 7 fr | v2 | 100 | 0.88 [0.84, 0.90] | 3.16 [1.41, 5.30] | 10.49 [7.64, 13.85] | 0.84 [0.63, 1.17] | 0.27 [0.23, 0.31] [p 8.1e-16, 87+/11-] |
+| RAFT chain, 7 fr | v3float | 69 | 0.89 [0.85, 0.91] | 4.71 [1.48, 9.03] | 8.26 [4.98, 13.36] | 0.66 [0.56, 0.77] | 0.33 [0.26, 0.41] [p 4.3e-11, 58+/7-] |
+| RAFT chain, 24 fr | v2 | 100 | 0.82 [0.79, 0.85] | 6.07 [3.87, 8.57] | 12.74 [10.25, 15.59] | 0.77 [0.59, 1.06] | 0.22 [0.17, 0.26] [p 1.4e-12, 83+/15-] |
+| RAFT chain, 24 fr | v3float | 69 | 0.85 [0.82, 0.88] | 6.60 [3.43, 10.63] | 10.47 [7.13, 15.76] | 0.65 [0.55, 0.75] | 0.29 [0.22, 0.37] [p 4.3e-11, 58+/7-] |
+
+Scenes with evaluation errors: {'any4d|v2': 0, 'any4d|v3float': 0, 'vggt|v2': 0, 'vggt|v3float': 0, 'cotracker3_24f|v2': 0, 'cotracker3_24f|v3float': 0, 'cotracker3_7f|v2': 0, 'cotracker3_7f|v3float': 0, 'raft_direct|v2': 0, 'raft_direct|v3float': 0, 'raft_chain7|v2': 0, 'raft_chain7|v3float': 0, 'raft_chain24|v2': 0, 'raft_chain24|v3float': 0}
+
+![baselines](fig_w2_baselines_kubric.png)
+
 

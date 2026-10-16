@@ -25,7 +25,7 @@ heads from the attention files, the block index of each global block from <inter
 as in Any4D), and the per-view feature dim from the token files. Non-finite x2_pred (models without a 2D output)
 gives NaN output gains and no output slope. For Any4D files the results are identical to the original script.
 """
-import glob, json, os, sys
+import glob, json, os, re, sys
 import numpy as np
 import torch
 from sklearn.cluster import KMeans
@@ -137,7 +137,7 @@ for si, n in enumerate(names_A):
     go = multibody_gain(g["c518"][keep], g["x2_pred"][keep], g["body"][keep], g["S"][keep]) if np.isfinite(g["x2_pred"][keep]).all() else []
     gg = multibody_gain(g["c518"][keep], g["x2_true"][keep], g["body"][keep], g["S"][keep])
     gains_out[si] = np.mean(go) if go else np.nan; gains_gt[si] = np.mean(gg) if gg else np.nan
-nonepi = splits != "epi_aligned"
+nonepi = ~np.char.startswith(splits.astype(str), "epi")  # v4: every epi_* split is epipolar-aligned (old data: only epi_aligned)
 res["A"]["sel_track"] = np.nanmean(sel_track, 0).tolist(); res["A"]["sel_rigid"] = np.nanmean(sel_rigid, 0).tolist()
 res["A"]["sel_track_by_scene"] = sel_track.tolist(); res["A"]["sel_rigid_by_scene"] = sel_rigid.tolist()
 res["A"]["log10_gain_att_nonepi_median"] = np.nanmedian(gains_att[nonepi], 0).tolist()
@@ -225,6 +225,23 @@ print("E5-F done", flush=True)
 # =============================================================== E5-P
 dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 folds = {n: i % 5 for i, n in enumerate(sorted(names, key=lambda m: (GT[m]["split"], seed_of[m])))}
+# v4 options (all unset = original behaviour):
+#   E5_TRAIN_FILTER=<regex>  probes are trained only on scenes whose name matches (transfer test); the pool keeps the
+#                            original fold assignment among itself, the other scenes get their own i % 5 folds.
+#   E5_FOLD_BY_SEED=1        scenes that share a seed share a fold (paired epi_accel / epi_const scenes, no leakage).
+#   E5_P_MOTION_ONLY=1       skip the pair probe (motion and object-motion probes only).
+TRAIN_RE = os.environ.get("E5_TRAIN_FILTER", "")
+MOTION_ONLY = os.environ.get("E5_P_MOTION_ONLY") == "1"
+_key = lambda m: (GT[m]["split"], seed_of[m])  # noqa: E731
+if os.environ.get("E5_FOLD_BY_SEED") == "1":
+    _useeds = sorted(set(seed_of.values()))
+    folds = {n: _useeds.index(seed_of[n]) % 5 for n in names}
+POOL = set(names)
+if TRAIN_RE:
+    POOL = {n for n in names if re.search(TRAIN_RE, n)}
+    folds = {n: i % 5 for i, n in enumerate(sorted(POOL, key=_key))}
+    folds.update({n: i % 5 for i, n in enumerate(sorted(set(names) - POOL, key=_key))})
+    print("train pool", len(POOL), "of", len(names), flush=True)
 
 DV = TOK[names[0]].arr.shape[-1] if names else 768   # per-view feature dim (Any4D 768)
 
@@ -290,12 +307,13 @@ def ridge_gcv(Xtr, Ytr):
 P_rows = []
 for l in (LAYERS if "P" in PARTS else []):
     for f in range(5):
-        tr = [n for n in names if folds[n] != f]; te = [n for n in names if folds[n] == f]
+        tr = [n for n in names if folds[n] != f and n in POOL]; te = [n for n in names if folds[n] == f]
         mu = np.mean(np.concatenate([feats(n, l) for n in tr]), 0); sd = np.std(np.concatenate([feats(n, l) for n in tr]), 0) + 1e-6
         Z = {n: (feats(n, l) - mu) / sd for n in tr + te}
         # --- pair probe
-        prs = [pairs_for(n, 600, rng) for n in tr]
-        W, ab = train_pair_probe([Z[n] for n in tr], prs)
+        if not MOTION_ONLY:
+            prs = [pairs_for(n, 600, rng) for n in tr]
+            W, ab = train_pair_probe([Z[n] for n in tr], prs)
         # --- linear probes (closed form ridge for motion and object-motion)
         Xtr = np.concatenate([Z[n] for n in tr]); ytr = np.concatenate([(GT[n]["body"][GT[n]["pidx"]] > 0).astype(float) for n in tr])
         dtr = np.concatenate([(GT[n]["x2_true"] - GT[n]["x2_static"])[GT[n]["pidx"]] for n in tr])
@@ -304,27 +322,28 @@ for l in (LAYERS if "P" in PARTS else []):
         Rm, alpha_m = ridge_gcv(Xv0, (2 * ytr - 1)[:, None])  # moving-vs-static probe on view-0 token only
         for n in te:
             g = GT[n]; P = g["pidx"]; b = g["body"][P]; ins = g["inst"][P]
-            with torch.no_grad():
-                z = W(torch.tensor(Z[n], device=dev)).cpu().numpy()
-            S = (z @ z.T) / np.sqrt(z.shape[1]) * float(ab[0]) + float(ab[1])
-            i, j, y = pairs_for(n, 600, rng)
             row = dict(scene=n, split=g["split"], layer=l, fold=f)
-            row["pair_auc"] = roc_auc_score(y, S[i, j]) if 0 < y.mean() < 1 else np.nan
-            if g["split"] == "confound_same":
-                mv = sorted(set(ins[b > 0])); st = [s_ for s_ in set(ins[b == 0]) if s_ >= 0]
-                if mv and st:
-                    row["copies_separated"] = float(np.mean([np.mean(S[np.ix_(ins == mv[0], ins == s_)] < 0) for s_ in st]))
-            if g["split"] == "confound_glued":
-                mv = sorted(set(ins[b > 0]))
-                if len(mv) >= 2:
-                    row["glued_joined"] = float(np.mean(S[np.ix_(ins == mv[0], ins == mv[1])] > 0))
-            sub = balanced_idx(ins)
-            A = 1 / (1 + np.exp(-S[np.ix_(sub, sub)]))
-            row["k_hat"] = linkage_k(A); row["k_true"] = int(len(set(b[sub])))
-            obj = np.where(ins >= 0)[0]
-            if len(obj) > 10:
-                io = rng.choice(obj, 2000); jo = rng.choice(obj, 2000); yo = b[io] == b[jo]
-                row["pair_auc_obj"] = roc_auc_score(yo, S[io, jo]) if 0 < yo.mean() < 1 else np.nan
+            if not MOTION_ONLY:
+                with torch.no_grad():
+                    z = W(torch.tensor(Z[n], device=dev)).cpu().numpy()
+                S = (z @ z.T) / np.sqrt(z.shape[1]) * float(ab[0]) + float(ab[1])
+                i, j, y = pairs_for(n, 600, rng)
+                row["pair_auc"] = roc_auc_score(y, S[i, j]) if 0 < y.mean() < 1 else np.nan
+                if g["split"] == "confound_same":
+                    mv = sorted(set(ins[b > 0])); st = [s_ for s_ in set(ins[b == 0]) if s_ >= 0]
+                    if mv and st:
+                        row["copies_separated"] = float(np.mean([np.mean(S[np.ix_(ins == mv[0], ins == s_)] < 0) for s_ in st]))
+                if g["split"] == "confound_glued":
+                    mv = sorted(set(ins[b > 0]))
+                    if len(mv) >= 2:
+                        row["glued_joined"] = float(np.mean(S[np.ix_(ins == mv[0], ins == mv[1])] > 0))
+                sub = balanced_idx(ins)
+                A = 1 / (1 + np.exp(-S[np.ix_(sub, sub)]))
+                row["k_hat"] = linkage_k(A); row["k_true"] = int(len(set(b[sub])))
+                obj = np.where(ins >= 0)[0]
+                if len(obj) > 10:
+                    io = rng.choice(obj, 2000); jo = rng.choice(obj, 2000); yo = b[io] == b[jo]
+                    row["pair_auc_obj"] = roc_auc_score(yo, S[io, jo]) if 0 < yo.mean() < 1 else np.nan
             dh = np.c_[Z[n], np.ones(len(P))] @ R
             pm = (np.c_[Z[n][:, :DV], np.ones(len(P))] @ Rm)[:, 0]
             row["motion_auc_v0"] = roc_auc_score(b > 0, pm) if 0 < (b > 0).mean() < 1 else np.nan

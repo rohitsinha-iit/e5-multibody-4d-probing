@@ -14,6 +14,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--src", required=True); ap.add_argument("--gt", required=True); ap.add_argument("--pass", dest="pas", required=True)
 ap.add_argument("--offsets", default="0,1"); ap.add_argument("--resize", default="square", choices=["square", "wide"])
 ap.add_argument("--model", default="any4d"); ap.add_argument("--pred", required=True); ap.add_argument("--out", required=True)
+ap.add_argument("--checkpoint", default="", help="Any4D checkpoint path (default: model default)")
 ap.add_argument("--limit", type=int, default=0); ap.add_argument("--check_resize", type=int, default=1)
 a = ap.parse_args()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, a.src)
@@ -66,7 +67,7 @@ for fi, f in enumerate(files):
                  cam_pose=q["cam_pose"][[0, 1]], K=q["K"][[0, 1]], geom=json.loads(str(q["geom"])))
     else:
         if model is None:
-            model = e5_models.get_model(a.model, resize_mode=mode)
+            model = e5_models.get_model(a.model, resize_mode=mode, **({"checkpoint_path": a.checkpoint} if a.checkpoint else {}))
         R = model.predict(paths)
         if a.check_resize and len(state["resize_check"]) < 3:
             mad, mad_shift = denorm_check(R["_views"][0], paths[0], R["geom"][0])

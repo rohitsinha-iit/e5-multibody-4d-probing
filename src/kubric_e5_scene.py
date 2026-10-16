@@ -16,6 +16,19 @@ Splits
                   (centre distance --far_lo..--far_hi m, invisible rigid offset) = group 1, plus an identical
                   copy C of asset A with its own independent motion = group 2, + 1 static.
                   Appearance says (A,C) belong together, motion says (A,B).
+v4 epipolar set (review item W3; every pair (frame 0, frame t) is epipolar-aligned, so two views are ambiguous):
+  epi_accel       epi_aligned camera and motion direction, but the object's displacement along the baseline follows a
+                  non-linear time warp h(t) (ease-in t^p or ease-out 1-(1-t)^p, p in [--accel_p_lo, --accel_p_hi]) with
+                  h(0)=0, h(1)=1. Frames 0 and 23 are identical to the paired epi_const scene; with 3 or more views a
+                  static point must move linearly in time, so the object is resolvable geometrically.
+  epi_const       paired control: same seed gives the same scene as epi_accel (same rng draws, including the profile),
+                  but h(t)=t (constant velocity, ambiguous for any number of views).
+  epi_sizerand    epi_aligned motion; the moving object's size is uniform in [--mov_size_lo, --mov_size_hi] m,
+                  independent of depth; static objects keep --size_lo..--size_hi.
+  epi_sizematch   epi_aligned motion with speed factor k drawn first; moving size = s_typ * (1 + k), s_typ uniform in
+                  [--size_lo, --size_hi], so the static interpretation (scaled by 1/(1+k) about the camera) has a
+                  typical size.
+  Old splits are bit-identical to the previous generator (no extra rng draws on their code paths).
 v3 float set: --float_height h > 0 lifts every object (moving and static) to a random height in [h, h+0.5] m
 above the floor with the same planar motion as v2 (xy translation + yaw), and --no_shadows 1 disables shadow
 casting for all objects, so neither floor contact nor a floor shadow reveals motion.
@@ -30,7 +43,8 @@ import kubric as kb
 from kubric.renderer.blender import Blender as KubricRenderer
 
 SPLITS = ["n2_generic", "n3_generic", "camrot", "epi_aligned", "planar",
-          "confound_same", "confound_glued", "confound_farglued"]
+          "confound_same", "confound_glued", "confound_farglued",
+          "epi_accel", "epi_const", "epi_sizerand", "epi_sizematch"]
 
 parser = kb.ArgumentParser()
 parser.add_argument("--split", type=str, required=True, choices=SPLITS)
@@ -45,6 +59,12 @@ parser.add_argument("--far_hi", type=float, default=3.2, help="confound_farglued
 parser.add_argument("--far_px", type=float, default=0.22, help="confound_farglued: min image distance between coupled members, as a fraction of the width, in every frame")
 parser.add_argument("--size_lo", type=float, default=1.2)
 parser.add_argument("--size_hi", type=float, default=2.0)
+parser.add_argument("--accel_p_lo", type=float, default=2.5, help="epi_accel/epi_const: time-warp exponent range")
+parser.add_argument("--accel_p_hi", type=float, default=3.5)
+parser.add_argument("--min_3v_px", type=float, default=20.0,
+                    help="epi_accel/epi_const: min image gap (px at 512 px width) at the middle view between the accelerated and the constant-velocity object centre")
+parser.add_argument("--mov_size_lo", type=float, default=0.5, help="epi_sizerand: moving-object size range (m)")
+parser.add_argument("--mov_size_hi", type=float, default=3.5)
 parser.add_argument("--min_sep_px", type=float, default=20.0,
                     help="min two-view multibody separation (px, frame first->last) for non-degenerate splits")
 parser.add_argument("--kubasic_assets", type=str, default="gs://kubric-public/assets/KuBasic/KuBasic.json")
@@ -111,6 +131,8 @@ def project(X, cam):  # cam = (pos, r, u, f) -> pixel (x right, y down), depth
 
 # ------------------------------------------------------------------ camera path
 split = FLAGS.split
+EPI = ("epi_aligned", "epi_accel", "epi_const", "epi_sizerand", "epi_sizematch")  # epipolar-aligned camera + motion
+PAIRED = ("epi_accel", "epi_const")
 cam_target = np.array([0.0, 0.0, 0.75])
 radius, height = rng.uniform(9, 11), rng.uniform(4, 5.5)
 th0 = rng.uniform(0, 2 * np.pi)
@@ -121,7 +143,7 @@ if split == "camrot":
     pan = rng.uniform(2.5, 3.5)  # metres of target sweep at the scene centre (~15-20 deg)
     for f in FRAMES:
         cam_path[f] = (pos, cam_target + side * pan * (TAU[f] - 0.5))
-elif split == "epi_aligned":
+elif split in EPI:
     pos0 = np.array([radius * np.cos(th0), radius * np.sin(th0), height])
     r0, _, _ = cam_pose_lookat(pos0, cam_target)
     cam_shift = rng.uniform(2.5, 3.5) * r0  # sideways, orientation fixed
@@ -134,7 +156,7 @@ else:
         cam_path[f] = (np.array([radius * np.cos(th), radius * np.sin(th), height]), cam_target)
 
 scene.camera = kb.PerspectiveCamera(focal_length=FOCAL, sensor_width=SENSOR)
-if split == "epi_aligned":
+if split in EPI:
     scene.camera.position = cam_path[F0][0]
     scene.camera.look_at(cam_target)
     q_fixed = np.array(scene.camera.quaternion)
@@ -142,7 +164,7 @@ cams = {}
 for f in FRAMES:
     pos, tgt = cam_path[f]
     scene.camera.position = pos
-    if split == "epi_aligned":
+    if split in EPI:
         scene.camera.quaternion = q_fixed
         r, u, fw = cam_pose_lookat(cam_path[F0][0], cam_target)
     else:
@@ -202,13 +224,26 @@ def visible(traj, margin=0.12):
             return False
     return True
 
+MOVER_IMG = []  # v4 epi splits: (trajectory, size) of every moving-object path, for the image no-overlap test
+
+
+def overlaps_mover(c, size, fac=0.7):
+    """v4 epi splits: True if a static object at c would overlap a moving object in the image in any frame."""
+    for traj, sm in MOVER_IMG:
+        for f in FRAMES:
+            pm, zm = project(traj[f], cams[f]); ps, zs = project(c, cams[f])
+            if np.hypot(pm[0] - ps[0], pm[1] - ps[1]) < fac * fx * (sm / 2 / max(zm, 1e-3) + size / 2 / max(zs, 1e-3)):
+                return True
+    return False
+
+
 def place_static(obj, size, near=None):
-    for _ in range(300):
+    for _ in range(300 if split not in EPI[1:] else 1500):
         xy = rng.uniform(-3.0, 3.0, 2) if near is None else near + rng.uniform(-2.5, 2.5, 2)
         zb = -obj.bounds[0][2] * obj.scale[2] + 0.005 + lift()
         c = np.r_[xy, zb]
         traj = {f: c for f in FRAMES}
-        if visible(traj, 0.08) and clear_of_others(traj, size / 2):
+        if visible(traj, 0.08) and clear_of_others(traj, size / 2) and not (split in EPI[1:] and overlaps_mover(c, size)):
             obj.position = c
             obj.quaternion = quat_axis_angle([0, 0, 1], rng.uniform(0, 2 * np.pi))
             placed.append((traj, size / 2))
@@ -225,12 +260,37 @@ def rest_height(obj):
         return float(obj.scale[2]) + 0.005
     return float(-obj.bounds[0][2] * obj.scale[2]) + 0.005
 
+EPI_K = None   # epi_sizematch: speed factor k, drawn before the object size
+ACC = None     # epi_accel / epi_const: time-warp profile (drawn in both splits, so a pair stays rng-identical)
+
+
+def warp_fn(prof):
+    if prof is None:
+        return lambda t: t
+    p = prof["p"]
+    if prof["mode"] == "ease_in":
+        return lambda t: t ** p
+    return lambda t: 1.0 - (1.0 - t) ** p
+
+
+WARP = lambda t: t  # identity except for epi_accel  # noqa: E731
+
+
+def ctr_with(members, axis, ang, pivot, v, wf):
+    return {f: np.mean([quat_to_R(quat_axis_angle(axis, ang * TAU[f])) @ off + pivot + v * wf(TAU[f])
+                        for (_, _, off) in members], 0) for f in FRAMES}
+
+
+def mid_view_index():
+    return int(round(12 * (len(FRAMES) - 1) / 23))
+
+
 def motion_params(kind):
     if FLAGS.grounded and kind != "epi":
         v = rand_unit(rng); v[2] = 0; v = v / np.linalg.norm(v) * rng.uniform(1.5, 3.0)
         return v, np.array([0, 0, 1.0]), np.deg2rad(rng.uniform(30, 90)) * rng.choice([-1, 1])
     if kind == "epi":
-        v = -rng.uniform(0.6, 1.0) * cam_shift  # parallel to camera translation, opposite sense
+        v = -(EPI_K if EPI_K is not None else rng.uniform(0.6, 1.0)) * cam_shift  # parallel to camera translation, opposite sense
         return v, np.array([0, 0, 1.0]), 0.0
     v = rand_unit(rng) * rng.uniform(1.5, 3.0); v[2] *= 0.3
     return v, rand_unit(rng), np.deg2rad(rng.uniform(30, 90)) * rng.choice([-1, 1])
@@ -252,7 +312,7 @@ def kinematics(members, kind):
             tr = {}
             for f in FRAMES:
                 qR = quat_axis_angle(axis, ang * TAU[f])
-                tr[f] = (quat_to_R(qR) @ off + pivot + v * TAU[f], quat_mul(qR, q0))
+                tr[f] = (quat_to_R(qR) @ off + pivot + v * WARP(TAU[f]), quat_mul(qR, q0))
             trajs.append(tr)
         rad = max(s for _, s, _ in members) / 2 + max(np.linalg.norm(o) for *_, o in members)
         ctr = {f: np.mean([t[f][0] for t in trajs], 0) for f in FRAMES}
@@ -274,14 +334,33 @@ def kinematics(members, kind):
                                analytic_sep_px=float("nan"), sep_target_met=True)
         if far:
             continue
-        if (FLAGS.grounded or all(c[2] > rad * 0.6 for c in ctr.values())) and visible(ctr) and clear_of_others(ctr, rad):
+        if split in PAIRED:  # test both the constant and the accelerated path, so accel and const accept identically
+            ctr_pair = [ctr_with(members, axis, ang, pivot, v, lambda t: t), ctr_with(members, axis, ang, pivot, v, warp_fn(ACC))]
+            ok_now = (FLAGS.grounded or all(c[2] > rad * 0.6 for c in ctr.values())) and \
+                all(visible(cc) and clear_of_others(cc, rad) for cc in ctr_pair)
+        else:
+            ok_now = (FLAGS.grounded or all(c[2] > rad * 0.6 for c in ctr.values())) and visible(ctr) and clear_of_others(ctr, rad)
+        if ok_now:
             body = (v, axis, ang, pivot)
             sep = body_sep(body, ctr[F0], rad)
             tries = getattr(kinematics, "tries", 0) + 1; kinematics.tries = tries
             if SEP_CHECK and sep < FLAGS.min_sep_px and tries < 400:
                 continue
             kinematics.tries = 0
+            if split in PAIRED:
+                fm = FRAMES[mid_view_index()]
+                r3 = float(np.linalg.norm(project(ctr_pair[1][fm], cams[fm])[0] - project(ctr_pair[0][fm], cams[fm])[0]))
+                if r3 < FLAGS.min_3v_px * W / 512.0:  # threshold is defined at 512 px
+                    continue
+                placed.extend([(ctr_pair[0], rad), (ctr_pair[1], rad)]); bodies.append((body, ctr[F0], rad))
+                smax = max(s_ for _, s_, _ in members)
+                MOVER_IMG.extend([(ctr_pair[0], smax), (ctr_pair[1], smax)])
+                return trajs, dict(v=v.tolist(), axis=axis.tolist(), angle=float(ang), pivot=pivot.tolist(),
+                                   analytic_sep_px=sep, sep_target_met=bool(sep >= FLAGS.min_sep_px),
+                                   accel_center_gap_mid_px=r3, mid_view_index=mid_view_index())
             placed.append((ctr, rad)); bodies.append((body, ctr[F0], rad))
+            if split in EPI[1:]:
+                MOVER_IMG.append((ctr, max(s_ for _, s_, _ in members)))
             return trajs, dict(v=v.tolist(), axis=axis.tolist(), angle=float(ang), pivot=pivot.tolist(),
                                analytic_sep_px=sep, sep_target_met=bool(sep >= FLAGS.min_sep_px))
     raise RuntimeError("could not place moving body")
@@ -359,7 +438,40 @@ def body_sep(body, center0, rad):
         seps.append(min(np.median(sampson_px(Fo, x1, x2)), np.median(sampson_px(Fb, y1, y2))))
     return float(min(seps))
 
-SEP_CHECK = split not in ("epi_aligned", "camrot")
+SEP_CHECK = split not in EPI + ("camrot",)
+
+def triangulate(xa, fa, xb, fb):
+    """Midpoint triangulation of pixel pairs under the static-world cameras of frames fa, fb."""
+    Ra, ta = cam_ext(fa); Rb, tb = cam_ext(fb)
+    Ca, Cb = -Ra.T @ ta, -Rb.T @ tb
+    da = (np.c_[xa, np.ones(len(xa))] @ Kinv.T) @ Ra; db = (np.c_[xb, np.ones(len(xb))] @ Kinv.T) @ Rb
+    w0 = Ca - Cb
+    a = (da * da).sum(1); b = (da * db).sum(1); c = (db * db).sum(1); d = (da * w0).sum(1); e = (db * w0).sum(1)
+    den = a * c - b * b
+    s = (b * e - c * d) / den; u = (a * e - b * d) / den
+    return 0.5 * ((Ca + s[:, None] * da) + (Cb + u[:, None] * db))
+
+
+def epi_analytic(obj_size, center_fn, n=300):
+    """Two-view separation of pairs (0, t) and the 3-view static-consistency residual, for a point cloud that
+    translates with the moving object's centre (epi motion has no rotation). Uses a local rng only."""
+    lr = np.random.default_rng(int(FLAGS.seed) + 991)
+    off = lr.normal(size=(n, 3)) * obj_size / 4
+    X = {f: center_fn(f) + off for f in FRAMES}
+    x0, _ = proj_px(X[F0], F0); x1, _ = proj_px(X[F1], F1)
+    Q = triangulate(x0, F0, x1, F1)  # static interpretation of the pair (0, last)
+    sep2 = float(np.median(sampson_px(F_body(None, F0, F1), x0, x1)))
+    seps, res3 = {}, {}
+    for j in (4, 8, 12, 16, 20):
+        i = int(round(j * (len(FRAMES) - 1) / 23)); f = FRAMES[i]
+        if f in (F0, F1):
+            continue
+        xt, _ = proj_px(X[f], f); qt, _ = proj_px(Q, f)
+        seps[str(i)] = float(np.median(sampson_px(F_body(None, F0, f), x0, xt)))
+        res3[str(i)] = float(np.median(np.linalg.norm(qt - xt, axis=1)))
+    sc = float(np.median(np.linalg.norm(Q - Q.mean(0), axis=1)) / np.median(np.linalg.norm(X[F0] - X[F0].mean(0), axis=1)))
+    return dict(analytic_sep2_px=sep2, analytic_sep_pairs_px=seps, analytic_resid3v_px=res3, static_scale_ratio=sc)
+
 
 objects = []  # dicts for metadata
 
@@ -371,6 +483,7 @@ def add_moving(members_spec, group, kind="generic"):
     kinematics.lifts = []
     members = [(o, s, off) for (o, a, s, off, pl) in members_spec]
     trajs, params = kinematics(members, kind)
+    add_moving.last_trajs = trajs
     for (o, a, s, off, pl), tr in zip(members_spec, trajs):
         add(o, a, s, group, planar=pl)
         for f in FRAMES:
@@ -379,14 +492,30 @@ def add_moving(members_spec, group, kind="generic"):
     return params
 
 motions = {}
-if split in ("n2_generic", "n3_generic", "camrot", "planar", "epi_aligned"):
+if split in ("n2_generic", "n3_generic", "camrot", "planar") + EPI:
     n_mov = 2 if split == "n3_generic" else 1
     for g in range(1, n_mov + 1):
         if split == "planar":
             o, a, s = new_card(); spec = [(o, a, s, np.zeros(3), True)]
         else:
-            o, a, s = new_gso(size=None if FLAGS.grounded else rng.uniform(1.8, 2.6)); spec = [(o, a, s, np.zeros(3), False)]
-        motions[g] = add_moving(spec, g, "epi" if split == "epi_aligned" else "generic")
+            if split in PAIRED:
+                ACC = dict(mode=str(rng.choice(["ease_in", "ease_out"])), p=float(rng.uniform(FLAGS.accel_p_lo, FLAGS.accel_p_hi)))
+                if split == "epi_accel":
+                    WARP = warp_fn(ACC)
+            if split == "epi_sizerand":
+                msize = float(rng.uniform(FLAGS.mov_size_lo, FLAGS.mov_size_hi))
+            elif split == "epi_sizematch":
+                EPI_K = float(rng.uniform(0.6, 1.0))
+                msize = float(rng.uniform(FLAGS.size_lo, FLAGS.size_hi)) * (1.0 + EPI_K)
+            else:
+                msize = None if FLAGS.grounded else rng.uniform(1.8, 2.6)
+            o, a, s = new_gso(size=msize); spec = [(o, a, s, np.zeros(3), False)]
+        motions[g] = add_moving(spec, g, "epi" if split in EPI else "generic")
+        if split in EPI and split != "epi_aligned":
+            mv_ = motions[g]; k_ = float(-np.dot(np.array(mv_["v"]), cam_shift) / np.dot(cam_shift, cam_shift))
+            mv_.update(variant=split, k=k_, mov_size=float(s), implied_static_size=float(s / (1.0 + k_)),
+                       profile=(dict(ACC, applied=bool(split == "epi_accel")) if ACC is not None else None),
+                       **epi_analytic(s, lambda f, tr_=add_moving.last_trajs[0]: np.asarray(tr_[f][0], float)))
         if split == "planar":
             texture_card(o)
 elif split == "confound_same":
@@ -411,6 +540,7 @@ elif split == "confound_farglued":
     motions[2] = add_moving([(oC, aA, sA, np.zeros(3), False)], 2)
 
 n_static = {"n2_generic": 3, "n3_generic": 2, "camrot": 3, "epi_aligned": 3, "planar": 2,
+            "epi_accel": 3, "epi_const": 3, "epi_sizerand": 3, "epi_sizematch": 3,
             "confound_same": 2, "confound_glued": 2, "confound_farglued": 1}[split]
 for _ in range(n_static):
     o, a, s = new_gso()

@@ -22,7 +22,7 @@ MODELS = [("any4d", "Any4D"), ("vggt", "VGGT-1B tracker"), ("cotracker3_24f", "C
           ("raft_chain24", "RAFT chain, 24 fr")]
 MLAB = dict(MODELS)
 COL = {"any4d": "#000000", "vggt": "#7f7f7f", "cotracker3_24f": "#0072B2", "cotracker3_7f": "#56B4E9",
-       "raft_direct": "#D55E00", "raft_chain7": "#E69F00", "raft_chain24": "#CC79A7", "raft": "#D55E00"}
+       "raft_direct": "#D55E00", "raft_chain7": "#E69F00", "raft_chain24": "#CC79A7", "raft": "#009E73"}
 KDS = [("v2", "Kubric v2 grounded (100)"), ("v3float", "Kubric floating (70)")]
 RDS = [("kitti15_rgb", "KITTI 2015, 2 views"), ("sintel_clean", "Sintel clean, 2 views"), ("sintel_final", "Sintel final, 2 views")]
 FACTORS = [("speed_px", "object speed |x_true - x_static| (px)", True), ("area", "object image area (fraction)", True),
@@ -124,7 +124,7 @@ def fig_metrics(D, keys, titles, dsl, path, ref_lines):
                             color=COL.get(m, "C0"), label=MLAB.get(m, "RAFT") if (i == 0 and j == 0) else None, capsize=2)
         for y in ref_lines.get(k, []):
             ax.axhline(y, color="0.6", lw=0.8, ls="--")
-        ax.set_xticks(range(len(dsl))); ax.set_xticklabels([dl.replace(", ", "\n") for _, dl in dsl], fontsize=7.5)
+        ax.set_xticks(range(len(dsl))); ax.set_xticklabels([dl.replace(" (", "\n(").replace(", ", "\n") for _, dl in dsl], fontsize=7.5)
         ax.set_title(titles[j])
     h, l = axs[0, 0].get_legend_handles_labels()
     fig.legend(h, l, loc="lower center", ncol=min(len(l), 7), frameon=False, bbox_to_anchor=(0.5, -0.02))
@@ -450,7 +450,7 @@ def mode_summary(a):
                 x = i + (mi - (len(ms) - 1) / 2) * 0.11
                 ax.errorbar(x, b["mean"], yerr=[[b["mean"] - b["lo"]], [b["hi"] - b["mean"]]], fmt="o", ms=4, color=COL[m], capsize=2,
                             label=(MLAB.get(m, "RAFT (2-view)") if m != "raft" else "RAFT (2-view)"))
-        ax.axhline(1, color="0.6", lw=0.8, ls="--"); ax.set_xticks(range(len(dsl))); ax.set_xticklabels([dl.replace(", ", "\n") for _, dl in dsl], fontsize=7)
+        ax.axhline(1, color="0.6", lw=0.8, ls="--"); ax.set_xticks(range(len(dsl))); ax.set_xticklabels([dl.replace(" (", "\n(").replace(", ", "\n") for _, dl in dsl], fontsize=7)
         ax.set_title(ttl[j])
     h, l = [], []
     for ax in axs:

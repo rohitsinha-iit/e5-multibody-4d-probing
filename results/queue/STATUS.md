@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-16 15:11:22
+updated 2026-10-16 15:46:33
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -24,7 +24,7 @@ updated 2026-10-16 15:11:22
 | 18 | t7_page4d_v2: Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | done | 1 | 2026-10-16 01:49:59 | 2026-10-16 01:53:36 | True |
 | 19 | t7_xm_summary: Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | done | 1 | 2026-10-16 01:55:59 | 2026-10-16 01:56:07 | True |
 | 20 | t7_any4d_v2_100: Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | done | 1 | 2026-10-16 01:53:44 | 2026-10-16 01:55:51 | True |
-| 21 | w2_kubric_baselines: Round 2 item 1 (W2): CoTracker3 + RAFT on Kubric v2 (100) and floating (70), same query sets as Any4D/VGGT; Any4D + VGGT on floating | running | 1 | 2026-10-16 15:11:22 |  | False |
+| 21 | w2_kubric_baselines: Round 2 item 1 (W2): CoTracker3 + RAFT on Kubric v2 (100) and floating (70), same query sets as Any4D/VGGT; Any4D + VGGT on floating | done | 1 | 2026-10-16 15:11:22 | 2026-10-16 15:46:33 | False |
 | 22 | w2_real_baselines: Round 2 item 1 (W2): RAFT on KITTI 2015 and Sintel (2 views), metrics + alpha/beta vs Any4D cached | pending | 0 |  |  |  |
 | 23 | w2_decomp: Round 2 item 1 (W2): alpha/beta decomposition and slope vs boundary distance, all models | pending | 0 |  |  |  |
 | 24 | w2_dose: Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence) | pending | 0 |  |  |  |
