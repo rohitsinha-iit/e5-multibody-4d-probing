@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-16 15:55:52 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-16 15:56:00 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -207,9 +207,9 @@
 <tr>
 <td>25</td>
 <td><a href="#w2_summary">w2_summary</a>: Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?)</td>
-<td>queued</td>
-<td>0</td>
-<td></td>
+<td>RUNNING</td>
+<td>1</td>
+<td>2026-10-16 15:55:58</td>
 <td></td>
 </tr>
 <tr>
@@ -2699,4 +2699,289 @@
 </table>
 <p><img alt="v2" src="fig_w2_dose_v2.png" /></p>
 <p><img alt="floating" src="fig_w2_dose_v3float.png" /></p>
-<p><img alt="regression" src="fig_w2_dose_regression.png" /></p></body></html>
+<p><img alt="regression" src="fig_w2_dose_regression.png" /></p>
+<h2>w2_summary</h2>
+<p>Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?)</p>
+<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-16 15:55:58. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/w2_summary/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/w2_summary/task.log">log</a>.</p>
+<p>Partial results so far; the run is still going.</p>
+<p><img alt="fig_w2_dose_regression.png" src="assets/w2_summary/fig_w2_dose_regression.png" />
+<img alt="fig_w2_dose_v2.png" src="assets/w2_summary/fig_w2_dose_v2.png" />
+<img alt="fig_w2_dose_v3float.png" src="assets/w2_summary/fig_w2_dose_v3float.png" />
+<img alt="fig_w2_summary.png" src="assets/w2_summary/fig_w2_summary.png" /></p>
+<p><strong>w2_summary_summary.md</strong></p>
+<h1>w2_summary: is the camera-motion pull regression shrinkage or a 4D-model property? (review item 1, W2)</h1>
+<h2>All models, same scenes and query sets</h2>
+<p>Mean over scenes [bootstrap 95% CI]. Kubric slope is slope2d_q and sep_ratio is sep_ratio_q (e5_xm_eval.py definitions, frame 0 to 23); real data use e5_realdata_eval.py. alpha and beta: x_pred - x1 = alpha (x_true - x_static) + beta (x_static - x1) on moving points, only on scenes where they are identifiable (condition number of [A B] at most 10, median |A| and |B| at least 2 px). Last column: paired per-scene difference to Any4D with a two-sided sign test.</p>
+<table>
+<thead>
+<tr>
+<th>model</th>
+<th>data</th>
+<th>n scenes</th>
+<th>slope</th>
+<th>alpha (n identifiable)</th>
+<th>beta</th>
+<th>beta_static</th>
+<th>sep_ratio</th>
+<th>slope vs Any4D [sign p]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Any4D</td>
+<td>v2</td>
+<td>98</td>
+<td>0.61 [0.56, 0.65]</td>
+<td>0.61 [0.56, 0.67] (84)</td>
+<td>1.03 [0.93, 1.13]</td>
+<td>0.99 [0.99, 1.00]</td>
+<td>0.83 [0.70, 0.96]</td>
+<td>reference</td>
+</tr>
+<tr>
+<td>Any4D</td>
+<td>v3float</td>
+<td>65</td>
+<td>0.56 [0.47, 0.64]</td>
+<td>0.64 [0.56, 0.71] (35)</td>
+<td>1.02 [0.88, 1.16]</td>
+<td>0.99 [0.98, 1.00]</td>
+<td>0.73 [0.57, 0.89]</td>
+<td>reference</td>
+</tr>
+<tr>
+<td>VGGT-1B tracker</td>
+<td>v2</td>
+<td>98</td>
+<td>0.34 [0.29, 0.41]</td>
+<td>0.22 [0.16, 0.27] (84)</td>
+<td>1.02 [0.92, 1.11]</td>
+<td>1.02 [1.00, 1.04]</td>
+<td>0.23 [0.16, 0.33]</td>
+<td>-0.26 [-0.34, -0.18] [p 3.7e-06]</td>
+</tr>
+<tr>
+<td>VGGT-1B tracker</td>
+<td>v3float</td>
+<td>65</td>
+<td>0.57 [0.47, 0.68]</td>
+<td>0.32 [0.23, 0.42] (35)</td>
+<td>0.95 [0.71, 1.21]</td>
+<td>1.06 [1.02, 1.09]</td>
+<td>0.27 [0.19, 0.35]</td>
+<td>+0.02 [-0.10, +0.14] [p 0.620]</td>
+</tr>
+<tr>
+<td>CoTracker3, 24 fr</td>
+<td>v2</td>
+<td>98</td>
+<td>0.96 [0.93, 0.97]</td>
+<td>0.95 [0.94, 0.97] (84)</td>
+<td>0.99 [0.97, 1.01]</td>
+<td>0.97 [0.94, 0.99]</td>
+<td>1.14 [0.88, 1.57]</td>
+<td>+0.35 [+0.31, +0.39] [p 9.9e-25]</td>
+</tr>
+<tr>
+<td>CoTracker3, 24 fr</td>
+<td>v3float</td>
+<td>65</td>
+<td>0.97 [0.96, 0.98]</td>
+<td>0.97 [0.96, 0.98] (35)</td>
+<td>1.02 [0.99, 1.05]</td>
+<td>0.97 [0.93, 0.99]</td>
+<td>0.96 [0.86, 1.07]</td>
+<td>+0.41 [+0.33, +0.50] [p 3.9e-14]</td>
+</tr>
+<tr>
+<td>CoTracker3, 7 fr</td>
+<td>v2</td>
+<td>98</td>
+<td>0.95 [0.92, 0.97]</td>
+<td>0.94 [0.92, 0.97] (84)</td>
+<td>0.98 [0.96, 1.00]</td>
+<td>0.96 [0.93, 0.98]</td>
+<td>0.95 [0.84, 1.07]</td>
+<td>+0.34 [+0.30, +0.38] [p 2.4e-23]</td>
+</tr>
+<tr>
+<td>CoTracker3, 7 fr</td>
+<td>v3float</td>
+<td>65</td>
+<td>0.96 [0.94, 0.97]</td>
+<td>0.96 [0.94, 0.98] (35)</td>
+<td>1.00 [0.98, 1.03]</td>
+<td>0.95 [0.90, 0.98]</td>
+<td>1.04 [0.87, 1.25]</td>
+<td>+0.40 [+0.32, +0.49] [p 4.9e-13]</td>
+</tr>
+<tr>
+<td>RAFT, 0 to 23</td>
+<td>v2</td>
+<td>98</td>
+<td>0.59 [0.48, 0.69]</td>
+<td>0.61 [0.49, 0.71] (84)</td>
+<td>0.68 [0.43, 0.90]</td>
+<td>0.60 [0.55, 0.66]</td>
+<td>0.90 [0.66, 1.25]</td>
+<td>-0.02 [-0.12, +0.08] [p 0.006]</td>
+</tr>
+<tr>
+<td>RAFT, 0 to 23</td>
+<td>v3float</td>
+<td>65</td>
+<td>0.50 [0.33, 0.65]</td>
+<td>0.62 [0.47, 0.75] (35)</td>
+<td>0.78 [0.54, 1.01]</td>
+<td>0.66 [0.58, 0.75]</td>
+<td>0.80 [0.54, 1.17]</td>
+<td>-0.06 [-0.20, +0.08] [p 0.136]</td>
+</tr>
+<tr>
+<td>RAFT chain, 7 fr</td>
+<td>v2</td>
+<td>98</td>
+<td>0.88 [0.84, 0.90]</td>
+<td>0.85 [0.81, 0.89] (84)</td>
+<td>0.98 [0.93, 1.03]</td>
+<td>0.97 [0.95, 0.99]</td>
+<td>0.84 [0.63, 1.17]</td>
+<td>+0.27 [+0.23, +0.31] [p 8.1e-16]</td>
+</tr>
+<tr>
+<td>RAFT chain, 7 fr</td>
+<td>v3float</td>
+<td>65</td>
+<td>0.89 [0.85, 0.91]</td>
+<td>0.91 [0.87, 0.94] (35)</td>
+<td>1.05 [0.99, 1.11]</td>
+<td>0.96 [0.92, 0.99]</td>
+<td>0.66 [0.56, 0.77]</td>
+<td>+0.33 [+0.26, +0.41] [p 4.3e-11]</td>
+</tr>
+<tr>
+<td>RAFT chain, 24 fr</td>
+<td>v2</td>
+<td>98</td>
+<td>0.82 [0.79, 0.85]</td>
+<td>0.78 [0.73, 0.82] (84)</td>
+<td>0.99 [0.92, 1.05]</td>
+<td>0.95 [0.92, 0.97]</td>
+<td>0.77 [0.59, 1.06]</td>
+<td>+0.22 [+0.17, +0.26] [p 1.4e-12]</td>
+</tr>
+<tr>
+<td>RAFT chain, 24 fr</td>
+<td>v3float</td>
+<td>65</td>
+<td>0.85 [0.82, 0.88]</td>
+<td>0.85 [0.81, 0.89] (35)</td>
+<td>1.06 [0.97, 1.15]</td>
+<td>0.94 [0.90, 0.98]</td>
+<td>0.65 [0.55, 0.75]</td>
+<td>+0.29 [+0.22, +0.37] [p 4.3e-11]</td>
+</tr>
+<tr>
+<td>Any4D</td>
+<td>kitti15_rgb</td>
+<td>195</td>
+<td>0.58 [0.51, 0.64]</td>
+<td>0.18 [0.01, 0.36] (42)</td>
+<td>0.88 [0.69, 1.07]</td>
+<td>0.84 [0.80, 0.87]</td>
+<td>1.55 [0.89, 2.38]</td>
+<td>reference</td>
+</tr>
+<tr>
+<td>Any4D</td>
+<td>sintel_clean</td>
+<td>217</td>
+<td>0.31 [0.23, 0.39]</td>
+<td>0.38 [0.29, 0.46] (123)</td>
+<td>0.91 [0.73, 1.10]</td>
+<td>0.45 [0.37, 0.53]</td>
+<td>0.84 [0.69, 1.02]</td>
+<td>reference</td>
+</tr>
+<tr>
+<td>Any4D</td>
+<td>sintel_final</td>
+<td>217</td>
+<td>0.33 [0.24, 0.41]</td>
+<td>0.32 [0.24, 0.41] (123)</td>
+<td>1.00 [0.79, 1.25]</td>
+<td>0.48 [0.39, 0.58]</td>
+<td>0.69 [0.59, 0.81]</td>
+<td>reference</td>
+</tr>
+<tr>
+<td>RAFT</td>
+<td>kitti15_rgb</td>
+<td>195</td>
+<td>0.95 [0.94, 0.96]</td>
+<td>0.94 [0.88, 0.98] (41)</td>
+<td>0.97 [0.92, 1.01]</td>
+<td>0.91 [0.88, 0.92]</td>
+<td>0.76 [0.57, 0.95]</td>
+<td>+0.38 [+0.31, +0.44] [p 9.0e-18]</td>
+</tr>
+<tr>
+<td>RAFT</td>
+<td>sintel_clean</td>
+<td>217</td>
+<td>0.91 [0.89, 0.93]</td>
+<td>0.86 [0.82, 0.90] (122)</td>
+<td>0.87 [0.80, 0.93]</td>
+<td>0.92 [0.80, 0.99]</td>
+<td>0.89 [0.81, 0.98]</td>
+<td>+0.60 [+0.52, +0.68] [p 2.3e-31]</td>
+</tr>
+<tr>
+<td>RAFT</td>
+<td>sintel_final</td>
+<td>217</td>
+<td>0.90 [0.88, 0.92]</td>
+<td>0.86 [0.82, 0.90] (122)</td>
+<td>0.89 [0.83, 0.95]</td>
+<td>0.98 [0.95, 1.01]</td>
+<td>0.93 [0.80, 1.08]</td>
+<td>+0.57 [+0.49, +0.66] [p 2.3e-27]</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="summary" src="fig_w2_summary.png" /></p>
+<h2>Rule-based reading per model</h2>
+<p>Thresholds: pull if the slope CI is below 0.9, no pull if it is above 0.9; shrinkage toward zero image motion if the beta CI is below 0.95 and alpha is not different from beta (sign test p &gt;= 0.05); camera-motion pull if beta is near 1 and alpha below 1; smoothing if the interior slope is higher than the edge slope (sign test p &lt; 0.05).</p>
+<ul>
+<li>Any4D, v2: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>Any4D, v3float: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>VGGT-1B tracker, v2: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>VGGT-1B tracker, v3float: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>CoTracker3, 24 fr, v2: no pull (slope CI above 0.9); camera motion kept (beta near 1); slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>CoTracker3, 24 fr, v3float: no pull (slope CI above 0.9); camera motion kept (beta near 1); slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>CoTracker3, 7 fr, v2: no pull (slope CI above 0.9); camera motion kept (beta near 1); slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>CoTracker3, 7 fr, v3float: no pull (slope CI above 0.9); camera motion kept (beta near 1); slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>RAFT, 0 to 23, v2: pull (slope CI below 0.9); shrinkage toward zero image motion (beta below 1 and alpha not different from beta); slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>RAFT, 0 to 23, v3float: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull</li>
+<li>RAFT chain, 7 fr, v2: weak or unclear pull (slope CI includes 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>RAFT chain, 7 fr, v3float: weak or unclear pull (slope CI includes 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>RAFT chain, 24 fr, v2: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>RAFT chain, 24 fr, v3float: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull; slope lower at object boundaries (spatial smoothing contributes)</li>
+<li>Any4D, kitti15_rgb: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull</li>
+<li>Any4D, sintel_clean: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull</li>
+<li>Any4D, sintel_final: pull (slope CI below 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull</li>
+<li>RAFT, kitti15_rgb: no pull (slope CI above 0.9); camera motion kept (beta near 1), own motion under-recovered (alpha &lt; 1): camera-motion pull</li>
+<li>RAFT, sintel_clean: weak or unclear pull (slope CI includes 0.9); mixed (beta below 1 and alpha different from beta)</li>
+<li>RAFT, sintel_final: weak or unclear pull (slope CI includes 0.9); shrinkage toward zero image motion (beta below 1 and alpha not different from beta)</li>
+</ul>
+<h2>Dose-response (Any4D)</h2>
+<ul>
+<li>Any4D, v2: factors whose standardised coefficient CI excludes 0: area +0.07, occlusion -0.05
+  confidence (added): -0.02 [-0.06, +0.02]</li>
+<li>Any4D, v3float: factors whose standardised coefficient CI excludes 0: area +0.26, occlusion -0.11, cam_disp_px -0.09
+  confidence (added): +0.02 [-0.02, +0.07]</li>
+</ul>
+<p>See w2_dose summary for all models and the figures fig_w2_dose_v2.png, fig_w2_dose_v3float.png, fig_w2_dose_regression.png.</p>
+<h2>Verdict (generated from the numbers above; to be checked and edited by hand)</h2>
+<p>Kubric v2 grounded (100): Any4D slope 0.61 [0.56, 0.65], VGGT tracker 0.34 [0.29, 0.41], CoTracker3 0.96 [0.93, 0.97], RAFT 0.59 [0.48, 0.69]; 0.88 [0.84, 0.90]; 0.82 [0.79, 0.85]. The best non-reconstruction baseline recovers clearly more object motion than Any4D (CIs do not overlap). Kubric floating (70): Any4D slope 0.56 [0.47, 0.64], VGGT tracker 0.57 [0.47, 0.68], CoTracker3 0.97 [0.96, 0.98], RAFT 0.50 [0.33, 0.65]; 0.89 [0.85, 0.91]; 0.85 [0.82, 0.88]. The best non-reconstruction baseline recovers clearly more object motion than Any4D (CIs do not overlap). KITTI 2015, 2 views: Any4D slope 0.58 [0.51, 0.64], RAFT 0.95 [0.94, 0.96]. Sintel clean, 2 views: Any4D slope 0.31 [0.23, 0.39], RAFT 0.91 [0.89, 0.93]. Sintel final, 2 views: Any4D slope 0.33 [0.24, 0.41], RAFT 0.90 [0.88, 0.92].
+If the dedicated trackers (CoTracker3, RAFT) recover close to all object motion on the same scenes while Any4D and the VGGT tracker head do not, the pull is a property of the reconstruction models and not a generic property of dense correspondence under uncertainty. If the baselines show the same deficit, with alpha close to beta, it is generic shrinkage. The decomposition rows above say which of the two readings each model follows.</p></body></html>
