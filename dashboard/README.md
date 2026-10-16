@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 02:39:44 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 02:40:22 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -35,9 +35,9 @@ Last updated 2026-10-17 02:39:44 (server time). Regenerated after every queue ev
 | 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | done | 3 | 2026-10-17 01:01:23 | 2026-10-17 02:31:45 |
 | 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 1 | 2026-10-17 02:39:02 |  |
 | 31 | [ft_eval_heads](#ft_eval_heads): Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
-| 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | RUNNING | 1 | 2026-10-17 02:39:41 |  |
+| 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 1 | 2026-10-17 02:39:41 |  |
 | 33 | [ft_eval_ctrl](#ft_eval_ctrl): Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 |  |  |
-| 34 | [ft_train_sf](#ft_train_sf): Item 10: fine-tune (b) scene-flow DPT head + adaptor | queued | 0 |  |  |
+| 34 | [ft_train_sf](#ft_train_sf): Item 10: fine-tune (b) scene-flow DPT head + adaptor | RUNNING | 1 | 2026-10-17 02:40:19 |  |
 | 35 | [ft_eval_sf](#ft_eval_sf): Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | queued | 0 |  |  |
 | 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | queued | 0 |  |  |
 | 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | queued | 0 |  |  |
@@ -52,7 +52,7 @@ Last updated 2026-10-17 02:39:44 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 02:39:11 running ft_train_heads
+Supervisor heartbeat: 2026-10-17 02:39:49 running ft_train_ctrl
 
 ## v3_pilot
 
@@ -823,11 +823,11 @@ Pilot run to choose the number of fine-tuning steps (variant heads_sf = five-hea
 
 
 
-## ft_train_ctrl
+## ft_train_sf
 
-Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads
+Item 10: fine-tune (b) scene-flow DPT head + adaptor
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 02:39:41. [Raw results](../results/queue/ft_train_ctrl/), [log](../results/queue/ft_train_ctrl/task.log).
+Status: **RUNNING**, attempt 1, started 2026-10-17 02:40:19. [Raw results](../results/queue/ft_train_sf/), [log](../results/queue/ft_train_sf/task.log).
 
 Partial results so far; the run is still going.
 
