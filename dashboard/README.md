@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-16 01:56:10 (server time). Regenerated after every queue event.
+Last updated 2026-10-16 15:11:26 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -24,6 +24,11 @@ Last updated 2026-10-16 01:56:10 (server time). Regenerated after every queue ev
 | 18 | [t7_page4d_v2](#t7_page4d_v2): Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention | done | 1 | 2026-10-16 01:49:59 | 2026-10-16 01:53:36 |
 | 19 | [t7_xm_summary](#t7_xm_summary): Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D) | done | 1 | 2026-10-16 01:55:59 | 2026-10-16 01:56:07 |
 | 20 | [t7_any4d_v2_100](#t7_any4d_v2_100): Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results) | done | 1 | 2026-10-16 01:53:44 | 2026-10-16 01:55:51 |
+| 21 | [w2_kubric_baselines](#w2_kubric_baselines): Round 2 item 1 (W2): CoTracker3 + RAFT on Kubric v2 (100) and floating (70), same query sets as Any4D/VGGT; Any4D + VGGT on floating | RUNNING | 1 | 2026-10-16 15:11:22 |  |
+| 22 | [w2_real_baselines](#w2_real_baselines): Round 2 item 1 (W2): RAFT on KITTI 2015 and Sintel (2 views), metrics + alpha/beta vs Any4D cached | queued | 0 |  |  |
+| 23 | [w2_decomp](#w2_decomp): Round 2 item 1 (W2): alpha/beta decomposition and slope vs boundary distance, all models | queued | 0 |  |  |
+| 24 | [w2_dose](#w2_dose): Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence) | queued | 0 |  |  |
+| 25 | [w2_summary](#w2_summary): Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | queued | 0 |  |  |
 
 Supervisor heartbeat: 2026-10-16 01:55:21 running t7_any4d_v2_100
 
@@ -323,13 +328,13 @@ Status: **done**, attempt 1, started 2026-10-16 01:43:28, finished 2026-10-16 01
 
 | metric | mean | median | n |
 |---|---|---|---|
-| align_scale | 4.7790 | 4.7222 | 60 |
-| align_rmse | 0.2584 | 0.2492 | 60 |
-| median_true_disp3d | 2.3840 | 2.4061 | 58 |
-| slope3d | 0.9386 | 0.9311 | 58 |
-| epe3d_static | 0.1619 | 0.1655 | 60 |
-| epe3d_moving | 0.3541 | 0.2930 | 58 |
-| sep_gt | 23.6306 | 26.6735 | 58 |
+| align_scale | 4.7920 | 4.7222 | 100 |
+| align_rmse | 0.2612 | 0.2507 | 100 |
+| median_true_disp3d | 2.3630 | 2.3707 | 98 |
+| slope3d | 0.9191 | 0.9322 | 98 |
+| epe3d_static | 0.1588 | 0.1568 | 100 |
+| epe3d_moving | 0.3917 | 0.3151 | 98 |
+| sep_gt | 25.4553 | 27.6463 | 98 |
 
 
 
@@ -347,25 +352,25 @@ Status: **done**, attempt 1, started 2026-10-16 01:46:13, finished 2026-10-16 01
 
 | metric | mean | median | n |
 |---|---|---|---|
-| align_scale | 21.4023 | 21.8720 | 60 |
-| align_rmse | 0.1454 | 0.1086 | 60 |
-| median_true_disp3d | 2.3840 | 2.4061 | 58 |
-| slope3d | 1.0264 | 1.0003 | 58 |
-| epe3d_static | 0.1992 | 0.1069 | 60 |
-| epe3d_moving | 0.1949 | 0.1543 | 58 |
-| align_rmse_head | 0.1448 | 0.1088 | 60 |
-| slope3d_head | 1.0326 | 1.0010 | 58 |
-| epe3d_static_head | 0.1773 | 0.0914 | 60 |
-| epe3d_moving_head | 0.2017 | 0.1271 | 58 |
-| sep_gt | 23.6306 | 26.6735 | 58 |
-| slope2d_q | 0.4018 | 0.3625 | 58 |
-| epe_static_q | 12.6548 | 7.2452 | 60 |
-| epe_moving_q | 52.9611 | 47.7194 | 58 |
-| sep_pred_q | 5.4213 | 3.5117 | 58 |
-| sep_ratio_q | 0.2964 | 0.1416 | 49 |
-| track_self_offset | 0.0000 | 0.0000 | 60 |
-| slope3d_track | 0.4518 | 0.4958 | 58 |
-| slope3d_q | 1.0271 | 1.0001 | 58 |
+| align_scale | 21.5576 | 21.8734 | 100 |
+| align_rmse | 0.1265 | 0.1001 | 100 |
+| median_true_disp3d | 2.3630 | 2.3707 | 98 |
+| slope3d | 1.0153 | 0.9953 | 98 |
+| epe3d_static | 0.1527 | 0.0810 | 100 |
+| epe3d_moving | 0.1737 | 0.1325 | 98 |
+| align_rmse_head | 0.1265 | 0.1034 | 100 |
+| slope3d_head | 1.0167 | 0.9883 | 98 |
+| epe3d_static_head | 0.1330 | 0.0671 | 100 |
+| epe3d_moving_head | 0.1727 | 0.1261 | 98 |
+| sep_gt | 25.4553 | 27.6463 | 98 |
+| slope2d_q | 0.3439 | 0.2911 | 98 |
+| epe_static_q | 9.6846 | 5.8218 | 100 |
+| epe_moving_q | 57.5506 | 52.6230 | 98 |
+| sep_pred_q | 4.8884 | 2.9189 | 98 |
+| sep_ratio_q | 0.2280 | 0.1184 | 89 |
+| track_self_offset | 0.0000 | 0.0000 | 100 |
+| slope3d_track | 0.3527 | 0.4312 | 98 |
+| slope3d_q | 1.0157 | 0.9944 | 98 |
 
 
 
@@ -383,17 +388,17 @@ Status: **done**, attempt 1, started 2026-10-16 01:49:59, finished 2026-10-16 01
 
 | metric | mean | median | n |
 |---|---|---|---|
-| align_scale | 20.5066 | 21.1419 | 60 |
-| align_rmse | 0.1826 | 0.1405 | 60 |
-| median_true_disp3d | 2.3840 | 2.4061 | 58 |
-| slope3d | 1.0627 | 0.9774 | 58 |
-| epe3d_static | 0.4147 | 0.2710 | 60 |
-| epe3d_moving | 0.3891 | 0.2361 | 58 |
-| align_rmse_head | 0.1501 | 0.1054 | 60 |
-| slope3d_head | 1.0606 | 0.9923 | 58 |
-| epe3d_static_head | 0.2548 | 0.0986 | 60 |
-| epe3d_moving_head | 0.3092 | 0.1745 | 58 |
-| sep_gt | 23.6306 | 26.6735 | 58 |
+| align_scale | 20.6718 | 21.1419 | 100 |
+| align_rmse | 0.1627 | 0.1366 | 100 |
+| median_true_disp3d | 2.3630 | 2.3707 | 98 |
+| slope3d | 1.0239 | 0.9673 | 98 |
+| epe3d_static | 0.3488 | 0.2526 | 100 |
+| epe3d_moving | 0.3208 | 0.2270 | 98 |
+| align_rmse_head | 0.1261 | 0.0908 | 100 |
+| slope3d_head | 1.0300 | 0.9883 | 98 |
+| epe3d_static_head | 0.1921 | 0.0942 | 100 |
+| epe3d_moving_head | 0.2540 | 0.1643 | 98 |
+| sep_gt | 25.4553 | 27.6463 | 98 |
 
 
 
@@ -409,4 +414,13 @@ Status: **done**, attempt 1, started 2026-10-16 01:55:59, finished 2026-10-16 01
 Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results)
 
 Status: **done**, attempt 1, started 2026-10-16 01:53:44, finished 2026-10-16 01:55:51. [Raw results](../results/queue/t7_any4d_v2_100/), [log](../results/queue/t7_any4d_v2_100/task.log).
+
+
+## w2_kubric_baselines
+
+Round 2 item 1 (W2): CoTracker3 + RAFT on Kubric v2 (100) and floating (70), same query sets as Any4D/VGGT; Any4D + VGGT on floating
+
+Status: **RUNNING**, attempt 1, started 2026-10-16 15:11:22. [Raw results](../results/queue/w2_kubric_baselines/), [log](../results/queue/w2_kubric_baselines/task.log).
+
+Partial results so far; the run is still going.
 

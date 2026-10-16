@@ -2,14 +2,14 @@
 
 | metric | mean | median | n |
 |---|---|---|---|
-| align_scale | 20.5066 | 21.1419 | 60 |
-| align_rmse | 0.1826 | 0.1405 | 60 |
-| median_true_disp3d | 2.3840 | 2.4061 | 58 |
-| slope3d | 1.0627 | 0.9774 | 58 |
-| epe3d_static | 0.4147 | 0.2710 | 60 |
-| epe3d_moving | 0.3891 | 0.2361 | 58 |
-| align_rmse_head | 0.1501 | 0.1054 | 60 |
-| slope3d_head | 1.0606 | 0.9923 | 58 |
-| epe3d_static_head | 0.2548 | 0.0986 | 60 |
-| epe3d_moving_head | 0.3092 | 0.1745 | 58 |
-| sep_gt | 23.6306 | 26.6735 | 58 |
+| align_scale | 20.6718 | 21.1419 | 100 |
+| align_rmse | 0.1627 | 0.1366 | 100 |
+| median_true_disp3d | 2.3630 | 2.3707 | 98 |
+| slope3d | 1.0239 | 0.9673 | 98 |
+| epe3d_static | 0.3488 | 0.2526 | 100 |
+| epe3d_moving | 0.3208 | 0.2270 | 98 |
+| align_rmse_head | 0.1261 | 0.0908 | 100 |
+| slope3d_head | 1.0300 | 0.9883 | 98 |
+| epe3d_static_head | 0.1921 | 0.0942 | 100 |
+| epe3d_moving_head | 0.2540 | 0.1643 | 98 |
+| sep_gt | 25.4553 | 27.6463 | 98 |

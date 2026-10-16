@@ -215,5 +215,62 @@
   "max_attempts": 2,
   "min_free_gb": 10,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "w2_kubric_baselines",
+  "title": "Round 2 item 1 (W2): CoTracker3 + RAFT on Kubric v2 (100) and floating (70), same query sets as Any4D/VGGT; Any4D + VGGT on floating",
+  "script": "w2_kubric_baselines.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "w2_real_baselines",
+  "title": "Round 2 item 1 (W2): RAFT on KITTI 2015 and Sintel (2 views), metrics + alpha/beta vs Any4D cached",
+  "script": "w2_real_baselines.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "w2_decomp",
+  "title": "Round 2 item 1 (W2): alpha/beta decomposition and slope vs boundary distance, all models",
+  "script": "w2_decomp.sh",
+  "deps": [
+   "w2_kubric_baselines",
+   "w2_real_baselines"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 2
+ },
+ {
+  "id": "w2_dose",
+  "title": "Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence)",
+  "script": "w2_dose.sh",
+  "deps": [
+   "w2_kubric_baselines"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 2
+ },
+ {
+  "id": "w2_summary",
+  "title": "Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?)",
+  "script": "w2_summary.sh",
+  "deps": [
+   "w2_kubric_baselines",
+   "w2_real_baselines",
+   "w2_decomp",
+   "w2_dose"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 2
  }
 ]

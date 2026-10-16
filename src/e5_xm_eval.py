@@ -119,7 +119,12 @@ def eval_scene(d, P, si):
     meta, gt, _ = kp.load_scene(d)
     W = meta["resolution"][0]; b = len(meta["frames"]) - 1; s = M518 / W
     q, q_xy, c, idx_sep = query_set(meta, gt, si)
-    if "q_idx" in P:
+    if "q_idx" in P and not np.array_equal(P["q_idx"], q):
+        # predictions made when the scene list held 20 extra epi scenes (index shifted by 20): use that index
+        for alt in (si + 20, si - 20):
+            q2, q_xy2, c2, idx2 = query_set(meta, gt, alt)
+            if np.array_equal(P["q_idx"], q2):
+                q, q_xy, c, idx_sep = q2, q_xy2, c2, idx2; break
         assert np.array_equal(P["q_idx"], q), "query set mismatch"
     x1, x2, grp = c["x1"], c["x2"], c["group"]
     row = dict(scene=os.path.basename(d), split=meta["split"], n_corr=int(len(x1)), n_query=int(len(q)))
