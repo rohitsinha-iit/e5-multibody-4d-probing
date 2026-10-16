@@ -306,13 +306,13 @@ All 18 queue tasks finished. There were five failures. The floating pipeline (on
 
 "Slope" is the fraction of true object motion recovered (1 = full motion, 0 = the object is treated as static).
 
-| Data (Any4D) | Slope, mean [95% CI] | Scenes with slope < 1 | Separation ratio |
+| Data (Any4D) | Slope, mean [95% CI, from final_summary.json] | Scenes with slope < 1 | Separation ratio |
 |---|---|---|---|
 | Kubric v2 grounded (94) | 0.75 [0.71, 0.78] | 95% | mean 0.76, 75% below GT |
-| Kubric floating (51) | 0.76 [0.68, 0.83] | 92% | median 0.71, 74% below GT |
-| Kubric far-glued (19) | 0.73 [0.65, 0.80] | 100% | median 0.55, 84% below GT |
-| KITTI 2015, 2 views, wide (195) | 0.58 [0.51, 0.64] | 84% | undefined (sep_gt < 1 px) |
-| Sintel clean, 2 views, wide (217) | 0.31 [0.24, 0.40] | 88% | median 0.54 |
+| Kubric floating (51) | 0.76 [0.69, 0.82] | 92% | median 0.71, 74% below GT |
+| Kubric far-glued (19) | 0.73 [0.65, 0.79] | 100% | median 0.55, 84% below GT |
+| KITTI 2015, 2 views, wide (195) | 0.58 [0.51, 0.63] | 84% | undefined (sep_gt < 1 px) |
+| Sintel clean, 2 views, wide (217) | 0.31 [0.23, 0.39] | 88% | median 0.54 |
 | Sintel final, 2 views, wide (217) | 0.33 [0.24, 0.41] | 89% | median 0.51 |
 
 - The pull is present on every dataset and is stronger on real footage than on Kubric.
