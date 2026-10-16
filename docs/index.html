@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-16 15:55:15 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-16 15:55:52 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -199,10 +199,10 @@
 <tr>
 <td>24</td>
 <td><a href="#w2_dose">w2_dose</a>: Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence)</td>
-<td>RUNNING</td>
+<td>done</td>
 <td>1</td>
 <td>2026-10-16 15:55:12</td>
-<td></td>
+<td>2026-10-16 15:55:49</td>
 </tr>
 <tr>
 <td>25</td>
@@ -390,7 +390,7 @@
 </tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-16 15:54:19 running w2_real_baselines</p>
+<p>Supervisor heartbeat: 2026-10-16 15:55:19 running w2_dose</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -2485,5 +2485,218 @@
 <p><img alt="boundary" src="fig_w2_boundary.png" /></p>
 <h2>w2_dose</h2>
 <p>Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence)</p>
-<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-16 15:55:12. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/w2_dose/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/w2_dose/task.log">log</a>.</p>
-<p>Partial results so far; the run is still going.</p></body></html>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-16 15:55:12, finished 2026-10-16 15:55:49. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/w2_dose/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/w2_dose/task.log">log</a>.</p>
+<p><img alt="fig_w2_dose_regression.png" src="assets/w2_dose/fig_w2_dose_regression.png" />
+<img alt="fig_w2_dose_v2.png" src="assets/w2_dose/fig_w2_dose_v2.png" />
+<img alt="fig_w2_dose_v3float.png" src="assets/w2_dose/fig_w2_dose_v3float.png" /></p>
+<p><strong>w2_dose_summary.md</strong></p>
+<h1>w2_dose: dose-response of the object-motion slope (review item 1, W2)</h1>
+<p>Per-object slope (objects with more than 20 moving query points), winsorised to [-0.5, 1.5]. Bins are quintiles of the Any4D objects (number of motions: its values). Regression: OLS of per-object slope on all factors, standardised (coefficient = change in slope per 1 SD), scene-cluster bootstrap 95% CI. Confidence is model-specific and is added in a separate fit.</p>
+<p>What each pattern implies:
+- Regression shrinkage (the prediction moves toward the training-set mean under uncertainty) predicts a LOWER slope at low texture, small area, high occlusion and low confidence, so positive coefficients for texture, area and confidence and a negative one for occlusion.
+- A structural pull toward the static (camera-only) hypothesis that does not depend on how well the object is seen predicts flat curves for texture, area, occlusion and confidence, with dependence on the geometry instead (camera rotation, camera-induced displacement, number of motions).
+- Speed: a lower slope at high speed is expected under both readings (large motions are rarer and harder), so it does not separate them; a lower slope at LOW speed points to a fixed offset or a detection threshold.</p>
+<table>
+<thead>
+<tr>
+<th>model</th>
+<th>data</th>
+<th>objects</th>
+<th>log speed</th>
+<th>log area</th>
+<th>texture</th>
+<th>occlusion</th>
+<th>cam rotation</th>
+<th>n motions</th>
+<th>log cam disp</th>
+<th>confidence (added to the same fit)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Any4D</td>
+<td>v2</td>
+<td>138</td>
+<td>+0.018 [-0.031, +0.062]</td>
+<td>+0.071 [+0.030, +0.113]</td>
+<td>-0.025 [-0.067, +0.020]</td>
+<td>-0.050 [-0.088, -0.014]</td>
+<td>+0.021 [-0.019, +0.059]</td>
+<td>-0.010 [-0.040, +0.020]</td>
+<td>-0.030 [-0.065, +0.004]</td>
+<td>-0.018 [-0.056, +0.024]</td>
+</tr>
+<tr>
+<td>VGGT-1B tracker</td>
+<td>v2</td>
+<td>138</td>
+<td>+0.016 [-0.029, +0.058]</td>
+<td>-0.016 [-0.073, +0.042]</td>
+<td>-0.025 [-0.077, +0.027]</td>
+<td>+0.060 [+0.011, +0.113]</td>
+<td>-0.092 [-0.151, -0.033]</td>
+<td>-0.036 [-0.090, +0.015]</td>
+<td>+0.064 [+0.000, +0.121]</td>
+<td>-0.090 [-0.127, -0.048]</td>
+</tr>
+<tr>
+<td>CoTracker3, 24 fr</td>
+<td>v2</td>
+<td>138</td>
+<td>+0.019 [+0.004, +0.034]</td>
+<td>+0.031 [-0.008, +0.091]</td>
+<td>-0.000 [-0.012, +0.012]</td>
+<td>-0.022 [-0.043, -0.003]</td>
+<td>-0.002 [-0.019, +0.010]</td>
+<td>-0.007 [-0.022, +0.007]</td>
+<td>-0.021 [-0.045, -0.002]</td>
+<td>+0.026 [+0.002, +0.044]</td>
+</tr>
+<tr>
+<td>CoTracker3, 7 fr</td>
+<td>v2</td>
+<td>138</td>
+<td>+0.019 [+0.000, +0.041]</td>
+<td>+0.031 [-0.009, +0.089]</td>
+<td>-0.001 [-0.016, +0.016]</td>
+<td>-0.037 [-0.068, -0.010]</td>
+<td>+0.005 [-0.016, +0.023]</td>
+<td>-0.009 [-0.025, +0.008]</td>
+<td>-0.027 [-0.053, -0.005]</td>
+<td>+0.020 [-0.001, +0.037]</td>
+</tr>
+<tr>
+<td>RAFT, 0 to 23</td>
+<td>v2</td>
+<td>138</td>
+<td>-0.059 [-0.139, +0.016]</td>
+<td>+0.128 [+0.054, +0.207]</td>
+<td>+0.012 [-0.070, +0.100]</td>
+<td>-0.117 [-0.205, -0.028]</td>
+<td>-0.026 [-0.141, +0.076]</td>
+<td>+0.012 [-0.061, +0.086]</td>
+<td>+0.010 [-0.087, +0.098]</td>
+<td>+0.146 [+0.059, +0.239]</td>
+</tr>
+<tr>
+<td>RAFT chain, 7 fr</td>
+<td>v2</td>
+<td>138</td>
+<td>+0.007 [-0.016, +0.029]</td>
+<td>+0.058 [+0.017, +0.111]</td>
+<td>+0.003 [-0.022, +0.027]</td>
+<td>-0.043 [-0.073, -0.016]</td>
+<td>+0.004 [-0.018, +0.025]</td>
+<td>-0.003 [-0.031, +0.021]</td>
+<td>-0.007 [-0.032, +0.017]</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>RAFT chain, 24 fr</td>
+<td>v2</td>
+<td>138</td>
+<td>+0.021 [-0.004, +0.045]</td>
+<td>+0.072 [+0.025, +0.126]</td>
+<td>+0.022 [-0.010, +0.051]</td>
+<td>-0.031 [-0.064, +0.000]</td>
+<td>+0.001 [-0.025, +0.028]</td>
+<td>-0.004 [-0.034, +0.025]</td>
+<td>+0.001 [-0.026, +0.029]</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>Any4D</td>
+<td>v3float</td>
+<td>84</td>
+<td>+0.009 [-0.035, +0.051]</td>
+<td>+0.255 [+0.169, +0.332]</td>
+<td>+0.008 [-0.047, +0.065]</td>
+<td>-0.107 [-0.152, -0.056]</td>
+<td>-0.054 [-0.150, +0.041]</td>
+<td>+0.010 [-0.043, +0.063]</td>
+<td>-0.090 [-0.169, -0.006]</td>
+<td>+0.020 [-0.022, +0.068]</td>
+</tr>
+<tr>
+<td>VGGT-1B tracker</td>
+<td>v3float</td>
+<td>84</td>
+<td>-0.017 [-0.103, +0.073]</td>
+<td>+0.108 [+0.006, +0.202]</td>
+<td>+0.010 [-0.095, +0.108]</td>
+<td>-0.023 [-0.129, +0.073]</td>
+<td>-0.113 [-0.243, -0.003]</td>
+<td>+0.000 [-0.087, +0.094]</td>
+<td>+0.119 [-0.004, +0.222]</td>
+<td>+0.028 [-0.082, +0.121]</td>
+</tr>
+<tr>
+<td>CoTracker3, 24 fr</td>
+<td>v3float</td>
+<td>84</td>
+<td>+0.005 [-0.001, +0.014]</td>
+<td>+0.017 [+0.001, +0.038]</td>
+<td>+0.001 [-0.015, +0.013]</td>
+<td>-0.008 [-0.019, +0.005]</td>
+<td>-0.000 [-0.018, +0.014]</td>
+<td>+0.002 [-0.006, +0.010]</td>
+<td>+0.008 [-0.001, +0.018]</td>
+<td>+0.009 [+0.000, +0.020]</td>
+</tr>
+<tr>
+<td>CoTracker3, 7 fr</td>
+<td>v3float</td>
+<td>84</td>
+<td>-0.009 [-0.030, +0.008]</td>
+<td>+0.023 [-0.002, +0.052]</td>
+<td>+0.011 [-0.010, +0.030]</td>
+<td>-0.022 [-0.040, -0.003]</td>
+<td>-0.003 [-0.021, +0.013]</td>
+<td>+0.006 [-0.005, +0.017]</td>
+<td>+0.005 [-0.010, +0.021]</td>
+<td>+0.042 [+0.010, +0.069]</td>
+</tr>
+<tr>
+<td>RAFT, 0 to 23</td>
+<td>v3float</td>
+<td>84</td>
+<td>-0.143 [-0.232, -0.051]</td>
+<td>+0.193 [+0.062, +0.331]</td>
+<td>+0.023 [-0.105, +0.152]</td>
+<td>-0.247 [-0.352, -0.122]</td>
+<td>+0.026 [-0.153, +0.190]</td>
+<td>+0.008 [-0.067, +0.089]</td>
+<td>-0.034 [-0.193, +0.111]</td>
+<td>+0.056 [-0.047, +0.173]</td>
+</tr>
+<tr>
+<td>RAFT chain, 7 fr</td>
+<td>v3float</td>
+<td>84</td>
+<td>-0.016 [-0.053, +0.014]</td>
+<td>+0.056 [+0.024, +0.091]</td>
+<td>+0.021 [-0.004, +0.045]</td>
+<td>-0.045 [-0.075, -0.015]</td>
+<td>+0.003 [-0.024, +0.027]</td>
+<td>+0.010 [-0.012, +0.031]</td>
+<td>-0.004 [-0.032, +0.025]</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>RAFT chain, 24 fr</td>
+<td>v3float</td>
+<td>84</td>
+<td>-0.013 [-0.055, +0.023]</td>
+<td>+0.055 [+0.026, +0.084]</td>
+<td>+0.023 [-0.002, +0.048]</td>
+<td>-0.035 [-0.061, -0.009]</td>
+<td>+0.004 [-0.026, +0.032]</td>
+<td>+0.014 [-0.009, +0.033]</td>
+<td>+0.001 [-0.030, +0.034]</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="v2" src="fig_w2_dose_v2.png" /></p>
+<p><img alt="floating" src="fig_w2_dose_v3float.png" /></p>
+<p><img alt="regression" src="fig_w2_dose_regression.png" /></p></body></html>
