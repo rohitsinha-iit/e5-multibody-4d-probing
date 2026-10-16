@@ -247,3 +247,138 @@ Base slope on these scenes is 0.561. All five heads replicate on scenes they wer
 - Ablate the five supply heads together, and patch their outputs into the scene-flow decoder, to test whether they jointly explain the slope.
 - Steer along the probe motion direction at layers 17 to 21 to test whether the decodable motion signal is causally used.
 - Increase the number of epipolar-aligned scenes to tighten C4.
+
+## 13. CVPR experiment queue (items 1, 2, 3, 4, 5, 7, 8)
+
+The user selected items 1, 2, 3, 4, 5, 7 and 8 from their observation list, plus the next steps in section 12. They run as a sequential, crash-safe queue on the GPU server. Each finished task is pushed to GitHub.
+
+### Queue mechanics
+
+- `~/e5_multibody/queue/supervisor.py` runs `tasks.json` one task at a time on the less-used GPU.
+- Cron restarts the supervisor every 5 minutes and at boot. A lock keeps one instance alive.
+- After a crash, the interrupted task is re-queued. Every task script skips per-scene work already on disk.
+- When a task finishes, `push.sh` commits these to the repo under `results/queue/<task>/`, `scripts/queue/` and `src/`:
+  - the task's results folder (files under 50 MB, no arrays)
+  - its log
+  - the task scripts and the source
+- Pushes use a write deploy key scoped to this repo only. Failed pushes retry every 10 minutes.
+- New data goes on `/media/workbench/zone_x/e5_multibody` (1.2 TB free). v1 and v2 stay where they are.
+- New datasets wait behind a gate (`approvals/v3_visual`) until the user approves the pilot contact sheets.
+
+### Tasks
+
+| # | Task | Item | What it does |
+|---|---|---|---|
+| 1 | v3_pilot | 1, 2 | Pilot renders of the two new scene types, with contact sheets and GIFs for visual approval |
+| 2 | t4_causal_v2 | 4 | Five supply heads ablated together; amplification x1.5, x2, x3; matched random-head controls; path patching (scene-flow decoder only vs geometry and pose decoders only, and per decoder tap) |
+| 3 | t5_subspace_v2 | 5 | LEACE erasure of the linear motion subspace at layers 17 to 21 (single layers and all five), rank-matched random erasure, steering movers toward static and static objects toward moving, random-direction controls |
+| 4 | t3_viewsweep_v2 | 3 | 2, 3, 4 and 7 input views: outputs, probes (layers 0, 4, ..., 24) and attention |
+| 5 | v3_scale | 1, 2 | After approval: 20 far-glued scenes, 70 floating shadowless scenes, 20 extra grounded epipolar-aligned scenes in v2 |
+| 6 | v3_pipeline | 1, 2 | Steps 3 to 6 plus the adjacency control on the new datasets, and on v2 with 30 epipolar-aligned scenes |
+| 7 | v3_viewsweep | 2, 3 | View-count sweep on the floating set |
+| 8+ | t7_* | 7 | Cross-model: MapAnything (static, same architecture), VGGT-1B (static), plus one or two dynamic models with public weights. Same output metrics, probes and attention hits |
+| 8+ | t8_* | 8 | Real data at the output level: KITTI scene flow 2015 and MPI Sintel, 2-view and multi-view; slope, EPE, separation ratio |
+
+### New scene types
+
+- **confound_farglued (C3 adjacency control).**
+  - Objects A and B are different assets, rigidly coupled 2.4 to 3.2 m apart through an invisible offset (one motion group).
+  - C is an identical copy of A with its own independent motion.
+  - There is one static object.
+  - Appearance says A and C belong together, motion says A and B, and A and B are never adjacent.
+- **v3float (C4 without floor cues).**
+  - Every object, moving or static, floats 0.6 to 1.1 m above the floor.
+  - Motion is the same planar motion as v2.
+  - No object casts a shadow, so neither floor contact nor a moving shadow reveals motion.
+  - Sizes are matched to v2.
+  - Epipolar-aligned scenes rise to 30.
+
+### Smoke-test notes (1 to 4 scenes, not results)
+
+- The causal script runs all 19 conditions. Tap 0 (encoder features) reproduces the base run exactly, which is the expected sanity check.
+- LEACE fits remove most of the linear "moving" information (training-fold R^2 from about 0.93 down to 0.01 to 0.31). Rank-matched random erasure leaves the outputs unchanged.
+
+## 14. Final results and interpretation (all queue runs complete, 2026-10-16)
+
+All 18 queue tasks finished. There were five failures. The floating pipeline (one rerun) and three cross-model runs (VGGT, MapAnything, PAGE-4D) were re-run. The Any4D cross-model reference had silently included the 20 new scenes and was rerun on the original 100. On top of that, 40 scenes per model needed an index-mismatch fix and a re-evaluation; after it, every model has 100 of 100 scenes. Figures: fig_c2_pull_everywhere.png, fig_c4_beyond_epipolar.png, fig_c3_farglued.png, fig_xmodel_internals.png. Numbers: final_summary.json, xm_output_table.json.
+
+### C2 behaviour: the camera-motion pull is general
+
+"Slope" is the fraction of true object motion recovered (1 = full motion, 0 = the object is treated as static).
+
+| Data (Any4D) | Slope, mean [95% CI] | Scenes with slope < 1 | Separation ratio |
+|---|---|---|---|
+| Kubric v2 grounded (94) | 0.75 [0.71, 0.78] | 95% | mean 0.76, 75% below GT |
+| Kubric floating (51) | 0.76 [0.68, 0.83] | 92% | median 0.71, 74% below GT |
+| Kubric far-glued (19) | 0.73 [0.65, 0.80] | 100% | median 0.55, 84% below GT |
+| KITTI 2015, 2 views, wide (195) | 0.58 [0.51, 0.64] | 84% | undefined (sep_gt < 1 px) |
+| Sintel clean, 2 views, wide (217) | 0.31 [0.24, 0.40] | 88% | median 0.54 |
+| Sintel final, 2 views, wide (217) | 0.33 [0.24, 0.41] | 89% | median 0.51 |
+
+- The pull is present on every dataset and is stronger on real footage than on Kubric.
+- It is also present in the static-trained VGGT-1B, read out from its tracking head: slope 0.34, separation ratio 0.23 (99% of scenes below GT). Any4D on the same 100 scenes gives 0.61 and 0.83. Dynamic training therefore reduces the pull but does not remove it.
+- The pull lives in the correspondence and motion outputs, not in per-frame geometry. The 3D slope computed from each frame's own pointmap is close to 1 for every model (Any4D 0.99, MapAnything 0.92, VGGT 1.02, PAGE-4D 1.02). Each frame places the object where it really is; the error appears only when the model links points across frames.
+
+### C2 mechanism: five heads, one route, a partial fix
+
+- **Joint ablation.** Mean-ablating the five supply heads together drops the slope from 0.61 to 0.01, while static error rises only from 4.1 to 7.1 px. Two of three matched random 5-head sets have no effect. The third broke the model (static EPE 87 px), probably because it contains the early frame-block head b1 h2.
+- **Route.** Path patching shows the whole effect passes through the scene-flow decoder: slope 0.01 when only that decoder sees the ablated features, with static error unchanged. It enters through the block-17 and final-layer taps; the block-11 tap contributes little.
+- **Amplification.** Scaling the five heads by 1.5 raises the slope to 0.95 and the separation ratio from 0.83 to 0.93, with static error +0.6 px. But moving error rises from 35 to 42 px, and a scale of 2 overshoots (slope 1.17). Amplification fixes the magnitude of object motion, not its accuracy. It is evidence that the pull is under-supply, not yet a usable fix.
+
+### Item 5: is the decodable motion subspace used? Weakly, and not specifically
+
+- **Erasure.** LEACE erasure at layers 17 to 21 lowers the slope (0.61 to 0.21 to 0.46 per layer, 0.08 when all five layers are erased), and rank-matched random erasure does nothing. However, erasure also raises static error by 7 to 17 px. Motion information in the residual stream is entangled with geometry, so removing it is not a clean, mover-specific intervention.
+- **Steering.** Steering movers toward "static" is not direction-specific (a random direction gives the same slope drop). Steering static objects toward "moving" is only weakly specific.
+- **Verdict.** The probe direction is necessary for good outputs, but we cannot claim the model reads motion along that particular linear direction.
+
+### C4: motion is inferred beyond two-view epipolar geometry
+
+- **Floating, shadowless scenes.** These remove floor contact and shadows. View-0 motion AUC on epipolar-aligned scenes rises from 0.52 at the input (chance) to 0.999 at layer 24 (n = 26). It passes 0.9 at layer 17.
+- **Two views.** With only two input views, AUC still rises from 0.51 to 0.995. At mid depth (layer 12), two views actually give higher AUC than seven (0.87 vs 0.75).
+- **The predicted two-view collapse does not happen.** Vidal's ambiguity is a statement about pure two-view geometry. A learned model can break it with monocular priors. An object moving along an epipolar line produces a triangulated depth that conflicts with its single-image depth and size, and this conflict exposes the motion. This is our proposed mechanism; it was not tested directly.
+- **The decoder uses this only partly.** The output motion-mask IoU on floating epipolar-aligned scenes is 0.31, against 0.56 on the other splits, and it stays at 0.29 to 0.32 for every view count. The transformer knows these objects move, but the output mostly fails to say so.
+
+### C3: reframe as instance grouping plus motion splitting
+
+Far-glued control (object A coupled to a distant, different-looking B; C an identical copy of A with its own motion):
+
+- **Pair probe, A to B.** The join rate rises from 0.80 to 0.95 (change +0.15 [0.02, 0.28]). At the input, A-B joins less than A-C, by 0.18 (p = 0.001). By layers 16 to 24 the two are equal (about 0.94).
+- **Pair probe, A to C.** Identical copies with different motion stay joined (0.98 to 0.94). The probe does not split them.
+- **k-means.** A-C joining falls from 0.44 to 0.19 (p = 0.065), so identical copies with different motion are split. A-B stays low throughout (0.20 to 0.19): distant coupled objects are never joined.
+- **Clustering follows instances, not rigid bodies.** The body-minus-instance ARI change is +0.05 (p = 0.73) on v2, +0.05 (p = 0.12) on the floating set, and -0.03 (p = 0.035) on the far-glued set.
+- **Conclusion.** By the criterion in the user's observations (item 1), C3 should be reframed. The transformer reduces appearance-driven grouping and adds motion evidence, and identical copies are separated (v2 probe copy separation 0.13 to 0.65, n = 20). But it does not build rigid-body groups that span distant, different-looking parts.
+
+### C1 and the cross-model view (item 7)
+
+| Model (100 v2 scenes) | Motion AUC, input to last | Epi AUC, last | Pair AUC, last | Copies separated, last | Probe object-motion slope, last |
+|---|---|---|---|---|---|
+| Any4D (dynamic) | 0.56 to 0.999 | 1.000 | 0.921 | 0.649 | 0.493 |
+| MapAnything (static base of Any4D) | 0.55 to 0.992 | 0.997 | 0.863 | 0.326 | 0.381 |
+| VGGT-1B (static) | 0.55 to 0.999 | 0.998 | 0.939 | 0.832 | 0.368 |
+| PAGE-4D (dynamic, VGGT base) | 0.55 to 0.996 | 0.979 | 0.909 | 0.599 | 0.334 |
+
+- **Motion detection does not need dynamic training.** Every model, including the two static-trained ones, makes motion linearly decodable, with epipolar-aligned motion included. It looks like a by-product of multi-view reconstruction: the model has to detect points that are inconsistent with a rigid scene.
+- **The effect of dynamic fine-tuning depends on the model family.**
+  - MapAnything to Any4D improves rigid grouping (0.86 to 0.92), copy separation (0.33 to 0.65) and the probe object-motion slope (0.38 to 0.49).
+  - VGGT to PAGE-4D does not: it lowers pair AUC (0.94 to 0.91) and copy separation (0.83 to 0.60).
+  - Static VGGT has the strongest grouping of all four models.
+  - With one pair per family we cannot separate the effect of dynamic training from the effect of each fine-tuning recipe.
+- **Attention.** In every model, attention follows the moving object (tracking hit rate about 0.5) and almost never routes to the static-scene location (at most 0.11). The pull is not caused by attention ignoring motion.
+
+### Revised paper story
+
+1. **Behaviour.** 4D feed-forward models under-recover object motion. This holds on Kubric, KITTI and Sintel, and in both a dynamic and a static model. The deficit is in cross-frame correspondence, not per-frame geometry.
+2. **Representation.** Motion is computed inside the transformer from near-chance input. This happens even for epipolar-aligned motion and with only two views, so these models go beyond the two-view multibody limit of Vidal et al. Grouping follows instances and splits by motion, rather than forming full rigid bodies.
+3. **Mechanism.** Five heads supply object motion to the scene-flow decoder through two taps. Removing them erases object motion; amplifying them restores its magnitude but not its accuracy.
+4. **The gap.** The transformer knows more than the output says (epipolar-aligned mask IoU 0.31 despite near-perfect internal decodability). This motivates a decoder-side or head-targeted fix (item 10).
+
+### Remaining caveats
+
+- Probes are linear and cross-scene. Item 5 could not show that the decodable direction is used specifically.
+- Only one dynamic and one static model per family. MapAnything and PAGE-4D have no 2D motion output, so the pull can be compared only between Any4D and VGGT.
+- Real data:
+  - KITTI separation ratio is undefined for most scenes.
+  - Sintel motion is mostly non-rigid, and only every 4th frame was used.
+  - The square input sees a centre crop, so the wide input is the reference.
+- Far-glued set: 19 to 20 scenes, with 13 to 16 usable pairs per type.
+- The monocular-prior explanation for C4 is a hypothesis.
