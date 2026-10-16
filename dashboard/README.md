@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 04:49:18 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 04:49:26 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -48,7 +48,7 @@ Last updated 2026-10-17 04:49:18 (server time). Regenerated after every queue ev
 | 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 |
 | 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | FAILED | 4 | 2026-10-17 04:46:51 | 2026-10-17 04:48:29 |
 | 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | FAILED | 4 | 2026-10-17 04:48:37 | 2026-10-17 04:49:15 |
-| 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | queued | 3 | 2026-10-17 04:46:13 |  |
+| 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | RUNNING | 4 | 2026-10-17 04:49:23 |  |
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
@@ -989,4 +989,13 @@ Status: **FAILED**, attempt 4, started 2026-10-17 04:46:51, finished 2026-10-17 
 Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float
 
 Status: **FAILED**, attempt 4, started 2026-10-17 04:48:37, finished 2026-10-17 04:49:15. [Raw results](../results/queue/r2_probe_extract/), [log](../results/queue/r2_probe_extract/task.log).
+
+
+## r2_heads_null
+
+Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100)
+
+Status: **RUNNING**, attempt 4, started 2026-10-17 04:49:23. [Raw results](../results/queue/r2_heads_null/), [log](../results/queue/r2_heads_null/task.log).
+
+Partial results so far; the run is still going.
 
