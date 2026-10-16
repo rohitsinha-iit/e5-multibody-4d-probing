@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-16 22:48:31 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-16 22:53:09 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -335,10 +335,10 @@
 <tr>
 <td>41</td>
 <td><a href="#v4_pilot">v4_pilot</a>: Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks</td>
-<td>RUNNING</td>
+<td>done</td>
 <td>1</td>
 <td>2026-10-16 22:48:29</td>
-<td></td>
+<td>2026-10-16 22:53:06</td>
 </tr>
 <tr>
 <td>42</td>
@@ -390,7 +390,7 @@
 </tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-16 22:47:34 running ft_render_float</p>
+<p>Supervisor heartbeat: 2026-10-16 22:52:36 running v4_pilot</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -3118,5 +3118,126 @@ If the dedicated trackers (CoTracker3, RAFT) recover close to all object motion 
 </table>
 <h2>v4_pilot</h2>
 <p>Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks</p>
-<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-16 22:48:29. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_pilot/task.log">log</a>.</p>
-<p>Partial results so far; the run is still going.</p></body></html>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-16 22:48:29, finished 2026-10-16 22:53:06. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_pilot/task.log">log</a>.</p>
+<p><img alt="sheets__epi_accel_s801.png" src="assets/v4_pilot/sheets__epi_accel_s801.png" />
+<img alt="sheets__epi_accel_s802.png" src="assets/v4_pilot/sheets__epi_accel_s802.png" />
+<img alt="sheets__epi_const_s801.png" src="assets/v4_pilot/sheets__epi_const_s801.png" />
+<img alt="sheets__epi_const_s802.png" src="assets/v4_pilot/sheets__epi_const_s802.png" />
+<img alt="sheets__epi_sizematch_s861.png" src="assets/v4_pilot/sheets__epi_sizematch_s861.png" />
+<img alt="sheets__epi_sizematch_s862.png" src="assets/v4_pilot/sheets__epi_sizematch_s862.png" />
+<img alt="sheets__epi_sizerand_s831.png" src="assets/v4_pilot/sheets__epi_sizerand_s831.png" />
+<img alt="sheets__epi_sizerand_s832.png" src="assets/v4_pilot/sheets__epi_sizerand_s832.png" />
+<img alt="v4_pilot.png" src="assets/v4_pilot/v4_pilot.png" /></p>
+<p><img src="assets/v4_pilot/sheets__epi_accel_s801.gif" width="200"> <img src="assets/v4_pilot/sheets__epi_accel_s802.gif" width="200"> <img src="assets/v4_pilot/sheets__epi_const_s801.gif" width="200"> <img src="assets/v4_pilot/sheets__epi_const_s802.gif" width="200"> <img src="assets/v4_pilot/sheets__epi_sizematch_s861.gif" width="200"> <img src="assets/v4_pilot/sheets__epi_sizematch_s862.gif" width="200"> <img src="assets/v4_pilot/sheets__epi_sizerand_s831.gif" width="200"> <img src="assets/v4_pilot/sheets__epi_sizerand_s832.gif" width="200"></p>
+<p><strong>v4_pilot_summary.md</strong></p>
+<h1>v4_pilot: pilot of the new epipolar scene types (review item W3)</h1>
+<p>Two scenes per new split, rendered with the v3float settings (floating, shadowless, sizes 1.4 to 2.2 m for static objects).
+Contact sheets and GIFs are in sheets/. The scaled task v4_scale_epi waits for the gate approvals/v4_visual.</p>
+<p>What to check visually:
+- epi_accel vs epi_const with the same seed: frames 0 and 23 look the same; in the GIF the accelerated object starts or stops while the constant one glides.
+- epi_sizerand: the moving object can be much smaller or larger than the static objects.
+- epi_sizematch: the moving object is large (2.2 to 4.4 m), so read as a static object at the closer ambiguous depth it would be of typical size.
+- Nothing touches the floor, no shadows, every object stays in view.</p>
+<p>Scenes checked: 8; scenes with errors: 0.</p>
+<p>All numbers come from Kubric ground truth (depth, segmentation, camera and object matrices).</p>
+<table>
+<thead>
+<tr>
+<th>split</th>
+<th>n</th>
+<th>sep GT 0 to 23 (px), median [min, max]</th>
+<th>3-view residual, moving, frame 12 (px), median [min, max]</th>
+<th>3-view residual, background, frame 12 (px)</th>
+<th>max centre gap from static reading (px)</th>
+<th>static objects per scene, mean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>epi_accel</td>
+<td>2</td>
+<td>0.00 [0.00, 0.00]</td>
+<td>43.1 [38.7, 47.6]</td>
+<td>0.00</td>
+<td>43.7</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>epi_const</td>
+<td>2</td>
+<td>0.00 [0.00, 0.00]</td>
+<td>0.0 [0.0, 0.0]</td>
+<td>0.00</td>
+<td>0.0</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>epi_sizerand</td>
+<td>2</td>
+<td>0.00 [0.00, 0.00]</td>
+<td>0.0 [0.0, 0.0]</td>
+<td>0.00</td>
+<td>0.0</td>
+<td>2.00</td>
+</tr>
+<tr>
+<td>epi_sizematch</td>
+<td>2</td>
+<td>0.00 [0.00, 0.00]</td>
+<td>0.0 [0.0, 0.0]</td>
+<td>0.00</td>
+<td>0.0</td>
+<td>2.00</td>
+</tr>
+</tbody>
+</table>
+<h2>Pairing check (epi_accel vs epi_const, same seed)</h2>
+<ul>
+<li>Pairs: 2. Largest pixel difference (0 to 255) in frame 0: 0; in frame 23: 0. Mean absolute difference in frame 12: 1.24 (only the moving object differs there).</li>
+<li>A difference of 0 in frames 0 and 23 means the two-view input (frames 0 and 23) is identical within a pair.</li>
+</ul>
+<h2>Size cue</h2>
+<table>
+<thead>
+<tr>
+<th>split</th>
+<th>n</th>
+<th>true moving size (m), median [min, max]</th>
+<th>size if read as static (m), median [min, max]</th>
+<th>max abs error of static scale vs 1/(1+k)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>epi_accel</td>
+<td>2</td>
+<td>1.74 [1.51, 1.98]</td>
+<td>1.03 [0.92, 1.15]</td>
+<td>5.8e-15</td>
+</tr>
+<tr>
+<td>epi_const</td>
+<td>2</td>
+<td>1.74 [1.51, 1.98]</td>
+<td>1.03 [0.92, 1.15]</td>
+<td>5.8e-15</td>
+</tr>
+<tr>
+<td>epi_sizerand</td>
+<td>2</td>
+<td>3.33 [3.29, 3.36]</td>
+<td>2.01 [1.98, 2.04]</td>
+<td>2.9e-15</td>
+</tr>
+<tr>
+<td>epi_sizematch</td>
+<td>2</td>
+<td>3.42 [3.19, 3.64]</td>
+<td>1.94 [1.89, 1.99]</td>
+<td>2.8e-15</td>
+</tr>
+</tbody>
+</table>
+<p>Static objects in every split are 1.4 to 2.2 m (the v3float range).</p>
+<p><img alt="GT checks" src="v4_pilot.png" /></p>
+<p>How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 misses the object in a third view by tens of pixels, while for epi_const and for the background it fits to about 0 px. (b) Two-view separation is about 0 in every split, so frames 0 and 23 alone are ambiguous. (c) The accelerated object's image track leaves the track of its static reading (the constant-velocity object stays on it). (d) Size randomisation decouples apparent size from the static interpretation.</p></body></html>

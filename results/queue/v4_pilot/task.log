@@ -1,3 +1,36 @@
 
 ===== 2026-10-16 22:48:29 attempt 1
 [22:48:29] smoke renders (128 px, 4 frames)
+[22:52:20] pilot renders
+v4 scenes rendered: 8
+[22:52:20] post (flow check, SNR, contact sheets, GIFs)
+epi_sizematch_s862 EPE 0.00 sep 0.0 snr1 0.0
+epi_sizerand_s831 EPE 0.00 sep 0.0 snr1 0.0
+epi_sizerand_s832 EPE 0.00 sep 0.0 snr1 0.0
+[22:52:35] GT checks
+epi_sizerand_s831 
+epi_sizerand_s832 
+/home/rohit/e5_multibody/queue/results/v4_pilot:
+scene_summary.json
+sheets
+v4_pilot.json
+v4_pilot.png
+v4_pilot_summary.md
+
+/home/rohit/e5_multibody/queue/results/v4_pilot/sheets:
+epi_accel_s801.gif
+epi_accel_s801.png
+epi_accel_s802.gif
+epi_accel_s802.png
+epi_const_s801.gif
+epi_const_s801.png
+epi_const_s802.gif
+epi_const_s802.png
+epi_sizematch_s861.gif
+epi_sizematch_s861.png
+epi_sizematch_s862.gif
+epi_sizematch_s862.png
+epi_sizerand_s831.gif
+epi_sizerand_s831.png
+epi_sizerand_s832.gif
+epi_sizerand_s832.png
