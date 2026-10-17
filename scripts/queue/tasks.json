@@ -530,5 +530,84 @@
   "max_attempts": 4,
   "min_free_gb": 8,
   "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_heads_sel",
+  "title": "Item 10 rerun: train heads with corrected checkpoint selection",
+  "script": "ft_train_heads_sel.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_heads_sel",
+  "title": "Item 10 rerun: evaluate heads_sel",
+  "script": "ft_eval_heads_sel.sh",
+  "deps": [
+   "ft_train_heads_sel"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_ctrl_sel",
+  "title": "Item 10 rerun: train ctrl with corrected checkpoint selection",
+  "script": "ft_train_ctrl_sel.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_ctrl_sel",
+  "title": "Item 10 rerun: evaluate ctrl_sel",
+  "script": "ft_eval_ctrl_sel.sh",
+  "deps": [
+   "ft_train_ctrl_sel"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_gain_sel",
+  "title": "Item 10 rerun: train gain with corrected checkpoint selection",
+  "script": "ft_train_gain_sel.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_gain_sel",
+  "title": "Item 10 rerun: evaluate gain_sel",
+  "script": "ft_eval_gain_sel.sh",
+  "deps": [
+   "ft_train_gain_sel"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_summary_sel",
+  "title": "Item 10: comparison table with corrected head variants",
+  "script": "ft_summary_sel.sh",
+  "deps": [
+   "ft_eval_heads_sel",
+   "ft_eval_ctrl_sel",
+   "ft_eval_gain_sel"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 2
  }
 ]

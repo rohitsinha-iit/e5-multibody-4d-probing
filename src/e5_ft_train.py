@@ -32,6 +32,10 @@ ap.add_argument("--workers", type=int, default=4); ap.add_argument("--limit_scen
 ap.add_argument("--n_val", type=int, default=0); ap.add_argument("--export", type=int, default=1)
 ap.add_argument("--log_every", type=int, default=20); ap.add_argument("--smoke_max_steps", type=int, default=0)
 ap.add_argument("--export_from", default="best", choices=["best", "last"], help="last: smoke tests only")
+ap.add_argument("--select", default="loss", choices=["loss", "sf"],
+                help="checkpoint selection: total val loss, or the scene-flow val loss with a static-EPE guard. With a "
+                     "geometry-distillation term the total loss always keeps step 0, because that term is 0 for the base model")
+ap.add_argument("--static_tol", type=float, default=0.25)
 a = ap.parse_args()
 sys.path.insert(0, a.e5)
 import e5_ft_lib as L  # noqa: E402
@@ -139,10 +143,19 @@ def validate():
     return out
 
 
+def score(v):
+    # checkpoint-selection score, lower is better (see --select)
+    if a.select == "loss":
+        return v["loss"]
+    s0 = state["history"][0].get("val_epe_static", float("nan")) if state["history"] else float("nan")
+    ok = not (v.get("val_epe_static", 0.0) > s0 + a.static_tol)
+    return v["sf"] if ok else float("inf")
+
+
 # ------------------------------------------------------------------ loop
 t0 = time.time(); t_prev = state["elapsed_h"]
 if state["step"] == 0 and not state["history"]:
-    v = validate(); v.update(step=0, hours=0.0); state["history"].append(v); state["best"] = v["loss"]; state["best_step"] = 0
+    v = validate(); v.update(step=0, hours=0.0); state["history"].append(v); state["best"] = score(v); state["best_step"] = 0
     torch.save(L.trainable_state(model), BEST); save_last()
     print("val step 0", json.dumps({k: round(x, 4) for k, x in v.items()}), flush=True)
 ds = L.KubricFT(train, seed=a.seed)
@@ -181,8 +194,8 @@ while state["step"] < a.max_steps and state["stopped"] is None:
         run = {}
     if state["step"] % a.val_every == 0 or state["step"] == a.max_steps:
         v = validate(); v.update(step=state["step"], hours=hours); state["history"].append(v)
-        if v["loss"] < state["best"]:
-            state["best"], state["best_step"], state["bad"] = v["loss"], state["step"], 0
+        if score(v) < state["best"]:
+            state["best"], state["best_step"], state["bad"] = score(v), state["step"], 0
             torch.save(L.trainable_state(model), BEST + ".tmp"); os.replace(BEST + ".tmp", BEST)
         else:
             state["bad"] += 1

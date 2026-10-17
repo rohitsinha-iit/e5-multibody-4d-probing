@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-17 16:21:47 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-17 16:37:27 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -351,10 +351,10 @@
 <tr>
 <td>43</td>
 <td><a href="#v4_viewsweep_epi">v4_viewsweep_epi</a>: Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats</td>
-<td>RUNNING</td>
+<td>done</td>
 <td>1</td>
 <td>2026-10-17 16:21:43</td>
-<td></td>
+<td>2026-10-17 16:37:22</td>
 </tr>
 <tr>
 <td>44</td>
@@ -388,9 +388,65 @@
 <td></td>
 <td></td>
 </tr>
+<tr>
+<td>48</td>
+<td><a href="#ft_train_heads_sel">ft_train_heads_sel</a>: Item 10 rerun: train heads with corrected checkpoint selection</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>49</td>
+<td><a href="#ft_eval_heads_sel">ft_eval_heads_sel</a>: Item 10 rerun: evaluate heads_sel</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>50</td>
+<td><a href="#ft_train_ctrl_sel">ft_train_ctrl_sel</a>: Item 10 rerun: train ctrl with corrected checkpoint selection</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>51</td>
+<td><a href="#ft_eval_ctrl_sel">ft_eval_ctrl_sel</a>: Item 10 rerun: evaluate ctrl_sel</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>52</td>
+<td><a href="#ft_train_gain_sel">ft_train_gain_sel</a>: Item 10 rerun: train gain with corrected checkpoint selection</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>53</td>
+<td><a href="#ft_eval_gain_sel">ft_eval_gain_sel</a>: Item 10 rerun: evaluate gain_sel</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>54</td>
+<td><a href="#ft_summary_sel">ft_summary_sel</a>: Item 10: comparison table with corrected head variants</td>
+<td>queued</td>
+<td>0</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-17 16:20:43 running ft_eval_gain</p>
+<p>Supervisor heartbeat: 2026-10-17 16:36:52 running v4_viewsweep_epi</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -4985,5 +5041,438 @@ Contact sheets and GIFs are in sheets/. The scaled task v4_scale_epi waits for t
 <p>How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 misses the object in a third view by tens of pixels, while for epi_const and for the background it fits to about 0 px. (b) Two-view separation is about 0 in every split, so frames 0 and 23 alone are ambiguous. (c) The accelerated object's image track leaves the track of its static reading (the constant-velocity object stays on it). (d) Size randomisation decouples apparent size from the static interpretation.</p>
 <h2>v4_viewsweep_epi</h2>
 <p>Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats</p>
-<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-17 16:21:43. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_viewsweep_epi/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_viewsweep_epi/task.log">log</a>.</p>
-<p>Partial results so far; the run is still going.</p></body></html>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-17 16:21:43, finished 2026-10-17 16:37:22. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_viewsweep_epi/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_viewsweep_epi/task.log">log</a>.</p>
+<p><img alt="fig_v4_accel_viewcount.png" src="assets/v4_viewsweep_epi/fig_v4_accel_viewcount.png" />
+<img alt="fig_v4_sizecue.png" src="assets/v4_viewsweep_epi/fig_v4_sizecue.png" /></p>
+<p><strong>v4_viewsweep_epi_summary.md</strong></p>
+<h1>v4_viewsweep_epi: view-count test with accelerated epipolar motion, and the monocular size cue (review item W3)</h1>
+<p>Data: v4epi (epi_accel and epi_const paired by seed, epi_sizerand, epi_sizematch; floating, shadowless, v3float settings) pooled with the 70 v3float scenes (reference: its 30 epi_aligned scenes). Any4D, frames 2 views = 0,23; 3 = 0,12,23; 4 = 0,8,16,23; 7 = 0,4,8,12,16,20,23.</p>
+<p>Metric definitions are those of round 1. Probe = ridge moving-vs-static probe on the view-0 token (object patches), 5-fold CV by scene.
+Pooled probe: trained on all scenes, paired accel and const scenes share a fold. Transfer probe: trained only on v3float scenes (round-1 folds), so it has never seen an accelerated or size-randomised mover.
+CIs are bootstrap 95% over scenes (10000 resamples). Paired tests are two-sided sign tests; unpaired tests are Mann-Whitney.</p>
+<p>Pre-specified primary read-outs: probe AUC averaged over layers 8, 12 and 16 (layer 24 is near ceiling in round 1), output mask IoU and slope at the frame-23 target.</p>
+<h2>1. Accelerated motion: does a third view help?</h2>
+<p>Seed pairs: 30. With 2 views the accel and const inputs are the same images, so any difference there is a bug: largest |accel - const| at 2 views, pooled mid-depth AUC = 0.0.</p>
+<table>
+<thead>
+<tr>
+<th>views</th>
+<th>AUC accel</th>
+<th>AUC const</th>
+<th>delta accel vs 2 views</th>
+<th>delta const vs 2 views</th>
+<th>difference in differences</th>
+<th>sign test (+/-), p, Holm p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>0.974 [0.944, 0.995]</td>
+<td>0.974 [0.944, 0.995]</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.973 [0.951, 0.992]</td>
+<td>0.974 [0.950, 0.992]</td>
+<td>-0.000 [-0.008, 0.010]</td>
+<td>-0.000 [-0.009, 0.010]</td>
+<td>-0.000 [-0.004, 0.004]</td>
+<td>6/5, 1.000, 1.000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.976 [0.958, 0.992]</td>
+<td>0.974 [0.952, 0.992]</td>
+<td>0.002 [-0.009, 0.019]</td>
+<td>0.000 [-0.010, 0.014]</td>
+<td>0.002 [-0.003, 0.009]</td>
+<td>7/6, 1.000, 1.000</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0.978 [0.961, 0.992]</td>
+<td>0.975 [0.955, 0.991]</td>
+<td>0.004 [-0.010, 0.024]</td>
+<td>0.001 [-0.011, 0.017]</td>
+<td>0.003 [-0.004, 0.010]</td>
+<td>7/5, 0.774, 1.000</td>
+</tr>
+</tbody>
+</table>
+<p>Same tests for the output (frame-23 target) and for the probe at layer 24:</p>
+<table>
+<thead>
+<tr>
+<th>read-out</th>
+<th>views</th>
+<th>accel</th>
+<th>const</th>
+<th>difference in differences</th>
+<th>sign test (+/-), p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mask_iou</td>
+<td>3</td>
+<td>0.333 [0.246, 0.425]</td>
+<td>0.333 [0.247, 0.424]</td>
+<td>0.000 [-0.008, 0.009]</td>
+<td>16/12, 0.572</td>
+</tr>
+<tr>
+<td>mask_iou</td>
+<td>4</td>
+<td>0.333 [0.249, 0.421]</td>
+<td>0.330 [0.245, 0.420]</td>
+<td>0.003 [-0.011, 0.021]</td>
+<td>11/17, 0.345</td>
+</tr>
+<tr>
+<td>mask_iou</td>
+<td>7</td>
+<td>0.325 [0.237, 0.417]</td>
+<td>0.325 [0.236, 0.418]</td>
+<td>0.000 [-0.011, 0.013]</td>
+<td>10/17, 0.248</td>
+</tr>
+<tr>
+<td>slope</td>
+<td>3</td>
+<td>0.397 [0.269, 0.520]</td>
+<td>0.389 [0.269, 0.508]</td>
+<td>0.008 [-0.019, 0.039]</td>
+<td>15/15, 1.000</td>
+</tr>
+<tr>
+<td>slope</td>
+<td>4</td>
+<td>0.379 [0.253, 0.502]</td>
+<td>0.393 [0.266, 0.516]</td>
+<td>-0.014 [-0.038, 0.010]</td>
+<td>14/16, 0.856</td>
+</tr>
+<tr>
+<td>slope</td>
+<td>7</td>
+<td>0.365 [0.232, 0.494]</td>
+<td>0.379 [0.251, 0.502]</td>
+<td>-0.014 [-0.032, 0.006]</td>
+<td>11/19, 0.200</td>
+</tr>
+<tr>
+<td>L24</td>
+<td>3</td>
+<td>0.997 [0.993, 1.000]</td>
+<td>0.999 [0.998, 1.000]</td>
+<td>-0.003 [-0.006, -0.000]</td>
+<td>0/4, 0.125</td>
+</tr>
+<tr>
+<td>L24</td>
+<td>4</td>
+<td>0.999 [0.998, 1.000]</td>
+<td>1.000 [1.000, 1.000]</td>
+<td>-0.001 [-0.002, 0.000]</td>
+<td>0/3, 0.250</td>
+</tr>
+<tr>
+<td>L24</td>
+<td>7</td>
+<td>0.999 [0.997, 1.000]</td>
+<td>1.000 [1.000, 1.000]</td>
+<td>-0.001 [-0.003, 0.000]</td>
+<td>0/2, 0.500</td>
+</tr>
+<tr>
+<td>mid (transfer probe)</td>
+<td>3</td>
+<td>0.776 [0.692, 0.851]</td>
+<td>0.776 [0.690, 0.851]</td>
+<td>0.000 [-0.018, 0.021]</td>
+<td>10/11, 1.000</td>
+</tr>
+<tr>
+<td>mid (transfer probe)</td>
+<td>4</td>
+<td>0.764 [0.674, 0.844]</td>
+<td>0.773 [0.690, 0.847]</td>
+<td>-0.009 [-0.028, 0.008]</td>
+<td>10/12, 0.832</td>
+</tr>
+<tr>
+<td>mid (transfer probe)</td>
+<td>7</td>
+<td>0.762 [0.673, 0.842]</td>
+<td>0.774 [0.689, 0.848]</td>
+<td>-0.011 [-0.033, 0.010]</td>
+<td>10/12, 0.832</td>
+</tr>
+</tbody>
+</table>
+<p>Slope for the frame-12 target (only where frame 12 is an input view):</p>
+<ul>
+<li>3 views: accel 0.416 [0.208, 0.615], const 0.471 [0.338, 0.596], accel minus const -0.054 [-0.196, 0.072], sign 15/15 p = 1.000.</li>
+<li>7 views: accel 0.360 [0.163, 0.547], const 0.464 [0.326, 0.594], accel minus const -0.105 [-0.229, 0.006], sign 13/17 p = 0.585.</li>
+</ul>
+<p>Verdict (pre-specified rule: DiD &gt; 0 with CI above 0 and Holm p &lt; 0.05): 0 of 3 view counts meet it. No view count meets it: adding views that make the motion geometrically resolvable does not raise decodability beyond the constant-velocity control.</p>
+<p><img alt="accel view-count" src="fig_v4_accel_viewcount.png" /></p>
+<h2>2. Size cue: is apparent size what reveals epipolar-aligned motion?</h2>
+<table>
+<thead>
+<tr>
+<th>views</th>
+<th>v3float epi_aligned</th>
+<th>sizerand</th>
+<th>sizematch</th>
+<th>sizerand minus ref, MWU p, Holm p</th>
+<th>sizematch minus ref, MWU p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>0.778 [0.696, 0.855]</td>
+<td>0.685 [0.587, 0.780]</td>
+<td>0.639 [0.538, 0.737]</td>
+<td>-0.093 [-0.218, 0.038], 0.221, 0.883</td>
+<td>-0.139 [-0.266, -0.012], 0.057</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.747 [0.656, 0.833]</td>
+<td>0.672 [0.571, 0.770]</td>
+<td>0.613 [0.501, 0.723]</td>
+<td>-0.076 [-0.207, 0.062], 0.376, 1.000</td>
+<td>-0.135 [-0.276, 0.005], 0.126</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.729 [0.626, 0.825]</td>
+<td>0.657 [0.547, 0.761]</td>
+<td>0.584 [0.468, 0.701]</td>
+<td>-0.072 [-0.216, 0.080], 0.402, 1.000</td>
+<td>-0.146 [-0.298, 0.007], 0.113</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0.721 [0.613, 0.820]</td>
+<td>0.654 [0.545, 0.759]</td>
+<td>0.578 [0.464, 0.693]</td>
+<td>-0.067 [-0.212, 0.086], 0.451, 1.000</td>
+<td>-0.143 [-0.297, 0.011], 0.122</td>
+</tr>
+</tbody>
+</table>
+<p>Matched reference: epi_const is generated with the same v4 constraints as the size splits (no image overlap between the mover and static objects), while v3float epi_aligned is the round-1 reference requested in the plan. Transfer probe, mid-depth AUC:</p>
+<table>
+<thead>
+<tr>
+<th>views</th>
+<th>epi_const</th>
+<th>sizerand minus const, MWU p</th>
+<th>sizematch minus const, MWU p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>0.798 [0.715, 0.870]</td>
+<td>-0.113 [-0.237, 0.018], 0.099</td>
+<td>-0.159 [-0.285, -0.034], 0.034</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.776 [0.690, 0.851]</td>
+<td>-0.104 [-0.232, 0.030], 0.148</td>
+<td>-0.163 [-0.300, -0.026], 0.041</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.773 [0.690, 0.847]</td>
+<td>-0.116 [-0.250, 0.023], 0.138</td>
+<td>-0.189 [-0.331, -0.048], 0.036</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0.774 [0.689, 0.848]</td>
+<td>-0.120 [-0.252, 0.017], 0.123</td>
+<td>-0.196 [-0.335, -0.055], 0.023</td>
+</tr>
+</tbody>
+</table>
+<p>Primary table uses the transfer probe, mid-depth AUC. Secondary read-outs:</p>
+<table>
+<thead>
+<tr>
+<th>read-out</th>
+<th>views</th>
+<th>ref</th>
+<th>sizerand</th>
+<th>sizematch</th>
+<th>sizerand minus ref, MWU p</th>
+<th>Spearman(AUC, size if read as static) in sizerand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mid (pooled)</td>
+<td>2</td>
+<td>0.932 [0.896, 0.964]</td>
+<td>0.979 [0.958, 0.994]</td>
+<td>0.982 [0.959, 0.997]</td>
+<td>0.046 [0.010, 0.086], 0.006</td>
+<td>0.04 (p 0.853, n 25)</td>
+</tr>
+<tr>
+<td>mid (pooled)</td>
+<td>3</td>
+<td>0.897 [0.838, 0.947]</td>
+<td>0.974 [0.954, 0.991]</td>
+<td>0.980 [0.957, 0.995]</td>
+<td>0.077 [0.024, 0.139], 0.006</td>
+<td>0.07 (p 0.759, n 25)</td>
+</tr>
+<tr>
+<td>mid (pooled)</td>
+<td>4</td>
+<td>0.887 [0.821, 0.943]</td>
+<td>0.973 [0.952, 0.990]</td>
+<td>0.980 [0.955, 0.996]</td>
+<td>0.086 [0.027, 0.154], 0.002</td>
+<td>-0.01 (p 0.947, n 25)</td>
+</tr>
+<tr>
+<td>mid (pooled)</td>
+<td>7</td>
+<td>0.877 [0.799, 0.941]</td>
+<td>0.975 [0.954, 0.991]</td>
+<td>0.979 [0.953, 0.996]</td>
+<td>0.098 [0.032, 0.178], 0.002</td>
+<td>0.08 (p 0.705, n 25)</td>
+</tr>
+<tr>
+<td>L24 (transfer)</td>
+<td>2</td>
+<td>0.995 [0.985, 1.000]</td>
+<td>0.984 [0.963, 0.996]</td>
+<td>0.977 [0.947, 0.996]</td>
+<td>-0.011 [-0.034, 0.006], 0.035</td>
+<td>-0.17 (p 0.408, n 25)</td>
+</tr>
+<tr>
+<td>L24 (transfer)</td>
+<td>3</td>
+<td>0.998 [0.995, 1.000]</td>
+<td>0.987 [0.963, 1.000]</td>
+<td>0.967 [0.912, 0.997]</td>
+<td>-0.011 [-0.036, 0.003], 0.415</td>
+<td>-0.34 (p 0.093, n 25)</td>
+</tr>
+<tr>
+<td>L24 (transfer)</td>
+<td>4</td>
+<td>0.999 [0.998, 1.000]</td>
+<td>0.983 [0.953, 1.000]</td>
+<td>0.969 [0.919, 0.997]</td>
+<td>-0.016 [-0.047, 0.001], 0.462</td>
+<td>-0.29 (p 0.157, n 25)</td>
+</tr>
+<tr>
+<td>L24 (transfer)</td>
+<td>7</td>
+<td>0.999 [0.997, 1.000]</td>
+<td>0.990 [0.970, 1.000]</td>
+<td>0.959 [0.897, 0.996]</td>
+<td>-0.009 [-0.029, 0.002], 0.755</td>
+<td>-0.36 (p 0.068, n 25)</td>
+</tr>
+<tr>
+<td>mask_iou (pooled)</td>
+<td>2</td>
+<td>0.293 [0.209, 0.379]</td>
+<td>0.340 [0.261, 0.419]</td>
+<td>0.505 [0.425, 0.582]</td>
+<td>0.047 [-0.072, 0.163], 0.382</td>
+<td>0.63 (p 4.0e-04, n 30)</td>
+</tr>
+<tr>
+<td>mask_iou (pooled)</td>
+<td>3</td>
+<td>0.318 [0.234, 0.405]</td>
+<td>0.324 [0.242, 0.407]</td>
+<td>0.525 [0.452, 0.595]</td>
+<td>0.006 [-0.115, 0.125], 0.917</td>
+<td>0.55 (p 0.002, n 30)</td>
+</tr>
+<tr>
+<td>mask_iou (pooled)</td>
+<td>4</td>
+<td>0.316 [0.230, 0.405]</td>
+<td>0.327 [0.240, 0.415]</td>
+<td>0.536 [0.466, 0.601]</td>
+<td>0.011 [-0.114, 0.136], 0.941</td>
+<td>0.49 (p 0.008, n 30)</td>
+</tr>
+<tr>
+<td>mask_iou (pooled)</td>
+<td>7</td>
+<td>0.312 [0.224, 0.402]</td>
+<td>0.328 [0.240, 0.414]</td>
+<td>0.539 [0.468, 0.606]</td>
+<td>0.016 [-0.112, 0.141], 0.859</td>
+<td>0.50 (p 0.006, n 30)</td>
+</tr>
+<tr>
+<td>slope (pooled)</td>
+<td>2</td>
+<td>0.440 [0.294, 0.581]</td>
+<td>0.479 [0.343, 0.611]</td>
+<td>0.688 [0.610, 0.757]</td>
+<td>0.038 [-0.156, 0.233], 0.587</td>
+<td>0.62 (p 6.0e-04, n 30)</td>
+</tr>
+<tr>
+<td>slope (pooled)</td>
+<td>3</td>
+<td>0.445 [0.299, 0.585]</td>
+<td>0.488 [0.336, 0.636]</td>
+<td>0.714 [0.631, 0.790]</td>
+<td>0.043 [-0.165, 0.249], 0.655</td>
+<td>0.66 (p 2.0e-04, n 30)</td>
+</tr>
+<tr>
+<td>slope (pooled)</td>
+<td>4</td>
+<td>0.440 [0.292, 0.578]</td>
+<td>0.474 [0.320, 0.624]</td>
+<td>0.693 [0.608, 0.772]</td>
+<td>0.034 [-0.174, 0.242], 0.749</td>
+<td>0.69 (p 0.0e+00, n 30)</td>
+</tr>
+<tr>
+<td>slope (pooled)</td>
+<td>7</td>
+<td>0.412 [0.267, 0.549]</td>
+<td>0.479 [0.328, 0.625]</td>
+<td>0.702 [0.620, 0.780]</td>
+<td>0.067 [-0.137, 0.271], 0.512</td>
+<td>0.67 (p 0.0e+00, n 30)</td>
+</tr>
+</tbody>
+</table>
+<p>Verdict (pre-specified rule: sizerand minus ref &lt; 0 with CI below 0 and Holm p &lt; 0.05): 0 of 4 view counts meet it. Breaking the size cue does not lower decodability, so apparent size is not what the model relies on (other monocular cues remain possible).</p>
+<p><img alt="size cue" src="fig_v4_sizecue.png" /></p>
+<h2>Caveats</h2>
+<ul>
+<li>Probe AUC is linear decodability, not use (see review item W4).</li>
+<li>The reference (v3float epi_aligned) and the size splits are different scenes, so the size comparison is unpaired.</li>
+<li>v4 scenes keep static objects from overlapping the mover in the image (to avoid occlusion-order cues and hidden movers); v3float epi_aligned does not, which is why epi_const is also reported as a matched reference.</li>
+<li>epi_sizematch makes the static reading a typical size, but that static copy also floats higher (it is scaled about the camera), so it is not a perfect look-alike of a static object.</li>
+<li>Files: v4_stats.json (all numbers), outm_<n>v.json, vs_pool_<n>v_results.json, vs_xfer_<n>v_results.json, step3_v4epi_<n>v.json.</li>
+</ul></body></html>

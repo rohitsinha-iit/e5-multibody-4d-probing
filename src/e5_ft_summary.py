@@ -30,7 +30,8 @@ LOWER_BETTER = {"epe_static", "epe_moving", "depth_absrel_med", "depth_absrel", 
 
 
 def load(v):
-    d = os.path.join(QR, f"ft_eval_{v}"); D = {}
+    MAP = dict(kv.split("=") for kv in os.environ.get("FT_MAP", "").split(",") if "=" in kv)
+    d = os.path.join(QR, f"ft_eval_{MAP.get(v, v)}"); D = {}
     if not os.path.isdir(d):
         return D
     for ds in KUB:
