@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-18 01:30:37
+updated 2026-10-18 01:30:48
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -57,4 +57,4 @@ updated 2026-10-18 01:30:37
 | 51 | ft_eval_ctrl_sel: Item 10 rerun: evaluate ctrl_sel | done | 1 | 2026-10-18 00:05:58 | 2026-10-18 00:20:06 | True |
 | 52 | ft_train_gain_sel: Item 10 rerun: train gain with corrected checkpoint selection | done | 1 | 2026-10-18 00:20:17 | 2026-10-18 01:12:58 | True |
 | 53 | ft_eval_gain_sel: Item 10 rerun: evaluate gain_sel | done | 2 | 2026-10-18 01:28:47 | 2026-10-18 01:30:26 | True |
-| 54 | ft_summary_sel: Item 10: comparison table with corrected head variants | running | 1 | 2026-10-18 01:30:37 |  | False |
+| 54 | ft_summary_sel: Item 10: comparison table with corrected head variants | done | 1 | 2026-10-18 01:30:37 | 2026-10-18 01:30:48 | False |

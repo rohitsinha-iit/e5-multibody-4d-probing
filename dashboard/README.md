@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-18 01:30:43 (server time). Regenerated after every queue event.
+Last updated 2026-10-18 01:30:54 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -57,7 +57,7 @@ Last updated 2026-10-18 01:30:43 (server time). Regenerated after every queue ev
 | 51 | [ft_eval_ctrl_sel](#ft_eval_ctrl_sel): Item 10 rerun: evaluate ctrl_sel | done | 1 | 2026-10-18 00:05:58 | 2026-10-18 00:20:06 |
 | 52 | [ft_train_gain_sel](#ft_train_gain_sel): Item 10 rerun: train gain with corrected checkpoint selection | done | 1 | 2026-10-18 00:20:17 | 2026-10-18 01:12:58 |
 | 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | done | 2 | 2026-10-18 01:28:47 | 2026-10-18 01:30:26 |
-| 54 | [ft_summary_sel](#ft_summary_sel): Item 10: comparison table with corrected head variants | RUNNING | 1 | 2026-10-18 01:30:37 |  |
+| 54 | [ft_summary_sel](#ft_summary_sel): Item 10: comparison table with corrected head variants | done | 1 | 2026-10-18 01:30:37 | 2026-10-18 01:30:48 |
 
 Supervisor heartbeat: 2026-10-18 01:29:56 running ft_eval_gain_sel
 
@@ -2233,9 +2233,7 @@ Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set
 
 Item 10: comparison table with corrected head variants
 
-Status: **RUNNING**, attempt 1, started 2026-10-18 01:30:37. [Raw results](../results/queue/ft_summary_sel/), [log](../results/queue/ft_summary_sel/task.log).
-
-Partial results so far; the run is still going.
+Status: **done**, attempt 1, started 2026-10-18 01:30:37, finished 2026-10-18 01:30:48. [Raw results](../results/queue/ft_summary_sel/), [log](../results/queue/ft_summary_sel/task.log).
 
 ![ft_comparison.png](assets/ft_summary_sel/ft_comparison.png)
 
