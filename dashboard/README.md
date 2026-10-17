@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 15:39:18 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 16:06:30 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -41,7 +41,7 @@ Last updated 2026-10-17 15:39:18 (server time). Regenerated after every queue ev
 | 35 | [ft_eval_sf](#ft_eval_sf): Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | done | 1 | 2026-10-17 13:47:07 | 2026-10-17 14:01:16 |
 | 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 14:01:26 | 2026-10-17 15:24:46 |
 | 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 15:24:57 | 2026-10-17 15:39:05 |
-| 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | RUNNING | 1 | 2026-10-17 15:39:16 |  |
+| 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | done | 1 | 2026-10-17 15:39:16 | 2026-10-17 16:06:25 |
 | 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | queued | 0 |  |  |
 | 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | queued | 0 |  |  |
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
@@ -52,7 +52,7 @@ Last updated 2026-10-17 15:39:18 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 15:38:35 running ft_eval_heads_sf
+Supervisor heartbeat: 2026-10-17 16:05:55 running ft_train_gain
 
 ## v3_pilot
 
@@ -1135,9 +1135,32 @@ Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set
 
 Item 10: fine-tune (e) 5 learned per-head gains
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 15:39:16. [Raw results](../results/queue/ft_train_gain/), [log](../results/queue/ft_train_gain/task.log).
+Status: **done**, attempt 1, started 2026-10-17 15:39:16, finished 2026-10-17 16:06:25. [Raw results](../results/queue/ft_train_gain/), [log](../results/queue/ft_train_gain/task.log).
 
-Partial results so far; the run is still going.
+![ft_train_gain_curves.png](assets/ft_train_gain/ft_train_gain_curves.png)
+
+
+**ft_train_gain_summary.md**
+
+# ft_train_gain
+
+Fine-tuning variant **gain** of Any4D from any4d_4v_combined.pth.
+
+- Trainable parameters: 5; heads: [[2, 1], [22, 9], [17, 10], [14, 6], [8, 11]]; LoRA rank 8, alpha 16.
+- Learning rates: LoRA 0.0002, scene-flow head 2e-05, gain 0.005; AdamW, warmup 100, cosine to 10%; bf16, activation checkpointing.
+- Loss: Any4D scene-flow loss (scale-invariant, log-norm, x10.0 on moving pixels) + 1.0 x distillation to the frozen model (pointmaps, depth, pose, metric scale).
+- Stopped: early stop at step 400 (best 0). Best validation step: 0. Merge check (adapter vs merged weights): {'d_sf': 0.0, 'd_pts': 0.0}.
+
+| validation (held-out training scenes, frames 0 to 23) | step 0 (base) | best step |
+|---|---|---|
+| loss | 0.0116 | 0.0116 |
+| slope (mean) | 0.6757 | 0.6757 |
+| EPE moving (median px) | 36.1928 | 36.1928 |
+| EPE static (median px) | 3.9417 | 3.9417 |
+| motion-mask IoU (median) | 0.5076 | 0.5076 |
+
+These are training-distribution numbers; the held-out evaluation is in the matching ft_eval task.
+
 
 
 ## v4_pilot
