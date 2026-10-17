@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 21:12:06
+updated 2026-10-17 22:31:27
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -51,7 +51,7 @@ updated 2026-10-17 21:12:06
 | 45 | r2_heads_null: Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | done | 1 | 2026-10-17 16:43:22 | 2026-10-17 17:54:42 | True |
 | 46 | r2_probe_linear: Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | done | 1 | 2026-10-17 17:54:53 | 2026-10-17 20:08:54 | True |
 | 47 | r2_probe_mlp: Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | done | 1 | 2026-10-17 20:09:05 | 2026-10-17 21:11:55 | True |
-| 48 | ft_train_heads_sel: Item 10 rerun: train heads with corrected checkpoint selection | running | 1 | 2026-10-17 21:12:06 |  | False |
+| 48 | ft_train_heads_sel: Item 10 rerun: train heads with corrected checkpoint selection | done | 1 | 2026-10-17 21:12:06 | 2026-10-17 22:31:27 | False |
 | 49 | ft_eval_heads_sel: Item 10 rerun: evaluate heads_sel | pending | 0 |  |  |  |
 | 50 | ft_train_ctrl_sel: Item 10 rerun: train ctrl with corrected checkpoint selection | pending | 0 |  |  |  |
 | 51 | ft_eval_ctrl_sel: Item 10 rerun: evaluate ctrl_sel | pending | 0 |  |  |  |
