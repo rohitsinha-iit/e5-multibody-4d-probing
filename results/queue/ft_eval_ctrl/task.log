@@ -3,3 +3,32 @@
 GPU 1
 ok
 [12:51:31] ctrl v2 inference
+planar_s450 1.04 s
+peak GPU GB 7.55
+[12:53:25] ctrl v2 metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/ctrl/pred_v2: 100 scenes ok, 0 errors; mean slope 0.607
+[12:54:58] ctrl v3float inference
+n3_generic_s590 1.12 s
+peak GPU GB 7.55
+[12:56:19] ctrl v3float metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/ctrl/pred_v3float: 69 scenes ok, 0 errors; mean slope 0.559
+[12:57:23] ctrl v3far inference
+confound_farglued_s520 1.11 s
+peak GPU GB 7.55
+[12:57:51] ctrl v3far metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/ctrl/pred_v3far: 19 scenes ok, 0 errors; mean slope 0.648
+[12:58:09] ctrl internals (v3float, layers 0,17,24)
+peak GPU GB 7.39
+E5-P layer 24
+done
+[12:59:23] ctrl real kitti15 rgb 2v
+rows 200 skipped 0
+[13:00:06] ctrl real kitti15 rgb mv4
+rows 200 skipped 0
+[13:01:04] ctrl real sintel final 2v
+rows 256 skipped 0
+[13:02:29] ctrl real sintel final mv4
+rows 256 skipped 0
+[13:04:15] ctrl real sintel clean 2v
+rows 256 skipped 0
+6.5G	/media/workbench/zone_x/e5_multibody/ft/eval/ctrl

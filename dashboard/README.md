@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 12:51:34 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 13:06:13 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -36,7 +36,7 @@ Last updated 2026-10-17 12:51:34 (server time). Regenerated after every queue ev
 | 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | done | 1 | 2026-10-17 11:42:06 | 2026-10-17 12:09:15 |
 | 31 | [ft_eval_heads](#ft_eval_heads): Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | done | 1 | 2026-10-17 12:09:24 | 2026-10-17 12:24:03 |
 | 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | done | 1 | 2026-10-17 12:24:13 | 2026-10-17 12:51:22 |
-| 33 | [ft_eval_ctrl](#ft_eval_ctrl): Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | RUNNING | 1 | 2026-10-17 12:51:31 |  |
+| 33 | [ft_eval_ctrl](#ft_eval_ctrl): Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | done | 1 | 2026-10-17 12:51:31 | 2026-10-17 13:06:10 |
 | 34 | [ft_train_sf](#ft_train_sf): Item 10: fine-tune (b) scene-flow DPT head + adaptor | queued | 0 | 2026-10-17 02:50:17 |  |
 | 35 | [ft_eval_sf](#ft_eval_sf): Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | queued | 0 |  |  |
 | 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | queued | 0 | 2026-10-17 03:04:34 |  |
@@ -52,7 +52,7 @@ Last updated 2026-10-17 12:51:34 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 12:50:52 running ft_train_ctrl
+Supervisor heartbeat: 2026-10-17 13:05:40 running ft_eval_ctrl
 
 ## v3_pilot
 
@@ -963,9 +963,36 @@ These are training-distribution numbers; the held-out evaluation is in the match
 
 Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 12:51:31. [Raw results](../results/queue/ft_eval_ctrl/), [log](../results/queue/ft_eval_ctrl/task.log).
+Status: **done**, attempt 1, started 2026-10-17 12:51:31, finished 2026-10-17 13:06:10. [Raw results](../results/queue/ft_eval_ctrl/), [log](../results/queue/ft_eval_ctrl/task.log).
 
-Partial results so far; the run is still going.
+![ft_eval_ctrl_metrics.png](assets/ft_eval_ctrl/ft_eval_ctrl_metrics.png)
+
+
+**ft_eval_ctrl_summary.md**
+
+# ft_eval_ctrl
+
+Evaluation of **ctrl** with the round-1 metric code (output metrics: e5_causal / e5_step3 definitions).
+
+| dataset | n | slope (mean) | EPE static (median of scenes) | EPE moving | sep ratio (median) | mask IoU | mask IoU, epi_aligned |
+|---|---|---|---|---|---|---|---|
+| v2 | 100 | 0.607 | 3.82 | 30.7 | 0.735 | 0.644 | 0.532 |
+| v3float | 69 | 0.559 | 4.02 | 33.2 | 0.657 | 0.496 | 0.278 |
+| v3far | 19 | 0.648 | 4.38 | 31.6 | 0.566 | 0.663 | nan |
+| kitti15_rgb_2v_wide | 200 | 0.575 | 3.67 | 11.6 | 0.740 | - | - |
+| kitti15_rgb_mv4_wide | 200 | 0.707 | 4.26 | 12.7 | 1.086 | - | - |
+| sintel_clean_2v_wide | 256 | 0.314 | 3.98 | 11.9 | 0.539 | - | - |
+| sintel_final_2v_wide | 256 | 0.327 | 4.30 | 12.2 | 0.510 | - | - |
+| sintel_final_mv4_wide | 256 | 0.334 | 4.13 | 11.3 | 0.458 | - | - |
+
+Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set):
+
+| layer | motion AUC, all splits | motion AUC, epi_aligned |
+|---|---|---|
+| 0 | 0.569 | 0.515 |
+| 17 | 0.843 | 0.905 |
+| 24 | 0.973 | 0.999 |
+
 
 
 ## v4_pilot
