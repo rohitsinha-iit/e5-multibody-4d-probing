@@ -159,3 +159,37 @@ v3float enc_any4d instance s0 ok
 v3float enc_dino instance s0 ok
 [19:53:26] v3float instance seed 1
 v3float trained instance s1 ok
+v3float randall instance s1 ok
+v3float randtf instance s1 ok
+v3float enc_any4d instance s1 ok
+v3float enc_dino instance s1 ok
+[19:57:11] v3float instance seed 2
+v3float trained instance s2 ok
+v3float randall instance s2 ok
+v3float randtf instance s2 ok
+v3float enc_any4d instance s2 ok
+v3float enc_dino instance s2 ok
+[20:00:54] v3float instance seed 3
+v3float trained instance s3 ok
+v3float randall instance s3 ok
+v3float randtf instance s3 ok
+v3float enc_any4d instance s3 ok
+v3float enc_dino instance s3 ok
+[20:04:39] v3float instance seed 4
+v3float trained instance s4 ok
+v3float randall instance s4 ok
+v3float randtf instance s4 ok
+v3float enc_any4d instance s4 ok
+v3float enc_dino instance s4 ok
+rows 828 comparisons 780
+total 1128
+drwxrwxr-x  2 rohit rohit   4096 Oct 17 20:08 .
+drwxrwxr-x 46 rohit rohit   4096 Oct 17 17:54 ..
+-rw-rw-r--  1 rohit rohit 175067 Oct 17 20:08 fig_probe_controls_allpatches.png
+-rw-rw-r--  1 rohit rohit 184108 Oct 17 20:08 fig_probe_controls.png
+-rw-rw-r--  1 rohit rohit  75919 Oct 17 20:08 probe_controls_comparisons.csv
+-rw-rw-r--  1 rohit rohit 520601 Oct 17 20:08 probe_controls.json
+-rw-rw-r--  1 rohit rohit  29021 Oct 17 20:08 probe_controls_key.md
+-rw-rw-r--  1 rohit rohit  71691 Oct 17 20:08 probe_controls_per_layer.csv
+-rw-rw-r--  1 rohit rohit  42960 Oct 17 20:08 probe_controls_tables.md
+-rw-rw-r--  1 rohit rohit  29958 Oct 17 20:08 r2_probe_linear_summary.md

@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-17 19:55:19 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-17 20:09:00 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -375,10 +375,10 @@
 <tr>
 <td>46</td>
 <td><a href="#r2_probe_linear">r2_probe_linear</a>: Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float)</td>
-<td>RUNNING</td>
+<td>done</td>
 <td>1</td>
 <td>2026-10-17 17:54:53</td>
-<td></td>
+<td>2026-10-17 20:08:54</td>
 </tr>
 <tr>
 <td>47</td>
@@ -446,7 +446,7 @@
 </tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-17 19:54:45 running r2_probe_linear</p>
+<p>Supervisor heartbeat: 2026-10-17 20:08:24 running r2_probe_linear</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -6532,5 +6532,1370 @@ CIs are bootstrap 95% over scenes (10000 resamples). Paired tests are two-sided 
 </ul>
 <h2>r2_probe_linear</h2>
 <p>Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float)</p>
-<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-17 17:54:53. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/r2_probe_linear/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/r2_probe_linear/task.log">log</a>.</p>
-<p>Partial results so far; the run is still going.</p></body></html>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-17 17:54:53, finished 2026-10-17 20:08:54. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/r2_probe_linear/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/r2_probe_linear/task.log">log</a>.</p>
+<p><img alt="fig_probe_controls.png" src="assets/r2_probe_linear/fig_probe_controls.png" />
+<img alt="fig_probe_controls_allpatches.png" src="assets/r2_probe_linear/fig_probe_controls_allpatches.png" /></p>
+<p><strong>r2_probe_linear_summary.md</strong></p>
+<h1>r2_probe_linear: linear probe controls (review W4, plan item 6)</h1>
+<p>Linear probes are part P of e5_internal_analysis.py with the round-1 definitions (ridge moving-vs-static probe on the view-0 token, low-rank bilinear same-rigid-body pair probe on concat(view 0, view 6), 5-fold CV grouped by scene), now seeded (--seed 0..4; seeds change probe init and pair sampling). Sources: Any4D trained (layers 0,4,...,24), random init everything (randall), public DINOv2 + random transformer (randtf), raw encoder tokens without view PE (enc_any4d = trained Any4D encoder, enc_dino = public DINOv2). Controls: E5_SHUFFLE=patch permutes all patch labels within a scene (counts kept); E5_SHUFFLE=instance permutes body labels across object instances within a scene (a type-level control: instance identity is kept). Selectivity = real minus control. This task has only the linear probes; the MLP probes and the combined figure are in r2_probe_mlp.</p>
+<p>Cells: mean over seeds +/- sd over seeds [95% bootstrap CI over scenes of the seed-averaged per-scene value]. Chance is 0.5 for all AUCs. Folds are grouped by scene (5 folds, as round 1). Sources: trained = Any4D trained; randall = random init (all); randtf = DINOv2 + random transformer; enc_any4d = Any4D encoder tokens (no view PE); enc_dino = public DINOv2 tokens (no view PE).</p>
+<h2>Key paired comparisons, layers 0 and 24 (per-scene seed means; mean difference [95% CI], sign-test p, n scenes)</h2>
+<table>
+<thead>
+<tr>
+<th>dataset</th>
+<th>comparison</th>
+<th>source</th>
+<th>probe</th>
+<th>layer</th>
+<th>metric</th>
+<th>difference [95% CI]</th>
+<th>sign p</th>
+<th>n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.006 [-0.045, +0.055]</td>
+<td>0.75</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.022 [-0.045, +0.092]</td>
+<td>0.3</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.139 [+0.110, +0.169]</td>
+<td>3.6e-12</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>-0.001 [-0.031, +0.028]</td>
+<td>1</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.009 [-0.063, +0.046]</td>
+<td>0.41</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.014 [-0.063, +0.090]</td>
+<td>0.75</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>L24 - L0</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.028 [-0.062, +0.004]</td>
+<td>0.39</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.148 [+0.113, +0.183]</td>
+<td>1.9e-11</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>-0.015 [-0.052, +0.021]</td>
+<td>0.21</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>L24 - L0</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.000 [-0.014, +0.015]</td>
+<td>0.84</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.043 [-0.104, +0.019]</td>
+<td>0.12</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.044 [-0.122, +0.030]</td>
+<td>0.84</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.242 [+0.214, +0.269]</td>
+<td>2.7e-23</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>-0.004 [-0.036, +0.029]</td>
+<td>1</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.062 [-0.001, +0.128]</td>
+<td>0.21</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.134 [+0.052, +0.213]</td>
+<td>0.0046</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained - randall</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.049 [-0.025, +0.120]</td>
+<td>0.12</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained - randtf</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.090 [+0.036, +0.144]</td>
+<td>0.12</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained L0 - enc_any4d</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.009 [-0.007, +0.026]</td>
+<td>0.59</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained L0 - enc_dino</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.085 [+0.037, +0.137]</td>
+<td>0.0067</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.242 [+0.212, +0.272]</td>
+<td>6.2e-22</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>-0.005 [-0.040, +0.031]</td>
+<td>0.68</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained - randall</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.119 [+0.086, +0.151]</td>
+<td>1e-07</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained - randtf</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.005 [-0.019, +0.030]</td>
+<td>0.038</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained L0 - enc_any4d</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>-0.030 [-0.042, -0.018]</td>
+<td>1.1e-06</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained L0 - enc_dino</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.006 [-0.019, +0.031]</td>
+<td>0.061</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.492 [+0.470, +0.514]</td>
+<td>2e-28</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.595 [+0.537, +0.650]</td>
+<td>8.1e-28</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained - randall</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.506 [+0.454, +0.556]</td>
+<td>8.1e-28</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained - randtf</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.543 [+0.493, +0.591]</td>
+<td>4e-28</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>L24 - L0</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.429 [+0.365, +0.492]</td>
+<td>1.6e-27</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.392 [+0.361, +0.418]</td>
+<td>2.7e-23</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.106 [+0.070, +0.139]</td>
+<td>9.6e-11</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained - randall</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.264 [+0.227, +0.301]</td>
+<td>1.7e-19</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trained - randtf</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.142 [+0.110, +0.176]</td>
+<td>3.6e-12</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>L24 - L0</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.145 [+0.115, +0.176]</td>
+<td>1.8e-15</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.039 [-0.098, +0.023]</td>
+<td>0.35</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.055 [-0.132, +0.028]</td>
+<td>0.15</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.239 [+0.213, +0.268]</td>
+<td>8.8e-25</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>-0.012 [-0.044, +0.020]</td>
+<td>0.097</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.067 [-0.123, -0.016]</td>
+<td>0.0011</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.065 [-0.139, +0.014]</td>
+<td>0.061</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>L24 - L0</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.024 [-0.058, +0.009]</td>
+<td>0.21</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.251 [+0.217, +0.285]</td>
+<td>1.7e-19</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.012 [-0.028, +0.051]</td>
+<td>1</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>L24 - L0</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.009 [-0.009, +0.027]</td>
+<td>0.84</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.058 [-0.007, +0.116]</td>
+<td>0.21</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.101 [+0.015, +0.184]</td>
+<td>0.016</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - patch</td>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.267 [+0.242, +0.293]</td>
+<td>2.7e-23</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>selectivity real - instance</td>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>-0.002 [-0.035, +0.033]</td>
+<td>1</td>
+<td>93</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.035 [-0.100, +0.030]</td>
+<td>0.9</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.029 [-0.127, +0.069]</td>
+<td>0.25</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.143 [+0.100, +0.189]</td>
+<td>1.1e-08</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.013 [-0.030, +0.051]</td>
+<td>0.9</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.018 [-0.055, +0.088]</td>
+<td>0.37</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.012 [-0.078, +0.098]</td>
+<td>1</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>L24 - L0</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.016 [-0.022, +0.053]</td>
+<td>0.37</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.129 [+0.079, +0.176]</td>
+<td>0.0005</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.006 [-0.040, +0.051]</td>
+<td>0.25</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>L24 - L0</td>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>-0.016 [-0.046, +0.014]</td>
+<td>0.25</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.059 [-0.029, +0.140]</td>
+<td>0.098</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.052 [-0.050, +0.156]</td>
+<td>0.37</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.247 [+0.211, +0.283]</td>
+<td>2.6e-13</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>-0.024 [-0.062, +0.014]</td>
+<td>0.9</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.073 [-0.035, +0.180]</td>
+<td>0.25</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.047 [-0.169, +0.071]</td>
+<td>0.9</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained - randall</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.094 [-0.012, +0.198]</td>
+<td>0.098</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained - randtf</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.023 [-0.051, +0.097]</td>
+<td>0.53</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained L0 - enc_any4d</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.001 [-0.037, +0.034]</td>
+<td>0.51</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained L0 - enc_dino</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.011 [-0.069, +0.085]</td>
+<td>1</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.270 [+0.233, +0.305]</td>
+<td>8.5e-16</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>-0.015 [-0.057, +0.028]</td>
+<td>1</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained - randall</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.135 [+0.088, +0.181]</td>
+<td>0.0013</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained - randtf</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.012 [-0.020, +0.042]</td>
+<td>0.53</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained L0 - enc_any4d</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>-0.027 [-0.048, -0.008]</td>
+<td>0.03</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained L0 - enc_dino</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.020 [-0.012, +0.050]</td>
+<td>0.16</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.482 [+0.444, +0.517]</td>
+<td>5.4e-17</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.407 [+0.320, +0.495]</td>
+<td>9.1e-13</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained - randall</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.483 [+0.414, +0.547]</td>
+<td>1.1e-16</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained - randtf</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.445 [+0.375, +0.513]</td>
+<td>1.1e-16</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>L24 - L0</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.405 [+0.316, +0.490]</td>
+<td>5.4e-17</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.417 [+0.389, +0.441]</td>
+<td>2.7e-17</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.145 [+0.103, +0.187]</td>
+<td>1.1e-08</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained - randall</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.308 [+0.258, +0.359]</td>
+<td>3.1e-12</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>trained - randtf</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.178 [+0.142, +0.214]</td>
+<td>1.7e-09</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>L24 - L0</td>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.157 [+0.118, +0.197]</td>
+<td>3.1e-12</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.043 [-0.033, +0.118]</td>
+<td>0.098</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.028 [-0.065, +0.124]</td>
+<td>0.37</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.254 [+0.219, +0.289]</td>
+<td>1.7e-14</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>-0.020 [-0.061, +0.021]</td>
+<td>0.9</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.055 [-0.029, +0.144]</td>
+<td>0.37</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.013 [-0.106, +0.078]</td>
+<td>0.7</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>L24 - L0</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.018 [-0.056, +0.018]</td>
+<td>0.53</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>+0.247 [+0.211, +0.279]</td>
+<td>8.5e-16</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>-0.037 [-0.082, +0.007]</td>
+<td>0.37</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>L24 - L0</td>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>24</td>
+<td>pair_auc_obj</td>
+<td>-0.010 [-0.035, +0.016]</td>
+<td>0.9</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>+0.073 [-0.022, +0.168]</td>
+<td>0.098</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>motion_auc_v0_objects</td>
+<td>-0.055 [-0.167, +0.055]</td>
+<td>0.61</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - patch</td>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.291 [+0.258, +0.326]</td>
+<td>3.1e-12</td>
+<td>62</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>selectivity real - instance</td>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>0</td>
+<td>pair_auc_obj</td>
+<td>+0.004 [-0.037, +0.043]</td>
+<td>0.16</td>
+<td>62</td>
+</tr>
+</tbody>
+</table>
+<h2>v2: motion_auc_v0_objects</h2>
+<table>
+<thead>
+<tr>
+<th>source</th>
+<th>probe</th>
+<th>labels</th>
+<th>L0</th>
+<th>L4</th>
+<th>L8</th>
+<th>L12</th>
+<th>L16</th>
+<th>L20</th>
+<th>L24</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>real</td>
+<td>0.569 +/- 0.000 [0.508, 0.628]</td>
+<td>0.613 +/- 0.000 [0.550, 0.674]</td>
+<td>0.652 +/- 0.000 [0.588, 0.712]</td>
+<td>0.720 +/- 0.000 [0.655, 0.785]</td>
+<td>0.760 +/- 0.000 [0.699, 0.816]</td>
+<td>0.970 +/- 0.000 [0.949, 0.986]</td>
+<td>0.998 +/- 0.000 [0.997, 0.999]</td>
+</tr>
+<tr>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>patch</td>
+<td>0.507 +/- 0.000 [0.483, 0.534]</td>
+<td>0.514 +/- 0.000 [0.488, 0.539]</td>
+<td>0.489 +/- 0.000 [0.466, 0.512]</td>
+<td>0.485 +/- 0.000 [0.462, 0.507]</td>
+<td>0.498 +/- 0.000 [0.474, 0.523]</td>
+<td>0.488 +/- 0.000 [0.466, 0.508]</td>
+<td>0.506 +/- 0.000 [0.485, 0.527]</td>
+</tr>
+<tr>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>instance</td>
+<td>0.435 +/- 0.000 [0.378, 0.490]</td>
+<td>0.449 +/- 0.000 [0.392, 0.504]</td>
+<td>0.454 +/- 0.000 [0.399, 0.509]</td>
+<td>0.432 +/- 0.000 [0.376, 0.489]</td>
+<td>0.406 +/- 0.000 [0.350, 0.461]</td>
+<td>0.387 +/- 0.000 [0.331, 0.446]</td>
+<td>0.403 +/- 0.000 [0.347, 0.458]</td>
+</tr>
+<tr>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>real</td>
+<td>0.520 +/- 0.000 [0.473, 0.569]</td>
+<td>0.484 +/- 0.000 [0.432, 0.535]</td>
+<td>0.484 +/- 0.000 [0.435, 0.533]</td>
+<td>0.485 +/- 0.000 [0.432, 0.538]</td>
+<td>0.482 +/- 0.000 [0.426, 0.536]</td>
+<td>0.492 +/- 0.000 [0.438, 0.543]</td>
+<td>0.492 +/- 0.000 [0.437, 0.544]</td>
+</tr>
+<tr>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>patch</td>
+<td>0.514 +/- 0.000 [0.493, 0.536]</td>
+<td>0.505 +/- 0.000 [0.484, 0.526]</td>
+<td>0.509 +/- 0.000 [0.487, 0.531]</td>
+<td>0.504 +/- 0.000 [0.483, 0.523]</td>
+<td>0.503 +/- 0.000 [0.482, 0.524]</td>
+<td>0.505 +/- 0.000 [0.482, 0.526]</td>
+<td>0.501 +/- 0.000 [0.480, 0.523]</td>
+</tr>
+<tr>
+<td>randall</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>instance</td>
+<td>0.498 +/- 0.000 [0.447, 0.547]</td>
+<td>0.500 +/- 0.000 [0.448, 0.549]</td>
+<td>0.497 +/- 0.000 [0.445, 0.551]</td>
+<td>0.509 +/- 0.000 [0.460, 0.560]</td>
+<td>0.499 +/- 0.000 [0.448, 0.550]</td>
+<td>0.472 +/- 0.000 [0.422, 0.523]</td>
+<td>0.478 +/- 0.000 [0.427, 0.530]</td>
+</tr>
+<tr>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>real</td>
+<td>0.479 +/- 0.000 [0.421, 0.533]</td>
+<td>0.468 +/- 0.000 [0.414, 0.521]</td>
+<td>0.476 +/- 0.000 [0.423, 0.529]</td>
+<td>0.463 +/- 0.000 [0.409, 0.515]</td>
+<td>0.460 +/- 0.000 [0.406, 0.513]</td>
+<td>0.464 +/- 0.000 [0.413, 0.520]</td>
+<td>0.455 +/- 0.000 [0.404, 0.505]</td>
+</tr>
+<tr>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>patch</td>
+<td>0.518 +/- 0.000 [0.498, 0.540]</td>
+<td>0.525 +/- 0.000 [0.501, 0.550]</td>
+<td>0.527 +/- 0.000 [0.502, 0.553]</td>
+<td>0.524 +/- 0.000 [0.498, 0.548]</td>
+<td>0.525 +/- 0.000 [0.502, 0.548]</td>
+<td>0.515 +/- 0.000 [0.488, 0.541]</td>
+<td>0.522 +/- 0.000 [0.496, 0.547]</td>
+</tr>
+<tr>
+<td>randtf</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>instance</td>
+<td>0.534 +/- 0.000 [0.475, 0.589]</td>
+<td>0.505 +/- 0.000 [0.456, 0.557]</td>
+<td>0.500 +/- 0.000 [0.446, 0.552]</td>
+<td>0.488 +/- 0.000 [0.434, 0.543]</td>
+<td>0.504 +/- 0.000 [0.453, 0.554]</td>
+<td>0.510 +/- 0.000 [0.459, 0.562]</td>
+<td>0.520 +/- 0.000 [0.466, 0.572]</td>
+</tr>
+<tr>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>real</td>
+<td>0.560 +/- 0.000 [0.498, 0.624]</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>patch</td>
+<td>0.502 +/- 0.000 [0.478, 0.525]</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>enc_any4d</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>instance</td>
+<td>0.459 +/- 0.000 [0.400, 0.518]</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>real</td>
+<td>0.484 +/- 0.000 [0.431, 0.537]</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>patch</td>
+<td>0.527 +/- 0.000 [0.504, 0.550]</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>enc_dino</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>instance</td>
+<td>0.528 +/- 0.000 [0.475, 0.582]</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<h2>v2: pair_auc_obj</h2>
+<table>
+<thead>
+<tr>
+<th>source</th>
+<th>probe</th>
+<th>labels</th>
+<th>L0</th>
+<th>L4</th>
+<th>L8</th>
+<th>L12</th>
+<th>L16</th>
+<th>L20</th>
+<th>L24</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>real</td>
+<td>0.770 +/- 0.001 [0.744, 0.796]</td>
+<td>0.795 +/- 0.001 [0.767, 0.823]</td>
+<td>0.810 +/- 0.000 [0.783, 0.838]</td>
+<td>0.842 +/- 0.000 [0.816, 0.867]</td>
+<td>0.862 +/- 0.000 [0.837, 0.887]</td>
+<td>0.890 +/- 0.000 [0.860, 0.916]</td>
+<td>0.915 +/- 0.001 [0.890, 0.937]</td>
+</tr>
+<tr>
+<td>trained</td>
+<td>linear (round-1 ridge / bilinear)</td>
+<td>patch</td>
+<td>0.528 +/- 0.001 [0.518, 0.541]</td>
+<td>0.526 +/- 0.000 [0.515, 0.539]</td>
+<td>0.526 +/- 0.000 [0.516, 0.536]</td>
+<td>0.530 +/- 0.001 [0.519, 0.541]</td>
+<td>0.526 +/- 0.001 [0.518, 0.536]</td>
+<td>0.5</td>
+<td></td>
+</tr>
+</tbody>
+</table></body></html>
