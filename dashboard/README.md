@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 15:24:52 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 15:25:00 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -40,7 +40,7 @@ Last updated 2026-10-17 15:24:52 (server time). Regenerated after every queue ev
 | 34 | [ft_train_sf](#ft_train_sf): Item 10: fine-tune (b) scene-flow DPT head + adaptor | done | 1 | 2026-10-17 13:06:18 | 2026-10-17 13:46:58 |
 | 35 | [ft_eval_sf](#ft_eval_sf): Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | done | 1 | 2026-10-17 13:47:07 | 2026-10-17 14:01:16 |
 | 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 14:01:26 | 2026-10-17 15:24:46 |
-| 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | queued | 0 |  |  |
+| 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | RUNNING | 1 | 2026-10-17 15:24:57 |  |
 | 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | queued | 0 | 2026-10-17 04:44:49 |  |
 | 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | queued | 0 |  |  |
 | 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | queued | 0 |  |  |
@@ -1093,6 +1093,15 @@ Fine-tuning variant **heads_sf** of Any4D from any4d_4v_combined.pth.
 
 These are training-distribution numbers; the held-out evaluation is in the matching ft_eval task.
 
+
+
+## ft_eval_heads_sf
+
+Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head
+
+Status: **RUNNING**, attempt 1, started 2026-10-17 15:24:57. [Raw results](../results/queue/ft_eval_heads_sf/), [log](../results/queue/ft_eval_heads_sf/task.log).
+
+Partial results so far; the run is still going.
 
 
 ## v4_pilot
