@@ -270,4 +270,95 @@ GPU 1
 Seed set to: 0
 max_steps from /media/workbench/zone_x/e5_multibody/ft/chosen_steps.json 1200
 train 353 scenes, val 38 scenes
-Initializing <class 'any4d.models.any4d.model.Any4D'> with kwargs: {'torch_hub_force_reload': False, 'pretrained_checkpoint_path': None, 'load_specific_pretrained_submodules': False, 'specific_pretrained_submodules': [], 'name': 'any4d', 'encoder_config': {'encoder_str': 'dinov2', 'name': 'dinov2_large', 'data_norm_type': 'dinov2', 'size': 'large', 'with_registers': False, 'uses_torch_hub': False, 'gradient_checkpointing': False}, 'info_sharing_config': {'model_type': 'alternating_attention', 'model_return_type': 'intermediate_features', 'custom_positional_encoding': None, 'module_args': {'name': 'aat_24_layers_ifr', 'indices': [11, 17], 'norm_intermediate': True, 'size': '24_layers', 'depth': 24, 'distinguish_ref_and_non_ref_views': True, 'gradient_checkpointing': False}}, 'pred_head_config': {'adaptor_config': {'input_dim': 6, 'scene_rep_dim': 4, 'type': 'raydirs+depth+pose+confidence+mask', 'scene_rep_type': 'raydirs+depth+pose', 'dense_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}}, 'type': 'dpt+pose', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3], 'checkpoint_gradient': False}, 'regressor_head': {'output_dim': 6, 'checkpoint_gradient': False}, 'pose_head': {'num_resconv_block': 2, 'rot_representation_dim': 4}, 'scale_head': {'output_dim': 1}, 'adaptor_type': 'raydirs+depth+pose+confidence+mask', 'dpt_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}, 'gradient_checkpointing': False}, 'scene_flow_pred_head_config': {'adaptor_config': {'input_dim': 3, 'scene_rep_dim': 3, 'type': 'scene_flow', 'scene_rep_type': 'scene_flow', 'dense_pred_init_dict': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'type': 'dpt', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3]}, 'regressor_head': {'output_dim': 3}, 'adaptor_type': 'scene_flow', 'dpt_adaptor': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'geometric_input_config': {'ray_dirs_encoder_config': {'name': 'ray_dirs_encoder', 'in_chans': 3, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'depth_encoder_config': {'name': 'depth_encoder', 'in_chans': 1, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'cam_rot_encoder_config': {'name': 'cam_rot_quats_encoder', 'in_chans': 4, 'encoder_str': 'global_rep_encoder'}, 'cam_trans_encoder_config': {'name': 'cam_trans_encoder', 'in_chans': 3, 'encoder_str': 'global_rep_
+Initializing <class 'any4d.models.any4d.model.Any4D'> with kwargs: {'torch_hub_force_reload': False, 'pretrained_checkpoint_path': None, 'load_specific_pretrained_submodules': False, 'specific_pretrained_submodules': [], 'name': 'any4d', 'encoder_config': {'encoder_str': 'dinov2', 'name': 'dinov2_large', 'data_norm_type': 'dinov2', 'size': 'large', 'with_registers': False, 'uses_torch_hub': False, 'gradient_checkpointing': False}, 'info_sharing_config': {'model_type': 'alternating_attention', 'model_return_type': 'intermediate_features', 'custom_positional_encoding': None, 'module_args': {'name': 'aat_24_layers_ifr', 'indices': [11, 17], 'norm_intermediate': True, 'size': '24_layers', 'depth': 24, 'distinguish_ref_and_non_ref_views': True, 'gradient_checkpointing': False}}, 'pred_head_config': {'adaptor_config': {'input_dim': 6, 'scene_rep_dim': 4, 'type': 'raydirs+depth+pose+confidence+mask', 'scene_rep_type': 'raydirs+depth+pose', 'dense_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}}, 'type': 'dpt+pose', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3], 'checkpoint_gradient': False}, 'regressor_head': {'output_dim': 6, 'checkpoint_gradient': False}, 'pose_head': {'num_resconv_block': 2, 'rot_representation_dim': 4}, 'scale_head': {'output_dim': 1}, 'adaptor_type': 'raydirs+depth+pose+confidence+mask', 'dpt_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}, 'gradient_checkpointing': False}, 'scene_flow_pred_head_config': {'adaptor_config': {'input_dim': 3, 'scene_rep_dim': 3, 'type': 'scene_flow', 'scene_rep_type': 'scene_flow', 'dense_pred_init_dict': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'type': 'dpt', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3]}, 'regressor_head': {'output_dim': 3}, 'adaptor_type': 'scene_flow', 'dpt_adaptor': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'geometric_input_config': {'ray_dirs_encoder_config': {'name': 'ray_dirs_encoder', 'in_chans': 3, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'depth_encoder_config': {'name': 'depth_encoder', 'in_chans': 1, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'cam_rot_encoder_config': {'name': 'cam_rot_quats_encoder', 'in_chans': 4, 'encoder_str': 'global_rep_encoder'}, 'cam_trans_encoder_config': {'name': 'cam_trans_encoder', 'in_chans': 3, 'encoder_str': 'global_rep_encoder'}, 'scale_encoder_config': {'name': 'scale_encoder', 'in_chans': 1, 'encoder_str': 'global_rep_encoder'}, 'scene_flow_encoder_config': {'name': 'scene_flow_encoder', 'in_chans': 3, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'images_prob': 1, 'overall_prob': 0, 'dropout_prob': 1, 'ray_dirs_prob': 0, 'depth_prob': 0, 'cam_prob': 0, 'sparse_depth_prob': 0, 'sparsification_removal_percent': 0, 'depth_scale_norm_all_prob': 0, 'pose_scale_norm_all_prob': 0, 'doppler_prob': 0, 'event_imgs_prob': 0}}
+Loading pretrained dinov2_vitl14 from torch hub
+Using cache found in /home/rohit/.cache/torch/hub/facebookresearch_dinov2_main
+Loading model from:  checkpoints/any4d_4v_combined.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+variant sf heads [] trainable params 19021379
+resumed at step 0
+step 20 0.01 h lr 4.20e-06 sf_dyn 0.0608 sf_static 0.0014 sf 0.0109 loss 0.0109 peak 10.2 GB
+step 40 0.02 h lr 8.20e-06 sf_dyn 0.0552 sf_static 0.0020 sf 0.0101 loss 0.0101 peak 10.2 GB
+step 60 0.03 h lr 1.22e-05 sf_dyn 0.0446 sf_static 0.0017 sf 0.0095 loss 0.0095 peak 10.2 GB
+step 80 0.03 h lr 1.62e-05 sf_dyn 0.0560 sf_static 0.0017 sf 0.0110 loss 0.0110 peak 10.2 GB
+step 100 0.04 h lr 2.00e-05 sf_dyn 0.0437 sf_static 0.0016 sf 0.0072 loss 0.0072 peak 10.2 GB
+val {"sf_dyn": 0.055, "sf_static": 0.0017, "sf": 0.0099, "loss": 0.0099, "val_slope": 0.7937, "val_epe_static": 4.044, "val_epe_moving": 31.6096, "val_mask_iou": 0.4712, "step": 100, "hours": 0.0432} best step 100
+step 120 0.07 h lr 2.00e-05 sf_dyn 0.0400 sf_static 0.0013 sf 0.0081 loss 0.0081 peak 10.2 GB
+step 140 0.07 h lr 1.99e-05 sf_dyn 0.0464 sf_static 0.0014 sf 0.0094 loss 0.0094 peak 10.2 GB
+step 160 0.08 h lr 1.99e-05 sf_dyn 0.0432 sf_static 0.0021 sf 0.0078 loss 0.0078 peak 10.2 GB
+step 180 0.09 h lr 1.98e-05 sf_dyn 0.0465 sf_static 0.0015 sf 0.0094 loss 0.0094 peak 10.2 GB
+step 200 0.10 h lr 1.96e-05 sf_dyn 0.0437 sf_static 0.0015 sf 0.0080 loss 0.0080 peak 10.2 GB
+val {"sf_dyn": 0.0559, "sf_static": 0.0014, "sf": 0.0098, "loss": 0.0098, "val_slope": 0.7345, "val_epe_static": 3.9847, "val_epe_moving": 37.0626, "val_mask_iou": 0.5172, "step": 200, "hours": 0.1008} best step 200
+step 220 0.12 h lr 1.95e-05 sf_dyn 0.0476 sf_static 0.0013 sf 0.0092 loss 0.0092 peak 10.2 GB
+step 240 0.13 h lr 1.93e-05 sf_dyn 0.0422 sf_static 0.0015 sf 0.0076 loss 0.0076 peak 10.2 GB
+step 260 0.14 h lr 1.91e-05 sf_dyn 0.0507 sf_static 0.0014 sf 0.0080 loss 0.0080 peak 10.2 GB
+step 280 0.15 h lr 1.88e-05 sf_dyn 0.0418 sf_static 0.0015 sf 0.0074 loss 0.0074 peak 10.2 GB
+step 300 0.16 h lr 1.86e-05 sf_dyn 0.0469 sf_static 0.0019 sf 0.0085 loss 0.0085 peak 10.2 GB
+val {"sf_dyn": 0.0521, "sf_static": 0.0017, "sf": 0.0097, "loss": 0.0097, "val_slope": 0.8494, "val_epe_static": 4.0266, "val_epe_moving": 37.0468, "val_mask_iou": 0.4583, "step": 300, "hours": 0.1585} best step 300
+step 320 0.18 h lr 1.83e-05 sf_dyn 0.0389 sf_static 0.0015 sf 0.0073 loss 0.0073 peak 10.2 GB
+step 340 0.19 h lr 1.80e-05 sf_dyn 0.0424 sf_static 0.0013 sf 0.0064 loss 0.0064 peak 10.2 GB
+step 360 0.20 h lr 1.76e-05 sf_dyn 0.0376 sf_static 0.0015 sf 0.0085 loss 0.0085 peak 10.2 GB
+step 380 0.21 h lr 1.73e-05 sf_dyn 0.0394 sf_static 0.0016 sf 0.0077 loss 0.0077 peak 10.2 GB
+step 400 0.22 h lr 1.69e-05 sf_dyn 0.0402 sf_static 0.0014 sf 0.0079 loss 0.0079 peak 10.2 GB
+val {"sf_dyn": 0.0524, "sf_static": 0.0016, "sf": 0.0094, "loss": 0.0094, "val_slope": 0.7636, "val_epe_static": 4.0216, "val_epe_moving": 39.3033, "val_mask_iou": 0.457, "step": 400, "hours": 0.2158} best step 400
+step 420 0.24 h lr 1.65e-05 sf_dyn 0.0404 sf_static 0.0013 sf 0.0067 loss 0.0067 peak 10.2 GB
+step 440 0.25 h lr 1.61e-05 sf_dyn 0.0365 sf_static 0.0017 sf 0.0070 loss 0.0070 peak 10.2 GB
+step 460 0.26 h lr 1.56e-05 sf_dyn 0.0370 sf_static 0.0013 sf 0.0067 loss 0.0067 peak 10.2 GB
+step 480 0.26 h lr 1.52e-05 sf_dyn 0.0379 sf_static 0.0014 sf 0.0070 loss 0.0070 peak 10.2 GB
+step 500 0.27 h lr 1.47e-05 sf_dyn 0.0468 sf_static 0.0013 sf 0.0062 loss 0.0062 peak 10.2 GB
+val {"sf_dyn": 0.0528, "sf_static": 0.0014, "sf": 0.0094, "loss": 0.0094, "val_slope": 0.7607, "val_epe_static": 3.9771, "val_epe_moving": 33.9376, "val_mask_iou": 0.5174, "step": 500, "hours": 0.2735} best step 400
+step 520 0.30 h lr 1.43e-05 sf_dyn 0.0489 sf_static 0.0014 sf 0.0072 loss 0.0072 peak 10.2 GB
+step 540 0.31 h lr 1.38e-05 sf_dyn 0.0390 sf_static 0.0015 sf 0.0069 loss 0.0069 peak 10.2 GB
+step 560 0.31 h lr 1.33e-05 sf_dyn 0.0345 sf_static 0.0016 sf 0.0063 loss 0.0063 peak 10.2 GB
+step 580 0.32 h lr 1.28e-05 sf_dyn 0.0348 sf_static 0.0013 sf 0.0064 loss 0.0064 peak 10.2 GB
+step 600 0.33 h lr 1.23e-05 sf_dyn 0.0341 sf_static 0.0012 sf 0.0064 loss 0.0064 peak 10.2 GB
+val {"sf_dyn": 0.0527, "sf_static": 0.0014, "sf": 0.0093, "loss": 0.0093, "val_slope": 0.769, "val_epe_static": 3.9786, "val_epe_moving": 36.7261, "val_mask_iou": 0.5255, "step": 600, "hours": 0.3312} best step 600
+step 620 0.35 h lr 1.18e-05 sf_dyn 0.0284 sf_static 0.0013 sf 0.0057 loss 0.0057 peak 10.2 GB
+step 640 0.36 h lr 1.13e-05 sf_dyn 0.0438 sf_static 0.0014 sf 0.0083 loss 0.0083 peak 10.2 GB
+step 660 0.37 h lr 1.07e-05 sf_dyn 0.0398 sf_static 0.0014 sf 0.0074 loss 0.0074 peak 10.2 GB
+step 680 0.38 h lr 1.02e-05 sf_dyn 0.0404 sf_static 0.0014 sf 0.0074 loss 0.0074 peak 10.2 GB
+step 700 0.39 h lr 9.72e-06 sf_dyn 0.0442 sf_static 0.0019 sf 0.0094 loss 0.0094 peak 10.2 GB
+val {"sf_dyn": 0.0518, "sf_static": 0.0014, "sf": 0.0093, "loss": 0.0093, "val_slope": 0.7828, "val_epe_static": 3.9553, "val_epe_moving": 34.9395, "val_mask_iou": 0.5326, "step": 700, "hours": 0.3853} best step 700
+step 720 0.40 h lr 9.21e-06 sf_dyn 0.0438 sf_static 0.0014 sf 0.0072 loss 0.0072 peak 10.2 GB
+step 740 0.41 h lr 8.71e-06 sf_dyn 0.0358 sf_static 0.0018 sf 0.0077 loss 0.0077 peak 10.2 GB
+step 760 0.42 h lr 8.22e-06 sf_dyn 0.0407 sf_static 0.0014 sf 0.0081 loss 0.0081 peak 10.2 GB
+step 780 0.43 h lr 7.73e-06 sf_dyn 0.0327 sf_static 0.0015 sf 0.0058 loss 0.0058 peak 10.2 GB
+step 800 0.44 h lr 7.26e-06 sf_dyn 0.0357 sf_static 0.0014 sf 0.0082 loss 0.0082 peak 10.2 GB
+val {"sf_dyn": 0.0514, "sf_static": 0.0014, "sf": 0.0093, "loss": 0.0093, "val_slope": 0.7915, "val_epe_static": 3.9698, "val_epe_moving": 34.8645, "val_mask_iou": 0.5257, "step": 800, "hours": 0.4394} best step 800
+step 820 0.46 h lr 6.80e-06 sf_dyn 0.0341 sf_static 0.0013 sf 0.0065 loss 0.0065 peak 10.2 GB
+step 840 0.47 h lr 6.35e-06 sf_dyn 0.0344 sf_static 0.0014 sf 0.0061 loss 0.0061 peak 10.2 GB
+step 860 0.48 h lr 5.92e-06 sf_dyn 0.0346 sf_static 0.0012 sf 0.0075 loss 0.0075 peak 10.2 GB
+step 880 0.48 h lr 5.50e-06 sf_dyn 0.0442 sf_static 0.0012 sf 0.0075 loss 0.0075 peak 10.2 GB
+step 900 0.49 h lr 5.11e-06 sf_dyn 0.0382 sf_static 0.0015 sf 0.0077 loss 0.0077 peak 10.2 GB
+val {"sf_dyn": 0.0514, "sf_static": 0.0014, "sf": 0.0094, "loss": 0.0094, "val_slope": 0.8024, "val_epe_static": 3.972, "val_epe_moving": 35.8721, "val_mask_iou": 0.5299, "step": 900, "hours": 0.4935} best step 800
+step 920 0.51 h lr 4.73e-06 sf_dyn 0.0347 sf_static 0.0012 sf 0.0061 loss 0.0061 peak 10.2 GB
+step 940 0.52 h lr 4.37e-06 sf_dyn 0.0320 sf_static 0.0017 sf 0.0067 loss 0.0067 peak 10.2 GB
+step 960 0.53 h lr 4.03e-06 sf_dyn 0.0347 sf_static 0.0013 sf 0.0070 loss 0.0070 peak 10.2 GB
+step 980 0.54 h lr 3.72e-06 sf_dyn 0.0364 sf_static 0.0015 sf 0.0097 loss 0.0097 peak 10.2 GB
+step 1000 0.55 h lr 3.43e-06 sf_dyn 0.0351 sf_static 0.0012 sf 0.0060 loss 0.0060 peak 10.2 GB
+val {"sf_dyn": 0.0509, "sf_static": 0.0015, "sf": 0.0093, "loss": 0.0093, "val_slope": 0.809, "val_epe_static": 3.9778, "val_epe_moving": 35.0534, "val_mask_iou": 0.5288, "step": 1000, "hours": 0.5475} best step 800
+step 1020 0.57 h lr 3.16e-06 sf_dyn 0.0379 sf_static 0.0014 sf 0.0071 loss 0.0071 peak 10.2 GB
+step 1040 0.58 h lr 2.92e-06 sf_dyn 0.0329 sf_static 0.0015 sf 0.0059 loss 0.0059 peak 10.2 GB
+step 1060 0.58 h lr 2.71e-06 sf_dyn 0.0364 sf_static 0.0011 sf 0.0057 loss 0.0057 peak 10.2 GB
+step 1080 0.59 h lr 2.52e-06 sf_dyn 0.0371 sf_static 0.0010 sf 0.0061 loss 0.0061 peak 10.2 GB
+step 1100 0.60 h lr 2.36e-06 sf_dyn 0.0469 sf_static 0.0014 sf 0.0075 loss 0.0075 peak 10.2 GB
+val {"sf_dyn": 0.0506, "sf_static": 0.0015, "sf": 0.0093, "loss": 0.0093, "val_slope": 0.8043, "val_epe_static": 3.9884, "val_epe_moving": 36.9083, "val_mask_iou": 0.5228, "step": 1100, "hours": 0.6016} best step 800
+step 1120 0.62 h lr 2.23e-06 sf_dyn 0.0432 sf_static 0.0014 sf 0.0071 loss 0.0071 peak 10.2 GB
+step 1140 0.63 h lr 2.13e-06 sf_dyn 0.0376 sf_static 0.0014 sf 0.0063 loss 0.0063 peak 10.2 GB
+step 1160 0.64 h lr 2.06e-06 sf_dyn 0.0322 sf_static 0.0019 sf 0.0068 loss 0.0068 peak 10.2 GB
+step 1180 0.65 h lr 2.01e-06 sf_dyn 0.0283 sf_static 0.0015 sf 0.0073 loss 0.0073 peak 10.2 GB
+step 1200 0.66 h lr 2.00e-06 sf_dyn 0.0394 sf_static 0.0013 sf 0.0064 loss 0.0064 peak 10.2 GB
+val {"sf_dyn": 0.0505, "sf_static": 0.0014, "sf": 0.0092, "loss": 0.0092, "val_slope": 0.7964, "val_epe_static": 3.9732, "val_epe_moving": 37.7783, "val_mask_iou": 0.5232, "step": 1200, "hours": 0.6557} best step 1200
+stopped: max_steps 1200
+merge check: max |d scene_flow| 0.00e+00, max |d pts3d| 0.00e+00
+done /media/workbench/zone_x/e5_multibody/ft/runs/sf/any4d_ft.pth
+total 2947040
+drwxrws---+ 2 rohit rohit       4096 Oct 17 13:46 .
+drwxrws---+ 8 rohit rohit       4096 Oct 17 03:19 ..
+-rw-rw----  1 rohit rohit 2713290310 Oct 17 13:46 any4d_ft.pth
+-rw-rw----  1 rohit rohit   76105698 Oct 17 13:46 best.pt
+-rw-rw----  1 rohit rohit        823 Oct 17 13:06 config.json
+-rw-rw----  1 rohit rohit  228331346 Oct 17 13:46 last.pt
+-rw-rw----  1 rohit rohit         27 Oct 17 13:46 merge_check.json
+-rw-rw----  1 rohit rohit       8781 Oct 17 13:06 split.json
+-rw-rw----  1 rohit rohit       5495 Oct 17 13:46 train_history.json
