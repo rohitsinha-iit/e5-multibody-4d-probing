@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 23:46:41 (server time). Regenerated after every queue event.
+Last updated 2026-10-18 00:05:53 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -53,13 +53,13 @@ Last updated 2026-10-17 23:46:41 (server time). Regenerated after every queue ev
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | done | 1 | 2026-10-17 20:09:05 | 2026-10-17 21:11:55 |
 | 48 | [ft_train_heads_sel](#ft_train_heads_sel): Item 10 rerun: train heads with corrected checkpoint selection | done | 1 | 2026-10-17 21:12:06 | 2026-10-17 22:31:27 |
 | 49 | [ft_eval_heads_sel](#ft_eval_heads_sel): Item 10 rerun: evaluate heads_sel | done | 1 | 2026-10-17 22:31:38 | 2026-10-17 22:46:16 |
-| 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | RUNNING | 1 | 2026-10-17 22:46:27 |  |
+| 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | done | 1 | 2026-10-17 22:46:27 | 2026-10-18 00:05:47 |
 | 51 | [ft_eval_ctrl_sel](#ft_eval_ctrl_sel): Item 10 rerun: evaluate ctrl_sel | queued | 0 |  |  |
 | 52 | [ft_train_gain_sel](#ft_train_gain_sel): Item 10 rerun: train gain with corrected checkpoint selection | queued | 0 |  |  |
 | 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | queued | 0 |  |  |
 | 54 | [ft_summary_sel](#ft_summary_sel): Item 10: comparison table with corrected head variants | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 23:46:08 running ft_train_ctrl_sel
+Supervisor heartbeat: 2026-10-18 00:05:17 running ft_train_ctrl_sel
 
 ## v3_pilot
 
@@ -2097,7 +2097,30 @@ Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set
 
 Item 10 rerun: train ctrl with corrected checkpoint selection
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 22:46:27. [Raw results](../results/queue/ft_train_ctrl_sel/), [log](../results/queue/ft_train_ctrl_sel/task.log).
+Status: **done**, attempt 1, started 2026-10-17 22:46:27, finished 2026-10-18 00:05:47. [Raw results](../results/queue/ft_train_ctrl_sel/), [log](../results/queue/ft_train_ctrl_sel/task.log).
 
-Partial results so far; the run is still going.
+![ft_train_ctrl_sel_curves.png](assets/ft_train_ctrl_sel/ft_train_ctrl_sel_curves.png)
+
+
+**ft_train_ctrl_sel_summary.md**
+
+# ft_train_ctrl_sel
+
+Fine-tuning variant **ctrl** of Any4D from any4d_4v_combined.pth.
+
+- Trainable parameters: 71,680; heads: [[2, 9], [22, 11], [17, 2], [14, 2], [8, 8]]; LoRA rank 8, alpha 16.
+- Learning rates: LoRA 0.0002, scene-flow head 2e-05, gain 0.005; AdamW, warmup 100, cosine to 10%; bf16, activation checkpointing.
+- Loss: Any4D scene-flow loss (scale-invariant, log-norm, x10.0 on moving pixels) + 1.0 x distillation to the frozen model (pointmaps, depth, pose, metric scale).
+- Stopped: max_steps 1200. Best validation step: 1200. Merge check (adapter vs merged weights): {'d_sf': 0.0006787776947021484, 'd_pts': 0.0074405670166015625}.
+
+| validation (held-out training scenes, frames 0 to 23) | step 0 (base) | best step |
+|---|---|---|
+| loss | 0.0116 | 0.0121 |
+| slope (mean) | 0.6757 | 0.6842 |
+| EPE moving (median px) | 36.1928 | 35.6682 |
+| EPE static (median px) | 3.9417 | 3.9648 |
+| motion-mask IoU (median) | 0.5076 | 0.5083 |
+
+These are training-distribution numbers; the held-out evaluation is in the matching ft_eval task.
+
 

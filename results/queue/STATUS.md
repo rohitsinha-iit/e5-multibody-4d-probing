@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 22:46:27
+updated 2026-10-18 00:05:47
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -53,7 +53,7 @@ updated 2026-10-17 22:46:27
 | 47 | r2_probe_mlp: Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | done | 1 | 2026-10-17 20:09:05 | 2026-10-17 21:11:55 | True |
 | 48 | ft_train_heads_sel: Item 10 rerun: train heads with corrected checkpoint selection | done | 1 | 2026-10-17 21:12:06 | 2026-10-17 22:31:27 | True |
 | 49 | ft_eval_heads_sel: Item 10 rerun: evaluate heads_sel | done | 1 | 2026-10-17 22:31:38 | 2026-10-17 22:46:16 | True |
-| 50 | ft_train_ctrl_sel: Item 10 rerun: train ctrl with corrected checkpoint selection | running | 1 | 2026-10-17 22:46:27 |  | False |
+| 50 | ft_train_ctrl_sel: Item 10 rerun: train ctrl with corrected checkpoint selection | done | 1 | 2026-10-17 22:46:27 | 2026-10-18 00:05:47 | False |
 | 51 | ft_eval_ctrl_sel: Item 10 rerun: evaluate ctrl_sel | pending | 0 |  |  |  |
 | 52 | ft_train_gain_sel: Item 10 rerun: train gain with corrected checkpoint selection | pending | 0 |  |  |  |
 | 53 | ft_eval_gain_sel: Item 10 rerun: evaluate gain_sel | pending | 0 |  |  |  |
