@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 17:54:48 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 17:54:56 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -49,7 +49,7 @@ Last updated 2026-10-17 17:54:48 (server time). Regenerated after every queue ev
 | 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | done | 1 | 2026-10-17 16:21:43 | 2026-10-17 16:37:22 |
 | 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | done | 1 | 2026-10-17 16:37:33 | 2026-10-17 16:43:12 |
 | 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | done | 1 | 2026-10-17 16:43:22 | 2026-10-17 17:54:42 |
-| 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
+| 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | RUNNING | 1 | 2026-10-17 17:54:53 |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 | 48 | [ft_train_heads_sel](#ft_train_heads_sel): Item 10 rerun: train heads with corrected checkpoint selection | queued | 0 |  |  |
 | 49 | [ft_eval_heads_sel](#ft_eval_heads_sel): Item 10 rerun: evaluate heads_sel | queued | 0 |  |  |
@@ -1708,4 +1708,13 @@ Each null set has 4 global-attention heads and 1 frame-attention head, drawn wit
 - Amplification x1.5: change in slope +0.346 vs null median +0.000 (z = 15.1, empirical p = 0.048).
 - Amplification fixes magnitude, not accuracy: the slope rises by +0.346 while the moving-object EPE also rises by +6.70 px.
 
+
+
+## r2_probe_linear
+
+Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float)
+
+Status: **RUNNING**, attempt 1, started 2026-10-17 17:54:53. [Raw results](../results/queue/r2_probe_linear/), [log](../results/queue/r2_probe_linear/task.log).
+
+Partial results so far; the run is still going.
 
