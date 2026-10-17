@@ -1,0 +1,16 @@
+
+===== 2026-10-18 01:30:37 attempt 1
+/home/rohit/e5_multibody/queue/src/e5_ft_summary.py:86: RuntimeWarning: Mean of empty slice
+  out = dict(variant=v, dataset=ds, metric=m, n=int(np.isfinite(x).sum()), mean=float(np.nanmean(x)) if len(x) else np.nan,
+/home/rohit/e5_multibody/queue/src/e5_ft_summary.py:87: RuntimeWarning: All-NaN slice encountered
+  median=float(np.nanmedian(x)) if len(x) else np.nan)
+/home/rohit/e5_multibody/queue/src/e5_ft_summary.py:92: RuntimeWarning: Mean of empty slice
+  out.update(ref=ref, n_paired=int(np.isfinite(d).sum()), delta=float(np.nanmean(d)), sign_p=sign_p(d),
+rows 760 variants ['base', 'heads', 'sf', 'heads_sf', 'ctrl', 'gain']
+total 480
+drwxrwxr-x  2 rohit rohit   4096 Oct 18 01:30 .
+drwxrwxr-x 54 rohit rohit   4096 Oct 18 01:30 ..
+-rw-rw-r--  1 rohit rohit  80009 Oct 18 01:30 ft_comparison_long.csv
+-rw-rw-r--  1 rohit rohit 274191 Oct 18 01:30 ft_comparison_long.json
+-rw-rw-r--  1 rohit rohit 110848 Oct 18 01:30 ft_comparison.png
+-rw-rw-r--  1 rohit rohit  12182 Oct 18 01:30 ft_summary_sel_summary.md
