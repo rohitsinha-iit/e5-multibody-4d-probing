@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 22:46:30 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 23:46:41 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -59,7 +59,7 @@ Last updated 2026-10-17 22:46:30 (server time). Regenerated after every queue ev
 | 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | queued | 0 |  |  |
 | 54 | [ft_summary_sel](#ft_summary_sel): Item 10: comparison table with corrected head variants | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 22:45:46 running ft_eval_heads_sel
+Supervisor heartbeat: 2026-10-17 23:46:08 running ft_train_ctrl_sel
 
 ## v3_pilot
 
