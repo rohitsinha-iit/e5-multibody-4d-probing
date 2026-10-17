@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-18 01:28:51 (server time). Regenerated after every queue event.
+Last updated 2026-10-18 01:30:32 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -56,10 +56,10 @@ Last updated 2026-10-18 01:28:51 (server time). Regenerated after every queue ev
 | 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | done | 1 | 2026-10-17 22:46:27 | 2026-10-18 00:05:47 |
 | 51 | [ft_eval_ctrl_sel](#ft_eval_ctrl_sel): Item 10 rerun: evaluate ctrl_sel | done | 1 | 2026-10-18 00:05:58 | 2026-10-18 00:20:06 |
 | 52 | [ft_train_gain_sel](#ft_train_gain_sel): Item 10 rerun: train gain with corrected checkpoint selection | done | 1 | 2026-10-18 00:20:17 | 2026-10-18 01:12:58 |
-| 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | RUNNING | 2 | 2026-10-18 01:28:47 |  |
+| 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | done | 2 | 2026-10-18 01:28:47 | 2026-10-18 01:30:26 |
 | 54 | [ft_summary_sel](#ft_summary_sel): Item 10: comparison table with corrected head variants | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-18 01:26:17 running ft_eval_gain_sel
+Supervisor heartbeat: 2026-10-18 01:29:56 running ft_eval_gain_sel
 
 ## v3_pilot
 
@@ -2197,7 +2197,34 @@ These are training-distribution numbers; the held-out evaluation is in the match
 
 Item 10 rerun: evaluate gain_sel
 
-Status: **RUNNING**, attempt 2, started 2026-10-18 01:28:47. [Raw results](../results/queue/ft_eval_gain_sel/), [log](../results/queue/ft_eval_gain_sel/task.log).
+Status: **done**, attempt 2, started 2026-10-18 01:28:47, finished 2026-10-18 01:30:26. [Raw results](../results/queue/ft_eval_gain_sel/), [log](../results/queue/ft_eval_gain_sel/task.log).
 
-Partial results so far; the run is still going.
+![ft_eval_gain_sel_metrics.png](assets/ft_eval_gain_sel/ft_eval_gain_sel_metrics.png)
+
+
+**ft_eval_gain_sel_summary.md**
+
+# ft_eval_gain_sel
+
+Evaluation of **gain_sel** with the round-1 metric code (output metrics: e5_causal / e5_step3 definitions).
+
+| dataset | n | slope (mean) | EPE static (median of scenes) | EPE moving | sep ratio (median) | mask IoU | mask IoU, epi_aligned |
+|---|---|---|---|---|---|---|---|
+| v2 | 100 | 0.620 | 3.84 | 30.3 | 0.724 | 0.642 | 0.527 |
+| v3float | 69 | 0.572 | 4.01 | 30.1 | 0.676 | 0.491 | 0.271 |
+| v3far | 19 | 0.661 | 4.44 | 31.5 | 0.583 | 0.664 | nan |
+| kitti15_rgb_2v_wide | 200 | 0.590 | 3.69 | 11.6 | 0.815 | - | - |
+| kitti15_rgb_mv4_wide | 200 | 0.722 | 4.25 | 12.6 | 1.097 | - | - |
+| sintel_clean_2v_wide | 256 | 0.319 | 3.97 | 11.8 | 0.539 | - | - |
+| sintel_final_2v_wide | 256 | 0.332 | 4.30 | 12.0 | 0.532 | - | - |
+| sintel_final_mv4_wide | 256 | 0.340 | 4.15 | 11.3 | 0.479 | - | - |
+
+Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set):
+
+| layer | motion AUC, all splits | motion AUC, epi_aligned |
+|---|---|---|
+| 0 | 0.569 | 0.515 |
+| 17 | 0.844 | 0.906 |
+| 24 | 0.973 | 0.999 |
+
 

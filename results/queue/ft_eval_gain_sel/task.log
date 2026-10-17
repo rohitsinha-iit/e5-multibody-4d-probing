@@ -38,3 +38,30 @@ rows 256 skipped 0
 GPU 1
 ok
 [01:28:47] gain_sel v2 inference
+<All keys matched successfully>
+peak GPU GB 2.45
+[01:28:55] gain_sel v2 metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/gain_sel/pred_v2: 100 scenes ok, 0 errors; mean slope 0.620
+[01:28:55] gain_sel v3float inference
+<All keys matched successfully>
+peak GPU GB 2.45
+[01:29:02] gain_sel v3float metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/gain_sel/pred_v3float: 69 scenes ok, 0 errors; mean slope 0.572
+[01:29:03] gain_sel v3far inference
+<All keys matched successfully>
+peak GPU GB 2.45
+[01:29:09] gain_sel v3far metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/gain_sel/pred_v3far: 19 scenes ok, 0 errors; mean slope 0.661
+[01:29:10] gain_sel internals (v3float, layers 0,17,24)
+peak GPU GB 2.45
+[01:29:16] gain_sel real kitti15 rgb 2v
+rows 200 skipped 0
+[01:29:16] gain_sel real kitti15 rgb mv4
+rows 200 skipped 0
+[01:29:16] gain_sel real sintel final 2v
+rows 256 skipped 0
+[01:29:16] gain_sel real sintel final mv4
+rows 256 skipped 0
+[01:29:17] gain_sel real sintel clean 2v
+rows 256 skipped 0
+6.5G	/media/workbench/zone_x/e5_multibody/ft/eval/gain_sel
