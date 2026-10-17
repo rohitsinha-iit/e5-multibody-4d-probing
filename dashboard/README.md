@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-18 00:05:53 (server time). Regenerated after every queue event.
+Last updated 2026-10-18 00:06:01 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -54,7 +54,7 @@ Last updated 2026-10-18 00:05:53 (server time). Regenerated after every queue ev
 | 48 | [ft_train_heads_sel](#ft_train_heads_sel): Item 10 rerun: train heads with corrected checkpoint selection | done | 1 | 2026-10-17 21:12:06 | 2026-10-17 22:31:27 |
 | 49 | [ft_eval_heads_sel](#ft_eval_heads_sel): Item 10 rerun: evaluate heads_sel | done | 1 | 2026-10-17 22:31:38 | 2026-10-17 22:46:16 |
 | 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | done | 1 | 2026-10-17 22:46:27 | 2026-10-18 00:05:47 |
-| 51 | [ft_eval_ctrl_sel](#ft_eval_ctrl_sel): Item 10 rerun: evaluate ctrl_sel | queued | 0 |  |  |
+| 51 | [ft_eval_ctrl_sel](#ft_eval_ctrl_sel): Item 10 rerun: evaluate ctrl_sel | RUNNING | 1 | 2026-10-18 00:05:58 |  |
 | 52 | [ft_train_gain_sel](#ft_train_gain_sel): Item 10 rerun: train gain with corrected checkpoint selection | queued | 0 |  |  |
 | 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | queued | 0 |  |  |
 | 54 | [ft_summary_sel](#ft_summary_sel): Item 10: comparison table with corrected head variants | queued | 0 |  |  |
@@ -2123,4 +2123,13 @@ Fine-tuning variant **ctrl** of Any4D from any4d_4v_combined.pth.
 
 These are training-distribution numbers; the held-out evaluation is in the matching ft_eval task.
 
+
+
+## ft_eval_ctrl_sel
+
+Item 10 rerun: evaluate ctrl_sel
+
+Status: **RUNNING**, attempt 1, started 2026-10-18 00:05:58. [Raw results](../results/queue/ft_eval_ctrl_sel/), [log](../results/queue/ft_eval_ctrl_sel/task.log).
+
+Partial results so far; the run is still going.
 
