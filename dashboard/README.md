@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 21:12:00 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 21:12:10 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -51,7 +51,7 @@ Last updated 2026-10-17 21:12:00 (server time). Regenerated after every queue ev
 | 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | done | 1 | 2026-10-17 16:43:22 | 2026-10-17 17:54:42 |
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | done | 1 | 2026-10-17 17:54:53 | 2026-10-17 20:08:54 |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | done | 1 | 2026-10-17 20:09:05 | 2026-10-17 21:11:55 |
-| 48 | [ft_train_heads_sel](#ft_train_heads_sel): Item 10 rerun: train heads with corrected checkpoint selection | queued | 0 |  |  |
+| 48 | [ft_train_heads_sel](#ft_train_heads_sel): Item 10 rerun: train heads with corrected checkpoint selection | RUNNING | 1 | 2026-10-17 21:12:06 |  |
 | 49 | [ft_eval_heads_sel](#ft_eval_heads_sel): Item 10 rerun: evaluate heads_sel | queued | 0 |  |  |
 | 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | queued | 0 |  |  |
 | 51 | [ft_eval_ctrl_sel](#ft_eval_ctrl_sel): Item 10 rerun: evaluate ctrl_sel | queued | 0 |  |  |
@@ -2023,4 +2023,13 @@ Cells: mean over seeds +/- sd over seeds [95% bootstrap CI over scenes of the se
 | v2 | selectivity real - instance | enc_dino | linear (MLP recipe) | 0 | pair_auc_obj | -0.005 [-0.028, +0.020] | 0.3 | 93 |
 | v2 | selectivity real - patch | trained | MLP | 0 | motion_auc_v0_objects | +0.130 [+0.077, +0.179] | 0.00081 | 93 |
 | v2 | selectivity real - inst
+
+
+## ft_train_heads_sel
+
+Item 10 rerun: train heads with corrected checkpoint selection
+
+Status: **RUNNING**, attempt 1, started 2026-10-17 21:12:06. [Raw results](../results/queue/ft_train_heads_sel/), [log](../results/queue/ft_train_heads_sel/task.log).
+
+Partial results so far; the run is still going.
 
