@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 12:24:13
+updated 2026-10-17 12:51:22
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -35,7 +35,7 @@ updated 2026-10-17 12:24:13
 | 29 | ft_pilot: Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | done | 3 | 2026-10-17 01:01:23 | 2026-10-17 02:31:45 | True |
 | 30 | ft_train_heads: Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | done | 1 | 2026-10-17 11:42:06 | 2026-10-17 12:09:15 | True |
 | 31 | ft_eval_heads: Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | done | 1 | 2026-10-17 12:09:24 | 2026-10-17 12:24:03 | True |
-| 32 | ft_train_ctrl: Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | running | 1 | 2026-10-17 12:24:13 |  | False |
+| 32 | ft_train_ctrl: Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | done | 1 | 2026-10-17 12:24:13 | 2026-10-17 12:51:22 | False |
 | 33 | ft_eval_ctrl: Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | pending | 0 |  |  |  |
 | 34 | ft_train_sf: Item 10: fine-tune (b) scene-flow DPT head + adaptor | pending | 0 | 2026-10-17 02:50:17 | 2026-10-17 03:04:26 | True |
 | 35 | ft_eval_sf: Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | pending | 0 |  |  |  |

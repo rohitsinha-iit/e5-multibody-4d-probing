@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-17 12:24:16 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-17 12:51:26 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -263,10 +263,10 @@
 <tr>
 <td>32</td>
 <td><a href="#ft_train_ctrl">ft_train_ctrl</a>: Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads</td>
-<td>RUNNING</td>
+<td>done</td>
 <td>1</td>
 <td>2026-10-17 12:24:13</td>
-<td></td>
+<td>2026-10-17 12:51:22</td>
 </tr>
 <tr>
 <td>33</td>
@@ -390,7 +390,7 @@
 </tr>
 </tbody>
 </table>
-<p>Supervisor heartbeat: 2026-10-17 12:23:33 running ft_eval_heads</p>
+<p>Supervisor heartbeat: 2026-10-17 12:50:52 running ft_train_ctrl</p>
 <h2>v3_pilot</h2>
 <p>Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-15 19:49:59, finished 2026-10-15 20:00:30. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v3_pilot/task.log">log</a>.</p>
@@ -3535,8 +3535,54 @@ If the dedicated trackers (CoTracker3, RAFT) recover close to all object motion 
 </table>
 <h2>ft_train_ctrl</h2>
 <p>Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads</p>
-<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-17 12:24:13. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_ctrl/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_ctrl/task.log">log</a>.</p>
-<p>Partial results so far; the run is still going.</p>
+<p>Status: <strong>done</strong>, attempt 1, started 2026-10-17 12:24:13, finished 2026-10-17 12:51:22. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_ctrl/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_ctrl/task.log">log</a>.</p>
+<p><img alt="ft_train_ctrl_curves.png" src="assets/ft_train_ctrl/ft_train_ctrl_curves.png" /></p>
+<p><strong>ft_train_ctrl_summary.md</strong></p>
+<h1>ft_train_ctrl</h1>
+<p>Fine-tuning variant <strong>ctrl</strong> of Any4D from any4d_4v_combined.pth.</p>
+<ul>
+<li>Trainable parameters: 71,680; heads: [[2, 9], [22, 11], [17, 2], [14, 2], [8, 8]]; LoRA rank 8, alpha 16.</li>
+<li>Learning rates: LoRA 0.0002, scene-flow head 2e-05, gain 0.005; AdamW, warmup 100, cosine to 10%; bf16, activation checkpointing.</li>
+<li>Loss: Any4D scene-flow loss (scale-invariant, log-norm, x10.0 on moving pixels) + 1.0 x distillation to the frozen model (pointmaps, depth, pose, metric scale).</li>
+<li>Stopped: early stop at step 400 (best 0). Best validation step: 0. Merge check (adapter vs merged weights): {'d_sf': 0.0, 'd_pts': 0.0}.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>validation (held-out training scenes, frames 0 to 23)</th>
+<th>step 0 (base)</th>
+<th>best step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>loss</td>
+<td>0.0116</td>
+<td>0.0116</td>
+</tr>
+<tr>
+<td>slope (mean)</td>
+<td>0.6757</td>
+<td>0.6757</td>
+</tr>
+<tr>
+<td>EPE moving (median px)</td>
+<td>36.1928</td>
+<td>36.1928</td>
+</tr>
+<tr>
+<td>EPE static (median px)</td>
+<td>3.9417</td>
+<td>3.9417</td>
+</tr>
+<tr>
+<td>motion-mask IoU (median)</td>
+<td>0.5076</td>
+<td>0.5076</td>
+</tr>
+</tbody>
+</table>
+<p>These are training-distribution numbers; the held-out evaluation is in the matching ft_eval task.</p>
 <h2>v4_pilot</h2>
 <p>Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-16 22:48:29, finished 2026-10-16 22:53:06. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_pilot/task.log">log</a>.</p>
