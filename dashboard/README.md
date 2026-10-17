@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 11:30:51 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 11:42:01 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -31,7 +31,7 @@ Last updated 2026-10-17 11:30:51 (server time). Regenerated after every queue ev
 | 25 | [w2_summary](#w2_summary): Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | done | 1 | 2026-10-16 15:55:58 | 2026-10-16 15:56:05 |
 | 26 | [ft_render_v2](#ft_render_v2): Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | done | 1 | 2026-10-16 15:56:13 | 2026-10-16 19:20:03 |
 | 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 |
-| 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | RUNNING | 1 | 2026-10-17 11:30:48 |  |
+| 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | done | 1 | 2026-10-17 11:30:48 | 2026-10-17 11:41:57 |
 | 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | done | 3 | 2026-10-17 01:01:23 | 2026-10-17 02:31:45 |
 | 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 | 2026-10-17 02:48:46 |  |
 | 31 | [ft_eval_heads](#ft_eval_heads): Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
@@ -52,7 +52,7 @@ Last updated 2026-10-17 11:30:51 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 04:49:32 running r2_heads_null
+Supervisor heartbeat: 2026-10-17 11:41:27 running ft_eval_base
 
 ## v3_pilot
 
@@ -792,9 +792,36 @@ Training scenes for item 10 (fine-tuning), rendered with the approved generator 
 
 Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel)
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 11:30:48. [Raw results](../results/queue/ft_eval_base/), [log](../results/queue/ft_eval_base/task.log).
+Status: **done**, attempt 1, started 2026-10-17 11:30:48, finished 2026-10-17 11:41:57. [Raw results](../results/queue/ft_eval_base/), [log](../results/queue/ft_eval_base/task.log).
 
-Partial results so far; the run is still going.
+![ft_eval_base_metrics.png](assets/ft_eval_base/ft_eval_base_metrics.png)
+
+
+**ft_eval_base_summary.md**
+
+# ft_eval_base
+
+Evaluation of **base** with the round-1 metric code (output metrics: e5_causal / e5_step3 definitions).
+
+| dataset | n | slope (mean) | EPE static (median of scenes) | EPE moving | sep ratio (median) | mask IoU | mask IoU, epi_aligned |
+|---|---|---|---|---|---|---|---|
+| v2 | 100 | 0.607 | 3.82 | 30.7 | 0.735 | 0.644 | 0.532 |
+| v3float | 69 | 0.559 | 4.02 | 33.2 | 0.657 | 0.496 | 0.278 |
+| v3far | 19 | 0.648 | 4.38 | 31.6 | 0.566 | 0.663 | nan |
+| kitti15_rgb_2v_wide | 200 | 0.575 | 3.67 | 11.6 | 0.740 | - | - |
+| kitti15_rgb_mv4_wide | 200 | 0.707 | 4.26 | 12.7 | 1.086 | - | - |
+| sintel_clean_2v_wide | 256 | 0.314 | 3.98 | 11.9 | 0.539 | - | - |
+| sintel_final_2v_wide | 256 | 0.327 | 4.30 | 12.2 | 0.510 | - | - |
+| sintel_final_mv4_wide | 256 | 0.334 | 4.13 | 11.3 | 0.458 | - | - |
+
+Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set):
+
+| layer | motion AUC, all splits | motion AUC, epi_aligned |
+|---|---|---|
+| 0 | 0.569 | 0.515 |
+| 17 | 0.843 | 0.905 |
+| 24 | 0.973 | 0.999 |
+
 
 
 ## ft_pilot

@@ -65,3 +65,32 @@ torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 918.00 MiB. GPU 0 
 GPU 1
 ok
 [11:30:48] base v2 inference
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+peak GPU GB 2.45
+[11:30:58] base v2 metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/base/pred_v2: 100 scenes ok, 0 errors; mean slope 0.607
+[11:30:59] base v3float inference
+n3_generic_s590 1.12 s
+peak GPU GB 7.55
+[11:32:21] base v3float metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/base/pred_v3float: 69 scenes ok, 0 errors; mean slope 0.559
+[11:33:26] base v3far inference
+confound_farglued_s520 1.12 s
+peak GPU GB 7.55
+[11:33:55] base v3far metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/base/pred_v3far: 19 scenes ok, 0 errors; mean slope 0.648
+[11:34:13] base internals (v3float, layers 0,17,24)
+peak GPU GB 7.39
+E5-P layer 24
+done
+[11:35:28] base real kitti15 rgb 2v
+rows 200 skipped 0
+[11:36:14] base real kitti15 rgb mv4
+rows 200 skipped 0
+[11:37:13] base real sintel final 2v
+rows 256 skipped 0
+[11:38:39] base real sintel final mv4
+rows 256 skipped 0
+[11:40:27] base real sintel clean 2v
+rows 256 skipped 0
+6.5G	/media/workbench/zone_x/e5_multibody/ft/eval/base
