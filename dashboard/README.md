@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 11:42:01 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 11:42:09 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -33,7 +33,7 @@ Last updated 2026-10-17 11:42:01 (server time). Regenerated after every queue ev
 | 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 |
 | 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | done | 1 | 2026-10-17 11:30:48 | 2026-10-17 11:41:57 |
 | 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | done | 3 | 2026-10-17 01:01:23 | 2026-10-17 02:31:45 |
-| 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 | 2026-10-17 02:48:46 |  |
+| 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | RUNNING | 1 | 2026-10-17 11:42:06 |  |
 | 31 | [ft_eval_heads](#ft_eval_heads): Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
 | 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 | 2026-10-17 02:49:32 |  |
 | 33 | [ft_eval_ctrl](#ft_eval_ctrl): Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 |  |  |
@@ -857,6 +857,15 @@ Pilot run to choose the number of fine-tuning steps (variant heads_sf = five-hea
 | 800 | 0.0100 | 0.795 | 36.5 | 3.96 | 0.520 |
 | 900 | 0.0100 | 0.804 | 36.0 | 3.99 | 0.532 |
 
+
+
+## ft_train_heads
+
+Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices
+
+Status: **RUNNING**, attempt 1, started 2026-10-17 11:42:06. [Raw results](../results/queue/ft_train_heads/), [log](../results/queue/ft_train_heads/task.log).
+
+Partial results so far; the run is still going.
 
 
 ## v4_pilot
