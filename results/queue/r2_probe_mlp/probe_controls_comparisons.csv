@@ -1,0 +1,1565 @@
+dataset,comparison,source,probe,layer,metric,diff,ci,sign_p,n
+v2,selectivity real - patch,randall,ridge,0,k_correct,0.166,0.096;0.238,1.6242e-06,100
+v2,selectivity real - instance,randall,ridge,0,k_correct,-0.04,-0.122;0.03605,0.64397,100
+v2,selectivity real - patch,randall,ridge,0,motion_auc_v0_objects,0.0064504,-0.04231;0.055729,0.75465,93
+v2,selectivity real - instance,randall,ridge,0,motion_auc_v0_objects,0.022221,-0.049847;0.092558,0.29973,93
+v2,selectivity real - patch,randall,ridge,0,motion_auc_v0,0.2485,0.20251;0.2921,3.4675e-11,95
+v2,selectivity real - instance,randall,ridge,0,motion_auc_v0,0.0059304,-0.044237;0.057597,0.53839,95
+v2,selectivity real - patch,randall,ridge,0,pair_auc_obj,0.13903,0.1104;0.16775,3.6178e-12,93
+v2,selectivity real - instance,randall,ridge,0,pair_auc_obj,-0.0014644,-0.030367;0.028589,1,93
+v2,selectivity real - patch,randall,ridge,0,pair_auc,0.27136,0.23662;0.30271,3.0932e-21,95
+v2,selectivity real - instance,randall,ridge,0,pair_auc,0.042155,0.0041565;0.077881,0.039608,95
+v2,selectivity real - patch,randall,ridge,0,copies_separated,0.14889,0.10662;0.18781,0.00040245,20
+v2,selectivity real - instance,randall,ridge,0,copies_separated,-0.040276,-0.11799;0.0284,1,20
+v2,selectivity real - patch,randall,ridge,4,k_correct,0.17,0.108;0.24,1.1921e-07,100
+v2,selectivity real - instance,randall,ridge,4,k_correct,0.016,-0.044;0.078,0.45826,100
+v2,selectivity real - patch,randall,ridge,4,motion_auc_v0_objects,-0.020801,-0.074241;0.036066,0.53406,93
+v2,selectivity real - instance,randall,ridge,4,motion_auc_v0_objects,-0.015734,-0.089745;0.060705,0.83585,93
+v2,selectivity real - patch,randall,ridge,4,motion_auc_v0,0.22238,0.17229;0.27184,7.2523e-10,95
+v2,selectivity real - instance,randall,ridge,4,motion_auc_v0,-0.014285,-0.071835;0.041411,1,95
+v2,selectivity real - patch,randall,ridge,4,pair_auc_obj,0.14072,0.10936;0.17078,3.6178e-12,93
+v2,selectivity real - instance,randall,ridge,4,pair_auc_obj,-0.0085706,-0.039082;0.022981,0.29973,93
+v2,selectivity real - patch,randall,ridge,4,pair_auc,0.26132,0.22856;0.29145,4.6972e-20,95
+v2,selectivity real - instance,randall,ridge,4,pair_auc,0.032598,-0.0057435;0.07208,0.013379,95
+v2,selectivity real - patch,randall,ridge,4,copies_separated,0.17191,0.11672;0.2326,1.9073e-06,20
+v2,selectivity real - instance,randall,ridge,4,copies_separated,-0.047102,-0.1346;0.036713,0.26318,20
+v2,selectivity real - patch,randall,ridge,8,k_correct,0.124,0.07;0.186,7.6294e-06,100
+v2,selectivity real - instance,randall,ridge,8,k_correct,-0.052,-0.122;0.014,0.32694,100
+v2,selectivity real - patch,randall,ridge,8,motion_auc_v0_objects,-0.024699,-0.08138;0.031005,0.40692,93
+v2,selectivity real - instance,randall,ridge,8,motion_auc_v0_objects,-0.012837,-0.090464;0.068081,0.46571,93
+v2,selectivity real - patch,randall,ridge,8,motion_auc_v0,0.19478,0.14062;0.24946,4.2499e-08,95
+v2,selectivity real - instance,randall,ridge,8,motion_auc_v0,-0.037494,-0.096735;0.018965,0.53839,95
+v2,selectivity real - patch,randall,ridge,8,pair_auc_obj,0.14118,0.10765;0.17238,1.9154e-09,93
+v2,selectivity real - instance,randall,ridge,8,pair_auc_obj,-0.01095,-0.045962;0.023462,0.53406,93
+v2,selectivity real - patch,randall,ridge,8,pair_auc,0.25771,0.22491;0.28842,3.0932e-21,95
+v2,selectivity real - instance,randall,ridge,8,pair_auc,0.024282,-0.013685;0.060431,0.064213,95
+v2,selectivity real - patch,randall,ridge,8,copies_separated,0.13659,0.086743;0.18774,4.0054e-05,20
+v2,selectivity real - instance,randall,ridge,8,copies_separated,-0.070093,-0.16789;0.015341,0.50344,20
+v2,selectivity real - patch,randall,ridge,12,k_correct,0.168,0.108;0.23,3.7253e-09,100
+v2,selectivity real - instance,randall,ridge,12,k_correct,0.014,-0.044;0.07605,0.7201,100
+v2,selectivity real - patch,randall,ridge,12,motion_auc_v0_objects,-0.01801,-0.075313;0.040672,0.53406,93
+v2,selectivity real - instance,randall,ridge,12,motion_auc_v0_objects,-0.023593,-0.1046;0.053472,0.29447,93
+v2,selectivity real - patch,randall,ridge,12,motion_auc_v0,0.1972,0.14281;0.25215,7.2523e-10,95
+v2,selectivity real - instance,randall,ridge,12,motion_auc_v0,-0.036748,-0.10111;0.025062,0.53839,95
+v2,selectivity real - patch,randall,ridge,12,pair_auc_obj,0.1375,0.10184;0.17378,1.9393e-11,93
+v2,selectivity real - instance,randall,ridge,12,pair_auc_obj,-0.0187,-0.054579;0.015945,0.83585,93
+v2,selectivity real - patch,randall,ridge,12,pair_auc,0.27272,0.23712;0.30566,3.0932e-21,95
+v2,selectivity real - instance,randall,ridge,12,pair_auc,0.055234,0.016402;0.092146,0.0073131,95
+v2,selectivity real - patch,randall,ridge,12,copies_separated,0.14893,0.08826;0.20957,0.00072861,20
+v2,selectivity real - instance,randall,ridge,12,copies_separated,-0.055039,-0.14953;0.035518,1,20
+v2,selectivity real - patch,randall,ridge,16,k_correct,0.182,0.12;0.252,1.5367e-08,100
+v2,selectivity real - instance,randall,ridge,16,k_correct,0.036,-0.028;0.106,0.39153,100
+v2,selectivity real - patch,randall,ridge,16,motion_auc_v0_objects,-0.020962,-0.081367;0.037155,0.67853,93
+v2,selectivity real - instance,randall,ridge,16,motion_auc_v0_objects,-0.016666,-0.095621;0.05923,0.34814,93
+v2,selectivity real - patch,randall,ridge,16,motion_auc_v0,0.20761,0.15699;0.25621,2.9991e-09,95
+v2,selectivity real - instance,randall,ridge,16,motion_auc_v0,-0.021714,-0.081656;0.033001,1,95
+v2,selectivity real - patch,randall,ridge,16,pair_auc_obj,0.1387,0.10756;0.17305,3.6178e-12,93
+v2,selectivity real - instance,randall,ridge,16,pair_auc_obj,-0.02388,-0.058553;0.011859,0.14618,93
+v2,selectivity real - patch,randall,ridge,16,pair_auc,0.26087,0.22759;0.29257,1.6795e-22,95
+v2,selectivity real - instance,randall,ridge,16,pair_auc,0.025978,-0.01198;0.061748,0.15052,95
+v2,selectivity real - patch,randall,ridge,16,copies_separated,0.13794,0.099959;0.18078,1.9073e-06,20
+v2,selectivity real - instance,randall,ridge,16,copies_separated,-0.066805,-0.16585;0.021155,0.8238,20
+v2,selectivity real - patch,randall,ridge,20,k_correct,0.14,0.082;0.202,5.722e-06,100
+v2,selectivity real - instance,randall,ridge,20,k_correct,-0.016,-0.082;0.054,0.51138,100
+v2,selectivity real - patch,randall,ridge,20,motion_auc_v0_objects,-0.013367,-0.07134;0.042161,1,93
+v2,selectivity real - instance,randall,ridge,20,motion_auc_v0_objects,0.019356,-0.057519;0.094166,0.91704,93
+v2,selectivity real - patch,randall,ridge,20,motion_auc_v0,0.22579,0.1729;0.278,1.2403e-12,95
+v2,selectivity real - instance,randall,ridge,20,motion_auc_v0,-0.001375,-0.061031;0.056656,0.10017,95
+v2,selectivity real - patch,randall,ridge,20,pair_auc_obj,0.15334,0.12305;0.18406,2.2645e-17,93
+v2,selectivity real - instance,randall,ridge,20,pair_auc_obj,-0.0053142,-0.041626;0.029412,0.83585,93
+v2,selectivity real - patch,randall,ridge,20,pair_auc,0.25676,0.21977;0.29101,6.6064e-17,95
+v2,selectivity real - instance,randall,ridge,20,pair_auc,0.036447,-0.0046511;0.078063,0.039608,95
+v2,selectivity real - patch,randall,ridge,20,copies_separated,0.15241,0.10501;0.19919,1.9073e-06,20
+v2,selectivity real - instance,randall,ridge,20,copies_separated,-0.047086,-0.13198;0.027805,1,20
+v2,selectivity real - patch,randall,ridge,24,k_correct,0.15,0.09;0.212,4.7684e-07,100
+v2,selectivity real - instance,randall,ridge,24,k_correct,0.02,-0.04205;0.088,1,100
+v2,L24 - L0,randall,ridge,24,k_correct,-0.022,-0.088;0.04,0.26493,100
+v2,selectivity real - patch,randall,ridge,24,motion_auc_v0_objects,-0.0091305,-0.062573;0.046748,0.40692,93
+v2,selectivity real - instance,randall,ridge,24,motion_auc_v0_objects,0.01415,-0.060509;0.088679,0.75465,93
+v2,L24 - L0,randall,ridge,24,motion_auc_v0_objects,-0.02787,-0.060639;0.0065704,0.39119,93
+v2,selectivity real - patch,randall,ridge,24,motion_auc_v0,0.23006,0.17688;0.28383,2.9991e-09,95
+v2,selectivity real - instance,randall,ridge,24,motion_auc_v0,0.0052714,-0.051788;0.061994,0.15052,95
+v2,L24 - L0,randall,ridge,24,motion_auc_v0,-0.035035,-0.076741;0.0014972,0.25644,95
+v2,selectivity real - patch,randall,ridge,24,pair_auc_obj,0.1476,0.11391;0.18231,1.9393e-11,93
+v2,selectivity real - instance,randall,ridge,24,pair_auc_obj,-0.014756,-0.047633;0.022254,0.21315,93
+v2,L24 - L0,randall,ridge,24,pair_auc_obj,0.00017355,-0.014279;0.014737,0.83585,93
+v2,selectivity real - patch,randall,ridge,24,pair_auc,0.26127,0.22448;0.2949,6.7416e-18,95
+v2,selectivity real - instance,randall,ridge,24,pair_auc,0.038978,-0.00088822;0.075898,0.30489,95
+v2,L24 - L0,randall,ridge,24,pair_auc,0.0027394,-0.019565;0.025093,1,95
+v2,selectivity real - patch,randall,ridge,24,copies_separated,0.13695,0.09062;0.18434,1.9073e-06,20
+v2,selectivity real - instance,randall,ridge,24,copies_separated,-0.082148,-0.19137;0.0074741,0.50344,20
+v2,L24 - L0,randall,ridge,24,copies_separated,-0.042166,-0.083284;0.0017354,0.041389,20
+v2,selectivity real - patch,enc_dino,ridge,0,k_correct,0.176,0.08995;0.256,0.0015472,100
+v2,selectivity real - instance,enc_dino,ridge,0,k_correct,-9.4369e-18,-0.088;0.08405,0.89192,100
+v2,selectivity real - patch,enc_dino,ridge,0,motion_auc_v0_objects,-0.043194,-0.10416;0.020101,0.11737,93
+v2,selectivity real - instance,enc_dino,ridge,0,motion_auc_v0_objects,-0.044428,-0.12137;0.032655,0.83585,93
+v2,selectivity real - patch,enc_dino,ridge,0,motion_auc_v0,0.44297,0.42163;0.46395,5.0487e-29,95
+v2,selectivity real - instance,enc_dino,ridge,0,motion_auc_v0,-0.0063186,-0.016338;0.0036545,0.41191,95
+v2,selectivity real - patch,enc_dino,ridge,0,pair_auc_obj,0.2415,0.21379;0.26934,2.7089e-23,93
+v2,selectivity real - instance,enc_dino,ridge,0,pair_auc_obj,-0.0037423,-0.034683;0.028995,1,93
+v2,selectivity real - patch,enc_dino,ridge,0,pair_auc,0.30515,0.28189;0.32739,5.0487e-29,95
+v2,selectivity real - instance,enc_dino,ridge,0,pair_auc,0.01167,-0.011044;0.035569,1,95
+v2,selectivity real - patch,enc_dino,ridge,0,copies_separated,0.070757,0.011628;0.12727,0.11532,20
+v2,selectivity real - instance,enc_dino,ridge,0,copies_separated,-0.078002,-0.14679;-0.012066,0.26318,20
+v2,selectivity real - patch,trained,ridge,0,k_correct,0.148,0.086;0.212,1.9073e-06,100
+v2,selectivity real - instance,trained,ridge,0,k_correct,-0.014,-0.092;0.068,1,100
+v2,trained - randall,trained,ridge,0,k_correct,-0.024,-0.112;0.062,0.40503,100
+v2,trained - randtf,trained,ridge,0,k_correct,-0.092,-0.182;0.00605,0.0093992,100
+v2,trained L0 - enc_any4d,trained,ridge,0,k_correct,-0.098,-0.178;-0.022,0.016125,100
+v2,trained L0 - enc_dino,trained,ridge,0,k_correct,-0.112,-0.21205;-0.01,0.0010158,100
+v2,selectivity real - patch,trained,ridge,0,motion_auc_v0_objects,0.061612,-0.0015949;0.12604,0.21315,93
+v2,selectivity real - instance,trained,ridge,0,motion_auc_v0_objects,0.13399,0.04848;0.21384,0.0046091,93
+v2,trained - randall,trained,ridge,0,motion_auc_v0_objects,0.048798,-0.029904;0.12736,0.11737,93
+v2,trained - randtf,trained,ridge,0,motion_auc_v0_objects,0.089848,0.037983;0.14149,0.11737,93
+v2,trained L0 - enc_any4d,trained,ridge,0,motion_auc_v0_objects,0.0088181,-0.0085701;0.025626,0.58565,93
+v2,trained L0 - enc_dino,trained,ridge,0,motion_auc_v0_objects,0.085379,0.03645;0.13422,0.006695,93
+v2,selectivity real - patch,trained,ridge,0,motion_auc_v0,0.48318,0.46358;0.5031,5.0487e-29,95
+v2,selectivity real - instance,trained,ridge,0,motion_auc_v0,0.0067826,-0.0014317;0.017289,0.00026168,95
+v2,trained - randall,trained,ridge,0,motion_auc_v0,0.21894,0.17586;0.26267,3.0932e-21,95
+v2,trained - randtf,trained,ridge,0,motion_auc_v0,0.012786,0.0050947;0.022562,0.00015757,95
+v2,trained L0 - enc_any4d,trained,ridge,0,motion_auc_v0,0.0036772,0.00077413;0.0079711,0.0037465,95
+v2,trained L0 - enc_dino,trained,ridge,0,motion_auc_v0,0.01513,0.0075682;0.023804,1.4641e-06,95
+v2,selectivity real - patch,trained,ridge,0,pair_auc_obj,0.2419,0.21305;0.26982,6.1672e-22,93
+v2,selectivity real - instance,trained,ridge,0,pair_auc_obj,-0.0045632,-0.040835;0.032058,0.67853,93
+v2,trained - randall,trained,ridge,0,pair_auc_obj,0.11894,0.087246;0.15154,1.0387e-07,93
+v2,trained - randtf,trained,ridge,0,pair_auc_obj,0.0052226,-0.017657;0.028616,0.037514,93
+v2,trained L0 - enc_any4d,trained,ridge,0,pair_auc_obj,-0.029758,-0.041677;-0.018163,1.1026e-06,93
+v2,trained L0 - enc_dino,trained,ridge,0,pair_auc_obj,0.0059966,-0.021172;0.030879,0.061386,93
+v2,selectivity real - patch,trained,ridge,0,pair_auc,0.17936,0.14416;0.21491,6.8128e-12,95
+v2,selectivity real - instance,trained,ridge,0,pair_auc,0.041157,-0.00013523;0.081607,0.15052,95
+v2,trained - randall,trained,ridge,0,pair_auc,-0.080495,-0.13106;-0.030019,0.0038329,95
+v2,trained - randtf,trained,ridge,0,pair_auc,-0.10079,-0.1347;-0.068704,0.00092464,95
+v2,trained L0 - enc_any4d,trained,ridge,0,pair_auc,-0.10226,-0.12081;-0.083212,6.0486e-19,95
+v2,trained L0 - enc_dino,trained,ridge,0,pair_auc,-0.11881,-0.15367;-0.086032,0.0001864,95
+v2,selectivity real - patch,trained,ridge,0,copies_separated,0.059976,-0.0022733;0.13095,0.50344,20
+v2,selectivity real - instance,trained,ridge,0,copies_separated,0.010521,-0.036763;0.063308,1,20
+v2,trained - randall,trained,ridge,0,copies_separated,-0.061356,-0.13023;0.0090637,0.041389,20
+v2,trained - randtf,trained,ridge,0,copies_separated,-0.17231,-0.23467;-0.10281,0.0025768,20
+v2,trained L0 - enc_any4d,trained,ridge,0,copies_separated,-0.11129,-0.17613;-0.055143,0.0025768,20
+v2,trained L0 - enc_dino,trained,ridge,0,copies_separated,-0.17338,-0.2445;-0.09852,0.0025768,20
+v2,selectivity real - patch,trained,ridge,4,k_correct,0.16,0.092;0.24,0.00012112,100
+v2,selectivity real - instance,trained,ridge,4,k_correct,-0.03,-0.098;0.03605,0.38331,100
+v2,trained - randall,trained,ridge,4,k_correct,-0.006,-0.1;0.09,1,100
+v2,trained - randtf,trained,ridge,4,k_correct,0.044,-0.048;0.13805,0.86417,100
+v2,selectivity real - patch,trained,ridge,4,motion_auc_v0_objects,0.09935,0.03255;0.16316,0.037514,93
+v2,selectivity real - instance,trained,ridge,4,motion_auc_v0_objects,0.16396,0.071556;0.25727,0.028017,93
+v2,trained - randall,trained,ridge,4,motion_auc_v0_objects,0.1294,0.053882;0.20426,0.092947,93
+v2,trained - randtf,trained,ridge,4,motion_auc_v0_objects,0.14488,0.082281;0.21148,5.3118e-05,93
+v2,selectivity real - patch,trained,ridge,4,motion_auc_v0,0.48298,0.46222;0.50446,5.0487e-29,95
+v2,selectivity real - instance,trained,ridge,4,motion_auc_v0,0.0082393,-9.4744e-05;0.018125,0.12137,95
+v2,trained - randall,trained,ridge,4,motion_auc_v0,0.25035,0.2025;0.29789,1.6795e-22,95
+v2,trained - randtf,trained,ridge,4,motion_auc_v0,0.014573,0.0065124;0.025048,2.9201e-08,95
+v2,selectivity real - patch,trained,ridge,4,pair_auc_obj,0.26999,0.24088;0.29935,2.7089e-23,93
+v2,selectivity real - instance,trained,ridge,4,pair_auc_obj,0.0046197,-0.031175;0.040924,1,93
+v2,trained - randall,trained,ridge,4,pair_auc_obj,0.13983,0.1051;0.17195,2.9201e-08,93
+v2,trained - randtf,trained,ridge,4,pair_auc_obj,0.018282,-0.0062033;0.04362,0.67853,93
+v2,selectivity real - patch,trained,ridge,4,pair_auc,0.24705,0.21891;0.27395,6.6064e-17,95
+v2,selectivity real - instance,trained,ridge,4,pair_auc,0.057501,0.02303;0.095332,0.0073131,95
+v2,trained - randall,trained,ridge,4,pair_auc,-0.013408,-0.05846;0.033102,0.15052,95
+v2,trained - randtf,trained,ridge,4,pair_auc,-0.031969,-0.063947;-0.00086963,0.023488,95
+v2,selectivity real - patch,trained,ridge,4,copies_separated,0.11687,0.042488;0.19548,0.26318,20
+v2,selectivity real - instance,trained,ridge,4,copies_separated,-0.00043138,-0.080343;0.073859,0.50344,20
+v2,trained - randall,trained,ridge,4,copies_separated,0.012678,-0.094594;0.11885,0.8238,20
+v2,trained - randtf,trained,ridge,4,copies_separated,0.04257,-0.043562;0.1368,0.8238,20
+v2,selectivity real - patch,trained,ridge,8,k_correct,0.182,0.11795;0.256,1.5497e-06,100
+v2,selectivity real - instance,trained,ridge,8,k_correct,-0.024,-0.09605;0.048,1,100
+v2,trained - randall,trained,ridge,8,k_correct,0.062,-0.02;0.142,0.14961,100
+v2,trained - randtf,trained,ridge,8,k_correct,0.08,-0.006;0.164,0.3105,100
+v2,selectivity real - patch,trained,ridge,8,motion_auc_v0_objects,0.16237,0.094422;0.22695,2.5258e-05,93
+v2,selectivity real - instance,trained,ridge,8,motion_auc_v0_objects,0.19717,0.11497;0.27688,0.0003658,93
+v2,trained - randall,trained,ridge,8,motion_auc_v0_objects,0.16741,0.083476;0.24249,0.0002225,93
+v2,trained - randtf,trained,ridge,8,motion_auc_v0_objects,0.17571,0.10823;0.2457,9.3756e-06,93
+v2,selectivity real - patch,trained,ridge,8,motion_auc_v0,0.49551,0.4748;0.51648,5.0487e-29,95
+v2,selectivity real - instance,trained,ridge,8,motion_auc_v0,0.00849,0.0019323;0.016452,0.01721,95
+v2,trained - randall,trained,ridge,8,motion_auc_v0,0.27477,0.2259;0.32414,1.6795e-22,95
+v2,trained - randtf,trained,ridge,8,motion_auc_v0,0.015471,0.0069884;0.028356,2.2028e-06,95
+v2,selectivity real - patch,trained,ridge,8,pair_auc_obj,0.28484,0.25766;0.31354,6.1672e-22,93
+v2,selectivity real - instance,trained,ridge,8,pair_auc_obj,0.0092087,-0.028168;0.043311,1,93
+v2,trained - randall,trained,ridge,8,pair_auc_obj,0.16071,0.12302;0.19907,7.7209e-09,93
+v2,trained - randtf,trained,ridge,8,pair_auc_obj,0.039139,0.013654;0.065303,0.022019,93
+v2,selectivity real - patch,trained,ridge,8,pair_auc,0.28115,0.24671;0.31474,4.6972e-20,95
+v2,selectivity real - instance,trained,ridge,8,pair_auc,0.039915,0.0049873;0.073088,0.10017,95
+v2,trained - randall,trained,ridge,8,pair_auc,0.026348,-0.021176;0.074501,0.83756,95
+v2,trained - randtf,trained,ridge,8,pair_auc,0.018811,-0.016921;0.053843,0.83756,95
+v2,selectivity real - patch,trained,ridge,8,copies_separated,0.14592,0.05918;0.23345,0.041389,20
+v2,selectivity real - instance,trained,ridge,8,copies_separated,0.0063199,-0.069893;0.074239,0.50344,20
+v2,trained - randall,trained,ridge,8,copies_separated,0.07561,-0.02137;0.17283,0.50344,20
+v2,trained - randtf,trained,ridge,8,copies_separated,0.088514,0.010231;0.17221,0.26318,20
+v2,selectivity real - patch,trained,ridge,12,k_correct,0.274,0.194;0.36,7.9162e-09,100
+v2,selectivity real - instance,trained,ridge,12,k_correct,0.06,-0.02605;0.14605,0.21533,100
+v2,trained - randall,trained,ridge,12,k_correct,0.1,5.4401e-18;0.198,0.24296,100
+v2,trained - randtf,trained,ridge,12,k_correct,0.206,0.10595;0.306,0.00060611,100
+v2,selectivity real - patch,trained,ridge,12,motion_auc_v0_objects,0.23491,0.17316;0.29921,9.3756e-06,93
+v2,selectivity real - instance,trained,ridge,12,motion_auc_v0_objects,0.28794,0.20582;0.37145,7.2929e-10,93
+v2,trained - randall,trained,ridge,12,motion_auc_v0_objects,0.23426,0.15123;0.31315,5.3481e-07,93
+v2,trained - randtf,trained,ridge,12,motion_auc_v0_objects,0.25677,0.1798;0.33072,7.2929e-10,93
+v2,selectivity real - patch,trained,ridge,12,motion_auc_v0,0.49831,0.47877;0.51765,5.0487e-29,95
+v2,selectivity real - instance,trained,ridge,12,motion_auc_v0,0.0097614,0.0039399;0.015747,3.4825e-07,95
+v2,trained - randall,trained,ridge,12,motion_auc_v0,0.28028,0.23264;0.33034,1.6795e-22,95
+v2,trained - randtf,trained,ridge,12,motion_auc_v0,0.017285,0.0091322;0.027141,2.7046e-10,95
+v2,selectivity real - patch,trained,ridge,12,pair_auc_obj,0.31246,0.282;0.33996,6.1672e-22,93
+v2,selectivity real - instance,trained,ridge,12,pair_auc_obj,0.040363,0.0084696;0.072028,0.037514,93
+v2,trained - randall,trained,ridge,12,pair_auc_obj,0.19836,0.16239;0.23601,2.1689e-16,93
+v2,trained - randtf,trained,ridge,12,pair_auc_obj,0.063674,0.03848;0.088047,2.5258e-05,93
+v2,selectivity real - patch,trained,ridge,12,pair_auc,0.30011,0.25414;0.33978,5.7623e-16,95
+v2,selectivity real - instance,trained,ridge,12,pair_auc,0.069986,0.032446;0.10723,0.0038329,95
+v2,trained - randall,trained,ridge,12,pair_auc,0.033826,-0.014192;0.078665,0.039608,95
+v2,trained - randtf,trained,ridge,12,pair_auc,0.047538,0.0056154;0.088132,0.0073131,95
+v2,selectivity real - patch,trained,ridge,12,copies_separated,0.2028,0.12771;0.27248,0.00040245,20
+v2,selectivity real - instance,trained,ridge,12,copies_separated,0.099019,-0.0093022;0.19896,0.11532,20
+v2,trained - randall,trained,ridge,12,copies_separated,0.15419,0.074331;0.23257,0.041389,20
+v2,trained - randtf,trained,ridge,12,copies_separated,0.20135,0.1231;0.2763,0.0025768,20
+v2,selectivity real - patch,trained,ridge,16,k_correct,0.304,0.226;0.394,3.638e-12,100
+v2,selectivity real - instance,trained,ridge,16,k_correct,0.04,-0.05;0.13,0.46139,100
+v2,trained - randall,trained,ridge,16,k_correct,0.124,0.02;0.224,0.029305,100
+v2,trained - randtf,trained,ridge,16,k_correct,0.254,0.16;0.342,2.4904e-05,100
+v2,selectivity real - patch,trained,ridge,16,motion_auc_v0_objects,0.26201,0.20024;0.32051,9.6298e-11,93
+v2,selectivity real - instance,trained,ridge,16,motion_auc_v0_objects,0.35428,0.27203;0.43337,3.1014e-09,93
+v2,trained - randall,trained,ridge,16,motion_auc_v0_objects,0.27774,0.20157;0.35293,7.7209e-09,93
+v2,trained - randtf,trained,ridge,16,motion_auc_v0_objects,0.29994,0.22157;0.3731,6.1622e-12,93
+v2,selectivity real - patch,trained,ridge,16,motion_auc_v0,0.49358,0.47536;0.51078,5.0487e-29,95
+v2,selectivity real - instance,trained,ridge,16,motion_auc_v0,0.010674,0.0032248;0.017525,1.0387e-07,95
+v2,trained - randall,trained,ridge,16,motion_auc_v0,0.27068,0.22403;0.31888,1.6795e-22,95
+v2,trained - randtf,trained,ridge,16,motion_auc_v0,0.017903,0.0083016;0.02827,3.6038e-13,95
+v2,selectivity real - patch,trained,ridge,16,pair_auc_obj,0.33595,0.3071;0.36316,8.8292e-25,93
+v2,selectivity real - instance,trained,ridge,16,pair_auc_obj,0.046974,0.013047;0.079168,0.00081001,93
+v2,trained - randall,trained,ridge,16,pair_auc_obj,0.22042,0.18205;0.2592,2.1689e-16,93
+v2,trained - randtf,trained,ridge,16,pair_auc_obj,0.081933,0.054095;0.10983,3.4825e-07,93
+v2,selectivity real - patch,trained,ridge,16,pair_auc,0.34597,0.30847;0.37957,3.0932e-21,95
+v2,selectivity real - instance,trained,ridge,16,pair_auc,0.065523,0.030106;0.099721,4.271e-06,95
+v2,trained - randall,trained,ridge,16,pair_auc,0.094645,0.051992;0.13732,7.8042e-05,95
+v2,trained - randtf,trained,ridge,16,pair_auc,0.10664,0.060909;0.14997,1.1828e-05,95
+v2,selectivity real - patch,trained,ridge,16,copies_separated,0.3009,0.20847;0.39028,4.0054e-05,20
+v2,selectivity real - instance,trained,ridge,16,copies_separated,0.12518,0.013525;0.23488,0.26318,20
+v2,trained - randall,trained,ridge,16,copies_separated,0.26155,0.17116;0.34556,0.011818,20
+v2,trained - randtf,trained,ridge,16,copies_separated,0.26361,0.16895;0.36198,0.00040245,20
+v2,selectivity real - patch,trained,ridge,20,k_correct,0.454,0.358;0.546,1.7764e-15,100
+v2,selectivity real - instance,trained,ridge,20,k_correct,0.186,0.086;0.284,0.00094067,100
+v2,trained - randall,trained,ridge,20,k_correct,0.312,0.212;0.416,3.3888e-06,100
+v2,trained - randtf,trained,ridge,20,k_correct,0.376,0.264;0.484,1.3088e-08,100
+v2,selectivity real - patch,trained,ridge,20,motion_auc_v0_objects,0.48148,0.45928;0.50418,2.0195e-28,93
+v2,selectivity real - instance,trained,ridge,20,motion_auc_v0_objects,0.58235,0.52611;0.64143,2.0195e-28,93
+v2,trained - randall,trained,ridge,20,motion_auc_v0_objects,0.47793,0.4193;0.53272,2.7089e-23,93
+v2,trained - randtf,trained,ridge,20,motion_auc_v0_objects,0.50522,0.45419;0.55893,5.245e-23,93
+v2,selectivity real - patch,trained,ridge,20,motion_auc_v0,0.51248,0.49483;0.52981,5.0487e-29,95
+v2,selectivity real - instance,trained,ridge,20,motion_auc_v0,0.023512,0.019125;0.028564,9.5925e-27,95
+v2,trained - randall,trained,ridge,20,motion_auc_v0,0.27304,0.22367;0.32512,4.8468e-27,95
+v2,trained - randtf,trained,ridge,20,motion_auc_v0,0.030384,0.022069;0.042663,2.7089e-23,95
+v2,selectivity real - patch,trained,ridge,20,pair_auc_obj,0.365,0.33013;0.39426,2.7089e-23,93
+v2,selectivity real - instance,trained,ridge,20,pair_auc_obj,0.077211,0.04023;0.1133,1.1026e-06,93
+v2,trained - randall,trained,ridge,20,pair_auc_obj,0.23768,0.20111;0.2734,1.6505e-19,93
+v2,trained - randtf,trained,ridge,20,pair_auc_obj,0.11765,0.086316;0.14814,4.4463e-10,93
+v2,selectivity real - patch,trained,ridge,20,pair_auc,0.41189,0.37268;0.44468,7.2184e-24,95
+v2,selectivity real - instance,trained,ridge,20,pair_auc,0.088074,0.056302;0.1179,7.2523e-10,95
+v2,trained - randall,trained,ridge,20,pair_auc,0.15449,0.11165;0.1968,2.9991e-09,95
+v2,trained - randtf,trained,ridge,20,pair_auc,0.16936,0.12996;0.20949,5.7623e-16,95
+v2,selectivity real - patch,trained,ridge,20,copies_separated,0.35955,0.24458;0.46768,0.00040245,20
+v2,selectivity real - instance,trained,ridge,20,copies_separated,0.24442,0.14739;0.34533,0.00040245,20
+v2,trained - randall,trained,ridge,20,copies_separated,0.36056,0.24476;0.48127,4.0054e-05,20
+v2,trained - randtf,trained,ridge,20,copies_separated,0.37285,0.25827;0.49437,0.00040245,20
+v2,selectivity real - patch,trained,ridge,24,k_correct,0.496,0.406;0.598,1.1102e-16,100
+v2,selectivity real - instance,trained,ridge,24,k_correct,0.252,0.162;0.344,1.0087e-07,100
+v2,trained - randall,trained,ridge,24,k_correct,0.358,0.256;0.454,1.8324e-08,100
+v2,trained - randtf,trained,ridge,24,k_correct,0.406,0.292;0.514,2.4022e-09,100
+v2,L24 - L0,trained,ridge,24,k_correct,0.36,0.254;0.46405,4.0032e-08,100
+v2,selectivity real - patch,trained,ridge,24,motion_auc_v0_objects,0.49194,0.46924;0.5139,2.0195e-28,93
+v2,selectivity real - instance,trained,ridge,24,motion_auc_v0_objects,0.59501,0.53656;0.65411,8.0779e-28,93
+v2,trained - randall,trained,ridge,24,motion_auc_v0_objects,0.50591,0.45433;0.55646,8.0779e-28,93
+v2,trained - randtf,trained,ridge,24,motion_auc_v0_objects,0.54333,0.49358;0.59411,4.039e-28,93
+v2,L24 - L0,trained,ridge,24,motion_auc_v0_objects,0.42925,0.37232;0.48844,1.6156e-27,93
+v2,selectivity real - patch,trained,ridge,24,motion_auc_v0,0.49544,0.47729;0.51351,5.0487e-29,95
+v2,selectivity real - instance,trained,ridge,24,motion_auc_v0,0.024901,0.020401;0.030365,3.7562e-26,95
+v2,trained - randall,trained,ridge,24,motion_auc_v0,0.27349,0.22556;0.32705,2.0195e-28,95
+v2,trained - randtf,trained,ridge,24,motion_auc_v0,0.033923,0.025138;0.046143,2.0195e-28,95
+v2,L24 - L0,trained,ridge,24,motion_auc_v0,0.019511,0.015275;0.024259,7.4317e-26,95
+v2,selectivity real - patch,trained,ridge,24,pair_auc_obj,0.39192,0.36119;0.41844,2.7089e-23,93
+v2,selectivity real - instance,trained,ridge,24,pair_auc_obj,0.10553,0.070652;0.13771,9.6298e-11,93
+v2,trained - randall,trained,ridge,24,pair_auc_obj,0.26388,0.22494;0.30013,1.6505e-19,93
+v2,trained - randtf,trained,ridge,24,pair_auc_obj,0.14168,0.10673;0.1747,3.6178e-12,93
+v2,L24 - L0,trained,ridge,24,pair_auc_obj,0.14511,0.11523;0.17588,1.8485e-15,93
+v2,selectivity real - patch,trained,ridge,24,pair_auc,0.41501,0.37724;0.44645,3.0932e-21,95
+v2,selectivity real - instance,trained,ridge,24,pair_auc,0.10038,0.065486;0.13048,1.2403e-12,95
+v2,trained - randall,trained,ridge,24,pair_auc,0.15571,0.11224;0.20045,2.9991e-09,95
+v2,trained - randtf,trained,ridge,24,pair_auc,0.1806,0.13925;0.22239,2.083e-13,95
+v2,L24 - L0,trained,ridge,24,pair_auc,0.23895,0.19804;0.27864,6.7416e-18,95
+v2,selectivity real - patch,trained,ridge,24,copies_separated,0.48584,0.34875;0.6077,0.0025768,20
+v2,selectivity real - instance,trained,ridge,24,copies_separated,0.3618,0.26713;0.45548,1.9073e-06,20
+v2,trained - randall,trained,ridge,24,copies_separated,0.49501,0.37661;0.60734,1.9073e-06,20
+v2,trained - randtf,trained,ridge,24,copies_separated,0.54607,0.43282;0.6628,1.9073e-06,20
+v2,L24 - L0,trained,ridge,24,copies_separated,0.5142,0.37526;0.64143,4.0054e-05,20
+v2,selectivity real - patch,randtf,ridge,0,k_correct,0.098,0.016;0.178,0.10479,100
+v2,selectivity real - instance,randtf,ridge,0,k_correct,-0.028,-0.12;0.066,0.4101,100
+v2,selectivity real - patch,randtf,ridge,0,motion_auc_v0_objects,-0.038859,-0.099345;0.021323,0.34814,93
+v2,selectivity real - instance,randtf,ridge,0,motion_auc_v0_objects,-0.054592,-0.13304;0.023318,0.14618,93
+v2,selectivity real - patch,randtf,ridge,0,motion_auc_v0,0.44743,0.42439;0.47035,5.0487e-29,95
+v2,selectivity real - instance,randtf,ridge,0,motion_auc_v0,-0.0022501,-0.014906;0.011351,0.41191,95
+v2,selectivity real - patch,randtf,ridge,0,pair_auc_obj,0.23924,0.21341;0.26712,8.8292e-25,93
+v2,selectivity real - instance,randtf,ridge,0,pair_auc_obj,-0.011899,-0.043487;0.022703,0.096565,93
+v2,selectivity real - patch,randtf,ridge,0,pair_auc,0.28546,0.26277;0.30933,2.3027e-25,95
+v2,selectivity real - instance,randtf,ridge,0,pair_auc,0.0077162,-0.017972;0.034114,0.83756,95
+v2,selectivity real - patch,randtf,ridge,0,copies_separated,0.061014,0.0020305;0.12425,0.11532,20
+v2,selectivity real - instance,randtf,ridge,0,copies_separated,-0.045583,-0.10701;0.013402,0.50344,20
+v2,selectivity real - patch,randtf,ridge,4,k_correct,0.126,0.066;0.192,2.0981e-05,100
+v2,selectivity real - instance,randtf,ridge,4,k_correct,-2.2204e-18,-0.052;0.056,0.54126,100
+v2,selectivity real - patch,randtf,ridge,4,motion_auc_v0_objects,-0.056317,-0.11533;0.00026585,0.17498,93
+v2,selectivity real - instance,randtf,ridge,4,motion_auc_v0_objects,-0.036346,-0.1111;0.037971,1,93
+v2,selectivity real - patch,randtf,ridge,4,motion_auc_v0,0.44405,0.41918;0.46798,4.8468e-27,95
+v2,selectivity real - instance,randtf,ridge,4,motion_auc_v0,-0.0055306,-0.018093;0.0053753,0.75719,95
+v2,selectivity real - patch,randtf,ridge,4,pair_auc_obj,0.25378,0.22622;0.28266,2.7089e-23,93
+v2,selectivity real - instance,randtf,ridge,4,pair_auc_obj,0.013765,-0.022695;0.048316,0.21315,93
+v2,selectivity real - patch,randtf,ridge,4,pair_auc,0.28147,0.25594;0.3075,7.2184e-24,95
+v2,selectivity real - instance,randtf,ridge,4,pair_auc,0.027872,-0.0055165;0.060549,0.53839,95
+v2,selectivity real - patch,randtf,ridge,4,copies_separated,0.049695,-0.0048445;0.10098,0.11532,20
+v2,selectivity real - instance,randtf,ridge,4,copies_separated,-0.04787,-0.14209;0.03871,0.8238,20
+v2,selectivity real - patch,randtf,ridge,8,k_correct,0.104,0.054;0.162,0.00072861,100
+v2,selectivity real - instance,randtf,ridge,8,k_correct,-0.016,-0.07405;0.042,0.42436,100
+v2,selectivity real - patch,randtf,ridge,8,motion_auc_v0_objects,-0.050578,-0.11097;0.0087951,0.028017,93
+v2,selectivity real - instance,randtf,ridge,8,motion_auc_v0_objects,-0.023919,-0.095871;0.048067,0.40692,93
+v2,selectivity real - patch,randtf,ridge,8,motion_auc_v0,0.43899,0.41143;0.46551,4.8468e-27,95
+v2,selectivity real - instance,randtf,ridge,8,motion_auc_v0,-0.0040651,-0.018307;0.0079315,0.75719,95
+v2,selectivity real - patch,randtf,ridge,8,pair_auc_obj,0.25615,0.22817;0.28469,8.8292e-25,93
+v2,selectivity real - instance,randtf,ridge,8,pair_auc_obj,0.0038525,-0.034888;0.041693,0.53406,93
+v2,selectivity real - patch,randtf,ridge,8,pair_auc,0.27015,0.23939;0.30094,4.6972e-20,95
+v2,selectivity real - instance,randtf,ridge,8,pair_auc,0.012951,-0.02391;0.04814,0.83756,95
+v2,selectivity real - patch,randtf,ridge,8,copies_separated,0.060271,0.010342;0.11123,0.8238,20
+v2,selectivity real - instance,randtf,ridge,8,copies_separated,-0.043453,-0.11376;0.028321,0.063568,20
+v2,selectivity real - patch,randtf,ridge,12,k_correct,0.07,0.02795;0.114,0.003418,100
+v2,selectivity real - instance,randtf,ridge,12,k_correct,-0.032,-0.086;0.024,0.28628,100
+v2,selectivity real - patch,randtf,ridge,12,motion_auc_v0_objects,-0.060685,-0.11919;-0.0017271,0.29973,93
+v2,selectivity real - instance,randtf,ridge,12,motion_auc_v0_objects,-0.024772,-0.10072;0.048544,0.29973,93
+v2,selectivity real - patch,randtf,ridge,12,motion_auc_v0,0.44446,0.41896;0.47003,4.8468e-27,95
+v2,selectivity real - instance,randtf,ridge,12,motion_auc_v0,-0.0030287,-0.013759;0.0070308,0.47049,95
+v2,selectivity real - patch,randtf,ridge,12,pair_auc_obj,0.24757,0.21911;0.27537,6.1672e-22,93
+v2,selectivity real - instance,randtf,ridge,12,pair_auc_obj,0.018326,-0.018944;0.056666,0.83585,93
+v2,selectivity real - patch,randtf,ridge,12,pair_auc,0.25836,0.22426;0.29248,6.0486e-19,95
+v2,selectivity real - instance,randtf,ridge,12,pair_auc,0.020766,-0.017142;0.059348,0.83756,95
+v2,selectivity real - patch,randtf,ridge,12,copies_separated,0.048645,-0.00075185;0.1017,0.50344,20
+v2,selectivity real - instance,randtf,ridge,12,copies_separated,-0.081053,-0.15755;-0.007043,0.64761,20
+v2,selectivity real - patch,randtf,ridge,16,k_correct,0.052,0.014;0.09605,0.003418,100
+v2,selectivity real - instance,randtf,ridge,16,k_correct,-0.014,-0.064;0.032,1,100
+v2,selectivity real - patch,randtf,ridge,16,motion_auc_v0_objects,-0.065384,-0.12104;-0.0070377,0.096565,93
+v2,selectivity real - instance,randtf,ridge,16,motion_auc_v0_objects,-0.043833,-0.12058;0.028024,0.29973,93
+v2,selectivity real - patch,randtf,ridge,16,motion_auc_v0,0.44395,0.42087;0.46634,5.0487e-29,95
+v2,selectivity real - instance,randtf,ridge,16,motion_auc_v0,-0.0050393,-0.015181;0.0034665,0.25644,95
+v2,selectivity real - patch,randtf,ridge,16,pair_auc_obj,0.26276,0.2315;0.29358,2.0782e-18,93
+v2,selectivity real - instance,randtf,ridge,16,pair_auc_obj,0.022062,-0.016085;0.058825,1,93
+v2,selectivity real - patch,randtf,ridge,16,pair_auc,0.24731,0.21;0.28166,5.7623e-16,95
+v2,selectivity real - instance,randtf,ridge,16,pair_auc,0.027473,-0.011802;0.066779,0.41191,95
+v2,selectivity real - patch,randtf,ridge,16,copies_separated,0.086508,0.038006;0.13995,0.041389,20
+v2,selectivity real - instance,randtf,ridge,16,copies_separated,-0.035406,-0.10634;0.04114,0.16707,20
+v2,selectivity real - patch,randtf,ridge,20,k_correct,0.076,0.032;0.126,0.00097656,100
+v2,selectivity real - instance,randtf,ridge,20,k_correct,0.026,-0.016;0.07,0.79053,100
+v2,selectivity real - patch,randtf,ridge,20,motion_auc_v0_objects,-0.05105,-0.10661;0.0063492,0.037514,93
+v2,selectivity real - instance,randtf,ridge,20,motion_auc_v0_objects,-0.045573,-0.11768;0.027178,0.29973,93
+v2,selectivity real - patch,randtf,ridge,20,motion_auc_v0,0.44858,0.42669;0.47099,5.0487e-29,95
+v2,selectivity real - instance,randtf,ridge,20,motion_auc_v0,-0.0059308,-0.01778;0.0031514,0.064213,95
+v2,selectivity real - patch,randtf,ridge,20,pair_auc_obj,0.25122,0.22142;0.28055,2.7089e-23,93
+v2,selectivity real - instance,randtf,ridge,20,pair_auc_obj,0.015498,-0.021947;0.054413,0.83585,93
+v2,selectivity real - patch,randtf,ridge,20,pair_auc,0.24784,0.21378;0.28102,6.0486e-19,95
+v2,selectivity real - instance,randtf,ridge,20,pair_auc,0.019863,-0.020292;0.060827,0.30489,95
+v2,selectivity real - patch,randtf,ridge,20,copies_separated,0.11754,0.066711;0.1707,0.041389,20
+v2,selectivity real - instance,randtf,ridge,20,copies_separated,-0.0039524,-0.064439;0.062749,0.26318,20
+v2,selectivity real - patch,randtf,ridge,24,k_correct,0.102,0.05;0.162,6.1035e-05,100
+v2,selectivity real - instance,randtf,ridge,24,k_correct,0.044,-0.016;0.104,0.16707,100
+v2,L24 - L0,randtf,ridge,24,k_correct,-0.138,-0.226;-0.05195,9.0215e-05,100
+v2,selectivity real - patch,randtf,ridge,24,motion_auc_v0_objects,-0.067407,-0.12254;-0.014214,0.0011109,93
+v2,selectivity real - instance,randtf,ridge,24,motion_auc_v0_objects,-0.064761,-0.1401;0.011498,0.061386,93
+v2,L24 - L0,randtf,ridge,24,motion_auc_v0_objects,-0.024236,-0.061277;0.0084687,0.20817,93
+v2,selectivity real - patch,randtf,ridge,24,motion_auc_v0,0.44272,0.41945;0.46488,5.0487e-29,95
+v2,selectivity real - instance,randtf,ridge,24,motion_auc_v0,-0.0074037,-0.019921;0.0023633,0.21805,95
+v2,L24 - L0,randtf,ridge,24,motion_auc_v0,-0.0016262,-0.0056652;0.0028172,0.01721,95
+v2,selectivity real - patch,randtf,ridge,24,pair_auc_obj,0.25092,0.21625;0.28385,1.6505e-19,93
+v2,selectivity real - instance,randtf,ridge,24,pair_auc_obj,0.011861,-0.024476;0.050596,1,93
+v2,L24 - L0,randtf,ridge,24,pair_auc_obj,0.0086572,-0.0096184;0.026486,0.83585,93
+v2,selectivity real - patch,randtf,ridge,24,pair_auc,0.24302,0.20618;0.28109,6.0486e-19,95
+v2,selectivity real - instance,randtf,ridge,24,pair_auc,0.01183,-0.031158;0.053544,0.83756,95
+v2,L24 - L0,randtf,ridge,24,pair_auc,-0.042441,-0.073308;-0.013247,0.41191,95
+v2,selectivity real - patch,randtf,ridge,24,copies_separated,0.066853,0.028928;0.108,0.041389,20
+v2,selectivity real - instance,randtf,ridge,24,copies_separated,-0.068729,-0.13051;-0.012692,1,20
+v2,L24 - L0,randtf,ridge,24,copies_separated,-0.20418,-0.2565;-0.15471,1.9073e-06,20
+v2,selectivity real - patch,enc_any4d,ridge,0,k_correct,0.234,0.156;0.322,1.3085e-07,100
+v2,selectivity real - instance,enc_any4d,ridge,0,k_correct,0.034,-0.05805;0.122,0.25588,100
+v2,selectivity real - patch,enc_any4d,ridge,0,motion_auc_v0_objects,0.05776,-0.00093161;0.11745,0.21315,93
+v2,selectivity real - instance,enc_any4d,ridge,0,motion_auc_v0_objects,0.10144,0.011979;0.19115,0.01602,93
+v2,selectivity real - patch,enc_any4d,ridge,0,motion_auc_v0,0.47875,0.46035;0.499,5.0487e-29,95
+v2,selectivity real - instance,enc_any4d,ridge,0,motion_auc_v0,0.01632,-0.0010467;0.039549,0.0025873,95
+v2,selectivity real - patch,enc_any4d,ridge,0,pair_auc_obj,0.26734,0.24007;0.29225,2.7089e-23,93
+v2,selectivity real - instance,enc_any4d,ridge,0,pair_auc_obj,-0.0016706,-0.035777;0.033939,1,93
+v2,selectivity real - patch,enc_any4d,ridge,0,pair_auc,0.28929,0.25705;0.32113,6.0486e-19,95
+v2,selectivity real - instance,enc_any4d,ridge,0,pair_auc,0.050723,0.010342;0.091302,0.039608,95
+v2,selectivity real - patch,enc_any4d,ridge,0,copies_separated,0.12307,0.044909;0.20299,0.011818,20
+v2,selectivity real - instance,enc_any4d,ridge,0,copies_separated,0.0089878,-0.058524;0.06662,0.11532,20
+v3float,selectivity real - patch,randall,ridge,0,motion_auc_v0_objects,-0.035068,-0.095271;0.024576,0.89908,62
+v3float,selectivity real - instance,randall,ridge,0,motion_auc_v0_objects,-0.029165,-0.12211;0.065051,0.25285,62
+v3float,selectivity real - patch,randall,ridge,0,motion_auc_v0,0.16956,0.11073;0.22656,1.1123e-05,63
+v3float,selectivity real - instance,randall,ridge,0,motion_auc_v0,-0.03109,-0.10304;0.042051,0.80131,63
+v3float,selectivity real - patch,randall,ridge,0,pair_auc_obj,0.14343,0.098578;0.18611,1.0507e-08,62
+v3float,selectivity real - instance,randall,ridge,0,pair_auc_obj,0.012509,-0.028423;0.049569,0.89908,62
+v3float,selectivity real - patch,randall,ridge,0,pair_auc,0.24786,0.19821;0.29884,9.7617e-10,63
+v3float,selectivity real - instance,randall,ridge,0,pair_auc,0.022528,-0.02801;0.0697,0.3135,63
+v3float,selectivity real - patch,randall,ridge,0,k_correct,0.13043,0.049275;0.22029,0.0043435,69
+v3float,selectivity real - instance,randall,ridge,0,k_correct,-0.04058,-0.15072;0.072464,0.44207,69
+v3float,selectivity real - patch,randall,ridge,0,copies_separated,0.05307,0.010853;0.10483,0.125,9
+v3float,selectivity real - instance,randall,ridge,0,copies_separated,-0.026531,-0.096246;0.031601,0.72656,9
+v3float,selectivity real - patch,randall,ridge,4,motion_auc_v0_objects,0.0029839,-0.062701;0.066498,0.89908,62
+v3float,selectivity real - instance,randall,ridge,4,motion_auc_v0_objects,0.0050049,-0.08995;0.10061,0.37415,62
+v3float,selectivity real - patch,randall,ridge,4,motion_auc_v0,0.18003,0.11699;0.24162,1.6735e-07,63
+v3float,selectivity real - instance,randall,ridge,4,motion_auc_v0,-0.004532,-0.079148;0.071239,1,63
+v3float,selectivity real - patch,randall,ridge,4,pair_auc_obj,0.14149,0.0941;0.18438,4.8175e-06,62
+v3float,selectivity real - instance,randall,ridge,4,pair_auc_obj,0.014539,-0.028832;0.057461,0.70354,62
+v3float,selectivity real - patch,randall,ridge,4,pair_auc,0.24219,0.18418;0.29498,3.3822e-08,63
+v3float,selectivity real - instance,randall,ridge,4,pair_auc,0.0022995,-0.051282;0.054635,1,63
+v3float,selectivity real - patch,randall,ridge,4,k_correct,0.15362,0.063768;0.24645,0.0013123,69
+v3float,selectivity real - instance,randall,ridge,4,k_correct,-0.02029,-0.11304;0.072536,0.5572,69
+v3float,selectivity real - patch,randall,ridge,4,copies_separated,0.064441,0.018712;0.11875,0.015625,9
+v3float,selectivity real - instance,randall,ridge,4,copies_separated,-0.034333,-0.11131;0.042869,0.72656,9
+v3float,selectivity real - patch,randall,ridge,8,motion_auc_v0_objects,0.01561,-0.05439;0.087935,1,62
+v3float,selectivity real - instance,randall,ridge,8,motion_auc_v0_objects,0.023909,-0.069833;0.11625,1,62
+v3float,selectivity real - patch,randall,ridge,8,motion_auc_v0,0.22125,0.15897;0.28499,3.3822e-08,63
+v3float,selectivity real - instance,randall,ridge,8,motion_auc_v0,0.023571,-0.048656;0.093442,0.44996,63
+v3float,selectivity real - patch,randall,ridge,8,pair_auc_obj,0.13251,0.082646;0.18052,4.8175e-06,62
+v3float,selectivity real - instance,randall,ridge,8,pair_auc_obj,-0.00054408,-0.041876;0.041679,1,62
+v3float,selectivity real - patch,randall,ridge,8,pair_auc,0.2036,0.14269;0.26501,1.6735e-07,63
+v3float,selectivity real - instance,randall,ridge,8,pair_auc,0.0036027,-0.054928;0.058189,1,62
+v3float,selectivity real - patch,randall,ridge,8,k_correct,0.18551,0.10145;0.27833,0.0025768,69
+v3float,selectivity real - instance,randall,ridge,8,k_correct,6.4361e-18,-0.092754;0.095652,1,69
+v3float,selectivity real - patch,randall,ridge,8,copies_separated,0.040198,0.00097077;0.087821,0.125,9
+v3float,selectivity real - instance,randall,ridge,8,copies_separated,-0.069924,-0.1648;0.0148,0.72656,9
+v3float,selectivity real - patch,randall,ridge,12,motion_auc_v0_objects,0.037804,-0.030558;0.10518,0.25285,62
+v3float,selectivity real - instance,randall,ridge,12,motion_auc_v0_objects,0.028614,-0.063426;0.12271,1,62
+v3float,selectivity real - patch,randall,ridge,12,motion_auc_v0,0.24693,0.18643;0.30863,3.3822e-08,63
+v3float,selectivity real - instance,randall,ridge,12,motion_auc_v0,0.025225,-0.045697;0.092303,0.3135,63
+v3float,selectivity real - patch,randall,ridge,12,pair_auc_obj,0.13349,0.087914;0.17811,5.7784e-05,62
+v3float,selectivity real - instance,randall,ridge,12,pair_auc_obj,-0.0019824,-0.048543;0.043127,0.89908,62
+v3float,selectivity real - patch,randall,ridge,12,pair_auc,0.21838,0.16232;0.2741,1.6735e-07,63
+v3float,selectivity real - instance,randall,ridge,12,pair_auc,-0.0048266,-0.067311;0.054312,1,63
+v3float,selectivity real - patch,randall,ridge,12,k_correct,0.18261,0.089855;0.27543,0.00040245,69
+v3float,selectivity real - instance,randall,ridge,12,k_correct,0.0028986,-0.10145;0.10732,0.83882,69
+v3float,selectivity real - patch,randall,ridge,12,copies_separated,0.040704,0.0093881;0.094357,0.015625,9
+v3float,selectivity real - instance,randall,ridge,12,copies_separated,-0.076673,-0.18699;0.011876,1,9
+v3float,selectivity real - patch,randall,ridge,16,motion_auc_v0_objects,0.010534,-0.055258;0.079662,0.25285,62
+v3float,selectivity real - instance,randall,ridge,16,motion_auc_v0_objects,-0.021509,-0.10855;0.06942,0.52577,62
+v3float,selectivity real - patch,randall,ridge,16,motion_auc_v0,0.236,0.17357;0.29854,3.3822e-08,63
+v3float,selectivity real - instance,randall,ridge,16,motion_auc_v0,0.015648,-0.044647;0.080655,0.12992,63
+v3float,selectivity real - patch,randall,ridge,16,pair_auc_obj,0.14063,0.087266;0.19317,0.00017633,62
+v3float,selectivity real - instance,randall,ridge,16,pair_auc_obj,0.010773,-0.035702;0.054391,0.52577,62
+v3float,selectivity real - patch,randall,ridge,16,pair_auc,0.21232,0.14279;0.27666,1.6735e-07,63
+v3float,selectivity real - instance,randall,ridge,16,pair_auc,-0.017843,-0.073716;0.043421,1,63
+v3float,selectivity real - patch,randall,ridge,16,k_correct,0.13913,0.057971;0.22319,0.0075378,69
+v3float,selectivity real - instance,randall,ridge,16,k_correct,-0.026087,-0.13043;0.072464,0.67764,69
+v3float,selectivity real - patch,randall,ridge,16,copies_separated,0.038188,0.0075631;0.078936,0.03125,9
+v3float,selectivity real - instance,randall,ridge,16,copies_separated,-0.051461,-0.13162;0.015032,1,9
+v3float,selectivity real - patch,randall,ridge,20,motion_auc_v0_objects,0.0039885,-0.066083;0.071982,0.70354,62
+v3float,selectivity real - instance,randall,ridge,20,motion_auc_v0_objects,0.0042691,-0.089944;0.097217,1,62
+v3float,selectivity real - patch,randall,ridge,20,motion_auc_v0,0.23187,0.17315;0.2887,1.3637e-10,63
+v3float,selectivity real - instance,randall,ridge,20,motion_auc_v0,0.024934,-0.036868;0.091135,0.3135,63
+v3float,selectivity real - patch,randall,ridge,20,pair_auc_obj,0.12439,0.069545;0.17868,5.7784e-05,62
+v3float,selectivity real - instance,randall,ridge,20,pair_auc_obj,0.0030458,-0.043727;0.04798,0.89908,62
+v3float,selectivity real - patch,randall,ridge,20,pair_auc,0.20554,0.13586;0.26985,1.6735e-07,63
+v3float,selectivity real - instance,randall,ridge,20,pair_auc,-0.021432,-0.088115;0.038002,0.80131,63
+v3float,selectivity real - patch,randall,ridge,20,k_correct,0.15072,0.066667;0.24058,0.004425,69
+v3float,selectivity real - instance,randall,ridge,20,k_correct,-0.026087,-0.11594;0.06087,0.66362,69
+v3float,selectivity real - patch,randall,ridge,20,copies_separated,0.03031,0.00253;0.079133,0.125,9
+v3float,selectivity real - instance,randall,ridge,20,copies_separated,-0.053745,-0.11968;0.0013919,0.72656,9
+v3float,selectivity real - patch,randall,ridge,24,motion_auc_v0_objects,0.018031,-0.049654;0.0875,0.37415,62
+v3float,selectivity real - instance,randall,ridge,24,motion_auc_v0_objects,0.011698,-0.075083;0.10198,1,62
+v3float,L24 - L0,randall,ridge,24,motion_auc_v0_objects,0.015897,-0.021752;0.053385,0.36629,62
+v3float,selectivity real - patch,randall,ridge,24,motion_auc_v0,0.2286,0.16582;0.28784,3.3822e-08,63
+v3float,selectivity real - instance,randall,ridge,24,motion_auc_v0,0.027311,-0.037998;0.094497,0.44996,63
+v3float,L24 - L0,randall,ridge,24,motion_auc_v0,0.033778,-0.0062101;0.077004,0.60892,63
+v3float,selectivity real - patch,randall,ridge,24,pair_auc_obj,0.1294,0.079964;0.18011,0.00049709,62
+v3float,selectivity real - instance,randall,ridge,24,pair_auc_obj,0.0057629,-0.043832;0.05138,0.25285,62
+v3float,L24 - L0,randall,ridge,24,pair_auc_obj,-0.01648,-0.046952;0.01356,0.25285,62
+v3float,selectivity real - patch,randall,ridge,24,pair_auc,0.18001,0.11619;0.23681,3.3822e-08,63
+v3float,selectivity real - instance,randall,ridge,24,pair_auc,-0.038047,-0.098411;0.018549,0.61466,63
+v3float,L24 - L0,randall,ridge,24,pair_auc,-0.055174,-0.095901;-0.017221,0.44996,63
+v3float,selectivity real - patch,randall,ridge,24,k_correct,0.18551,0.11014;0.27246,4.0054e-05,69
+v3float,selectivity real - instance,randall,ridge,24,k_correct,0.017391,-0.081232;0.11594,0.69004,69
+v3float,L24 - L0,randall,ridge,24,k_correct,-0.0057971,-0.092754;0.078261,1,69
+v3float,selectivity real - patch,randall,ridge,24,copies_separated,0.025415,0.0020207;0.065625,0.25,9
+v3float,selectivity real - instance,randall,ridge,24,copies_separated,-0.058172,-0.12674;-0.0054524,0.21875,9
+v3float,L24 - L0,randall,ridge,24,copies_separated,-0.062245,-0.13594;-0.004055,0.070312,9
+v3float,selectivity real - patch,enc_dino,ridge,0,motion_auc_v0_objects,0.058776,-0.021356;0.13874,0.097954,62
+v3float,selectivity real - instance,enc_dino,ridge,0,motion_auc_v0_objects,0.051998,-0.049461;0.14617,0.37415,62
+v3float,selectivity real - patch,enc_dino,ridge,0,motion_auc_v0,0.45977,0.4263;0.49063,1.3878e-17,63
+v3float,selectivity real - instance,enc_dino,ridge,0,motion_auc_v0,0.024544,-0.0044834;0.053849,0.022575,63
+v3float,selectivity real - patch,enc_dino,ridge,0,pair_auc_obj,0.24747,0.21102;0.28518,2.5918e-13,62
+v3float,selectivity real - instance,enc_dino,ridge,0,pair_auc_obj,-0.024389,-0.06119;0.012635,0.89908,62
+v3float,selectivity real - patch,enc_dino,ridge,0,pair_auc,0.26754,0.23328;0.2995,9.0483e-15,63
+v3float,selectivity real - instance,enc_dino,ridge,0,pair_auc,-0.019066,-0.052777;0.013377,0.44996,63
+v3float,selectivity real - patch,enc_dino,ridge,0,k_correct,0.13043,0.031884;0.23188,0.10813,69
+v3float,selectivity real - instance,enc_dino,ridge,0,k_correct,-0.063768,-0.17681;0.055145,0.33678,69
+v3float,selectivity real - patch,enc_dino,ridge,0,copies_separated,0.043952,-0.055875;0.15956,0.50781,9
+v3float,selectivity real - instance,enc_dino,ridge,0,copies_separated,-0.12604,-0.2553;-0.0035923,0.50781,9
+v3float,selectivity real - patch,trained,ridge,0,motion_auc_v0_objects,0.073218,-0.028446;0.17222,0.25285,62
+v3float,selectivity real - instance,trained,ridge,0,motion_auc_v0_objects,-0.046695,-0.16009;0.072266,0.89908,62
+v3float,trained - randall,trained,ridge,0,motion_auc_v0_objects,0.093929,-0.012827;0.20021,0.097954,62
+v3float,trained - randtf,trained,ridge,0,motion_auc_v0_objects,0.022624,-0.050513;0.096657,0.52577,62
+v3float,trained L0 - enc_any4d,trained,ridge,0,motion_auc_v0_objects,0.00052631,-0.038847;0.035139,0.51184,62
+v3float,trained L0 - enc_dino,trained,ridge,0,motion_auc_v0_objects,0.010622,-0.065264;0.087631,1,62
+v3float,selectivity real - patch,trained,ridge,0,motion_auc_v0,0.45969,0.42123;0.4944,4.3737e-16,63
+v3float,selectivity real - instance,trained,ridge,0,motion_auc_v0,-0.012324,-0.044207;0.015018,0.89908,63
+v3float,trained - randall,trained,ridge,0,motion_auc_v0,0.28466,0.22886;0.3433,1.3821e-13,63
+v3float,trained - randtf,trained,ridge,0,motion_auc_v0,0.00084904,-0.013515;0.013082,0.042957,63
+v3float,trained L0 - enc_any4d,trained,ridge,0,motion_auc_v0,0.014409,0.0042099;0.027572,0.0051524,63
+v3float,trained L0 - enc_dino,trained,ridge,0,motion_auc_v0,0.0027494,-0.013507;0.017571,0.042957,63
+v3float,selectivity real - patch,trained,ridge,0,pair_auc_obj,0.26972,0.23372;0.3043,8.4741e-16,62
+v3float,selectivity real - instance,trained,ridge,0,pair_auc_obj,-0.014636,-0.055752;0.027079,1,62
+v3float,trained - randall,trained,ridge,0,pair_auc_obj,0.13483,0.088887;0.18089,0.001299,62
+v3float,trained - randtf,trained,ridge,0,pair_auc_obj,0.011531,-0.018378;0.041964,0.52577,62
+v3float,trained L0 - enc_any4d,trained,ridge,0,pair_auc_obj,-0.027451,-0.048952;-0.007602,0.030016,62
+v3float,trained L0 - enc_dino,trained,ridge,0,pair_auc_obj,0.019985,-0.011119;0.05061,0.16188,62
+v3float,selectivity real - patch,trained,ridge,0,pair_auc,0.22373,0.17578;0.26784,6.1083e-09,63
+v3float,selectivity real - instance,trained,ridge,0,pair_auc,0.037878,-0.017107;0.094666,0.0022275,63
+v3float,trained - randall,trained,ridge,0,pair_auc,-0.028125,-0.085711;0.03247,0.61466,63
+v3float,trained - randtf,trained,ridge,0,pair_auc,-0.028885,-0.070801;0.0087561,1,63
+v3float,trained L0 - enc_any4d,trained,ridge,0,pair_auc,-0.058501,-0.087933;-0.029039,0.00011706,63
+v3float,trained L0 - enc_dino,trained,ridge,0,pair_auc,-0.056916,-0.09737;-0.01605,0.12992,63
+v3float,selectivity real - patch,trained,ridge,0,k_correct,0.17391,0.098551;0.26087,4.0054e-05,69
+v3float,selectivity real - instance,trained,ridge,0,k_correct,0.072464,-0.0058696;0.15652,0.23788,69
+v3float,trained - randall,trained,ridge,0,k_correct,-0.037681,-0.15942;0.078261,0.86005,69
+v3float,trained - randtf,trained,ridge,0,k_correct,-0.049275,-0.15362;0.057971,0.10813,69
+v3float,trained L0 - enc_any4d,trained,ridge,0,k_correct,-0.055072,-0.14203;0.026159,0.15159,69
+v3float,trained L0 - enc_dino,trained,ridge,0,k_correct,-0.072464,-0.18841;0.049275,0.18774,69
+v3float,selectivity real - patch,trained,ridge,0,copies_separated,0.05453,-0.030023;0.1441,1,9
+v3float,selectivity real - instance,trained,ridge,0,copies_separated,0.031549,-0.015924;0.084596,1,9
+v3float,trained - randall,trained,ridge,0,copies_separated,0.062655,0.02028;0.10412,0.17969,9
+v3float,trained - randtf,trained,ridge,0,copies_separated,-0.11201,-0.21132;-0.027031,0.039062,9
+v3float,trained L0 - enc_any4d,trained,ridge,0,copies_separated,-0.027724,-0.058717;0.001093,0.17969,9
+v3float,trained L0 - enc_dino,trained,ridge,0,copies_separated,-0.07436,-0.17692;0.022247,0.50781,9
+v3float,selectivity real - patch,trained,ridge,4,motion_auc_v0_objects,0.084622,-0.0049331;0.17836,0.097954,62
+v3float,selectivity real - instance,trained,ridge,4,motion_auc_v0_objects,0.0098306,-0.09017;0.11766,0.44263,62
+v3float,trained - randall,trained,ridge,4,motion_auc_v0_objects,0.068611,-0.032274;0.16815,0.055897,62
+v3float,trained - randtf,trained,ridge,4,motion_auc_v0_objects,0.022087,-0.051666;0.093849,0.30568,62
+v3float,selectivity real - patch,trained,ridge,4,motion_auc_v0,0.4678,0.43268;0.49977,4.3737e-16,63
+v3float,selectivity real - instance,trained,ridge,4,motion_auc_v0,-0.0090951,-0.031;0.010184,0.3135,63
+v3float,trained - randall,trained,ridge,4,motion_auc_v0,0.28265,0.22812;0.34289,1.6624e-12,63
+v3float,trained - randtf,trained,ridge,4,motion_auc_v0,-0.00051126,-0.015092;0.012445,0.20003,63
+v3float,selectivity real - patch,trained,ridge,4,pair_auc_obj,0.29105,0.25854;0.32496,8.4741e-16,62
+v3float,selectivity real - instance,trained,ridge,4,pair_auc_obj,0.010659,-0.034007;0.054218,0.70354,62
+v3float,trained - randall,trained,ridge,4,pair_auc_obj,0.17063,0.12098;0.21965,1.7429e-05,62
+v3float,trained - randtf,trained,ridge,4,pair_auc_obj,0.050489,0.016891;0.084158,0.097954,62
+v3float,selectivity real - patch,trained,ridge,4,pair_auc,0.26138,0.22217;0.30014,1.3821e-13,63
+v3float,selectivity real - instance,trained,ridge,4,pair_auc,0.067533,0.016554;0.12056,0.042957,63
+v3float,trained - randall,trained,ridge,4,pair_auc,0.02717,-0.036551;0.093292,0.44996,63
+v3float,trained - randtf,trained,ridge,4,pair_auc,0.021168,-0.027943;0.070782,0.3135,63
+v3float,selectivity real - patch,trained,ridge,4,k_correct,0.15652,0.066667;0.24935,0.0023499,69
+v3float,selectivity real - instance,trained,ridge,4,k_correct,0.031884,-0.098551;0.15652,0.85554,69
+v3float,trained - randall,trained,ridge,4,k_correct,-0.0086957,-0.13333;0.11304,0.85554,69
+v3float,trained - randtf,trained,ridge,4,k_correct,0.026087,-0.086957;0.1392,0.42436,69
+v3float,selectivity real - patch,trained,ridge,4,copies_separated,0.12602,0.031127;0.20868,0.17969,9
+v3float,selectivity real - instance,trained,ridge,4,copies_separated,0.12518,0.045108;0.19764,0.17969,9
+v3float,trained - randall,trained,ridge,4,copies_separated,0.16241,0.093298;0.23287,0.0039062,9
+v3float,trained - randtf,trained,ridge,4,copies_separated,0.079077,-0.042106;0.19149,0.50781,9
+v3float,selectivity real - patch,trained,ridge,8,motion_auc_v0_objects,0.082404,-0.0096002;0.16945,0.16188,62
+v3float,selectivity real - instance,trained,ridge,8,motion_auc_v0_objects,0.041249,-0.079807;0.15578,0.30568,62
+v3float,trained - randall,trained,ridge,8,motion_auc_v0_objects,0.087676,-0.018807;0.19072,0.015134,62
+v3float,trained - randtf,trained,ridge,8,motion_auc_v0_objects,0.042089,-0.044382;0.12513,0.30568,62
+v3float,selectivity real - patch,trained,ridge,8,motion_auc_v0,0.4424,0.40259;0.47987,2.7322e-17,63
+v3float,selectivity real - instance,trained,ridge,8,motion_auc_v0,-0.0015538,-0.035637;0.033917,0.70354,63
+v3float,trained - randall,trained,ridge,8,motion_auc_v0,0.2469,0.19036;0.30274,1.6396e-11,63
+v3float,trained - randtf,trained,ridge,8,motion_auc_v0,-0.0067876,-0.028692;0.0097479,0.022575,63
+v3float,selectivity real - patch,trained,ridge,8,pair_auc_obj,0.2979,0.25521;0.33922,2.5918e-13,62
+v3float,selectivity real - instance,trained,ridge,8,pair_auc_obj,0.0080719,-0.030749;0.047286,0.89908,62
+v3float,trained - randall,trained,ridge,8,pair_auc_obj,0.19005,0.1395;0.24043,2.7756e-07,62
+v3float,trained - randtf,trained,ridge,8,pair_auc_obj,0.050782,0.014957;0.086289,0.030016,62
+v3float,selectivity real - patch,trained,ridge,8,pair_auc,0.29573,0.25499;0.33357,1.6624e-12,63
+v3float,selectivity real - instance,trained,ridge,8,pair_auc,0.078632,0.030462;0.12832,0.16188,62
+v3float,trained - randall,trained,ridge,8,pair_auc,0.10111,0.028364;0.17107,0.076926,63
+v3float,trained - randtf,trained,ridge,8,pair_auc,0.075943,0.01694;0.13432,0.0022275,63
+v3float,selectivity real - patch,trained,ridge,8,k_correct,0.21159,0.12464;0.29862,0.00015652,69
+v3float,selectivity real - instance,trained,ridge,8,k_correct,0.084058,-0.029058;0.2029,0.18493,69
+v3float,trained - randall,trained,ridge,8,k_correct,0.026087,-0.095652;0.14493,1,69
+v3float,trained - randtf,trained,ridge,8,k_correct,0.14203,0.034783;0.24935,0.043285,69
+v3float,selectivity real - patch,trained,ridge,8,copies_separated,0.066188,-0.057493;0.20609,1,9
+v3float,selectivity real - instance,trained,ridge,8,copies_separated,0.040582,-0.058999;0.12888,1,9
+v3float,trained - randall,trained,ridge,8,copies_separated,0.17142,0.087183;0.26765,0.0039062,9
+v3float,trained - randtf,trained,ridge,8,copies_separated,0.098242,0.030753;0.16576,0.17969,9
+v3float,selectivity real - patch,trained,ridge,12,motion_auc_v0_objects,0.20535,0.12367;0.28882,0.001299,62
+v3float,selectivity real - instance,trained,ridge,12,motion_auc_v0_objects,0.129,0.024658;0.23302,0.013489,62
+v3float,trained - randall,trained,ridge,12,motion_auc_v0_objects,0.18235,0.089711;0.27115,0.00026428,62
+v3float,trained - randtf,trained,ridge,12,motion_auc_v0_objects,0.15465,0.076376;0.23277,4.2237e-05,62
+v3float,selectivity real - patch,trained,ridge,12,motion_auc_v0,0.48432,0.45516;0.51245,2.1684e-19,63
+v3float,selectivity real - instance,trained,ridge,12,motion_auc_v0,0.021518,-0.0009196;0.050635,0.37415,63
+v3float,trained - randall,trained,ridge,12,motion_auc_v0,0.25166,0.20528;0.29872,8.4741e-16,63
+v3float,trained - randtf,trained,ridge,12,motion_auc_v0,0.025918,0.0081994;0.046307,5.7136e-08,63
+v3float,selectivity real - patch,trained,ridge,12,pair_auc_obj,0.36794,0.33248;0.40494,4.3368e-19,62
+v3float,selectivity real - instance,trained,ridge,12,pair_auc_obj,0.060374,0.021086;0.1,0.00017633,62
+v3float,trained - randall,trained,ridge,12,pair_auc_obj,0.24271,0.18983;0.297,3.0655e-12,62
+v3float,trained - randtf,trained,ridge,12,pair_auc_obj,0.1037,0.065359;0.13744,5.7784e-05,62
+v3float,selectivity real - patch,trained,ridge,12,pair_auc,0.37374,0.33709;0.41024,1.3878e-17,63
+v3float,selectivity real - instance,trained,ridge,12,pair_auc,0.13564,0.091163;0.18427,3.7606e-05,63
+v3float,trained - randall,trained,ridge,12,pair_auc,0.16846,0.10437;0.23628,0.00011706,63
+v3float,trained - randtf,trained,ridge,12,pair_auc,0.16352,0.10682;0.21989,3.016e-06,63
+v3float,selectivity real - patch,trained,ridge,12,k_correct,0.28696,0.17391;0.39428,5.9476e-05,69
+v3float,selectivity real - instance,trained,ridge,12,k_correct,0.098551,-0.034783;0.22609,0.080143,69
+v3float,trained - randall,trained,ridge,12,k_correct,0.11014,-0.043478;0.26377,0.15386,69
+v3float,trained - randtf,trained,ridge,12,k_correct,0.23768,0.12746;0.35072,0.0014309,69
+v3float,selectivity real - patch,trained,ridge,12,copies_separated,0.12453,0.025379;0.22299,0.50781,9
+v3float,selectivity real - instance,trained,ridge,12,copies_separated,0.049496,-0.065466;0.16497,1,9
+v3float,trained - randall,trained,ridge,12,copies_separated,0.23601,0.15335;0.32804,0.0039062,9
+v3float,trained - randtf,trained,ridge,12,copies_separated,0.10571,0.022383;0.19964,0.50781,9
+v3float,selectivity real - patch,trained,ridge,16,motion_auc_v0_objects,0.28732,0.2057;0.36765,1.2144e-06,62
+v3float,selectivity real - instance,trained,ridge,16,motion_auc_v0_objects,0.21665,0.12206;0.30892,2.7192e-05,62
+v3float,trained - randall,trained,ridge,16,motion_auc_v0_objects,0.30024,0.2143;0.38799,7.5613e-07,62
+v3float,trained - randtf,trained,ridge,16,motion_auc_v0_objects,0.25151,0.1705;0.33104,9.6244e-08,62
+v3float,selectivity real - patch,trained,ridge,16,motion_auc_v0,0.4816,0.45233;0.50822,2.1684e-19,63
+v3float,selectivity real - instance,trained,ridge,16,motion_auc_v0,0.022838,0.0065048;0.048494,0.00049709,63
+v3float,trained - randall,trained,ridge,16,motion_auc_v0,0.2726,0.22123;0.3252,8.6736e-19,63
+v3float,trained - randtf,trained,ridge,16,motion_auc_v0,0.03528,0.016286;0.058676,1.7093e-09,63
+v3float,selectivity real - patch,trained,ridge,16,pair_auc_obj,0.38485,0.35624;0.41496,4.3368e-19,62
+v3float,selectivity real - instance,trained,ridge,16,pair_auc_obj,0.085155,0.049859;0.12104,1.7429e-05,62
+v3float,trained - randall,trained,ridge,16,pair_auc_obj,0.27658,0.23033;0.32517,1.7249e-14,62
+v3float,trained - randtf,trained,ridge,16,pair_auc_obj,0.14147,0.1034;0.1769,4.8175e-06,62
+v3float,selectivity real - patch,trained,ridge,16,pair_auc,0.42404,0.3955;0.45358,2.1684e-19,63
+v3float,selectivity real - instance,trained,ridge,16,pair_auc,0.12887,0.089411;0.16858,1.6735e-07,63
+v3float,trained - randall,trained,ridge,16,pair_auc,0.2272,0.16789;0.2875,6.1083e-09,63
+v3float,trained - randtf,trained,ridge,16,pair_auc,0.22947,0.17829;0.28253,1.3637e-10,63
+v3float,selectivity real - patch,trained,ridge,16,k_correct,0.42899,0.30725;0.54493,1.0245e-08,69
+v3float,selectivity real - instance,trained,ridge,16,k_correct,0.24058,0.11297;0.36812,0.0029351,69
+v3float,trained - randall,trained,ridge,16,k_correct,0.27826,0.14783;0.41739,0.0014505,69
+v3float,trained - randtf,trained,ridge,16,k_correct,0.35072,0.23471;0.46377,4.177e-07,69
+v3float,selectivity real - patch,trained,ridge,16,copies_separated,0.19504,0.065109;0.32413,0.17969,9
+v3float,selectivity real - instance,trained,ridge,16,copies_separated,0.060996,-0.064567;0.18847,1,9
+v3float,trained - randall,trained,ridge,16,copies_separated,0.289,0.19238;0.39417,0.0039062,9
+v3float,trained - randtf,trained,ridge,16,copies_separated,0.24484,0.14888;0.33783,0.0039062,9
+v3float,selectivity real - patch,trained,ridge,20,motion_auc_v0_objects,0.43993,0.38868;0.48477,1.641e-15,62
+v3float,selectivity real - instance,trained,ridge,20,motion_auc_v0_objects,0.39839,0.31454;0.49234,9.0845e-13,62
+v3float,trained - randall,trained,ridge,20,motion_auc_v0_objects,0.45052,0.37709;0.52859,1.0582e-16,62
+v3float,trained - randtf,trained,ridge,20,motion_auc_v0_objects,0.41189,0.34358;0.48279,1.641e-15,62
+v3float,selectivity real - patch,trained,ridge,20,motion_auc_v0,0.48974,0.45729;0.51951,2.1684e-19,63
+v3float,selectivity real - instance,trained,ridge,20,motion_auc_v0,0.036261,0.019078;0.063427,5.3806e-11,63
+v3float,trained - randall,trained,ridge,20,motion_auc_v0,0.27592,0.22807;0.3291,5.3776e-17,63
+v3float,trained - randtf,trained,ridge,20,motion_auc_v0,0.041003,0.024079;0.06347,4.3737e-16,63
+v3float,selectivity real - patch,trained,ridge,20,pair_auc_obj,0.42364,0.39759;0.44732,4.3368e-19,62
+v3float,selectivity real - instance,trained,ridge,20,pair_auc_obj,0.1326,0.096378;0.169,3.0655e-12,62
+v3float,trained - randall,trained,ridge,20,pair_auc_obj,0.31436,0.2701;0.35949,2.5918e-13,62
+v3float,trained - randtf,trained,ridge,20,pair_auc_obj,0.18589,0.14846;0.22218,1.0507e-08,62
+v3float,selectivity real - patch,trained,ridge,20,pair_auc,0.45004,0.42487;0.47382,2.1684e-19,63
+v3float,selectivity real - instance,trained,ridge,20,pair_auc,0.15317,0.11545;0.18972,1.6624e-12,63
+v3float,trained - randall,trained,ridge,20,pair_auc,0.26397,0.2025;0.32648,1.6624e-12,63
+v3float,trained - randtf,trained,ridge,20,pair_auc,0.26613,0.22117;0.31269,4.3737e-16,63
+v3float,selectivity real - patch,trained,ridge,20,k_correct,0.48696,0.36812;0.61159,2.8413e-09,69
+v3float,selectivity real - instance,trained,ridge,20,k_correct,0.28986,0.16522;0.42029,0.0011932,69
+v3float,trained - randall,trained,ridge,20,k_correct,0.32174,0.17094;0.46377,0.00060611,69
+v3float,trained - randtf,trained,ridge,20,k_correct,0.43188,0.30145;0.55072,1.0258e-07,69
+v3float,selectivity real - patch,trained,ridge,20,copies_separated,0.054332,-0.058283;0.19054,1,9
+v3float,selectivity real - instance,trained,ridge,20,copies_separated,0.036118,-0.13254;0.20943,1,9
+v3float,trained - randall,trained,ridge,20,copies_separated,0.21227,0.089743;0.35004,0.0078125,9
+v3float,trained - randtf,trained,ridge,20,copies_separated,0.14932,-0.0024934;0.31563,0.50781,9
+v3float,selectivity real - patch,trained,ridge,24,motion_auc_v0_objects,0.48215,0.4408;0.51899,5.3776e-17,62
+v3float,selectivity real - instance,trained,ridge,24,motion_auc_v0_objects,0.40687,0.32207;0.49905,9.0845e-13,62
+v3float,trained - randall,trained,ridge,24,motion_auc_v0_objects,0.48258,0.41452;0.55204,1.0582e-16,62
+v3float,trained - randtf,trained,ridge,24,motion_auc_v0_objects,0.44499,0.37384;0.51627,1.0582e-16,62
+v3float,L24 - L0,trained,ridge,24,motion_auc_v0_objects,0.40454,0.31382;0.49546,5.3776e-17,62
+v3float,selectivity real - patch,trained,ridge,24,motion_auc_v0,0.50078,0.47387;0.52558,2.1684e-19,63
+v3float,selectivity real - instance,trained,ridge,24,motion_auc_v0,0.04398,0.02153;0.078382,5.6456e-12,63
+v3float,trained - randall,trained,ridge,24,motion_auc_v0,0.28962,0.23881;0.34602,5.3776e-17,63
+v3float,trained - randtf,trained,ridge,24,motion_auc_v0,0.039683,0.02483;0.059609,1.3878e-17,63
+v3float,L24 - L0,trained,ridge,24,motion_auc_v0,0.038741,0.018932;0.070497,1.641e-15,63
+v3float,selectivity real - patch,trained,ridge,24,pair_auc_obj,0.41676,0.38824;0.44214,2.7322e-17,62
+v3float,selectivity real - instance,trained,ridge,24,pair_auc_obj,0.1453,0.10504;0.18621,1.0507e-08,62
+v3float,trained - randall,trained,ridge,24,pair_auc_obj,0.30838,0.2556;0.35887,3.0655e-12,62
+v3float,trained - randtf,trained,ridge,24,pair_auc_obj,0.17821,0.13977;0.21436,1.7093e-09,62
+v3float,L24 - L0,trained,ridge,24,pair_auc_obj,0.15707,0.11681;0.19557,3.0655e-12,62
+v3float,selectivity real - patch,trained,ridge,24,pair_auc,0.46273,0.44226;0.48098,2.1684e-19,63
+v3float,selectivity real - instance,trained,ridge,24,pair_auc,0.15299,0.11315;0.19364,1.6396e-11,63
+v3float,trained - randall,trained,ridge,24,pair_auc,0.27668,0.21968;0.33734,4.3737e-16,63
+v3float,trained - randtf,trained,ridge,24,pair_auc,0.26259,0.21746;0.31127,9.0483e-15,63
+v3float,L24 - L0,trained,ridge,24,pair_auc,0.24963,0.20097;0.29562,9.0483e-15,63
+v3float,selectivity real - patch,trained,ridge,24,k_correct,0.41449,0.28986;0.54493,1.0844e-06,69
+v3float,selectivity real - instance,trained,ridge,24,k_correct,0.22319,0.086884;0.36232,0.0059881,69
+v3float,trained - randall,trained,ridge,24,k_correct,0.23478,0.095652;0.37391,0.0008214,69
+v3float,trained - randtf,trained,ridge,24,k_correct,0.4,0.26957;0.52464,7.6601e-07,69
+v3float,L24 - L0,trained,ridge,24,k_correct,0.26667,0.12167;0.41739,0.00067955,69
+v3float,selectivity real - patch,trained,ridge,24,copies_separated,0.18694,0.0068175;0.3746,0.50781,9
+v3float,selectivity real - instance,trained,ridge,24,copies_separated,0.12084,-0.094512;0.36706,0.50781,9
+v3float,trained - randall,trained,ridge,24,copies_separated,0.31513,0.12324;0.52512,0.039062,9
+v3float,trained - randtf,trained,ridge,24,copies_separated,0.31791,0.13193;0.52265,0.0078125,9
+v3float,L24 - L0,trained,ridge,24,copies_separated,0.19023,-0.0095919;0.41789,0.50781,9
+v3float,selectivity real - patch,randtf,ridge,0,motion_auc_v0_objects,0.042543,-0.035393;0.12193,0.097954,62
+v3float,selectivity real - instance,randtf,ridge,0,motion_auc_v0_objects,0.027598,-0.068741;0.13049,0.37415,62
+v3float,selectivity real - patch,randtf,ridge,0,motion_auc_v0,0.45678,0.42419;0.48649,1.3878e-17,63
+v3float,selectivity real - instance,randtf,ridge,0,motion_auc_v0,0.017349,-0.013533;0.046788,0.12992,63
+v3float,selectivity real - patch,randtf,ridge,0,pair_auc_obj,0.25424,0.2181;0.28977,1.7249e-14,62
+v3float,selectivity real - instance,randtf,ridge,0,pair_auc_obj,-0.01955,-0.059557;0.021624,0.89908,62
+v3float,selectivity real - patch,randtf,ridge,0,pair_auc,0.23372,0.20105;0.26563,9.0483e-15,63
+v3float,selectivity real - instance,randtf,ridge,0,pair_auc,-0.026043,-0.064452;0.010417,0.61466,63
+v3float,selectivity real - patch,randtf,ridge,0,k_correct,0.10145,0.0086957;0.19138,0.043559,69
+v3float,selectivity real - instance,randtf,ridge,0,k_correct,-0.04058,-0.14783;0.063768,0.47088,69
+v3float,selectivity real - patch,randtf,ridge,0,copies_separated,0.069535,-0.038826;0.1842,0.50781,9
+v3float,selectivity real - instance,randtf,ridge,0,copies_separated,-0.045753,-0.18686;0.093935,0.50781,9
+v3float,selectivity real - patch,randtf,ridge,4,motion_auc_v0_objects,0.030717,-0.052105;0.11032,0.25285,62
+v3float,selectivity real - instance,randtf,ridge,4,motion_auc_v0_objects,0.026609,-0.073474;0.11893,0.097954,62
+v3float,selectivity real - patch,randtf,ridge,4,motion_auc_v0,0.45607,0.42599;0.48633,2.1684e-19,63
+v3float,selectivity real - instance,randtf,ridge,4,motion_auc_v0,0.010537,-0.0090756;0.02951,0.20737,63
+v3float,selectivity real - patch,randtf,ridge,4,pair_auc_obj,0.2432,0.2111;0.27678,8.4741e-16,62
+v3float,selectivity real - instance,randtf,ridge,4,pair_auc_obj,-0.034339,-0.078829;0.0069737,0.097954,62
+v3float,selectivity real - patch,randtf,ridge,4,pair_auc,0.23816,0.19647;0.27815,9.0483e-15,63
+v3float,selectivity real - instance,randtf,ridge,4,pair_auc,-0.051966,-0.097398;-0.0090913,0.61466,63
+v3float,selectivity real - patch,randtf,ridge,4,k_correct,0.14493,0.06087;0.23188,0.0073853,69
+v3float,selectivity real - instance,randtf,ridge,4,k_correct,0.034783,-0.066739;0.14203,0.83181,69
+v3float,selectivity real - patch,randtf,ridge,4,copies_separated,0.074866,-0.010962;0.20318,1,9
+v3float,selectivity real - instance,randtf,ridge,4,copies_separated,0.0048769,-0.0754;0.079777,1,9
+v3float,selectivity real - patch,randtf,ridge,8,motion_auc_v0_objects,0.069914,-0.014269;0.15345,0.097954,62
+v3float,selectivity real - instance,randtf,ridge,8,motion_auc_v0_objects,0.037781,-0.057542;0.13582,0.37415,62
+v3float,selectivity real - patch,randtf,ridge,8,motion_auc_v0,0.47388,0.44432;0.50418,2.1684e-19,63
+v3float,selectivity real - instance,randtf,ridge,8,motion_auc_v0,0.0115,-0.0096414;0.032246,0.0022275,63
+v3float,selectivity real - patch,randtf,ridge,8,pair_auc_obj,0.25879,0.22803;0.28974,4.3368e-19,62
+v3float,selectivity real - instance,randtf,ridge,8,pair_auc_obj,-0.024668,-0.069894;0.023197,0.70354,62
+v3float,selectivity real - patch,randtf,ridge,8,pair_auc,0.22629,0.18243;0.26724,1.3637e-10,63
+v3float,selectivity real - instance,randtf,ridge,8,pair_auc,-0.033301,-0.0791;0.011962,0.37415,62
+v3float,selectivity real - patch,randtf,ridge,8,k_correct,0.089855,0.03471;0.15942,0.0039062,69
+v3float,selectivity real - instance,randtf,ridge,8,k_correct,-0.023188,-0.11014;0.063768,1,69
+v3float,selectivity real - patch,randtf,ridge,8,copies_separated,0.056754,-0.037969;0.19813,0.72656,9
+v3float,selectivity real - instance,randtf,ridge,8,copies_separated,-0.060524,-0.23405;0.090882,0.28906,9
+v3float,selectivity real - patch,randtf,ridge,12,motion_auc_v0_objects,0.044801,-0.043832;0.12759,0.25285,62
+v3float,selectivity real - instance,randtf,ridge,12,motion_auc_v0_objects,0.034874,-0.064011;0.12774,0.37415,62
+v3float,selectivity real - patch,randtf,ridge,12,motion_auc_v0,0.45405,0.4195;0.4875,4.3737e-16,63
+v3float,selectivity real - instance,randtf,ridge,12,motion_auc_v0,0.0061799,-0.021321;0.031737,0.042957,63
+v3float,selectivity real - patch,randtf,ridge,12,pair_auc_obj,0.26289,0.22929;0.29594,2.7322e-17,62
+v3float,selectivity real - instance,randtf,ridge,12,pair_auc_obj,-0.028353,-0.075002;0.018821,0.030016,62
+v3float,selectivity real - patch,randtf,ridge,12,pair_auc,0.20819,0.16424;0.24999,6.1083e-09,63
+v3float,selectivity real - instance,randtf,ridge,12,pair_auc,-0.046586,-0.094253;0.00072247,0.44996,63
+v3float,selectivity real - patch,randtf,ridge,12,k_correct,0.066667,0.0028986;0.13623,0.021484,69
+v3float,selectivity real - instance,randtf,ridge,12,k_correct,0.0057971,-0.055072;0.069565,0.79053,69
+v3float,selectivity real - patch,randtf,ridge,12,copies_separated,0.11992,0.029295;0.23196,0.17969,9
+v3float,selectivity real - instance,randtf,ridge,12,copies_separated,0.047996,-0.076344;0.18521,1,9
+v3float,selectivity real - patch,randtf,ridge,16,motion_auc_v0_objects,0.039159,-0.041888;0.12216,0.16188,62
+v3float,selectivity real - instance,randtf,ridge,16,motion_auc_v0_objects,0.01792,-0.069806;0.10497,0.60892,62
+v3float,selectivity real - patch,randtf,ridge,16,motion_auc_v0,0.46127,0.42971;0.49142,1.3878e-17,63
+v3float,selectivity real - instance,randtf,ridge,16,motion_auc_v0,0.00010288,-0.027842;0.02568,0.12992,63
+v3float,selectivity real - patch,randtf,ridge,16,pair_auc_obj,0.25277,0.2216;0.28865,2.7322e-17,62
+v3float,selectivity real - instance,randtf,ridge,16,pair_auc_obj,-0.028125,-0.070967;0.013253,0.25285,62
+v3float,selectivity real - patch,randtf,ridge,16,pair_auc,0.1987,0.14992;0.24935,6.1083e-09,63
+v3float,selectivity real - instance,randtf,ridge,16,pair_auc,-0.061596,-0.11679;-0.0072779,0.20737,63
+v3float,selectivity real - patch,randtf,ridge,16,k_correct,0.084058,0.026087;0.15072,0.015625,69
+v3float,selectivity real - instance,randtf,ridge,16,k_correct,0.0028986,-0.078261;0.084058,0.80362,69
+v3float,selectivity real - patch,randtf,ridge,16,copies_separated,0.057512,-0.0058285;0.14476,1,9
+v3float,selectivity real - instance,randtf,ridge,16,copies_separated,0.0045151,-0.069171;0.079465,0.50781,9
+v3float,selectivity real - patch,randtf,ridge,20,motion_auc_v0_objects,0.043898,-0.038739;0.1261,0.16188,62
+v3float,selectivity real - instance,randtf,ridge,20,motion_auc_v0_objects,-0.0065709,-0.10315;0.084906,0.89908,62
+v3float,selectivity real - patch,randtf,ridge,20,motion_auc_v0,0.4742,0.44221;0.50327,2.1684e-19,63
+v3float,selectivity real - instance,randtf,ridge,20,motion_auc_v0,-0.0014822,-0.029061;0.020993,0.12992,63
+v3float,selectivity real - patch,randtf,ridge,20,pair_auc_obj,0.2503,0.21952;0.28431,2.7322e-17,62
+v3float,selectivity real - instance,randtf,ridge,20,pair_auc_obj,-0.039525,-0.08459;0.0041101,0.097954,62
+v3float,selectivity real - patch,randtf,ridge,20,pair_auc,0.2049,0.16029;0.24865,3.3822e-08,63
+v3float,selectivity real - instance,randtf,ridge,20,pair_auc,-0.05233,-0.10697;0.00067589,0.20737,63
+v3float,selectivity real - patch,randtf,ridge,20,k_correct,0.055072,0.011594;0.10732,0.021484,69
+v3float,selectivity real - instance,randtf,ridge,20,k_correct,0.0028986,-0.072464;0.081159,1,69
+v3float,selectivity real - patch,randtf,ridge,20,copies_separated,0.073148,-0.0082224;0.20697,1,9
+v3float,selectivity real - instance,randtf,ridge,20,copies_separated,0.074381,0.0095709;0.1835,0.28906,9
+v3float,selectivity real - patch,randtf,ridge,24,motion_auc_v0_objects,0.054627,-0.03163;0.14251,0.37415,62
+v3float,selectivity real - instance,randtf,ridge,24,motion_auc_v0_objects,-0.012829,-0.10625;0.082411,0.70354,62
+v3float,L24 - L0,randtf,ridge,24,motion_auc_v0_objects,-0.017827,-0.055531;0.015836,0.52577,62
+v3float,selectivity real - patch,randtf,ridge,24,motion_auc_v0,0.48499,0.45469;0.51278,2.1684e-19,63
+v3float,selectivity real - instance,randtf,ridge,24,motion_auc_v0,0.0041175,-0.019894;0.025357,0.12992,63
+v3float,L24 - L0,randtf,ridge,24,motion_auc_v0,-9.2922e-05,-0.022706;0.018157,1,63
+v3float,selectivity real - patch,randtf,ridge,24,pair_auc_obj,0.24652,0.21385;0.2792,8.4741e-16,62
+v3float,selectivity real - instance,randtf,ridge,24,pair_auc_obj,-0.036523,-0.083142;0.0063605,0.37415,62
+v3float,L24 - L0,randtf,ridge,24,pair_auc_obj,-0.0096049,-0.03418;0.016322,0.89908,62
+v3float,selectivity real - patch,randtf,ridge,24,pair_auc,0.19632,0.1457;0.24134,1.6735e-07,63
+v3float,selectivity real - instance,randtf,ridge,24,pair_auc,-0.018456,-0.075311;0.035264,0.44996,63
+v3float,L24 - L0,randtf,ridge,24,pair_auc,-0.041845,-0.083509;0.0012928,0.44996,63
+v3float,selectivity real - patch,randtf,ridge,24,k_correct,0.031884,-0.017391;0.084058,0.125,69
+v3float,selectivity real - instance,randtf,ridge,24,k_correct,0.014493,-0.043478;0.075362,1,69
+v3float,L24 - L0,randtf,ridge,24,k_correct,-0.18261,-0.27826;-0.089855,0.00019513,69
+v3float,selectivity real - patch,randtf,ridge,24,copies_separated,0.001165,-0.028485;0.045548,0.28906,9
+v3float,selectivity real - instance,randtf,ridge,24,copies_separated,-0.0067195,-0.03428;0.014564,1,9
+v3float,L24 - L0,randtf,ridge,24,copies_separated,-0.2397,-0.33262;-0.1479,0.0039062,9
+v3float,selectivity real - patch,enc_any4d,ridge,0,motion_auc_v0_objects,0.072965,-0.021411;0.16652,0.097954,62
+v3float,selectivity real - instance,enc_any4d,ridge,0,motion_auc_v0_objects,-0.055232,-0.16017;0.056628,0.60892,62
+v3float,selectivity real - patch,enc_any4d,ridge,0,motion_auc_v0,0.44061,0.39796;0.47745,4.3737e-16,63
+v3float,selectivity real - instance,enc_any4d,ridge,0,motion_auc_v0,-0.0038007,-0.050772;0.042108,0.89908,63
+v3float,selectivity real - patch,enc_any4d,ridge,0,pair_auc_obj,0.29117,0.25445;0.32619,3.0655e-12,62
+v3float,selectivity real - instance,enc_any4d,ridge,0,pair_auc_obj,0.0037786,-0.038991;0.044253,0.16188,62
+v3float,selectivity real - patch,enc_any4d,ridge,0,pair_auc,0.26989,0.22349;0.31343,1.6624e-12,63
+v3float,selectivity real - instance,enc_any4d,ridge,0,pair_auc,0.03617,-0.014079;0.087604,0.3135,63
+v3float,selectivity real - patch,enc_any4d,ridge,0,k_correct,0.22029,0.11594;0.32754,0.00010372,69
+v3float,selectivity real - instance,enc_any4d,ridge,0,k_correct,0.052174,-0.063768;0.16232,0.72833,69
+v3float,selectivity real - patch,enc_any4d,ridge,0,copies_separated,0.038173,-0.061659;0.16093,0.50781,9
+v3float,selectivity real - instance,enc_any4d,ridge,0,copies_separated,-0.01087,-0.099106;0.071831,0.50781,9
+v2,selectivity real - patch,randall,mlp,0,motion_auc_v0_objects,0.017276,-0.03522;0.067627,0.83585,93
+v2,selectivity real - instance,randall,mlp,0,motion_auc_v0_objects,-0.012476,-0.06693;0.044193,0.83585,93
+v2,MLP - ridge/bilinear,randall,mlp,0,motion_auc_v0_objects,-0.00665,-0.039365;0.027904,0.40692,93
+v2,selectivity real - patch,randall,mlp,0,motion_auc_v0,0.31244,0.27453;0.34669,4.6972e-20,95
+v2,selectivity real - instance,randall,mlp,0,motion_auc_v0,-0.020606,-0.053577;0.010059,0.83756,95
+v2,MLP - ridge/bilinear,randall,mlp,0,motion_auc_v0,0.047872,0.020411;0.075658,0.013379,95
+v2,selectivity real - patch,randall,mlp,0,pair_auc_obj,0.13546,0.10434;0.1687,6.2247e-13,93
+v2,selectivity real - instance,randall,mlp,0,pair_auc_obj,-0.0059625,-0.03299;0.021375,0.53406,93
+v2,MLP - ridge/bilinear,randall,mlp,0,pair_auc_obj,-0.012853,-0.036867;0.010685,0.40692,93
+v2,selectivity real - patch,randall,mlp,0,pair_auc,0.2832,0.24958;0.31728,3.0932e-21,95
+v2,selectivity real - instance,randall,mlp,0,pair_auc,-0.0077283,-0.040372;0.022699,1,95
+v2,MLP - ridge/bilinear,randall,mlp,0,pair_auc,0.019309,-0.0062641;0.044446,0.10017,95
+v2,selectivity real - patch,randall,lin,0,motion_auc_v0_objects,0.024929,-0.0094654;0.056964,1,93
+v2,selectivity real - instance,randall,lin,0,motion_auc_v0_objects,0.00022875,-0.037564;0.037289,0.096565,93
+v2,selectivity real - patch,randall,lin,0,motion_auc_v0,0.13948,0.11005;0.17067,1.164e-08,95
+v2,selectivity real - instance,randall,lin,0,motion_auc_v0,-0.0058173,-0.028021;0.017024,0.41191,95
+v2,selectivity real - patch,randall,lin,0,pair_auc_obj,0.14533,0.11525;0.1747,1.416e-14,93
+v2,selectivity real - instance,randall,lin,0,pair_auc_obj,-0.00019944,-0.022692;0.021762,1,93
+v2,selectivity real - patch,randall,lin,0,pair_auc,0.25849,0.22737;0.28995,7.2184e-24,95
+v2,selectivity real - instance,randall,lin,0,pair_auc,0.0051624,-0.023954;0.032193,1,95
+v2,selectivity real - patch,randall,mlp,24,motion_auc_v0_objects,-0.0060045,-0.065955;0.051074,1,93
+v2,selectivity real - instance,randall,mlp,24,motion_auc_v0_objects,-0.021035,-0.079937;0.03727,1,93
+v2,MLP - ridge/bilinear,randall,mlp,24,motion_auc_v0_objects,0.0045019,-0.046592;0.054555,0.53406,93
+v2,L24 - L0,randall,mlp,24,motion_auc_v0_objects,-0.016718,-0.038085;0.0042715,0.75465,93
+v2,selectivity real - patch,randall,mlp,24,motion_auc_v0,0.26675,0.22249;0.30598,4.5184e-15,95
+v2,selectivity real - instance,randall,mlp,24,motion_auc_v0,-0.026834,-0.070343;0.009664,1,95
+v2,MLP - ridge/bilinear,randall,mlp,24,motion_auc_v0,0.041728,-0.004805;0.090674,0.21805,95
+v2,L24 - L0,randall,mlp,24,motion_auc_v0,-0.041178,-0.059386;-0.023648,0.00042479,95
+v2,selectivity real - patch,randall,mlp,24,pair_auc_obj,0.11017,0.07677;0.14275,3.4825e-07,93
+v2,selectivity real - instance,randall,mlp,24,pair_auc_obj,0.0097552,-0.019452;0.038917,1,93
+v2,MLP - ridge/bilinear,randall,mlp,24,pair_auc_obj,-0.038682,-0.063215;-0.014416,0.006695,93
+v2,L24 - L0,randall,mlp,24,pair_auc_obj,-0.025656,-0.043487;-0.0077475,0.006695,93
+v2,selectivity real - patch,randall,mlp,24,pair_auc,0.21718,0.17559;0.2552,3.4675e-11,95
+v2,selectivity real - instance,randall,mlp,24,pair_auc,-0.010588,-0.046936;0.027506,0.30489,95
+v2,MLP - ridge/bilinear,randall,mlp,24,pair_auc,-0.055656,-0.092511;-0.017398,0.064213,95
+v2,L24 - L0,randall,mlp,24,pair_auc,-0.072226,-0.098237;-0.044868,1.4641e-06,95
+v2,selectivity real - patch,randall,lin,24,motion_auc_v0_objects,0.050948,0.018185;0.084296,0.028017,93
+v2,selectivity real - instance,randall,lin,24,motion_auc_v0_objects,0.04402,0.0042062;0.085602,0.14618,93
+v2,L24 - L0,randall,lin,24,motion_auc_v0_objects,0.035102,0.00884;0.061123,0.01602,93
+v2,selectivity real - patch,randall,lin,24,motion_auc_v0,0.10475,0.068242;0.14157,0.00042479,95
+v2,selectivity real - instance,randall,lin,24,motion_auc_v0,0.025336,-0.006008;0.059509,0.41191,95
+v2,L24 - L0,randall,lin,24,motion_auc_v0,-0.026228,-0.054094;0.0026187,0.10017,95
+v2,selectivity real - patch,randall,lin,24,pair_auc_obj,0.1243,0.094363;0.15811,3.6178e-12,93
+v2,selectivity real - instance,randall,lin,24,pair_auc_obj,0.0059549,-0.021245;0.034357,1,93
+v2,L24 - L0,randall,lin,24,pair_auc_obj,-0.022363,-0.038347;-0.0078901,0.0034619,93
+v2,selectivity real - patch,randall,lin,24,pair_auc,0.20883,0.1735;0.24352,3.4675e-11,95
+v2,selectivity real - instance,randall,lin,24,pair_auc,0.0055501,-0.029809;0.040129,1,95
+v2,L24 - L0,randall,lin,24,pair_auc,-0.049209,-0.074642;-0.026038,0.0073131,95
+v2,selectivity real - patch,enc_dino,mlp,0,motion_auc_v0_objects,-0.020908,-0.068215;0.026551,0.14618,93
+v2,selectivity real - instance,enc_dino,mlp,0,motion_auc_v0_objects,-0.050566,-0.10715;0.0097216,0.14618,93
+v2,MLP - ridge/bilinear,enc_dino,mlp,0,motion_auc_v0_objects,-0.0010217,-0.028634;0.026819,1,93
+v2,selectivity real - patch,enc_dino,mlp,0,motion_auc_v0,0.47417,0.46353;0.48473,5.0487e-29,95
+v2,selectivity real - instance,enc_dino,mlp,0,motion_auc_v0,-0.003446,-0.0072553;0.00028332,1,95
+v2,MLP - ridge/bilinear,enc_dino,mlp,0,motion_auc_v0,0.010597,0.0037418;0.019323,0.21805,95
+v2,selectivity real - patch,enc_dino,mlp,0,pair_auc_obj,0.20415,0.18145;0.22729,8.8292e-25,93
+v2,selectivity real - instance,enc_dino,mlp,0,pair_auc_obj,-0.0013926,-0.024772;0.020885,0.40692,93
+v2,MLP - ridge/bilinear,enc_dino,mlp,0,pair_auc_obj,-0.044421,-0.063828;-0.025319,6.467e-05,93
+v2,selectivity real - patch,enc_dino,mlp,0,pair_auc,0.45636,0.44574;0.46617,5.0487e-29,95
+v2,selectivity real - instance,enc_dino,mlp,0,pair_auc,-0.001501,-0.0071251;0.0038869,1,95
+v2,MLP - ridge/bilinear,enc_dino,mlp,0,pair_auc,0.15624,0.13794;0.17464,4.8468e-27,95
+v2,selectivity real - patch,enc_dino,lin,0,motion_auc_v0_objects,-0.029002,-0.064792;0.0077828,0.096565,93
+v2,selectivity real - instance,enc_dino,lin,0,motion_auc_v0_objects,-0.047835,-0.087153;-0.0043332,0.0003658,93
+v2,selectivity real - patch,enc_dino,lin,0,motion_auc_v0,0.4011,0.38172;0.41842,5.0487e-29,95
+v2,selectivity real - instance,enc_dino,lin,0,motion_auc_v0,-0.0080942,-0.02015;0.0045549,0.41191,95
+v2,selectivity real - patch,enc_dino,lin,0,pair_auc_obj,0.23239,0.20671;0.25858,1.8983e-26,93
+v2,selectivity real - instance,enc_dino,lin,0,pair_auc_obj,-0.0048023,-0.028053;0.020159,0.29973,93
+v2,selectivity real - patch,enc_dino,lin,0,pair_auc,0.28864,0.26924;0.307,5.0487e-29,95
+v2,selectivity real - instance,enc_dino,lin,0,pair_auc,-1.7303e-05,-0.014932;0.014993,0.68174,95
+v2,selectivity real - patch,trained,mlp,0,motion_auc_v0_objects,0.13037,0.077185;0.17887,0.00081001,93
+v2,selectivity real - instance,trained,mlp,0,motion_auc_v0_objects,0.11852,0.059824;0.17586,0.037514,93
+v2,trained - randall,trained,mlp,0,motion_auc_v0_objects,0.10553,0.032003;0.17676,0.14618,93
+v2,trained - randtf,trained,mlp,0,motion_auc_v0_objects,0.099711,0.047106;0.14931,0.0017128,93
+v2,trained L0 - enc_any4d,trained,mlp,0,motion_auc_v0_objects,0.00084068,-0.014889;0.01659,1,93
+v2,trained L0 - enc_dino,trained,mlp,0,motion_auc_v0_objects,0.13648,0.082162;0.18991,0.0023146,93
+v2,MLP - ridge/bilinear,trained,mlp,0,motion_auc_v0_objects,0.050077,0.0024302;0.096264,0.29973,93
+v2,selectivity real - patch,trained,mlp,0,motion_auc_v0,0.49037,0.48316;0.49764,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,0,motion_auc_v0,0.0037585,0.00044687;0.0074741,0.01721,95
+v2,trained - randall,trained,mlp,0,motion_auc_v0,0.17526,0.14154;0.20975,7.2184e-24,95
+v2,trained - randtf,trained,mlp,0,motion_auc_v0,0.0079977,0.0048257;0.011372,4.2499e-08,95
+v2,trained L0 - enc_any4d,trained,mlp,0,motion_auc_v0,0.00029151,-0.00049925;0.0011406,0.6063,95
+v2,trained L0 - enc_dino,trained,mlp,0,motion_auc_v0,0.0087208,0.0059481;0.011763,4.271e-06,95
+v2,MLP - ridge/bilinear,trained,mlp,0,motion_auc_v0,0.004187,0.0011143;0.0077604,0.35333,95
+v2,selectivity real - patch,trained,mlp,0,pair_auc_obj,0.22935,0.20549;0.25251,8.8292e-25,93
+v2,selectivity real - instance,trained,mlp,0,pair_auc_obj,0.044856,0.020212;0.06948,0.00015757,93
+v2,trained - randall,trained,mlp,0,pair_auc_obj,0.099188,0.068242;0.13003,1.0387e-07,93
+v2,trained - randtf,trained,mlp,0,pair_auc_obj,-0.027316,-0.048064;-0.0053911,6.467e-05,93
+v2,trained L0 - enc_any4d,trained,mlp,0,pair_auc_obj,-0.012849,-0.022979;-0.0022799,0.14618,93
+v2,trained L0 - enc_dino,trained,mlp,0,pair_auc_obj,0.017815,-0.0040683;0.039497,0.096565,93
+v2,MLP - ridge/bilinear,trained,mlp,0,pair_auc_obj,-0.032603,-0.055848;-0.010566,0.0034619,93
+v2,selectivity real - patch,trained,mlp,0,pair_auc,0.47846,0.4709;0.48612,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,0,pair_auc,0.005607,0.0011925;0.010334,0.10017,95
+v2,trained - randall,trained,mlp,0,pair_auc,0.18624,0.15372;0.22068,5.7623e-16,95
+v2,trained - randtf,trained,mlp,0,pair_auc,0.0082495,0.0042649;0.012067,4.271e-06,95
+v2,trained L0 - enc_any4d,trained,mlp,0,pair_auc,-0.0016364,-0.0027928;-0.00035145,0.0038329,95
+v2,trained L0 - enc_dino,trained,mlp,0,pair_auc,0.010992,0.0069521;0.015408,1.1828e-05,95
+v2,MLP - ridge/bilinear,trained,mlp,0,pair_auc,0.28605,0.25158;0.32268,5.0487e-29,95
+v2,selectivity real - patch,trained,lin,0,motion_auc_v0_objects,0.022174,-0.017205;0.060078,0.096565,93
+v2,selectivity real - instance,trained,lin,0,motion_auc_v0_objects,0.02695,-0.020688;0.074292,0.40692,93
+v2,trained - randall,trained,lin,0,motion_auc_v0_objects,0.015549,-0.026478;0.060603,0.67853,93
+v2,trained - randtf,trained,lin,0,motion_auc_v0_objects,0.046302,0.0069506;0.086612,0.037514,93
+v2,trained L0 - enc_any4d,trained,lin,0,motion_auc_v0_objects,0.014763,-0.010556;0.03881,0.83585,93
+v2,trained L0 - enc_dino,trained,lin,0,motion_auc_v0_objects,0.058855,0.01089;0.10409,0.037514,93
+v2,selectivity real - patch,trained,lin,0,motion_auc_v0,0.47687,0.46436;0.48725,5.0487e-29,95
+v2,selectivity real - instance,trained,lin,0,motion_auc_v0,-0.00033492,-0.0038806;0.0033051,0.6063,95
+v2,trained - randall,trained,lin,0,motion_auc_v0,0.34846,0.31969;0.37754,5.0487e-29,95
+v2,trained - randtf,trained,lin,0,motion_auc_v0,0.063524,0.050327;0.077122,3.0932e-21,95
+v2,trained L0 - enc_any4d,trained,lin,0,motion_auc_v0,0.0018621,1.0467e-05;0.0037333,0.01721,95
+v2,trained L0 - enc_dino,trained,lin,0,motion_auc_v0,0.08038,0.066807;0.096442,6.7416e-18,95
+v2,selectivity real - patch,trained,lin,0,pair_auc_obj,0.2128,0.18808;0.23661,1.1112e-20,93
+v2,selectivity real - instance,trained,lin,0,pair_auc_obj,0.013813,-0.009591;0.040039,0.14618,93
+v2,trained - randall,trained,lin,0,pair_auc_obj,0.073915,0.043767;0.10441,9.3756e-06,93
+v2,trained - randtf,trained,lin,0,pair_auc_obj,-0.028343,-0.048946;-0.0069567,0.012401,93
+v2,trained L0 - enc_any4d,trained,lin,0,pair_auc_obj,0.020702,0.0074274;0.032936,0.0034619,93
+v2,trained L0 - enc_dino,trained,lin,0,pair_auc_obj,-0.028421,-0.049835;-0.0062876,0.096565,93
+v2,selectivity real - patch,trained,lin,0,pair_auc,0.32681,0.30742;0.34528,5.0487e-29,95
+v2,selectivity real - instance,trained,lin,0,pair_auc,0.014022,-0.0063648;0.033348,0.10017,95
+v2,trained - randall,trained,lin,0,pair_auc,0.068512,0.038669;0.099786,0.0038329,95
+v2,trained - randtf,trained,lin,0,pair_auc,0.052431,0.029603;0.074122,7.8042e-05,95
+v2,trained L0 - enc_any4d,trained,lin,0,pair_auc,0.11219,0.094598;0.12999,6.6064e-17,95
+v2,trained L0 - enc_dino,trained,lin,0,pair_auc,0.033109,0.011149;0.055808,0.039608,95
+v2,selectivity real - patch,trained,mlp,4,motion_auc_v0_objects,0.1416,0.08832;0.19501,0.00015757,93
+v2,selectivity real - instance,trained,mlp,4,motion_auc_v0_objects,0.13655,0.07788;0.19445,0.00015757,93
+v2,trained - randall,trained,mlp,4,motion_auc_v0_objects,0.13447,0.062591;0.21047,0.037514,93
+v2,trained - randtf,trained,mlp,4,motion_auc_v0_objects,0.15785,0.095741;0.21434,3.3029e-06,93
+v2,selectivity real - patch,trained,mlp,4,motion_auc_v0,0.48834,0.48012;0.49719,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,4,motion_auc_v0,0.0041275,0.001008;0.0072494,0.00042479,95
+v2,trained - randall,trained,mlp,4,motion_auc_v0,0.18596,0.15266;0.22271,1.6795e-22,95
+v2,trained - randtf,trained,mlp,4,motion_auc_v0,0.010915,0.0071056;0.014586,6.8128e-12,95
+v2,selectivity real - patch,trained,mlp,4,pair_auc_obj,0.25102,0.22667;0.27478,1.8983e-26,93
+v2,selectivity real - instance,trained,mlp,4,pair_auc_obj,0.062937,0.036794;0.088778,0.0003658,93
+v2,trained - randall,trained,mlp,4,pair_auc_obj,0.13462,0.10119;0.16757,7.7209e-09,93
+v2,trained - randtf,trained,mlp,4,pair_auc_obj,0.038038,0.016375;0.061658,0.0034619,93
+v2,selectivity real - patch,trained,mlp,4,pair_auc,0.47363,0.46448;0.48233,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,4,pair_auc,0.0082975,0.0027742;0.013828,0.013379,95
+v2,trained - randall,trained,mlp,4,pair_auc,0.23007,0.19225;0.2703,1.6795e-22,95
+v2,trained - randtf,trained,mlp,4,pair_auc,0.011808,0.007364;0.016164,1.463e-07,95
+v2,selectivity real - patch,trained,lin,4,motion_auc_v0_objects,0.03894,0.0015789;0.074174,0.037514,93
+v2,selectivity real - instance,trained,lin,4,motion_auc_v0_objects,0.052345,0.012436;0.092525,0.006695,93
+v2,trained - randall,trained,lin,4,motion_auc_v0_objects,0.027116,-0.011954;0.065796,0.29973,93
+v2,trained - randtf,trained,lin,4,motion_auc_v0_objects,0.041597,0.0013079;0.081998,0.67853,93
+v2,selectivity real - patch,trained,lin,4,motion_auc_v0,0.47984,0.47196;0.48746,5.0487e-29,95
+v2,selectivity real - instance,trained,lin,4,motion_auc_v0,0.0030995,0.0002449;0.005992,0.039608,95
+v2,trained - randall,trained,lin,4,motion_auc_v0,0.37668,0.3489;0.40655,5.0487e-29,95
+v2,trained - randtf,trained,lin,4,motion_auc_v0,0.054018,0.044476;0.064225,3.0932e-21,95
+v2,selectivity real - patch,trained,lin,4,pair_auc_obj,0.19508,0.16644;0.22441,1.6505e-19,93
+v2,selectivity real - instance,trained,lin,4,pair_auc_obj,0.0086543,-0.016916;0.034375,0.29973,93
+v2,trained - randall,trained,lin,4,pair_auc_obj,0.070365,0.038926;0.1029,2.5258e-05,93
+v2,trained - randtf,trained,lin,4,pair_auc_obj,-0.048599,-0.071151;-0.025063,0.00015757,93
+v2,selectivity real - patch,trained,lin,4,pair_auc,0.19367,0.16662;0.22079,6.0486e-19,95
+v2,selectivity real - instance,trained,lin,4,pair_auc,0.010691,-0.01297;0.034705,0.68174,95
+v2,trained - randall,trained,lin,4,pair_auc,-0.044226,-0.084323;-0.0047492,0.064213,95
+v2,trained - randtf,trained,lin,4,pair_auc,-0.07645,-0.10921;-0.045203,3.1141e-05,95
+v2,selectivity real - patch,trained,mlp,8,motion_auc_v0_objects,0.17846,0.1204;0.23581,3.4825e-07,93
+v2,selectivity real - instance,trained,mlp,8,motion_auc_v0_objects,0.19887,0.13494;0.26243,0.00015757,93
+v2,trained - randall,trained,mlp,8,motion_auc_v0_objects,0.17895,0.10583;0.25435,9.264e-05,93
+v2,trained - randtf,trained,mlp,8,motion_auc_v0_objects,0.19217,0.13109;0.25762,2.9201e-08,93
+v2,selectivity real - patch,trained,mlp,8,motion_auc_v0,0.48429,0.474;0.49427,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,8,motion_auc_v0,0.0064506,0.0027166;0.010225,3.1141e-05,95
+v2,trained - randall,trained,mlp,8,motion_auc_v0,0.19594,0.15948;0.2385,7.2184e-24,95
+v2,trained - randtf,trained,mlp,8,motion_auc_v0,0.012024,0.0080521;0.016009,6.8128e-12,95
+v2,selectivity real - patch,trained,mlp,8,pair_auc_obj,0.29504,0.27019;0.31771,8.8292e-25,93
+v2,selectivity real - instance,trained,mlp,8,pair_auc_obj,0.068536,0.041562;0.095457,6.467e-05,93
+v2,trained - randall,trained,mlp,8,pair_auc_obj,0.17201,0.13621;0.20807,3.4825e-07,93
+v2,trained - randtf,trained,mlp,8,pair_auc_obj,0.10191,0.077071;0.1278,1.9154e-09,93
+v2,selectivity real - patch,trained,mlp,8,pair_auc,0.48,0.472;0.48805,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,8,pair_auc,0.011573,0.0061611;0.017386,0.0001864,95
+v2,trained - randall,trained,mlp,8,pair_auc,0.23403,0.19701;0.2733,1.6795e-22,95
+v2,trained - randtf,trained,mlp,8,pair_auc,0.016273,0.010796;0.021843,1.164e-08,95
+v2,selectivity real - patch,trained,lin,8,motion_auc_v0_objects,0.044016,0.0060706;0.080279,0.022019,93
+v2,selectivity real - instance,trained,lin,8,motion_auc_v0_objects,0.068272,0.023019;0.11022,0.022019,93
+v2,trained - randall,trained,lin,8,motion_auc_v0_objects,0.0059014,-0.036795;0.047608,1,93
+v2,trained - randtf,trained,lin,8,motion_auc_v0_objects,0.061595,0.017489;0.10552,0.14618,93
+v2,selectivity real - patch,trained,lin,8,motion_auc_v0,0.48107,0.47293;0.48955,5.0487e-29,95
+v2,selectivity real - instance,trained,lin,8,motion_auc_v0,0.0031202,0.00053278;0.0060687,0.41191,95
+v2,trained - randall,trained,lin,8,motion_auc_v0,0.35751,0.3251;0.39031,2.3027e-25,95
+v2,trained - randtf,trained,lin,8,motion_auc_v0,0.058372,0.049016;0.068431,2.3027e-25,95
+v2,selectivity real - patch,trained,lin,8,pair_auc_obj,0.21612,0.188;0.2432,1.1112e-20,93
+v2,selectivity real - instance,trained,lin,8,pair_auc_obj,0.027046,0.00083835;0.052228,0.022019,93
+v2,trained - randall,trained,lin,8,pair_auc_obj,0.092038,0.057884;0.12694,0.00081001,93
+v2,trained - randtf,trained,lin,8,pair_auc_obj,-0.023601,-0.049553;0.0012771,0.14618,93
+v2,selectivity real - patch,trained,lin,8,pair_auc,0.23903,0.20921;0.26949,3.0932e-21,95
+v2,selectivity real - instance,trained,lin,8,pair_auc,0.030502,0.0064291;0.054425,0.013379,95
+v2,trained - randall,trained,lin,8,pair_auc,0.0085696,-0.035439;0.052553,0.83756,95
+v2,trained - randtf,trained,lin,8,pair_auc,-0.0040671,-0.038246;0.028485,0.83756,95
+v2,selectivity real - patch,trained,mlp,12,motion_auc_v0_objects,0.27914,0.21926;0.3353,3.6178e-12,93
+v2,selectivity real - instance,trained,mlp,12,motion_auc_v0_objects,0.28427,0.22325;0.33964,3.6178e-12,93
+v2,trained - randall,trained,mlp,12,motion_auc_v0_objects,0.28191,0.21416;0.34897,3.2624e-11,93
+v2,trained - randtf,trained,mlp,12,motion_auc_v0_objects,0.30052,0.23408;0.36382,1.9393e-11,93
+v2,selectivity real - patch,trained,mlp,12,motion_auc_v0,0.48974,0.47817;0.50072,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,12,motion_auc_v0,0.010113,0.0064192;0.013514,5.7845e-11,95
+v2,trained - randall,trained,mlp,12,motion_auc_v0,0.20477,0.16734;0.24342,2.3027e-25,95
+v2,trained - randtf,trained,mlp,12,motion_auc_v0,0.017363,0.01274;0.021955,2.083e-13,95
+v2,selectivity real - patch,trained,mlp,12,pair_auc_obj,0.33109,0.30653;0.35516,2.0195e-28,93
+v2,selectivity real - instance,trained,mlp,12,pair_auc_obj,0.090712,0.065469;0.11516,1.0387e-07,93
+v2,trained - randall,trained,mlp,12,pair_auc_obj,0.2211,0.18654;0.25575,1.416e-14,93
+v2,trained - randtf,trained,mlp,12,pair_auc_obj,0.1544,0.12917;0.1777,2.0782e-18,93
+v2,selectivity real - patch,trained,mlp,12,pair_auc,0.47746,0.46869;0.486,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,12,pair_auc,0.014712,0.00973;0.020206,4.2499e-08,95
+v2,trained - randall,trained,mlp,12,pair_auc,0.25846,0.21654;0.29535,1.6795e-22,95
+v2,trained - randtf,trained,mlp,12,pair_auc,0.019378,0.014181;0.024805,2.083e-13,95
+v2,selectivity real - patch,trained,lin,12,motion_auc_v0_objects,0.068305,0.030216;0.10801,0.0034619,93
+v2,selectivity real - instance,trained,lin,12,motion_auc_v0_objects,0.092512,0.044726;0.1423,0.00081001,93
+v2,trained - randall,trained,lin,12,motion_auc_v0_objects,0.057421,0.012348;0.10506,0.0017128,93
+v2,trained - randtf,trained,lin,12,motion_auc_v0_objects,0.090628,0.044012;0.1378,0.022019,93
+v2,selectivity real - patch,trained,lin,12,motion_auc_v0,0.4744,0.46636;0.48235,5.0487e-29,95
+v2,selectivity real - instance,trained,lin,12,motion_auc_v0,0.0042306,0.0014061;0.0071846,0.023488,95
+v2,trained - randall,trained,lin,12,motion_auc_v0,0.39152,0.35849;0.42334,5.0487e-29,95
+v2,trained - randtf,trained,lin,12,motion_auc_v0,0.071069,0.060103;0.084036,2.3027e-25,95
+v2,selectivity real - patch,trained,lin,12,pair_auc_obj,0.23376,0.20458;0.26172,6.1672e-22,93
+v2,selectivity real - instance,trained,lin,12,pair_auc_obj,0.046533,0.02137;0.070117,0.0017128,93
+v2,trained - randall,trained,lin,12,pair_auc_obj,0.11578,0.081809;0.15173,1.1026e-06,93
+v2,trained - randtf,trained,lin,12,pair_auc_obj,-0.0069837,-0.034777;0.020124,0.53406,93
+v2,selectivity real - patch,trained,lin,12,pair_auc,0.2669,0.23338;0.29959,6.7416e-18,95
+v2,selectivity real - instance,trained,lin,12,pair_auc,0.047379,0.020318;0.075921,0.00042479,95
+v2,trained - randall,trained,lin,12,pair_auc,0.050174,0.0039582;0.093227,0.10017,95
+v2,trained - randtf,trained,lin,12,pair_auc,0.027393,-0.014251;0.065655,0.10017,95
+v2,selectivity real - patch,trained,mlp,16,motion_auc_v0_objects,0.28392,0.23285;0.3333,1.9393e-11,93
+v2,selectivity real - instance,trained,mlp,16,motion_auc_v0_objects,0.30082,0.24716;0.35436,3.6178e-12,93
+v2,trained - randall,trained,mlp,16,motion_auc_v0_objects,0.29592,0.22367;0.36857,1.0734e-12,93
+v2,trained - randtf,trained,mlp,16,motion_auc_v0_objects,0.30842,0.24125;0.37106,1.9393e-11,93
+v2,selectivity real - patch,trained,mlp,16,motion_auc_v0,0.48357,0.47488;0.49188,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,16,motion_auc_v0,0.010733,0.007868;0.013626,1.1505e-11,95
+v2,trained - randall,trained,mlp,16,motion_auc_v0,0.2082,0.17267;0.24806,5.0487e-29,95
+v2,trained - randtf,trained,mlp,16,motion_auc_v0,0.017409,0.012969;0.021813,3.2114e-14,95
+v2,selectivity real - patch,trained,mlp,16,pair_auc_obj,0.35182,0.32862;0.37314,2.0195e-28,93
+v2,selectivity real - instance,trained,mlp,16,pair_auc_obj,0.092856,0.065826;0.11813,1.0387e-07,93
+v2,trained - randall,trained,mlp,16,pair_auc_obj,0.2396,0.2025;0.27398,2.2645e-17,93
+v2,trained - randtf,trained,mlp,16,pair_auc_obj,0.16676,0.14123;0.1898,6.1672e-22,93
+v2,selectivity real - patch,trained,mlp,16,pair_auc,0.48372,0.47614;0.4917,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,16,pair_auc,0.016249,0.010576;0.02212,1.463e-07,95
+v2,trained - randall,trained,mlp,16,pair_auc,0.26279,0.22115;0.30494,7.2184e-24,95
+v2,trained - randtf,trained,mlp,16,pair_auc,0.021166,0.015273;0.027014,3.4675e-11,95
+v2,selectivity real - patch,trained,lin,16,motion_auc_v0_objects,0.058501,0.017864;0.098993,0.006695,93
+v2,selectivity real - instance,trained,lin,16,motion_auc_v0_objects,0.07404,0.024717;0.12211,0.0017128,93
+v2,trained - randall,trained,lin,16,motion_auc_v0_objects,0.04379,-0.003692;0.09068,0.14618,93
+v2,trained - randtf,trained,lin,16,motion_auc_v0_objects,0.081204,0.035645;0.12853,0.028017,93
+v2,selectivity real - patch,trained,lin,16,motion_auc_v0,0.48176,0.47229;0.49131,5.0487e-29,95
+v2,selectivity real - instance,trained,lin,16,motion_auc_v0,0.0030418,8.1172e-05;0.0058785,0.039608,95
+v2,trained - randall,trained,lin,16,motion_auc_v0,0.37157,0.33899;0.40766,5.0487e-29,95
+v2,trained - randtf,trained,lin,16,motion_auc_v0,0.080682,0.068265;0.09406,5.0487e-29,95
+v2,selectivity real - patch,trained,lin,16,pair_auc_obj,0.25971,0.23205;0.29105,2.7089e-23,93
+v2,selectivity real - instance,trained,lin,16,pair_auc_obj,0.080787,0.054572;0.10567,1.0387e-07,93
+v2,trained - randall,trained,lin,16,pair_auc_obj,0.14379,0.10986;0.17756,2.9201e-08,93
+v2,trained - randtf,trained,lin,16,pair_auc_obj,0.026721,0.001612;0.052173,0.40692,93
+v2,selectivity real - patch,trained,lin,16,pair_auc,0.3219,0.28394;0.35574,6.0486e-19,95
+v2,selectivity real - instance,trained,lin,16,pair_auc,0.088592,0.061015;0.11515,3.4675e-11,95
+v2,trained - randall,trained,lin,16,pair_auc,0.1132,0.066223;0.16309,3.1141e-05,95
+v2,trained - randtf,trained,lin,16,pair_auc,0.095984,0.049436;0.14312,1.4641e-06,95
+v2,selectivity real - patch,trained,mlp,20,motion_auc_v0_objects,0.48387,0.47356;0.49459,2.0195e-28,93
+v2,selectivity real - instance,trained,mlp,20,motion_auc_v0_objects,0.49879,0.47162;0.52421,2.0195e-28,93
+v2,trained - randall,trained,mlp,20,motion_auc_v0_objects,0.49429,0.44075;0.54885,3.7562e-26,93
+v2,trained - randtf,trained,mlp,20,motion_auc_v0_objects,0.51628,0.47006;0.56139,2.0195e-28,93
+v2,selectivity real - patch,trained,mlp,20,motion_auc_v0,0.49634,0.48718;0.50523,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,20,motion_auc_v0,0.019876,0.017262;0.022727,4.8468e-27,95
+v2,trained - randall,trained,mlp,20,motion_auc_v0,0.21238,0.17788;0.25256,4.8468e-27,95
+v2,trained - randtf,trained,mlp,20,motion_auc_v0,0.026814,0.022357;0.031877,5.0487e-29,95
+v2,selectivity real - patch,trained,mlp,20,pair_auc_obj,0.42763,0.40523;0.44625,1.8983e-26,93
+v2,selectivity real - instance,trained,mlp,20,pair_auc_obj,0.17429,0.1435;0.19988,6.1672e-22,93
+v2,trained - randall,trained,mlp,20,pair_auc_obj,0.33042,0.29357;0.36553,6.1672e-22,93
+v2,trained - randtf,trained,mlp,20,pair_auc_obj,0.25866,0.23149;0.28836,1.8983e-26,93
+v2,selectivity real - patch,trained,mlp,20,pair_auc,0.49951,0.4921;0.50673,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,20,pair_auc,0.033332,0.028644;0.038398,9.5925e-27,95
+v2,trained - randall,trained,mlp,20,pair_auc,0.28495,0.24533;0.32551,5.0487e-29,95
+v2,trained - randtf,trained,mlp,20,pair_auc,0.04036,0.03451;0.046879,4.8468e-27,95
+v2,selectivity real - patch,trained,lin,20,motion_auc_v0_objects,0.23398,0.19245;0.27502,6.2247e-13,93
+v2,selectivity real - instance,trained,lin,20,motion_auc_v0_objects,0.27517,0.22879;0.32387,1.8485e-15,93
+v2,trained - randall,trained,lin,20,motion_auc_v0_objects,0.21044,0.16386;0.25529,1.9393e-11,93
+v2,trained - randtf,trained,lin,20,motion_auc_v0_objects,0.2738,0.22318;0.32175,4.4463e-10,93
+v2,selectivity real - patch,trained,lin,20,motion_auc_v0,0.48208,0.47283;0.49102,5.0487e-29,95
+v2,selectivity real - instance,trained,lin,20,motion_auc_v0,0.011413,0.0085182;0.014356,6.8128e-12,95
+v2,trained - randall,trained,lin,20,motion_auc_v0,0.3787,0.34225;0.41477,5.0487e-29,95
+v2,trained - randtf,trained,lin,20,motion_auc_v0,0.086317,0.07309;0.099683,4.8468e-27,95
+v2,selectivity real - patch,trained,lin,20,pair_auc_obj,0.31315,0.28248;0.34361,1.6505e-19,93
+v2,selectivity real - instance,trained,lin,20,pair_auc_obj,0.11431,0.080456;0.14315,1.9393e-11,93
+v2,trained - randall,trained,lin,20,pair_auc_obj,0.2043,0.1639;0.24347,9.8288e-14,93
+v2,trained - randtf,trained,lin,20,pair_auc_obj,0.08749,0.054018;0.11994,6.467e-05,93
+v2,selectivity real - patch,trained,lin,20,pair_auc,0.38103,0.34226;0.41303,3.0932e-21,95
+v2,selectivity real - instance,trained,lin,20,pair_auc,0.11664,0.089374;0.14211,6.8128e-12,95
+v2,trained - randall,trained,lin,20,pair_auc,0.17482,0.12953;0.22003,6.8128e-12,95
+v2,trained - randtf,trained,lin,20,pair_auc,0.16994,0.12444;0.21545,3.2114e-14,95
+v2,selectivity real - patch,trained,mlp,24,motion_auc_v0_objects,0.49018,0.47954;0.50073,2.0195e-28,93
+v2,selectivity real - instance,trained,mlp,24,motion_auc_v0_objects,0.49893,0.47121;0.5257,2.0195e-28,93
+v2,trained - randall,trained,mlp,24,motion_auc_v0_objects,0.50159,0.44734;0.55577,4.039e-28,93
+v2,trained - randtf,trained,mlp,24,motion_auc_v0_objects,0.51192,0.46189;0.56081,2.0195e-28,93
+v2,MLP - ridge/bilinear,trained,mlp,24,motion_auc_v0_objects,0.00017496,-0.0013755;0.0015598,0.79053,93
+v2,L24 - L0,trained,mlp,24,motion_auc_v0_objects,0.37934,0.32612;0.43104,4.039e-28,93
+v2,selectivity real - patch,trained,mlp,24,motion_auc_v0,0.49552,0.48709;0.50408,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,24,motion_auc_v0,0.020317,0.017433;0.023589,1.0097e-28,95
+v2,trained - randall,trained,mlp,24,motion_auc_v0,0.23183,0.194;0.27387,5.0487e-29,95
+v2,trained - randtf,trained,mlp,24,motion_auc_v0,0.026084,0.021953;0.030858,5.0487e-29,95
+v2,MLP - ridge/bilinear,trained,mlp,24,motion_auc_v0,6.8583e-05,-4.6429e-06;0.00015126,0.0045514,95
+v2,L24 - L0,trained,mlp,24,motion_auc_v0,0.015392,0.012392;0.018841,1.0097e-28,95
+v2,selectivity real - patch,trained,mlp,24,pair_auc_obj,0.456,0.44188;0.4684,2.0195e-28,93
+v2,selectivity real - instance,trained,mlp,24,pair_auc_obj,0.20866,0.1859;0.23155,6.1672e-22,93
+v2,trained - randall,trained,mlp,24,pair_auc_obj,0.35662,0.32304;0.38989,1.8983e-26,93
+v2,trained - randtf,trained,mlp,24,pair_auc_obj,0.29097,0.26227;0.31926,8.8292e-25,93
+v2,MLP - ridge/bilinear,trained,mlp,24,pair_auc_obj,0.05406,0.031759;0.078598,1.6704e-06,93
+v2,L24 - L0,trained,mlp,24,pair_auc_obj,0.23178,0.20304;0.26042,1.6505e-19,93
+v2,selectivity real - patch,trained,mlp,24,pair_auc,0.49882,0.49261;0.50499,5.0487e-29,95
+v2,selectivity real - instance,trained,mlp,24,pair_auc,0.036871,0.03213;0.042163,1.0097e-28,95
+v2,trained - randall,trained,mlp,24,pair_auc,0.28818,0.248;0.33036,4.8468e-27,95
+v2,trained - randtf,trained,mlp,24,pair_auc,0.042736,0.036888;0.049414,5.0487e-29,95
+v2,MLP - ridge/bilinear,trained,mlp,24,pair_auc,0.076809,0.050335;0.10755,4.8468e-27,95
+v2,L24 - L0,trained,mlp,24,pair_auc,0.029713,0.024781;0.034949,5.0487e-29,95
+v2,selectivity real - patch,trained,lin,24,motion_auc_v0_objects,0.41074,0.38318;0.43381,8.8292e-25,93
+v2,selectivity real - instance,trained,lin,24,motion_auc_v0_objects,0.42603,0.39194;0.46,1.8983e-26,93
+v2,trained - randall,trained,lin,24,motion_auc_v0_objects,0.35644,0.32031;0.39064,2.7089e-23,93
+v2,trained - randtf,trained,lin,24,motion_auc_v0_objects,0.40768,0.37454;0.43989,1.8983e-26,93
+v2,L24 - L0,trained,lin,24,motion_auc_v0_objects,0.37599,0.34244;0.41169,4.039e-28,93
+v2,selectivity real - patch,trained,lin,24,motion_auc_v0,0.49652,0.4878;0.5052,5.0487e-29,95
+v2,selectivity real - instance,trained,lin,24,motion_auc_v0,0.018292,0.015287;0.021693,4.8468e-27,95
+v2,trained - randall,trained,lin,24,motion_auc_v0,0.39003,0.35628;0.42287,5.0487e-29,95
+v2,trained - randtf,trained,lin,24,motion_auc_v0,0.088991,0.077295;0.10222,5.0487e-29,95
+v2,L24 - L0,trained,lin,24,motion_auc_v0,0.015339,0.012383;0.018637,1.3986e-23,95
+v2,selectivity real - patch,trained,lin,24,pair_auc_obj,0.30159,0.26167;0.33758,6.1672e-22,93
+v2,selectivity real - instance,trained,lin,24,pair_auc_obj,0.084525,0.047181;0.1193,1.1026e-06,93
+v2,trained - randall,trained,lin,24,pair_auc_obj,0.19491,0.15114;0.24002,1.9393e-11,93
+v2,trained - randtf,trained,lin,24,pair_auc_obj,0.079507,0.038986;0.11725,2.5258e-05,93
+v2,L24 - L0,trained,lin,24,pair_auc_obj,0.098629,0.061255;0.13197,7.7209e-09,93
+v2,selectivity real - patch,trained,lin,24,pair_auc,0.37174,0.33068;0.40666,3.0932e-21,95
+v2,selectivity real - instance,trained,lin,24,pair_auc,0.10401,0.074942;0.13047,3.2114e-14,95
+v2,trained - randall,trained,lin,24,pair_auc,0.1736,0.125;0.22179,1.164e-08,95
+v2,trained - randtf,trained,lin,24,pair_auc,0.16761,0.1189;0.21294,1.2403e-12,95
+v2,L24 - L0,trained,lin,24,pair_auc,0.055878,0.017543;0.090012,1.164e-08,95
+v2,selectivity real - patch,randtf,mlp,0,motion_auc_v0_objects,0.020905,-0.027228;0.069497,0.40692,93
+v2,selectivity real - instance,randtf,mlp,0,motion_auc_v0_objects,-0.00025046,-0.056306;0.057742,1,93
+v2,MLP - ridge/bilinear,randtf,mlp,0,motion_auc_v0_objects,0.040214,0.0053456;0.071821,0.037514,93
+v2,selectivity real - patch,randtf,mlp,0,motion_auc_v0,0.47992,0.46994;0.49055,5.0487e-29,95
+v2,selectivity real - instance,randtf,mlp,0,motion_auc_v0,-0.0015269,-0.00517;0.0020876,0.41191,95
+v2,MLP - ridge/bilinear,randtf,mlp,0,motion_auc_v0,0.0089755,0.0025113;0.018306,0.30489,95
+v2,selectivity real - patch,randtf,mlp,0,pair_auc_obj,0.25338,0.22949;0.27743,1.8983e-26,93
+v2,selectivity real - instance,randtf,mlp,0,pair_auc_obj,0.021277,-0.004912;0.046883,0.006695,93
+v2,MLP - ridge/bilinear,randtf,mlp,0,pair_auc_obj,-6.4405e-05,-0.025908;0.023521,0.40692,93
+v2,selectivity real - patch,randtf,mlp,0,pair_auc,0.46045,0.45069;0.47003,5.0487e-29,95
+v2,selectivity real - instance,randtf,mlp,0,pair_auc,0.0013944,-0.0039112;0.0062395,0.41191,95
+v2,MLP - ridge/bilinear,randtf,mlp,0,pair_auc,0.177,0.15895;0.19727,5.0487e-29,95
+v2,selectivity real - patch,randtf,lin,0,motion_auc_v0_objects,-0.018099,-0.054346;0.017982,0.53406,93
+v2,selectivity real - instance,randtf,lin,0,motion_auc_v0_objects,-0.015716,-0.062324;0.028898,0.83585,93
+v2,selectivity real - patch,randtf,lin,0,motion_auc_v0,0.41662,0.40245;0.43191,5.0487e-29,95
+v2,selectivity real - instance,randtf,lin,0,motion_auc_v0,-0.0058508,-0.018605;0.0055674,1,95
+v2,selectivity real - patch,randtf,lin,0,pair_auc_obj,0.23625,0.21145;0.26133,2.0195e-28,93
+v2,selectivity real - instance,randtf,lin,0,pair_auc_obj,-0.0052223,-0.029174;0.019774,0.061386,93
+v2,selectivity real - patch,randtf,lin,0,pair_auc,0.27226,0.25214;0.2912,5.0487e-29,95
+v2,selectivity real - instance,randtf,lin,0,pair_auc,-0.0029861,-0.016783;0.010747,0.83756,95
+v2,selectivity real - patch,randtf,mlp,24,motion_auc_v0_objects,-0.021971,-0.071434;0.030364,0.53406,93
+v2,selectivity real - instance,randtf,mlp,24,motion_auc_v0_objects,-0.04163,-0.097878;0.014825,0.14618,93
+v2,MLP - ridge/bilinear,randtf,mlp,24,motion_auc_v0_objects,0.031586,-0.012275;0.072833,0.096565,93
+v2,L24 - L0,randtf,mlp,24,motion_auc_v0_objects,-0.032863,-0.071574;0.0070929,0.006695,93
+v2,selectivity real - patch,randtf,mlp,24,motion_auc_v0,0.46648,0.45641;0.47632,5.0487e-29,95
+v2,selectivity real - instance,randtf,mlp,24,motion_auc_v0,-0.0042415,-0.0082025;-0.00064926,0.68174,95
+v2,MLP - ridge/bilinear,randtf,mlp,24,motion_auc_v0,0.0079072,0.00080289;0.018872,0.21805,95
+v2,L24 - L0,randtf,mlp,24,motion_auc_v0,-0.0026945,-0.0048781;-0.00035638,0.039608,95
+v2,selectivity real - patch,randtf,mlp,24,pair_auc_obj,0.1663,0.13916;0.19163,1.8485e-15,93
+v2,selectivity real - instance,randtf,mlp,24,pair_auc_obj,-0.0091322,-0.03475;0.016564,0.83585,93
+v2,MLP - ridge/bilinear,randtf,mlp,24,pair_auc_obj,-0.095234,-0.12212;-0.070352,1.0387e-07,93
+v2,L24 - L0,randtf,mlp,24,pair_auc_obj,-0.086513,-0.11025;-0.063186,1.1026e-06,93
+v2,selectivity real - patch,randtf,mlp,24,pair_auc,0.45208,0.44328;0.46057,5.0487e-29,95
+v2,selectivity real - instance,randtf,mlp,24,pair_auc,-0.00055546,-0.005659;0.0049148,0.83756,95
+v2,MLP - ridge/bilinear,randtf,mlp,24,pair_auc,0.21467,0.18124;0.24854,6.0486e-19,95
+v2,L24 - L0,randtf,mlp,24,pair_auc,-0.0047742,-0.0086901;-0.0008942,0.0038329,95
+v2,selectivity real - patch,randtf,lin,24,motion_auc_v0_objects,-0.0090313,-0.042451;0.023259,1,93
+v2,selectivity real - instance,randtf,lin,24,motion_auc_v0_objects,-0.01515,-0.049336;0.019421,1,93
+v2,L24 - L0,randtf,lin,24,motion_auc_v0_objects,0.014618,-0.016226;0.042845,0.21315,93
+v2,selectivity real - patch,randtf,lin,24,motion_auc_v0,0.3969,0.38113;0.41268,5.0487e-29,95
+v2,selectivity real - instance,randtf,lin,24,motion_auc_v0,0.0069372,-0.0064654;0.02046,0.013379,95
+v2,L24 - L0,randtf,lin,24,motion_auc_v0,-0.010127,-0.023648;0.0039742,0.00042479,95
+v2,selectivity real - patch,randtf,lin,24,pair_auc_obj,0.22683,0.19473;0.25594,2.0782e-18,93
+v2,selectivity real - instance,randtf,lin,24,pair_auc_obj,-0.0016781,-0.029324;0.02512,1,93
+v2,L24 - L0,randtf,lin,24,pair_auc_obj,-0.0092209,-0.024381;0.0055953,1,93
+v2,selectivity real - patch,randtf,lin,24,pair_auc,0.20805,0.17576;0.23946,6.7416e-18,95
+v2,selectivity real - instance,randtf,lin,24,pair_auc,-0.00020919,-0.028299;0.028313,0.83756,95
+v2,L24 - L0,randtf,lin,24,pair_auc,-0.059303,-0.08641;-0.031304,0.0038329,95
+v2,selectivity real - patch,enc_any4d,mlp,0,motion_auc_v0_objects,0.11291,0.057408;0.16765,0.00015757,93
+v2,selectivity real - instance,enc_any4d,mlp,0,motion_auc_v0_objects,0.099838,0.036167;0.16301,0.061386,93
+v2,MLP - ridge/bilinear,enc_any4d,mlp,0,motion_auc_v0_objects,0.058054,0.018021;0.095204,0.022019,93
+v2,selectivity real - patch,enc_any4d,mlp,0,motion_auc_v0,0.48336,0.47471;0.49153,5.0487e-29,95
+v2,selectivity real - instance,enc_any4d,mlp,0,motion_auc_v0,0.0022866,-0.0010352;0.0058302,0.04945,95
+v2,MLP - ridge/bilinear,enc_any4d,mlp,0,motion_auc_v0,0.0075727,0.0030726;0.013644,0.006695,95
+v2,selectivity real - patch,enc_any4d,mlp,0,pair_auc_obj,0.24036,0.21892;0.26132,2.0195e-28,93
+v2,selectivity real - instance,enc_any4d,mlp,0,pair_auc_obj,0.051477,0.029022;0.072811,6.467e-05,93
+v2,MLP - ridge/bilinear,enc_any4d,mlp,0,pair_auc_obj,-0.049511,-0.070955;-0.02761,0.00081001,93
+v2,selectivity real - patch,enc_any4d,mlp,0,pair_auc,0.47576,0.46608;0.48458,5.0487e-29,95
+v2,selectivity real - instance,enc_any4d,mlp,0,pair_auc,0.0056811,0.00090572;0.010312,0.013379,95
+v2,MLP - ridge/bilinear,enc_any4d,mlp,0,pair_auc,0.18543,0.1535;0.21855,4.6972e-20,95
+v2,selectivity real - patch,enc_any4d,lin,0,motion_auc_v0_objects,0.020312,-0.012887;0.052935,0.21315,93
+v2,selectivity real - instance,enc_any4d,lin,0,motion_auc_v0_objects,0.0086114,-0.028244;0.046338,0.83585,93
+v2,selectivity real - patch,enc_any4d,lin,0,motion_auc_v0,0.48463,0.47492;0.4946,5.0487e-29,95
+v2,selectivity real - instance,enc_any4d,lin,0,motion_auc_v0,0.00060659,-0.0023783;0.0035836,1,95
+v2,selectivity real - patch,enc_any4d,lin,0,pair_auc_obj,0.19035,0.16366;0.21646,2.0782e-18,93
+v2,selectivity real - instance,enc_any4d,lin,0,pair_auc_obj,0.008872,-0.018992;0.037688,0.14618,93
+v2,selectivity real - patch,enc_any4d,lin,0,pair_auc,0.21035,0.18276;0.23837,6.7416e-18,95
+v2,selectivity real - instance,enc_any4d,lin,0,pair_auc,0.019594,-0.0050331;0.043855,0.039608,95
+v3float,selectivity real - patch,randall,mlp,0,motion_auc_v0_objects,-0.0083175,-0.075856;0.058307,0.70354,62
+v3float,selectivity real - instance,randall,mlp,0,motion_auc_v0_objects,-0.011114,-0.084334;0.059781,0.70354,62
+v3float,MLP - ridge/bilinear,randall,mlp,0,motion_auc_v0_objects,0.013884,-0.051077;0.07448,0.69888,62
+v3float,selectivity real - patch,randall,mlp,0,motion_auc_v0,0.2365,0.17878;0.29318,7.4597e-07,63
+v3float,selectivity real - instance,randall,mlp,0,motion_auc_v0,-0.0012936,-0.045644;0.04117,0.80131,63
+v3float,MLP - ridge/bilinear,randall,mlp,0,motion_auc_v0,0.061702,0.0043011;0.12451,0.030016,63
+v3float,selectivity real - patch,randall,mlp,0,pair_auc_obj,0.13224,0.091751;0.17363,1.7429e-05,62
+v3float,selectivity real - instance,randall,mlp,0,pair_auc_obj,0.0039622,-0.030531;0.039292,0.89908,62
+v3float,MLP - ridge/bilinear,randall,mlp,0,pair_auc_obj,-0.010618,-0.048022;0.024846,0.70354,62
+v3float,selectivity real - patch,randall,mlp,0,pair_auc,0.23078,0.18471;0.277,9.7617e-10,63
+v3float,selectivity real - instance,randall,mlp,0,pair_auc,-0.017282,-0.051603;0.018703,0.80131,63
+v3float,MLP - ridge/bilinear,randall,mlp,0,pair_auc,-0.012122,-0.044158;0.020711,0.3135,63
+v3float,selectivity real - patch,randall,lin,0,motion_auc_v0_objects,-0.0013335,-0.042959;0.045058,0.52577,62
+v3float,selectivity real - instance,randall,lin,0,motion_auc_v0_objects,-0.014055,-0.059746;0.032245,0.89908,62
+v3float,selectivity real - patch,randall,lin,0,motion_auc_v0,0.097234,0.056708;0.1362,3.7606e-05,63
+v3float,selectivity real - instance,randall,lin,0,motion_auc_v0,-0.0081006,-0.04586;0.027868,0.44996,63
+v3float,selectivity real - patch,randall,lin,0,pair_auc_obj,0.13923,0.098241;0.18297,4.8175e-06,62
+v3float,selectivity real - instance,randall,lin,0,pair_auc_obj,0.012285,-0.019543;0.044996,0.16188,62
+v3float,selectivity real - patch,randall,lin,0,pair_auc,0.24127,0.1997;0.28078,1.6396e-11,63
+v3float,selectivity real - instance,randall,lin,0,pair_auc,0.0095122,-0.02139;0.040385,0.12992,63
+v3float,selectivity real - patch,randall,mlp,24,motion_auc_v0_objects,-0.036226,-0.10163;0.031209,0.52577,62
+v3float,selectivity real - instance,randall,mlp,24,motion_auc_v0_objects,-0.032984,-0.107;0.04215,0.70354,62
+v3float,MLP - ridge/bilinear,randall,mlp,24,motion_auc_v0_objects,-0.018617,-0.086396;0.047819,0.89908,62
+v3float,L24 - L0,randall,mlp,24,motion_auc_v0_objects,-0.016605,-0.054576;0.017807,1,62
+v3float,selectivity real - patch,randall,mlp,24,motion_auc_v0,0.18629,0.12373;0.24455,3.016e-06,63
+v3float,selectivity real - instance,randall,mlp,24,motion_auc_v0,-0.027471,-0.075363;0.020924,0.3135,63
+v3float,MLP - ridge/bilinear,randall,mlp,24,motion_auc_v0,-0.013846,-0.067946;0.035573,0.3135,63
+v3float,L24 - L0,randall,mlp,24,motion_auc_v0,-0.04177,-0.077916;-0.0062202,0.076926,63
+v3float,selectivity real - patch,randall,mlp,24,pair_auc_obj,0.093434,0.055408;0.13235,0.00049709,62
+v3float,selectivity real - instance,randall,mlp,24,pair_auc_obj,-0.0098095,-0.041997;0.020342,0.37415,62
+v3float,MLP - ridge/bilinear,randall,mlp,24,pair_auc_obj,-0.040522,-0.075865;-0.0058945,0.015134,62
+v3float,L24 - L0,randall,mlp,24,pair_auc_obj,-0.046384,-0.069812;-0.023092,0.00017633,62
+v3float,selectivity real - patch,randall,mlp,24,pair_auc,0.20016,0.14655;0.25121,7.4597e-07,63
+v3float,selectivity real - instance,randall,mlp,24,pair_auc,0.0104,-0.032011;0.053212,0.80131,63
+v3float,MLP - ridge/bilinear,randall,mlp,24,pair_auc,0.0064125,-0.051053;0.064712,0.042957,63
+v3float,L24 - L0,randall,mlp,24,pair_auc,-0.03664,-0.06106;-0.01219,0.042957,63
+v3float,selectivity real - patch,randall,lin,24,motion_auc_v0_objects,0.0030016,-0.040174;0.045926,1,62
+v3float,selectivity real - instance,randall,lin,24,motion_auc_v0_objects,0.013901,-0.037087;0.068177,0.89908,62
+v3float,L24 - L0,randall,lin,24,motion_auc_v0_objects,-0.0033764,-0.032705;0.026249,0.52577,62
+v3float,selectivity real - patch,randall,lin,24,motion_auc_v0,0.06552,0.029529;0.10214,0.011141,63
+v3float,selectivity real - instance,randall,lin,24,motion_auc_v0,-0.0073495,-0.05028;0.036213,0.20737,63
+v3float,L24 - L0,randall,lin,24,motion_auc_v0,-0.037043,-0.06611;-0.0050974,0.042957,63
+v3float,selectivity real - patch,randall,lin,24,pair_auc_obj,0.10795,0.073233;0.14699,4.8175e-06,62
+v3float,selectivity real - instance,randall,lin,24,pair_auc_obj,-0.001427,-0.03302;0.029443,1,62
+v3float,L24 - L0,randall,lin,24,pair_auc_obj,-0.037625,-0.061468;-0.014179,0.097954,62
+v3float,selectivity real - patch,randall,lin,24,pair_auc,0.19238,0.14343;0.24195,1.6735e-07,63
+v3float,selectivity real - instance,randall,lin,24,pair_auc,5.7311e-05,-0.040002;0.041164,0.80131,63
+v3float,L24 - L0,randall,lin,24,pair_auc,-0.053124,-0.091047;-0.017114,0.076926,63
+v3float,selectivity real - patch,enc_dino,mlp,0,motion_auc_v0_objects,0.058091,-0.0099326;0.12269,0.16188,62
+v3float,selectivity real - instance,enc_dino,mlp,0,motion_auc_v0_objects,0.077739,0.013053;0.14291,0.030016,62
+v3float,MLP - ridge/bilinear,enc_dino,mlp,0,motion_auc_v0_objects,-0.0050887,-0.044222;0.033007,1,62
+v3float,selectivity real - patch,enc_dino,mlp,0,motion_auc_v0,0.48083,0.47085;0.49156,2.1684e-19,63
+v3float,selectivity real - instance,enc_dino,mlp,0,motion_auc_v0,0.0031588,-0.0015688;0.0078662,0.042957,63
+v3float,MLP - ridge/bilinear,enc_dino,mlp,0,motion_auc_v0,0.018765,0.0061602;0.035843,0.12992,63
+v3float,selectivity real - patch,enc_dino,mlp,0,pair_auc_obj,0.18851,0.15814;0.21804,1.7249e-14,62
+v3float,selectivity real - instance,enc_dino,mlp,0,pair_auc_obj,-0.016668,-0.047091;0.013708,0.055897,62
+v3float,MLP - ridge/bilinear,enc_dino,mlp,0,pair_auc_obj,-0.060696,-0.085808;-0.033527,0.001299,62
+v3float,selectivity real - patch,enc_dino,mlp,0,pair_auc,0.46497,0.45256;0.47661,2.1684e-19,63
+v3float,selectivity real - instance,enc_dino,mlp,0,pair_auc,0.013613,0.0051221;0.022024,0.00033671,63
+v3float,MLP - ridge/bilinear,enc_dino,mlp,0,pair_auc,0.1942,0.16506;0.22321,4.3737e-16,63
+v3float,selectivity real - patch,enc_dino,lin,0,motion_auc_v0_objects,0.027878,-0.019223;0.071236,0.52577,62
+v3float,selectivity real - instance,enc_dino,lin,0,motion_auc_v0_objects,0.01266,-0.044438;0.066111,0.25285,62
+v3float,selectivity real - patch,enc_dino,lin,0,motion_auc_v0,0.41242,0.38865;0.43461,2.1684e-19,63
+v3float,selectivity real - instance,enc_dino,lin,0,motion_auc_v0,0.019067,-0.00079199;0.037956,0.00033671,63
+v3float,selectivity real - patch,enc_dino,lin,0,pair_auc_obj,0.23801,0.20633;0.27071,1.7249e-14,62
+v3float,selectivity real - instance,enc_dino,lin,0,pair_auc_obj,-0.0095331,-0.036367;0.016501,0.25285,62
+v3float,selectivity real - patch,enc_dino,lin,0,pair_auc,0.26107,0.23081;0.28875,4.3737e-16,63
+v3float,selectivity real - instance,enc_dino,lin,0,pair_auc,0.01627,-0.003513;0.03528,0.12992,63
+v3float,selectivity real - patch,trained,mlp,0,motion_auc_v0_objects,0.037573,-0.033018;0.10425,0.89908,62
+v3float,selectivity real - instance,trained,mlp,0,motion_auc_v0_objects,0.034931,-0.036197;0.10974,0.52577,62
+v3float,trained - randall,trained,mlp,0,motion_auc_v0_objects,0.044938,-0.055777;0.13984,0.70354,62
+v3float,trained - randtf,trained,mlp,0,motion_auc_v0_objects,-0.026092,-0.081474;0.028883,0.70354,62
+v3float,trained L0 - enc_any4d,trained,mlp,0,motion_auc_v0_objects,-0.028244,-0.057678;0.0017846,0.055897,62
+v3float,trained L0 - enc_dino,trained,mlp,0,motion_auc_v0_objects,-0.019397,-0.086919;0.045697,0.70354,62
+v3float,MLP - ridge/bilinear,trained,mlp,0,motion_auc_v0_objects,-0.035107,-0.096528;0.023104,0.097954,62
+v3float,selectivity real - patch,trained,mlp,0,motion_auc_v0,0.47722,0.46332;0.49151,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,0,motion_auc_v0,-0.00019807,-0.0045518;0.0041068,0.44996,63
+v3float,trained - randall,trained,mlp,0,motion_auc_v0,0.23965,0.18692;0.293,4.3737e-16,63
+v3float,trained - randtf,trained,mlp,0,motion_auc_v0,0.0014299,-0.0020194;0.0046865,0.3135,63
+v3float,trained L0 - enc_any4d,trained,mlp,0,motion_auc_v0,-0.00062973,-0.0019417;0.00064139,0.022575,63
+v3float,trained L0 - enc_dino,trained,mlp,0,motion_auc_v0,0.0006719,-0.0047831;0.0052769,0.61466,63
+v3float,MLP - ridge/bilinear,trained,mlp,0,motion_auc_v0,0.016687,0.00057969;0.04407,0.20737,63
+v3float,selectivity real - patch,trained,mlp,0,pair_auc_obj,0.24535,0.21967;0.26959,4.3368e-19,62
+v3float,selectivity real - instance,trained,mlp,0,pair_auc_obj,0.036685,0.0090432;0.067623,0.16188,62
+v3float,trained - randall,trained,mlp,0,pair_auc_obj,0.12472,0.081749;0.16708,1.7429e-05,62
+v3float,trained - randtf,trained,mlp,0,pair_auc_obj,0.028779,-2.8095e-05;0.061566,0.25285,62
+v3float,trained L0 - enc_any4d,trained,mlp,0,pair_auc_obj,-0.0047208,-0.017353;0.0080539,0.37415,62
+v3float,trained L0 - enc_dino,trained,mlp,0,pair_auc_obj,0.059952,0.025615;0.092778,0.030016,62
+v3float,MLP - ridge/bilinear,trained,mlp,0,pair_auc_obj,-0.020728,-0.049455;0.0062239,0.70354,62
+v3float,selectivity real - patch,trained,mlp,0,pair_auc,0.46336,0.45028;0.47651,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,0,pair_auc,0.0066379,-0.0014885;0.014397,0.0051524,63
+v3float,trained - randall,trained,mlp,0,pair_auc,0.23533,0.1935;0.27958,9.0483e-15,63
+v3float,trained - randtf,trained,mlp,0,pair_auc,-0.0005791,-0.0077156;0.0057336,1,63
+v3float,trained L0 - enc_any4d,trained,mlp,0,pair_auc,-0.0015655,-0.0035808;0.00027368,0.20737,63
+v3float,trained L0 - enc_dino,trained,mlp,0,pair_auc,0.00022483,-0.0075537;0.007082,0.12992,63
+v3float,MLP - ridge/bilinear,trained,mlp,0,pair_auc,0.25134,0.21042;0.29196,9.0483e-15,63
+v3float,selectivity real - patch,trained,lin,0,motion_auc_v0_objects,0.029707,-0.028035;0.08561,0.37415,62
+v3float,selectivity real - instance,trained,lin,0,motion_auc_v0_objects,0.064742,0.0018639;0.12582,0.097954,62
+v3float,trained - randall,trained,lin,0,motion_auc_v0_objects,0.031944,-0.034431;0.09321,0.70354,62
+v3float,trained - randtf,trained,lin,0,motion_auc_v0_objects,0.046845,-0.017082;0.10499,0.097954,62
+v3float,trained L0 - enc_any4d,trained,lin,0,motion_auc_v0_objects,-0.0025922,-0.030678;0.025087,0.89908,62
+v3float,trained L0 - enc_dino,trained,lin,0,motion_auc_v0_objects,0.013906,-0.04318;0.073054,0.37415,62
+v3float,selectivity real - patch,trained,lin,0,motion_auc_v0,0.47744,0.46402;0.4887,2.1684e-19,63
+v3float,selectivity real - instance,trained,lin,0,motion_auc_v0,0.0032987,-0.00060095;0.0073414,0.20737,63
+v3float,trained - randall,trained,lin,0,motion_auc_v0,0.3805,0.34427;0.4185,2.1684e-19,63
+v3float,trained - randtf,trained,lin,0,motion_auc_v0,0.053151,0.039873;0.066992,1.3821e-13,63
+v3float,trained L0 - enc_any4d,trained,lin,0,motion_auc_v0,0.0033522,0.00091452;0.0058459,0.0051524,63
+v3float,trained L0 - enc_dino,trained,lin,0,motion_auc_v0,0.064145,0.047406;0.083587,1.6624e-12,63
+v3float,selectivity real - patch,trained,lin,0,pair_auc_obj,0.2232,0.18883;0.25865,8.4741e-16,62
+v3float,selectivity real - instance,trained,lin,0,pair_auc_obj,0.00068815,-0.0293;0.030444,0.70354,62
+v3float,trained - randall,trained,lin,0,pair_auc_obj,0.083134,0.040492;0.1263,0.0071487,62
+v3float,trained - randtf,trained,lin,0,pair_auc_obj,-0.011111,-0.043133;0.02221,0.89908,62
+v3float,trained L0 - enc_any4d,trained,lin,0,pair_auc_obj,-0.0094891,-0.025616;0.0072614,0.37415,62
+v3float,trained L0 - enc_dino,trained,lin,0,pair_auc_obj,-0.016567,-0.050153;0.017199,0.37415,62
+v3float,selectivity real - patch,trained,lin,0,pair_auc,0.20099,0.16347;0.23685,1.6624e-12,63
+v3float,selectivity real - instance,trained,lin,0,pair_auc,0.024024,-0.0068035;0.054017,0.042957,63
+v3float,trained - randall,trained,lin,0,pair_auc,-0.04556,-0.097818;0.0026584,0.3135,63
+v3float,trained - randtf,trained,lin,0,pair_auc,-0.030229,-0.066411;0.004904,0.80131,63
+v3float,trained L0 - enc_any4d,trained,lin,0,pair_auc,0.012277,-0.0092902;0.033504,0.44996,63
+v3float,trained L0 - enc_dino,trained,lin,0,pair_auc,-0.062505,-0.099105;-0.028395,0.022575,63
+v3float,selectivity real - patch,trained,mlp,4,motion_auc_v0_objects,0.1098,0.045149;0.17649,0.25285,62
+v3float,selectivity real - instance,trained,mlp,4,motion_auc_v0_objects,0.10097,0.034606;0.16741,0.030016,62
+v3float,trained - randall,trained,mlp,4,motion_auc_v0_objects,0.13115,0.046834;0.21497,0.37415,62
+v3float,trained - randtf,trained,mlp,4,motion_auc_v0_objects,0.026979,-0.028466;0.08273,0.89908,62
+v3float,selectivity real - patch,trained,mlp,4,motion_auc_v0,0.48226,0.46954;0.49356,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,4,motion_auc_v0,0.0022083,-0.001899;0.0061262,0.042957,63
+v3float,trained - randall,trained,mlp,4,motion_auc_v0,0.28296,0.22516;0.34153,1.3878e-17,63
+v3float,trained - randtf,trained,mlp,4,motion_auc_v0,0.0051013,0.0015483;0.0091825,0.20737,63
+v3float,selectivity real - patch,trained,mlp,4,pair_auc_obj,0.24218,0.21855;0.2651,4.3368e-19,62
+v3float,selectivity real - instance,trained,mlp,4,pair_auc_obj,0.030914,0.0066002;0.0551,0.015134,62
+v3float,trained - randall,trained,mlp,4,pair_auc_obj,0.14686,0.10031;0.18677,0.00017633,62
+v3float,trained - randtf,trained,mlp,4,pair_auc_obj,0.053216,0.024728;0.081723,0.001299,62
+v3float,selectivity real - patch,trained,mlp,4,pair_auc,0.45622,0.4422;0.47088,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,4,pair_auc,0.0065069,-0.0006452;0.012617,0.0051524,63
+v3float,trained - randall,trained,mlp,4,pair_auc,0.25789,0.20999;0.3089,1.3821e-13,63
+v3float,trained - randtf,trained,mlp,4,pair_auc,0.0021612,-0.0049023;0.0083763,0.011141,63
+v3float,selectivity real - patch,trained,lin,4,motion_auc_v0_objects,0.03668,-0.032544;0.10591,0.16188,62
+v3float,selectivity real - instance,trained,lin,4,motion_auc_v0_objects,0.0606,-0.0078915;0.12846,0.52577,62
+v3float,trained - randall,trained,lin,4,motion_auc_v0_objects,0.055141,-0.019682;0.1291,0.52577,62
+v3float,trained - randtf,trained,lin,4,motion_auc_v0_objects,0.02969,-0.038317;0.096946,0.37415,62
+v3float,selectivity real - patch,trained,lin,4,motion_auc_v0,0.47449,0.45764;0.49,2.1684e-19,63
+v3float,selectivity real - instance,trained,lin,4,motion_auc_v0,0.0012809,-0.0033985;0.0059083,0.20737,63
+v3float,trained - randall,trained,lin,4,motion_auc_v0,0.40034,0.3608;0.43909,2.1684e-19,63
+v3float,trained - randtf,trained,lin,4,motion_auc_v0,0.055817,0.041851;0.071834,1.6396e-11,63
+v3float,selectivity real - patch,trained,lin,4,pair_auc_obj,0.23676,0.19913;0.27316,2.5918e-13,62
+v3float,selectivity real - instance,trained,lin,4,pair_auc_obj,0.0065673,-0.021617;0.033779,0.70354,62
+v3float,trained - randall,trained,lin,4,pair_auc_obj,0.12444,0.076746;0.17386,5.7784e-05,62
+v3float,trained - randtf,trained,lin,4,pair_auc_obj,-0.010465,-0.048539;0.027698,1,62
+v3float,selectivity real - patch,trained,lin,4,pair_auc,0.18707,0.14684;0.22714,7.4597e-07,63
+v3float,selectivity real - instance,trained,lin,4,pair_auc,0.033903,-0.0013416;0.068231,0.61466,63
+v3float,trained - randall,trained,lin,4,pair_auc,-0.023386,-0.083768;0.032913,0.61466,63
+v3float,trained - randtf,trained,lin,4,pair_auc,-0.038756,-0.085983;0.0072583,0.44996,63
+v3float,selectivity real - patch,trained,mlp,8,motion_auc_v0_objects,0.12241,0.050878;0.19245,0.097954,62
+v3float,selectivity real - instance,trained,mlp,8,motion_auc_v0_objects,0.13032,0.06745;0.19438,0.015134,62
+v3float,trained - randall,trained,mlp,8,motion_auc_v0_objects,0.15373,0.060234;0.24725,0.001299,62
+v3float,trained - randtf,trained,mlp,8,motion_auc_v0_objects,0.062245,-0.012873;0.13387,0.25285,62
+v3float,selectivity real - patch,trained,mlp,8,motion_auc_v0,0.47564,0.46317;0.4885,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,8,motion_auc_v0,0.003167,-0.0010026;0.0071438,0.0051524,63
+v3float,trained - randall,trained,mlp,8,motion_auc_v0,0.27145,0.21357;0.33073,4.3737e-16,63
+v3float,trained - randtf,trained,mlp,8,motion_auc_v0,0.008203,0.00087049;0.017313,0.042957,63
+v3float,selectivity real - patch,trained,mlp,8,pair_auc_obj,0.30841,0.28016;0.33356,4.3368e-19,62
+v3float,selectivity real - instance,trained,mlp,8,pair_auc_obj,0.065317,0.037952;0.090215,0.00017633,62
+v3float,trained - randall,trained,mlp,8,pair_auc_obj,0.21479,0.17061;0.25974,1.0507e-08,62
+v3float,trained - randtf,trained,mlp,8,pair_auc_obj,0.1374,0.10473;0.16916,1.2144e-06,62
+v3float,selectivity real - patch,trained,mlp,8,pair_auc,0.46285,0.45175;0.47394,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,8,pair_auc,0.01093,0.0046265;0.017098,0.00089805,63
+v3float,trained - randall,trained,mlp,8,pair_auc,0.27323,0.22721;0.32417,4.3737e-16,63
+v3float,trained - randtf,trained,mlp,8,pair_auc,0.0090454,0.0020853;0.01581,0.00011706,63
+v3float,selectivity real - patch,trained,lin,8,motion_auc_v0_objects,0.048234,-0.020588;0.11513,0.097954,62
+v3float,selectivity real - instance,trained,lin,8,motion_auc_v0_objects,0.075573,2.1125e-05;0.15366,0.25285,62
+v3float,trained - randall,trained,lin,8,motion_auc_v0_objects,0.071285,-0.0049088;0.14255,0.097954,62
+v3float,trained - randtf,trained,lin,8,motion_auc_v0_objects,0.043254,-0.021599;0.10742,0.25285,62
+v3float,selectivity real - patch,trained,lin,8,motion_auc_v0,0.47381,0.46154;0.4879,2.1684e-19,63
+v3float,selectivity real - instance,trained,lin,8,motion_auc_v0,0.0023221,-0.0023914;0.0071315,0.076926,63
+v3float,trained - randall,trained,lin,8,motion_auc_v0,0.40967,0.3652;0.45423,2.1684e-19,63
+v3float,trained - randtf,trained,lin,8,motion_auc_v0,0.056496,0.041341;0.075765,9.0483e-15,63
+v3float,selectivity real - patch,trained,lin,8,pair_auc_obj,0.24715,0.20944;0.28559,2.9726e-11,62
+v3float,selectivity real - instance,trained,lin,8,pair_auc_obj,0.037005,0.0066191;0.06903,0.097954,62
+v3float,trained - randall,trained,lin,8,pair_auc_obj,0.14509,0.097519;0.19378,1.2144e-06,62
+v3float,trained - randtf,trained,lin,8,pair_auc_obj,0.025246,-0.01413;0.066688,0.25285,62
+v3float,selectivity real - patch,trained,lin,8,pair_auc,0.21571,0.1715;0.25831,6.1083e-09,63
+v3float,selectivity real - instance,trained,lin,8,pair_auc,0.046155,0.014053;0.07663,0.0022275,63
+v3float,trained - randall,trained,lin,8,pair_auc,0.019917,-0.040618;0.079732,0.3135,63
+v3float,trained - randtf,trained,lin,8,pair_auc,0.027696,-0.020657;0.077653,0.20737,63
+v3float,selectivity real - patch,trained,mlp,12,motion_auc_v0_objects,0.24797,0.18585;0.30883,1.2144e-06,62
+v3float,selectivity real - instance,trained,mlp,12,motion_auc_v0_objects,0.26322,0.2013;0.32568,1.0507e-08,62
+v3float,trained - randall,trained,mlp,12,motion_auc_v0_objects,0.27995,0.19426;0.36562,1.7429e-05,62
+v3float,trained - randtf,trained,mlp,12,motion_auc_v0_objects,0.18951,0.11724;0.25931,0.00017633,62
+v3float,selectivity real - patch,trained,mlp,12,motion_auc_v0,0.47834,0.4646;0.49207,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,12,motion_auc_v0,0.0098904,0.0062579;0.013299,1.1123e-05,63
+v3float,trained - randall,trained,mlp,12,motion_auc_v0,0.27938,0.22575;0.33709,4.3737e-16,63
+v3float,trained - randtf,trained,mlp,12,motion_auc_v0,0.015815,0.0060307;0.031506,7.4597e-07,63
+v3float,selectivity real - patch,trained,mlp,12,pair_auc_obj,0.35318,0.3212;0.38361,2.7322e-17,62
+v3float,selectivity real - instance,trained,mlp,12,pair_auc_obj,0.088257,0.055401;0.11864,0.00017633,62
+v3float,trained - randall,trained,mlp,12,pair_auc_obj,0.25903,0.20944;0.30511,1.0507e-08,62
+v3float,trained - randtf,trained,mlp,12,pair_auc_obj,0.17976,0.14506;0.21795,2.4301e-10,62
+v3float,selectivity real - patch,trained,mlp,12,pair_auc,0.48105,0.46886;0.49294,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,12,pair_auc,0.020488,0.015123;0.026056,3.3822e-08,63
+v3float,trained - randall,trained,mlp,12,pair_auc,0.27872,0.23166;0.33166,1.3878e-17,63
+v3float,trained - randtf,trained,mlp,12,pair_auc,0.018193,0.011679;0.025037,1.6735e-07,63
+v3float,selectivity real - patch,trained,lin,12,motion_auc_v0_objects,0.055053,-0.014684;0.1223,0.16188,62
+v3float,selectivity real - instance,trained,lin,12,motion_auc_v0_objects,0.079023,0.010141;0.15041,0.25285,62
+v3float,trained - randall,trained,lin,12,motion_auc_v0_objects,0.068699,-0.0060614;0.14042,0.097954,62
+v3float,trained - randtf,trained,lin,12,motion_auc_v0_objects,0.047353,-0.021704;0.11019,0.52577,62
+v3float,selectivity real - patch,trained,lin,12,motion_auc_v0,0.47576,0.46313;0.48813,2.1684e-19,63
+v3float,selectivity real - instance,trained,lin,12,motion_auc_v0,0.0039281,-0.00069158;0.0084938,0.12992,63
+v3float,trained - randall,trained,lin,12,motion_auc_v0,0.38815,0.35261;0.42498,1.3878e-17,63
+v3float,trained - randtf,trained,lin,12,motion_auc_v0,0.066271,0.051884;0.081357,1.7249e-14,63
+v3float,selectivity real - patch,trained,lin,12,pair_auc_obj,0.30964,0.26811;0.34634,8.4741e-16,62
+v3float,selectivity real - instance,trained,lin,12,pair_auc_obj,0.078382,0.047199;0.10787,0.00049709,62
+v3float,trained - randall,trained,lin,12,pair_auc_obj,0.20279,0.15162;0.25454,1.7093e-09,62
+v3float,trained - randtf,trained,lin,12,pair_auc_obj,0.086352,0.047304;0.1241,0.001299,62
+v3float,selectivity real - patch,trained,lin,12,pair_auc,0.303,0.26216;0.34051,1.6624e-12,63
+v3float,selectivity real - instance,trained,lin,12,pair_auc,0.12629,0.090679;0.16216,1.6735e-07,63
+v3float,trained - randall,trained,lin,12,pair_auc,0.10741,0.038395;0.17504,0.00011706,63
+v3float,trained - randtf,trained,lin,12,pair_auc,0.13488,0.082342;0.18737,0.00033671,63
+v3float,selectivity real - patch,trained,mlp,16,motion_auc_v0_objects,0.29573,0.23643;0.35352,1.0507e-08,62
+v3float,selectivity real - instance,trained,mlp,16,motion_auc_v0_objects,0.29386,0.23767;0.34991,2.4301e-10,62
+v3float,trained - randall,trained,mlp,16,motion_auc_v0_objects,0.32822,0.24045;0.40984,2.7756e-07,62
+v3float,trained - randtf,trained,mlp,16,motion_auc_v0_objects,0.228,0.16267;0.29704,5.7136e-08,62
+v3float,selectivity real - patch,trained,mlp,16,motion_auc_v0,0.48201,0.46943;0.49489,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,16,motion_auc_v0,0.010827,0.0074583;0.013678,7.4597e-07,63
+v3float,trained - randall,trained,mlp,16,motion_auc_v0,0.28919,0.23218;0.34741,4.3737e-16,63
+v3float,trained - randtf,trained,mlp,16,motion_auc_v0,0.016803,0.0077869;0.030455,9.7617e-10,63
+v3float,selectivity real - patch,trained,mlp,16,pair_auc_obj,0.364,0.32997;0.39532,4.3368e-19,62
+v3float,selectivity real - instance,trained,mlp,16,pair_auc_obj,0.085197,0.055446;0.11524,0.00017633,62
+v3float,trained - randall,trained,mlp,16,pair_auc_obj,0.2755,0.22702;0.32458,2.4301e-10,62
+v3float,trained - randtf,trained,mlp,16,pair_auc_obj,0.2025,0.16921;0.23596,2.5918e-13,62
+v3float,selectivity real - patch,trained,mlp,16,pair_auc,0.47981,0.46808;0.49057,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,16,pair_auc,0.025242,0.019146;0.031427,9.7617e-10,63
+v3float,trained - randall,trained,mlp,16,pair_auc,0.28647,0.23527;0.33893,1.3878e-17,63
+v3float,trained - randtf,trained,mlp,16,pair_auc,0.021686,0.015156;0.029073,3.3822e-08,63
+v3float,selectivity real - patch,trained,lin,16,motion_auc_v0_objects,0.079273,0.016416;0.14047,0.0071487,62
+v3float,selectivity real - instance,trained,lin,16,motion_auc_v0_objects,0.097692,0.02196;0.16754,0.055897,62
+v3float,trained - randall,trained,lin,16,motion_auc_v0_objects,0.084653,0.01096;0.15787,0.097954,62
+v3float,trained - randtf,trained,lin,16,motion_auc_v0_objects,0.079,0.008364;0.14378,0.16188,62
+v3float,selectivity real - patch,trained,lin,16,motion_auc_v0,0.47914,0.46729;0.49061,2.1684e-19,63
+v3float,selectivity real - instance,trained,lin,16,motion_auc_v0,0.0034418,-0.0012073;0.0078444,0.076926,63
+v3float,trained - randall,trained,lin,16,motion_auc_v0,0.38694,0.34902;0.42552,2.1684e-19,63
+v3float,trained - randtf,trained,lin,16,motion_auc_v0,0.069045,0.057939;0.08131,2.1684e-19,63
+v3float,selectivity real - patch,trained,lin,16,pair_auc_obj,0.33982,0.30275;0.37376,1.7249e-14,62
+v3float,selectivity real - instance,trained,lin,16,pair_auc_obj,0.10554,0.073895;0.13486,5.7136e-08,62
+v3float,trained - randall,trained,lin,16,pair_auc_obj,0.23517,0.18737;0.28304,1.7093e-09,62
+v3float,trained - randtf,trained,lin,16,pair_auc_obj,0.12197,0.076852;0.16413,1.7429e-05,62
+v3float,selectivity real - patch,trained,lin,16,pair_auc,0.3752,0.33727;0.4098,1.3878e-17,63
+v3float,selectivity real - instance,trained,lin,16,pair_auc,0.1769,0.13681;0.2158,1.3637e-10,63
+v3float,trained - randall,trained,lin,16,pair_auc,0.17526,0.11061;0.24089,3.7606e-05,63
+v3float,trained - randtf,trained,lin,16,pair_auc,0.21599,0.15879;0.27433,7.4597e-07,63
+v3float,selectivity real - patch,trained,mlp,20,motion_auc_v0_objects,0.45871,0.42089;0.49232,2.7322e-17,62
+v3float,selectivity real - instance,trained,mlp,20,motion_auc_v0_objects,0.4573,0.41528;0.49888,2.7322e-17,62
+v3float,trained - randall,trained,mlp,20,motion_auc_v0_objects,0.47123,0.3867;0.54848,3.0655e-12,62
+v3float,trained - randtf,trained,mlp,20,motion_auc_v0_objects,0.37493,0.30929;0.44214,1.641e-15,62
+v3float,selectivity real - patch,trained,mlp,20,motion_auc_v0,0.50018,0.48833;0.51314,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,20,motion_auc_v0,0.020342,0.01704;0.02386,1.3878e-17,63
+v3float,trained - randall,trained,mlp,20,motion_auc_v0,0.30521,0.25102;0.36514,1.3878e-17,63
+v3float,trained - randtf,trained,mlp,20,motion_auc_v0,0.025352,0.014762;0.043019,4.3737e-16,63
+v3float,selectivity real - patch,trained,mlp,20,pair_auc_obj,0.41649,0.39119;0.43938,4.3368e-19,62
+v3float,selectivity real - instance,trained,mlp,20,pair_auc_obj,0.13723,0.10896;0.16462,2.9726e-11,62
+v3float,trained - randall,trained,mlp,20,pair_auc_obj,0.32969,0.28838;0.36958,2.7322e-17,62
+v3float,trained - randtf,trained,mlp,20,pair_auc_obj,0.26403,0.22731;0.30049,1.7249e-14,62
+v3float,selectivity real - patch,trained,mlp,20,pair_auc,0.49617,0.48833;0.50452,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,20,pair_auc,0.036591,0.031201;0.042276,9.0483e-15,63
+v3float,trained - randall,trained,mlp,20,pair_auc,0.30735,0.25765;0.35939,1.3878e-17,63
+v3float,trained - randtf,trained,mlp,20,pair_auc,0.032869,0.026194;0.040144,4.3737e-16,63
+v3float,selectivity real - patch,trained,lin,20,motion_auc_v0_objects,0.15142,0.080062;0.22228,0.00017633,62
+v3float,selectivity real - instance,trained,lin,20,motion_auc_v0_objects,0.17902,0.10085;0.25711,0.00017633,62
+v3float,trained - randall,trained,lin,20,motion_auc_v0_objects,0.15473,0.077859;0.22644,0.0031561,62
+v3float,trained - randtf,trained,lin,20,motion_auc_v0_objects,0.17668,0.10337;0.24498,0.00049709,62
+v3float,selectivity real - patch,trained,lin,20,motion_auc_v0,0.47191,0.45947;0.4844,2.1684e-19,63
+v3float,selectivity real - instance,trained,lin,20,motion_auc_v0,0.0075562,0.0020901;0.012566,0.00033671,63
+v3float,trained - randall,trained,lin,20,motion_auc_v0,0.39174,0.35383;0.42817,2.1684e-19,63
+v3float,trained - randtf,trained,lin,20,motion_auc_v0,0.091645,0.073029;0.11129,1.3821e-13,63
+v3float,selectivity real - patch,trained,lin,20,pair_auc_obj,0.38351,0.34931;0.4145,2.7322e-17,62
+v3float,selectivity real - instance,trained,lin,20,pair_auc_obj,0.14025,0.10425;0.17125,1.0507e-08,62
+v3float,trained - randall,trained,lin,20,pair_auc_obj,0.28859,0.24259;0.32995,3.0655e-12,62
+v3float,trained - randtf,trained,lin,20,pair_auc_obj,0.17636,0.13406;0.21734,5.7136e-08,62
+v3float,selectivity real - patch,trained,lin,20,pair_auc,0.42391,0.39954;0.44676,2.1684e-19,63
+v3float,selectivity real - instance,trained,lin,20,pair_auc,0.18297,0.14628;0.21818,1.3821e-13,63
+v3float,trained - randall,trained,lin,20,pair_auc,0.24196,0.18747;0.29888,6.1083e-09,63
+v3float,trained - randtf,trained,lin,20,pair_auc,0.28643,0.23604;0.33557,1.6624e-12,63
+v3float,selectivity real - patch,trained,mlp,24,motion_auc_v0_objects,0.45953,0.42453;0.48999,2.7322e-17,62
+v3float,selectivity real - instance,trained,mlp,24,motion_auc_v0_objects,0.47774,0.42402;0.52587,8.4741e-16,62
+v3float,trained - randall,trained,mlp,24,motion_auc_v0_objects,0.4833,0.40639;0.55306,8.4741e-16,62
+v3float,trained - randtf,trained,mlp,24,motion_auc_v0_objects,0.3866,0.31009;0.46036,8.4741e-16,62
+v3float,MLP - ridge/bilinear,trained,mlp,24,motion_auc_v0_objects,-0.017891,-0.037236;-0.00088702,0.024307,62
+v3float,L24 - L0,trained,mlp,24,motion_auc_v0_objects,0.42176,0.35031;0.49209,2.7322e-17,62
+v3float,selectivity real - patch,trained,mlp,24,motion_auc_v0,0.49967,0.48805;0.51129,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,24,motion_auc_v0,0.022296,0.018773;0.026033,1.3878e-17,63
+v3float,trained - randall,trained,mlp,24,motion_auc_v0,0.30292,0.25055;0.35991,2.1684e-19,63
+v3float,trained - randtf,trained,mlp,24,motion_auc_v0,0.025762,0.016051;0.04118,4.3737e-16,63
+v3float,MLP - ridge/bilinear,trained,mlp,24,motion_auc_v0,-0.00054873,-0.0015652;0.00031904,0.098872,63
+v3float,L24 - L0,trained,mlp,24,motion_auc_v0,0.021505,0.016103;0.02768,1.3878e-17,63
+v3float,selectivity real - patch,trained,mlp,24,pair_auc_obj,0.42751,0.40459;0.44924,4.3368e-19,62
+v3float,selectivity real - instance,trained,mlp,24,pair_auc_obj,0.15274,0.11797;0.18755,1.7093e-09,62
+v3float,trained - randall,trained,mlp,24,pair_auc_obj,0.3497,0.30873;0.38865,2.7322e-17,62
+v3float,trained - randtf,trained,mlp,24,pair_auc_obj,0.27453,0.2355;0.311,8.4741e-16,62
+v3float,MLP - ridge/bilinear,trained,mlp,24,pair_auc_obj,0.00080244,-0.023716;0.024886,1,62
+v3float,L24 - L0,trained,mlp,24,pair_auc_obj,0.1786,0.14287;0.21257,2.9726e-11,62
+v3float,selectivity real - patch,trained,mlp,24,pair_auc,0.49584,0.48644;0.50455,2.1684e-19,63
+v3float,selectivity real - instance,trained,mlp,24,pair_auc,0.040393,0.033992;0.047313,4.3737e-16,63
+v3float,trained - randall,trained,mlp,24,pair_auc,0.30523,0.25628;0.35402,1.3878e-17,63
+v3float,trained - randtf,trained,mlp,24,pair_auc,0.0382,0.030715;0.046307,9.0483e-15,63
+v3float,MLP - ridge/bilinear,trained,mlp,24,pair_auc,0.034961,0.021259;0.05146,4.3221e-10,63
+v3float,L24 - L0,trained,mlp,24,pair_auc,0.033259,0.023137;0.043406,4.3737e-16,63
+v3float,selectivity real - patch,trained,lin,24,motion_auc_v0_objects,0.261,0.20293;0.3141,1.7093e-09,62
+v3float,selectivity real - instance,trained,lin,24,motion_auc_v0_objects,0.31036,0.24809;0.37423,1.7093e-09,62
+v3float,trained - randall,trained,lin,24,motion_auc_v0_objects,0.26659,0.20599;0.32618,1.0507e-08,62
+v3float,trained - randtf,trained,lin,24,motion_auc_v0_objects,0.26644,0.20604;0.32504,1.7093e-09,62
+v3float,L24 - L0,trained,lin,24,motion_auc_v0_objects,0.23127,0.19151;0.26968,3.0655e-12,62
+v3float,selectivity real - patch,trained,lin,24,motion_auc_v0,0.48595,0.47208;0.49798,2.1684e-19,63
+v3float,selectivity real - instance,trained,lin,24,motion_auc_v0,0.015219,0.010977;0.01938,6.1083e-09,63
+v3float,trained - randall,trained,lin,24,motion_auc_v0,0.42726,0.39196;0.46457,2.1684e-19,63
+v3float,trained - randtf,trained,lin,24,motion_auc_v0,0.089306,0.074458;0.10556,4.3737e-16,63
+v3float,L24 - L0,trained,lin,24,motion_auc_v0,0.009715,0.0072455;0.012251,1.3637e-10,63
+v3float,selectivity real - patch,trained,lin,24,pair_auc_obj,0.39145,0.35914;0.42223,2.7322e-17,62
+v3float,selectivity real - instance,trained,lin,24,pair_auc_obj,0.12952,0.096262;0.16188,1.2144e-06,62
+v3float,trained - randall,trained,lin,24,pair_auc_obj,0.29079,0.24402;0.33337,3.0655e-12,62
+v3float,trained - randtf,trained,lin,24,pair_auc_obj,0.17604,0.13383;0.21806,5.7136e-08,62
+v3float,L24 - L0,trained,lin,24,pair_auc_obj,0.17003,0.1292;0.21072,2.9726e-11,62
+v3float,selectivity real - patch,trained,lin,24,pair_auc,0.4365,0.41354;0.45624,2.1684e-19,63
+v3float,selectivity real - instance,trained,lin,24,pair_auc,0.18023,0.14777;0.21591,1.3821e-13,63
+v3float,trained - randall,trained,lin,24,pair_auc,0.25435,0.2026;0.31076,1.3637e-10,63
+v3float,trained - randtf,trained,lin,24,pair_auc,0.30027,0.24936;0.35268,1.3821e-13,63
+v3float,L24 - L0,trained,lin,24,pair_auc,0.24679,0.20759;0.28735,4.3737e-16,63
+v3float,selectivity real - patch,randtf,mlp,0,motion_auc_v0_objects,0.060231,-0.012352;0.12464,0.37415,62
+v3float,selectivity real - instance,randtf,mlp,0,motion_auc_v0_objects,0.08759,0.01829;0.15403,0.097954,62
+v3float,MLP - ridge/bilinear,randtf,mlp,0,motion_auc_v0_objects,0.013609,-0.029857;0.053418,0.52577,62
+v3float,selectivity real - patch,randtf,mlp,0,motion_auc_v0,0.47865,0.46802;0.48943,2.1684e-19,63
+v3float,selectivity real - instance,randtf,mlp,0,motion_auc_v0,0.0036771,-0.0014973;0.0086506,0.022575,63
+v3float,MLP - ridge/bilinear,randtf,mlp,0,motion_auc_v0,0.016107,0.003575;0.033038,0.011141,63
+v3float,selectivity real - patch,randtf,mlp,0,pair_auc_obj,0.21967,0.19109;0.25021,2.7322e-17,62
+v3float,selectivity real - instance,randtf,mlp,0,pair_auc_obj,-0.0071935,-0.036482;0.023057,0.70354,62
+v3float,MLP - ridge/bilinear,randtf,mlp,0,pair_auc_obj,-0.037976,-0.064661;-0.0089292,0.16188,62
+v3float,selectivity real - patch,randtf,mlp,0,pair_auc,0.46205,0.44896;0.47405,2.1684e-19,63
+v3float,selectivity real - instance,randtf,mlp,0,pair_auc,0.011516,0.0041279;0.01866,0.0022275,63
+v3float,MLP - ridge/bilinear,randtf,mlp,0,pair_auc,0.22303,0.19422;0.25328,2.1684e-19,63
+v3float,selectivity real - patch,randtf,lin,0,motion_auc_v0_objects,-0.026237,-0.065619;0.011834,0.30568,62
+v3float,selectivity real - instance,randtf,lin,0,motion_auc_v0_objects,-0.0099421,-0.052381;0.032748,0.89908,62
+v3float,selectivity real - patch,randtf,lin,0,motion_auc_v0,0.41309,0.39383;0.43107,2.1684e-19,63
+v3float,selectivity real - instance,randtf,lin,0,motion_auc_v0,0.015668,-0.0011469;0.031986,0.076926,63
+v3float,selectivity real - patch,randtf,lin,0,pair_auc_obj,0.23226,0.20205;0.262,1.7249e-14,62
+v3float,selectivity real - instance,randtf,lin,0,pair_auc_obj,-0.010905,-0.036678;0.016044,0.25285,62
+v3float,selectivity real - patch,randtf,lin,0,pair_auc,0.23093,0.20095;0.2597,9.0483e-15,63
+v3float,selectivity real - instance,randtf,lin,0,pair_auc,0.0011284,-0.021195;0.021104,0.61466,63
+v3float,selectivity real - patch,randtf,mlp,24,motion_auc_v0_objects,0.083154,0.01466;0.15097,0.52577,62
+v3float,selectivity real - instance,randtf,mlp,24,motion_auc_v0_objects,0.072988,0.0011282;0.14465,0.097954,62
+v3float,MLP - ridge/bilinear,randtf,mlp,24,motion_auc_v0_objects,0.040504,-0.0057345;0.08808,0.16188,62
+v3float,L24 - L0,randtf,mlp,24,motion_auc_v0_objects,0.0090682,-0.036102;0.055256,0.89908,62
+v3float,selectivity real - patch,randtf,mlp,24,motion_auc_v0,0.48749,0.47242;0.50057,2.1684e-19,63
+v3float,selectivity real - instance,randtf,mlp,24,motion_auc_v0,0.00092527,-0.013394;0.0095913,0.00033671,63
+v3float,MLP - ridge/bilinear,randtf,mlp,24,motion_auc_v0,0.013372,0.00066801;0.033256,0.0051524,63
+v3float,L24 - L0,randtf,mlp,24,motion_auc_v0,-0.0028273,-0.013369;0.0035335,0.44996,63
+v3float,selectivity real - patch,randtf,mlp,24,pair_auc_obj,0.16116,0.13254;0.18998,1.7249e-14,62
+v3float,selectivity real - instance,randtf,mlp,24,pair_auc_obj,-0.01433,-0.045994;0.016622,0.37415,62
+v3float,MLP - ridge/bilinear,randtf,mlp,24,pair_auc_obj,-0.095517,-0.12621;-0.065185,5.7784e-05,62
+v3float,L24 - L0,randtf,mlp,24,pair_auc_obj,-0.067145,-0.096332;-0.039759,0.00049709,62
+v3float,selectivity real - patch,randtf,mlp,24,pair_auc,0.46072,0.44924;0.47116,2.1684e-19,63
+v3float,selectivity real - instance,randtf,mlp,24,pair_auc,0.010239,0.002262;0.017751,0.00033671,63
+v3float,MLP - ridge/bilinear,randtf,mlp,24,pair_auc,0.25935,0.21808;0.30138,2.1684e-19,63
+v3float,L24 - L0,randtf,mlp,24,pair_auc,-0.0055203,-0.010301;-0.00067065,0.00089805,63
+v3float,selectivity real - patch,randtf,lin,24,motion_auc_v0_objects,0.00030862,-0.036756;0.035381,1,62
+v3float,selectivity real - instance,randtf,lin,24,motion_auc_v0_objects,-0.0091488,-0.051466;0.031242,1,62
+v3float,L24 - L0,randtf,lin,24,motion_auc_v0_objects,0.011675,-0.025498;0.047702,0.70354,62
+v3float,selectivity real - patch,randtf,lin,24,motion_auc_v0,0.39372,0.37283;0.41262,2.1684e-19,63
+v3float,selectivity real - instance,randtf,lin,24,motion_auc_v0,0.019149,-0.0017753;0.038508,0.042957,63
+v3float,L24 - L0,randtf,lin,24,motion_auc_v0,-0.026439,-0.045307;-0.0095563,1.1123e-05,63
+v3float,selectivity real - patch,randtf,lin,24,pair_auc_obj,0.21767,0.18464;0.2487,8.4741e-16,62
+v3float,selectivity real - instance,randtf,lin,24,pair_auc_obj,-0.0066595,-0.042649;0.030337,0.52577,62
+v3float,L24 - L0,randtf,lin,24,pair_auc_obj,-0.017117,-0.041533;0.0060165,0.89908,62
+v3float,selectivity real - patch,randtf,lin,24,pair_auc,0.14269,0.093561;0.19126,0.00011706,63
+v3float,selectivity real - instance,randtf,lin,24,pair_auc,0.0014278,-0.038689;0.039658,0.61466,63
+v3float,L24 - L0,randtf,lin,24,pair_auc,-0.083707,-0.1295;-0.037509,0.042957,63
+v3float,selectivity real - patch,enc_any4d,mlp,0,motion_auc_v0_objects,0.064387,-0.013833;0.14789,0.70354,62
+v3float,selectivity real - instance,enc_any4d,mlp,0,motion_auc_v0_objects,0.046441,-0.04172;0.12314,0.70354,62
+v3float,MLP - ridge/bilinear,enc_any4d,mlp,0,motion_auc_v0_objects,-0.006337,-0.065742;0.05506,0.70354,62
+v3float,selectivity real - patch,enc_any4d,mlp,0,motion_auc_v0,0.47372,0.46007;0.48707,2.1684e-19,63
+v3float,selectivity real - instance,enc_any4d,mlp,0,motion_auc_v0,-0.0010137,-0.0058366;0.0039217,0.61466,63
+v3float,MLP - ridge/bilinear,enc_any4d,mlp,0,motion_auc_v0,0.031726,0.0077982;0.066427,0.80131,63
+v3float,selectivity real - patch,enc_any4d,mlp,0,pair_auc_obj,0.25343,0.22745;0.27838,4.3368e-19,62
+v3float,selectivity real - instance,enc_any4d,mlp,0,pair_auc_obj,0.030653,0.00041696;0.060983,0.25285,62
+v3float,MLP - ridge/bilinear,enc_any4d,mlp,0,pair_auc_obj,-0.043458,-0.069041;-0.017747,0.015134,62
+v3float,selectivity real - patch,enc_any4d,mlp,0,pair_auc,0.46857,0.45504;0.48158,2.1684e-19,63
+v3float,selectivity real - instance,enc_any4d,mlp,0,pair_auc,0.0057577,-0.0024787;0.013351,0.0022275,63
+v3float,MLP - ridge/bilinear,enc_any4d,mlp,0,pair_auc,0.1944,0.15089;0.2378,1.3821e-13,63
+v3float,selectivity real - patch,enc_any4d,lin,0,motion_auc_v0_objects,0.0416,-0.015971;0.094607,0.25285,62
+v3float,selectivity real - instance,enc_any4d,lin,0,motion_auc_v0_objects,0.044006,-0.017236;0.10463,0.16188,62
+v3float,selectivity real - patch,enc_any4d,lin,0,motion_auc_v0,0.47473,0.46473;0.48508,2.1684e-19,63
+v3float,selectivity real - instance,enc_any4d,lin,0,motion_auc_v0,0.0033228,-0.0020184;0.008348,0.12992,63
+v3float,selectivity real - patch,enc_any4d,lin,0,pair_auc_obj,0.22488,0.19033;0.25845,1.7249e-14,62
+v3float,selectivity real - instance,enc_any4d,lin,0,pair_auc_obj,0.00076321,-0.024738;0.025485,0.89908,62
+v3float,selectivity real - patch,enc_any4d,lin,0,pair_auc,0.18156,0.14067;0.22286,1.6735e-07,63
+v3float,selectivity real - instance,enc_any4d,lin,0,pair_auc,0.019603,-0.012849;0.053354,0.3135,63

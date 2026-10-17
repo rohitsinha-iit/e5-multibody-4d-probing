@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 21:09:20 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 21:12:00 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -50,7 +50,7 @@ Last updated 2026-10-17 21:09:20 (server time). Regenerated after every queue ev
 | 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | done | 1 | 2026-10-17 16:37:33 | 2026-10-17 16:43:12 |
 | 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | done | 1 | 2026-10-17 16:43:22 | 2026-10-17 17:54:42 |
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | done | 1 | 2026-10-17 17:54:53 | 2026-10-17 20:08:54 |
-| 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | RUNNING | 1 | 2026-10-17 20:09:05 |  |
+| 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | done | 1 | 2026-10-17 20:09:05 | 2026-10-17 21:11:55 |
 | 48 | [ft_train_heads_sel](#ft_train_heads_sel): Item 10 rerun: train heads with corrected checkpoint selection | queued | 0 |  |  |
 | 49 | [ft_eval_heads_sel](#ft_eval_heads_sel): Item 10 rerun: evaluate heads_sel | queued | 0 |  |  |
 | 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | queued | 0 |  |  |
@@ -59,7 +59,7 @@ Last updated 2026-10-17 21:09:20 (server time). Regenerated after every queue ev
 | 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | queued | 0 |  |  |
 | 54 | [ft_summary_sel](#ft_summary_sel): Item 10: comparison table with corrected head variants | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 21:08:47 running r2_probe_mlp
+Supervisor heartbeat: 2026-10-17 21:11:25 running r2_probe_mlp
 
 ## v3_pilot
 
@@ -1866,7 +1866,161 @@ Cells: mean over seeds +/- sd over seeds [95% bootstrap CI over scenes of the se
 
 Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float)
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 20:09:05. [Raw results](../results/queue/r2_probe_mlp/), [log](../results/queue/r2_probe_mlp/task.log).
+Status: **done**, attempt 1, started 2026-10-17 20:09:05, finished 2026-10-17 21:11:55. [Raw results](../results/queue/r2_probe_mlp/), [log](../results/queue/r2_probe_mlp/task.log).
 
-Partial results so far; the run is still going.
+![fig_probe_controls.png](assets/r2_probe_mlp/fig_probe_controls.png)
+![fig_probe_controls_allpatches.png](assets/r2_probe_mlp/fig_probe_controls_allpatches.png)
+
+
+**r2_probe_mlp_summary.md**
+
+# r2_probe_mlp: probe controls, linear and MLP (review W4, plan item 6)
+
+MLP probe: 2 layers, 256 hidden, ReLU; motion probe D to 256 to 1 on the view-0 token; pair probe embeds concat(view 0, view 6) with D to 256 to 64 and scores pairs by a scaled dot product (the nonlinear version of the round-1 bilinear probe). AdamW (lr 1e-3, weight decay 1e-2), minibatch 4096, early stopping on a held-out 15% of the training scenes (grouped by scene), same 5 scene folds as round 1. 'linear (MLP recipe)' is the same training with the hidden layer removed. 'linear (round-1 ridge / bilinear)' comes from r2_probe_linear. Five seeds per cell. Shuffled controls: all layers for the trained model, layers 0 and 24 for the random-init variants. Selectivity = real minus control (paired over scenes).
+
+Figure: fig_probe_controls.png (object patches: motion AUC and pair AUC), fig_probe_controls_allpatches.png (all pure patches).
+
+Cells: mean over seeds +/- sd over seeds [95% bootstrap CI over scenes of the seed-averaged per-scene value]. Chance is 0.5 for all AUCs. Folds are grouped by scene (5 folds, as round 1). Sources: trained = Any4D trained; randall = random init (all); randtf = DINOv2 + random transformer; enc_any4d = Any4D encoder tokens (no view PE); enc_dino = public DINOv2 tokens (no view PE).
+
+
+## Key paired comparisons, layers 0 and 24 (per-scene seed means; mean difference [95% CI], sign-test p, n scenes)
+
+| dataset | comparison | source | probe | layer | metric | difference [95% CI] | sign p | n |
+|---|---|---|---|---|---|---|---|---|
+| v2 | selectivity real - patch | randall | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.006 [-0.042, +0.056] | 0.75 | 93 |
+| v2 | selectivity real - instance | randall | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.022 [-0.050, +0.093] | 0.3 | 93 |
+| v2 | selectivity real - patch | randall | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.139 [+0.110, +0.168] | 3.6e-12 | 93 |
+| v2 | selectivity real - instance | randall | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | -0.001 [-0.030, +0.029] | 1 | 93 |
+| v2 | selectivity real - patch | randall | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | -0.009 [-0.063, +0.047] | 0.41 | 93 |
+| v2 | selectivity real - instance | randall | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.014 [-0.061, +0.089] | 0.75 | 93 |
+| v2 | L24 - L0 | randall | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | -0.028 [-0.061, +0.007] | 0.39 | 93 |
+| v2 | selectivity real - patch | randall | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.148 [+0.114, +0.182] | 1.9e-11 | 93 |
+| v2 | selectivity real - instance | randall | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | -0.015 [-0.048, +0.022] | 0.21 | 93 |
+| v2 | L24 - L0 | randall | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.000 [-0.014, +0.015] | 0.84 | 93 |
+| v2 | selectivity real - patch | enc_dino | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | -0.043 [-0.104, +0.020] | 0.12 | 93 |
+| v2 | selectivity real - instance | enc_dino | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | -0.044 [-0.121, +0.033] | 0.84 | 93 |
+| v2 | selectivity real - patch | enc_dino | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.242 [+0.214, +0.269] | 2.7e-23 | 93 |
+| v2 | selectivity real - instance | enc_dino | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | -0.004 [-0.035, +0.029] | 1 | 93 |
+| v2 | selectivity real - patch | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.062 [-0.002, +0.126] | 0.21 | 93 |
+| v2 | selectivity real - instance | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.134 [+0.048, +0.214] | 0.0046 | 93 |
+| v2 | trained - randall | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.049 [-0.030, +0.127] | 0.12 | 93 |
+| v2 | trained - randtf | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.090 [+0.038, +0.141] | 0.12 | 93 |
+| v2 | trained L0 - enc_any4d | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.009 [-0.009, +0.026] | 0.59 | 93 |
+| v2 | trained L0 - enc_dino | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.085 [+0.036, +0.134] | 0.0067 | 93 |
+| v2 | selectivity real - patch | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.242 [+0.213, +0.270] | 6.2e-22 | 93 |
+| v2 | selectivity real - instance | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | -0.005 [-0.041, +0.032] | 0.68 | 93 |
+| v2 | trained - randall | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.119 [+0.087, +0.152] | 1e-07 | 93 |
+| v2 | trained - randtf | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.005 [-0.018, +0.029] | 0.038 | 93 |
+| v2 | trained L0 - enc_any4d | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | -0.030 [-0.042, -0.018] | 1.1e-06 | 93 |
+| v2 | trained L0 - enc_dino | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.006 [-0.021, +0.031] | 0.061 | 93 |
+| v2 | selectivity real - patch | trained | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.492 [+0.469, +0.514] | 2e-28 | 93 |
+| v2 | selectivity real - instance | trained | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.595 [+0.537, +0.654] | 8.1e-28 | 93 |
+| v2 | trained - randall | trained | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.506 [+0.454, +0.556] | 8.1e-28 | 93 |
+| v2 | trained - randtf | trained | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.543 [+0.494, +0.594] | 4e-28 | 93 |
+| v2 | L24 - L0 | trained | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.429 [+0.372, +0.488] | 1.6e-27 | 93 |
+| v2 | selectivity real - patch | trained | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.392 [+0.361, +0.418] | 2.7e-23 | 93 |
+| v2 | selectivity real - instance | trained | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.106 [+0.071, +0.138] | 9.6e-11 | 93 |
+| v2 | trained - randall | trained | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.264 [+0.225, +0.300] | 1.7e-19 | 93 |
+| v2 | trained - randtf | trained | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.142 [+0.107, +0.175] | 3.6e-12 | 93 |
+| v2 | L24 - L0 | trained | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.145 [+0.115, +0.176] | 1.8e-15 | 93 |
+| v2 | selectivity real - patch | randtf | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | -0.039 [-0.099, +0.021] | 0.35 | 93 |
+| v2 | selectivity real - instance | randtf | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | -0.055 [-0.133, +0.023] | 0.15 | 93 |
+| v2 | selectivity real - patch | randtf | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.239 [+0.213, +0.267] | 8.8e-25 | 93 |
+| v2 | selectivity real - instance | randtf | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | -0.012 [-0.043, +0.023] | 0.097 | 93 |
+| v2 | selectivity real - patch | randtf | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | -0.067 [-0.123, -0.014] | 0.0011 | 93 |
+| v2 | selectivity real - instance | randtf | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | -0.065 [-0.140, +0.011] | 0.061 | 93 |
+| v2 | L24 - L0 | randtf | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | -0.024 [-0.061, +0.008] | 0.21 | 93 |
+| v2 | selectivity real - patch | randtf | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.251 [+0.216, +0.284] | 1.7e-19 | 93 |
+| v2 | selectivity real - instance | randtf | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.012 [-0.024, +0.051] | 1 | 93 |
+| v2 | L24 - L0 | randtf | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.009 [-0.010, +0.026] | 0.84 | 93 |
+| v2 | selectivity real - patch | enc_any4d | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.058 [-0.001, +0.117] | 0.21 | 93 |
+| v2 | selectivity real - instance | enc_any4d | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.101 [+0.012, +0.191] | 0.016 | 93 |
+| v2 | selectivity real - patch | enc_any4d | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.267 [+0.240, +0.292] | 2.7e-23 | 93 |
+| v2 | selectivity real - instance | enc_any4d | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | -0.002 [-0.036, +0.034] | 1 | 93 |
+| v3float | selectivity real - patch | randall | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | -0.035 [-0.095, +0.025] | 0.9 | 62 |
+| v3float | selectivity real - instance | randall | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | -0.029 [-0.122, +0.065] | 0.25 | 62 |
+| v3float | selectivity real - patch | randall | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.143 [+0.099, +0.186] | 1.1e-08 | 62 |
+| v3float | selectivity real - instance | randall | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.013 [-0.028, +0.050] | 0.9 | 62 |
+| v3float | selectivity real - patch | randall | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.018 [-0.050, +0.087] | 0.37 | 62 |
+| v3float | selectivity real - instance | randall | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.012 [-0.075, +0.102] | 1 | 62 |
+| v3float | L24 - L0 | randall | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.016 [-0.022, +0.053] | 0.37 | 62 |
+| v3float | selectivity real - patch | randall | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.129 [+0.080, +0.180] | 0.0005 | 62 |
+| v3float | selectivity real - instance | randall | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.006 [-0.044, +0.051] | 0.25 | 62 |
+| v3float | L24 - L0 | randall | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | -0.016 [-0.047, +0.014] | 0.25 | 62 |
+| v3float | selectivity real - patch | enc_dino | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.059 [-0.021, +0.139] | 0.098 | 62 |
+| v3float | selectivity real - instance | enc_dino | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.052 [-0.049, +0.146] | 0.37 | 62 |
+| v3float | selectivity real - patch | enc_dino | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.247 [+0.211, +0.285] | 2.6e-13 | 62 |
+| v3float | selectivity real - instance | enc_dino | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | -0.024 [-0.061, +0.013] | 0.9 | 62 |
+| v3float | selectivity real - patch | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.073 [-0.028, +0.172] | 0.25 | 62 |
+| v3float | selectivity real - instance | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | -0.047 [-0.160, +0.072] | 0.9 | 62 |
+| v3float | trained - randall | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.094 [-0.013, +0.200] | 0.098 | 62 |
+| v3float | trained - randtf | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.023 [-0.051, +0.097] | 0.53 | 62 |
+| v3float | trained L0 - enc_any4d | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.001 [-0.039, +0.035] | 0.51 | 62 |
+| v3float | trained L0 - enc_dino | trained | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.011 [-0.065, +0.088] | 1 | 62 |
+| v3float | selectivity real - patch | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.270 [+0.234, +0.304] | 8.5e-16 | 62 |
+| v3float | selectivity real - instance | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | -0.015 [-0.056, +0.027] | 1 | 62 |
+| v3float | trained - randall | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.135 [+0.089, +0.181] | 0.0013 | 62 |
+| v3float | trained - randtf | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.012 [-0.018, +0.042] | 0.53 | 62 |
+| v3float | trained L0 - enc_any4d | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | -0.027 [-0.049, -0.008] | 0.03 | 62 |
+| v3float | trained L0 - enc_dino | trained | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.020 [-0.011, +0.051] | 0.16 | 62 |
+| v3float | selectivity real - patch | trained | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.482 [+0.441, +0.519] | 5.4e-17 | 62 |
+| v3float | selectivity real - instance | trained | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.407 [+0.322, +0.499] | 9.1e-13 | 62 |
+| v3float | trained - randall | trained | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.483 [+0.415, +0.552] | 1.1e-16 | 62 |
+| v3float | trained - randtf | trained | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.445 [+0.374, +0.516] | 1.1e-16 | 62 |
+| v3float | L24 - L0 | trained | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.405 [+0.314, +0.495] | 5.4e-17 | 62 |
+| v3float | selectivity real - patch | trained | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.417 [+0.388, +0.442] | 2.7e-17 | 62 |
+| v3float | selectivity real - instance | trained | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.145 [+0.105, +0.186] | 1.1e-08 | 62 |
+| v3float | trained - randall | trained | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.308 [+0.256, +0.359] | 3.1e-12 | 62 |
+| v3float | trained - randtf | trained | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.178 [+0.140, +0.214] | 1.7e-09 | 62 |
+| v3float | L24 - L0 | trained | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.157 [+0.117, +0.196] | 3.1e-12 | 62 |
+| v3float | selectivity real - patch | randtf | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.043 [-0.035, +0.122] | 0.098 | 62 |
+| v3float | selectivity real - instance | randtf | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.028 [-0.069, +0.130] | 0.37 | 62 |
+| v3float | selectivity real - patch | randtf | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.254 [+0.218, +0.290] | 1.7e-14 | 62 |
+| v3float | selectivity real - instance | randtf | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | -0.020 [-0.060, +0.022] | 0.9 | 62 |
+| v3float | selectivity real - patch | randtf | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | +0.055 [-0.032, +0.143] | 0.37 | 62 |
+| v3float | selectivity real - instance | randtf | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | -0.013 [-0.106, +0.082] | 0.7 | 62 |
+| v3float | L24 - L0 | randtf | linear (round-1 ridge / bilinear) | 24 | motion_auc_v0_objects | -0.018 [-0.056, +0.016] | 0.53 | 62 |
+| v3float | selectivity real - patch | randtf | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | +0.247 [+0.214, +0.279] | 8.5e-16 | 62 |
+| v3float | selectivity real - instance | randtf | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | -0.037 [-0.083, +0.006] | 0.37 | 62 |
+| v3float | L24 - L0 | randtf | linear (round-1 ridge / bilinear) | 24 | pair_auc_obj | -0.010 [-0.034, +0.016] | 0.9 | 62 |
+| v3float | selectivity real - patch | enc_any4d | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | +0.073 [-0.021, +0.167] | 0.098 | 62 |
+| v3float | selectivity real - instance | enc_any4d | linear (round-1 ridge / bilinear) | 0 | motion_auc_v0_objects | -0.055 [-0.160, +0.057] | 0.61 | 62 |
+| v3float | selectivity real - patch | enc_any4d | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.291 [+0.254, +0.326] | 3.1e-12 | 62 |
+| v3float | selectivity real - instance | enc_any4d | linear (round-1 ridge / bilinear) | 0 | pair_auc_obj | +0.004 [-0.039, +0.044] | 0.16 | 62 |
+| v2 | selectivity real - patch | randall | MLP | 0 | motion_auc_v0_objects | +0.017 [-0.035, +0.068] | 0.84 | 93 |
+| v2 | selectivity real - instance | randall | MLP | 0 | motion_auc_v0_objects | -0.012 [-0.067, +0.044] | 0.84 | 93 |
+| v2 | MLP - ridge/bilinear | randall | MLP | 0 | motion_auc_v0_objects | -0.007 [-0.039, +0.028] | 0.41 | 93 |
+| v2 | selectivity real - patch | randall | MLP | 0 | pair_auc_obj | +0.135 [+0.104, +0.169] | 6.2e-13 | 93 |
+| v2 | selectivity real - instance | randall | MLP | 0 | pair_auc_obj | -0.006 [-0.033, +0.021] | 0.53 | 93 |
+| v2 | MLP - ridge/bilinear | randall | MLP | 0 | pair_auc_obj | -0.013 [-0.037, +0.011] | 0.41 | 93 |
+| v2 | selectivity real - patch | randall | linear (MLP recipe) | 0 | motion_auc_v0_objects | +0.025 [-0.009, +0.057] | 1 | 93 |
+| v2 | selectivity real - instance | randall | linear (MLP recipe) | 0 | motion_auc_v0_objects | +0.000 [-0.038, +0.037] | 0.097 | 93 |
+| v2 | selectivity real - patch | randall | linear (MLP recipe) | 0 | pair_auc_obj | +0.145 [+0.115, +0.175] | 1.4e-14 | 93 |
+| v2 | selectivity real - instance | randall | linear (MLP recipe) | 0 | pair_auc_obj | -0.000 [-0.023, +0.022] | 1 | 93 |
+| v2 | selectivity real - patch | randall | MLP | 24 | motion_auc_v0_objects | -0.006 [-0.066, +0.051] | 1 | 93 |
+| v2 | selectivity real - instance | randall | MLP | 24 | motion_auc_v0_objects | -0.021 [-0.080, +0.037] | 1 | 93 |
+| v2 | MLP - ridge/bilinear | randall | MLP | 24 | motion_auc_v0_objects | +0.005 [-0.047, +0.055] | 0.53 | 93 |
+| v2 | L24 - L0 | randall | MLP | 24 | motion_auc_v0_objects | -0.017 [-0.038, +0.004] | 0.75 | 93 |
+| v2 | selectivity real - patch | randall | MLP | 24 | pair_auc_obj | +0.110 [+0.077, +0.143] | 3.5e-07 | 93 |
+| v2 | selectivity real - instance | randall | MLP | 24 | pair_auc_obj | +0.010 [-0.019, +0.039] | 1 | 93 |
+| v2 | MLP - ridge/bilinear | randall | MLP | 24 | pair_auc_obj | -0.039 [-0.063, -0.014] | 0.0067 | 93 |
+| v2 | L24 - L0 | randall | MLP | 24 | pair_auc_obj | -0.026 [-0.043, -0.008] | 0.0067 | 93 |
+| v2 | selectivity real - patch | randall | linear (MLP recipe) | 24 | motion_auc_v0_objects | +0.051 [+0.018, +0.084] | 0.028 | 93 |
+| v2 | selectivity real - instance | randall | linear (MLP recipe) | 24 | motion_auc_v0_objects | +0.044 [+0.004, +0.086] | 0.15 | 93 |
+| v2 | L24 - L0 | randall | linear (MLP recipe) | 24 | motion_auc_v0_objects | +0.035 [+0.009, +0.061] | 0.016 | 93 |
+| v2 | selectivity real - patch | randall | linear (MLP recipe) | 24 | pair_auc_obj | +0.124 [+0.094, +0.158] | 3.6e-12 | 93 |
+| v2 | selectivity real - instance | randall | linear (MLP recipe) | 24 | pair_auc_obj | +0.006 [-0.021, +0.034] | 1 | 93 |
+| v2 | L24 - L0 | randall | linear (MLP recipe) | 24 | pair_auc_obj | -0.022 [-0.038, -0.008] | 0.0035 | 93 |
+| v2 | selectivity real - patch | enc_dino | MLP | 0 | motion_auc_v0_objects | -0.021 [-0.068, +0.027] | 0.15 | 93 |
+| v2 | selectivity real - instance | enc_dino | MLP | 0 | motion_auc_v0_objects | -0.051 [-0.107, +0.010] | 0.15 | 93 |
+| v2 | MLP - ridge/bilinear | enc_dino | MLP | 0 | motion_auc_v0_objects | -0.001 [-0.029, +0.027] | 1 | 93 |
+| v2 | selectivity real - patch | enc_dino | MLP | 0 | pair_auc_obj | +0.204 [+0.181, +0.227] | 8.8e-25 | 93 |
+| v2 | selectivity real - instance | enc_dino | MLP | 0 | pair_auc_obj | -0.001 [-0.025, +0.021] | 0.41 | 93 |
+| v2 | MLP - ridge/bilinear | enc_dino | MLP | 0 | pair_auc_obj | -0.044 [-0.064, -0.025] | 6.5e-05 | 93 |
+| v2 | selectivity real - patch | enc_dino | linear (MLP recipe) | 0 | motion_auc_v0_objects | -0.029 [-0.065, +0.008] | 0.097 | 93 |
+| v2 | selectivity real - instance | enc_dino | linear (MLP recipe) | 0 | motion_auc_v0_objects | -0.048 [-0.087, -0.004] | 0.00037 | 93 |
+| v2 | selectivity real - patch | enc_dino | linear (MLP recipe) | 0 | pair_auc_obj | +0.232 [+0.207, +0.259] | 1.9e-26 | 93 |
+| v2 | selectivity real - instance | enc_dino | linear (MLP recipe) | 0 | pair_auc_obj | -0.005 [-0.028, +0.020] | 0.3 | 93 |
+| v2 | selectivity real - patch | trained | MLP | 0 | motion_auc_v0_objects | +0.130 [+0.077, +0.179] | 0.00081 | 93 |
+| v2 | selectivity real - inst
 
