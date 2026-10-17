@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 16:21:33
+updated 2026-10-17 16:21:43
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -43,10 +43,10 @@ updated 2026-10-17 16:21:33
 | 37 | ft_eval_heads_sf: Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 15:24:57 | 2026-10-17 15:39:05 | True |
 | 38 | ft_train_gain: Item 10: fine-tune (e) 5 learned per-head gains | done | 1 | 2026-10-17 15:39:16 | 2026-10-17 16:06:25 | True |
 | 39 | ft_eval_gain: Item 10: evaluate fine-tune (e) 5 learned per-head gains | done | 1 | 2026-10-17 16:06:35 | 2026-10-17 16:21:13 | True |
-| 40 | ft_summary: Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | done | 1 | 2026-10-17 16:21:23 | 2026-10-17 16:21:33 | False |
+| 40 | ft_summary: Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | done | 1 | 2026-10-17 16:21:23 | 2026-10-17 16:21:33 | True |
 | 41 | v4_pilot: Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 | True |
 | 42 | v4_scale_epi: Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 | True |
-| 43 | v4_viewsweep_epi: Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | pending | 0 | 2026-10-17 04:46:51 | 2026-10-17 04:48:29 | True |
+| 43 | v4_viewsweep_epi: Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | running | 1 | 2026-10-17 16:21:43 |  | False |
 | 44 | r2_probe_extract: Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | pending | 0 | 2026-10-17 04:48:37 | 2026-10-17 04:49:15 | True |
 | 45 | r2_heads_null: Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | pending | 0 | 2026-10-17 04:49:23 | 2026-10-17 04:50:02 | True |
 | 46 | r2_probe_linear: Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | pending | 0 |  |  |  |

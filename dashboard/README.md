@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 16:21:39 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 16:21:47 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -46,7 +46,7 @@ Last updated 2026-10-17 16:21:39 (server time). Regenerated after every queue ev
 | 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | done | 1 | 2026-10-17 16:21:23 | 2026-10-17 16:21:33 |
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
 | 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 |
-| 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | queued | 0 | 2026-10-17 04:46:51 |  |
+| 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | RUNNING | 1 | 2026-10-17 16:21:43 |  |
 | 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | queued | 0 | 2026-10-17 04:48:37 |  |
 | 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | queued | 0 | 2026-10-17 04:49:23 |  |
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
@@ -1400,4 +1400,13 @@ Static objects in every split are 1.4 to 2.2 m (the v3float range).
 
 How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 misses the object in a third view by tens of pixels, while for epi_const and for the background it fits to about 0 px. (b) Two-view separation is about 0 in every split, so frames 0 and 23 alone are ambiguous. (c) The accelerated object's image track leaves the track of its static reading (the constant-velocity object stays on it). (d) Size randomisation decouples apparent size from the static interpretation.
 
+
+
+## v4_viewsweep_epi
+
+Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats
+
+Status: **RUNNING**, attempt 1, started 2026-10-17 16:21:43. [Raw results](../results/queue/v4_viewsweep_epi/), [log](../results/queue/v4_viewsweep_epi/task.log).
+
+Partial results so far; the run is still going.
 
