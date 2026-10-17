@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 20:08:54
+updated 2026-10-17 20:09:05
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -49,8 +49,8 @@ updated 2026-10-17 20:08:54
 | 43 | v4_viewsweep_epi: Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | done | 1 | 2026-10-17 16:21:43 | 2026-10-17 16:37:22 | True |
 | 44 | r2_probe_extract: Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | done | 1 | 2026-10-17 16:37:33 | 2026-10-17 16:43:12 | True |
 | 45 | r2_heads_null: Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | done | 1 | 2026-10-17 16:43:22 | 2026-10-17 17:54:42 | True |
-| 46 | r2_probe_linear: Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | done | 1 | 2026-10-17 17:54:53 | 2026-10-17 20:08:54 | False |
-| 47 | r2_probe_mlp: Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | pending | 0 |  |  |  |
+| 46 | r2_probe_linear: Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | done | 1 | 2026-10-17 17:54:53 | 2026-10-17 20:08:54 | True |
+| 47 | r2_probe_mlp: Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | running | 1 | 2026-10-17 20:09:05 |  | False |
 | 48 | ft_train_heads_sel: Item 10 rerun: train heads with corrected checkpoint selection | pending | 0 |  |  |  |
 | 49 | ft_eval_heads_sel: Item 10 rerun: evaluate heads_sel | pending | 0 |  |  |  |
 | 50 | ft_train_ctrl_sel: Item 10 rerun: train ctrl with corrected checkpoint selection | pending | 0 |  |  |  |

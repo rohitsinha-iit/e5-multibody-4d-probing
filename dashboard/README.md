@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 20:09:00 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 20:09:09 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -50,7 +50,7 @@ Last updated 2026-10-17 20:09:00 (server time). Regenerated after every queue ev
 | 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | done | 1 | 2026-10-17 16:37:33 | 2026-10-17 16:43:12 |
 | 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | done | 1 | 2026-10-17 16:43:22 | 2026-10-17 17:54:42 |
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | done | 1 | 2026-10-17 17:54:53 | 2026-10-17 20:08:54 |
-| 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
+| 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | RUNNING | 1 | 2026-10-17 20:09:05 |  |
 | 48 | [ft_train_heads_sel](#ft_train_heads_sel): Item 10 rerun: train heads with corrected checkpoint selection | queued | 0 |  |  |
 | 49 | [ft_eval_heads_sel](#ft_eval_heads_sel): Item 10 rerun: evaluate heads_sel | queued | 0 |  |  |
 | 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | queued | 0 |  |  |
@@ -1860,4 +1860,13 @@ Cells: mean over seeds +/- sd over seeds [95% bootstrap CI over scenes of the se
 |---|---|---|---|---|---|---|---|---|---|
 | trained | linear (round-1 ridge / bilinear) | real | 0.770 +/- 0.001 [0.744, 0.796] | 0.795 +/- 0.001 [0.767, 0.823] | 0.810 +/- 0.000 [0.783, 0.838] | 0.842 +/- 0.000 [0.816, 0.867] | 0.862 +/- 0.000 [0.837, 0.887] | 0.890 +/- 0.000 [0.860, 0.916] | 0.915 +/- 0.001 [0.890, 0.937] |
 | trained | linear (round-1 ridge / bilinear) | patch | 0.528 +/- 0.001 [0.518, 0.541] | 0.526 +/- 0.000 [0.515, 0.539] | 0.526 +/- 0.000 [0.516, 0.536] | 0.530 +/- 0.001 [0.519, 0.541] | 0.526 +/- 0.001 [0.518, 0.536] | 0.5
+
+
+## r2_probe_mlp
+
+Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float)
+
+Status: **RUNNING**, attempt 1, started 2026-10-17 20:09:05. [Raw results](../results/queue/r2_probe_mlp/), [log](../results/queue/r2_probe_mlp/task.log).
+
+Partial results so far; the run is still going.
 
