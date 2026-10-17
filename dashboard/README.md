@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 16:37:36 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 16:43:17 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -47,7 +47,7 @@ Last updated 2026-10-17 16:37:36 (server time). Regenerated after every queue ev
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
 | 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 |
 | 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | done | 1 | 2026-10-17 16:21:43 | 2026-10-17 16:37:22 |
-| 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | RUNNING | 1 | 2026-10-17 16:37:33 |  |
+| 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | done | 1 | 2026-10-17 16:37:33 | 2026-10-17 16:43:12 |
 | 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | queued | 0 | 2026-10-17 04:49:23 |  |
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
@@ -59,7 +59,7 @@ Last updated 2026-10-17 16:37:36 (server time). Regenerated after every queue ev
 | 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | queued | 0 |  |  |
 | 54 | [ft_summary_sel](#ft_summary_sel): Item 10: comparison table with corrected head variants | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 16:36:52 running v4_viewsweep_epi
+Supervisor heartbeat: 2026-10-17 16:42:42 running r2_probe_extract
 
 ## v3_pilot
 
@@ -1525,7 +1525,31 @@ Verdict (pre-specified rule: sizerand minus ref < 0 with CI below 0 and Holm p <
 
 Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 16:37:33. [Raw results](../results/queue/r2_probe_extract/), [log](../results/queue/r2_probe_extract/task.log).
+Status: **done**, attempt 1, started 2026-10-17 16:37:33, finished 2026-10-17 16:43:12. [Raw results](../results/queue/r2_probe_extract/), [log](../results/queue/r2_probe_extract/task.log).
 
-Partial results so far; the run is still going.
+![fig_token_norms.png](assets/r2_probe_extract/fig_token_norms.png)
+
+
+**r2_probe_extract_summary.md**
+
+# r2_probe_extract: control-model internals for the probe controls (review W4)
+
+Variants: randtf = public DINOv2 ViT-L/14 encoder + Any4D projection, fusion norm, transformer and heads at their own seeded random init; randall = everything random (encoder re-initialised with the dinov2 constructor, pretrained=False); enc_any4d / enc_dino = raw encoder patch tokens of the trained Any4D encoder / the public DINOv2 encoder (1024-d, before fusion norm, projection and view PE); trained = round-1 Any4D internals (symlinks). Layers 0,4,...,24 for the transformer variants (0 = transformer input).
+
+| dataset | source | scenes | stored layers | non-finite values | encoder max abs param diff to public DINOv2 |
+|---|---|---|---|---|---|
+| v2 | trained | 100 | 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 | 0 (first 20 scenes) |  |
+| v2 | randtf | 100 | 0,4,8,12,16,20,24 | 0 (first 20 scenes) | 0 |
+| v2 | randall | 100 | 0,4,8,12,16,20,24 | 0 (first 20 scenes) | 72.27 |
+| v2 | enc_any4d | 100 | 0 | 0 (first 20 scenes) | 0.0617 |
+| v2 | enc_dino | 100 | 0 | 0 (first 20 scenes) | 0 |
+| v3float | trained | 69 | 0,2,4,6,8,10,12,14,16,18,20,22,24,17,19,21 | 0 (first 20 scenes) |  |
+| v3float | randtf | 69 | 0,4,8,12,16,20,24 | 0 (first 20 scenes) | 0 |
+| v3float | randall | 69 | 0,4,8,12,16,20,24 | 0 (first 20 scenes) | 72.27 |
+| v3float | enc_any4d | 69 | 0 | 0 (first 20 scenes) | 0.0617 |
+| v3float | enc_dino | 69 | 0 | 0 (first 20 scenes) | 0 |
+
+The trained Any4D encoder differs from the public DINOv2 weights (it was fine-tuned), so enc_any4d and enc_dino are two different baselines.
+
+
 
