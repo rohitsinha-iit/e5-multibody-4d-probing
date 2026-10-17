@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-18 00:20:12 (server time). Regenerated after every queue event.
+Last updated 2026-10-18 00:20:20 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -55,7 +55,7 @@ Last updated 2026-10-18 00:20:12 (server time). Regenerated after every queue ev
 | 49 | [ft_eval_heads_sel](#ft_eval_heads_sel): Item 10 rerun: evaluate heads_sel | done | 1 | 2026-10-17 22:31:38 | 2026-10-17 22:46:16 |
 | 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | done | 1 | 2026-10-17 22:46:27 | 2026-10-18 00:05:47 |
 | 51 | [ft_eval_ctrl_sel](#ft_eval_ctrl_sel): Item 10 rerun: evaluate ctrl_sel | done | 1 | 2026-10-18 00:05:58 | 2026-10-18 00:20:06 |
-| 52 | [ft_train_gain_sel](#ft_train_gain_sel): Item 10 rerun: train gain with corrected checkpoint selection | queued | 0 |  |  |
+| 52 | [ft_train_gain_sel](#ft_train_gain_sel): Item 10 rerun: train gain with corrected checkpoint selection | RUNNING | 1 | 2026-10-18 00:20:17 |  |
 | 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | queued | 0 |  |  |
 | 54 | [ft_summary_sel](#ft_summary_sel): Item 10: comparison table with corrected head variants | queued | 0 |  |  |
 
@@ -2159,4 +2159,13 @@ Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set
 | 17 | 0.844 | 0.906 |
 | 24 | 0.974 | 0.999 |
 
+
+
+## ft_train_gain_sel
+
+Item 10 rerun: train gain with corrected checkpoint selection
+
+Status: **RUNNING**, attempt 1, started 2026-10-18 00:20:17. [Raw results](../results/queue/ft_train_gain_sel/), [log](../results/queue/ft_train_gain_sel/task.log).
+
+Partial results so far; the run is still going.
 
