@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 16:21:18 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 16:21:28 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -43,7 +43,7 @@ Last updated 2026-10-17 16:21:18 (server time). Regenerated after every queue ev
 | 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 15:24:57 | 2026-10-17 15:39:05 |
 | 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | done | 1 | 2026-10-17 15:39:16 | 2026-10-17 16:06:25 |
 | 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | done | 1 | 2026-10-17 16:06:35 | 2026-10-17 16:21:13 |
-| 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | queued | 0 |  |  |
+| 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | RUNNING | 1 | 2026-10-17 16:21:23 |  |
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
 | 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 |
 | 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | queued | 0 | 2026-10-17 04:46:51 |  |
@@ -1196,6 +1196,99 @@ Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set
 | 0 | 0.569 | 0.515 |
 | 17 | 0.843 | 0.905 |
 | 24 | 0.973 | 0.999 |
+
+
+
+## ft_summary
+
+Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap)
+
+Status: **RUNNING**, attempt 1, started 2026-10-17 16:21:23. [Raw results](../results/queue/ft_summary/), [log](../results/queue/ft_summary/task.log).
+
+Partial results so far; the run is still going.
+
+![ft_comparison.png](assets/ft_summary/ft_comparison.png)
+
+
+**ft_summary_summary.md**
+
+# ft_summary: item 10, head-targeted and decoder-side fine-tuning of Any4D
+
+Each cell: mean over scenes (EPE: mean of per-scene medians, px), then in brackets the paired change vs base with a bootstrap 95% CI over scenes and the two-sided paired sign-test p. Lower is better for EPE and geometry errors.
+
+| dataset | metric | base | (a) heads-LoRA | (b) sf-decoder | (c) heads+sf | (d) control heads | (e) head gains |
+|---|---|---|---|---|---|---|---|
+| v2 | slope | 0.607 | 0.607 (+0.000 [+0.000, +0.000], p=nan) | 0.767 (+0.160 [+0.134, +0.187], p=9.9e-17) | 0.776 (+0.169 [+0.143, +0.197], p=8.1e-16) | 0.607 (+0.000 [+0.000, +0.000], p=nan) | 0.607 (+0.000 [+0.000, +0.000], p=nan) |
+| v2 | epe_static | 4.100 | 4.100 (+0.000 [+0.000, +0.000], p=nan) | 4.136 (+0.035 [+0.019, +0.052], p=0.0035) | 4.136 (+0.036 [+0.020, +0.053], p=7.9e-05) | 4.100 (+0.000 [+0.000, +0.000], p=nan) | 4.100 (+0.000 [+0.000, +0.000], p=nan) |
+| v2 | epe_moving | 35.0 | 35.0 (+0.000 [+0.000, +0.000], p=nan) | 29.5 (-5.412 [-8.399, -2.632], p=0.011) | 28.9 (-6.075 [-9.302, -3.100], p=0.011) | 35.0 (+0.000 [+0.000, +0.000], p=nan) | 35.0 (+0.000 [+0.000, +0.000], p=nan) |
+| v2 | sep_ratio | 0.825 | 0.825 (+0.000 [+0.000, +0.000], p=nan) | 0.828 (+0.003 [-0.092, +0.103], p=0.4) | 0.826 (+0.002 [-0.078, +0.088], p=0.67) | 0.825 (+0.000 [+0.000, +0.000], p=nan) | 0.825 (+0.000 [+0.000, +0.000], p=nan) |
+| v2 | mask_iou | 0.591 | 0.591 (+0.000 [+0.000, +0.000], p=nan) | 0.544 (-0.047 [-0.066, -0.027], p=3.1e-07) | 0.544 (-0.047 [-0.065, -0.027], p=9.4e-08) | 0.591 (+0.000 [+0.000, +0.000], p=nan) | 0.591 (+0.000 [+0.000, +0.000], p=nan) |
+| v2_epi | mask_iou | 0.486 | 0.486 (+0.000 [+0.000, +0.000], p=nan) | 0.424 (-0.062 [-0.135, +0.010], p=0.18) | 0.419 (-0.066 [-0.141, +0.012], p=0.18) | 0.486 (+0.000 [+0.000, +0.000], p=nan) | 0.486 (+0.000 [+0.000, +0.000], p=nan) |
+| v3float | slope | 0.559 | 0.559 (+0.000 [+0.000, +0.000], p=nan) | 0.724 (+0.165 [+0.127, +0.207], p=3.2e-10) | 0.735 (+0.177 [+0.135, +0.219], p=5e-12) | 0.559 (+0.000 [+0.000, +0.000], p=nan) | 0.559 (+0.000 [+0.000, +0.000], p=nan) |
+| v3float | epe_static | 4.517 | 4.517 (+0.000 [+0.000, +0.000], p=nan) | 4.527 (+0.009 [-0.028, +0.042], p=0.053) | 4.534 (+0.017 [-0.023, +0.049], p=0.0016) | 4.517 (+0.000 [+0.000, +0.000], p=nan) | 4.517 (+0.000 [+0.000, +0.000], p=nan) |
+| v3float | epe_moving | 47.7 | 47.7 (+0.000 [+0.000, +0.000], p=nan) | 41.1 (-6.633 [-12.691, -1.033], p=0.46) | 39.5 (-8.169 [-14.659, -2.264], p=0.14) | 47.7 (+0.000 [+0.000, +0.000], p=nan) | 47.7 (+0.000 [+0.000, +0.000], p=nan) |
+| v3float | sep_ratio | 0.727 | 0.727 (+0.000 [+0.000, +0.000], p=nan) | 0.858 (+0.132 [-0.022, +0.291], p=0.26) | 0.835 (+0.109 [-0.049, +0.248], p=0.14) | 0.727 (+0.000 [+0.000, +0.000], p=nan) | 0.727 (+0.000 [+0.000, +0.000], p=nan) |
+| v3float | mask_iou | 0.453 | 0.453 (+0.000 [+0.000, +0.000], p=nan) | 0.463 (+0.011 [-0.013, +0.036], p=0.53) | 0.471 (+0.018 [-0.009, +0.048], p=1) | 0.453 (+0.000 [+0.000, +0.000], p=nan) | 0.453 (+0.000 [+0.000, +0.000], p=nan) |
+| v3float_epi | mask_iou | 0.312 | 0.312 (+0.000 [+0.000, +0.000], p=nan) | 0.346 (+0.034 [-0.006, +0.080], p=0.56) | 0.358 (+0.046 [-0.000, +0.103], p=0.33) | 0.312 (+0.000 [+0.000, +0.000], p=nan) | 0.312 (+0.000 [+0.000, +0.000], p=nan) |
+| v3float_epi | mask_auc | 0.943 | 0.943 (+0.000 [+0.000, +0.000], p=nan) | 0.929 (-0.014 [-0.065, +0.018], p=0.036) | 0.934 (-0.010 [-0.060, +0.023], p=0.036) | 0.943 (+0.000 [+0.000, +0.000], p=nan) | 0.943 (+0.000 [+0.000, +0.000], p=nan) |
+| v3far | slope | 0.648 | 0.648 (+0.000 [+0.000, +0.000], p=nan) | 0.797 (+0.149 [+0.094, +0.209], p=0.00073) | 0.790 (+0.142 [+0.092, +0.199], p=0.00073) | 0.648 (+0.000 [+0.000, +0.000], p=nan) | 0.648 (+0.000 [+0.000, +0.000], p=nan) |
+| v3far | epe_moving | 35.8 | 35.8 (+0.000 [+0.000, +0.000], p=nan) | 31.4 (-4.409 [-9.149, -0.272], p=0.65) | 31.5 (-4.314 [-9.277, +0.337], p=0.65) | 35.8 (+0.000 [+0.000, +0.000], p=nan) | 35.8 (+0.000 [+0.000, +0.000], p=nan) |
+| v3far | sep_ratio | 0.855 | 0.855 (+0.000 [+0.000, +0.000], p=nan) | 0.686 (-0.169 [-0.416, +0.048], p=0.65) | 0.691 (-0.163 [-0.376, +0.037], p=1) | 0.855 (+0.000 [+0.000, +0.000], p=nan) | 0.855 (+0.000 [+0.000, +0.000], p=nan) |
+| v2 | depth_absrel_med | 0.020 | 0.020 (+0.000 [+0.000, +0.000], p=nan) | 0.020 (+0.000 [+0.000, +0.000], p=nan) | 0.020 (-0.000 [-0.000, +0.000], p=0.62) | 0.020 (+0.000 [+0.000, +0.000], p=nan) | 0.020 (+0.000 [+0.000, +0.000], p=nan) |
+| v2 | rot_err_deg | 0.604 | 0.604 (+0.000 [+0.000, +0.000], p=nan) | 0.604 (+0.000 [+0.000, +0.000], p=nan) | 0.603 (-0.000 [-0.001, +0.000], p=0.76) | 0.604 (+0.000 [+0.000, +0.000], p=nan) | 0.604 (+0.000 [+0.000, +0.000], p=nan) |
+| v2 | trans_relerr_med | 0.045 | 0.045 (+0.000 [+0.000, +0.000], p=nan) | 0.045 (+0.000 [+0.000, +0.000], p=nan) | 0.045 (-0.000 [-0.000, +0.000], p=0.75) | 0.045 (+0.000 [+0.000, +0.000], p=nan) | 0.045 (+0.000 [+0.000, +0.000], p=nan) |
+| kitti15_rgb_2v_wide | slope | 0.575 | 0.575 (+0.000 [+0.000, +0.000], p=nan) | 0.542 (-0.034 [-0.079, +0.013], p=1.5e-05) | 0.512 (-0.063 [-0.105, -0.021], p=1.8e-07) | 0.575 (+0.000 [+0.000, +0.000], p=nan) | 0.575 (+0.000 [+0.000, +0.000], p=nan) |
+| kitti15_rgb_2v_wide | epe_static | 4.232 | 4.232 (+0.000 [+0.000, +0.000], p=nan) | 4.119 (-0.113 [-0.144, -0.081], p=2.5e-12) | 4.089 (-0.142 [-0.172, -0.112], p=8.3e-19) | 4.232 (+0.000 [+0.000, +0.000], p=nan) | 4.232 (+0.000 [+0.000, +0.000], p=nan) |
+| kitti15_rgb_2v_wide | epe_moving | 17.8 | 17.8 (+0.000 [+0.000, +0.000], p=nan) | 21.6 (+3.822 [+2.587, +5.099], p=1.5e-08) | 21.2 (+3.424 [+2.290, +4.621], p=8.1e-08) | 17.8 (+0.000 [+0.000, +0.000], p=nan) | 17.8 (+0.000 [+0.000, +0.000], p=nan) |
+| kitti15_rgb_mv4_wide | slope | 0.707 | 0.707 (+0.000 [+0.000, +0.000], p=nan) | 0.672 (-0.035 [-0.095, +0.021], p=0.00094) | 0.642 (-0.064 [-0.118, -0.011], p=5.4e-05) | 0.707 (+0.000 [+0.000, +0.000], p=nan) | 0.707 (+0.000 [+0.000, +0.000], p=nan) |
+| sintel_final_2v_wide | slope | 0.327 | 0.327 (+0.000 [+0.000, +0.000], p=nan) | 0.171 (-0.156 [-0.219, -0.091], p=1.4e-09) | 0.173 (-0.153 [-0.220, -0.089], p=7.7e-09) | 0.327 (+0.000 [+0.000, +0.000], p=nan) | 0.327 (+0.000 [+0.000, +0.000], p=nan) |
+| sintel_final_2v_wide | epe_moving | 18.5 | 18.5 (+0.000 [+0.000, +0.000], p=nan) | 21.1 (+2.587 [+1.397, +3.926], p=4.2e-05) | 21.1 (+2.580 [+1.407, +3.934], p=7.5e-05) | 18.5 (+0.000 [+0.000, +0.000], p=nan) | 18.5 (+0.000 [+0.000, +0.000], p=nan) |
+| sintel_final_2v_wide | sep_ratio | 0.692 | 0.692 (+0.000 [+0.000, +0.000], p=nan) | 0.716 (+0.024 [-0.073, +0.122], p=0.67) | 0.712 (+0.020 [-0.073, +0.112], p=0.8) | 0.692 (+0.000 [+0.000, +0.000], p=nan) | 0.692 (+0.000 [+0.000, +0.000], p=nan) |
+| sintel_final_mv4_wide | slope | 0.334 | 0.334 (+0.000 [+0.000, +0.000], p=nan) | 0.180 (-0.154 [-0.219, -0.096], p=3.3e-09) | 0.186 (-0.148 [-0.215, -0.087], p=1.8e-08) | 0.334 (+0.000 [+0.000, +0.000], p=nan) | 0.334 (+0.000 [+0.000, +0.000], p=nan) |
+| sintel_clean_2v_wide | slope | 0.314 | 0.314 (+0.000 [+0.000, +0.000], p=nan) | 0.211 (-0.103 [-0.143, -0.060], p=1.4e-09) | 0.217 (-0.096 [-0.139, -0.052], p=1.8e-08) | 0.314 (+0.000 [+0.000, +0.000], p=nan) | 0.314 (+0.000 [+0.000, +0.000], p=nan) |
+| probe_epi | motion_auc_v0_objects_L24 | 0.999 | 0.999 (+0.000 [+0.000, +0.000], p=nan) | 0.999 (+0.000 [+0.000, +0.000], p=nan) | 0.999 (-0.000 [-0.000, +0.000], p=1) | 0.999 (+0.000 [+0.000, +0.000], p=nan) | 0.999 (+0.000 [+0.000, +0.000], p=nan) |
+| probe | motion_auc_v0_objects_L24 | 0.973 | 0.973 (+0.000 [+0.000, +0.000], p=nan) | 0.973 (+0.000 [+0.000, +0.000], p=nan) | 0.973 (+0.000 [-0.001, +0.001], p=1) | 0.973 (+0.000 [+0.000, +0.000], p=nan) | 0.973 (+0.000 [+0.000, +0.000], p=nan) |
+
+## Are the gains specific to the five heads? (paired vs the matched control heads, variant d)
+
+| dataset | metric | (a) heads-LoRA vs (d) | (c) heads+sf vs (d) |
+|---|---|---|---|
+| v2 | slope | 0.607 (+0.000 [+0.000, +0.000], p=nan) | 0.776 (+0.169 [+0.142, +0.197], p=8.1e-16) |
+| v2 | epe_static | 4.100 (+0.000 [+0.000, +0.000], p=nan) | 4.136 (+0.036 [+0.019, +0.054], p=7.9e-05) |
+| v2 | epe_moving | 35.0 (+0.000 [+0.000, +0.000], p=nan) | 28.9 (-6.075 [-9.379, -3.165], p=0.011) |
+| v2 | sep_ratio | 0.825 (+0.000 [+0.000, +0.000], p=nan) | 0.826 (+0.002 [-0.075, +0.082], p=0.67) |
+| v2 | mask_iou | 0.591 (+0.000 [+0.000, +0.000], p=nan) | 0.544 (-0.047 [-0.065, -0.027], p=9.4e-08) |
+| v2_epi | mask_iou | 0.486 (+0.000 [+0.000, +0.000], p=nan) | 0.419 (-0.066 [-0.138, +0.011], p=0.18) |
+| v3float | slope | 0.559 (+0.000 [+0.000, +0.000], p=nan) | 0.735 (+0.177 [+0.137, +0.219], p=5e-12) |
+| v3float | epe_static | 4.517 (+0.000 [+0.000, +0.000], p=nan) | 4.534 (+0.017 [-0.023, +0.048], p=0.0016) |
+| v3float | epe_moving | 47.7 (+0.000 [+0.000, +0.000], p=nan) | 39.5 (-8.169 [-14.563, -2.120], p=0.14) |
+| v3float | sep_ratio | 0.727 (+0.000 [+0.000, +0.000], p=nan) | 0.835 (+0.109 [-0.042, +0.258], p=0.14) |
+| v3float | mask_iou | 0.453 (+0.000 [+0.000, +0.000], p=nan) | 0.471 (+0.018 [-0.008, +0.047], p=1) |
+| v3float_epi | mask_iou | 0.312 (+0.000 [+0.000, +0.000], p=nan) | 0.358 (+0.046 [-0.002, +0.100], p=0.33) |
+| v3float_epi | mask_auc | 0.943 (+0.000 [+0.000, +0.000], p=nan) | 0.934 (-0.010 [-0.062, +0.022], p=0.036) |
+| v3far | slope | 0.648 (+0.000 [+0.000, +0.000], p=nan) | 0.790 (+0.142 [+0.093, +0.197], p=0.00073) |
+| v3far | epe_moving | 35.8 (+0.000 [+0.000, +0.000], p=nan) | 31.5 (-4.314 [-9.476, +0.103], p=0.65) |
+| v3far | sep_ratio | 0.855 (+0.000 [+0.000, +0.000], p=nan) | 0.691 (-0.163 [-0.370, +0.055], p=1) |
+| kitti15_rgb_2v_wide | slope | 0.575 (+0.000 [+0.000, +0.000], p=nan) | 0.512 (-0.063 [-0.105, -0.021], p=1.8e-07) |
+| kitti15_rgb_2v_wide | epe_static | 4.232 (+0.000 [+0.000, +0.000], p=nan) | 4.089 (-0.142 [-0.172, -0.114], p=8.3e-19) |
+| kitti15_rgb_2v_wide | epe_moving | 17.8 (+0.000 [+0.000, +0.000], p=nan) | 21.2 (+3.424 [+2.238, +4.699], p=8.1e-08) |
+| kitti15_rgb_mv4_wide | slope | 0.707 (+0.000 [+0.000, +0.000], p=nan) | 0.642 (-0.064 [-0.116, -0.010], p=5.4e-05) |
+| sintel_final_2v_wide | slope | 0.327 (+0.000 [+0.000, +0.000], p=nan) | 0.173 (-0.153 [-0.219, -0.087], p=7.7e-09) |
+| sintel_final_2v_wide | epe_moving | 18.5 (+0.000 [+0.000, +0.000], p=nan) | 21.1 (+2.580 [+1.387, +4.006], p=7.5e-05) |
+| sintel_final_2v_wide | sep_ratio | 0.692 (+0.000 [+0.000, +0.000], p=nan) | 0.712 (+0.020 [-0.069, +0.106], p=0.8) |
+| sintel_final_mv4_wide | slope | 0.334 (+0.000 [+0.000, +0.000], p=nan) | 0.186 (-0.148 [-0.212, -0.086], p=1.8e-08) |
+| sintel_clean_2v_wide | slope | 0.314 (+0.000 [+0.000, +0.000], p=nan) | 0.217 (-0.096 [-0.139, -0.053], p=1.8e-08) |
+
+## Questions
+
+- Largest Kubric v2 slope: (c) heads+sf (0.776 vs base 0.607); moving EPE 28.9 vs 35.0 px; static EPE 4.14 vs 4.10 px.
+- (a) heads-LoRA: KITTI 2-view slope change +0.000 (p=nan), Sintel final 2-view +0.000 (p=nan); floating epi mask IoU 0.312 (base 0.312), layer-24 probe AUC on the same scenes 0.999.
+- (b) sf-decoder: KITTI 2-view slope change -0.034 (p=1.5e-05), Sintel final 2-view -0.156 (p=1.4e-09); floating epi mask IoU 0.346 (base 0.312), layer-24 probe AUC on the same scenes 0.999.
+- (c) heads+sf: KITTI 2-view slope change -0.063 (p=1.8e-07), Sintel final 2-view -0.153 (p=7.7e-09); floating epi mask IoU 0.358 (base 0.312), layer-24 probe AUC on the same scenes 0.999.
+- (d) control heads: KITTI 2-view slope change +0.000 (p=nan), Sintel final 2-view +0.000 (p=nan); floating epi mask IoU 0.312 (base 0.312), layer-24 probe AUC on the same scenes 0.999.
+- (e) head gains: KITTI 2-view slope change +0.000 (p=nan), Sintel final 2-view +0.000 (p=nan); floating epi mask IoU 0.312 (base 0.312), layer-24 probe AUC on the same scenes 0.999.
+
+Automatic text above only reports numbers; interpretation is left to the write-up. Full statistics: ft_comparison_long.csv.
 
 
 

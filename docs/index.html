@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-17 16:21:18 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-17 16:21:28 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -327,9 +327,9 @@
 <tr>
 <td>40</td>
 <td><a href="#ft_summary">ft_summary</a>: Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap)</td>
-<td>queued</td>
-<td>0</td>
-<td></td>
+<td>RUNNING</td>
+<td>1</td>
+<td>2026-10-17 16:21:23</td>
 <td></td>
 </tr>
 <tr>
@@ -4253,6 +4253,503 @@ If the dedicated trackers (CoTracker3, RAFT) recover close to all object motion 
 </tr>
 </tbody>
 </table>
+<h2>ft_summary</h2>
+<p>Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap)</p>
+<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-17 16:21:23. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_summary/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_summary/task.log">log</a>.</p>
+<p>Partial results so far; the run is still going.</p>
+<p><img alt="ft_comparison.png" src="assets/ft_summary/ft_comparison.png" /></p>
+<p><strong>ft_summary_summary.md</strong></p>
+<h1>ft_summary: item 10, head-targeted and decoder-side fine-tuning of Any4D</h1>
+<p>Each cell: mean over scenes (EPE: mean of per-scene medians, px), then in brackets the paired change vs base with a bootstrap 95% CI over scenes and the two-sided paired sign-test p. Lower is better for EPE and geometry errors.</p>
+<table>
+<thead>
+<tr>
+<th>dataset</th>
+<th>metric</th>
+<th>base</th>
+<th>(a) heads-LoRA</th>
+<th>(b) sf-decoder</th>
+<th>(c) heads+sf</th>
+<th>(d) control heads</th>
+<th>(e) head gains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v2</td>
+<td>slope</td>
+<td>0.607</td>
+<td>0.607 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.767 (+0.160 [+0.134, +0.187], p=9.9e-17)</td>
+<td>0.776 (+0.169 [+0.143, +0.197], p=8.1e-16)</td>
+<td>0.607 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.607 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>epe_static</td>
+<td>4.100</td>
+<td>4.100 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>4.136 (+0.035 [+0.019, +0.052], p=0.0035)</td>
+<td>4.136 (+0.036 [+0.020, +0.053], p=7.9e-05)</td>
+<td>4.100 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>4.100 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>epe_moving</td>
+<td>35.0</td>
+<td>35.0 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>29.5 (-5.412 [-8.399, -2.632], p=0.011)</td>
+<td>28.9 (-6.075 [-9.302, -3.100], p=0.011)</td>
+<td>35.0 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>35.0 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>sep_ratio</td>
+<td>0.825</td>
+<td>0.825 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.828 (+0.003 [-0.092, +0.103], p=0.4)</td>
+<td>0.826 (+0.002 [-0.078, +0.088], p=0.67)</td>
+<td>0.825 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.825 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>mask_iou</td>
+<td>0.591</td>
+<td>0.591 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.544 (-0.047 [-0.066, -0.027], p=3.1e-07)</td>
+<td>0.544 (-0.047 [-0.065, -0.027], p=9.4e-08)</td>
+<td>0.591 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.591 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v2_epi</td>
+<td>mask_iou</td>
+<td>0.486</td>
+<td>0.486 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.424 (-0.062 [-0.135, +0.010], p=0.18)</td>
+<td>0.419 (-0.066 [-0.141, +0.012], p=0.18)</td>
+<td>0.486 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.486 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>slope</td>
+<td>0.559</td>
+<td>0.559 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.724 (+0.165 [+0.127, +0.207], p=3.2e-10)</td>
+<td>0.735 (+0.177 [+0.135, +0.219], p=5e-12)</td>
+<td>0.559 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.559 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>epe_static</td>
+<td>4.517</td>
+<td>4.517 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>4.527 (+0.009 [-0.028, +0.042], p=0.053)</td>
+<td>4.534 (+0.017 [-0.023, +0.049], p=0.0016)</td>
+<td>4.517 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>4.517 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>epe_moving</td>
+<td>47.7</td>
+<td>47.7 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>41.1 (-6.633 [-12.691, -1.033], p=0.46)</td>
+<td>39.5 (-8.169 [-14.659, -2.264], p=0.14)</td>
+<td>47.7 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>47.7 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>sep_ratio</td>
+<td>0.727</td>
+<td>0.727 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.858 (+0.132 [-0.022, +0.291], p=0.26)</td>
+<td>0.835 (+0.109 [-0.049, +0.248], p=0.14)</td>
+<td>0.727 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.727 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>mask_iou</td>
+<td>0.453</td>
+<td>0.453 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.463 (+0.011 [-0.013, +0.036], p=0.53)</td>
+<td>0.471 (+0.018 [-0.009, +0.048], p=1)</td>
+<td>0.453 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.453 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v3float_epi</td>
+<td>mask_iou</td>
+<td>0.312</td>
+<td>0.312 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.346 (+0.034 [-0.006, +0.080], p=0.56)</td>
+<td>0.358 (+0.046 [-0.000, +0.103], p=0.33)</td>
+<td>0.312 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.312 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v3float_epi</td>
+<td>mask_auc</td>
+<td>0.943</td>
+<td>0.943 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.929 (-0.014 [-0.065, +0.018], p=0.036)</td>
+<td>0.934 (-0.010 [-0.060, +0.023], p=0.036)</td>
+<td>0.943 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.943 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v3far</td>
+<td>slope</td>
+<td>0.648</td>
+<td>0.648 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.797 (+0.149 [+0.094, +0.209], p=0.00073)</td>
+<td>0.790 (+0.142 [+0.092, +0.199], p=0.00073)</td>
+<td>0.648 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.648 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v3far</td>
+<td>epe_moving</td>
+<td>35.8</td>
+<td>35.8 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>31.4 (-4.409 [-9.149, -0.272], p=0.65)</td>
+<td>31.5 (-4.314 [-9.277, +0.337], p=0.65)</td>
+<td>35.8 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>35.8 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v3far</td>
+<td>sep_ratio</td>
+<td>0.855</td>
+<td>0.855 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.686 (-0.169 [-0.416, +0.048], p=0.65)</td>
+<td>0.691 (-0.163 [-0.376, +0.037], p=1)</td>
+<td>0.855 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.855 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>depth_absrel_med</td>
+<td>0.020</td>
+<td>0.020 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.020 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.020 (-0.000 [-0.000, +0.000], p=0.62)</td>
+<td>0.020 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.020 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>rot_err_deg</td>
+<td>0.604</td>
+<td>0.604 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.604 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.603 (-0.000 [-0.001, +0.000], p=0.76)</td>
+<td>0.604 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.604 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>trans_relerr_med</td>
+<td>0.045</td>
+<td>0.045 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.045 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.045 (-0.000 [-0.000, +0.000], p=0.75)</td>
+<td>0.045 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.045 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>kitti15_rgb_2v_wide</td>
+<td>slope</td>
+<td>0.575</td>
+<td>0.575 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.542 (-0.034 [-0.079, +0.013], p=1.5e-05)</td>
+<td>0.512 (-0.063 [-0.105, -0.021], p=1.8e-07)</td>
+<td>0.575 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.575 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>kitti15_rgb_2v_wide</td>
+<td>epe_static</td>
+<td>4.232</td>
+<td>4.232 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>4.119 (-0.113 [-0.144, -0.081], p=2.5e-12)</td>
+<td>4.089 (-0.142 [-0.172, -0.112], p=8.3e-19)</td>
+<td>4.232 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>4.232 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>kitti15_rgb_2v_wide</td>
+<td>epe_moving</td>
+<td>17.8</td>
+<td>17.8 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>21.6 (+3.822 [+2.587, +5.099], p=1.5e-08)</td>
+<td>21.2 (+3.424 [+2.290, +4.621], p=8.1e-08)</td>
+<td>17.8 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>17.8 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>kitti15_rgb_mv4_wide</td>
+<td>slope</td>
+<td>0.707</td>
+<td>0.707 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.672 (-0.035 [-0.095, +0.021], p=0.00094)</td>
+<td>0.642 (-0.064 [-0.118, -0.011], p=5.4e-05)</td>
+<td>0.707 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.707 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>sintel_final_2v_wide</td>
+<td>slope</td>
+<td>0.327</td>
+<td>0.327 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.171 (-0.156 [-0.219, -0.091], p=1.4e-09)</td>
+<td>0.173 (-0.153 [-0.220, -0.089], p=7.7e-09)</td>
+<td>0.327 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.327 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>sintel_final_2v_wide</td>
+<td>epe_moving</td>
+<td>18.5</td>
+<td>18.5 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>21.1 (+2.587 [+1.397, +3.926], p=4.2e-05)</td>
+<td>21.1 (+2.580 [+1.407, +3.934], p=7.5e-05)</td>
+<td>18.5 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>18.5 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>sintel_final_2v_wide</td>
+<td>sep_ratio</td>
+<td>0.692</td>
+<td>0.692 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.716 (+0.024 [-0.073, +0.122], p=0.67)</td>
+<td>0.712 (+0.020 [-0.073, +0.112], p=0.8)</td>
+<td>0.692 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.692 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>sintel_final_mv4_wide</td>
+<td>slope</td>
+<td>0.334</td>
+<td>0.334 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.180 (-0.154 [-0.219, -0.096], p=3.3e-09)</td>
+<td>0.186 (-0.148 [-0.215, -0.087], p=1.8e-08)</td>
+<td>0.334 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.334 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>sintel_clean_2v_wide</td>
+<td>slope</td>
+<td>0.314</td>
+<td>0.314 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.211 (-0.103 [-0.143, -0.060], p=1.4e-09)</td>
+<td>0.217 (-0.096 [-0.139, -0.052], p=1.8e-08)</td>
+<td>0.314 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.314 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>probe_epi</td>
+<td>motion_auc_v0_objects_L24</td>
+<td>0.999</td>
+<td>0.999 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.999 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.999 (-0.000 [-0.000, +0.000], p=1)</td>
+<td>0.999 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.999 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+<tr>
+<td>probe</td>
+<td>motion_auc_v0_objects_L24</td>
+<td>0.973</td>
+<td>0.973 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.973 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.973 (+0.000 [-0.001, +0.001], p=1)</td>
+<td>0.973 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.973 (+0.000 [+0.000, +0.000], p=nan)</td>
+</tr>
+</tbody>
+</table>
+<h2>Are the gains specific to the five heads? (paired vs the matched control heads, variant d)</h2>
+<table>
+<thead>
+<tr>
+<th>dataset</th>
+<th>metric</th>
+<th>(a) heads-LoRA vs (d)</th>
+<th>(c) heads+sf vs (d)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v2</td>
+<td>slope</td>
+<td>0.607 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.776 (+0.169 [+0.142, +0.197], p=8.1e-16)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>epe_static</td>
+<td>4.100 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>4.136 (+0.036 [+0.019, +0.054], p=7.9e-05)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>epe_moving</td>
+<td>35.0 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>28.9 (-6.075 [-9.379, -3.165], p=0.011)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>sep_ratio</td>
+<td>0.825 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.826 (+0.002 [-0.075, +0.082], p=0.67)</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>mask_iou</td>
+<td>0.591 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.544 (-0.047 [-0.065, -0.027], p=9.4e-08)</td>
+</tr>
+<tr>
+<td>v2_epi</td>
+<td>mask_iou</td>
+<td>0.486 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.419 (-0.066 [-0.138, +0.011], p=0.18)</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>slope</td>
+<td>0.559 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.735 (+0.177 [+0.137, +0.219], p=5e-12)</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>epe_static</td>
+<td>4.517 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>4.534 (+0.017 [-0.023, +0.048], p=0.0016)</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>epe_moving</td>
+<td>47.7 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>39.5 (-8.169 [-14.563, -2.120], p=0.14)</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>sep_ratio</td>
+<td>0.727 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.835 (+0.109 [-0.042, +0.258], p=0.14)</td>
+</tr>
+<tr>
+<td>v3float</td>
+<td>mask_iou</td>
+<td>0.453 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.471 (+0.018 [-0.008, +0.047], p=1)</td>
+</tr>
+<tr>
+<td>v3float_epi</td>
+<td>mask_iou</td>
+<td>0.312 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.358 (+0.046 [-0.002, +0.100], p=0.33)</td>
+</tr>
+<tr>
+<td>v3float_epi</td>
+<td>mask_auc</td>
+<td>0.943 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.934 (-0.010 [-0.062, +0.022], p=0.036)</td>
+</tr>
+<tr>
+<td>v3far</td>
+<td>slope</td>
+<td>0.648 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.790 (+0.142 [+0.093, +0.197], p=0.00073)</td>
+</tr>
+<tr>
+<td>v3far</td>
+<td>epe_moving</td>
+<td>35.8 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>31.5 (-4.314 [-9.476, +0.103], p=0.65)</td>
+</tr>
+<tr>
+<td>v3far</td>
+<td>sep_ratio</td>
+<td>0.855 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.691 (-0.163 [-0.370, +0.055], p=1)</td>
+</tr>
+<tr>
+<td>kitti15_rgb_2v_wide</td>
+<td>slope</td>
+<td>0.575 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.512 (-0.063 [-0.105, -0.021], p=1.8e-07)</td>
+</tr>
+<tr>
+<td>kitti15_rgb_2v_wide</td>
+<td>epe_static</td>
+<td>4.232 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>4.089 (-0.142 [-0.172, -0.114], p=8.3e-19)</td>
+</tr>
+<tr>
+<td>kitti15_rgb_2v_wide</td>
+<td>epe_moving</td>
+<td>17.8 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>21.2 (+3.424 [+2.238, +4.699], p=8.1e-08)</td>
+</tr>
+<tr>
+<td>kitti15_rgb_mv4_wide</td>
+<td>slope</td>
+<td>0.707 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.642 (-0.064 [-0.116, -0.010], p=5.4e-05)</td>
+</tr>
+<tr>
+<td>sintel_final_2v_wide</td>
+<td>slope</td>
+<td>0.327 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.173 (-0.153 [-0.219, -0.087], p=7.7e-09)</td>
+</tr>
+<tr>
+<td>sintel_final_2v_wide</td>
+<td>epe_moving</td>
+<td>18.5 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>21.1 (+2.580 [+1.387, +4.006], p=7.5e-05)</td>
+</tr>
+<tr>
+<td>sintel_final_2v_wide</td>
+<td>sep_ratio</td>
+<td>0.692 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.712 (+0.020 [-0.069, +0.106], p=0.8)</td>
+</tr>
+<tr>
+<td>sintel_final_mv4_wide</td>
+<td>slope</td>
+<td>0.334 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.186 (-0.148 [-0.212, -0.086], p=1.8e-08)</td>
+</tr>
+<tr>
+<td>sintel_clean_2v_wide</td>
+<td>slope</td>
+<td>0.314 (+0.000 [+0.000, +0.000], p=nan)</td>
+<td>0.217 (-0.096 [-0.139, -0.053], p=1.8e-08)</td>
+</tr>
+</tbody>
+</table>
+<h2>Questions</h2>
+<ul>
+<li>Largest Kubric v2 slope: (c) heads+sf (0.776 vs base 0.607); moving EPE 28.9 vs 35.0 px; static EPE 4.14 vs 4.10 px.</li>
+<li>(a) heads-LoRA: KITTI 2-view slope change +0.000 (p=nan), Sintel final 2-view +0.000 (p=nan); floating epi mask IoU 0.312 (base 0.312), layer-24 probe AUC on the same scenes 0.999.</li>
+<li>(b) sf-decoder: KITTI 2-view slope change -0.034 (p=1.5e-05), Sintel final 2-view -0.156 (p=1.4e-09); floating epi mask IoU 0.346 (base 0.312), layer-24 probe AUC on the same scenes 0.999.</li>
+<li>(c) heads+sf: KITTI 2-view slope change -0.063 (p=1.8e-07), Sintel final 2-view -0.153 (p=7.7e-09); floating epi mask IoU 0.358 (base 0.312), layer-24 probe AUC on the same scenes 0.999.</li>
+<li>(d) control heads: KITTI 2-view slope change +0.000 (p=nan), Sintel final 2-view +0.000 (p=nan); floating epi mask IoU 0.312 (base 0.312), layer-24 probe AUC on the same scenes 0.999.</li>
+<li>(e) head gains: KITTI 2-view slope change +0.000 (p=nan), Sintel final 2-view +0.000 (p=nan); floating epi mask IoU 0.312 (base 0.312), layer-24 probe AUC on the same scenes 0.999.</li>
+</ul>
+<p>Automatic text above only reports numbers; interpretation is left to the write-up. Full statistics: ft_comparison_long.csv.</p>
 <h2>v4_pilot</h2>
 <p>Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-16 22:48:29, finished 2026-10-16 22:53:06. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_pilot/task.log">log</a>.</p>
