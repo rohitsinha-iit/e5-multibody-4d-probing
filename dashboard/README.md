@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 14:01:29 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 15:01:40 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -52,7 +52,7 @@ Last updated 2026-10-17 14:01:29 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 14:00:46 running ft_eval_sf
+Supervisor heartbeat: 2026-10-17 15:01:07 running ft_train_heads_sf
 
 ## v3_pilot
 
