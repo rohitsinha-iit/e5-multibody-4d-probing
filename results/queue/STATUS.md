@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 15:24:57
+updated 2026-10-17 15:39:05
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -40,7 +40,7 @@ updated 2026-10-17 15:24:57
 | 34 | ft_train_sf: Item 10: fine-tune (b) scene-flow DPT head + adaptor | done | 1 | 2026-10-17 13:06:18 | 2026-10-17 13:46:58 | True |
 | 35 | ft_eval_sf: Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | done | 1 | 2026-10-17 13:47:07 | 2026-10-17 14:01:16 | True |
 | 36 | ft_train_heads_sf: Item 10: fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 14:01:26 | 2026-10-17 15:24:46 | True |
-| 37 | ft_eval_heads_sf: Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | running | 1 | 2026-10-17 15:24:57 |  | False |
+| 37 | ft_eval_heads_sf: Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 15:24:57 | 2026-10-17 15:39:05 | False |
 | 38 | ft_train_gain: Item 10: fine-tune (e) 5 learned per-head gains | pending | 0 | 2026-10-17 04:44:49 | 2026-10-17 04:45:27 | True |
 | 39 | ft_eval_gain: Item 10: evaluate fine-tune (e) 5 learned per-head gains | pending | 0 |  |  |  |
 | 40 | ft_summary: Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | pending | 0 |  |  |  |
