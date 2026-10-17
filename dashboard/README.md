@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 12:51:26 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 12:51:34 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -36,7 +36,7 @@ Last updated 2026-10-17 12:51:26 (server time). Regenerated after every queue ev
 | 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | done | 1 | 2026-10-17 11:42:06 | 2026-10-17 12:09:15 |
 | 31 | [ft_eval_heads](#ft_eval_heads): Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | done | 1 | 2026-10-17 12:09:24 | 2026-10-17 12:24:03 |
 | 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | done | 1 | 2026-10-17 12:24:13 | 2026-10-17 12:51:22 |
-| 33 | [ft_eval_ctrl](#ft_eval_ctrl): Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 |  |  |
+| 33 | [ft_eval_ctrl](#ft_eval_ctrl): Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | RUNNING | 1 | 2026-10-17 12:51:31 |  |
 | 34 | [ft_train_sf](#ft_train_sf): Item 10: fine-tune (b) scene-flow DPT head + adaptor | queued | 0 | 2026-10-17 02:50:17 |  |
 | 35 | [ft_eval_sf](#ft_eval_sf): Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | queued | 0 |  |  |
 | 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | queued | 0 | 2026-10-17 03:04:34 |  |
@@ -957,6 +957,15 @@ Fine-tuning variant **ctrl** of Any4D from any4d_4v_combined.pth.
 
 These are training-distribution numbers; the held-out evaluation is in the matching ft_eval task.
 
+
+
+## ft_eval_ctrl
+
+Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads
+
+Status: **RUNNING**, attempt 1, started 2026-10-17 12:51:31. [Raw results](../results/queue/ft_eval_ctrl/), [log](../results/queue/ft_eval_ctrl/task.log).
+
+Partial results so far; the run is still going.
 
 
 ## v4_pilot
