@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 16:06:30 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 16:06:38 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -42,7 +42,7 @@ Last updated 2026-10-17 16:06:30 (server time). Regenerated after every queue ev
 | 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 14:01:26 | 2026-10-17 15:24:46 |
 | 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 15:24:57 | 2026-10-17 15:39:05 |
 | 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | done | 1 | 2026-10-17 15:39:16 | 2026-10-17 16:06:25 |
-| 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | queued | 0 |  |  |
+| 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | RUNNING | 1 | 2026-10-17 16:06:35 |  |
 | 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | queued | 0 |  |  |
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
 | 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 |
@@ -1161,6 +1161,15 @@ Fine-tuning variant **gain** of Any4D from any4d_4v_combined.pth.
 
 These are training-distribution numbers; the held-out evaluation is in the matching ft_eval task.
 
+
+
+## ft_eval_gain
+
+Item 10: evaluate fine-tune (e) 5 learned per-head gains
+
+Status: **RUNNING**, attempt 1, started 2026-10-17 16:06:35. [Raw results](../results/queue/ft_eval_gain/), [log](../results/queue/ft_eval_gain/task.log).
+
+Partial results so far; the run is still going.
 
 
 ## v4_pilot
