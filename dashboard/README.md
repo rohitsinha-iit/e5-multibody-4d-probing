@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 16:06:38 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 16:21:18 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -42,7 +42,7 @@ Last updated 2026-10-17 16:06:38 (server time). Regenerated after every queue ev
 | 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 14:01:26 | 2026-10-17 15:24:46 |
 | 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 15:24:57 | 2026-10-17 15:39:05 |
 | 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | done | 1 | 2026-10-17 15:39:16 | 2026-10-17 16:06:25 |
-| 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | RUNNING | 1 | 2026-10-17 16:06:35 |  |
+| 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | done | 1 | 2026-10-17 16:06:35 | 2026-10-17 16:21:13 |
 | 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | queued | 0 |  |  |
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
 | 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 |
@@ -52,7 +52,7 @@ Last updated 2026-10-17 16:06:38 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 16:05:55 running ft_train_gain
+Supervisor heartbeat: 2026-10-17 16:20:43 running ft_eval_gain
 
 ## v3_pilot
 
@@ -1167,9 +1167,36 @@ These are training-distribution numbers; the held-out evaluation is in the match
 
 Item 10: evaluate fine-tune (e) 5 learned per-head gains
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 16:06:35. [Raw results](../results/queue/ft_eval_gain/), [log](../results/queue/ft_eval_gain/task.log).
+Status: **done**, attempt 1, started 2026-10-17 16:06:35, finished 2026-10-17 16:21:13. [Raw results](../results/queue/ft_eval_gain/), [log](../results/queue/ft_eval_gain/task.log).
 
-Partial results so far; the run is still going.
+![ft_eval_gain_metrics.png](assets/ft_eval_gain/ft_eval_gain_metrics.png)
+
+
+**ft_eval_gain_summary.md**
+
+# ft_eval_gain
+
+Evaluation of **gain** with the round-1 metric code (output metrics: e5_causal / e5_step3 definitions).
+
+| dataset | n | slope (mean) | EPE static (median of scenes) | EPE moving | sep ratio (median) | mask IoU | mask IoU, epi_aligned |
+|---|---|---|---|---|---|---|---|
+| v2 | 100 | 0.607 | 3.82 | 30.7 | 0.735 | 0.644 | 0.532 |
+| v3float | 69 | 0.559 | 4.02 | 33.2 | 0.657 | 0.496 | 0.278 |
+| v3far | 19 | 0.648 | 4.38 | 31.6 | 0.566 | 0.663 | nan |
+| kitti15_rgb_2v_wide | 200 | 0.575 | 3.67 | 11.6 | 0.740 | - | - |
+| kitti15_rgb_mv4_wide | 200 | 0.707 | 4.26 | 12.7 | 1.086 | - | - |
+| sintel_clean_2v_wide | 256 | 0.314 | 3.98 | 11.9 | 0.539 | - | - |
+| sintel_final_2v_wide | 256 | 0.327 | 4.30 | 12.2 | 0.510 | - | - |
+| sintel_final_mv4_wide | 256 | 0.334 | 4.13 | 11.3 | 0.458 | - | - |
+
+Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set):
+
+| layer | motion AUC, all splits | motion AUC, epi_aligned |
+|---|---|---|
+| 0 | 0.569 | 0.515 |
+| 17 | 0.843 | 0.905 |
+| 24 | 0.973 | 0.999 |
+
 
 
 ## v4_pilot
