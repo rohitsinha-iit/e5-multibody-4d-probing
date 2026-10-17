@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 15:01:40 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 15:24:52 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -39,7 +39,7 @@ Last updated 2026-10-17 15:01:40 (server time). Regenerated after every queue ev
 | 33 | [ft_eval_ctrl](#ft_eval_ctrl): Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | done | 1 | 2026-10-17 12:51:31 | 2026-10-17 13:06:10 |
 | 34 | [ft_train_sf](#ft_train_sf): Item 10: fine-tune (b) scene-flow DPT head + adaptor | done | 1 | 2026-10-17 13:06:18 | 2026-10-17 13:46:58 |
 | 35 | [ft_eval_sf](#ft_eval_sf): Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | done | 1 | 2026-10-17 13:47:07 | 2026-10-17 14:01:16 |
-| 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | RUNNING | 1 | 2026-10-17 14:01:26 |  |
+| 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 14:01:26 | 2026-10-17 15:24:46 |
 | 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | queued | 0 |  |  |
 | 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | queued | 0 | 2026-10-17 04:44:49 |  |
 | 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | queued | 0 |  |  |
@@ -52,7 +52,7 @@ Last updated 2026-10-17 15:01:40 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 15:01:07 running ft_train_heads_sf
+Supervisor heartbeat: 2026-10-17 15:24:16 running ft_train_heads_sf
 
 ## v3_pilot
 
@@ -1067,9 +1067,32 @@ Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set
 
 Item 10: fine-tune (c) five-head LoRA + scene-flow head
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 14:01:26. [Raw results](../results/queue/ft_train_heads_sf/), [log](../results/queue/ft_train_heads_sf/task.log).
+Status: **done**, attempt 1, started 2026-10-17 14:01:26, finished 2026-10-17 15:24:46. [Raw results](../results/queue/ft_train_heads_sf/), [log](../results/queue/ft_train_heads_sf/task.log).
 
-Partial results so far; the run is still going.
+![ft_train_heads_sf_curves.png](assets/ft_train_heads_sf/ft_train_heads_sf_curves.png)
+
+
+**ft_train_heads_sf_summary.md**
+
+# ft_train_heads_sf
+
+Fine-tuning variant **heads_sf** of Any4D from any4d_4v_combined.pth.
+
+- Trainable parameters: 19,093,059; heads: [[2, 1], [22, 9], [17, 10], [14, 6], [8, 11]]; LoRA rank 8, alpha 16.
+- Learning rates: LoRA 0.0002, scene-flow head 2e-05, gain 0.005; AdamW, warmup 100, cosine to 10%; bf16, activation checkpointing.
+- Loss: Any4D scene-flow loss (scale-invariant, log-norm, x10.0 on moving pixels) + 1.0 x distillation to the frozen model (pointmaps, depth, pose, metric scale).
+- Stopped: max_steps 1200. Best validation step: 1200. Merge check (adapter vs merged weights): {'d_sf': 0.0011048614978790283, 'd_pts': 0.008114814758300781}.
+
+| validation (held-out training scenes, frames 0 to 23) | step 0 (base) | best step |
+|---|---|---|
+| loss | 0.0116 | 0.0098 |
+| slope (mean) | 0.6757 | 0.7991 |
+| EPE moving (median px) | 36.1928 | 37.8953 |
+| EPE static (median px) | 3.9417 | 3.9488 |
+| motion-mask IoU (median) | 0.5076 | 0.5308 |
+
+These are training-distribution numbers; the held-out evaluation is in the matching ft_eval task.
+
 
 
 ## v4_pilot

@@ -318,4 +318,38 @@ step 800 0.90 h lr 7.26e-05 sf_dyn 0.0355 sf_static 0.0014 sf 0.0082 geo_pts 0.0
 val {"sf_dyn": 0.0508, "sf_static": 0.0014, "sf": 0.0091, "geo_pts": 0.0001, "geo_depth": 0.0003, "geo_trans": 0.0001, "geo_quat": 0.0, "geo_scale": 0.0002, "geo": 0.0007, "loss": 0.0099, "val_slope": 0.7981, "val_epe_static": 3.9371, "val_epe_moving": 35.3361, "val_mask_iou": 0.5312, "step": 800, "hours": 0.9037} best step 800
 step 820 0.94 h lr 6.80e-05 sf_dyn 0.0334 sf_static 0.0013 sf 0.0065 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0000 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0072 peak 11.1 GB
 step 840 0.96 h lr 6.35e-05 sf_dyn 0.0333 sf_static 0.0014 sf 0.0061 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0069 peak 11.1 GB
-step 860 0.98 h lr 5.92e-05 sf_dyn 0.0340 sf_static
+step 860 0.98 h lr 5.92e-05 sf_dyn 0.0340 sf_static 0.0012 sf 0.0074 geo_pts 0.0002 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0009 loss 0.0083 peak 11.1 GB
+step 880 1.00 h lr 5.50e-05 sf_dyn 0.0436 sf_static 0.0012 sf 0.0075 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0082 peak 11.1 GB
+step 900 1.02 h lr 5.11e-05 sf_dyn 0.0374 sf_static 0.0015 sf 0.0075 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0083 peak 11.1 GB
+val {"sf_dyn": 0.0508, "sf_static": 0.0014, "sf": 0.0093, "geo_pts": 0.0001, "geo_depth": 0.0002, "geo_trans": 0.0001, "geo_quat": 0.0, "geo_scale": 0.0002, "geo": 0.0006, "loss": 0.0099, "val_slope": 0.8071, "val_epe_static": 3.9933, "val_epe_moving": 34.5701, "val_mask_iou": 0.5391, "step": 900, "hours": 1.0186} best step 800
+step 920 1.05 h lr 4.73e-05 sf_dyn 0.0333 sf_static 0.0012 sf 0.0060 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0067 peak 11.1 GB
+step 940 1.07 h lr 4.37e-05 sf_dyn 0.0314 sf_static 0.0017 sf 0.0066 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0000 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0074 peak 11.1 GB
+step 960 1.09 h lr 4.03e-05 sf_dyn 0.0340 sf_static 0.0013 sf 0.0069 geo_pts 0.0001 geo_depth 0.0002 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0006 loss 0.0076 peak 11.1 GB
+step 980 1.11 h lr 3.72e-05 sf_dyn 0.0361 sf_static 0.0014 sf 0.0096 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0104 peak 11.1 GB
+step 1000 1.13 h lr 3.43e-05 sf_dyn 0.0345 sf_static 0.0012 sf 0.0060 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0068 peak 11.1 GB
+val {"sf_dyn": 0.0501, "sf_static": 0.0014, "sf": 0.0092, "geo_pts": 0.0001, "geo_depth": 0.0003, "geo_trans": 0.0001, "geo_quat": 0.0, "geo_scale": 0.0002, "geo": 0.0007, "loss": 0.0099, "val_slope": 0.8124, "val_epe_static": 3.9567, "val_epe_moving": 34.4054, "val_mask_iou": 0.523, "step": 1000, "hours": 1.1334} best step 800
+step 1020 1.17 h lr 3.16e-05 sf_dyn 0.0371 sf_static 0.0014 sf 0.0070 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0077 peak 11.1 GB
+step 1040 1.19 h lr 2.92e-05 sf_dyn 0.0325 sf_static 0.0014 sf 0.0059 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0067 peak 11.1 GB
+step 1060 1.21 h lr 2.71e-05 sf_dyn 0.0362 sf_static 0.0011 sf 0.0056 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0000 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0064 peak 11.1 GB
+step 1080 1.23 h lr 2.52e-05 sf_dyn 0.0362 sf_static 0.0010 sf 0.0060 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0008 loss 0.0068 peak 11.1 GB
+step 1100 1.25 h lr 2.36e-05 sf_dyn 0.0454 sf_static 0.0014 sf 0.0074 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0082 peak 11.1 GB
+val {"sf_dyn": 0.05, "sf_static": 0.0014, "sf": 0.0091, "geo_pts": 0.0001, "geo_depth": 0.0002, "geo_trans": 0.0001, "geo_quat": 0.0, "geo_scale": 0.0002, "geo": 0.0007, "loss": 0.0098, "val_slope": 0.8066, "val_epe_static": 3.9718, "val_epe_moving": 36.2282, "val_mask_iou": 0.524, "step": 1100, "hours": 1.2483} best step 1100
+step 1120 1.28 h lr 2.23e-05 sf_dyn 0.0414 sf_static 0.0014 sf 0.0069 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0077 peak 11.1 GB
+step 1140 1.30 h lr 2.13e-05 sf_dyn 0.0364 sf_static 0.0014 sf 0.0062 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0069 peak 11.1 GB
+step 1160 1.32 h lr 2.06e-05 sf_dyn 0.0314 sf_static 0.0019 sf 0.0068 geo_pts 0.0001 geo_depth 0.0002 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0002 geo 0.0007 loss 0.0074 peak 11.1 GB
+step 1180 1.34 h lr 2.01e-05 sf_dyn 0.0281 sf_static 0.0014 sf 0.0073 geo_pts 0.0001 geo_depth 0.0002 geo_trans 0.0000 geo_quat 0.0000 geo_scale 0.0002 geo 0.0006 loss 0.0079 peak 11.1 GB
+step 1200 1.36 h lr 2.00e-05 sf_dyn 0.0374 sf_static 0.0013 sf 0.0063 geo_pts 0.0001 geo_depth 0.0003 geo_trans 0.0001 geo_quat 0.0000 geo_scale 0.0003 geo 0.0008 loss 0.0071 peak 11.1 GB
+val {"sf_dyn": 0.0499, "sf_static": 0.0014, "sf": 0.0091, "geo_pts": 0.0001, "geo_depth": 0.0003, "geo_trans": 0.0001, "geo_quat": 0.0, "geo_scale": 0.0002, "geo": 0.0007, "loss": 0.0098, "val_slope": 0.7991, "val_epe_static": 3.9488, "val_epe_moving": 37.8953, "val_mask_iou": 0.5308, "step": 1200, "hours": 1.3632} best step 1200
+stopped: max_steps 1200
+merge check: max |d scene_flow| 1.10e-03, max |d pts3d| 8.11e-03
+done /media/workbench/zone_x/e5_multibody/ft/runs/heads_sf/any4d_ft.pth
+total 2948196
+drwxrws---+ 2 rohit rohit       4096 Oct 17 15:24 .
+drwxrws---+ 8 rohit rohit       4096 Oct 17 03:19 ..
+-rw-rw----  1 rohit rohit 2713290374 Oct 17 15:24 any4d_ft.pth
+-rw-rw----  1 rohit rohit   76398886 Oct 17 15:24 best.pt
+-rw-rw----  1 rohit rohit        940 Oct 17 14:01 config.json
+-rw-rw----  1 rohit rohit  229216242 Oct 17 15:24 last.pt
+-rw-rw----  1 rohit rohit         62 Oct 17 15:24 merge_check.json
+-rw-rw----  1 rohit rohit       8781 Oct 17 14:01 split.json
+-rw-rw----  1 rohit rohit       8456 Oct 17 15:24 train_history.json
