@@ -319,4 +319,178 @@ torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 918.00 MiB. GPU 0 
 ===== 2026-10-17 16:43:22 attempt 1
 GPU 1
 Seed set to: 0
-Initializing <class 'any4d.models.any4d.model.Any4D'> with kwargs: {'torch_hub_force_reload': False, 'pretrained_checkpoint_path': None, 'load_specific_pretrained_submodules': False, 'specific_pretrained_submodules': [], 'name': 'any4d', 'encoder_config': {'encoder_str': 'dinov2', 'name': 'dinov2_large', 'data_norm_type': 'dinov2', 'size': 'large', 'with_registers': False, 'uses_torch_hub': False, 'gradient_checkpointing': False}, 'info_sharing_config': {'model_type': 'alternating_attention', 'model_return_type': 'intermediate_features', 'custom_positional_encoding': None, 'module_args': {'name': 'aat_24_layers_ifr', 'indices': [11, 17], 'norm_intermediate': True, 'size': '24_layers', 'depth': 24, 'distinguish_ref_and_non_ref_views': True, 'gradient_checkpointing': False}}, 'pred_head_config': {'adaptor_config': {'input_dim': 6, 'scene_rep_dim': 4, 'type': 'raydirs+depth+pose+confidence+mask', 'scene_rep_type': 'raydirs+depth+pose', 'dense_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}}, 'type': 'dpt+pose', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3], 'checkpoint_gradient': False}, 'regressor_head': {'output_dim': 6, 'checkpoint_gradient': False}, 'pose_head': {'num_resconv_block': 2, 'rot_representation_dim': 4}, 'scale_head': {'output_dim': 1}, 'adaptor_type': 'raydirs+depth+pose+confidence+mask', 'dpt_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}, 'gradient_checkpointing': False}, 'scene_flow_pred_head_config': {'adaptor_config': {'input_dim': 3, 'scene_rep_dim': 3, 'type': 'scene_flow', 'scene_rep_type': 'scene_flow', 'dense_pred_init_dict': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'type': 'dpt', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3]}, 'regressor_head': {'output_dim': 3}, 'adaptor_type': 'scene_flow', 'dpt_adaptor': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'geometric_input_config': {'ray_dirs_encoder_config': {'name': 'ray_dirs_encoder', 'in_chans': 3, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'depth_encoder_config': {'name': 'depth_encoder', 'in_chans': 1, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'cam_rot_encoder_config': {'name': 'cam_rot_quats_encoder', 'in_chans': 4, 'encoder_str': 'global_rep_encoder'}, 'cam_trans_encoder_config': {'name': 'cam_trans_encoder', 'in_chans': 3, 'encoder_str': 'global_rep_encoder'}, 'scale_encoder_config': {'name': 'scale_encoder', 'in_chans': 1, 'encoder_str': 'global_rep_encoder
+Initializing <class 'any4d.models.any4d.model.Any4D'> with kwargs: {'torch_hub_force_reload': False, 'pretrained_checkpoint_path': None, 'load_specific_pretrained_submodules': False, 'specific_pretrained_submodules': [], 'name': 'any4d', 'encoder_config': {'encoder_str': 'dinov2', 'name': 'dinov2_large', 'data_norm_type': 'dinov2', 'size': 'large', 'with_registers': False, 'uses_torch_hub': False, 'gradient_checkpointing': False}, 'info_sharing_config': {'model_type': 'alternating_attention', 'model_return_type': 'intermediate_features', 'custom_positional_encoding': None, 'module_args': {'name': 'aat_24_layers_ifr', 'indices': [11, 17], 'norm_intermediate': True, 'size': '24_layers', 'depth': 24, 'distinguish_ref_and_non_ref_views': True, 'gradient_checkpointing': False}}, 'pred_head_config': {'adaptor_config': {'input_dim': 6, 'scene_rep_dim': 4, 'type': 'raydirs+depth+pose+confidence+mask', 'scene_rep_type': 'raydirs+depth+pose', 'dense_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}}, 'type': 'dpt+pose', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3], 'checkpoint_gradient': False}, 'regressor_head': {'output_dim': 6, 'checkpoint_gradient': False}, 'pose_head': {'num_resconv_block': 2, 'rot_representation_dim': 4}, 'scale_head': {'output_dim': 1}, 'adaptor_type': 'raydirs+depth+pose+confidence+mask', 'dpt_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}, 'gradient_checkpointing': False}, 'scene_flow_pred_head_config': {'adaptor_config': {'input_dim': 3, 'scene_rep_dim': 3, 'type': 'scene_flow', 'scene_rep_type': 'scene_flow', 'dense_pred_init_dict': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'type': 'dpt', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3]}, 'regressor_head': {'output_dim': 3}, 'adaptor_type': 'scene_flow', 'dpt_adaptor': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'geometric_input_config': {'ray_dirs_encoder_config': {'name': 'ray_dirs_encoder', 'in_chans': 3, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'depth_encoder_config': {'name': 'depth_encoder', 'in_chans': 1, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'cam_rot_encoder_config': {'name': 'cam_rot_quats_encoder', 'in_chans': 4, 'encoder_str': 'global_rep_encoder'}, 'cam_trans_encoder_config': {'name': 'cam_trans_encoder', 'in_chans': 3, 'encoder_str': 'global_rep_encoder'}, 'scale_encoder_config': {'name': 'scale_encoder', 'in_chans': 1, 'encoder_str': 'global_rep_encoder'}, 'scene_flow_encoder_config': {'name': 'scene_flow_encoder', 'in_chans': 3, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'images_prob': 1, 'overall_prob': 0, 'dropout_prob': 1, 'ray_dirs_prob': 0, 'depth_prob': 0, 'cam_prob': 0, 'sparse_depth_prob': 0, 'sparsification_removal_percent': 0, 'depth_scale_norm_all_prob': 0, 'pose_scale_norm_all_prob': 0, 'doppler_prob': 0, 'event_imgs_prob': 0}}
+Loading pretrained dinov2_vitl14 from torch hub
+Using cache found in /home/rohit/.cache/torch/hub/facebookresearch_dinov2_main
+Loading model from:  checkpoints/any4d_4v_combined.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+camrot_s305 79
+camrot_s306 158
+camrot_s427 237
+camrot_s428 316
+camrot_s429 395
+camrot_s430 474
+camrot_s431 553
+camrot_s432 632
+camrot_s433 711
+camrot_s434 790
+confound_glued_s313 869
+confound_glued_s314 948
+confound_glued_s469 1027
+confound_glued_s470 1106
+confound_glued_s471 1185
+confound_glued_s472 1264
+confound_glued_s473 1343
+confound_glued_s474 1422
+confound_glued_s475 1501
+confound_glued_s476 1580
+confound_glued_s477 1659
+confound_glued_s478 1738
+confound_glued_s479 1817
+confound_glued_s480 1896
+confound_glued_s481 1975
+confound_glued_s482 2054
+confound_glued_s483 2133
+confound_glued_s484 2212
+confound_glued_s485 2291
+confound_glued_s486 2370
+confound_same_s311 2449
+confound_same_s312 2528
+confound_same_s451 2607
+confound_same_s452 2686
+confound_same_s453 2765
+confound_same_s454 2844
+confound_same_s455 2923
+confound_same_s456 3002
+confound_same_s457 3081
+confound_same_s458 3160
+confound_same_s459 3239
+confound_same_s460 3318
+confound_same_s461 3397
+confound_same_s462 3476
+confound_same_s463 3555
+confound_same_s464 3634
+confound_same_s465 3713
+confound_same_s466 3792
+confound_same_s467 3871
+confound_same_s468 3950
+epi_aligned_s307 4029
+epi_aligned_s308 4108
+epi_aligned_s435 4187
+epi_aligned_s436 4266
+epi_aligned_s437 4345
+epi_aligned_s438 4424
+epi_aligned_s439 4503
+epi_aligned_s440 4582
+epi_aligned_s441 4661
+epi_aligned_s442 4740
+n2_generic_s301 4819
+n2_generic_s302 4898
+n2_generic_s401 4977
+n2_generic_s402 5056
+n2_generic_s403 5135
+n2_generic_s404 5214
+n2_generic_s405 5293
+n2_generic_s406 5372
+n2_generic_s407 5451
+n2_generic_s408 5530
+n3_generic_s303 5609
+n3_generic_s304 5688
+n3_generic_s409 5767
+n3_generic_s410 5846
+n3_generic_s411 5925
+n3_generic_s412 6004
+n3_generic_s413 6083
+n3_generic_s414 6162
+n3_generic_s415 6241
+n3_generic_s416 6320
+n3_generic_s417 6399
+n3_generic_s418 6478
+n3_generic_s419 6557
+n3_generic_s420 6636
+n3_generic_s421 6715
+n3_generic_s422 6794
+n3_generic_s423 6873
+n3_generic_s424 6952
+n3_generic_s425 7031
+n3_generic_s426 7110
+planar_s309 7189
+planar_s310 7268
+planar_s443 7347
+planar_s444 7426
+planar_s445 7505
+planar_s446 7584
+planar_s447 7663
+planar_s448 7742
+planar_s449 7821
+planar_s450 7900
+done 7900
+/home/rohit/e5_multibody/queue/src/e5_causal_null_summary.py:67: RuntimeWarning: All-NaN slice encountered
+  per_scene_null_med = np.nanmedian(np.stack([D[c][m] for c in nulls]), 0)
+# Causal specificity of the five supply heads (review W5), v2 out100
+
+Scenes: 100. Heads (block:head): 2:1, 22:9, 17:10, 14:6, 8:11. Base: slope 0.607, static EPE 4.10 px, moving EPE 34.96 px, separation ratio 0.825.
+
+Each null set has 4 global-attention heads and 1 frame-attention head, drawn without the five (seeded; the first three are the round-1 sets). Statistic: mean over scenes of (condition minus base). z uses the null mean and sd; robust z uses the null median and MAD; p is the empirical one-sided p, (1 + number of null sets at least as extreme) / (N + 1).
+
+
+## Mean ablation (abl5 vs 40 random sets)
+
+| metric | five heads, mean [95% CI] | null mean (sd) | null median | z | robust z | p (one-sided) | p (two-sided) | percentile | five vs per-scene null median [95% CI] (sign p) | null sets with static EPE > +10 px |
+|---|---|---|---|---|---|---|---|---|---|---|
+| slope | -0.599 [-0.641, -0.552] | -0.067 (0.156) | -0.011 | -3.42 | -22.50 | 0.073 | 0.073 | 5 | -0.586 [-0.629, -0.538] (9.9e-25) | 3 |
+| epe_static | +3.028 [+2.628, +3.428] | +5.061 (18.690) | -0.011 | -0.11 | 41.49 | 0.122 | 0.122 | 90 | +3.010 [+2.615, +3.412] (6.4e-24) | 3 |
+| epe_moving | +56.046 [+49.307, +63.367] | +6.299 (16.474) | +0.855 | 3.02 | 37.51 | 0.073 | 0.073 | 95 | +55.193 [+48.611, +62.105] (2.4e-23) | 3 |
+| sep_ratio | -0.796 [-0.924, -0.678] | -0.083 (0.169) | -0.021 | -4.21 | -23.67 | 0.024 | 0.024 | 0 | -0.763 [-0.873, -0.655] (3.2e-27) | 3 |
+
+## Resample ablation (res5 vs 10 random sets)
+
+| metric | five heads, mean [95% CI] | null mean (sd) | null median | z | robust z | p (one-sided) | p (two-sided) | percentile | five vs per-scene null median [95% CI] (sign p) | null sets with static EPE > +10 px |
+|---|---|---|---|---|---|---|---|---|---|---|
+| slope | -0.525 [-0.585, -0.468] | -0.056 (0.171) | -0.005 | -2.75 | -36.91 | 0.182 | 0.182 | 10 | -0.519 [-0.580, -0.462] (2.4e-23) | 1 |
+| epe_static | +4.457 [+3.196, +5.959] | +11.596 (36.297) | +0.131 | -0.20 | 16.98 | 0.182 | 0.182 | 90 | +4.353 [+3.076, +5.936] (2.6e-12) | 1 |
+| epe_moving | +52.731 [+45.061, +60.591] | +6.531 (20.287) | +0.277 | 2.28 | 70.51 | 0.182 | 0.182 | 90 | +52.438 [+45.077, +60.605] (9.9e-25) | 1 |
+| sep_ratio | -0.616 [-0.739, -0.497] | -0.080 (0.168) | -0.037 | -3.19 | -15.48 | 0.091 | 0.091 | 0 | -0.584 [-0.708, -0.468] (1.9e-14) | 1 |
+
+## Amplification x1.5 (amp5_a1.5 vs 20 random sets)
+
+| metric | five heads, mean [95% CI] | null mean (sd) | null median | z | robust z | p (one-sided) | p (two-sided) | percentile | five vs per-scene null median [95% CI] (sign p) | null sets with static EPE > +10 px |
+|---|---|---|---|---|---|---|---|---|---|---|
+| slope | +0.346 [+0.320, +0.371] | -0.005 (0.023) | +0.000 | 15.12 | 49.77 | 0.048 | 0.048 | 100 | +0.346 [+0.319, +0.371] (9.9e-25) | 0 |
+| epe_static | +0.609 [+0.393, +0.824] | +0.332 (0.809) | +0.047 | 0.34 | 12.92 | 0.143 | 0.143 | 90 | +0.548 [+0.344, +0.747] (0.00041) | 0 |
+| epe_moving | +6.702 [+2.168, +10.611] | +0.539 (1.739) | -0.023 | 3.54 | 18.70 | 0.048 | 0.048 | 100 | +6.638 [+2.442, +10.719] (0.00077) | 0 |
+| sep_ratio | +0.102 [-0.007, +0.212] | -0.016 (0.049) | -0.005 | 2.42 | 6.56 | 0.048 | 0.143 | 100 | +0.107 [-0.005, +0.215] (0.033) | 0 |
+
+## Single conditions (change vs base, mean [95% CI], sign-test p)
+
+| condition | slope | static EPE (px) | moving EPE (px) | sep ratio |
+|---|---|---|---|---|
+| res1_b2h1 | -0.160 [-0.185, -0.134] (8.1e-16) | +0.734 [+0.487, +1.003] (0.00087) | +12.735 [+9.011, +17.170] (2.9e-09) | -0.175 [-0.269, -0.080] (0.00027) |
+| res1_b22h9 | -0.265 [-0.298, -0.233] (7.1e-21) | +0.345 [+0.216, +0.476] (4.7e-06) | +22.285 [+18.302, +26.367] (1.1e-18) | -0.349 [-0.463, -0.241] (1.8e-07) |
+| res1_b17h10 | -0.320 [-0.355, -0.281] (2.4e-23) | +0.148 [+0.072, +0.226] (0.00041) | +29.100 [+24.176, +34.114] (4.5e-22) | -0.431 [-0.553, -0.329] (9e-13) |
+| res1_b14h6 | -0.117 [-0.142, -0.091] (2.5e-13) | +0.158 [+0.090, +0.220] (7.9e-05) | +8.430 [+5.990, +11.029] (7.1e-10) | -0.223 [-0.325, -0.140] (1.8e-07) |
+| res1_b8h11 | -0.062 [-0.082, -0.044] (4.2e-07) | +0.190 [+0.041, +0.357] (0.62) | +4.875 [+2.965, +7.166] (3.7e-06) | -0.104 [-0.174, -0.036] (0.089) |
+| res5 | -0.525 [-0.588, -0.467] (2.4e-23) | +4.457 [+3.150, +6.025] (2.6e-12) | +52.731 [+45.305, +60.262] (9.9e-25) | -0.616 [-0.754, -0.494] (1.9e-14) |
+| abl5 | -0.599 [-0.644, -0.553] (9.9e-25) | +3.028 [+2.668, +3.421] (6.4e-24) | +56.046 [+49.383, +62.746] (2.4e-23) | -0.796 [-0.920, -0.683] (3.2e-27) |
+| amp5_a1.5 | +0.346 [+0.319, +0.369] (9.9e-25) | +0.609 [+0.405, +0.828] (0.00041) | +6.702 [+2.392, +10.799] (0.00077) | +0.102 [-0.012, +0.215] (0.033) |
+
+## Plain statements (generated from the numbers above)
+
+- Mean ablation: the five heads' change in static EPE (+3.03 px) is within the null of random sets (two-sided empirical p = 0.122, percentile 90).
+- Mean ablation: change in slope -0.599 vs null median -0.011 (z = -3.4, empirical p = 0.073).
+- Resample ablation: the five heads' change in static EPE (+4.46 px) is within the null of random sets (two-sided empirical p = 0.182, percentile 90).
+- Resample ablation: change in slope -0.525 vs null median -0.005 (z = -2.7, empirical p = 0.182).
+- Amplification x1.5: the five heads' change in static EPE (+0.61 px) is within the null of random sets (two-sided empirical p = 0.143, percentile 90).
+- Amplification x1.5: change in slope +0.346 vs null median +0.000 (z = 15.1, empirical p = 0.048).
+- Amplification fixes magnitude, not accuracy: the slope rises by +0.346 while the moving-object EPE also rises by +6.70 px.
+total 2468
+drwxrwxr-x  2 rohit rohit    4096 Oct 17 17:54 .
+drwxrwxr-x 45 rohit rohit    4096 Oct 17 16:21 ..
+-rw-rw-r--  1 rohit rohit   17525 Oct 17 17:54 causal_null_v2_conditions_summary.csv
+-rw-rw-r--  1 rohit rohit   13269 Oct 17 17:54 causal_null_v2_conditions_summary.md
+-rw-rw-r--  1 rohit rohit 2182829 Oct 17 17:54 causal_null_v2.json
+-rw-rw-r--  1 rohit rohit  170842 Oct 17 17:54 fig_heads_null.png
+-rw-rw-r--  1 rohit rohit   69916 Oct 17 17:54 fig_heads_resample.png
+-rw-rw-r--  1 rohit rohit    4730 Oct 17 17:54 r2_heads_null_null.csv
+-rw-rw-r--  1 rohit rohit   33436 Oct 17 17:54 r2_heads_null_null.json
+-rw-rw-r--  1 rohit rohit    5585 Oct 17 17:54 r2_heads_null_summary.md
