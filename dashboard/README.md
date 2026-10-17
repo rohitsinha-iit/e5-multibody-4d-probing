@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 16:21:28 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 16:21:39 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -43,7 +43,7 @@ Last updated 2026-10-17 16:21:28 (server time). Regenerated after every queue ev
 | 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | done | 1 | 2026-10-17 15:24:57 | 2026-10-17 15:39:05 |
 | 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | done | 1 | 2026-10-17 15:39:16 | 2026-10-17 16:06:25 |
 | 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | done | 1 | 2026-10-17 16:06:35 | 2026-10-17 16:21:13 |
-| 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | RUNNING | 1 | 2026-10-17 16:21:23 |  |
+| 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | done | 1 | 2026-10-17 16:21:23 | 2026-10-17 16:21:33 |
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
 | 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 |
 | 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | queued | 0 | 2026-10-17 04:46:51 |  |
@@ -1203,9 +1203,7 @@ Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set
 
 Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap)
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 16:21:23. [Raw results](../results/queue/ft_summary/), [log](../results/queue/ft_summary/task.log).
-
-Partial results so far; the run is still going.
+Status: **done**, attempt 1, started 2026-10-17 16:21:23, finished 2026-10-17 16:21:33. [Raw results](../results/queue/ft_summary/), [log](../results/queue/ft_summary/task.log).
 
 ![ft_comparison.png](assets/ft_summary/ft_comparison.png)
 
