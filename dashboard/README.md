@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 22:31:41 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 22:46:22 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -52,14 +52,14 @@ Last updated 2026-10-17 22:31:41 (server time). Regenerated after every queue ev
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | done | 1 | 2026-10-17 17:54:53 | 2026-10-17 20:08:54 |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | done | 1 | 2026-10-17 20:09:05 | 2026-10-17 21:11:55 |
 | 48 | [ft_train_heads_sel](#ft_train_heads_sel): Item 10 rerun: train heads with corrected checkpoint selection | done | 1 | 2026-10-17 21:12:06 | 2026-10-17 22:31:27 |
-| 49 | [ft_eval_heads_sel](#ft_eval_heads_sel): Item 10 rerun: evaluate heads_sel | RUNNING | 1 | 2026-10-17 22:31:38 |  |
+| 49 | [ft_eval_heads_sel](#ft_eval_heads_sel): Item 10 rerun: evaluate heads_sel | done | 1 | 2026-10-17 22:31:38 | 2026-10-17 22:46:16 |
 | 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | queued | 0 |  |  |
 | 51 | [ft_eval_ctrl_sel](#ft_eval_ctrl_sel): Item 10 rerun: evaluate ctrl_sel | queued | 0 |  |  |
 | 52 | [ft_train_gain_sel](#ft_train_gain_sel): Item 10 rerun: train gain with corrected checkpoint selection | queued | 0 |  |  |
 | 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | queued | 0 |  |  |
 | 54 | [ft_summary_sel](#ft_summary_sel): Item 10: comparison table with corrected head variants | queued | 0 |  |  |
 
-Supervisor heartbeat: 2026-10-17 22:30:57 running ft_train_heads_sel
+Supervisor heartbeat: 2026-10-17 22:45:46 running ft_eval_heads_sel
 
 ## v3_pilot
 
@@ -2061,7 +2061,34 @@ These are training-distribution numbers; the held-out evaluation is in the match
 
 Item 10 rerun: evaluate heads_sel
 
-Status: **RUNNING**, attempt 1, started 2026-10-17 22:31:38. [Raw results](../results/queue/ft_eval_heads_sel/), [log](../results/queue/ft_eval_heads_sel/task.log).
+Status: **done**, attempt 1, started 2026-10-17 22:31:38, finished 2026-10-17 22:46:16. [Raw results](../results/queue/ft_eval_heads_sel/), [log](../results/queue/ft_eval_heads_sel/task.log).
 
-Partial results so far; the run is still going.
+![ft_eval_heads_sel_metrics.png](assets/ft_eval_heads_sel/ft_eval_heads_sel_metrics.png)
+
+
+**ft_eval_heads_sel_summary.md**
+
+# ft_eval_heads_sel
+
+Evaluation of **heads_sel** with the round-1 metric code (output metrics: e5_causal / e5_step3 definitions).
+
+| dataset | n | slope (mean) | EPE static (median of scenes) | EPE moving | sep ratio (median) | mask IoU | mask IoU, epi_aligned |
+|---|---|---|---|---|---|---|---|
+| v2 | 100 | 0.716 | 3.85 | 23.6 | 0.729 | 0.608 | 0.439 |
+| v3float | 69 | 0.667 | 4.10 | 28.7 | 0.714 | 0.469 | 0.292 |
+| v3far | 19 | 0.733 | 4.49 | 29.9 | 0.621 | 0.622 | nan |
+| kitti15_rgb_2v_wide | 200 | 0.598 | 3.63 | 11.6 | 0.969 | - | - |
+| kitti15_rgb_mv4_wide | 200 | 0.732 | 4.24 | 12.4 | 1.035 | - | - |
+| sintel_clean_2v_wide | 256 | 0.322 | 4.05 | 11.8 | 0.564 | - | - |
+| sintel_final_2v_wide | 256 | 0.333 | 4.31 | 11.8 | 0.460 | - | - |
+| sintel_final_mv4_wide | 256 | 0.345 | 4.16 | 11.0 | 0.482 | - | - |
+
+Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set):
+
+| layer | motion AUC, all splits | motion AUC, epi_aligned |
+|---|---|---|
+| 0 | 0.569 | 0.515 |
+| 17 | 0.844 | 0.905 |
+| 24 | 0.974 | 0.999 |
+
 

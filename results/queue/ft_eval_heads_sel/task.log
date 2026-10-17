@@ -3,3 +3,32 @@
 GPU 1
 ok
 [22:31:38] heads_sel v2 inference
+planar_s450 1.05 s
+peak GPU GB 7.55
+[22:33:31] heads_sel v2 metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/heads_sel/pred_v2: 100 scenes ok, 0 errors; mean slope 0.716
+[22:35:04] heads_sel v3float inference
+n3_generic_s590 1.12 s
+peak GPU GB 7.55
+[22:36:25] heads_sel v3float metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/heads_sel/pred_v3float: 69 scenes ok, 0 errors; mean slope 0.667
+[22:37:30] heads_sel v3far inference
+confound_farglued_s520 1.11 s
+peak GPU GB 7.55
+[22:37:58] heads_sel v3far metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/heads_sel/pred_v3far: 19 scenes ok, 0 errors; mean slope 0.733
+[22:38:16] heads_sel internals (v3float, layers 0,17,24)
+peak GPU GB 7.39
+E5-P layer 24
+done
+[22:39:30] heads_sel real kitti15 rgb 2v
+rows 200 skipped 0
+[22:40:15] heads_sel real kitti15 rgb mv4
+rows 200 skipped 0
+[22:41:12] heads_sel real sintel final 2v
+rows 256 skipped 0
+[22:42:38] heads_sel real sintel final mv4
+rows 256 skipped 0
+[22:44:24] heads_sel real sintel clean 2v
+rows 256 skipped 0
+6.4G	/media/workbench/zone_x/e5_multibody/ft/eval/heads_sel
