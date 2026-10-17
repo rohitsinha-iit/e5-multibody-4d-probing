@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 14:01:16
+updated 2026-10-17 14:01:26
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -38,8 +38,8 @@ updated 2026-10-17 14:01:16
 | 32 | ft_train_ctrl: Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | done | 1 | 2026-10-17 12:24:13 | 2026-10-17 12:51:22 | True |
 | 33 | ft_eval_ctrl: Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | done | 1 | 2026-10-17 12:51:31 | 2026-10-17 13:06:10 | True |
 | 34 | ft_train_sf: Item 10: fine-tune (b) scene-flow DPT head + adaptor | done | 1 | 2026-10-17 13:06:18 | 2026-10-17 13:46:58 | True |
-| 35 | ft_eval_sf: Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | done | 1 | 2026-10-17 13:47:07 | 2026-10-17 14:01:16 | False |
-| 36 | ft_train_heads_sf: Item 10: fine-tune (c) five-head LoRA + scene-flow head | pending | 0 | 2026-10-17 03:04:34 | 2026-10-17 03:19:43 | True |
+| 35 | ft_eval_sf: Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | done | 1 | 2026-10-17 13:47:07 | 2026-10-17 14:01:16 | True |
+| 36 | ft_train_heads_sf: Item 10: fine-tune (c) five-head LoRA + scene-flow head | running | 1 | 2026-10-17 14:01:26 |  | False |
 | 37 | ft_eval_heads_sf: Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | pending | 0 |  |  |  |
 | 38 | ft_train_gain: Item 10: fine-tune (e) 5 learned per-head gains | pending | 0 | 2026-10-17 04:44:49 | 2026-10-17 04:45:27 | True |
 | 39 | ft_eval_gain: Item 10: evaluate fine-tune (e) 5 learned per-head gains | pending | 0 |  |  |  |
