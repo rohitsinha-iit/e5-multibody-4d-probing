@@ -3,3 +3,38 @@
 GPU 1
 ok
 [01:13:09] gain_sel v2 inference
+planar_s450 1.05 s
+peak GPU GB 7.55
+[01:15:04] gain_sel v2 metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/gain_sel/pred_v2: 100 scenes ok, 0 errors; mean slope 0.620
+[01:16:37] gain_sel v3float inference
+n3_generic_s590 1.12 s
+peak GPU GB 7.55
+[01:17:59] gain_sel v3float metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/gain_sel/pred_v3float: 69 scenes ok, 0 errors; mean slope 0.572
+[01:19:03] gain_sel v3far inference
+confound_farglued_s520 1.12 s
+peak GPU GB 7.55
+[01:19:30] gain_sel v3far metrics
+/media/workbench/zone_x/e5_multibody/ft/eval/gain_sel/pred_v3far: 19 scenes ok, 0 errors; mean slope 0.661
+[01:19:49] gain_sel internals (v3float, layers 0,17,24)
+peak GPU GB 7.39
+E5-P layer 24
+done
+[01:21:03] gain_sel real kitti15 rgb 2v
+rows 200 skipped 0
+[01:21:48] gain_sel real kitti15 rgb mv4
+rows 200 skipped 0
+[01:22:47] gain_sel real sintel final 2v
+rows 256 skipped 0
+[01:24:11] gain_sel real sintel final mv4
+rows 256 skipped 0
+[01:25:56] gain_sel real sintel clean 2v
+/home/rohit/e5_multibody/queue/tasks/t8_common.sh: line 3: 1945303 Segmentation fault      (core dumped) "$@" 2>&1
+     1945304 Done                    | { grep -v -i warn || true; }
+[32s] bamboo_2_0009 slope 0.284 sep_ratio nan epe s/m 2.37/12.91
+
+===== 2026-10-18 01:28:47 attempt 2
+GPU 1
+ok
+[01:28:47] gain_sel v2 inference
