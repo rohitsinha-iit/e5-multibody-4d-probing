@@ -16,7 +16,7 @@ Files (all under the queue directory, default ~/e5_multibody/queue):
   events.log        one line per state change; STATUS.md is a table regenerated every loop
   STOP              if present, the supervisor finishes the current task and exits
 """
-import fcntl, json, os, signal, subprocess, time
+import fcntl, json, os, re, signal, subprocess, time
 
 Q = os.path.abspath(os.environ.get("E5_QUEUE", os.path.expanduser("~/e5_multibody/queue")))
 POLL = 30
@@ -215,8 +215,20 @@ def main():
         log.close()
         rc = read_rc(rcfile, p.returncode)
         st.update(rc=rc, finished=now(), pid=None)
+        oom = False
+        if rc != 0:
+            try:
+                tail = open(os.path.join(Q, "logs", f"{tid}.log"), errors="replace").read()
+                tail = tail[tail.rfind("===== "):]
+                oom = bool(re.search(r"OutOfMemoryError|CUDA out of memory|CUBLAS_STATUS_ALLOC_FAILED|CUDNN_STATUS_ALLOC_FAILED", tail))
+            except OSError:
+                pass
         if rc == 0:
             st["status"] = "done"; event(f"done {tid}")
+        elif oom and st.get("oom_retries", 0) < 30:
+            st["oom_retries"] = st.get("oom_retries", 0) + 1; st["attempts"] = max(0, st["attempts"] - 1)
+            wait_min = min(60, 10 * st["oom_retries"]); st["status"] = "pending"; st["not_before"] = time.time() + 60 * wait_min
+            event(f"{tid} hit GPU out-of-memory (shared GPU), retry {st['oom_retries']} in {wait_min} min (attempt not counted)")
         elif st["attempts"] < nxt.get("max_attempts", 2):
             st["status"] = "pending"; st["not_before"] = time.time() + 120; event(f"{tid} failed rc {rc}, will retry")
         else:

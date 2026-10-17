@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 04:50:05 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 11:30:51 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -31,24 +31,24 @@ Last updated 2026-10-17 04:50:05 (server time). Regenerated after every queue ev
 | 25 | [w2_summary](#w2_summary): Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | done | 1 | 2026-10-16 15:55:58 | 2026-10-16 15:56:05 |
 | 26 | [ft_render_v2](#ft_render_v2): Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | done | 1 | 2026-10-16 15:56:13 | 2026-10-16 19:20:03 |
 | 27 | [ft_render_float](#ft_render_float): Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 |
-| 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | FAILED | 4 | 2026-10-17 02:48:00 | 2026-10-17 02:48:38 |
+| 28 | [ft_eval_base](#ft_eval_base): Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | RUNNING | 1 | 2026-10-17 11:30:48 |  |
 | 29 | [ft_pilot](#ft_pilot): Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | done | 3 | 2026-10-17 01:01:23 | 2026-10-17 02:31:45 |
-| 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | FAILED | 4 | 2026-10-17 02:48:46 | 2026-10-17 02:49:24 |
+| 30 | [ft_train_heads](#ft_train_heads): Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 | 2026-10-17 02:48:46 |  |
 | 31 | [ft_eval_heads](#ft_eval_heads): Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | queued | 0 |  |  |
-| 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | FAILED | 4 | 2026-10-17 02:49:32 | 2026-10-17 02:50:10 |
+| 32 | [ft_train_ctrl](#ft_train_ctrl): Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 | 2026-10-17 02:49:32 |  |
 | 33 | [ft_eval_ctrl](#ft_eval_ctrl): Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | queued | 0 |  |  |
-| 34 | [ft_train_sf](#ft_train_sf): Item 10: fine-tune (b) scene-flow DPT head + adaptor | FAILED | 4 | 2026-10-17 02:50:17 | 2026-10-17 03:04:26 |
+| 34 | [ft_train_sf](#ft_train_sf): Item 10: fine-tune (b) scene-flow DPT head + adaptor | queued | 0 | 2026-10-17 02:50:17 |  |
 | 35 | [ft_eval_sf](#ft_eval_sf): Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | queued | 0 |  |  |
-| 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | FAILED | 4 | 2026-10-17 03:04:34 | 2026-10-17 03:19:43 |
+| 36 | [ft_train_heads_sf](#ft_train_heads_sf): Item 10: fine-tune (c) five-head LoRA + scene-flow head | queued | 0 | 2026-10-17 03:04:34 |  |
 | 37 | [ft_eval_heads_sf](#ft_eval_heads_sf): Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | queued | 0 |  |  |
-| 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | FAILED | 4 | 2026-10-17 04:44:49 | 2026-10-17 04:45:27 |
+| 38 | [ft_train_gain](#ft_train_gain): Item 10: fine-tune (e) 5 learned per-head gains | queued | 0 | 2026-10-17 04:44:49 |  |
 | 39 | [ft_eval_gain](#ft_eval_gain): Item 10: evaluate fine-tune (e) 5 learned per-head gains | queued | 0 |  |  |
 | 40 | [ft_summary](#ft_summary): Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | queued | 0 |  |  |
 | 41 | [v4_pilot](#v4_pilot): Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 |
 | 42 | [v4_scale_epi](#v4_scale_epi): Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 |
-| 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | FAILED | 4 | 2026-10-17 04:46:51 | 2026-10-17 04:48:29 |
-| 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | FAILED | 4 | 2026-10-17 04:48:37 | 2026-10-17 04:49:15 |
-| 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | FAILED | 4 | 2026-10-17 04:49:23 | 2026-10-17 04:50:02 |
+| 43 | [v4_viewsweep_epi](#v4_viewsweep_epi): Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | queued | 0 | 2026-10-17 04:46:51 |  |
+| 44 | [r2_probe_extract](#r2_probe_extract): Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | queued | 0 | 2026-10-17 04:48:37 |  |
+| 45 | [r2_heads_null](#r2_heads_null): Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | queued | 0 | 2026-10-17 04:49:23 |  |
 | 46 | [r2_probe_linear](#r2_probe_linear): Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | queued | 0 |  |  |
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | queued | 0 |  |  |
 
@@ -792,7 +792,9 @@ Training scenes for item 10 (fine-tuning), rendered with the approved generator 
 
 Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel)
 
-Status: **FAILED**, attempt 4, started 2026-10-17 02:48:00, finished 2026-10-17 02:48:38. [Raw results](../results/queue/ft_eval_base/), [log](../results/queue/ft_eval_base/task.log).
+Status: **RUNNING**, attempt 1, started 2026-10-17 11:30:48. [Raw results](../results/queue/ft_eval_base/), [log](../results/queue/ft_eval_base/task.log).
+
+Partial results so far; the run is still going.
 
 
 ## ft_pilot
@@ -828,41 +830,6 @@ Pilot run to choose the number of fine-tuning steps (variant heads_sf = five-hea
 | 800 | 0.0100 | 0.795 | 36.5 | 3.96 | 0.520 |
 | 900 | 0.0100 | 0.804 | 36.0 | 3.99 | 0.532 |
 
-
-
-## ft_train_heads
-
-Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices
-
-Status: **FAILED**, attempt 4, started 2026-10-17 02:48:46, finished 2026-10-17 02:49:24. [Raw results](../results/queue/ft_train_heads/), [log](../results/queue/ft_train_heads/task.log).
-
-
-## ft_train_ctrl
-
-Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads
-
-Status: **FAILED**, attempt 4, started 2026-10-17 02:49:32, finished 2026-10-17 02:50:10. [Raw results](../results/queue/ft_train_ctrl/), [log](../results/queue/ft_train_ctrl/task.log).
-
-
-## ft_train_sf
-
-Item 10: fine-tune (b) scene-flow DPT head + adaptor
-
-Status: **FAILED**, attempt 4, started 2026-10-17 02:50:17, finished 2026-10-17 03:04:26. [Raw results](../results/queue/ft_train_sf/), [log](../results/queue/ft_train_sf/task.log).
-
-
-## ft_train_heads_sf
-
-Item 10: fine-tune (c) five-head LoRA + scene-flow head
-
-Status: **FAILED**, attempt 4, started 2026-10-17 03:04:34, finished 2026-10-17 03:19:43. [Raw results](../results/queue/ft_train_heads_sf/), [log](../results/queue/ft_train_heads_sf/task.log).
-
-
-## ft_train_gain
-
-Item 10: fine-tune (e) 5 learned per-head gains
-
-Status: **FAILED**, attempt 4, started 2026-10-17 04:44:49, finished 2026-10-17 04:45:27. [Raw results](../results/queue/ft_train_gain/), [log](../results/queue/ft_train_gain/task.log).
 
 
 ## v4_pilot
@@ -975,25 +942,4 @@ Static objects in every split are 1.4 to 2.2 m (the v3float range).
 
 How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 misses the object in a third view by tens of pixels, while for epi_const and for the background it fits to about 0 px. (b) Two-view separation is about 0 in every split, so frames 0 and 23 alone are ambiguous. (c) The accelerated object's image track leaves the track of its static reading (the constant-velocity object stays on it). (d) Size randomisation decouples apparent size from the static interpretation.
 
-
-
-## v4_viewsweep_epi
-
-Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats
-
-Status: **FAILED**, attempt 4, started 2026-10-17 04:46:51, finished 2026-10-17 04:48:29. [Raw results](../results/queue/v4_viewsweep_epi/), [log](../results/queue/v4_viewsweep_epi/task.log).
-
-
-## r2_probe_extract
-
-Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float
-
-Status: **FAILED**, attempt 4, started 2026-10-17 04:48:37, finished 2026-10-17 04:49:15. [Raw results](../results/queue/r2_probe_extract/), [log](../results/queue/r2_probe_extract/task.log).
-
-
-## r2_heads_null
-
-Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100)
-
-Status: **FAILED**, attempt 4, started 2026-10-17 04:49:23, finished 2026-10-17 04:50:02. [Raw results](../results/queue/r2_heads_null/), [log](../results/queue/r2_heads_null/task.log).
 

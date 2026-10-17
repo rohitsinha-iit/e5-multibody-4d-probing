@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-17 04:50:05 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-17 11:30:51 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -231,10 +231,10 @@
 <tr>
 <td>28</td>
 <td><a href="#ft_eval_base">ft_eval_base</a>: Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel)</td>
-<td>FAILED</td>
-<td>4</td>
-<td>2026-10-17 02:48:00</td>
-<td>2026-10-17 02:48:38</td>
+<td>RUNNING</td>
+<td>1</td>
+<td>2026-10-17 11:30:48</td>
+<td></td>
 </tr>
 <tr>
 <td>29</td>
@@ -247,10 +247,10 @@
 <tr>
 <td>30</td>
 <td><a href="#ft_train_heads">ft_train_heads</a>: Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices</td>
-<td>FAILED</td>
-<td>4</td>
+<td>queued</td>
+<td>0</td>
 <td>2026-10-17 02:48:46</td>
-<td>2026-10-17 02:49:24</td>
+<td></td>
 </tr>
 <tr>
 <td>31</td>
@@ -263,10 +263,10 @@
 <tr>
 <td>32</td>
 <td><a href="#ft_train_ctrl">ft_train_ctrl</a>: Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads</td>
-<td>FAILED</td>
-<td>4</td>
+<td>queued</td>
+<td>0</td>
 <td>2026-10-17 02:49:32</td>
-<td>2026-10-17 02:50:10</td>
+<td></td>
 </tr>
 <tr>
 <td>33</td>
@@ -279,10 +279,10 @@
 <tr>
 <td>34</td>
 <td><a href="#ft_train_sf">ft_train_sf</a>: Item 10: fine-tune (b) scene-flow DPT head + adaptor</td>
-<td>FAILED</td>
-<td>4</td>
+<td>queued</td>
+<td>0</td>
 <td>2026-10-17 02:50:17</td>
-<td>2026-10-17 03:04:26</td>
+<td></td>
 </tr>
 <tr>
 <td>35</td>
@@ -295,10 +295,10 @@
 <tr>
 <td>36</td>
 <td><a href="#ft_train_heads_sf">ft_train_heads_sf</a>: Item 10: fine-tune (c) five-head LoRA + scene-flow head</td>
-<td>FAILED</td>
-<td>4</td>
+<td>queued</td>
+<td>0</td>
 <td>2026-10-17 03:04:34</td>
-<td>2026-10-17 03:19:43</td>
+<td></td>
 </tr>
 <tr>
 <td>37</td>
@@ -311,10 +311,10 @@
 <tr>
 <td>38</td>
 <td><a href="#ft_train_gain">ft_train_gain</a>: Item 10: fine-tune (e) 5 learned per-head gains</td>
-<td>FAILED</td>
-<td>4</td>
+<td>queued</td>
+<td>0</td>
 <td>2026-10-17 04:44:49</td>
-<td>2026-10-17 04:45:27</td>
+<td></td>
 </tr>
 <tr>
 <td>39</td>
@@ -351,26 +351,26 @@
 <tr>
 <td>43</td>
 <td><a href="#v4_viewsweep_epi">v4_viewsweep_epi</a>: Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats</td>
-<td>FAILED</td>
-<td>4</td>
+<td>queued</td>
+<td>0</td>
 <td>2026-10-17 04:46:51</td>
-<td>2026-10-17 04:48:29</td>
+<td></td>
 </tr>
 <tr>
 <td>44</td>
 <td><a href="#r2_probe_extract">r2_probe_extract</a>: Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float</td>
-<td>FAILED</td>
-<td>4</td>
+<td>queued</td>
+<td>0</td>
 <td>2026-10-17 04:48:37</td>
-<td>2026-10-17 04:49:15</td>
+<td></td>
 </tr>
 <tr>
 <td>45</td>
 <td><a href="#r2_heads_null">r2_heads_null</a>: Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100)</td>
-<td>FAILED</td>
-<td>4</td>
+<td>queued</td>
+<td>0</td>
 <td>2026-10-17 04:49:23</td>
-<td>2026-10-17 04:50:02</td>
+<td></td>
 </tr>
 <tr>
 <td>46</td>
@@ -3118,7 +3118,8 @@ If the dedicated trackers (CoTracker3, RAFT) recover close to all object motion 
 </table>
 <h2>ft_eval_base</h2>
 <p>Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel)</p>
-<p>Status: <strong>FAILED</strong>, attempt 4, started 2026-10-17 02:48:00, finished 2026-10-17 02:48:38. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_eval_base/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_eval_base/task.log">log</a>.</p>
+<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-17 11:30:48. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_eval_base/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_eval_base/task.log">log</a>.</p>
+<p>Partial results so far; the run is still going.</p>
 <h2>ft_pilot</h2>
 <p>Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps</p>
 <p>Status: <strong>done</strong>, attempt 3, started 2026-10-17 01:01:23, finished 2026-10-17 02:31:45. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_pilot/task.log">log</a>.</p>
@@ -3226,21 +3227,6 @@ If the dedicated trackers (CoTracker3, RAFT) recover close to all object motion 
 </tr>
 </tbody>
 </table>
-<h2>ft_train_heads</h2>
-<p>Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices</p>
-<p>Status: <strong>FAILED</strong>, attempt 4, started 2026-10-17 02:48:46, finished 2026-10-17 02:49:24. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_heads/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_heads/task.log">log</a>.</p>
-<h2>ft_train_ctrl</h2>
-<p>Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads</p>
-<p>Status: <strong>FAILED</strong>, attempt 4, started 2026-10-17 02:49:32, finished 2026-10-17 02:50:10. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_ctrl/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_ctrl/task.log">log</a>.</p>
-<h2>ft_train_sf</h2>
-<p>Item 10: fine-tune (b) scene-flow DPT head + adaptor</p>
-<p>Status: <strong>FAILED</strong>, attempt 4, started 2026-10-17 02:50:17, finished 2026-10-17 03:04:26. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_sf/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_sf/task.log">log</a>.</p>
-<h2>ft_train_heads_sf</h2>
-<p>Item 10: fine-tune (c) five-head LoRA + scene-flow head</p>
-<p>Status: <strong>FAILED</strong>, attempt 4, started 2026-10-17 03:04:34, finished 2026-10-17 03:19:43. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_heads_sf/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_heads_sf/task.log">log</a>.</p>
-<h2>ft_train_gain</h2>
-<p>Item 10: fine-tune (e) 5 learned per-head gains</p>
-<p>Status: <strong>FAILED</strong>, attempt 4, started 2026-10-17 04:44:49, finished 2026-10-17 04:45:27. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_gain/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/ft_train_gain/task.log">log</a>.</p>
 <h2>v4_pilot</h2>
 <p>Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks</p>
 <p>Status: <strong>done</strong>, attempt 1, started 2026-10-16 22:48:29, finished 2026-10-16 22:53:06. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_pilot/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_pilot/task.log">log</a>.</p>
@@ -3474,13 +3460,4 @@ Contact sheets and GIFs are in sheets/. The scaled task v4_scale_epi waits for t
 </table>
 <p>Static objects in every split are 1.4 to 2.2 m (the v3float range).</p>
 <p><img alt="GT checks" src="v4_scale_epi.png" /></p>
-<p>How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 misses the object in a third view by tens of pixels, while for epi_const and for the background it fits to about 0 px. (b) Two-view separation is about 0 in every split, so frames 0 and 23 alone are ambiguous. (c) The accelerated object's image track leaves the track of its static reading (the constant-velocity object stays on it). (d) Size randomisation decouples apparent size from the static interpretation.</p>
-<h2>v4_viewsweep_epi</h2>
-<p>Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats</p>
-<p>Status: <strong>FAILED</strong>, attempt 4, started 2026-10-17 04:46:51, finished 2026-10-17 04:48:29. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_viewsweep_epi/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/v4_viewsweep_epi/task.log">log</a>.</p>
-<h2>r2_probe_extract</h2>
-<p>Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float</p>
-<p>Status: <strong>FAILED</strong>, attempt 4, started 2026-10-17 04:48:37, finished 2026-10-17 04:49:15. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/r2_probe_extract/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/r2_probe_extract/task.log">log</a>.</p>
-<h2>r2_heads_null</h2>
-<p>Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100)</p>
-<p>Status: <strong>FAILED</strong>, attempt 4, started 2026-10-17 04:49:23, finished 2026-10-17 04:50:02. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/r2_heads_null/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/r2_heads_null/task.log">log</a>.</p></body></html>
+<p>How to read the figure: (a) for epi_accel the static fit from frames 0 and 23 misses the object in a third view by tens of pixels, while for epi_const and for the background it fits to about 0 px. (b) Two-view separation is about 0 in every split, so frames 0 and 23 alone are ambiguous. (c) The accelerated object's image track leaves the track of its static reading (the constant-velocity object stays on it). (d) Size randomisation decouples apparent size from the static interpretation.</p></body></html>

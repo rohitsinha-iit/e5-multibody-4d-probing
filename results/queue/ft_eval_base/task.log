@@ -60,3 +60,8 @@ peak GPU GB 2.46
 [02:48:15] base v3float inference
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 918.00 MiB. GPU 0 has a total capacity of 23.58 GiB of which 615.38 MiB is free. Process 1675453 has 2.38 GiB memory in use. Process 1692442 has 13.22 GiB memory in use. Including non-PyTorch memory, this process has 5.33 GiB memory in use. Of the allocated memory 4.43 GiB is allocated by PyTorch, and 661.24 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+===== 2026-10-17 11:30:48 attempt 1
+GPU 1
+ok
+[11:30:48] base v2 inference

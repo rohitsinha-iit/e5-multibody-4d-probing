@@ -1,6 +1,6 @@
 # E5 queue status
 
-updated 2026-10-17 04:50:02
+updated 2026-10-17 11:30:48
 
 | # | task | status | attempts | started | finished | pushed |
 |---|---|---|---|---|---|---|
@@ -31,23 +31,23 @@ updated 2026-10-17 04:50:02
 | 25 | w2_summary: Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?) | done | 1 | 2026-10-16 15:55:58 | 2026-10-16 15:56:05 | True |
 | 26 | ft_render_v2: Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings) | done | 1 | 2026-10-16 15:56:13 | 2026-10-16 19:20:03 | True |
 | 27 | ft_render_float: Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings) | done | 1 | 2026-10-16 19:20:12 | 2026-10-16 22:48:04 | True |
-| 28 | ft_eval_base: Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | failed | 4 | 2026-10-17 02:48:00 | 2026-10-17 02:48:38 | True |
+| 28 | ft_eval_base: Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel) | running | 1 | 2026-10-17 11:30:48 |  | False |
 | 29 | ft_pilot: Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps | done | 3 | 2026-10-17 01:01:23 | 2026-10-17 02:31:45 | True |
-| 30 | ft_train_heads: Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | failed | 4 | 2026-10-17 02:48:46 | 2026-10-17 02:49:24 | True |
+| 30 | ft_train_heads: Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices | pending | 0 | 2026-10-17 02:48:46 | 2026-10-17 02:49:24 | True |
 | 31 | ft_eval_heads: Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices | pending | 0 |  |  |  |
-| 32 | ft_train_ctrl: Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | failed | 4 | 2026-10-17 02:49:32 | 2026-10-17 02:50:10 | True |
+| 32 | ft_train_ctrl: Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads | pending | 0 | 2026-10-17 02:49:32 | 2026-10-17 02:50:10 | True |
 | 33 | ft_eval_ctrl: Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads | pending | 0 |  |  |  |
-| 34 | ft_train_sf: Item 10: fine-tune (b) scene-flow DPT head + adaptor | failed | 4 | 2026-10-17 02:50:17 | 2026-10-17 03:04:26 | True |
+| 34 | ft_train_sf: Item 10: fine-tune (b) scene-flow DPT head + adaptor | pending | 0 | 2026-10-17 02:50:17 | 2026-10-17 03:04:26 | True |
 | 35 | ft_eval_sf: Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor | pending | 0 |  |  |  |
-| 36 | ft_train_heads_sf: Item 10: fine-tune (c) five-head LoRA + scene-flow head | failed | 4 | 2026-10-17 03:04:34 | 2026-10-17 03:19:43 | True |
+| 36 | ft_train_heads_sf: Item 10: fine-tune (c) five-head LoRA + scene-flow head | pending | 0 | 2026-10-17 03:04:34 | 2026-10-17 03:19:43 | True |
 | 37 | ft_eval_heads_sf: Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head | pending | 0 |  |  |  |
-| 38 | ft_train_gain: Item 10: fine-tune (e) 5 learned per-head gains | failed | 4 | 2026-10-17 04:44:49 | 2026-10-17 04:45:27 | True |
+| 38 | ft_train_gain: Item 10: fine-tune (e) 5 learned per-head gains | pending | 0 | 2026-10-17 04:44:49 | 2026-10-17 04:45:27 | True |
 | 39 | ft_eval_gain: Item 10: evaluate fine-tune (e) 5 learned per-head gains | pending | 0 |  |  |  |
 | 40 | ft_summary: Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap) | pending | 0 |  |  |  |
 | 41 | v4_pilot: Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks | done | 1 | 2026-10-16 22:48:29 | 2026-10-16 22:53:06 | True |
 | 42 | v4_scale_epi: Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks | done | 1 | 2026-10-16 22:53:45 | 2026-10-17 01:01:15 | True |
-| 43 | v4_viewsweep_epi: Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | failed | 4 | 2026-10-17 04:46:51 | 2026-10-17 04:48:29 | True |
-| 44 | r2_probe_extract: Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | failed | 4 | 2026-10-17 04:48:37 | 2026-10-17 04:49:15 | True |
-| 45 | r2_heads_null: Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | failed | 4 | 2026-10-17 04:49:23 | 2026-10-17 04:50:02 | False |
+| 43 | v4_viewsweep_epi: Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats | pending | 0 | 2026-10-17 04:46:51 | 2026-10-17 04:48:29 | True |
+| 44 | r2_probe_extract: Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float | pending | 0 | 2026-10-17 04:48:37 | 2026-10-17 04:49:15 | True |
+| 45 | r2_heads_null: Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100) | pending | 0 | 2026-10-17 04:49:23 | 2026-10-17 04:50:02 | True |
 | 46 | r2_probe_linear: Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float) | pending | 0 |  |  |  |
 | 47 | r2_probe_mlp: Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | pending | 0 |  |  |  |
