@@ -1,6 +1,6 @@
 # E5 experiment dashboard
 
-Last updated 2026-10-17 22:46:22 (server time). Regenerated after every queue event.
+Last updated 2026-10-17 22:46:30 (server time). Regenerated after every queue event.
 
 | # | run | status | attempts | started | finished |
 |---|---|---|---|---|---|
@@ -53,7 +53,7 @@ Last updated 2026-10-17 22:46:22 (server time). Regenerated after every queue ev
 | 47 | [r2_probe_mlp](#r2_probe_mlp): Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float) | done | 1 | 2026-10-17 20:09:05 | 2026-10-17 21:11:55 |
 | 48 | [ft_train_heads_sel](#ft_train_heads_sel): Item 10 rerun: train heads with corrected checkpoint selection | done | 1 | 2026-10-17 21:12:06 | 2026-10-17 22:31:27 |
 | 49 | [ft_eval_heads_sel](#ft_eval_heads_sel): Item 10 rerun: evaluate heads_sel | done | 1 | 2026-10-17 22:31:38 | 2026-10-17 22:46:16 |
-| 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | queued | 0 |  |  |
+| 50 | [ft_train_ctrl_sel](#ft_train_ctrl_sel): Item 10 rerun: train ctrl with corrected checkpoint selection | RUNNING | 1 | 2026-10-17 22:46:27 |  |
 | 51 | [ft_eval_ctrl_sel](#ft_eval_ctrl_sel): Item 10 rerun: evaluate ctrl_sel | queued | 0 |  |  |
 | 52 | [ft_train_gain_sel](#ft_train_gain_sel): Item 10 rerun: train gain with corrected checkpoint selection | queued | 0 |  |  |
 | 53 | [ft_eval_gain_sel](#ft_eval_gain_sel): Item 10 rerun: evaluate gain_sel | queued | 0 |  |  |
@@ -2091,4 +2091,13 @@ Internal motion decodability (view-0 linear probe, 5-fold by scene, floating set
 | 17 | 0.844 | 0.905 |
 | 24 | 0.974 | 0.999 |
 
+
+
+## ft_train_ctrl_sel
+
+Item 10 rerun: train ctrl with corrected checkpoint selection
+
+Status: **RUNNING**, attempt 1, started 2026-10-17 22:46:27. [Raw results](../results/queue/ft_train_ctrl_sel/), [log](../results/queue/ft_train_ctrl_sel/task.log).
+
+Partial results so far; the run is still going.
 
