@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset='utf-8'><meta http-equiv='refresh' content='300'><title>E5 dashboard</title><style>body{font-family:system-ui,sans-serif;max-width:1100px;margin:2em auto;padding:0 1em}img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ddd;padding:3px 6px;font-size:13px}</style></head><body><h1>E5 experiment dashboard</h1>
-<p>Last updated 2026-10-17 16:37:27 (server time). Regenerated after every queue event.</p>
+<p>Last updated 2026-10-17 16:37:36 (server time). Regenerated after every queue event.</p>
 <table>
 <thead>
 <tr>
@@ -359,9 +359,9 @@
 <tr>
 <td>44</td>
 <td><a href="#r2_probe_extract">r2_probe_extract</a>: Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float</td>
-<td>queued</td>
-<td>0</td>
-<td>2026-10-17 04:48:37</td>
+<td>RUNNING</td>
+<td>1</td>
+<td>2026-10-17 16:37:33</td>
 <td></td>
 </tr>
 <tr>
@@ -5475,4 +5475,8 @@ CIs are bootstrap 95% over scenes (10000 resamples). Paired tests are two-sided 
 <li>v4 scenes keep static objects from overlapping the mover in the image (to avoid occlusion-order cues and hidden movers); v3float epi_aligned does not, which is why epi_const is also reported as a matched reference.</li>
 <li>epi_sizematch makes the static reading a typical size, but that static copy also floats higher (it is scaled about the camera), so it is not a perfect look-alike of a static object.</li>
 <li>Files: v4_stats.json (all numbers), outm_<n>v.json, vs_pool_<n>v_results.json, vs_xfer_<n>v_results.json, step3_v4epi_<n>v.json.</li>
-</ul></body></html>
+</ul>
+<h2>r2_probe_extract</h2>
+<p>Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float</p>
+<p>Status: <strong>RUNNING</strong>, attempt 1, started 2026-10-17 16:37:33. <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/r2_probe_extract/">Raw results</a>, <a href="https://github.com/rohitsinha-iit/e5-multibody-4d-probing/tree/main/results/queue/r2_probe_extract/task.log">log</a>.</p>
+<p>Partial results so far; the run is still going.</p></body></html>
