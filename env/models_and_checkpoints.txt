@@ -1,14 +1,19 @@
-# Hugging Face cache snapshots (model id, revision) on the 4090 server
-opencompass/CompassJudger-2-7B-Instruct  ref=main  rev=f913ec1569c282f02530028fedc1ce9832024ebf  size=15G
-Qwen/Qwen2.5-7B-Instruct  ref=main  rev=a09a35458c702b33eeacc393d103063234e8bc28  size=15G
-RedHatAI/Qwen3.8-27B-INT4  ref=main  rev=91bd022d5b49442a868bc35008f6c21e1860edfa  size=296K
-stabilityai/sdxl-vae  ref=main  rev=6f5909a7e596173e25d4e97b07fd19cdf9611c76  size=320M
-dataset:HuggingFaceH4/ultrachat_200k  ref=main  rev=8049631c405ae6576f93f445c6b8166f76f5505a  size=78M
-dataset:sayakpaul/ShapeNet-55  ref=main  rev=310702922da52e7d74845ec81f73235d2544598d  size=12K
-dataset:yifengzhu-hf/LIBERO-datasets  ref=main  rev=f13aa24a3da8c43c7225569f28c562979fa0e35a  size=12K
+# E5 model weights on the 4090 server (Hugging Face cache snapshots: id, ref, revision, size)
+facebook/VGGT_tracker_fixed  ref=main  rev=4d9d9494b2211c90ab9cd3c8c6aa188fe363103d  size=32K  cache=/media/workbench/zone_x/e5_multibody/models/hf/hub
+facebook/cotracker3  ref=main  rev=bf55ea50d4390e1820a267f131cd6587240fb2c5  size=32K  cache=/media/workbench/zone_x/e5_multibody/models/hf/hub
+dataset:zhouk777/PAGE4D  ref=main  rev=69c86f898829ae9365469aa8e9f34b386844a4b5  size=32K  cache=/media/workbench/zone_x/e5_multibody/models/hf/hub
+facebook/VGGT-1B  ref=main  rev=860abec7937da0a4c03c41d3c269c366e82abdf9  size=32K  cache=/media/workbench/zone_x/e5_multibody/models/hf/hub
+facebook/map-anything  ref=main  rev=a1d87e9086706fb9974f3be5a3e3a0ca5401c5aa  size=84K  cache=/media/workbench/zone_x/e5_multibody/models/hf/hub
 
-# checkpoints
-total 7546164
-drwxrwxr-x  2 rohit rohit       4096 Oct 11 02:53 .
-drwxrwxr-x 10 rohit rohit       4096 Oct 16 11:35 ..
--rw-rw-r--  1 rohit rohit 7727258559 Oct 11 03:06 any4d_4v_combined.pth
+# local checkpoint files
+/home/rohit/e5_multibody/Any4D/checkpoints/any4d_4v_combined.pth	7727258559 bytes
+
+# fine-tuned E5 checkpoints (five-head LoRA etc.)
+/media/workbench/zone_x/e5_multibody/ft/runs/ctrl_sel/any4d_ft.pth	2713290374 bytes
+/media/workbench/zone_x/e5_multibody/ft/runs/gain_sel/any4d_ft.pth	2713290374 bytes
+/media/workbench/zone_x/e5_multibody/ft/runs/ctrl/any4d_ft.pth	2713290374 bytes
+/media/workbench/zone_x/e5_multibody/ft/runs/gain/any4d_ft.pth	2713290374 bytes
+/media/workbench/zone_x/e5_multibody/ft/runs/sf/any4d_ft.pth	2713290310 bytes
+/media/workbench/zone_x/e5_multibody/ft/runs/heads_sf/any4d_ft.pth	2713290374 bytes
+/media/workbench/zone_x/e5_multibody/ft/runs/heads_sel/any4d_ft.pth	2713290374 bytes
+/media/workbench/zone_x/e5_multibody/ft/runs/heads/any4d_ft.pth	2713290374 bytes
