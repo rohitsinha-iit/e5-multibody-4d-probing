@@ -383,94 +383,125 @@ Far-glued control (object A coupled to a distant, different-looking B; C an iden
 - Far-glued set: 19 to 20 scenes, with 13 to 16 usable pairs per type.
 - The monocular-prior explanation for C4 is a hypothesis.
 
-## 15. Round 2 results (review items 1 to 4 and the method, item 10), interim as of 2026-10-18
+## 15. Round 2 results (self-review items 1 to 4, plan item 10), 2026-10-18
 
-Status: 31 of 34 round-2 tasks are done. Still pending: gain_sel training and evaluation, and the corrected method summary (ft_summary_sel). The head-variant fine-tunes were rerun on 2026-10-17 with corrected checkpoint selection (`*_sel` tasks): the first selection rule, total validation loss, kept step 0 (the unchanged base model) for every head variant, because the distillation term dominated. The new rule selects on the scene-flow validation loss with a static-EPE guard, using held-out training scenes only. The numbers below for heads and control are from these reruns.
+All 34 round-2 tasks finished.
 
-### Item 1 (W2): the pull is not generic regression shrinkage
+- **Failures before success.** Eight tasks first failed because another user's job filled GPU 0. All succeeded on retry: three on their second or third try, and five after a manual re-queue once their four attempts were used up.
+- **Checkpoint-selection bug.** The first heads, control and gain fine-tunes had a checkpoint-selection bug; they were re-run as *_sel tasks. Every fine-tune number below comes from the corrected runs.
 
-| model (Kubric v2, 100 scenes) | slope | alpha (own motion) | beta (camera motion) |
-|---|---|---|---|
-| Any4D | 0.61 [0.56, 0.65] | 0.61 [0.56, 0.67] | 1.03 [0.93, 1.13] |
-| VGGT-1B tracker | 0.34 [0.29, 0.41] | 0.22 [0.16, 0.27] | 1.02 [0.92, 1.11] |
-| CoTracker3, 24 frames | 0.96 [0.93, 0.97] | 0.95 [0.94, 0.97] | 0.99 [0.97, 1.01] |
-| RAFT chained, 7 frames | 0.88 [0.84, 0.90] | 0.85 [0.81, 0.89] | 0.98 [0.93, 1.03] |
-| RAFT direct 0 to 23 | 0.59 [0.48, 0.69] | 0.61 [0.49, 0.71] | 0.68 [0.43, 0.90] |
+Figures:
+- fig_w2_summary.png, fig_w2_alpha_beta.png (shrinkage);
+- fig_v4_accel_viewcount.png, fig_v4_sizecue.png (view test);
+- fig_probe_controls.png, fig_heads_null.png (controls);
+- ft_comparison.png (method).
 
-- **Dedicated trackers recover almost all object motion on the same scenes and query points.** CoTracker3 reaches 0.96 to 0.97 on v2 and the floating set. On real data, RAFT reaches 0.95 on KITTI and 0.90 to 0.91 on Sintel, against Any4D's 0.58 and 0.31 to 0.33.
-- **The decomposition separates two failure types.** Fitting x_pred - x1 = alpha (x_true - x_static) + beta (x_static - x1):
-  - Any4D and the VGGT tracker keep the camera-induced motion intact (beta about 1) and lose only the object's own motion (alpha 0.2 to 0.6). This is a specific camera-motion pull.
-  - The one baseline that also fails, RAFT applied directly from frame 0 to 23, shrinks both components (beta 0.68). That is the signature of generic shrinkage, and it differs from Any4D's.
-- **Dose-response is weak and partly uncertainty-like.** Any4D's slope rises with object image area (+0.07 per SD on v2, +0.26 on the floating set) and falls with occlusion (-0.05, -0.11). It does not depend on texture, speed, camera rotation, number of motions or the model's own confidence. So small or occluded objects are pulled more, but the pull is present at every texture level and on large, unoccluded objects.
-- **Verdict on W2.** The pull is a property of the 4D reconstruction models (Any4D, VGGT), not of dense correspondence under uncertainty in general.
+### 15.1 Is the pull just regression shrinkage? No. It is specific to feed-forward reconstruction models (review W2)
 
-### Item 2 (W3): a non-degenerate view test finds no use of extra-view geometry
+Decomposition on moving points: x_pred - x1 = alpha (x_true - x_static) + beta (x_static - x1).
+- A pure camera-motion pull gives beta = 1 and alpha < 1.
+- Shrinkage toward zero image motion gives alpha = beta < 1.
 
-- **Setup.** 30 seed pairs of epi_accel (non-constant velocity along the baseline) and a paired constant-velocity control, all floating and shadowless. For the frame 0 and 23 pair the ground-truth multibody separation is at most 4e-06 px, while any third view exposes the accelerated mover by 39 to 49 px.
-- **Result.** Adding views does not help on accelerated motion beyond the paired control, by any read-out:
-  - probe AUC difference-in-differences: 0.000 to 0.003, all CIs include 0, Holm p = 1.0;
-  - output mask IoU: 0.33 for accelerated and 0.33 for control at 3 views;
-  - slope: 0.40 vs 0.39.
-  Of the pre-specified tests, 0 of 3 view counts pass.
-- **Interpretation.** Within the range tested, Any4D does not use the multi-view geometric constraint (a static point must move linearly in time) to detect motion that two views cannot resolve. Its motion signal is already present with two views, so it must come from cues other than geometry.
-- **Size cue (epi_sizerand, object size 0.5 to 3.5 m).**
-  - A probe trained only on v3float drops by 0.07 to 0.12 AUC on size-randomised movers, which is not significant after correction (Holm p 0.88 to 1.0).
-  - On size-matched movers it drops by 0.14 to 0.20 against the paired control (uncorrected p 0.02 to 0.04).
-  - A probe trained with these scenes included still decodes motion (mid-depth AUC 0.98).
-  - So apparent size contributes to how motion is encoded, but it is not the only cue.
-- **Caveat.** The pooled probe reaches AUC 0.78 already at layer 0 on v4 scenes, so these scenes carry some input-level cue. The transfer probe is the clean read-out.
-- **Revised C4 wording.** Motion that is ambiguous in pure two-view geometry is detected from monocular priors (including, but not only, apparent size), not from multi-view geometric reasoning.
+All models were scored on the same scenes and query points.
 
-### Item 3 (W4): probe controls confirm the rise is computed by the trained transformer
+| Model | Kubric v2 slope | alpha | beta | Real-data slope (2 views) |
+|---|---|---|---|---|
+| Any4D | 0.61 [0.56, 0.65] | 0.61 | 1.03 | KITTI 0.58, Sintel 0.31 to 0.33 |
+| VGGT-1B tracker | 0.34 [0.29, 0.41] | 0.22 | 1.02 | not run |
+| CoTracker3 (24 frames) | 0.96 [0.93, 0.97] | 0.95 | 0.99 | not run |
+| RAFT chained over 7 frames | 0.88 [0.84, 0.90] | 0.85 | 0.98 | KITTI 0.95, Sintel 0.90 to 0.91 (2-view RAFT) |
+| RAFT direct 0 to 23 | 0.59 [0.48, 0.69] | 0.61 | 0.68 | n/a |
 
-- **Random-init Any4D does not encode motion.** Both the fully random model and DINOv2 with a random transformer give motion AUC 0.48 to 0.55 at every layer, with linear and MLP probes alike. The trained model reaches 0.998.
-- **The difference appears with depth, not at the input.** Trained minus random at layer 24 is +0.51 [0.45, 0.56] on v2 and +0.48 on the floating set. At layer 0 it is not significant (+0.05 [-0.03, 0.13]).
-- **Label-shuffle selectivity at layer 24 is large.**
-  - Motion: +0.49 (patch shuffle) and +0.60 (instance shuffle).
-  - Pairs: +0.39 and +0.11.
-- **A small nonlinear signal exists at layer 0.** The MLP gives 0.62 at layer 0 on v2, against 0.57 for the linear probe. It comes from Any4D's fine-tuned encoder (raw encoder tokens: MLP selectivity +0.11), not from public DINOv2 (-0.02). It disappears on the floating set (trained L0 minus public DINOv2, MLP: -0.02).
-- **Pair grouping is partly appearance.** The pair probe is well above chance in random-init models too (0.61 to 0.78; DINOv2 features alone give about 0.77). Instance shuffling removes almost all selectivity at layer 0. The trained model adds +0.14 to +0.18 over DINOv2 with a random transformer at layer 24. So C1 rests on this depth increase, not on the absolute AUC.
-- **Seeds.** Five probe seeds: sd at most 0.03 for the pair probe and 0.000 for the ridge motion probe.
+- **The pattern in both reconstruction models.** Any4D and VGGT keep the camera-induced motion exactly (beta about 1, also on static points) while under-recovering the object's own motion (alpha well below beta; Any4D alpha minus beta -0.42, p = 8e-11).
+- **Dedicated correspondence models barely show it.** CoTracker3 and chained RAFT on the same inputs reach 0.85 to 0.97.
+- **The only baseline that looks like Any4D fails differently.** RAFT run directly over the large 0-to-23 gap has a slope similar to Any4D, but it shrinks both components (beta 0.68 to 0.78), which is ordinary large-displacement failure.
+- **The real-data gap is large.** RAFT recovers 0.90 to 0.95 of object motion on KITTI and Sintel, against Any4D's 0.31 to 0.58.
 
-### Item 4 (W5): head specificity holds once model-breaking sets are separated
+Dose-response (per-object slope, standardised regression):
+- **Size.** Any4D loses more motion on small objects (log image area +0.07 per SD on v2, +0.26 on the floating set).
+- **Occlusion.** It also loses more on occluded ones (-0.05 and -0.11).
+- **No dependence on texture or the model's own confidence.**
+- **Edges.** Object boundaries are recovered worse than interiors in every model.
 
-| condition | change in slope | change in static EPE (px) | null comparison |
-|---|---|---|---|
-| Mean ablation, five heads | -0.60 [-0.64, -0.55] | +3.0 [+2.6, +3.4] | 40 random sets: 37 non-breaking sets give at most -0.12; 3 sets break the model (static EPE +32 to +83 px, all containing early frame-block heads) |
-| Resample ablation, five heads | -0.53 [-0.59, -0.47] | +4.5 [+3.2, +6.0] | 10 random sets: 9 non-breaking at most -0.02; 1 breaks the model |
-| Amplification x1.5, five heads | +0.35 [+0.32, +0.37] | +0.6 [+0.4, +0.8] | 20 random sets: all within +/-0.025 (z = 15, p = 1/21, the smallest p 20 sets allow) |
+So the pull is a structural, camera-preserving bias of these models. It is stronger for small and partly hidden objects, consistent with motion evidence from few patch tokens being outvoted by the surrounding static scene. Generic regression shrinkage would also have shrunk the camera component and depended on texture and confidence, and it does neither.
 
-- **The five heads are specific.** Among sets that do not break the model, no random 5-head set comes close to the five heads' effect on slope. The raw empirical p (0.07 for mean ablation) is inflated by the three model-breaking sets, which damage static geometry as well.
-- **Every single head matters under resample ablation.** Slope changes are -0.06 to -0.32.
-- **Amplification still fixes magnitude, not accuracy.** At x1.5, moving EPE rises by 6.7 px.
+### 15.2 The non-degenerate view test: a third view does not help (review W3)
 
-### Item 10 (method): LoRA on the five heads is a specific, safe partial fix on Kubric that barely transfers
+New floating, shadowless scenes, verified from ground truth:
+- **epi_accel and epi_const (30 seed pairs).** The two-view multibody separation of the 0 and 23 frames is 0.00 px in every scene. Frames 0 and 23 are pixel-identical within a pair. With accelerated motion, a third view exposes the mover by 31 to 61 px.
+- **epi_sizerand and epi_sizematch (30 each).** These decouple the mover's apparent size from its depth.
 
-Paired change versus the base model, mean [95% CI]:
+Results:
+- **The extra views add nothing.** Mid-depth motion AUC is 0.974 with 2 views and 0.973 to 0.978 with 3, 4 or 7. The difference-in-differences against the constant-velocity control is 0.000 to 0.003 (CIs span 0; 0 of 3 view counts pass the pre-specified test). Output mask IoU and slope are also unchanged.
+  - Any4D flags epipolar-aligned movers from two views, before the geometry allows it.
+  - It does not use the multi-view constraint even when a third view makes the motion geometrically resolvable.
+- **Apparent size is not the cue.** Randomising size does not lower decodability (0 of 4 view counts pass the pre-specified test, Holm-corrected). Matching the size to the static reading lowers it somewhat with a probe trained only on round-1 floating scenes (-0.16 to -0.20, uncorrected p = 0.02 to 0.04). A probe trained on these scenes still decodes them at 0.98.
+- **The cue remains unidentified.** It is some monocular or appearance-level cue that we did not isolate.
+- **Size drives the output, not the detection.** On the same scenes the output slope and mask IoU rise strongly with the mover's size (Spearman 0.6 to 0.7, p < 0.001). This matches the dose-response in 15.1.
 
-| data | heads-LoRA (five heads, 71,680 parameters) | control LoRA (5 random heads) | scene-flow decoder fine-tune |
-|---|---|---|---|
-| Kubric v2, slope | +0.109 [+0.093, +0.125] | +0.008 [+0.007, +0.008] | +0.160 [+0.135, +0.187] |
-| Kubric v2, moving EPE (px) | -6.606 [-8.812, -4.653] | -0.403 [-0.511, -0.305] | -5.412 [-8.160, -2.704] |
-| Kubric v2, static EPE (px) | +0.036 [+0.024, +0.048] | +0.003 [-0.002, +0.007] | +0.035 [+0.020, +0.053] |
-| Kubric floating, slope | +0.109 [+0.085, +0.135] | +0.008 [+0.007, +0.009] | +0.165 [+0.128, +0.206] |
-| Kubric far-glued, slope | +0.085 [+0.057, +0.113] | +0.007 [+0.006, +0.009] | +0.149 [+0.094, +0.210] |
-| KITTI 2 views, slope | +0.022 [+0.017, +0.028] | +0.003 [+0.002, +0.004] | -0.034 [-0.078, +0.012] |
-| KITTI 2 views, moving EPE | -0.228 [-0.432, -0.041] | -0.021 [-0.051, +0.007] | +3.822 [+2.597, +5.125] |
-| Sintel final 2 views, slope | +0.007 [+0.001, +0.013] | +0.001 [-0.000, +0.002] | -0.156 [-0.219, -0.093] |
-| Sintel final 2 views, moving EPE | -0.109 [-0.237, +0.012] | -0.023 [-0.038, -0.010] | +2.587 [+1.406, +3.992] |
+### 15.3 Probe controls: the rise is computed by the trained transformer (review W4, item 6)
 
-- **Heads-LoRA is head-specific.** It raises the slope by about 0.11 on all three Kubric sets, against +0.008 for the matched random-head control.
-- **It improves accuracy as well as magnitude, unlike amplification.** Moving EPE improves by 6.6 px on v2 and 7.8 px on the floating set, while static EPE is unchanged (+0.04 px).
-- **Geometry is not affected.** Depth and pose errors are unchanged.
-- **Real-data transfer is small.** KITTI slope +0.02 (0.575 to 0.598), Sintel +0.01. These are significant but small.
-- **Decoder-only fine-tuning overfits to Kubric.** It gives larger Kubric gains (+0.16) but hurts real data: KITTI moving EPE +3.8 px, Sintel slope -0.10 to -0.16.
-- **The gap between internal decodability and output is not closed.** Layer-24 motion AUC is unchanged (0.999), and the epipolar-aligned mask IoU does not improve (0.29 against 0.28 for the base model).
-- **Training caveats.** The scene-flow loss is a reimplementation (Any4D's training code is not public), there is one seed per variant, and learning rates were not tuned.
+Five seeds per probe; linear and 2-layer MLP probes; patch-level and instance-level label shuffles.
 
-### What changes in the paper story
+- **Motion is not decodable without the trained transformer.**
+  - In a fully random Any4D, or a pretrained DINOv2 encoder followed by a random transformer, view-0 motion AUC stays at chance at every layer. At layer 24 the trained model exceeds them by +0.51 (v2) and +0.48 (floating), p < 1e-15.
+  - Label-shuffle selectivity at layer 24 is +0.49 (v2) and +0.48 (floating).
+- **Layer 0 holds only a little nonlinear motion information.**
+  - The MLP finds some at layer 0 on v2 (selectivity +0.13, p = 0.001), but not on the floating set (+0.04, not significant).
+  - Raw public DINOv2 tokens carry less (trained layer 0 minus DINOv2 +0.14 on v2).
+  - The near-chance input claim holds for the confound-free floating set and is weaker on grounded v2.
+- **Grouping beyond instance identity exists but is small.**
+  - Pair-probe selectivity against the instance-level shuffle is +0.11 at layer 24 (p = 1e-10) and about 0 at layer 0.
+  - At layer 24, the trained model exceeds the random-init models by +0.26 and +0.14.
+- **Seeded probes reproduce round 1** (v2 motion AUC 0.569 to 0.998; pair AUC 0.770 to 0.918).
 
-1. **Behaviour (strengthened).** The pull is specific to 4D reconstruction models. Trackers on the same footage recover 0.90 to 0.97 of object motion, and the decomposition shows camera motion kept and own motion lost, which is not generic shrinkage.
-2. **Representation (reworded).** Motion is computed by the trained transformer (random-init controls stay at chance), but from monocular cues. Extra views that resolve the ambiguity geometrically are not used. "Beyond two-view geometry" should become "without two-view geometry".
-3. **Mechanism (strengthened).** The five heads are specific against 40 random sets once model-breaking sets are separated, under both mean and resample ablation.
-4. **Method (honest, modest).** Head-targeted LoRA with 71,680 parameters fixes about a quarter of the Kubric deficit with no geometry cost and specificity to the five heads, but transfers only weakly to real footage. Decoder fine-tuning does not transfer at all. Natural next step: train on more diverse dynamic data (for example, PointOdyssey-like or real pseudo-labelled clips) while restricting updates to the five heads.
+### 15.4 Causal specificity of the five heads (review W5)
+
+There are 40 matched random sets (4 global-attention heads + 1 frame-attention head). Three of them, all containing an early frame-attention head, break the model (static EPE above +10 px).
+
+| Intervention | Five heads: change in slope | Null median | Five heads: change in static EPE (px) | Null median | Empirical p |
+|---|---|---|---|---|---|
+| Mean ablation | -0.60 | -0.01 | +3.0 | -0.01 | 0.073 (z = -3.4, robust z = -22.5) |
+| Resample ablation (10 sets) | -0.53 | -0.01 | +4.5 | +0.13 | 0.18 (floor 0.09) |
+| Amplification x1.5 (20 sets) | +0.35 | 0.00 | +0.6 | +0.05 | 0.048 (floor; z = 15) |
+
+- **The p-values are limited by the null itself.** Only the three null sets that break the whole model reach the five heads' slope effect (slope -0.57 to -0.61, but static EPE +32 to +83 px). Among the 37 non-breaking sets, the largest slope drop is -0.12, about a fifth of the five heads' effect. Resample ablation reproduces the effect (-0.53), so it is not an artefact of mean ablation.
+- **Effects on static error are within the null.** Under mean and resample ablation, the five heads' static-EPE change sits at the 90th percentile of the null (two-sided p 0.12 to 0.18).
+- **Single resampled heads.** Block 17 head 10 (-0.32) and block 22 head 9 (-0.27) carry the most.
+- **Amplification fixes magnitude, not accuracy.** At x1.5 the slope rises by +0.35 while moving EPE also rises (+6.7 px).
+
+### 15.5 Method: a 72k-parameter edit of the five heads (plan item 10)
+
+Setup:
+- LoRA (rank 8, 71,680 parameters) restricted to the five heads' attention slices, trained on 400 new Kubric scenes (disjoint seeds).
+- Loss: a reimplemented Any4D scene-flow loss plus distillation to the frozen model. Any4D's training code is not public, and its training data already includes Kubric.
+
+| Variant | Kubric v2 slope | v2 moving EPE (px) | v2 static EPE (px) | KITTI 2-view slope | Sintel final 2-view slope |
+|---|---|---|---|---|---|
+| Base | 0.607 | 35.0 | 4.10 | 0.575 | 0.327 |
+| (a) five-head LoRA | 0.716 (+0.11, p = 3e-26) | 28.4 (-6.6) | 4.14 (+0.04) | 0.598 (+0.022, p = 1e-10) | 0.333 (+0.007, p = 4e-07) |
+| (b) scene-flow decoder only | 0.767 (+0.16) | 29.5 | 4.14 | 0.542 (-0.034) | 0.171 (-0.156) |
+| (c) heads + decoder | 0.776 (+0.17) | 28.9 | 4.14 | 0.512 (-0.063) | 0.173 (-0.153) |
+| (d) LoRA on 5 random matched heads | 0.615 (+0.008) | 34.6 | 4.10 | 0.578 (+0.003) | 0.327 (+0.001) |
+| (e) 5 learned head gains | 0.620 (+0.013) | 34.4 | 4.11 | 0.590 (+0.015) | 0.332 (+0.005) |
+
+- **The five-head edit is specific.** It gains +0.10 slope over the matched control. Unlike amplification, it also lowers moving error (-6.6 px), and it leaves geometry (depth, rotation and translation errors) and static error unchanged. The same gains appear on the floating (+0.11) and far-glued (+0.09) sets.
+- **It transfers to real footage in the right direction, but only a little.** The gain is +0.022 to +0.025 on KITTI and +0.007 to +0.011 on Sintel, all p < 1e-4. That closes about 6% of the gap to RAFT on KITTI.
+- **Fine-tuning the scene-flow decoder overfits to Kubric.** It gives the largest Kubric gains but makes real data clearly worse (Sintel slope -0.10 to -0.16, moving EPE +2.6 to +3.8 px).
+- **Separation ratio and mask IoU do not improve.** The output motion is larger but not more cleanly separated.
+- **The "gap" is mostly magnitude.** On floating epipolar-aligned scenes, the base model's output scene-flow magnitude already separates movers from static points with AUC 0.94, while its thresholded motion-mask IoU is only 0.31. The output carries the motion signal but under-scaled, which is the pull itself.
+
+### 15.6 Updated claims
+
+- **C2 (pull):** strengthened and redefined. Feed-forward reconstruction models (Any4D, VGGT) keep camera-induced motion and under-report object motion; dedicated trackers and chained flow do not. It is worse for small and occluded objects, and not explained by generic shrinkage.
+- **C4 (beyond epipolar geometry):** reworded. Motion is detected from two views even when two-view geometry is ambiguous, and the model gains nothing from views that resolve it geometrically. So detection relies on a learned two-view or appearance cue, not multi-view consistency. Size is not the cue.
+- **Mechanism:** five heads, now with null distributions; specific under mean and resample ablation; editable with a 72k-parameter LoRA.
+- **Probe claims** survive random-init and shuffle controls.
+
+### 15.7 Remaining limitations
+
+- The unidentified two-view cue (C4).
+- The real-data gain of the method is small. Training was on Kubric only, and the loss is a reimplementation.
+- There is still one dynamic and one static model per family.
+- Head-null p-values are floored by the number of null sets.
+- CoTracker3 was not run on real data; RAFT is the real-data baseline.
