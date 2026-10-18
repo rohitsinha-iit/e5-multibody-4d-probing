@@ -44,11 +44,14 @@ Not in the repo: data, model weights, venvs, logs, and the deploy key.
 | $BIG/ft/runs (five-head LoRA checkpoints) | see manifest | U5a baseline (v) |
 | $BIG/data/ft_train_v2, ft_train_float | 28 GB | only to retrain the E5 LoRA; optional |
 
-Options, to decide with the user:
-- (a) Re-render. Kubric scenes are deterministic from seed and generator version, so v2, v3float and v4 can be re-rendered on the A6000 from provenance/ if docker is available. The renders need to be checked against stored GT.
-- (b) Transfer through a private Hugging Face dataset repo, uploaded from the 4090 while it is still reachable.
-- (c) Direct copy, if the two servers can reach each other (not tested).
+Decision (user, 2026-10-18): only the irreplaceable files were uploaded. Everything else is downloaded or regenerated on the A6000.
 
-Real data can always be re-fetched.
+- Hugging Face, private dataset rohitsinhaiitgn/e5-multibody-data: ft_runs_heads_ctrl.tar.part000/001 (five-head LoRA heads_sel and the random-head control ctrl_sel, merged Any4D checkpoints, 5.43 GB), SHA256SUMS, README.md. Sizes were verified after upload. Restore:
 
-New downloads for the plan (pose sets, OpenD4RT, TrackCraft3R, 4RC, MoRe, CoTracker3_Kubric shards) go straight to /data2/DATA on the A6000, whichever option is chosen.
+      huggingface-cli download rohitsinhaiitgn/e5-multibody-data --repo-type dataset --local-dir <dst>
+      cd <dst> && sha256sum -c SHA256SUMS && cat ft_runs_heads_ctrl.tar.part* | tar -xf - -C $E5_BIG/ft/runs
+
+- Re-render on the A6000 (needs docker for the Kubric image): v2, v3float and v4epi from provenance/kubric_e5_scene_USED_FOR_v2_v3float_v3far.py with the original seeds. These form variant D of MotionFactorial, together with the new A, B and C variants. The re-renders may not be bit-identical to the 4090 renders, so E5 numbers that are reused in the paper must be re-scored on the new D renders.
+- Re-download on the A6000: KITTI 2015 and Sintel (src/e5_realdata_fetch.sh), pose sets (yslan/pointmap_regression_evalsets), CoTracker3_Kubric shards, and all model weights at the revisions in env/models_and_checkpoints.txt.
+
+A full 63.8 GB tar staging copy of all datasets remains on the 4090 server at /media/workbench/zone_x/e5_multibody/hf_stage/parts. It can be deleted once the A6000 re-renders are verified.
