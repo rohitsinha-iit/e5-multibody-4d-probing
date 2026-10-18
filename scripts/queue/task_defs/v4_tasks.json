@@ -1,0 +1,36 @@
+[
+ {
+  "id": "v4_pilot",
+  "title": "Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks",
+  "script": "v4_pilot.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 20,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v4_scale_epi",
+  "title": "Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks",
+  "script": "v4_scale_epi.sh",
+  "deps": [
+   "v4_pilot"
+  ],
+  "gate": "v4_visual",
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v4_viewsweep_epi",
+  "title": "Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats",
+  "script": "v4_viewsweep_epi.sh",
+  "deps": [
+   "v4_scale_epi"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 40,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ }
+]

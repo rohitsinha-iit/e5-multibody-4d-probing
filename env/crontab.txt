@@ -1,0 +1,2 @@
+*/5 * * * * cd /home/rohit/e5_multibody/queue && /usr/bin/python3 supervisor.py >> logs/supervisor.log 2>&1 # e5_multibody/queue
+@reboot sleep 90 && cd /home/rohit/e5_multibody/queue && /usr/bin/python3 supervisor.py >> logs/supervisor.log 2>&1 # e5_multibody/queue

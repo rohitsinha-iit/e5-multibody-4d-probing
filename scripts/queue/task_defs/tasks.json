@@ -1,0 +1,613 @@
+[
+ {
+  "id": "v3_pilot",
+  "title": "Items 1+2 pilot renders (far-glued C3, floating shadowless C4) for visual approval",
+  "script": "v3_pilot.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t4_causal_v2",
+  "title": "Item 4: five heads together, amplification, path patching into scene-flow decoder (v2)",
+  "script": "t4_causal_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 3
+ },
+ {
+  "id": "t5_subspace_v2",
+  "title": "Item 5: LEACE erasure and steering along the motion subspace, layers 17-21 (v2)",
+  "script": "t5_subspace_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 3
+ },
+ {
+  "id": "t3_viewsweep_v2",
+  "title": "Item 3: 2, 3, 4, 7 input views, outputs + probes + attention (v2)",
+  "script": "t3_viewsweep_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_scale",
+  "title": "(split into v3_scale_float and v3_scale_far)",
+  "script": "v3_scale.sh",
+  "deps": [
+   "never_runs"
+  ],
+  "gate": "retired",
+  "max_attempts": 1,
+  "min_free_gb": 40,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_pipeline",
+  "title": "(split into v3_pipeline_float and v3_pipeline_far)",
+  "script": "v3_pipeline.sh",
+  "deps": [
+   "never_runs"
+  ],
+  "gate": "retired",
+  "max_attempts": 1,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_viewsweep",
+  "title": "Items 2+3: view-count sweep on the floating set",
+  "script": "v3_viewsweep.sh",
+  "deps": [
+   "v3_pipeline_float"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_pilot_far2",
+  "title": "Item 1 pilot re-render: far-glued pairs kept far apart in the image",
+  "script": "v3_pilot_far2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 20,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t8_realdata_kitti",
+  "title": "Item 8a: KITTI scene flow 2015 (200 scenes), Any4D slope / EPE / sep_ratio, 2, 4, 7 views, square and wide input",
+  "script": "t8_realdata_kitti.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 60,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t8_realdata_sintel",
+  "title": "Item 8b: MPI Sintel training (final, clean; every 4th frame), Any4D slope / EPE / sep_ratio, 2 and 4 views, square and wide input",
+  "script": "t8_realdata_sintel.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 40,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_scale_float",
+  "title": "Item 2: render 70 floating shadowless scenes + 20 extra grounded epi (v2)",
+  "script": "v3_scale_float.sh",
+  "deps": [
+   "v3_pilot"
+  ],
+  "gate": "v3_float_visual",
+  "max_attempts": 2,
+  "min_free_gb": 40,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_pipeline_float",
+  "title": "Item 2: Steps 3-6 + adjacency control on the floating set and v2 with 30 epi",
+  "script": "v3_pipeline_float.sh",
+  "deps": [
+   "v3_scale_float"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_scale_far",
+  "title": "Item 1: render 20 far-glued scenes (image-gap constraint)",
+  "script": "v3_scale_far.sh",
+  "deps": [
+   "v3_pilot_far2"
+  ],
+  "gate": "v3_far_visual",
+  "max_attempts": 2,
+  "min_free_gb": 20,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v3_pipeline_far",
+  "title": "Item 1: Steps 3-6 + adjacency control on the far-glued set",
+  "script": "v3_pipeline_far.sh",
+  "deps": [
+   "v3_scale_far"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 20,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t7_any4d_v2",
+  "title": "Item 7 cross-model: Any4D reference (3D/2D slope, sep_ratio, probes P + attention A at layers 0,4..24)",
+  "script": "t7_any4d_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t7_mapanything_v2",
+  "title": "Item 7 cross-model: MapAnything V1 (static, Any4D's base) outputs, probes, attention",
+  "script": "t7_mapanything_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t7_vggt_v2",
+  "title": "Item 7 cross-model: VGGT-1B (static) outputs + tracks (fixed tracker head), probes, attention",
+  "script": "t7_vggt_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t7_page4d_v2",
+  "title": "Item 7 cross-model: PAGE-4D (dynamic VGGT fine-tune) outputs, probes, attention",
+  "script": "t7_page4d_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "t7_xm_summary",
+  "title": "Item 7: cross-model comparison table (Any4D, MapAnything, VGGT, PAGE-4D)",
+  "script": "t7_xm_summary.sh",
+  "deps": [
+   "t7_any4d_v2",
+   "t7_mapanything_v2",
+   "t7_vggt_v2",
+   "t7_page4d_v2",
+   "t7_any4d_v2_100"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 1
+ },
+ {
+  "id": "t7_any4d_v2_100",
+  "title": "Item 7: Any4D reference rerun on the fixed 100 v2 scenes (writes into t7_any4d_v2 results)",
+  "script": "t7_any4d_v2_100.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "w2_kubric_baselines",
+  "title": "Round 2 item 1 (W2): CoTracker3 + RAFT on Kubric v2 (100) and floating (70), same query sets as Any4D/VGGT; Any4D + VGGT on floating",
+  "script": "w2_kubric_baselines.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "w2_real_baselines",
+  "title": "Round 2 item 1 (W2): RAFT on KITTI 2015 and Sintel (2 views), metrics + alpha/beta vs Any4D cached",
+  "script": "w2_real_baselines.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "w2_decomp",
+  "title": "Round 2 item 1 (W2): alpha/beta decomposition and slope vs boundary distance, all models",
+  "script": "w2_decomp.sh",
+  "deps": [
+   "w2_kubric_baselines",
+   "w2_real_baselines"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 2
+ },
+ {
+  "id": "w2_dose",
+  "title": "Round 2 item 1 (W2): dose-response of the slope (speed, area, texture, occlusion, camera rotation, motions, confidence)",
+  "script": "w2_dose.sh",
+  "deps": [
+   "w2_kubric_baselines"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 2
+ },
+ {
+  "id": "w2_summary",
+  "title": "Round 2 item 1 (W2): summary table, figure and verdict (pull: 4D-model property or generic shrinkage?)",
+  "script": "w2_summary.sh",
+  "deps": [
+   "w2_kubric_baselines",
+   "w2_real_baselines",
+   "w2_decomp",
+   "w2_dose"
+  ],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 2
+ },
+ {
+  "id": "ft_render_v2",
+  "title": "Item 10: render 200 v2-grounded training scenes (seeds 2001-2200, approved settings)",
+  "script": "ft_render_v2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_render_float",
+  "title": "Item 10: render 200 floating training scenes (seeds 2201-2400, approved v3float settings)",
+  "script": "ft_render_float.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_base",
+  "title": "Item 10: evaluate base Any4D with the fine-tune evaluation (Kubric v2/v3float/v3far, internals, KITTI, Sintel)",
+  "script": "ft_eval_base.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_pilot",
+  "title": "Item 10: pilot fine-tune (heads_sf, 1000 steps) to choose the number of steps",
+  "script": "ft_pilot.sh",
+  "deps": [
+   "ft_render_v2",
+   "ft_render_float"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_heads",
+  "title": "Item 10: fine-tune (a) LoRA r8 on the five supply heads' slices",
+  "script": "ft_train_heads.sh",
+  "deps": [
+   "ft_pilot"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_heads",
+  "title": "Item 10: evaluate fine-tune (a) LoRA r8 on the five supply heads' slices",
+  "script": "ft_eval_heads.sh",
+  "deps": [
+   "ft_train_heads"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_ctrl",
+  "title": "Item 10: fine-tune (d) control: LoRA r8 on 5 matched random heads",
+  "script": "ft_train_ctrl.sh",
+  "deps": [
+   "ft_pilot"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_ctrl",
+  "title": "Item 10: evaluate fine-tune (d) control: LoRA r8 on 5 matched random heads",
+  "script": "ft_eval_ctrl.sh",
+  "deps": [
+   "ft_train_ctrl"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_sf",
+  "title": "Item 10: fine-tune (b) scene-flow DPT head + adaptor",
+  "script": "ft_train_sf.sh",
+  "deps": [
+   "ft_pilot"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_sf",
+  "title": "Item 10: evaluate fine-tune (b) scene-flow DPT head + adaptor",
+  "script": "ft_eval_sf.sh",
+  "deps": [
+   "ft_train_sf"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_heads_sf",
+  "title": "Item 10: fine-tune (c) five-head LoRA + scene-flow head",
+  "script": "ft_train_heads_sf.sh",
+  "deps": [
+   "ft_pilot"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_heads_sf",
+  "title": "Item 10: evaluate fine-tune (c) five-head LoRA + scene-flow head",
+  "script": "ft_eval_heads_sf.sh",
+  "deps": [
+   "ft_train_heads_sf"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_gain",
+  "title": "Item 10: fine-tune (e) 5 learned per-head gains",
+  "script": "ft_train_gain.sh",
+  "deps": [
+   "ft_pilot"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_gain",
+  "title": "Item 10: evaluate fine-tune (e) 5 learned per-head gains",
+  "script": "ft_eval_gain.sh",
+  "deps": [
+   "ft_train_gain"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 15,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_summary",
+  "title": "Item 10: comparison table and figure (base vs variants; a vs d head specificity; transfer; decodability gap)",
+  "script": "ft_summary.sh",
+  "deps": [
+   "ft_eval_base",
+   "ft_eval_heads",
+   "ft_eval_ctrl",
+   "ft_eval_sf",
+   "ft_eval_heads_sf",
+   "ft_eval_gain"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 1,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v4_pilot",
+  "title": "Review item W3 pilot: 2 scenes each of epi_accel, epi_const (paired), epi_sizerand, epi_sizematch, with GT checks",
+  "script": "v4_pilot.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 2,
+  "min_free_gb": 20,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v4_scale_epi",
+  "title": "Review item W3: render 30 scenes per new epipolar split (120 scenes) + GT checks",
+  "script": "v4_scale_epi.sh",
+  "deps": [
+   "v4_pilot"
+  ],
+  "gate": "v4_visual",
+  "max_attempts": 2,
+  "min_free_gb": 30,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "v4_viewsweep_epi",
+  "title": "Review item W3: 2/3/4/7-view sweep on v4 epipolar set + v3float: outputs, probes (pooled and transfer), attention, stats",
+  "script": "v4_viewsweep_epi.sh",
+  "deps": [
+   "v4_scale_epi"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 40,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "r2_probe_extract",
+  "title": "Round 2 W4: control-model internals (random-init Any4D, DINOv2 + random transformer, raw encoder tokens) on v2 out100 and v3float",
+  "script": "r2_probe_extract.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 20,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "r2_heads_null",
+  "title": "Round 2 W5: five supply heads vs 40 matched random head sets (mean ablation), resample ablation, amplification x1.5 (v2 out100)",
+  "script": "r2_heads_null.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 8
+ },
+ {
+  "id": "r2_probe_linear",
+  "title": "Round 2 W4: seeded linear probes (5 seeds) with random-init, DINOv2-only and label-shuffle controls (v2 out100, v3float)",
+  "script": "r2_probe_linear.sh",
+  "deps": [
+   "r2_probe_extract"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 8,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "r2_probe_mlp",
+  "title": "Round 2 W4: MLP probes vs linear, 5 seeds, label-shuffle selectivity, combined figure (v2 out100, v3float)",
+  "script": "r2_probe_mlp.sh",
+  "deps": [
+   "r2_probe_extract",
+   "r2_probe_linear"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 8,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_heads_sel",
+  "title": "Item 10 rerun: train heads with corrected checkpoint selection",
+  "script": "ft_train_heads_sel.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_heads_sel",
+  "title": "Item 10 rerun: evaluate heads_sel",
+  "script": "ft_eval_heads_sel.sh",
+  "deps": [
+   "ft_train_heads_sel"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_ctrl_sel",
+  "title": "Item 10 rerun: train ctrl with corrected checkpoint selection",
+  "script": "ft_train_ctrl_sel.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_ctrl_sel",
+  "title": "Item 10 rerun: evaluate ctrl_sel",
+  "script": "ft_eval_ctrl_sel.sh",
+  "deps": [
+   "ft_train_ctrl_sel"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_train_gain_sel",
+  "title": "Item 10 rerun: train gain with corrected checkpoint selection",
+  "script": "ft_train_gain_sel.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_eval_gain_sel",
+  "title": "Item 10 rerun: evaluate gain_sel",
+  "script": "ft_eval_gain_sel.sh",
+  "deps": [
+   "ft_train_gain_sel"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 10,
+  "disk_path": "/media/workbench/zone_x/e5_multibody"
+ },
+ {
+  "id": "ft_summary_sel",
+  "title": "Item 10: comparison table with corrected head variants",
+  "script": "ft_summary_sel.sh",
+  "deps": [
+   "ft_eval_heads_sel",
+   "ft_eval_ctrl_sel",
+   "ft_eval_gain_sel"
+  ],
+  "gate": null,
+  "max_attempts": 4,
+  "min_free_gb": 2
+ }
+]

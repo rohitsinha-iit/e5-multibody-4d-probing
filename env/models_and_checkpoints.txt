@@ -1,0 +1,14 @@
+# Hugging Face cache snapshots (model id, revision) on the 4090 server
+opencompass/CompassJudger-2-7B-Instruct  ref=main  rev=f913ec1569c282f02530028fedc1ce9832024ebf  size=15G
+Qwen/Qwen2.5-7B-Instruct  ref=main  rev=a09a35458c702b33eeacc393d103063234e8bc28  size=15G
+RedHatAI/Qwen3.8-27B-INT4  ref=main  rev=91bd022d5b49442a868bc35008f6c21e1860edfa  size=296K
+stabilityai/sdxl-vae  ref=main  rev=6f5909a7e596173e25d4e97b07fd19cdf9611c76  size=320M
+dataset:HuggingFaceH4/ultrachat_200k  ref=main  rev=8049631c405ae6576f93f445c6b8166f76f5505a  size=78M
+dataset:sayakpaul/ShapeNet-55  ref=main  rev=310702922da52e7d74845ec81f73235d2544598d  size=12K
+dataset:yifengzhu-hf/LIBERO-datasets  ref=main  rev=f13aa24a3da8c43c7225569f28c562979fa0e35a  size=12K
+
+# checkpoints
+total 7546164
+drwxrwxr-x  2 rohit rohit       4096 Oct 11 02:53 .
+drwxrwxr-x 10 rohit rohit       4096 Oct 16 11:35 ..
+-rw-rw-r--  1 rohit rohit 7727258559 Oct 11 03:06 any4d_4v_combined.pth

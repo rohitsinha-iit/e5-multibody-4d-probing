@@ -1,0 +1,21 @@
+# files with hardcoded 4090-server paths (count of lines)
+scripts/queue/tasks.json:46
+scripts/queue/task_defs/tasks.json:46
+scripts/queue/tasks/defs/ft_tasks.json:15
+scripts/queue/task_defs/ft_sel_tasks.json:6
+scripts/queue/tasks/r2_tasks.json:3
+scripts/queue/task_defs/v4_tasks.json:3
+scripts/jobs/v2_full_job.sh:3
+scripts/queue/tasks/common.sh.bak_gpu:2
+scripts/queue/tasks/common.sh:2
+scripts/queue/supervisor.py:2
+scripts/queue/push.sh:2
+scripts/queue/common.sh:2
+scripts/jobs/v2_pilot_job.sh:2
+scripts/jobs/e8_screen_job.sh:2
+scripts/jobs/e8_rep_job.sh:2
+scripts/jobs/e8_job.sh:2
+src/e5_realdata_fetch.sh:1
+src/e5_final_figs.py:1
+scripts/queue/enqueue.py:1
+scripts/queue/dashboard_python:1
