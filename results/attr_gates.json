@@ -1,0 +1,539 @@
+{
+ "G0e": {
+  "gate": "G0e",
+  "time": "2026-10-19 08:33:36",
+  "host": "aicoe-a6000",
+  "shard": "0000",
+  "n_frames": 120,
+  "frames_readable": 120,
+  "frame_shape": [
+   512,
+   512,
+   3
+  ],
+  "n_tracks": 32768,
+  "best_convention": {
+   "depth_is_ray": true,
+   "extrinsics_is_c2w": false,
+   "n_static": 16806,
+   "frac_static": 0.51287841796875,
+   "cross_frame_err_px_median": 4.712904478901951e-05,
+   "p90": 0.00016464222287279097,
+   "n_pairs": 50104,
+   "same_frame_roundtrip_max_px": 9.094947017729282e-13
+  },
+  "depthmap_vs_coords_depth_rel_err_median": 0.1642599279189336,
+  "criteria": "RGB frames present and readable; static tracks: frame-0 lift (track + per-track depth + shared intrinsics + extrinsics) reprojects into frames t within 0.5 px (median)",
+  "status": "pass"
+ },
+ "G0f": {
+  "gate": "G0f",
+  "time": "2026-10-19 10:53:40",
+  "host": "aicoe-a6000",
+  "n_scenes": 10,
+  "scenes": [
+   "camrot_s305",
+   "n2_generic_s401",
+   "n3_generic_s409",
+   "epi_aligned_s435",
+   "planar_s443",
+   "confound_same_s451",
+   "confound_glued_s469",
+   "epi_aligned_s531",
+   "n2_generic_s561",
+   "n3_generic_s581"
+  ],
+  "checks": {
+   "copy": true,
+   "psnr": true,
+   "cam_identity": true,
+   "obj_zero": true
+  },
+  "status": "pass",
+  "psnr_db_min": Infinity,
+  "psnr_db_median": Infinity,
+  "criteria": "frame-0 copy done; rendered-vs-copied frame-0 PSNR >= 35 dB; frozen camera: c2w[t] == c2w[0] exactly; frozen objects: object pose[t] == pose[0] exactly and query world displacement == 0",
+  "per_scene": [
+   {
+    "scene": "camrot_s305",
+    "set": "v2",
+    "copy_done": true,
+    "psnr_db": {
+     "A": Infinity,
+     "B": Infinity,
+     "C": Infinity
+    },
+    "frozen_camera": {
+     "A": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     },
+     "C": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     }
+    },
+    "frozen_objects": {
+     "A": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     },
+     "B": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     }
+    },
+    "same_scene": {
+     "assets_equal": true,
+     "B_cam_vs_D": 0.0,
+     "C_obj_vs_D": 0.0,
+     "frame0_pose_vs_D": 0.0,
+     "frame0_obj_vs_D": 0.0,
+     "frame0_depth_max_abs_vs_D": 0.0,
+     "D_moving_objects": 1,
+     "D_median_A_px_t23": 53.55095772545885
+    },
+    "pass": {
+     "copy": true,
+     "psnr": true,
+     "cam_identity": true,
+     "obj_zero": true
+    }
+   },
+   {
+    "scene": "n2_generic_s401",
+    "set": "v2",
+    "copy_done": true,
+    "psnr_db": {
+     "A": Infinity,
+     "B": Infinity,
+     "C": Infinity
+    },
+    "frozen_camera": {
+     "A": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     },
+     "C": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     }
+    },
+    "frozen_objects": {
+     "A": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     },
+     "B": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     }
+    },
+    "same_scene": {
+     "assets_equal": true,
+     "B_cam_vs_D": 0.0,
+     "C_obj_vs_D": 0.0,
+     "frame0_pose_vs_D": 0.0,
+     "frame0_obj_vs_D": 0.0,
+     "frame0_depth_max_abs_vs_D": 0.0,
+     "D_moving_objects": 1,
+     "D_median_A_px_t23": 54.25754154171963
+    },
+    "pass": {
+     "copy": true,
+     "psnr": true,
+     "cam_identity": true,
+     "obj_zero": true
+    }
+   },
+   {
+    "scene": "n3_generic_s409",
+    "set": "v2",
+    "copy_done": true,
+    "psnr_db": {
+     "A": Infinity,
+     "B": Infinity,
+     "C": Infinity
+    },
+    "frozen_camera": {
+     "A": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     },
+     "C": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     }
+    },
+    "frozen_objects": {
+     "A": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     },
+     "B": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     }
+    },
+    "same_scene": {
+     "assets_equal": true,
+     "B_cam_vs_D": 0.0,
+     "C_obj_vs_D": 0.0,
+     "frame0_pose_vs_D": 0.0,
+     "frame0_obj_vs_D": 0.0,
+     "frame0_depth_max_abs_vs_D": 0.0,
+     "D_moving_objects": 2,
+     "D_median_A_px_t23": 55.77111874845666
+    },
+    "pass": {
+     "copy": true,
+     "psnr": true,
+     "cam_identity": true,
+     "obj_zero": true
+    }
+   },
+   {
+    "scene": "epi_aligned_s435",
+    "set": "v2",
+    "copy_done": true,
+    "psnr_db": {
+     "A": Infinity,
+     "B": Infinity,
+     "C": Infinity
+    },
+    "frozen_camera": {
+     "A": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     },
+     "C": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     }
+    },
+    "frozen_objects": {
+     "A": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     },
+     "B": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     }
+    },
+    "same_scene": {
+     "assets_equal": true,
+     "B_cam_vs_D": 0.0,
+     "C_obj_vs_D": 0.0,
+     "frame0_pose_vs_D": 0.0,
+     "frame0_obj_vs_D": 0.0,
+     "frame0_depth_max_abs_vs_D": 0.0,
+     "D_moving_objects": 1,
+     "D_median_A_px_t23": 152.55764288802354
+    },
+    "pass": {
+     "copy": true,
+     "psnr": true,
+     "cam_identity": true,
+     "obj_zero": true
+    }
+   },
+   {
+    "scene": "planar_s443",
+    "set": "v2",
+    "copy_done": true,
+    "psnr_db": {
+     "A": Infinity,
+     "B": Infinity,
+     "C": Infinity
+    },
+    "frozen_camera": {
+     "A": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     },
+     "C": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     }
+    },
+    "frozen_objects": {
+     "A": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     },
+     "B": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     }
+    },
+    "same_scene": {
+     "assets_equal": true,
+     "B_cam_vs_D": 0.0,
+     "C_obj_vs_D": 0.0,
+     "frame0_pose_vs_D": 0.0,
+     "frame0_obj_vs_D": 0.0,
+     "frame0_depth_max_abs_vs_D": 0.0,
+     "D_moving_objects": 1,
+     "D_median_A_px_t23": 87.00412962122475
+    },
+    "pass": {
+     "copy": true,
+     "psnr": true,
+     "cam_identity": true,
+     "obj_zero": true
+    }
+   },
+   {
+    "scene": "confound_same_s451",
+    "set": "v2",
+    "copy_done": true,
+    "psnr_db": {
+     "A": Infinity,
+     "B": Infinity,
+     "C": Infinity
+    },
+    "frozen_camera": {
+     "A": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     },
+     "C": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     }
+    },
+    "frozen_objects": {
+     "A": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     },
+     "B": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     }
+    },
+    "same_scene": {
+     "assets_equal": true,
+     "B_cam_vs_D": 0.0,
+     "C_obj_vs_D": 0.0,
+     "frame0_pose_vs_D": 0.0,
+     "frame0_obj_vs_D": 0.0,
+     "frame0_depth_max_abs_vs_D": 0.0,
+     "D_moving_objects": 1,
+     "D_median_A_px_t23": 79.73553166789912
+    },
+    "pass": {
+     "copy": true,
+     "psnr": true,
+     "cam_identity": true,
+     "obj_zero": true
+    }
+   },
+   {
+    "scene": "confound_glued_s469",
+    "set": "v2",
+    "copy_done": true,
+    "psnr_db": {
+     "A": Infinity,
+     "B": Infinity,
+     "C": Infinity
+    },
+    "frozen_camera": {
+     "A": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     },
+     "C": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     }
+    },
+    "frozen_objects": {
+     "A": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     },
+     "B": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     }
+    },
+    "same_scene": {
+     "assets_equal": true,
+     "B_cam_vs_D": 0.0,
+     "C_obj_vs_D": 0.0,
+     "frame0_pose_vs_D": 0.0,
+     "frame0_obj_vs_D": 0.0,
+     "frame0_depth_max_abs_vs_D": 0.0,
+     "D_moving_objects": 2,
+     "D_median_A_px_t23": 104.04030006055774
+    },
+    "pass": {
+     "copy": true,
+     "psnr": true,
+     "cam_identity": true,
+     "obj_zero": true
+    }
+   },
+   {
+    "scene": "epi_aligned_s531",
+    "set": "v3float",
+    "copy_done": true,
+    "psnr_db": {
+     "A": Infinity,
+     "B": Infinity,
+     "C": Infinity
+    },
+    "frozen_camera": {
+     "A": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     },
+     "C": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     }
+    },
+    "frozen_objects": {
+     "A": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     },
+     "B": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     }
+    },
+    "same_scene": {
+     "assets_equal": true,
+     "B_cam_vs_D": 0.0,
+     "C_obj_vs_D": 0.0,
+     "frame0_pose_vs_D": 0.0,
+     "frame0_obj_vs_D": 0.0,
+     "frame0_depth_max_abs_vs_D": 0.0,
+     "D_moving_objects": 1,
+     "D_median_A_px_t23": 137.55066935197846
+    },
+    "pass": {
+     "copy": true,
+     "psnr": true,
+     "cam_identity": true,
+     "obj_zero": true
+    }
+   },
+   {
+    "scene": "n2_generic_s561",
+    "set": "v3float",
+    "copy_done": true,
+    "psnr_db": {
+     "A": Infinity,
+     "B": Infinity,
+     "C": Infinity
+    },
+    "frozen_camera": {
+     "A": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     },
+     "C": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     }
+    },
+    "frozen_objects": {
+     "A": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     },
+     "B": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     }
+    },
+    "same_scene": {
+     "assets_equal": true,
+     "B_cam_vs_D": 0.0,
+     "C_obj_vs_D": 0.0,
+     "frame0_pose_vs_D": 0.0,
+     "frame0_obj_vs_D": 0.0,
+     "frame0_depth_max_abs_vs_D": 0.0,
+     "D_moving_objects": 1,
+     "D_median_A_px_t23": 52.46671694435707
+    },
+    "pass": {
+     "copy": true,
+     "psnr": true,
+     "cam_identity": true,
+     "obj_zero": true
+    }
+   },
+   {
+    "scene": "n3_generic_s581",
+    "set": "v3float",
+    "copy_done": true,
+    "psnr_db": {
+     "A": Infinity,
+     "B": Infinity,
+     "C": Infinity
+    },
+    "frozen_camera": {
+     "A": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     },
+     "C": {
+      "max_abs_c2w_minus_c2w0": 0.0,
+      "max_abs_rel_minus_I": 0.0
+     }
+    },
+    "frozen_objects": {
+     "A": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     },
+     "B": {
+      "max_abs_objpose_minus_pose0": 0.0,
+      "max_abs_world_disp": 0.0,
+      "max_abs_A_px": 0.0
+     }
+    },
+    "same_scene": {
+     "assets_equal": true,
+     "B_cam_vs_D": 0.0,
+     "C_obj_vs_D": 0.0,
+     "frame0_pose_vs_D": 0.0,
+     "frame0_obj_vs_D": 0.0,
+     "frame0_depth_max_abs_vs_D": 0.0,
+     "D_moving_objects": 2,
+     "D_median_A_px_t23": 85.6826542497679
+    },
+    "pass": {
+     "copy": true,
+     "psnr": true,
+     "cam_identity": true,
+     "obj_zero": true
+    }
+   }
+  ]
+ }
+}
