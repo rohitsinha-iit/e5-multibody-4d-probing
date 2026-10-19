@@ -1,0 +1,361 @@
+[
+ {
+  "id": "u4a_joint_obj",
+  "title": "U4a joint top-k with 40 matched nulls on test scenes (obj)",
+  "script": "u4a_joint_obj.sh",
+  "deps": [
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_null_obj_transfer",
+  "title": "U4a joint top-k with 40 nulls on v3float transfer (obj)",
+  "script": "u4a_null_obj_transfer.sh",
+  "deps": [
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_joint_cam",
+  "title": "U4a joint top-k with 40 matched nulls on test scenes (cam)",
+  "script": "u4a_joint_cam.sh",
+  "deps": [
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_null_cam_transfer",
+  "title": "U4a joint top-k with 40 nulls on v3float transfer (cam)",
+  "script": "u4a_null_cam_transfer.sh",
+  "deps": [
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_joint_cont",
+  "title": "U4a joint top-k with 40 matched nulls on test scenes (cont)",
+  "script": "u4a_joint_cont.sh",
+  "deps": [
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_null_cont_transfer",
+  "title": "U4a joint top-k with 40 nulls on v3float transfer (cont)",
+  "script": "u4a_null_cont_transfer.sh",
+  "deps": [
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5a_edit_i_g1.5",
+  "title": "U5a edit variant i, g=1.5, test and transfer",
+  "script": "u5a_edit_i_g1.5.sh",
+  "deps": [
+   "u5a_dirs"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5a_edit_i_g2",
+  "title": "U5a edit variant i, g=2, test and transfer",
+  "script": "u5a_edit_i_g2.sh",
+  "deps": [
+   "u5a_dirs"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5a_edit_ii_g1.5",
+  "title": "U5a edit variant ii, g=1.5, test and transfer",
+  "script": "u5a_edit_ii_g1.5.sh",
+  "deps": [
+   "u5a_dirs"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5a_edit_ii_g2",
+  "title": "U5a edit variant ii, g=2, test and transfer",
+  "script": "u5a_edit_ii_g2.sh",
+  "deps": [
+   "u5a_dirs"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5a_edit_iii_g1.5",
+  "title": "U5a edit variant iii, g=1.5, test and transfer",
+  "script": "u5a_edit_iii_g1.5.sh",
+  "deps": [
+   "u5a_dirs"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5a_edit_iii_g2",
+  "title": "U5a edit variant iii, g=2, test and transfer",
+  "script": "u5a_edit_iii_g2.sh",
+  "deps": [
+   "u5a_dirs"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5a_edit_iv_g1.5",
+  "title": "U5a edit variant iv, g=1.5, test and transfer",
+  "script": "u5a_edit_iv_g1.5.sh",
+  "deps": [
+   "u5a_dirs"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5a_edit_iv_g2",
+  "title": "U5a edit variant iv, g=2, test and transfer",
+  "script": "u5a_edit_iv_g2.sh",
+  "deps": [
+   "u5a_dirs"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5a_edit_v",
+  "title": "U5a variant v: heads_sel LoRA, test and transfer",
+  "script": "u5a_edit_v.sh",
+  "deps": [],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_a_kubric",
+  "title": "U5b masking variant a on Kubric test scenes",
+  "script": "u5b_mask_a_kubric.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_a_sintel",
+  "title": "U5b masking variant a on sintel",
+  "script": "u5b_mask_a_sintel.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_a_tum",
+  "title": "U5b masking variant a on tum",
+  "script": "u5b_mask_a_tum.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_a_bonn",
+  "title": "U5b masking variant a on bonn",
+  "script": "u5b_mask_a_bonn.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_b_kubric",
+  "title": "U5b masking variant b on Kubric test scenes",
+  "script": "u5b_mask_b_kubric.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_b_sintel",
+  "title": "U5b masking variant b on sintel",
+  "script": "u5b_mask_b_sintel.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_b_tum",
+  "title": "U5b masking variant b on tum",
+  "script": "u5b_mask_b_tum.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_b_bonn",
+  "title": "U5b masking variant b on bonn",
+  "script": "u5b_mask_b_bonn.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_c_kubric",
+  "title": "U5b masking variant c on Kubric test scenes",
+  "script": "u5b_mask_c_kubric.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_c_sintel",
+  "title": "U5b masking variant c on sintel",
+  "script": "u5b_mask_c_sintel.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_c_tum",
+  "title": "U5b masking variant c on tum",
+  "script": "u5b_mask_c_tum.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_c_bonn",
+  "title": "U5b masking variant c on bonn",
+  "script": "u5b_mask_c_bonn.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5b_mask_d_kubric",
+  "title": "U5b masking variant d on Kubric test scenes",
+  "script": "u5b_mask_d_kubric.sh",
+  "deps": [
+   "u5_probe_any4d",
+   "u4a_joint_fit"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5_probe_eval_any4d",
+  "title": "U5 probe AUC and mask IoU on test and transfer",
+  "script": "u5_probe_eval_any4d.sh",
+  "deps": [
+   "u5_probe_any4d"
+  ],
+  "gate": "attr_prereg",
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ }
+]

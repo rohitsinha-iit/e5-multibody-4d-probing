@@ -1,0 +1,256 @@
+[
+ {
+  "id": "u4a_screen_obj_0",
+  "title": "U4a obj screen on fit scenes, component chunk 0/4",
+  "script": "u4a_screen_obj_0.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_obj_1",
+  "title": "U4a obj screen on fit scenes, component chunk 1/4",
+  "script": "u4a_screen_obj_1.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_obj_2",
+  "title": "U4a obj screen on fit scenes, component chunk 2/4",
+  "script": "u4a_screen_obj_2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_obj_3",
+  "title": "U4a obj screen on fit scenes, component chunk 3/4",
+  "script": "u4a_screen_obj_3.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_cam_0",
+  "title": "U4a cam screen on fit scenes, component chunk 0/4",
+  "script": "u4a_screen_cam_0.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_cam_1",
+  "title": "U4a cam screen on fit scenes, component chunk 1/4",
+  "script": "u4a_screen_cam_1.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_cam_2",
+  "title": "U4a cam screen on fit scenes, component chunk 2/4",
+  "script": "u4a_screen_cam_2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_cam_3",
+  "title": "U4a cam screen on fit scenes, component chunk 3/4",
+  "script": "u4a_screen_cam_3.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_cont_0",
+  "title": "U4a cont screen on fit scenes, component chunk 0/4",
+  "script": "u4a_screen_cont_0.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_cont_1",
+  "title": "U4a cont screen on fit scenes, component chunk 1/4",
+  "script": "u4a_screen_cont_1.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_cont_2",
+  "title": "U4a cont screen on fit scenes, component chunk 2/4",
+  "script": "u4a_screen_cont_2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_cont_3",
+  "title": "U4a cont screen on fit scenes, component chunk 3/4",
+  "script": "u4a_screen_cont_3.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_objall_0",
+  "title": "U4a objall screen on fit scenes, component chunk 0/4",
+  "script": "u4a_screen_objall_0.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_objall_1",
+  "title": "U4a objall screen on fit scenes, component chunk 1/4",
+  "script": "u4a_screen_objall_1.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_objall_2",
+  "title": "U4a objall screen on fit scenes, component chunk 2/4",
+  "script": "u4a_screen_objall_2.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_objall_3",
+  "title": "U4a objall screen on fit scenes, component chunk 3/4",
+  "script": "u4a_screen_objall_3.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_screen_camwarp_0",
+  "title": "U4a secondary warp-aligned camera screen (24 residual states) on fit scenes",
+  "script": "u4a_screen_camwarp_0.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_rank",
+  "title": "U4a rank components on fit scenes (obj, cam, cont, camwarp)",
+  "script": "u4a_rank.sh",
+  "deps": [
+   "u4a_screen_obj_0",
+   "u4a_screen_obj_1",
+   "u4a_screen_obj_2",
+   "u4a_screen_obj_3",
+   "u4a_screen_cam_0",
+   "u4a_screen_cam_1",
+   "u4a_screen_cam_2",
+   "u4a_screen_cam_3",
+   "u4a_screen_cont_0",
+   "u4a_screen_cont_1",
+   "u4a_screen_cont_2",
+   "u4a_screen_cont_3",
+   "u4a_screen_objall_0",
+   "u4a_screen_objall_1",
+   "u4a_screen_objall_2",
+   "u4a_screen_objall_3",
+   "u4a_screen_camwarp_0"
+  ],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_joint_fit",
+  "title": "U4a joint top-k patches on fit scenes (completeness, no nulls) and k*",
+  "script": "u4a_joint_fit.sh",
+  "deps": [
+   "u4a_rank"
+  ],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4a_necessity_fit",
+  "title": "U4a resample-ablation necessity of top components on fit scenes",
+  "script": "u4a_necessity_fit.sh",
+  "deps": [
+   "u4a_rank"
+  ],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5_probe_any4d",
+  "title": "U5 all-view motion probe on Any4D (fit scenes; L* by CV; 90% recall threshold)",
+  "script": "u5_probe_any4d.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u5a_dirs",
+  "title": "U5a counterfactual directions (P_obj at k* + five E5 heads) on fit scenes",
+  "script": "u5a_dirs.sh",
+  "deps": [
+   "u4a_joint_fit"
+  ],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ },
+ {
+  "id": "u4b_gate_g0h",
+  "title": "Gate G0h: VGGT camera-token layout (identity and camera-head positive check)",
+  "script": "u4b_gate_g0h.sh",
+  "deps": [],
+  "gate": null,
+  "max_attempts": 3,
+  "min_free_gb": 20,
+  "disk_path": "$E5_BIG"
+ }
+]
