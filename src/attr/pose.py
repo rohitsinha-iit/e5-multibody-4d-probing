@@ -2,8 +2,8 @@
 
 Poses are camera-to-world 4x4 (any consistent convention shared by pred and GT).
 ATE      RMSE of camera centres after Sim(3) Umeyama alignment of predicted to GT centres.
-RPE-T    mean translation error of consecutive relative poses, after applying the ATE Sim(3) scale to the prediction.
-RPE-R    mean rotation error (deg) of consecutive relative poses.
+RPE-T    RMSE (default; agg='mean' available) of the translation error of consecutive relative poses, after applying the ATE Sim(3) scale to the prediction.
+RPE-R    RMSE (default) of the rotation error (deg) of consecutive relative poses.
 Spurious ego-motion (frozen-camera variants A and C): per view t, the rotation angle (deg) of the predicted relative
 pose of view t to view 0, and its translation norm divided by the median predicted frame-0 depth. Report C against A
 (spurious_vs_A) to remove the model's baseline jitter on a static video.
@@ -40,8 +40,9 @@ def ate(pred, gt):
     return float(np.sqrt(np.mean(np.sum((A[:, :3, 3] - np.asarray(gt)[:, :3, 3]) ** 2, 1))))
 
 
-def rpe(pred, gt, aligned=True):
-    """Consecutive-view RPE. Returns (rpe_t, rpe_r_deg)."""
+def rpe(pred, gt, aligned=True, agg="rmse"):
+    """Consecutive-view RPE. Returns (rpe_t, rpe_r_deg). agg = 'rmse' (default; the evo convention used by
+    MonST3R-style evaluators, checked against 4RC's evaluator at G0k) or 'mean'."""
     P = align_sim3(pred, gt)[3] if aligned else np.asarray(pred, float)
     G = np.asarray(gt, float)
     et, er = [], []
@@ -49,7 +50,10 @@ def rpe(pred, gt, aligned=True):
         rp = np.linalg.inv(P[i]) @ P[i + 1]; rg = np.linalg.inv(G[i]) @ G[i + 1]
         E = np.linalg.inv(rg) @ rp
         et.append(np.linalg.norm(E[:3, 3])); er.append(rot_angle_deg(E[:3, :3]))
-    return float(np.mean(et)), float(np.mean(er))
+    et, er = np.asarray(et), np.asarray(er)
+    if agg == "mean":
+        return float(et.mean()), float(er.mean())
+    return float(np.sqrt((et ** 2).mean())), float(np.sqrt((er ** 2).mean()))
 
 
 def pose_metrics(pred, gt):

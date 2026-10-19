@@ -15,12 +15,11 @@ for ds in sys.argv[2:]:
         seq = os.path.basename(os.path.dirname(d))
         try:
             gt_file = md["gt_traj_func"](md["img_path"], md.get("anno_path"), seq)
-            gt = load_traj(gt_traj_file=gt_file, traj_format=md.get("traj_format") or "sintel", stride=1)
-            gtt = gt[0] if isinstance(gt, tuple) else gt
-            G = np.stack([np.eye(4)] * len(gtt.positions_xyz)); G[:, :3, 3] = gtt.positions_xyz
-            G[:, :3, :3] = Rotation.from_quat(gtt.orientations_quat_wxyz[:, [1, 2, 3, 0]]).as_matrix()
+            arr = load_traj(gt_traj_file=gt_file, traj_format=md.get("traj_format") or "sintel", stride=1)[0]
+            G = np.stack([np.eye(4)] * len(arr)); G[:, :3, 3] = arr[:, :3]
+            G[:, :3, :3] = Rotation.from_quat(arr[:, [4, 5, 6, 3]]).as_matrix()     # stored wxyz
             p = np.loadtxt(d); Pp = np.stack([np.eye(4)] * len(p)); Pp[:, :3, 3] = p[:, 1:4]
-            Pp[:, :3, :3] = Rotation.from_quat(p[:, 4:8]).as_matrix()
+            Pp[:, :3, :3] = Rotation.from_quat(p[:, [5, 6, 7, 4]]).as_matrix()     # stored wxyz
             n = min(len(G), len(Pp)); rows[seq] = pm.pose_metrics(Pp[:n], G[:n]); rows[seq]["n"] = n
         except Exception as ex:  # noqa
             rows[seq] = dict(error=repr(ex)[:300])
