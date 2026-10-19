@@ -7,7 +7,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 20,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v4_scale_epi",
@@ -19,7 +19,7 @@
   "gate": "v4_visual",
   "max_attempts": 2,
   "min_free_gb": 30,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v4_viewsweep_epi",
@@ -31,6 +31,6 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 40,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  }
 ]

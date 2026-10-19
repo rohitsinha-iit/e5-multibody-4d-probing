@@ -3,7 +3,7 @@ import json, os, glob, csv, math, collections
 import numpy as np
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-R = os.path.expanduser("~/e5_multibody/queue/results"); OUT = "figs"; os.makedirs(OUT, exist_ok=True)
+R = os.path.join(os.environ.get("E5_QUEUE", os.path.join(os.path.expanduser(os.environ.get("E5_ROOT", "~/e5_multibody")), "queue")), "results"); OUT = "figs"; os.makedirs(OUT, exist_ok=True)
 plt.rcParams.update({"font.size": 7.5, "axes.titlesize": 8, "axes.labelsize": 7.5, "legend.fontsize": 6.5, "xtick.labelsize": 7, "ytick.labelsize": 7,
                      "axes.spines.top": False, "axes.spines.right": False, "font.family": "DejaVu Sans", "axes.linewidth": 0.7})
 BLUE, ORANGE, GREEN, PINK, SKY, VERM, GREY, YEL = "#0072B2", "#E69F00", "#009E73", "#CC79A7", "#56B4E9", "#D55E00", "#7f7f7f", "#F0E442"

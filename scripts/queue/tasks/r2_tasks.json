@@ -7,7 +7,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 20,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "r2_heads_null",
@@ -28,7 +28,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 8,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "r2_probe_mlp",
@@ -41,6 +41,6 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 8,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  }
 ]

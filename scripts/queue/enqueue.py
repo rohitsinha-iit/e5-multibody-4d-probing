@@ -3,7 +3,7 @@
 A task file holds one task dict or a list. An existing task with the same id is replaced only if it has not
 started (state pending / waiting_gate) unless --force is given."""
 import fcntl, json, os, sys
-Q = os.path.abspath(os.environ.get("E5_QUEUE", os.path.expanduser("~/e5_multibody/queue")))
+Q = os.path.abspath(os.environ.get("E5_QUEUE", os.path.join(os.path.expanduser(os.environ.get("E5_ROOT", "~/e5_multibody")), "queue")))
 force = "--force" in sys.argv
 new = []
 for a in sys.argv[1:]:

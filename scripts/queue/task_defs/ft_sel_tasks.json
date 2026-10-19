@@ -7,7 +7,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_heads_sel",
@@ -19,7 +19,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_train_ctrl_sel",
@@ -29,7 +29,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_ctrl_sel",
@@ -41,7 +41,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_train_gain_sel",
@@ -51,7 +51,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_gain_sel",
@@ -63,7 +63,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_summary_sel",

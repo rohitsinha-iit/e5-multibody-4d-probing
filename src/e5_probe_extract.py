@@ -48,7 +48,7 @@ else:
     model = init_inference_model(cfg, None, dev)  # encoder: pretrained DINOv2 from the hub cache; rest: random init
     if args.variant == "randall":
         torch.manual_seed(args.seed + 1)
-        hub = os.path.expanduser("~/.cache/torch/hub/facebookresearch_dinov2_main")
+        hub = os.path.join(os.path.expanduser(os.environ.get("TORCH_HOME", "~/.cache/torch")), "hub", "facebookresearch_dinov2_main")
         fresh = torch.hub.load(hub, "dinov2_vitl14", source="local", pretrained=False)
         sd = {k: v for k, v in fresh.state_dict().items() if k in model.encoder.model.state_dict()}
         r = model.encoder.model.load_state_dict(sd, strict=False)
@@ -56,7 +56,7 @@ else:
         assert len(r.missing_keys) == 0, r.missing_keys
         model.to(dev).eval()
 # record how far the encoder is from the public DINOv2 weights (is Any4D's encoder fine-tuned?)
-pub = torch.load(os.path.expanduser("~/.cache/torch/hub/checkpoints/dinov2_vitl14_pretrain.pth"), map_location="cpu")
+pub = torch.load(os.path.join(os.path.expanduser(os.environ.get("TORCH_HOME", "~/.cache/torch")), "hub", "checkpoints", "dinov2_vitl14_pretrain.pth"), map_location="cpu")
 msd = model.encoder.model.state_dict(); diffs = []
 for k, v in pub.items():
     if k in msd and msd[k].shape == v.shape:

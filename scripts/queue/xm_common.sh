@@ -5,7 +5,7 @@ export HF_HOME=$BIG/models/hf UV_CACHE_DIR=$BIG/models/uvcache PIP_CACHE_DIR=$BI
 export HF_HUB_DISABLE_TELEMETRY=1
 mkdir -p $XM $XMS $HF_HOME $UV_CACHE_DIR $TMPDIR
 xm_setup() {
-  local UV=$HOME/.local/bin/uv
+  local UV=${UV_BIN:-$(command -v uv || echo $HOME/.local/bin/uv)}
   if [ ! -f $XMV/.ok ]; then
     step "creating venv $XMV"
     $UV venv -q --python 3.12 $XMV

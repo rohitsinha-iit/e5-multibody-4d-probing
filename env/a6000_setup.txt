@@ -1,0 +1,58 @@
+# E5 on the A6000 server (aicoe-a6000, user rohit_sinha): what was installed where (bootstrap track, 2026-10-19)
+# Machine: 4x RTX A6000 49 GB, driver 550.144.03, 40 CPUs, 125 GB RAM; shared with other users. No docker or sudo for us.
+
+[roots]
+E5_ROOT = /data2/DATA/rohit_sinha/e5          (repo clone at $E5_ROOT/repo, symlink ~/e5)
+E5_BIG  = /data2/DATA/rohit_sinha/e5/big
+site env file: $E5_BIG/queue/site_env.sh (copy of scripts/queue/site_env_a6000.sh); source it before any manual run
+4090-layout symlinks: $E5_ROOT/Any4D -> $E5_BIG/models/src/Any4D ; $E5_ROOT/data -> $E5_BIG/data ;
+  $E5_ROOT/queue -> $E5_BIG/queue ; $E5_ROOT/.venv-post -> $E5_BIG/venvs/post ; $E5_BIG/models/src/Any4D/.venv -> $E5_BIG/venvs/any4d ;
+  $E5_BIG/models/venvs -> $E5_BIG/venvs ; $E5_BIG/models/torch -> $E5_BIG/cache/torch
+
+[caches]
+PIP_CACHE_DIR=$E5_BIG/cache/pip  UV_CACHE_DIR=$E5_BIG/cache/uv  XDG_CACHE_HOME=$E5_BIG/cache/xdg
+HF_HOME=$E5_BIG/models/hf  TORCH_HOME=$E5_BIG/cache/torch
+Other tracks use /data2/DATA/rohit_sinha/e5/cache as cache root; links added there (only where absent):
+  e5/cache/torch/hub -> $E5_BIG/cache/torch/hub ; e5/cache/hf/hub -> $E5_BIG/models/hf/hub
+
+[tools]
+uv 0.13.1 at $E5_BIG/tools/uvpkg/bin/uv (pip --target install with the base miniconda python)
+python 3.12.14 (python-build-standalone via uv) at $E5_BIG/tools/python/cpython-3.12.14-linux-x86_64-gnu
+huggingface_hub (pip --target) at $E5_BIG/tools/hfpkg: NOT usable for downloads with the base miniconda python
+  (TypeError Decompressor.decompress() output_buffer_limit on small files); use the any4d or xm venv for HF downloads.
+
+[venvs]  (installed with: uv pip install --no-deps -r <lockfile with A6000 editable paths> --extra-index-url https://download.pytorch.org/whl/cu124 --index-strategy unsafe-best-match)
+any4d  $E5_BIG/venvs/any4d  python 3.12.14  91 pkgs  torch 2.6.0+cu124 torchvision 0.21.0+cu124  CUDA 12.4 cuDNN 9.1.0  -e $E5_BIG/models/src/Any4D   freeze == env/venv_any4d.txt
+xm     $E5_BIG/venvs/xm     python 3.12.14  95 pkgs  torch 2.6.0+cu124 torchvision 0.21.0+cu124  -e map-anything, -e vggt              freeze == env/venv_xm.txt except the +cu124 local tag (4090 had the PyPI torch 2.6.0 wheel, also CUDA 12.4)
+post   $E5_BIG/venvs/post   python 3.12.15  14 pkgs  (venv already existed, created by another track with the /data1 uv python 3.12.15 interpreter;
+                            the 12 lockfile packages are present; extra: opencv-python-headless 5.0.0.93, scipy 1.18.1)
+freeze files: $E5_BIG/logs/bootstrap/freeze_{any4d,xm,post}.txt ; diffs: freeze_diff_*.txt
+
+[external repos]  ($E5_BIG/models/src/<name>, commits from env/external_repos.tsv, all verified with git rev-parse)
+Any4D        aa9f1b0d7ecdf44a6ef8cef93387be0093bdd497  (editable in any4d venv)
+co-tracker   82e02e8029753ad4ef13cf06be7f4fc5facdda4d
+map-anything 3d10cf7a3016fc0f9bb13a071ee66c47b10be0d9  (editable in xm venv)
+PAGE4D       b8af462a1384385d787b8f91eca2993a471b90ea
+vggt         a288dd0f14786c93483e45524328726ab7b1b4ce  (editable in xm venv)
+dinov2 hub   7764ea0f912e53c92e82eb78a2a1631e92725fc8  at $TORCH_HOME/hub/facebookresearch_dinov2_main
+dinov2_vitl14_pretrain.pth (1.13 GB, fetched by Any4D on first run) at $TORCH_HOME/hub/checkpoints/
+
+[weights]  (HF_HOME=$E5_BIG/models/hf, hub cache layout)
+facebook/VGGT-1B              860abec7937da0a4c03c41d3c269c366e82abdf9  model.pt
+facebook/VGGT_tracker_fixed   4d9d9494b2211c90ab9cd3c8c6aa188fe363103d  model_tracker_fixed_e20.pt, _e30.pt
+facebook/cotracker3           bf55ea50d4390e1820a267f131cd6587240fb2c5
+facebook/map-anything         6f3a25bfbb8fcc799176bb01e9d07dfb49d5416a  (pinned by xm_common.sh and t7_mapanything_v2.sh: V1 config)
+facebook/map-anything         a1d87e9086706fb9974f3be5a3e3a0ca5401c5aa  (the 'main' ref recorded in models_and_checkpoints.txt; different model.safetensors)
+dataset zhouk777/PAGE4D       69c86f898829ae9365469aa8e9f34b386844a4b5
+Any4D  airlabshare/any4d-checkpoint any4d_4v_combined.pth  7727258559 bytes  at $E5_BIG/models/ckpt/any4d/ ; symlink $E5_BIG/models/src/Any4D/checkpoints/any4d_4v_combined.pth
+
+[fine-tuned checkpoints]  (private HF dataset rohitsinhaiitgn/e5-multibody-data, sha256sum -c SHA256SUMS OK, staged at $E5_BIG/ft/hf_stage)
+$E5_BIG/ft/runs/heads_sel/any4d_ft.pth  2713290374 bytes
+$E5_BIG/ft/runs/ctrl_sel/any4d_ft.pth   2713290374 bytes
+(gain_sel, ctrl, gain, sf, heads_sf, heads from the 4090 were not uploaded and are not on the A6000)
+
+[smoke test 2026-10-19]  $E5_BIG/results/bootstrap_smoke/smoke.log
+Any4D (src/e5_any4d_infer.py, 7 views, Any4D example_images car and dog): base and heads_sel (--checkpoint_path $(ft_ckpt heads_sel)) both OK, peak 7.55 GB
+VGGT-1B + VGGT_tracker_fixed e20 track head (xm venv): OK on the same frames, peak 8.32 GB
+
+[queue]  $E5_BIG/queue (see README_A6000.md there). Not started, no crontab installed, tasks.json empty.

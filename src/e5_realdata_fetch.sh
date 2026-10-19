@@ -4,7 +4,7 @@
 # Layout: $R/kitti15/{training/...}, $R/sintel/{training/...}. A marker file .done_<part> records completion,
 # archives are deleted after extraction, partial downloads are resumed with curl -C -.
 set -o pipefail
-BIG=/media/workbench/zone_x/e5_multibody; R=$BIG/realdata; mkdir -p $R/dl
+BIG=${E5_BIG:-/media/workbench/zone_x/e5_multibody}; R=$BIG/realdata; mkdir -p $R/dl
 S3=https://s3.eu-central-1.amazonaws.com/avg-kitti
 SIN=https://files.is.tue.mpg.de
 get() {  # get URL DEST PART [unzip patterns...]

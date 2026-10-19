@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """E5 experiment queue supervisor (stdlib only).
 
-Runs the tasks in tasks.json one after the other. Safe to start any number of times: a lock file
+Runs the tasks in tasks.json in order, at most E5_MAX_PARALLEL (default 1, hard cap 2) at a time. Safe to start any number of times: a lock file
 guarantees a single live instance, and cron restarts it every 5 minutes and at boot, so a server
 crash or reboot only costs the interrupted task's progress since its last per-scene checkpoint
 (every task script is written to skip work that is already on disk).
 
-Files (all under the queue directory, default ~/e5_multibody/queue):
+Files (all under the queue directory $E5_QUEUE, default $E5_ROOT/queue, E5_ROOT default ~/e5_multibody):
   tasks.json        ordered list of tasks: {id, title, script, deps[], gate, max_attempts, min_free_gb}
   state.json        per-task status: pending | waiting_gate | running | done | failed  (+ attempts, times, rc, pushed)
   tasks/<script>    task script; runs with cwd = work/<id>, env TASK_ID, RESULT_DIR, QDIR, SRC
@@ -18,8 +18,8 @@ Files (all under the queue directory, default ~/e5_multibody/queue):
 """
 import fcntl, json, os, re, signal, subprocess, time
 
-Q = os.path.abspath(os.environ.get("E5_QUEUE", os.path.expanduser("~/e5_multibody/queue")))
-POLL = 30
+Q = os.path.abspath(os.environ.get("E5_QUEUE", os.path.join(os.path.expanduser(os.environ.get("E5_ROOT", "~/e5_multibody")), "queue")))
+POLL = int(os.environ.get("E5_POLL_S", "30"))
 
 
 def now():
@@ -108,7 +108,43 @@ def write_status(tasks, state):
     os.replace(os.path.join(Q, "STATUS.md.tmp"), os.path.join(Q, "STATUS.md"))
 
 
+MAX_PAR = max(1, min(2, int(os.environ.get("E5_MAX_PARALLEL", "1"))))  # hard cap: never more than 2 of our tasks at once
+START_GAP = int(os.environ.get("E5_START_GAP_S", "120"))  # seconds between two task starts (lets the first one allocate its GPU)
+
+
+def task_disk_path(t):
+    """disk_path may hold $E5_BIG / $E5_ROOT placeholders (task definitions are machine-independent)."""
+    return os.path.expanduser(os.path.expandvars(t.get("disk_path", "~")))
+
+
+def finalize(tid, t, st, rc, adopted, state, tasks, spath):
+    st.update(rc=rc, finished=now(), pid=None)
+    oom = False
+    if rc != 0:
+        try:
+            tail = open(os.path.join(Q, "logs", f"{tid}.log"), errors="replace").read()
+            tail = tail[tail.rfind("===== "):]
+            oom = bool(re.search(r"OutOfMemoryError|CUDA out of memory|CUBLAS_STATUS_ALLOC_FAILED|CUDNN_STATUS_ALLOC_FAILED", tail))
+        except OSError:
+            pass
+    tag = " (adopted)" if adopted else ""
+    if rc == 0:
+        st["status"] = "done"; event(f"done {tid}{tag}")
+    elif oom and st.get("oom_retries", 0) < 30:
+        st["oom_retries"] = st.get("oom_retries", 0) + 1; st["attempts"] = max(0, st["attempts"] - 1)
+        wait_min = min(60, 10 * st["oom_retries"]); st["status"] = "pending"; st["not_before"] = time.time() + 60 * wait_min
+        event(f"{tid} hit GPU out-of-memory (shared GPU), retry {st['oom_retries']} in {wait_min} min (attempt not counted)")
+    elif st.get("attempts", 1) < t.get("max_attempts", 2):
+        st["status"] = "pending"; st["not_before"] = time.time() + 120; event(f"{tid} failed rc {rc}{tag}, will retry")
+    else:
+        st["status"] = "failed"; event(f"{tid} FAILED rc {rc} after {st.get('attempts')} attempts{tag}")
+    jsave(spath, state); write_status(tasks, state)
+    if st["status"] in ("done", "failed"):
+        st["last_push_try"] = time.time(); push(tid, st); jsave(spath, state)
+
+
 def main():
+    os.environ.setdefault("E5_BIG", "/media/workbench/zone_x/e5_multibody")  # E5_BIG default = 4090 path, for $E5_BIG in disk_path
     os.makedirs(os.path.join(Q, "logs"), exist_ok=True)
     lockf = open(os.path.join(Q, ".supervisor.lock"), "a+")  # never truncate before holding the lock
     try:
@@ -116,46 +152,42 @@ def main():
     except BlockingIOError:
         return  # another supervisor is alive
     lockf.seek(0); lockf.truncate(); lockf.write(str(os.getpid())); lockf.flush()
-    event(f"supervisor start pid {os.getpid()}")
+    event(f"supervisor start pid {os.getpid()} (max parallel {MAX_PAR})")
     spath = os.path.join(Q, "state.json")
     state = jload(spath, {})
-    adopt = None
+    running = {}  # tid -> {"proc": Popen or None (adopted), "pid": int, "log": file or None}
     for tid, st in state.items():  # crash recovery
         if st.get("status") == "running":
-            if alive(st.get("pid")) and adopt is None:
-                adopt = tid; event(f"adopting still-running task {tid} (pid {st['pid']})")
+            if alive(st.get("pid")) and len(running) < MAX_PAR:
+                running[tid] = {"proc": None, "pid": st["pid"], "log": None}; event(f"adopting still-running task {tid} (pid {st['pid']})")
             else:
                 if alive(st.get("pid")):
                     kill_group(st["pid"])
                 st["status"] = "pending"; st["pid"] = None; event(f"recovered {tid} (was running) -> pending")
     jsave(spath, state)
-
-    if adopt:
-        st = state[adopt]; tasks = jload(os.path.join(Q, "tasks.json"), [])
-        t = next((x for x in tasks if x["id"] == adopt), {})
-        last_status = 0
-        while alive(st["pid"]):
-            with open(os.path.join(Q, "heartbeat"), "w") as fh:
-                fh.write(f"{now()} running {adopt} (adopted)\n")
-            if time.time() - last_status > 3600:
-                status_push(); last_status = time.time()
-            time.sleep(POLL)
-        rc = read_rc(os.path.join(Q, "work", adopt + ".rc"), None)
-        st.update(rc=rc, finished=now(), pid=None)
-        if rc == 0:
-            st["status"] = "done"; event(f"done {adopt} (adopted)")
-        elif st.get("attempts", 1) < t.get("max_attempts", 2):
-            st["status"] = "pending"; st["not_before"] = time.time() + 60; event(f"{adopt} ended rc {rc} (adopted), will retry")
-        else:
-            st["status"] = "failed"; event(f"{adopt} FAILED rc {rc} (adopted)")
-        jsave(spath, state)
-        if st["status"] in ("done", "failed"):
-            st["last_push_try"] = time.time(); push(adopt, st); jsave(spath, state)
+    last_status = 0; last_start = 0; stop_seen = False
 
     while True:
-        if os.path.exists(os.path.join(Q, "STOP")):
-            event("STOP file found, exiting"); return
+        stop = os.path.exists(os.path.join(Q, "STOP"))
+        if stop and not stop_seen:
+            event("STOP file found, no new tasks; exiting when running tasks finish"); stop_seen = True
         tasks = jload(os.path.join(Q, "tasks.json"), [])
+        tmap = {t["id"]: t for t in tasks}
+        # finished tasks
+        for tid in list(running):
+            r = running[tid]
+            finished = (r["proc"].poll() is not None) if r["proc"] is not None else not alive(r["pid"])
+            if not finished:
+                continue
+            if r["log"] is not None:
+                r["log"].close()
+            fallback = r["proc"].returncode if r["proc"] is not None else None
+            rc = read_rc(os.path.join(Q, "work", tid + ".rc"), fallback)
+            del running[tid]
+            finalize(tid, tmap.get(tid, {}), state.setdefault(tid, {"status": "running", "attempts": 1}), rc,
+                     r["proc"] is None, state, tasks, spath)
+        if stop and not running:
+            event("STOP: all running tasks finished, exiting"); return
         for t in tasks:
             state.setdefault(t["id"], {"status": "pending", "attempts": 0})
             if state[t["id"]].get("status") == "failed" and os.path.exists(os.path.join(Q, "approvals", "retry_" + t["id"])):
@@ -166,9 +198,10 @@ def main():
             if st["status"] in ("done", "failed") and not st.get("pushed") and time.time() - st.get("last_push_try", 0) > 600:
                 st["last_push_try"] = time.time(); push(t["id"], st)
         nxt = None
-        for t in tasks:
+        can_start = (not stop and len(running) < MAX_PAR and (not running or time.time() - last_start >= START_GAP))
+        for t in (tasks if can_start else []):
             st = state[t["id"]]
-            if st["status"] not in ("pending", "waiting_gate"):
+            if st["status"] not in ("pending", "waiting_gate") or t["id"] in running:
                 continue
             if not all(state.get(d, {}).get("status") == "done" for d in t.get("deps", [])):
                 continue
@@ -179,7 +212,7 @@ def main():
                 continue
             if time.time() < st.get("not_before", 0):
                 continue
-            dpath = os.path.expanduser(t.get("disk_path", "~")); need = t.get("min_free_gb", 5)
+            dpath = task_disk_path(t); need = t.get("min_free_gb", 5)
             have = free_gb(dpath if os.path.exists(dpath) else os.path.expanduser("~"))
             if have < need:
                 if not st.get("disk_warned"):
@@ -187,6 +220,11 @@ def main():
                 continue
             nxt = t; break
         write_status(tasks, state); jsave(spath, state)
+        if running and time.time() - last_status > 3600:  # hourly dashboard refresh with partial results
+            status_push(); last_status = time.time()
+        if running:
+            with open(os.path.join(Q, "heartbeat"), "w") as fh:
+                fh.write(f"{now()} running {' '.join(sorted(running))}\n")
         if nxt is None:
             time.sleep(POLL); continue
 
@@ -203,39 +241,10 @@ def main():
         script = os.path.join(Q, "tasks", nxt["script"])
         p = subprocess.Popen(["bash", "-c", f'bash "{script}"; echo $? > "{rcfile}"'], cwd=work, env=env,
                              stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+        running[tid] = {"proc": p, "pid": p.pid, "log": log}; last_start = time.time()
         st.update(status="running", pid=p.pid, started=now(), finished="", attempts=st["attempts"] + 1, disk_warned=False, pushed=False)
-        jsave(spath, state); write_status(tasks, state); event(f"start {tid} pid {p.pid} attempt {st['attempts']}")
+        jsave(spath, state); write_status(tasks, state); event(f"start {tid} pid {p.pid} attempt {st['attempts']} ({len(running)}/{MAX_PAR} running)")
         status_push(); last_status = time.time()
-        while p.poll() is None:
-            if time.time() - last_status > 3600:  # hourly dashboard refresh with partial results
-                status_push(); last_status = time.time()
-            with open(os.path.join(Q, "heartbeat"), "w") as fh:
-                fh.write(f"{now()} running {tid}\n")
-            time.sleep(POLL)
-        log.close()
-        rc = read_rc(rcfile, p.returncode)
-        st.update(rc=rc, finished=now(), pid=None)
-        oom = False
-        if rc != 0:
-            try:
-                tail = open(os.path.join(Q, "logs", f"{tid}.log"), errors="replace").read()
-                tail = tail[tail.rfind("===== "):]
-                oom = bool(re.search(r"OutOfMemoryError|CUDA out of memory|CUBLAS_STATUS_ALLOC_FAILED|CUDNN_STATUS_ALLOC_FAILED", tail))
-            except OSError:
-                pass
-        if rc == 0:
-            st["status"] = "done"; event(f"done {tid}")
-        elif oom and st.get("oom_retries", 0) < 30:
-            st["oom_retries"] = st.get("oom_retries", 0) + 1; st["attempts"] = max(0, st["attempts"] - 1)
-            wait_min = min(60, 10 * st["oom_retries"]); st["status"] = "pending"; st["not_before"] = time.time() + 60 * wait_min
-            event(f"{tid} hit GPU out-of-memory (shared GPU), retry {st['oom_retries']} in {wait_min} min (attempt not counted)")
-        elif st["attempts"] < nxt.get("max_attempts", 2):
-            st["status"] = "pending"; st["not_before"] = time.time() + 120; event(f"{tid} failed rc {rc}, will retry")
-        else:
-            st["status"] = "failed"; event(f"{tid} FAILED rc {rc} after {st['attempts']} attempts")
-        jsave(spath, state); write_status(tasks, state)
-        if st["status"] in ("done", "failed"):
-            st["last_push_try"] = time.time(); push(tid, st); jsave(spath, state)
 
 
 if __name__ == "__main__":

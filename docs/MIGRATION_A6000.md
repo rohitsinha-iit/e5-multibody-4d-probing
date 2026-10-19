@@ -55,3 +55,16 @@ Decision (user, 2026-10-18): only the irreplaceable files were uploaded. Everyth
 - Re-download on the A6000: KITTI 2015 and Sintel (src/e5_realdata_fetch.sh), pose sets (yslan/pointmap_regression_evalsets), CoTracker3_Kubric shards, and all model weights at the revisions in env/models_and_checkpoints.txt.
 
 A full 63.8 GB tar staging copy of all datasets remains on the 4090 server at /media/workbench/zone_x/e5_multibody/hf_stage/parts. It can be deleted once the A6000 re-renders are verified.
+
+
+## 5. A6000 bootstrap status (2026-10-19, bootstrap track)
+
+Done on the A6000; details and versions in env/a6000_setup.txt.
+
+- Paths: src/e5_paths.py reads E5_ROOT and E5_BIG (defaults: the 4090 paths). Shell scripts use ${E5_ROOT:-$HOME/e5_multibody} and ${E5_BIG:-/media/workbench/zone_x/e5_multibody}; task definitions use "disk_path": "$E5_BIG", expanded by the supervisor. scripts/check_hardcoded_paths.py lists remaining literals (0 at the bootstrap commit). On the A6000, E5_ROOT=/data2/DATA/rohit_sinha/e5 and E5_BIG=/data2/DATA/rohit_sinha/e5/big, and symlinks recreate the 4090 layout ($E5_ROOT/Any4D, $E5_ROOT/data, $E5_ROOT/.venv-post, $E5_ROOT/queue, Any4D/.venv, $E5_BIG/models/venvs).
+- Environments: any4d, xm, post under $E5_BIG/venvs, from the lockfiles with uv (--no-deps). The PyTorch cu124 index was reachable.
+- Weights: all revisions in env/models_and_checkpoints.txt plus map-anything 6f3a25bf (the revision the code pins); Any4D checkpoint; dinov2 hub clone and dinov2_vitl14_pretrain.pth.
+- Fine-tuned checkpoints: heads_sel and ctrl_sel restored from the private HF dataset, SHA256 verified.
+- Smoke test: Any4D (base and heads_sel) and VGGT with the fixed tracker run on one A6000.
+- Queue: ported to $E5_BIG/queue (README_A6000.md). New: E5_MAX_PARALLEL (default 1, hard cap 2), E5_START_GAP_S, GPU_HEADROOM_GB (4 on the A6000) and GPU reservations in pick_gpu, and $QDIR/site_env.sh sourced by common.sh. Not started and no crontab installed.
+- Open: Kubric renders (no docker on the A6000, handled by the render track), push credential for push.sh (no deploy key on the A6000), and the HF downloads with the base miniconda python fail (use a venv python).

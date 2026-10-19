@@ -7,7 +7,7 @@
   "gate": null,
   "max_attempts": 3,
   "min_free_gb": 20,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "t4_causal_v2",
@@ -35,7 +35,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 30,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v3_scale",
@@ -47,7 +47,7 @@
   "gate": "retired",
   "max_attempts": 1,
   "min_free_gb": 40,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v3_pipeline",
@@ -59,7 +59,7 @@
   "gate": "retired",
   "max_attempts": 1,
   "min_free_gb": 30,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v3_viewsweep",
@@ -71,7 +71,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 30,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v3_pilot_far2",
@@ -81,7 +81,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 20,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "t8_realdata_kitti",
@@ -91,7 +91,7 @@
   "gate": null,
   "max_attempts": 3,
   "min_free_gb": 60,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "t8_realdata_sintel",
@@ -101,7 +101,7 @@
   "gate": null,
   "max_attempts": 3,
   "min_free_gb": 40,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v3_scale_float",
@@ -113,7 +113,7 @@
   "gate": "v3_float_visual",
   "max_attempts": 2,
   "min_free_gb": 40,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v3_pipeline_float",
@@ -125,7 +125,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 30,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v3_scale_far",
@@ -137,7 +137,7 @@
   "gate": "v3_far_visual",
   "max_attempts": 2,
   "min_free_gb": 20,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v3_pipeline_far",
@@ -149,7 +149,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 20,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "t7_any4d_v2",
@@ -159,7 +159,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "t7_mapanything_v2",
@@ -169,7 +169,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "t7_vggt_v2",
@@ -179,7 +179,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "t7_page4d_v2",
@@ -189,7 +189,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "t7_xm_summary",
@@ -214,7 +214,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "w2_kubric_baselines",
@@ -224,7 +224,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 30,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "w2_real_baselines",
@@ -234,7 +234,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "w2_decomp",
@@ -281,7 +281,7 @@
   "gate": null,
   "max_attempts": 3,
   "min_free_gb": 30,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_render_float",
@@ -291,7 +291,7 @@
   "gate": null,
   "max_attempts": 3,
   "min_free_gb": 30,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_base",
@@ -301,7 +301,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_pilot",
@@ -314,7 +314,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_train_heads",
@@ -326,7 +326,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_heads",
@@ -338,7 +338,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_train_ctrl",
@@ -350,7 +350,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_ctrl",
@@ -362,7 +362,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_train_sf",
@@ -374,7 +374,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_sf",
@@ -386,7 +386,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_train_heads_sf",
@@ -398,7 +398,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_heads_sf",
@@ -410,7 +410,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_train_gain",
@@ -422,7 +422,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_gain",
@@ -434,7 +434,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 15,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_summary",
@@ -451,7 +451,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 1,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v4_pilot",
@@ -461,7 +461,7 @@
   "gate": null,
   "max_attempts": 2,
   "min_free_gb": 20,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v4_scale_epi",
@@ -473,7 +473,7 @@
   "gate": "v4_visual",
   "max_attempts": 2,
   "min_free_gb": 30,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "v4_viewsweep_epi",
@@ -485,7 +485,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 40,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "r2_probe_extract",
@@ -495,7 +495,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 20,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "r2_heads_null",
@@ -516,7 +516,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 8,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "r2_probe_mlp",
@@ -529,7 +529,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 8,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_train_heads_sel",
@@ -539,7 +539,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_heads_sel",
@@ -551,7 +551,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_train_ctrl_sel",
@@ -561,7 +561,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_ctrl_sel",
@@ -573,7 +573,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_train_gain_sel",
@@ -583,7 +583,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_eval_gain_sel",
@@ -595,7 +595,7 @@
   "gate": null,
   "max_attempts": 4,
   "min_free_gb": 10,
-  "disk_path": "/media/workbench/zone_x/e5_multibody"
+  "disk_path": "$E5_BIG"
  },
  {
   "id": "ft_summary_sel",

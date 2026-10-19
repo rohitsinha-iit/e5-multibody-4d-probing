@@ -1,12 +1,12 @@
 set +e
-export PATH=$HOME/.local/bin:$PATH; W=$PWD; D=~/e5_multibody/data/v2
+export PATH=$HOME/.local/bin:$PATH; W=$PWD; D=${E5_ROOT:-$HOME/e5_multibody}/data/v2
 cp render_v2_scale.sh e5_step3_analysis.py e5_gt_patches.py e5_internal_analysis.py e5_adjacency_control.py e5_multibody.py e5_kubric_post.py $D/
 cd $D && bash render_v2_scale.sh
 echo "scenes $(ls out | wc -l) meta $(ls out/*/e5_meta.json | wc -l)"; grep -l Traceback logs/*.txt || true
-~/e5_multibody/.venv-post/bin/python e5_post_driver.py out > post.log 2>&1; tail -2 post.log
+${E5_ROOT:-$HOME/e5_multibody}/.venv-post/bin/python e5_post_driver.py out > post.log 2>&1; tail -2 post.log
 cp scene_summary.json $W/scene_summary_v2.json
 pick_gpu() { nvidia-smi --query-gpu=index,memory.used --format=csv,noheader,nounits | sort -t, -k2 -n | head -1 | cut -d, -f1; }
-cd ~/e5_multibody/Any4D && source .venv/bin/activate && cp $W/e5_any4d_infer.py $W/e5_any4d_extract.py scripts/
+cd ${E5_ROOT:-$HOME/e5_multibody}/Any4D && source .venv/bin/activate && cp $W/e5_any4d_infer.py $W/e5_any4d_extract.py scripts/
 GPU=$(pick_gpu); echo "GPU $GPU"; nvidia-smi --query-gpu=index,memory.used --format=csv
 test "$(ls $D/pred_any4d_7v/*.npz 2>/dev/null | wc -l)" -ge 100 || CUDA_VISIBLE_DEVICES=$GPU python scripts/e5_any4d_infer.py --data $D/out --out $D/pred_any4d_7v --frames 0,4,8,12,16,20,23 > $D/infer.log 2>&1; echo "infer rc $?"
 test "$(ls $D/internals/*_att.npz 2>/dev/null | wc -l)" -ge 100 || CUDA_VISIBLE_DEVICES=$GPU python scripts/e5_any4d_extract.py --data $D/out --out $D/internals > $D/extract.log 2>&1; echo "extract rc $?"

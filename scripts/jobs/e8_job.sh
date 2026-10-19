@@ -1,6 +1,6 @@
 set -e
-export PATH=$HOME/.local/bin:$PATH; W=$PWD; D=~/e5_multibody/data/pilot_v1
-cd ~/e5_multibody/Any4D && source .venv/bin/activate && cp $W/e5_e8_knockout.py scripts/
+export PATH=$HOME/.local/bin:$PATH; W=$PWD; D=${E5_ROOT:-$HOME/e5_multibody}/data/pilot_v1
+cd ${E5_ROOT:-$HOME/e5_multibody}/Any4D && source .venv/bin/activate && cp $W/e5_e8_knockout.py scripts/
 GPU=$(nvidia-smi --query-gpu=index,memory.used --format=csv,noheader,nounits | sort -t, -k2 -n | head -1 | cut -d, -f1); echo GPU $GPU
 nvidia-smi --query-gpu=index,memory.used,utilization.gpu --format=csv
 A="--data $D/out --gt $D/gt_patches --att $D/internals --e5 $D"
