@@ -53,7 +53,8 @@ def sample(arr, g, x, y):
 def run_model(A, model, paths, meta=None, gt=None, frames=None, cond="gt", da3_dir=None, gpu=None):
     if model == "trackcraft3r":
         if meta is None or cond == "da3":
-            da3_dir = da3_dir or (os.path.splitext(paths[0])[0] + "_da3")
+            import hashlib
+            da3_dir = da3_dir or os.path.join(em.E5_BIG_DEFAULT, "results/newmodels/da3", hashlib.md5("|".join(paths).encode()).hexdigest()[:12])
             if not os.path.exists(os.path.join(da3_dir, "depth.npy")):
                 em.TrackCraft3RAdapter.run_da3(paths, da3_dir, gpu=gpu)
             d, w2c, intr = em.TrackCraft3RAdapter.make_inputs("da3", da3_dir=da3_dir)
@@ -67,7 +68,7 @@ def run_model(A, model, paths, meta=None, gt=None, frames=None, cond="gt", da3_d
         Km = g["K"].copy(); Km[0] *= sx; Km[1] *= sy
         import cv2
         dz = cv2.resize(g["depth_z"][0], (A.w, A.h), interpolation=cv2.INTER_NEAREST)
-        return A.predict(paths, gt=dict(K=Km, w2c=g["w2c"], depth0_z=dz))
+        return A.predict(paths, targets=[0, len(paths) - 1], gt=dict(K=Km, w2c=g["w2c"], depth0_z=dz))
     if model == "any4d":
         import torch, time
         torch.cuda.reset_peak_memory_stats(); t0 = time.time()
