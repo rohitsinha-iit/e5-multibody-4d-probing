@@ -222,6 +222,7 @@ class OpenD4RTAdapter:
     """OpenD4RT (unofficial D4RT, ViT-g, 256x256, tubelet 2 so V must be even). Queries (u,v,t_src,t_tgt,t_cam) with
     u,v normalised by (W-1). All view-0 pixels of the model grid (stride dense_stride) are queried at every target.
 
+    pad_to_clip (default True): pad a V < clip_frames video to clip_frames by repeating the last frame, as in training.
     Readouts (P3 v2 4.2), all in model pixels / model units:
       x_r1        (V,h,w,2) uv head at t_tgt                          (also returned as x_pred)
       x_r2_predK  (V,h,w,2) xyz(t_cam = t_tgt) projected with the predicted intrinsics of view t
@@ -234,7 +235,8 @@ class OpenD4RTAdapter:
     point)."""
     name = "opend4rt"
 
-    def __init__(self, repo=None, ckpt_dir=None, device="cuda", query_chunk=16384, dense_stride=1, pose_grid=32):
+    def __init__(self, repo=None, ckpt_dir=None, device="cuda", query_chunk=16384, dense_stride=1, pose_grid=32,
+                 pad_to_clip=True):
         import torch
         repo = repo or os.path.join(E5_BIG_DEFAULT, "models/src/Open-d4rt")
         ckpt_dir = ckpt_dir or os.path.join(E5_BIG_DEFAULT, "models/ckpt/opend4rt/checkpoints/OpenD4RT_32CLIP_9Dataset_NoAUG")
@@ -260,6 +262,10 @@ class OpenD4RTAdapter:
         self.h, self.w = int(hw[0]), int(hw[1])
         self.clip_frames = d4t._model_clip_frames(self.model)
         self.query_chunk, self.stride, self.pose_grid = query_chunk, dense_stride, pose_grid
+        # Training feeds clip_frames-long clips; scenes shorter than the clip (24-frame Kubric) are padded by repeating
+        # the last frame (Open-d4rt src/data/raw_augment.py sample_frame_indices_with_stride / _pad_to_clip). The repo's
+        # inference helpers feed short clips unpadded, which is out of distribution (opend4rt_readout_check, 2026-10-20).
+        self.pad_to_clip = bool(pad_to_clip)
 
     def _q(self, u, v, ts, tt, tc):
         torch = self.torch; n = len(u)
@@ -277,13 +283,15 @@ class OpenD4RTAdapter:
         from PIL import Image
         torch = self.torch
         V = len(paths)
-        if V % 2:
+        if V % 2 and not self.pad_to_clip:
             raise ValueError("OpenD4RT needs an even number of frames (tubelet 2)")
         if V > self.clip_frames:
             raise ValueError(f"{V} frames > clip length {self.clip_frames}; use the 48-frame checkpoint")
         frames = [np.array(Image.open(p).convert("RGB")) for p in paths]
         H, W = frames[0].shape[:2]; h, w = self.h, self.w
         vid = np.stack([cv2.resize(f, (w, h), interpolation=cv2.INTER_AREA if H >= h else cv2.INTER_LINEAR) for f in frames])
+        if self.pad_to_clip and V < self.clip_frames:   # queries index only the first V (real) frames
+            vid = np.concatenate([vid, np.repeat(vid[-1:], self.clip_frames - V, axis=0)])
         if torch.cuda.is_available():
             torch.cuda.reset_peak_memory_stats()
         t0 = time.time()
@@ -355,8 +363,10 @@ class OpenD4RTAdapter:
 
 # ----------------------------------------------------------------------------- TrackCraft3R
 class TrackCraft3RAdapter:
-    """TrackCraft3R (Wan2.1-1.3B DiT + LoRA, one-step regression). 12 frames per run, 480x832 canvas with
-    resize_mode='pad' (a 512x512 input becomes a centred 480x480 region). Inputs per run: z-depth (T,H,W),
+    """TrackCraft3R (Wan2.1-1.3B DiT + LoRA, one-step regression). 12 frames per run, 480x832 canvas.
+    Primary setting (decision 2026-10-20, env/a6000_decisions.md): resize_mode='stretch' (the repo default; a 512x512
+    input is stretched to the full canvas) with no t0 re-registration. resize_mode='pad' (a 512x512 input becomes a
+    centred 480x480 region) stays available as a sensitivity setting. Inputs per run: z-depth (T,H,W),
     frame-0-normalised W2C (T,4,4, OpenCV) and [fx,fy,cx,cy] at native resolution. Output: frame-0-camera tracks
     P0(t) of every frame-0 pixel, a residual from the input frame-0 pointmap.
     Conditions (unified plan 2.2 / P3 v2): 'gt' = GT depth + GT cameras; 'da3' = DA3 depth + cameras (+ DA3 intrinsics
@@ -369,7 +379,7 @@ class TrackCraft3RAdapter:
     KUBRIC_FRAMES = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 23]
 
     def __init__(self, repo=None, ckpt=None, wan_root=None, null_ctx=None, device="cuda", height=480, width=832,
-                 resize_mode="pad"):
+                 resize_mode="stretch"):
         big = E5_BIG_DEFAULT
         repo = repo or os.path.join(big, "models/src/TrackCraft3r")
         ckpt = ckpt or os.path.join(big, "models/ckpt/trackcraft3r/model.safetensors")

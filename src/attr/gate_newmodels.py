@@ -28,7 +28,7 @@ GATES = {"opend4rt": "G0d: median static EPE <= 2x Any4D on the same scenes",
 
 def build(model, args):
     if model == "opend4rt":
-        return em.OpenD4RTAdapter(dense_stride=args.stride, ckpt_dir=args.ckpt_dir or None)
+        return em.OpenD4RTAdapter(dense_stride=args.stride, ckpt_dir=args.ckpt_dir or None, pad_to_clip=not args.no_pad_clip)
     if model == "trackcraft3r":
         A = em.TrackCraft3RAdapter(resize_mode=args.resize_mode); A.register_t0 = args.register_t0; return A
     if model == "4rc":
@@ -147,7 +147,8 @@ def main():
     ap.add_argument("--no_square", action="store_true"); ap.add_argument("--save_npz", default="")
     ap.add_argument("--scenes", default="", help="comma-separated scene names (overrides --n order)")
     ap.add_argument("--ckpt_dir", default="")
-    ap.add_argument("--resize_mode", default="pad"); ap.add_argument("--register_t0", action="store_true")
+    ap.add_argument("--no_pad_clip", action="store_true", help="OpenD4RT: feed the 24-frame clip unpadded (pre-2026-10-20 behaviour)")
+    ap.add_argument("--resize_mode", default="stretch", choices=["stretch", "pad"], help="TrackCraft3R resize mode: stretch is primary (2026-10-20), pad is a sensitivity setting"); ap.add_argument("--register_t0", action="store_true")
     args = ap.parse_args()
     t0 = time.time(); A = build(args.model, args); load_s = time.time() - t0
     import torch
