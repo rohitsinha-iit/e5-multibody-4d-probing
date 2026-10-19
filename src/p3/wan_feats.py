@@ -21,6 +21,7 @@ import torch
 import torch.nn.functional as F
 
 E5_BIG = os.environ.get("E5_BIG", "/data2/DATA/rohit_sinha/e5/big")
+os.environ.setdefault("HF_HOME", os.path.join(E5_BIG, "models", "hf"))   # never fall back to the full /data1 home
 REPO = "Wan-AI/Wan2.1-T2V-1.3B-Diffusers"
 CTX = os.path.join(E5_BIG, "models", "ckpt", "wan_empty_ctx.pt")
 OFFICIAL_SRC = os.path.join(E5_BIG, "models", "src", "Wan2.1")

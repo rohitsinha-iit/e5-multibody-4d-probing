@@ -1,7 +1,7 @@
 """P3 X2 / U3 evaluation of trained decoders on E5 Kubric splits and MotionFactorial variants.
 
 Per scene (scene dirs in the E5 format: e5_meta.json, gt.npz, rgba_*.png; 24 frames at 512 px):
-  1. Wan features: 25 frames (frame 23 repeated) at 480 px, t = 5, final block; cached once per scene in
+  1. Wan features (fp32 DiT, as for training): 25 frames (frame 23 repeated) at 480 px, t = 5, final block; cached once per scene in
      $E5_BIG/p3/feat_e5/<tag>/<scene>.npy and shared by all runs.
   2. Queries: the E5 query set e5_xm_eval.query_set(meta, gt, si) (si = index in the sorted scene list of the split,
      or of --si_ref when given, matched by scene name). Decoder queried at (u, v, t_src = 0, t_tgt = 23, t_cam = 23)
@@ -35,8 +35,8 @@ NB_PX = 8.0
 T_TGT = 23 / 24.0
 
 
-def scene_features(wf, d, cache):
-    p = os.path.join(cache, os.path.basename(d) + ".npy")
+def scene_features(wf, d, cache, name=None):
+    p = os.path.join(cache, (name or os.path.basename(d)) + ".npy")
     if os.path.exists(p):
         return np.load(p)
     from wan_feats import to_video_tensor
@@ -153,7 +153,8 @@ def summarise(rows, variant):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--runs", required=True, help="comma list of run dirs (each with ckpt_latest.pt)")
-    ap.add_argument("--data", required=True, help="dir of E5-format scene dirs")
+    ap.add_argument("--data", default="", help="dir of E5-format scene dirs")
+    ap.add_argument("--scene_glob", default="", help="glob of scene dirs, e.g. $E5_BIG/attr/factorial/v2/*/C (factorial layout <split>/<seed>/<variant>)")
     ap.add_argument("--tag", required=True, help="split tag, e.g. v2, v3float, fact_v2_C")
     ap.add_argument("--variant", default="D", choices=["A", "B", "C", "D"])
     ap.add_argument("--si_ref", default="", help="original split dir whose sorted scene list defines si (factorial)")
@@ -161,16 +162,22 @@ def main():
     ap.add_argument("--out", default=os.path.join(E5_BIG, "results", "x2_eval"))
     a = ap.parse_args()
     dev = torch.device("cuda")
-    scenes = xe.scene_dirs(a.data, a.limit)
-    ref = {os.path.basename(d): i for i, d in enumerate(xe.scene_dirs(a.si_ref))} if a.si_ref else None
+    if a.scene_glob:
+        scenes = sorted(d for d in glob.glob(a.scene_glob) if os.path.exists(os.path.join(d, "e5_meta.json")))[: a.limit or None]
+    else:
+        scenes = xe.scene_dirs(a.data, a.limit)
+    sname = (lambda d: os.path.basename(os.path.dirname(d))) if a.scene_glob else os.path.basename   # factorial: seed
+    ref = None
+    if a.si_ref:   # index of the base scene in the original split list, matched by seed (names end in _s<seed>)
+        ref = {os.path.basename(d).rsplit("_s", 1)[-1]: i for i, d in enumerate(xe.scene_dirs(a.si_ref))}
     cache = os.path.join(E5_BIG, "p3", "feat_e5", a.tag)
     from wan_feats import WanFeat
     wf = None
-    if any(not os.path.exists(os.path.join(cache, os.path.basename(d) + ".npy")) for d in scenes):
-        wf = WanFeat(dev, dtype=torch.bfloat16)
+    if any(not os.path.exists(os.path.join(cache, sname(d) + ".npy")) for d in scenes):
+        wf = WanFeat(dev, dtype=torch.float32)   # fp32 DiT, identical to the training features (G0a: bf16 parity failed)
     feats = {}
     for d in scenes:
-        feats[d] = scene_features(wf, d, cache)
+        feats[d] = scene_features(wf, d, cache, sname(d))
     del wf; torch.cuda.empty_cache()
     tok_pos = token_positions(device=dev)
     for rd in a.runs.split(","):
@@ -178,10 +185,10 @@ def main():
         od = os.path.join(a.out, os.path.basename(rd.rstrip("/")), a.tag); os.makedirs(od, exist_ok=True)
         rows = []
         for si, d in enumerate(scenes):
-            n = os.path.basename(d); pj = os.path.join(od, n + ".json")
+            n = sname(d); pj = os.path.join(od, n + ".json")
             if os.path.exists(pj):
                 rows.append(json.load(open(pj))); continue
-            sii = ref[n] if ref is not None else si
+            sii = ref[n.rsplit("_s", 1)[-1]] if ref is not None else si
             try:
                 r = eval_scene(model, feats[d], tok_pos, d, sii, dev, a.variant)
             except Exception as e:

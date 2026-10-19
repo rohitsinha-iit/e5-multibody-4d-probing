@@ -68,7 +68,7 @@ def targets(lab, n, tt, tc):
 
 
 class ClipSet(Dataset):
-    def __init__(self, clips, feat, names, n_query=2048, edge_frac=0.3, p_same=0.4, seed=0, preload=False, tracks_keep=0):
+    def __init__(self, clips, feat, names, n_query=2048, edge_frac=0.3, p_same=0.4, seed=0, preload=False, tracks_keep=0, rgb_jpeg=0):
         self.clips, self.feat, self.names = clips, feat, names
         self.nq, self.ef, self.ps, self.seed = n_query, edge_frac, p_same, seed
         self.epoch = 0; self.mem = None
@@ -80,7 +80,11 @@ class ClipSet(Dataset):
                     keep = np.sort(np.random.default_rng(int.from_bytes(nm.encode()[:8].ljust(8, b"0"), "little") % (1 << 31)).choice(len(lab["vis"]), tracks_keep, replace=False))
                     for key in ("coords", "Xw", "vis", "near_edge", "segid"):
                         lab[key] = np.ascontiguousarray(lab[key][keep])
-                self.mem[nm] = (np.load(os.path.join(feat, nm + ".npy")), np.load(os.path.join(clips, nm, "rgb.npy")), lab)
+                rgb = np.load(os.path.join(clips, nm, "rgb.npy"))
+                if rgb_jpeg:
+                    import cv2
+                    rgb = [cv2.imencode(".jpg", f[..., ::-1], [cv2.IMWRITE_JPEG_QUALITY, rgb_jpeg])[1] for f in rgb]
+                self.mem[nm] = (np.load(os.path.join(feat, nm + ".npy")), rgb, lab)
                 if k % 50 == 0:
                     print(f"preload {k}/{len(names)} {time.time() - t0:.0f}s", flush=True)
             print(f"preload done {len(names)} clips {time.time() - t0:.0f}s", flush=True)
@@ -93,6 +97,9 @@ class ClipSet(Dataset):
         rng = np.random.default_rng([self.seed, self.epoch, i, int(time.time_ns() % (1 << 31))])
         if self.mem is not None:
             feat, rgb, lab = self.mem[name]
+            if isinstance(rgb, list):
+                import cv2
+                rgb = np.stack([cv2.imdecode(b, cv2.IMREAD_COLOR)[..., ::-1] for b in rgb])
         else:
             lab = load_clip(self.clips, name)
             rgb = np.load(os.path.join(self.clips, name, "rgb.npy"), mmap_mode="r")
@@ -194,10 +201,11 @@ def main():
     ap.add_argument("--runs", default=os.path.join(E5_BIG, "p3", "runs")); ap.add_argument("--max_steps_this_job", type=int, default=0)
     ap.add_argument("--bench_loader", type=int, default=0, help="only time N batches of the data loader and exit")
     ap.add_argument("--preload", type=int, default=0, help="1: hold features, RGB and labels in RAM")
+    ap.add_argument("--rgb_jpeg", type=int, default=0, help="with --preload: hold RGB as JPEG of this quality (0 = raw)")
     ap.add_argument("--tracks_keep", type=int, default=0, help="with --preload: fixed random subset of tracks per clip (0 = all)")
     a = ap.parse_args()
     if a.bench_loader:
-        tr = clip_list(a.clips, a.feat, "train"); ds = ClipSet(a.clips, a.feat, tr, n_query=a.n_query, preload=bool(a.preload), tracks_keep=a.tracks_keep)
+        tr = clip_list(a.clips, a.feat, "train"); ds = ClipSet(a.clips, a.feat, tr, n_query=a.n_query, preload=bool(a.preload), tracks_keep=a.tracks_keep, rgb_jpeg=a.rgb_jpeg)
         dl = DataLoader(ds, batch_size=a.batch, shuffle=True, num_workers=a.workers, drop_last=True, prefetch_factor=4)
         t0 = time.time(); nb = 0; mb = 0.0
         for b in dl:
@@ -226,7 +234,7 @@ def main():
         print("resumed at", step, flush=True)
     print(f"params {n_params(model)/1e6:.2f}M train clips {len(tr)} val clips {len(va)}", flush=True)
     tok_pos = token_positions(device=dev)
-    ds = ClipSet(a.clips, a.feat, tr, n_query=a.n_query, seed=a.seed, preload=bool(a.preload), tracks_keep=a.tracks_keep)
+    ds = ClipSet(a.clips, a.feat, tr, n_query=a.n_query, seed=a.seed, preload=bool(a.preload), tracks_keep=a.tracks_keep, rgb_jpeg=a.rgb_jpeg)
     logf = open(os.path.join(rd, "log.jsonl"), "a"); evf = open(os.path.join(rd, "eval.jsonl"), "a")
     t_stop = step + a.max_steps_this_job if a.max_steps_this_job else a.steps
     torch.cuda.reset_peak_memory_stats()
