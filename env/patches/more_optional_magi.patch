@@ -1,0 +1,32 @@
+diff --git a/vggt/layers/attention.py b/vggt/layers/attention.py
+index 7014bc9..51bbe3b 100644
+--- a/vggt/layers/attention.py
++++ b/vggt/layers/attention.py
+@@ -17,8 +17,12 @@ import torch
+ from torch import Tensor
+ from torch import nn
+ import torch.nn.functional as F
+-from magi_attention.functional.flex_flash_attn import flex_flash_attn_func
+-from magi_attention.common.enum import AttnMaskType
++try:  # E5 patch: MagiAttention is only needed by the stream model
++    from magi_attention.functional.flex_flash_attn import flex_flash_attn_func
++    from magi_attention.common.enum import AttnMaskType
++except ImportError:
++    flex_flash_attn_func = None
++    AttnMaskType = None
+ # from xformers.ops import memory_efficient_attention
+ 
+ XFORMERS_AVAILABLE = False
+diff --git a/vggt/models/aggregator.py b/vggt/models/aggregator.py
+index ffa079c..1a0091c 100644
+--- a/vggt/models/aggregator.py
++++ b/vggt/models/aggregator.py
+@@ -344,7 +344,7 @@ class Aggregator(nn.Module):
+ 
+         return tokens, frame_idx, intermediates, attn_weight
+ 
+-    def _process_global_attention(self, tokens, B, S, P, C, global_idx, pos=None, save_intermediate=False):
++    def _process_global_attention(self, tokens, B, S, P, C, global_idx, pos=None, save_intermediate=False, save_attn=False):  # E5 patch: forward() passes save_attn
+         """
+         Process global attention blocks. We keep tokens in shape (B, S*P, C).
+         """

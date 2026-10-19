@@ -1,0 +1,55 @@
+diff --git a/evaluation/wan_scene_flow_predictor.py b/evaluation/wan_scene_flow_predictor.py
+index e3ac4a8..eade7ef 100644
+--- a/evaluation/wan_scene_flow_predictor.py
++++ b/evaluation/wan_scene_flow_predictor.py
+@@ -6,6 +6,7 @@ predicted visibility. Loads a stage-2 release checkpoint and produces
+ """
+ 
+ import copy
++import os
+ 
+ import torch
+ import numpy as np
+@@ -83,11 +84,15 @@ class WanSceneFlowPredictor(BasePredictor):
+         self.pj_separate_encoder = pj_separate_encoder
+ 
+         # 1. Load base Wan2.1 pipeline (DiT + VAE + T5)
++        # E5 patch: with a cached empty-prompt context (env TC3R_NULL_CONTEXT) umT5 is not loaded at all;
++        # without it, umT5 is loaded, the context is computed ON THE CPU and cached (umT5 never goes to the GPU).
++        _null_ctx_path = os.environ.get('TC3R_NULL_CONTEXT', '')
++        _skip_t5 = bool(_null_ctx_path) and os.path.exists(_null_ctx_path)
+         self.pipe = WanVideoPipeline.from_pretrained(
+             torch_dtype=torch.bfloat16, device="cpu",
+             model_configs=[
+                 ModelConfig(model_id=model_id, origin_file_pattern="diffusion_pytorch_model*.safetensors"),
+-                ModelConfig(model_id=model_id, origin_file_pattern="models_t5_umt5-xxl-enc-bf16.pth"),
++                *([] if _skip_t5 else [ModelConfig(model_id=model_id, origin_file_pattern="models_t5_umt5-xxl-enc-bf16.pth")]),
+                 ModelConfig(model_id=model_id, origin_file_pattern="Wan2*_VAE.pth"),
+             ],
+         )
+@@ -185,13 +190,18 @@ class WanSceneFlowPredictor(BasePredictor):
+                     if sub_m is not None:
+                         sub_m.to(memory_format=torch.channels_last)
+ 
+-        # 9. Cache null text context
+-        self.pipe.prompter.text_encoder.to(device=device)
+-        with torch.no_grad():
+-            self._null_context = self.pipe.prompter.encode_prompt(
+-                "", positive=True, device=device,
+-            ).to(dtype=torch.bfloat16, device=device)
+-        self.pipe.prompter.text_encoder.to(device="cpu")
++        # 9. Cache null text context (E5 patch: cached file, or computed on the CPU)
++        if _skip_t5:
++            self._null_context = torch.load(_null_ctx_path, map_location='cpu').to(dtype=torch.bfloat16, device=device)
++        else:
++            with torch.no_grad():
++                _ctx = self.pipe.prompter.encode_prompt('', positive=True, device='cpu')
++            self._null_context = _ctx.to(dtype=torch.bfloat16, device=device)
++            if _null_ctx_path:
++                torch.save(_ctx.to(dtype=torch.bfloat16).cpu(), _null_ctx_path)
++            self.pipe.prompter.text_encoder = None
++            self.pipe.text_encoder = None
++            import gc; gc.collect()
+         torch.cuda.empty_cache()
+ 
+         print(f"WanSceneFlowPredictor loaded from {checkpoint_path}")
