@@ -28,9 +28,9 @@ GATES = {"opend4rt": "G0d: median static EPE <= 2x Any4D on the same scenes",
 
 def build(model, args):
     if model == "opend4rt":
-        return em.OpenD4RTAdapter(dense_stride=args.stride)
+        return em.OpenD4RTAdapter(dense_stride=args.stride, ckpt_dir=args.ckpt_dir or None)
     if model == "trackcraft3r":
-        return em.TrackCraft3RAdapter()
+        A = em.TrackCraft3RAdapter(resize_mode=args.resize_mode); A.register_t0 = args.register_t0; return A
     if model == "4rc":
         return em.FourRCAdapter(square_ok=not args.no_square)
     if model == "more":
@@ -60,7 +60,7 @@ def run_model(A, model, paths, meta=None, gt=None, frames=None, cond="gt", da3_d
             d, w2c, intr = em.TrackCraft3RAdapter.make_inputs("da3", da3_dir=da3_dir)
         else:
             d, w2c, intr = em.TrackCraft3RAdapter.make_inputs(cond, meta, gt, frames)
-        return A.predict(paths, d, w2c, intr)
+        return A.predict(paths, d, w2c, intr, register_t0=getattr(A, "register_t0", False))
     if model == "opend4rt" and meta is not None:
         g = em.kubric_cv_geometry(meta, gt, frames)
         H, W = g["depth_z"].shape[1:]
@@ -145,6 +145,9 @@ def main():
     ap.add_argument("--cond", default="gt"); ap.add_argument("--stride", type=int, default=1)
     ap.add_argument("--ref", help="json with per-scene Any4D epe_static (dict scene -> value, or rows)")
     ap.add_argument("--no_square", action="store_true"); ap.add_argument("--save_npz", default="")
+    ap.add_argument("--scenes", default="", help="comma-separated scene names (overrides --n order)")
+    ap.add_argument("--ckpt_dir", default="")
+    ap.add_argument("--resize_mode", default="pad"); ap.add_argument("--register_t0", action="store_true")
     args = ap.parse_args()
     t0 = time.time(); A = build(args.model, args); load_s = time.time() - t0
     import torch
@@ -164,7 +167,8 @@ def main():
     if args.data:
         import e5_kubric_post as kp
         scenes = sorted(d for d in glob.glob(os.path.join(args.data, "*")) if os.path.exists(os.path.join(d, "e5_meta.json"))
-                        and os.path.exists(os.path.join(d, "gt.npz")))[: args.n]
+                        and os.path.exists(os.path.join(d, "gt.npz")))
+        scenes = [d for d in scenes if os.path.basename(d) in args.scenes.split(",")] if args.scenes else scenes[: args.n]
         res["n_scenes_found"] = len(scenes)
         for d in scenes:
             meta, gt, _ = kp.load_scene(d)

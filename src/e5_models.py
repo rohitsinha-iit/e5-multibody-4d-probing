@@ -422,7 +422,21 @@ class TrackCraft3RAdapter:
         shutil.rmtree(tmp)
         return out_dir
 
-    def predict(self, paths, depth_z, w2c, intr4):
+    @staticmethod
+    def _register_t0(dense, x0, K, med=15):
+        """GT-free re-registration (opt-in, non-standard readout; see report). x0 (h,w,2) = projection of the
+        predicted frame-0 points P0(0) into camera 0; ideally x0(p) = p. The smoothed offset field d = x0 - p is
+        undone by resampling every output map at p - d(p) (bilinear). Returns resampled dense (T,h,w,3), d."""
+        from scipy.ndimage import map_coordinates, median_filter
+        h, w = x0.shape[:2]
+        vv, uu = np.meshgrid(np.arange(h, dtype=np.float64), np.arange(w, dtype=np.float64), indexing="ij")
+        d = np.stack([median_filter(x0[..., 0] - uu, med), median_filter(x0[..., 1] - vv, med)], -1)
+        cu, cv = uu - d[..., 0], vv - d[..., 1]
+        out = np.stack([np.stack([map_coordinates(dense[t, ..., c], [cv, cu], order=1, mode="nearest")
+                                  for c in range(3)], -1) for t in range(len(dense))]).astype(np.float32)
+        return out, d
+
+    def predict(self, paths, depth_z, w2c, intr4, register_t0=False):
         import time
         from PIL import Image
         torch = self.torch
@@ -440,13 +454,21 @@ class TrackCraft3RAdapter:
         vis = self.p._last_vis_dense
         vis = vis[:, pt:pt + nh, pl:pl + nw] if vis is not None else None
         fx, fy, cx, cy = intr4
-        K = np.array([[fx * ar, 0, cx * ar], [0, fy * ar, cy * ar], [0, 0, 1.0]])
+        sx, sy = (ar, ar) if ar is not None else (nw / W, nh / H)    # resize_mode 'stretch' returns ar = None
+        K = np.array([[fx * sx, 0, cx * sx], [0, fy * sy, cy * sy], [0, 0, 1.0]])
         T = len(paths)
+        reg = None
+        if register_t0:
+            x0 = _project_cv(dense[0], K)
+            dense, reg = self._register_t0(dense, x0, K)
         x_pred = np.stack([_project_cv(_apply_T(w2c[t], dense[t]), K) for t in range(T)])
         out = dict(pts3d_0=pj0, tracks_cam0=dense, w_disp=dense - dense[0:1], scene_flow=dense - pj0[None],
                    cam_pose=np.linalg.inv(w2c), K=np.tile(K, (T, 1, 1)), x_pred=x_pred, vis=vis,
                    residual0=dense[0] - pj0)
-        out["geom"] = [_geom_affine(W, H, nw, nh, ar, ar, 0.0, 0.0) for _ in range(T)]
+        out["geom"] = [_geom_affine(W, H, nw, nh, sx, sy, 0.0, 0.0) for _ in range(T)]
+        out["resize_mode"] = self.p.resize_mode
+        if reg is not None:
+            out["register_offset_med_px"] = np.median(reg.reshape(-1, 2), 0)
         out["_runtime_s"] = runtime; out["_gpu"] = _gpu_stats(torch)
         return out
 
