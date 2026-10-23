@@ -167,7 +167,8 @@ def main():
     if a.mode in ("fit", "all"):
         r = fit(scenes); print(json.dumps({k: r[k] for k in ("L_star", "threshold", "recall_at_thr_oof", "fpr_at_thr_oof")}))
     if a.mode == "eval":
-        rows = evaluate(H, scenes, load_probe())
+        fzf = os.environ.get("FIT_FROZEN", os.path.join(E5_BIG, "results", "u4a", "fit_derived_values.json"))
+        rows = evaluate(H, scenes, load_probe(json.load(open(fzf))["probe"]["file"] if os.path.exists(fzf) else None))
         os.makedirs(OUT, exist_ok=True)
         f = os.path.join(OUT, f"probe_eval_any4d_{a.split}{a.out_tag}.json"); json.dump(rows, open(f, "w"), indent=1)
         print(f, {k: float(np.nanmedian([r[k] for r in rows])) for k in ("auc_D", "auc_DB", "iou_D", "fpr_B")})
