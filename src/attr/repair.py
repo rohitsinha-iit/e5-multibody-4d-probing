@@ -20,7 +20,11 @@ Evaluation:
           U5b the recovery (e(D) - e(edit)) / (e(D) - e(B)) with B's base run.
   real    Sintel (MonST3R 14-sequence subset, final pass), TUM-dynamics (rgb_90, groundtruth_90), Bonn (rgb_110,
           groundtruth_110): non-overlapping 8-frame windows (pose.windows), Sim(3) per window; ATE, RPE-T, RPE-R.
-Boundary rule (8 px) is not applied here yet (TODO before the Oct 27 freeze; world_slope.boundary_mask).
+Boundary rule (pre-registration): Kubric metrics exclude query points within 8 px (at 512) of a moving-object boundary at
+  frame 0 (primary); every metric is also stored without the rule (suffix _nb).
+Frozen inputs: every head list, projector and probe comes from the fit_derived_values block
+  ($E5_BIG/results/u4a/fit_derived_values.json, identical to the block appended to attr_preregistration.json).
+Outputs: U5a -> $E5_BIG/results/u5a/<eval>/<variant>_g<g>/<scene>.json; U5b -> $E5_BIG/results/u5b/{kubric,real}/.
 """
 import argparse, glob, json, os, struct, sys, time
 import numpy as np
@@ -34,21 +38,38 @@ import e5_step3_analysis as s3  # noqa
 from e5_w2_eval import fit_ab  # noqa
 
 E5_BIG = ic.E5_BIG
-OUT = os.environ.get("U5_RES", os.path.join(E5_BIG, "results", "u5"))
+OUT5A = os.environ.get("U5A_RES", os.path.join(E5_BIG, "results", "u5a"))
+OUT5B = os.environ.get("U5B_RES", os.path.join(E5_BIG, "results", "u5b"))
+FROZEN = os.environ.get("FIT_FROZEN", os.path.join(E5_BIG, "results", "u4a", "fit_derived_values.json"))
 POSESETS = os.path.join(E5_BIG, "realdata", "posesets")
+REALGT = os.path.join(E5_BIG, "realdata", "gt")
+POSE_WINDOWS = os.path.join(E5_BIG, "results", "u2", "pose_windows.json")
 SINTEL14 = ["alley_2", "ambush_4", "ambush_5", "ambush_6", "cave_2", "cave_4", "market_2", "market_5", "market_6",
             "shaman_3", "sleeping_1", "sleeping_2", "temple_2", "temple_3"]
 LORA = {"heads_sel": os.path.join(E5_BIG, "ft", "runs", "heads_sel", "any4d_ft.pth")}
 TV = 6
+GS = [1.5, 2.0]
+N_RANDOM = 20
+
+
+def frozen():
+    return json.load(open(FROZEN))
+
+
+def sha256(f):
+    import hashlib
+    h = hashlib.sha256()
+    with open(f, "rb") as fh:
+        for b in iter(lambda: fh.read(1 << 20), b""):
+            h.update(b)
+    return h.hexdigest()
 
 
 # ------------------------------------------------------------------ U5a directions
-def head_set(kstar_obj, rank_file=None):
+def head_set_from_ptobj(p_obj):
     hs = set(ah.FIVE)
-    rf = rank_file or os.path.join(ic.RES, "rank_obj.json")
-    if os.path.exists(rf) and kstar_obj:
-        for n in [n for n in json.load(open(rf))["order"] if not n.endswith("r")][:kstar_obj]:
-            c = ic.parse(n); hs.add((c[1], c[2]))
+    for n in p_obj:
+        c = ic.parse(n); hs.add((c[1], c[2]))
     return sorted(hs)
 
 
@@ -62,6 +83,17 @@ def orth_proj(U, W):
     Q = U - W @ (W.T @ U)
     Q, _ = torch.linalg.qr(Q)
     return Q @ Q.T
+
+
+def random_projectors(heads, n=N_RANDOM):
+    """iii: per draw r a torch.Generator seeded 1000 + r; heads visited in sorted order; one random 2D subspace per
+    head (QR of a 64x2 Gaussian), P = Q Q^T (rank 2, Frobenius norm sqrt(2), as P_O and P_C)."""
+    out = {hh: [] for hh in heads}
+    for r in range(n):
+        gen = torch.Generator().manual_seed(1000 + r)
+        for hh in sorted(heads):
+            Q, _ = torch.linalg.qr(torch.randn(64, 2, generator=gen)); out[hh].append(Q @ Q.T)
+    return {hh: torch.stack(v) for hh, v in out.items()}
 
 
 def fit_dirs(H, scenes, heads):
@@ -90,45 +122,40 @@ def fit_dirs(H, scenes, heads):
     return dirs
 
 
-def edit_fns(dirs, variant, g, r=0):
+def edit_fns(dirs, rand, variant, g, r=0):
     fns = {}
-    gen = torch.Generator().manual_seed(1000 + r)
     for (b, h), dd in dirs.items():
-        if variant == "i":
-            P, m = dd["P_O"].cuda(), dd["m"].cuda()
-        elif variant == "ii":
-            P, m = dd["P_C"].cuda(), dd["m"].cuda()
-        elif variant == "iii":
-            Q, _ = torch.linalg.qr(torch.randn(64, 2, generator=gen)); P, m = (Q @ Q.T).cuda(), dd["m"].cuda()
-        elif variant == "iv":
+        if variant == "iv":       # E5 whole-head gain: per-run token mean, P = I
             fns[(b, h)] = (lambda x, n, g=g: x.mean(0, keepdim=True) + g * (x - x.mean(0, keepdim=True)))
             continue
-        else:
-            raise ValueError(variant)
+        m = dd["m"].cuda()
+        P = {"i": lambda: dd["P_O"], "ii": lambda: dd["P_C"], "iii": lambda: rand[(b, h)][r]}[variant]().cuda()
         fns[(b, h)] = (lambda x, n, P=P, m=m, g=g: x + (g - 1) * (x - m) @ P)
     return fns
 
 
 # ------------------------------------------------------------------ U5b masks
-def mask_heads(variant, kstar, rng=None, rank_file=None):
-    if variant in ("b", "d"):
-        return [(b, h) for b in range(24) for h in range(12)]
-    order = [n for n in json.load(open(rank_file or os.path.join(ic.RES, "rank_cont.json")))["order"]][:kstar]
-    pc = [(ic.parse(n)[1], ic.parse(n)[2]) for n in order]
-    if variant == "a":
-        return pc
-    out = []
-    for b, h in pc:   # c: block-matched random heads, excluding P_cont
-        pool = [hh for hh in range(12) if (b, hh) not in pc and (b, hh) not in out]
-        out.append((b, int(rng.choice(pool))))
-    return out
-
-
 def masks_for(heads, key):
     m = {}
     for b, h in heads:
         m.setdefault(b, ah.KeyMask([], key)).heads.append(h)
     return m
+
+
+def random_head_sets(p_cont, n=N_RANDOM, seed=0):
+    """c: n sets of k* random heads, block-matched to P_cont (one head of the same block per P_cont head), excluding
+    P_cont heads; numpy default_rng(seed), drawn once and frozen."""
+    rng = np.random.default_rng(seed); pc = [tuple(x) for x in p_cont]; sets = []
+    for _ in range(n):
+        out = []
+        for b, h in pc:
+            pool = [hh for hh in range(12) if (b, hh) not in pc and (b, hh) not in out]
+            out.append((b, int(rng.choice(pool))))
+        sets.append(out)
+    return sets
+
+
+ALL_HEADS = [(b, h) for b in range(24) for h in range(12)]
 
 
 # ------------------------------------------------------------------ Kubric metrics
@@ -138,21 +165,31 @@ def kubric_metrics(o, d, vn="D"):
     xp518 = s3.pred_correspondences(P, TV, off)
     uv = ic.to518(g["q_pix"]); xp = xp518[uv[:, 1], uv[:, 0]]; xp = (xp + 0.5) * 512 / 518 - 0.5
     x1 = g["x1"]; A = g["A"][-1]; Bc = g["B"][-1]; xt = g["x_true"][-1]; vis = g["vis"][-1]
-    mv = (g["q_group"] > 0) & vis; st = (g["q_group"] == 0) & vis
-    y = xp - x1; ab = fit_ab(A[mv], Bc[mv], y[mv])
-    ident = bool(ab["cond_AB"] <= 10 and np.median(np.linalg.norm(A[mv], axis=1)) >= 2 and np.median(np.linalg.norm(Bc[mv], axis=1)) >= 2) if mv.sum() > 20 else False
-    err = np.linalg.norm(xp - xt, axis=1)
-    # s_w: predicted world displacement = scene flow of the query pixel (model world) vs GT world_disp (view 23)
+    g0 = g["group0"].astype(int)
+    keepmap = ws.boundary_mask(g0, moving_ids=[int(i) for i in np.unique(g0[g0 > 0])], radius_px=8, W_ref=512)
+    keep = keepmap[g["q_pix"][:, 1].astype(int), g["q_pix"][:, 0].astype(int)]
     sf = P["scene_flow"][-1][uv[:, 1], uv[:, 0]]
     T0 = P["cam_pose"][0]; zp = ((P["pts3d_0"][uv[:, 1], uv[:, 0]] - T0[:3, 3]) @ T0[:3, :3])[:, 2]
     w2c0 = g["w2c_cv"][0]
     X = g["pts0"][g["q_pix"][:, 1], g["q_pix"][:, 0]]; zg = (X @ w2c0[:3, :3].T + w2c0[:3, 3])[:, 2]
-    sw = ws.world_slope(sf, g["world_disp"][-1], mv, st, z_gt=zg, z_pred=zp, focal=float(g["K"][0, 0]))
+    err = np.linalg.norm(xp - xt, axis=1); y = xp - x1
+    out = {}
+    for suf, kp in (("", keep), ("_nb", np.ones_like(keep))):
+        mv = (g["q_group"] > 0) & vis & kp; st = (g["q_group"] == 0) & vis & kp
+        ab = fit_ab(A[mv], Bc[mv], y[mv]) if mv.sum() > 20 else {"alpha": float("nan"), "beta": float("nan"), "cond_AB": float("nan")}
+        ident = bool(ab["cond_AB"] <= 10 and np.median(np.linalg.norm(A[mv], axis=1)) >= 2
+                     and np.median(np.linalg.norm(Bc[mv], axis=1)) >= 2) if mv.sum() > 20 else False
+        sw = ws.world_slope(sf, g["world_disp"][-1], (g["q_group"] > 0) & vis, (g["q_group"] == 0) & vis, z_gt=zg,
+                            z_pred=zp, focal=float(g["K"][0, 0]), keep=kp)
+        out.update({"alpha" + suf: ab["alpha"], "beta" + suf: ab["beta"], "cond_AB" + suf: ab["cond_AB"],
+                    "identifiable" + suf: ident, "s_w" + suf: sw["s_w"], "static_residual" + suf: sw["static_residual"],
+                    "epe_moving" + suf: float(np.median(err[mv])) if mv.any() else float("nan"),
+                    "epe_static" + suf: float(np.median(err[st])) if st.any() else float("nan"),
+                    "n_moving" + suf: int(mv.sum())})
     gtc = np.linalg.inv(g["w2c_cv"][ah.FRAMES])
     rt, rr = pm.rpe(P["cam_pose"], gtc)
-    return dict(alpha=ab["alpha"], beta=ab["beta"], cond_AB=ab["cond_AB"], identifiable=ident, s_w=sw["s_w"],
-                static_residual=sw["static_residual"], epe_moving=float(np.median(err[mv])) if mv.any() else float("nan"),
-                epe_static=float(np.median(err[st])), rpe_t=rt, rpe_r=rr, ate=pm.ate(P["cam_pose"], gtc))
+    out.update(rpe_t=rt, rpe_r=rr, ate=pm.ate(P["cam_pose"], gtc))
+    return out
 
 
 def e_norm(r, rD):
@@ -210,125 +247,215 @@ def load_imgs(paths):
     return load_images(list(paths), resize_mode="square", size=518, norm_type=ah.CFG["data_norm_type"], patch_size=14)
 
 
+
+# ------------------------------------------------------------------ real flow (E5 KITTI / Sintel protocol)
+REAL_FLOW = {"kitti15": ("rgb", "0,1"), "sintel": ("final", "0,1")}   # E5 FT evaluation: 2 views, wide input
+
+
+def real_flow_samples(ds, limit=0):
+    files = sorted(f for f in glob.glob(os.path.join(REALGT, ds, "*.npz")) if not f.endswith(".tmp.npz"))
+    pas = REAL_FLOW[ds][0]; out = []
+    for f in files:
+        z = np.load(f, allow_pickle=False); meta = json.loads(str(z["meta"]))
+        fr = meta["frames"].get(pas, {})
+        if not all(k in fr for k in ("0", "1")):
+            continue
+        out.append((os.path.basename(f)[:-4], f, [fr["0"], fr["1"]]))
+    return out[:limit] if limit else out
+
+
+class RealFlow:
+    """E5 real-data flow protocol (src/e5_realdata_run.py + e5_realdata_eval.py): Any4D adapter of e5_models with
+    resize 'wide' (fixed_mapping), offsets 0,1; edits are installed on the adapter's network through Any4DHooks."""
+    def __init__(self, ckpt=None):
+        sys.path.insert(0, os.path.join(ah.ANY4D, "scripts")); os.chdir(ah.ANY4D)
+        import e5_models, e5_realdata_eval  # noqa
+        self.ev = e5_realdata_eval
+        kw = {"checkpoint_path": ckpt} if ckpt else {}
+        self.m = e5_models.get_model("any4d", resize_mode="fixed_mapping", **kw)
+        self.H = ah.Any4DHooks(self.m.model)
+
+    def run(self, f, paths, edits=None, seed=0):
+        z = np.load(f, allow_pickle=False); meta = json.loads(str(z["meta"]))
+        gt = {k: z[k] for k in ("x2_true", "x2_static", "group", "valid", "label") if k in z.files}
+        self.H.configure(edits=edits)
+        try:
+            R = self.m.predict(paths)
+        finally:
+            self.H._reset()
+        P = dict(pts3d_0=R["pts3d_0"], scene_flow=R["scene_flow"][[0, 1]], cam_pose=R["cam_pose"][[0, 1]],
+                 K=R["K"][[0, 1]], geom=R["geom"])
+        row = self.ev.evaluate(gt, meta, P, ti=1, seed=seed)
+        return {k: row[k] for k in ("slope", "slope_inst_median", "epe_static", "epe_moving", "n_eval", "n_moving_eval")}
+
+
 # ------------------------------------------------------------------ drivers
-def run_u5a(H, a, scenes):
-    dirs = torch.load(os.path.join(OUT, "u5a_dirs.pt")) if a.variant in ("i", "ii", "iii") else None
-    if a.variant == "iv":
-        dirs = {hh: None for hh in head_set(a.kstar_obj)}
-    draws = range(a.n_random) if a.variant == "iii" else [0]
-    od = os.path.join(OUT, f"u5a_{a.variant}_g{a.g:g}{a.out_tag}"); os.makedirs(od, exist_ok=True)
-    for d in scenes:
-        f = os.path.join(od, ic.sid(d) + ".json")
+def load_dirs():
+    fz = frozen()["u5a"]
+    dirs = torch.load(fz["projector_file"]); rand = torch.load(fz["random_projector_file"])
+    return dirs, rand
+
+
+def u5a_plan(dirs, rand, variants):
+    """(name, edits) for every edit run of variants i..iv at both g values (base run is separate)."""
+    plan = []
+    for g in GS:
+        for v in variants:
+            for r in (range(N_RANDOM) if v == "iii" else [0]):
+                plan.append((f"{v}_g{g:g}", r, edit_fns(dirs, rand, v, g, r)))
+    return plan
+
+
+def run_u5a(a, scenes):
+    """One process: base + variants i, ii, iii (20 draws), iv at g = 1.5 and 2 per scene or sample
+    (a.variant = 'all'), or variant v alone (a.variant = 'v', LoRA checkpoint, g-independent)."""
+    ev = a.eval
+    od = os.path.join(OUT5A, ev, "v" if a.variant == "v" else "edits"); os.makedirs(od, exist_ok=True)
+    if a.variant == "v":
+        plan = [("v", 0, None)]
+    else:
+        dirs, rand = load_dirs(); plan = [("base", 0, None)] + u5a_plan(dirs, rand, ["i", "ii", "iii", "iv"])
+    ck = LORA["heads_sel"] if a.variant == "v" else None
+    if ev == "kubric":
+        H = ah.Any4DHooks(ah.load_any4d(ckpt=ck)); items = [(ic.sid(d), d) for d in scenes]
+    else:
+        RF = RealFlow(ckpt=ck); items = [(n, (f, p)) for n, f, p in real_flow_samples(ev, a.limit)]
+    print(f"[u5a] eval={ev} variant={a.variant} items={len(items)} runs/item={len(plan)}", flush=True)
+    for name, it in items:
+        f = os.path.join(od, name + ".json")
         if os.path.exists(f):
             continue
-        views = ah.load_views(os.path.join(d, "D")); rows = {}
-        o, _ = H.run(views); rows["base"] = kubric_metrics(o, d)
-        if a.variant != "v":
-            for r in draws:
-                o, _ = H.run(views, edits=edit_fns(dirs, a.variant, a.g, r)); rows[f"edit_r{r}"] = kubric_metrics(o, d)
-        json.dump(dict(scene=ic.sid(d), variant=a.variant, g=a.g, heads=[list(h) for h in (dirs or {})], rows=rows),
-                  open(f, "w"), indent=1)
-        print("[u5a]", ic.sid(d), a.variant, flush=True)
+        t0 = time.time(); rows = {}
+        if ev == "kubric":
+            views = ah.load_views(os.path.join(it, "D"))
+        for (vn, r, fns) in plan:
+            if ev == "kubric":
+                o, _ = H.run(views, edits=fns); m = kubric_metrics(o, it)
+            else:
+                m = RF.run(it[0], it[1], edits=fns)
+            rows.setdefault(vn, {})[f"r{r}"] = m
+        json.dump(dict(item=name, eval=ev, variant=a.variant, rows=rows, wall_s=round(time.time() - t0, 1)),
+                  open(f + ".tmp", "w"), indent=1); os.replace(f + ".tmp", f)
+        print("[u5a]", ev, name, a.variant, round(time.time() - t0, 1), "s", flush=True)
+
+
+def u5b_runs(H, views, key_probe, key_gt, fz):
+    """Variants a (probe mask in P_cont), b (probe mask, all heads), c (probe mask in 20 frozen random head sets),
+    d (GT mask, all heads; only when key_gt is given)."""
+    out = {}
+    o, _ = H.run(views, masks=masks_for([tuple(x) for x in fz["p_cont"]], key_probe)); out["a"] = {"r0": o}
+    o, _ = H.run(views, masks=masks_for(ALL_HEADS, key_probe)); out["b"] = {"r0": o}
+    out["c"] = {}
+    for r, hs in enumerate(fz["random_head_sets"]):
+        o, _ = H.run(views, masks=masks_for([tuple(x) for x in hs], key_probe)); out["c"][f"r{r}"] = o
+    if key_gt is not None:
+        o, _ = H.run(views, masks=masks_for(ALL_HEADS, key_gt)); out["d"] = {"r0": o}
+    return out
 
 
 def run_u5b_kubric(H, a, scenes, probe):
-    od = os.path.join(OUT, f"u5b_{a.variant}_kubric{a.out_tag}"); os.makedirs(od, exist_ok=True)
-    rng = np.random.default_rng(0)
+    import motion_probe_allviews as mpa
+    fz = frozen()["u5b"]
+    od = os.path.join(OUT5B, "kubric", a.split); os.makedirs(od, exist_ok=True)
     for d in scenes:
         f = os.path.join(od, ic.sid(d) + ".json")
         if os.path.exists(f):
             continue
+        t0 = time.time()
         views = ah.load_views(os.path.join(d, "D"))
         oD, _ = H.run(views); rD = kubric_metrics(oD, d)
         oB, _ = H.run(ah.load_views(os.path.join(d, "B"))); rB = kubric_metrics(oB, d, "B")
-        if a.variant == "d":
-            key = ah.token_mask_from_pixels(ic.gt_of(d, "D")["moving_mask"][ah.FRAMES], 0.25).reshape(-1).cuda()
-        else:
-            key = mpa.probe_mask(H, views, probe)
-        rows = {"base_D": rD, "base_B": rB}
-        for r in range(a.n_random if a.variant == "c" else 1):
-            hs = mask_heads(a.variant, a.kstar_cont, rng)
-            o, _ = H.run(views, masks=masks_for(hs, key)); m = kubric_metrics(o, d)
-            eD, eB, eE = 1.0, e_norm(rB, rD), e_norm(m, rD)
-            m["recovery"] = (eD - eE) / (eD - eB) if abs(eD - eB) > 1e-9 else float("nan")
-            m["heads"] = [list(h) for h in hs]; rows[f"edit_r{r}"] = m
-        rows["mask_frac"] = float(key.float().mean())
-        json.dump(dict(scene=ic.sid(d), variant=a.variant, rows=rows), open(f, "w"), indent=1)
-        print("[u5b kubric]", ic.sid(d), a.variant, flush=True)
+        key_gt = ah.token_mask_from_pixels(ic.gt_of(d, "D")["moving_mask"][ah.FRAMES], 0.25).reshape(-1).cuda()
+        key = mpa.probe_mask(H, views, probe)
+        lab = ah.token_mask_from_pixels(ic.gt_of(d, "D")["moving_mask"][ah.FRAMES], 0.5).reshape(-1).cuda()
+        rows = {"base_D": rD, "base_B": rB, "mask_frac": float(key.float().mean()),
+                "probe_iou_gt": float((key & lab).sum() / max(int((key | lab).sum()), 1)),
+                "probe_recall_gt": float((key & lab).sum() / max(int(lab.sum()), 1))}
+        eB = e_norm(rB, rD)
+        for vn, rr in u5b_runs(H, views, key, key_gt, fz).items():
+            for r, o in rr.items():
+                m = kubric_metrics(o, d); eE = e_norm(m, rD)
+                m["recovery"] = (1.0 - eE) / (1.0 - eB) if abs(1.0 - eB) > 1e-9 else float("nan")
+                rows.setdefault(vn, {})[r] = m
+        json.dump(dict(scene=ic.sid(d), rows=rows, wall_s=round(time.time() - t0, 1)), open(f + ".tmp", "w"), indent=1)
+        os.replace(f + ".tmp", f)
+        print("[u5b kubric]", ic.sid(d), round(time.time() - t0, 1), "s", flush=True)
 
 
-def run_u5b_real(H, a, probe, setname, edit=None):
-    od = os.path.join(OUT, f"u5b_{a.variant}_{setname}{a.out_tag}"); os.makedirs(od, exist_ok=True)
-    rng = np.random.default_rng(0); n = 0
-    for seq, imgs, gt in pose_sequences(setname):
-        f = os.path.join(od, seq + ".json")
+# ------------------------------------------------------------------ pose windows written by the behaviour track
+def run_u5b_real(H, a, probe):
+    """Exactly the behaviour track's windows (results/u2/pose_windows.json, written once by u2_common.make_pose_windows):
+    each window's own image paths and its GT through u2_common.window_gt_c2w (same frames and GT as the MoRe rows)."""
+    import motion_probe_allviews as mpa
+    import u2_common as u2
+    fz = frozen()["u5b"]
+    J = json.load(open(a.windows)); wins = J["windows"]
+    od = os.path.join(OUT5B, "real"); os.makedirs(od, exist_ok=True)
+    json.dump(dict(source=a.windows, sha256=sha256(a.windows), n_windows=len(wins), per_set=J.get("per_set")),
+              open(os.path.join(od, "_windows_used.json"), "w"), indent=1)
+    print(f"[u5b real] windows {len(wins)} {J.get('per_set')}", flush=True)
+    if a.limit:
+        wins = wins[:a.limit]
+    for w in wins:
+        wid = w["id"].replace("/", "__")
+        f = os.path.join(od, wid + ".json")
         if os.path.exists(f):
             continue
-        rows = []
-        for w in pm.windows(len(imgs), 8, 1):
-            views = load_imgs([imgs[i] for i in w]); g = gt[w]
-            o, _ = H.run(views); base = pm.pose_metrics(o["cam_pose"].double().cpu().numpy(), g)
-            row = {"frames": w, "base": base}
-            if a.variant in ("a", "b", "c"):
-                key = mpa.probe_mask(H, views, probe); row["mask_frac"] = float(key.float().mean())
-                for r in range(a.n_random if a.variant == "c" else 1):
-                    hs = mask_heads(a.variant, a.kstar_cont, rng)
-                    oe, _ = H.run(views, masks=masks_for(hs, key))
-                    row[f"edit_r{r}"] = pm.pose_metrics(oe["cam_pose"].double().cpu().numpy(), g)
-            elif a.variant in ("i", "ii", "iii", "iv"):
-                pass
-            rows.append(row)
-        json.dump(dict(set=setname, seq=seq, variant=a.variant, rows=rows), open(f, "w"), indent=1)
-        n += 1; print("[u5b real]", setname, seq, len(rows), "windows", flush=True)
-        if a.limit and n >= a.limit:
-            break
+        t0 = time.time()
+        views = load_imgs(w["frames"]); g = u2.window_gt_c2w(w)
+        o, _ = H.run(views); base = pm.pose_metrics(o["cam_pose"].double().cpu().numpy(), g)
+        key = mpa.probe_mask(H, views, probe)
+        row = dict(set=w["set"], seq=w["seq"], frame_idx=w["frame_idx"], id=w["id"], base=base,
+                   mask_frac=float(key.float().mean()))
+        for vn, rr in u5b_runs(H, views, key, None, fz).items():
+            row[vn] = {r: pm.pose_metrics(oo["cam_pose"].double().cpu().numpy(), g) for r, oo in rr.items()}
+        json.dump(row, open(f + ".tmp", "w"), indent=1); os.replace(f + ".tmp", f)
+        print("[u5b real]", w["id"], round(time.time() - t0, 1), "s", flush=True)
 
 
 def main():
-    global mpa
     p = argparse.ArgumentParser()
     p.add_argument("--mode", required=True, choices=["dirs", "u5a", "u5b"])
-    p.add_argument("--variant", default="i")
-    p.add_argument("--g", type=float, default=2.0)
-    p.add_argument("--n_random", type=int, default=20)
-    p.add_argument("--kstar_obj", type=int, default=0, help="k* of P_obj (0 = only the five E5 heads)")
-    p.add_argument("--kstar_cont", type=int, default=5)
-    p.add_argument("--eval", default="kubric", help="kubric | sintel | tum | bonn")
+    p.add_argument("--variant", default="all", help="u5a: all | v")
+    p.add_argument("--eval", default="kubric", help="kubric | kitti15 | sintel (u5a); kubric | real (u5b)")
     p.add_argument("--split", default="fit"); p.add_argument("--allow_test", action="store_true")
     p.add_argument("--scenes", default=""); p.add_argument("--limit", type=int, default=0)
-    p.add_argument("--ckpt", default="", help="heads_sel (variant v) or a path")
-    p.add_argument("--out_tag", default="")
+    p.add_argument("--p_obj", default="", help="dirs: comma head list (P_obj = objall top-k*)")
+    p.add_argument("--dirs_out", default=os.path.join(OUT5A, "u5a_dirs.pt"))
+    p.add_argument("--windows", default=POSE_WINDOWS)
     a = p.parse_args()
     if (a.split in ("test", "transfer") or a.eval != "kubric") and not a.allow_test:
-        sys.exit("test, transfer and real-data evaluation require --allow_test (after the Oct 27 pre-registration)")
+        sys.exit("test, transfer and real-data evaluation require --allow_test (after the fit-derived freeze)")
     if a.mode == "dirs" and a.split not in ("fit", "any"):
         sys.exit("directions are fitted on fit scenes only")
-    import motion_probe_allviews as _m; mpa = _m
+    if a.mode != "dirs" and (a.split in ("test", "transfer") or a.eval != "kubric") and not os.path.exists(FROZEN):
+        sys.exit("fit_derived_values not frozen yet: " + FROZEN)
     scenes = ic.split_scenes(a.split)
     if a.scenes:
         w = set(a.scenes.split(",")); scenes = [d for d in scenes if ic.sid(d) in w]
     if a.limit and a.eval == "kubric":
         scenes = scenes[:a.limit]
-    ck = LORA.get(a.ckpt, a.ckpt) if (a.ckpt or a.variant == "v") else None
-    if a.variant == "v" and not ck:
-        ck = LORA["heads_sel"]
-    H = ah.Any4DHooks(ah.load_any4d(ckpt=ck))
-    os.makedirs(OUT, exist_ok=True)
-    print(f"[repair] mode={a.mode} variant={a.variant} g={a.g} eval={a.eval} split={a.split} scenes={len(scenes)} ckpt={ck}", flush=True)
+    os.makedirs(OUT5A, exist_ok=True); os.makedirs(OUT5B, exist_ok=True)
+    print(f"[repair] mode={a.mode} variant={a.variant} eval={a.eval} split={a.split} scenes={len(scenes)}", flush=True)
     if a.mode == "dirs":
-        heads = head_set(a.kstar_obj); dirs = fit_dirs(H, scenes, heads)
-        torch.save(dirs, os.path.join(OUT, "u5a_dirs.pt"))
+        heads = head_set_from_ptobj([x for x in a.p_obj.split(",") if x])
+        H = ah.Any4DHooks(ah.load_any4d())
+        dirs = fit_dirs(H, scenes, heads)
+        torch.save(dirs, a.dirs_out)
+        rp = random_projectors(heads); torch.save(rp, a.dirs_out.replace(".pt", "_random_projectors.pt"))
         json.dump({f"b{b}h{h}": {"cos_OC": v["cos_OC"]} for (b, h), v in dirs.items()},
-                  open(os.path.join(OUT, "u5a_dirs_summary.json"), "w"), indent=1)
-        print("[u5a dirs] saved", len(dirs), "heads")
+                  open(a.dirs_out.replace(".pt", "_summary.json"), "w"), indent=1)
+        print("[u5a dirs] saved", len(dirs), "heads", flush=True)
     elif a.mode == "u5a":
-        run_u5a(H, a, scenes)
+        run_u5a(a, scenes)
     else:
-        probe = mpa.load_probe() if a.variant != "d" else None
+        import motion_probe_allviews as mpa
+        H = ah.Any4DHooks(ah.load_any4d())
+        probe = mpa.load_probe(frozen()["probe"]["file"])
         if a.eval == "kubric":
             run_u5b_kubric(H, a, scenes, probe)
         else:
-            run_u5b_real(H, a, probe, a.eval)
+            run_u5b_real(H, a, probe)
 
 
 if __name__ == "__main__":

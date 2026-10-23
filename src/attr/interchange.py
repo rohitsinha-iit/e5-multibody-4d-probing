@@ -52,7 +52,14 @@ def scene_ok(d):
         all(os.path.exists(os.path.join(d, v, "gt_factorial.npz")) for v in ("A", "B", "C", "D_gt"))
 
 
+EXCLUDED = {"v2_471", "v2_477", "v3float_593"}   # pre-registration excluded_scenes (also unrendered: scene_ok fails)
+
+
 def split_scenes(split, sets=None):
+    return [d for d in _split_scenes(split) if sid(d) not in EXCLUDED]
+
+
+def _split_scenes(split):
     out = []
     if split in ("fit", "test"):
         for d in sorted(glob.glob(os.path.join(FACT, "v2", "*"))):
@@ -87,6 +94,17 @@ class Readout:
         self.mv = grp > 0
         uv = to518(q)
         self.u = torch.as_tensor(uv[self.mv, 0], device="cuda"); self.v = torch.as_tensor(uv[self.mv, 1], device="cuda")
+        # boundary rule (pre-registration): primary F excludes moving queries within 8 px (at 512) of a moving-object
+        # boundary at frame 0 (group0 segmentation); F_nb keeps all moving queries (as the fit screens ran)
+        import world_slope as _ws
+        g0 = g["group0"].astype(int)
+        keep = _ws.boundary_mask(g0, moving_ids=[int(i) for i in np.unique(g0[g0 > 0])], radius_px=8, W_ref=512)
+        kq = keep[q[self.mv, 1].astype(int), q[self.mv, 0].astype(int)]
+        self.boundary_fallback = bool(kq.sum() < 10)
+        if self.boundary_fallback:     # tiny objects: all moving queries (flagged in the summary)
+            kq = np.ones_like(kq)
+        self.kq = torch.as_tensor(np.repeat(kq, 3), device="cuda")
+        self.n_keep = int(kq.sum())
         self.gt_c2w = {}
         for vn in "ABCD":
             gg = gt_of(d, vn)
@@ -142,8 +160,11 @@ class SceneRuns:
 
     def measures(self, y):
         dF = self.ro.F(y) - self.FD; dP = self.ro.pose(y) - self.pD
-        m = {"tau_O": dot(dF, self.dFB) / max(self.nFB, 1e-12),
-             "dF_rel": float(dF.norm()) / max(self.nFB ** 0.5, 1e-12)}
+        kq = self.ro.kq; dFk, dFBk = dF[kq], self.dFB[kq]; nFBk = float((dFBk ** 2).sum())
+        m = {"tau_O": dot(dFk, dFBk) / max(nFBk, 1e-12),          # primary: boundary rule applied
+             "dF_rel": float(dFk.norm()) / max(nFBk ** 0.5, 1e-12),
+             "tau_O_nb": dot(dF, self.dFB) / max(self.nFB, 1e-12),  # without the boundary rule
+             "dF_rel_nb": float(dF.norm()) / max(self.nFB ** 0.5, 1e-12)}
         if self.pC is not None:
             m["tau_C"] = dot(dP, self.dPC) / max(self.nPC, 1e-12)
             m["dpose_rel"] = float(dP.norm()) / max(self.nPC ** 0.5, 1e-12)
@@ -156,7 +177,8 @@ class SceneRuns:
     def summary(self):
         return {"nFB": self.nFB, "nPC": getattr(self, "nPC", None), "rpe_D": self.rpeD, "rpe_B": self.rpeB,
                 "e_B": self.e(self.rpeB), "n_moving_queries": int(self.ro.mv.sum()),
-                "n_moving_tokens_D": int(self.ro.moving_tok["D"].sum())}
+                "n_moving_tokens_D": int(self.ro.moving_tok["D"].sum()), "n_moving_queries_kept": self.ro.n_keep,
+                "boundary_fallback": self.ro.boundary_fallback}
 
 
 # ------------------------------------------------------------------ warp map (secondary camera analysis)
@@ -317,28 +339,41 @@ def patch_set(S, screen, names, src_scene=None):
         for n in names:
             c = parse(n); masks.setdefault(c[1], ah.KeyMask([], km)).heads.append(c[2])
         return dict(masks=masks)
-    pos = ah.view_positions([0], V, scale=(screen == "cam")) if src_scene is None else torch.arange(V * ah.P_TOK + 1, device="cuda")
-    src = src_scene if src_scene is not None else S.cache["B" if screen == "obj" else "C"]
+    if src_scene is not None:          # necessity: resample every position from the donor scene
+        pos = torch.arange(V * ah.P_TOK + 1, device="cuda")
+    elif screen == "objall":           # all view tokens, source B (same camera path as D)
+        pos = ah.view_positions(range(V), V)
+    else:
+        pos = ah.view_positions([0], V, scale=(screen == "cam"))
+    src = src_scene if src_scene is not None else S.cache["B" if screen in ("obj", "objall") else "C"]
     return dict(patches=[ah.Patch(parse(n), pos, src) for n in names])
 
 
-def run_joint(H, d, screen, rk, n_null=40, kgrid=KGRID, seed=0):
-    S = SceneRuns(H, d); rng = np.random.default_rng(seed)
+def run_joint(H, d, screen, rk, n_null=40, kgrid=KGRID, seed=0, null_ks=None, heads=None):
+    """Joint top-k head patch. Null sets are drawn with a fresh generator (seed) per scene, so null draw r is the same
+    component set on every scene (given the same top list): scene-level null statistics are paired by draw.
+    null_ks: k values that get nulls (default: all of kgrid). heads: explicit frozen head order (default rk order)."""
+    S = SceneRuns(H, d)
     met = METRIC[screen]; rows = {}
-    names = [n for n in rk["order"] if not n.endswith("r")]   # P_* are head sets; residual states = layer profile only
+    names = list(heads) if heads else [n for n in rk["order"] if not n.endswith("r")]   # P_* are head sets
     y, _ = H.run(S.views["D"], **patch_set(S, screen, [ah.comp_name(c) for c in ah.all_components(resid=False)]))
     full = S.measures(y); rows["ALL_HEADS"] = full
+    null_ks = kgrid if null_ks is None else null_ks
     for k in kgrid:
         top = names[:k]
         y, _ = H.run(S.views["D"], **patch_set(S, screen, top)); m = S.measures(y)
-        m["completeness"] = m[met] / full[met] if abs(full[met]) > 1e-12 else float("nan")
-        nulls = []
-        for r in range(n_null):
-            ns = matched_null(top, rk["norm"], rng, names)
-            yn, _ = H.run(S.views["D"], **patch_set(S, screen, ns)); nulls.append(S.measures(yn))
-        if nulls:
+        for mm in (met, met + "_nb") if met == "tau_O" else (met,):
+            m["completeness" + mm[len(met):]] = m[mm] / full[mm] if abs(full[mm]) > 1e-12 else float("nan")
+        m["heads"] = top
+        if k in null_ks and n_null:
+            rng = np.random.default_rng(seed + k)
+            nulls = []
+            for r in range(n_null):
+                ns = matched_null(top, rk["norm"], rng, names)
+                yn, _ = H.run(S.views["D"], **patch_set(S, screen, ns)); x = S.measures(yn); x["heads"] = ns
+                nulls.append(x)
             nv = np.array([x[met] for x in nulls])
-            m["null_values"] = nv.tolist(); m["null_pct95"] = float(np.percentile(nv, 95))
+            m["nulls"] = nulls; m["null_values"] = nv.tolist(); m["null_pct95"] = float(np.percentile(nv, 95))
             m["rank_in_null"] = float((nv >= m[met]).mean())
         rows[f"k{k}"] = m
     return {"scene": sid(d), "screen": screen, "summary": S.summary(), "rows": rows}
@@ -357,13 +392,30 @@ def run_necessity(H, d, donor, screen, rk, kgrid=KGRID):
 
 def kstar(screen, scenes, tag="", frac=0.8):
     """k* = smallest k in KGRID whose scene-median completeness (joint top-k effect / ALL_HEADS effect) reaches 80%,
-    from joint runs on FIT scenes (results/u4a/joint_<screen>/). Writes results/u4a/kstar.json (key = screen)."""
+    from joint runs on FIT scenes (results/u4a/joint_<screen><tag>/). Primary completeness uses the boundary rule
+    (tau_O screens); the no-boundary-rule curve and a pooled curve (sum of effects / sum of full effects) are reported.
+    Writes results/u4a/kstar<tag>.json (key = screen)."""
     rows = [json.load(open(f)) for d in scenes for f in glob.glob(os.path.join(RES, f"joint_{screen}{tag}", sid(d) + ".json"))]
-    curve = {k: float(np.nanmedian([r["rows"][f"k{k}"]["completeness"] for r in rows])) if rows else float("nan") for k in KGRID}
-    ks = [k for k in KGRID if curve[k] >= frac]
-    out = {"screen": screen, "n_scenes": len(rows), "completeness_median": curve, "kstar": ks[0] if ks else None,
+    met = METRIC[screen]
+
+    def curve(key):
+        return {k: float(np.nanmedian([r["rows"][f"k{k}"][key] for r in rows])) if rows else float("nan") for k in KGRID}
+
+    def pooled(mk):
+        den = sum(r["rows"]["ALL_HEADS"][mk] for r in rows)
+        return {k: float(sum(r["rows"][f"k{k}"][mk] for r in rows) / den) if rows and abs(den) > 1e-12 else float("nan")
+                for k in KGRID}
+    cm = curve("completeness")
+    ks = [k for k in KGRID if cm[k] >= frac]
+    out = {"screen": screen, "metric": met, "n_scenes": len(rows), "scenes": [r["scene"] for r in rows],
+           "completeness_median": cm, "completeness_pooled": pooled(met), "kstar": ks[0] if ks else None,
            "rule": "smallest k in {1,3,5,10,20} with scene-median completeness >= 0.8 on fit scenes; None = distributed (risk 4)"}
-    f = os.path.join(RES, "kstar.json"); allk = json.load(open(f)) if os.path.exists(f) else {}
+    if met == "tau_O":
+        cnb = curve("completeness_nb"); out["completeness_median_nb"] = cnb
+        ks2 = [k for k in KGRID if cnb[k] >= frac]; out["kstar_nb"] = ks2[0] if ks2 else None
+    names = [n for n in json.load(open(os.path.join(RES, f"rank_{screen}.json")))["order"] if not n.endswith("r")]
+    out["topk_heads"] = names[:out["kstar"]] if out["kstar"] else None
+    f = os.path.join(RES, f"kstar{tag}.json"); allk = json.load(open(f)) if os.path.exists(f) else {}
     allk[screen] = out; json.dump(allk, open(f + ".tmp", "w"), indent=1); os.replace(f + ".tmp", f)
     return out
 
@@ -381,6 +433,9 @@ def main():
     p.add_argument("--n_null", type=int, default=40)
     p.add_argument("--rank_from", default="", help="rank json (default results/u4a/rank_<screen>.json)")
     p.add_argument("--out_tag", default="")
+    p.add_argument("--null_ks", default="", help="comma k list that get nulls (default all k)")
+    p.add_argument("--kgrid", default="1,3,5,10,20")
+    p.add_argument("--frozen", default="", help="fit_derived_values json (heads lists frozen before test runs)")
     a = p.parse_args()
     if a.split in ("test", "transfer") and a.mode != "rank" and not a.allow_test:
         sys.exit("test/transfer split requires --allow_test (after the Oct 27 pre-registration)")
@@ -409,10 +464,15 @@ def main():
         if a.mode == "screen":
             r = run_screen(H, d, a.screen, (ci, cn), comps)
         elif a.mode == "joint":
-            r = run_joint(H, d, a.screen, rk, a.n_null)
+            kg = [int(x) for x in a.kgrid.split(",")]
+            nk = [int(x) for x in a.null_ks.split(",")] if a.null_ks else None
+            heads = None
+            if a.frozen:   # frozen order: the fit rank order (first 20 heads) recorded in the pre-registration block
+                fz = json.load(open(a.frozen)); heads = fz["rank_order_heads_top20"][a.screen]
+            r = run_joint(H, d, a.screen, rk, a.n_null, kgrid=kg, null_ks=nk, heads=heads)
         else:
             others = [x for x in split_scenes(a.split) if x != d]
-            r = run_necessity(H, d, others[int(drng.integers(len(others)))], a.screen, rk)
+            r = run_necessity(H, d, others[int(drng.integers(len(others)))], a.screen, rk)   # donor: same split
         r["peak_gpu_gb"] = round(torch.cuda.max_memory_allocated() / 1e9, 2)
         json.dump(r, open(f + ".tmp", "w"), indent=1); os.replace(f + ".tmp", f)
         print(f"[interchange] {sid(d)} {a.mode}/{a.screen} {round(time.time()-t0,1)} s peak {r['peak_gpu_gb']} GB", flush=True)

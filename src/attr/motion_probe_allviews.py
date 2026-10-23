@@ -9,7 +9,7 @@ Steps:
            fp16, per layer), plus the token labels and positions.
   fit      5-fold CV grouped by scene for every L (logistic regression, standardised features, L2 1e-3, full-batch
            LBFGS in torch); L* = best mean held-out AUC; refit on all fit scenes; threshold = 90% recall on the
-           out-of-fold scores at L*. Writes $E5_BIG/results/u5/probe_any4d.json and probe_any4d.pt.
+           out-of-fold scores at L*. Writes $E5_BIG/results/u5b/probe_any4d.json and probe_any4d.pt.
   eval     on given scenes (split rule as interchange.py): AUC over all tokens of D and B, and mask IoU of the predicted
            token mask vs the GT token mask (D, all 7 views; B false-positive rate).
 Library use: probe_mask(H, views, probe) runs pass 1 (capture block L* only) and returns the bool (V*P,) key mask.
@@ -24,7 +24,7 @@ import interchange as ic  # noqa
 E5_BIG = ic.E5_BIG
 LAYERS = [13, 15, 17, 19, 21]
 FEAT = os.environ.get("PROBE_FEAT", os.path.join(E5_BIG, "attr", "probe_feats", "any4d"))
-OUT = os.environ.get("U5_RES", os.path.join(E5_BIG, "results", "u5"))
+OUT = os.environ.get("U5B_RES", os.path.join(E5_BIG, "results", "u5b"))
 
 
 def auc(y, s):
