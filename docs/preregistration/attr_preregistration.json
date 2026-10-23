@@ -1,0 +1,87 @@
+{
+ "title": "E5 + P3 + Idea 1 (motion attribution): pre-registration, core",
+ "written": "2026-10-21 (IST), before any test-split or transfer-split result of U2, U4, U5",
+ "plans": {
+  "unified_plan": "docs/plans/Unified_E5_P3_Idea1_implementation_plan.md",
+  "decisions": "env/a6000_decisions.md"
+ },
+ "decisions_approved_by_user": [
+  "factorial set as rendered (native bpy 4.3 port; D re-renders match the 4090 data: v2 98/98 GT motions equal, median-flow within 0.01 px in 95/98, max 0.18 px)",
+  "OpenD4RT: 32CLIP checkpoint, 24-frame clips padded to 32 by repeating the last frame (pad_to_clip=True); world readouts r3 (s_w) and r4 primary, camera-frame r1 and r2 secondary",
+  "TrackCraft3R: stretch resize mode, no t0 re-registration, primary; conditions (i) GT depth+cameras and (ii) DA3 primary, (iii) identity cameras exploratory",
+  "X2 (U3) paused by the user on 2026-10-20; its test T3' is removed from the confirmatory family; X2 may later be reported as framing only",
+  "lead decision: all-view object screen (objall; B and D share the camera path, so all views are pixel-aligned) is the primary object screen and the H3 test; the view-0 object screen is secondary"
+ ],
+ "excluded_scenes": {
+  "reason": "generator could not place the moving body (same scenes unusable on the 4090)",
+  "v2": [
+   "confound_glued_s471",
+   "confound_glued_s477"
+  ],
+  "v3float": [
+   "confound_glued_s593"
+  ]
+ },
+ "splits": {
+  "fit": "v2 even seeds (50 base scenes)",
+  "test": "v2 odd seeds (48 usable base scenes)",
+  "transfer": "v3float (69 usable base scenes)",
+  "real": {
+   "kitti15": "E5 protocol, 200 pairs",
+   "sintel": "E5 protocol, 217 samples",
+   "posesets": "Sintel 14-sequence MonST3R subset, TUM-dynamics first 90 frames stride 3, Bonn MonST3R protocol; windows of 8 consecutive evaluation frames, Sim(3) alignment per window"
+  }
+ },
+ "views": {
+  "any4d_vggt": [
+   0,
+   4,
+   8,
+   12,
+   16,
+   20,
+   23
+  ],
+  "target_view": 23,
+  "opend4rt": "all 24 frames padded to 32",
+  "trackcraft3r": [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14,
+   16,
+   18,
+   20,
+   23
+  ]
+ },
+ "metrics": "unified plan section 6 (alpha, beta with identifiability filter cond<=10 and median |A|,|B|>=2 px; s_w through-origin slope after per-scene median-depth scale alignment; static residual; ATE Sim3, RPE-T, RPE-R as RMSE over consecutive views; spurious ego-motion; tau, lambda, kappa; completeness)",
+ "boundary_rule": "exclude points within 8 px (at 512) of moving-object boundaries; primary = with exclusion; also reported without",
+ "statistics": {
+  "bootstrap_resamples": 2000,
+  "bootstrap_seed": 0,
+  "ci": 0.95,
+  "unit": "base scene (Kubric) or window (pose sets)",
+  "correction": "Holm over the confirmatory family below, alpha = 0.05"
+ },
+ "confirmatory_family": {
+  "T1a": "OpenD4RT r3 world-frame slope s_w < 0.9; one-sided scene bootstrap on v2 test + v3float transfer",
+  "T1b": "TrackCraft3R condition (ii) s_w < 0.9; same test",
+  "T1_validity": "lifted CoTracker3 and lifted RAFT must give s_w >= 0.9 for T1 to be read",
+  "T5p": "U5a object-gain edit (i) A-direction orthogonal to B, g = 1.5 primary (g = 2 secondary) vs 20 random 2D projectors of matched norm: alpha change, one-sided, paired over test scenes",
+  "T7": "factorial interaction I = alpha_D - alpha_C for Any4D on test scenes identifiable in D, two-sided paired scene bootstrap; |I| >= 0.10 effect (negative I supports account K), |I| < 0.05 with CI including 0 = no interaction (supports account R), otherwise inconclusive; repeated with s_w (descriptive)",
+  "T8": "contamination dRPE-R(D - B) > 0 for Any4D, one-sided paired bootstrap over test scenes; VGGT descriptive",
+  "T9": "H1 double dissociation at k*: P_obj (objall top-k*) tau_O and P_cam (cam top-k*) tau_C both above the 95th percentile of 40 matched random nulls and both leakages <= 0.2; p = max of the two null ranks",
+  "T10": "U5b contamination masking (a) internal-probe mask in top-k* contamination heads vs (c) k* random heads (20 draws, matched block distribution): real pose-set RPE-R, one-sided, paired over windows"
+ },
+ "success_rules": {
+  "U5a": "(i) alpha +0.10 or more, beta change <= 0.03, moving EPE change <= +1 px, static EPE <= +5%; and (ii) B-direction edit moves beta >= 0.10 with alpha change <= 0.03",
+  "U5b": "(a) beats (c) (T10), reaches >= 50% of the oracle GT-mask-all-heads improvement (d), moving EPE change <= +1 px; if Any4D contamination CI includes 0 on Kubric and real data, U5b is reported as null and moves to VGGT (descriptive)",
+  "T9_k": "k* = smallest k in {1,3,5,10,20} reaching 80% completeness on FIT scenes, per screen"
+ },
+ "fit_derived_values": "TO BE APPENDED by the mechanism run before any test-split run: k* per screen, top-k* head lists, motion-probe layer L* and its 90%-recall threshold, U5a projector files, U5b head list; each with sha256 and a frozen_at timestamp. No test-split or transfer-split mechanism result may be computed before this block exists."
+}
