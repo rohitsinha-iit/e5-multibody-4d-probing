@@ -1,0 +1,30 @@
+[
+ {
+  "model": "more",
+  "split": "fit",
+  "set": "v2",
+  "seed": 482,
+  "scene": "confound_glued_s482",
+  "variant": "B",
+  "boundary": "excl8",
+  "pose_ate": 0.029281640265717942,
+  "pose_rpe_t": 0.032545438307711456,
+  "pose_rpe_r": 0.7673591638039929,
+  "runtime_s": 0.557246208190918,
+  "peak_reserved_gb": 9.568359375
+ },
+ {
+  "model": "more",
+  "split": "fit",
+  "set": "v2",
+  "seed": 482,
+  "scene": "confound_glued_s482",
+  "variant": "B",
+  "boundary": "none",
+  "pose_ate": 0.029281640265717942,
+  "pose_rpe_t": 0.032545438307711456,
+  "pose_rpe_r": 0.7673591638039929,
+  "runtime_s": 0.557246208190918,
+  "peak_reserved_gb": 9.568359375
+ }
+]

@@ -1,0 +1,44 @@
+[run_gpu] Monday 19 October 2026 11:14:24 AM IST GPU=1 pin= need=10 venv=more args=/data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py --model more --data /data2/DATA/rohit_sinha/e5/big/data/v2/out --n 10 --out /data2/DATA/rohit_sinha/e5/big/results/newmodels/gate_more.json
+0, 15 MiB, 48656 MiB
+1, 15 MiB, 48656 MiB
+2, 9613 MiB, 39058 MiB
+3, 9609 MiB, 39062 MiB
+/data2/DATA/rohit_sinha/e5/big/venvs/more/lib/python3.10/site-packages/hydra/_internal/defaults_list.py:251: UserWarning: In 'omniworld_full': Defaults list is missing `_self_`. See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/default_composition_order for more information
+  warnings.warn(msg, UserWarning)
+/data2/DATA/rohit_sinha/e5/repo/src/e5_models.py:569: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.no_grad(), torch.cuda.amp.autocast(dtype=self.dtype):
+{"scene": "camrot_s305", "runtime_s": 2.20169734954834, "peak_alloc_gb": 9.062057971954346, "peak_reserved_gb": 10.876953125, "epe_static": 38.76796973938117, "epe_moving": 87.67283609451913, "n_static": 136404, "n_moving": 285, "frac_inside": 1.0, "pose_ate": 1.5242406228109212e-15, "pose_rpe_t": 2.438455167473406e-15, "pose_rpe_r": 0.41875494355669124}
+{"scene": "confound_glued_s469", "runtime_s": 0.5342390537261963, "peak_alloc_gb": 9.063411235809326, "peak_reserved_gb": 10.876953125, "epe_static": 28.06743343080859, "epe_moving": 92.89394518678162, "n_static": 136059, "n_moving": 9486, "frac_inside": 1.0, "pose_ate": 0.027967660505479178, "pose_rpe_t": 0.0324210495877109, "pose_rpe_r": 0.8432713577990123}
+{"scene": "confound_same_s451", "runtime_s": 0.5370595455169678, "peak_alloc_gb": 9.063411235809326, "peak_reserved_gb": 10.876953125, "epe_static": 53.24971225035689, "epe_moving": 137.04143785748533, "n_static": 113092, "n_moving": 8832, "frac_inside": 1.0, "pose_ate": 0.044784828826895134, "pose_rpe_t": 0.043875034617999444, "pose_rpe_r": 0.7565300349132287}
+{"scene": "epi_aligned_s435", "runtime_s": 0.5357086658477783, "peak_alloc_gb": 9.063411235809326, "peak_reserved_gb": 10.876953125, "epe_static": 58.81251025426042, "epe_moving": 217.5829814994401, "n_static": 92207, "n_moving": 1907, "frac_inside": 1.0, "pose_ate": 0.02336854471985909, "pose_rpe_t": 0.04461025865086376, "pose_rpe_r": 0.2172820780463854}
+{"scene": "n2_generic_s301", "runtime_s": 0.5353128910064697, "peak_alloc_gb": 9.063411235809326, "peak_reserved_gb": 10.876953125, "epe_static": 50.86466865416997, "epe_moving": 76.02731985128612, "n_static": 127165, "n_moving": 13525, "frac_inside": 1.0, "pose_ate": 0.035871623532879815, "pose_rpe_t": 0.0447638923107607, "pose_rpe_r": 0.9004912815239935}
+{"scene": "n2_generic_s302", "runtime_s": 0.5364320278167725, "peak_alloc_gb": 9.063411235809326, "peak_reserved_gb": 10.876953125, "epe_static": 43.345304808552, "epe_moving": 115.0427506279247, "n_static": 139719, "n_moving": 1144, "frac_inside": 1.0, "pose_ate": 0.04820439609162866, "pose_rpe_t": 0.04556321939076933, "pose_rpe_r": 0.7440712211292038}
+{"scene": "n2_generic_s401", "runtime_s": 0.5364406108856201, "peak_alloc_gb": 9.063411235809326, "peak_reserved_gb": 10.876953125, "epe_static": 46.72673116402589, "epe_moving": 76.24646700129968, "n_static": 140342, "n_moving": 2772, "frac_inside": 1.0, "pose_ate": 0.035430196775739047, "pose_rpe_t": 0.03520779869898374, "pose_rpe_r": 0.9213321682347285}
+{"scene": "n3_generic_s303", "runtime_s": 0.5374877452850342, "peak_alloc_gb": 9.063411235809326, "peak_reserved_gb": 10.876953125, "epe_static": 27.654713588657863, "epe_moving": 133.29923765413676, "n_static": 133217, "n_moving": 4283, "frac_inside": 1.0, "pose_ate": 0.02652670640363383, "pose_rpe_t": 0.03426235530137559, "pose_rpe_r": 0.5722845091846741}
+{"scene": "n3_generic_s409", "runtime_s": 0.5368213653564453, "peak_alloc_gb": 9.063411235809326, "peak_reserved_gb": 10.876953125, "epe_static": 44.52038194363537, "epe_moving": 66.94174341315437, "n_static": 118134, "n_moving": 7848, "frac_inside": 1.0, "pose_ate": 0.01622463910135681, "pose_rpe_t": 0.019348653917647094, "pose_rpe_r": 0.7648370282418909}
+{"scene": "planar_s443", "runtime_s": 0.5366764068603516, "peak_alloc_gb": 9.063411235809326, "peak_reserved_gb": 10.876953125, "epe_static": 44.320223498861175, "epe_moving": 110.37412626906783, "n_static": 126685, "n_moving": 3714, "frac_inside": 1.0, "pose_ate": 0.042548902813577934, "pose_rpe_t": 0.042183253667605086, "pose_rpe_r": 1.4424309540068716}
+WROTE /data2/DATA/rohit_sinha/e5/big/results/newmodels/gate_more.json
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/more/bin/python /data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py --model more --data /data2/DATA/rohit_sinha/e5/big/data/v2/out --n 10 --out /data2/DATA/rohit_sinha/e5/big/results/newmodels/gate_more.json"
+	User time (seconds): 70.21
+	System time (seconds): 36.36
+	Percent of CPU this job got: 138%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:16.96
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 10996820
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 408
+	Minor (reclaiming a frame) page faults: 3622233
+	Voluntary context switches: 10186
+	Involuntary context switches: 1226
+	Swaps: 0
+	File system inputs: 11285408
+	File system outputs: 88
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[run_gpu] exit 0 Monday 19 October 2026 11:15:41 AM IST

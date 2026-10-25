@@ -1,0 +1,61 @@
++ export E5_BIG=/data2/DATA/rohit_sinha/e5/big
++ E5_BIG=/data2/DATA/rohit_sinha/e5/big
++ export XDG_CACHE_HOME=/data2/DATA/rohit_sinha/e5/cache UV_CACHE_DIR=/data2/DATA/rohit_sinha/e5/cache/uv PIP_CACHE_DIR=/data2/DATA/rohit_sinha/e5/cache/pip HF_HOME=/data2/DATA/rohit_sinha/e5/big/models/hf
++ XDG_CACHE_HOME=/data2/DATA/rohit_sinha/e5/cache
++ UV_CACHE_DIR=/data2/DATA/rohit_sinha/e5/cache/uv
++ PIP_CACHE_DIR=/data2/DATA/rohit_sinha/e5/cache/pip
++ HF_HOME=/data2/DATA/rohit_sinha/e5/big/models/hf
++ mkdir -p /data2/DATA/rohit_sinha/e5/big/venvs /data2/DATA/rohit_sinha/e5/big/models/src /data2/DATA/rohit_sinha/e5/big/models/hf /data2/DATA/rohit_sinha/e5/big/models/ckpt /data2/DATA/rohit_sinha/e5/big/data /data2/DATA/rohit_sinha/e5/big/realdata /data2/DATA/rohit_sinha/e5/big/results /data2/DATA/rohit_sinha/e5/big/logs/newmodels /data2/DATA/rohit_sinha/e5/cache /data2/DATA/rohit_sinha/e5/cache/uv /data2/DATA/rohit_sinha/e5/cache/pip
++ cd /data2/DATA/rohit_sinha/e5/big/models/src
++ for r in Lijiaxin0111/Open-d4rt cvlab-kaist/TrackCraft3r ByteDance-Seed/depth-anything-3 Luo-Yihang/4RC HellexF/MoRe
+++ basename Lijiaxin0111/Open-d4rt
++ n=Open-d4rt
++ '[' -d Open-d4rt ']'
++ git clone --depth 50 https://github.com/Lijiaxin0111/Open-d4rt Open-d4rt
+Cloning into 'Open-d4rt'...
++ cd Open-d4rt
++ git log -1 '--format=Open-d4rt %H %cd'
+Open-d4rt 403290a6e7ea6262a1f20f8c02d5461cd7b6c9b3 Wed Aug 12 12:30:33 2026 +0800
++ for r in Lijiaxin0111/Open-d4rt cvlab-kaist/TrackCraft3r ByteDance-Seed/depth-anything-3 Luo-Yihang/4RC HellexF/MoRe
+++ basename cvlab-kaist/TrackCraft3r
++ n=TrackCraft3r
++ '[' -d TrackCraft3r ']'
++ git clone --depth 50 https://github.com/cvlab-kaist/TrackCraft3r TrackCraft3r
+Cloning into 'TrackCraft3r'...
++ cd TrackCraft3r
++ git log -1 '--format=TrackCraft3r %H %cd'
+TrackCraft3r 21e8fcaf4b6375b3044cead210d5808e1d81760b Thu May 14 20:16:54 2026 +0900
++ for r in Lijiaxin0111/Open-d4rt cvlab-kaist/TrackCraft3r ByteDance-Seed/depth-anything-3 Luo-Yihang/4RC HellexF/MoRe
+++ basename ByteDance-Seed/depth-anything-3
++ n=depth-anything-3
++ '[' -d depth-anything-3 ']'
++ git clone --depth 50 https://github.com/ByteDance-Seed/depth-anything-3 depth-anything-3
+Cloning into 'depth-anything-3'...
++ cd depth-anything-3
++ git log -1 '--format=depth-anything-3 %H %cd'
+depth-anything-3 3d835ec1a5802d64a8b8b15f817a1ab54809bfe4 Mon Jul 27 14:03:55 2026 +0800
++ for r in Lijiaxin0111/Open-d4rt cvlab-kaist/TrackCraft3r ByteDance-Seed/depth-anything-3 Luo-Yihang/4RC HellexF/MoRe
+++ basename Luo-Yihang/4RC
++ n=4RC
++ '[' -d 4RC ']'
++ git clone --depth 50 https://github.com/Luo-Yihang/4RC 4RC
+Cloning into '4RC'...
++ cd 4RC
++ git log -1 '--format=4RC %H %cd'
+4RC a08ca0a5394c7c5f6a2a3423223cb98f85f84e6a Tue Jul 7 17:40:45 2026 +0000
++ for r in Lijiaxin0111/Open-d4rt cvlab-kaist/TrackCraft3r ByteDance-Seed/depth-anything-3 Luo-Yihang/4RC HellexF/MoRe
+++ basename HellexF/MoRe
++ n=MoRe
++ '[' -d MoRe ']'
++ git clone --depth 50 https://github.com/HellexF/MoRe MoRe
+Cloning into 'MoRe'...
++ cd MoRe
++ git log -1 '--format=MoRe %H %cd'
+MoRe f330a3499dcb96e53715156c23bf32fb4d01cd92 Tue Apr 21 11:53:33 2026 +0800
++ /data1/rohit_sinha/miniconda3/bin/python3 -m venv /data2/DATA/rohit_sinha/e5/big/venvs/tools
++ /data2/DATA/rohit_sinha/e5/big/venvs/tools/bin/pip install -q uv huggingface_hub gdown hf_transfer
+
+[notice] A new release of pip is available: 25.1.1 -> 26.2.1
+[notice] To update, run: /data2/DATA/rohit_sinha/e5/big/venvs/tools/bin/python3 -m pip install --upgrade pip
++ /data2/DATA/rohit_sinha/e5/big/venvs/tools/bin/uv --version
+uv 0.13.1 (x86_64-unknown-linux-gnu)

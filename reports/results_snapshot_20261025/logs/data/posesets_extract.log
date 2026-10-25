@@ -1,0 +1,23 @@
+extract tum 08:42:39
+rc 0 08:56:24
+extract davis 08:56:24
+rc 0 08:58:00
+extract bonn 08:58:00
+rc 0 09:41:44
+== sintel top: README_depth.txt README.txt sdk training 
+   files 6400  size 3.5G
+   mask-like dirs: 
+   mask-like dir count: 0
+== tum top: rgbd_dataset_freiburg3_sitting_halfsphere rgbd_dataset_freiburg3_sitting_rpy rgbd_dataset_freiburg3_sitting_static rgbd_dataset_freiburg3_sitting_xyz rgbd_dataset_freiburg3_walking_halfsphere rgbd_dataset_freiburg3_walking_rpy rgbd_dataset_freiburg3_walking_static rgbd_dataset_freiburg3_walking_xyz 
+   files 15495  size 5.0G
+   mask-like dirs: 
+   mask-like dir count: 0
+== davis top: DAVIS 
+   files 18630  size 957M
+   mask-like dirs: davis/DAVIS/masked_images davis/DAVIS/masked_images/480p davis/DAVIS/masked_images/480p/libby davis/DAVIS/masked_images/480p/crossing davis/DAVIS/masked_images/480p/pigs davis/DAVIS/masked_images/480p/lucia davis/DAVIS/masked_images/480p/rallye davis/DAVIS/masked_images/480p/car-turn davis/DAVIS/masked_images/480p/night-race davis/DAVIS/masked_images/480p/drone davis/DAVIS/masked_images/480p/varanus-cage davis/DAVIS/masked_images/480p/stroller 
+   mask-like dir count: 92
+== bonn top: rgbd_bonn_dataset rgbd_bonn_groundtruth_1mm_section.ply rgbd_bonn_groundtruth_1mm_section.zip rgbd_bonn_groundtruth.ply rgbd_bonn_groundtruth.zip 
+   files 64914  size 40G
+   mask-like dirs: 
+   mask-like dir count: 0
+EXTRACT_DONE

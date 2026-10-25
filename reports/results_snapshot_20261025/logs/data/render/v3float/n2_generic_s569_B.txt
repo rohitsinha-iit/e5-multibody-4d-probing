@@ -1,0 +1,93 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792499810.232032 1586476 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792499812.028255 1586476 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+INFO:kubric.utils:{ 'far_hi': 3.2,
+  'far_lo': 2.4,
+  'far_px': 0.22,
+  'float_height': 0.6,
+  'frame_end': 24,
+  'frame_rate': 12,
+  'frame_start': 1,
+  'freeze_camera': 0,
+  'freeze_objects': 1,
+  'grounded': 1,
+  'gso_assets': 'gs://kubric-public/assets/GSO/GSO.json',
+  'hdri_assets': 'gs://kubric-public/assets/HDRI_haven/HDRI_haven.json',
+  'job_dir': '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial',
+  'kubasic_assets': 'gs://kubric-public/assets/KuBasic/KuBasic.json',
+  'logging_level': 'INFO',
+  'min_sep_px': 25.0,
+  'motion_scale_cam': 1.0,
+  'motion_scale_obj': 1.0,
+  'no_shadows': 1,
+  'resolution': '512x512',
+  'samples': 32,
+  'scratch_dir': '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B',
+  'seed': 569,
+  'size_hi': 2.2,
+  'size_lo': 1.4,
+  'split': 'n2_generic',
+  'step_rate': 240}
+INFO:root:Using scratch directory: /data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B
+INFO:root:Using output directory: /data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial
+INFO:root:Created AssetSource 'KuBasic' with '15' assets at URI='gs://kubric-public/assets/KuBasic'
+INFO:root:Created AssetSource 'GSO' with '1033' assets at URI='gs://kubric-public/assets/GSO'
+INFO:root:Created AssetSource 'HDRI_haven' with '509' assets at URI='gs://kubric-public/assets/HDRI_haven'
+Loaded image from: '/data2/DATA/rohit_sinha/e5/cache/tmp/GSOlr4q5o2t/Cascadia_8_Color_AquariusHibscsBearingSeaBlk_Size_50/texture.png'
+Loaded image from: '/data2/DATA/rohit_sinha/e5/cache/tmp/GSOlr4q5o2t/JBL_Charge_Speaker_portable_wireless_wired_Green/texture.png'
+Loaded image from: '/data2/DATA/rohit_sinha/e5/cache/tmp/GSOlr4q5o2t/In_Green_Company_Surface_Saver_Ring_10_Terra_Cotta/texture.png'
+Loaded image from: '/data2/DATA/rohit_sinha/e5/cache/tmp/GSOlr4q5o2t/MONKEY_BOWLING/texture.png'
+INFO:root:shadows disabled on 4 objects
+INFO:kubric.renderer.blender:Using scratch rendering folder: '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0001.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0002.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0003.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0004.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0005.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0006.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0007.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0008.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0009.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0010.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0011.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0012.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0013.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0014.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0015.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0016.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0017.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0018.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0019.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0020.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0021.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0022.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0023.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v3float_n2_generic_s569_B/images/frame_0024.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00000.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00002.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00001.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00003.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00004.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00010.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00007.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00005.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00012.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00008.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00013.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00006.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00011.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00014.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00009.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00015.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00016.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00017.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00018.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00019.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00020.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00021.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00023.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v3float/569/B.partial/rgba_00022.png'
+INFO:root:Done!
+INFO:root:kb.done(): ignored No module named 'hypertune'
+Error: Not freed memory blocks: 1, total unfreed memory 0.001335 MB

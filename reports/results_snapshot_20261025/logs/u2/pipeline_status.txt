@@ -1,0 +1,28 @@
+2026-10-23 23:16:46 pipeline start (pid 4174143)
+pose windows 230 {'sintel': 77, 'tum': 88, 'bonn': 65}
+2026-10-23 23:16:46 start any4d
+2026-10-23 23:50:12 end any4d rc=0
+2026-10-24 00:10:27 start vggt
+2026-10-24 02:17:10 end vggt rc=0
+2026-10-24 02:27:19 start 4rc
+2026-10-24 02:58:24 end 4rc rc=0
+2026-10-24 03:09:44 start more
+2026-10-24 03:20:08 end more rc=0
+2026-10-24 03:21:37 start cotracker3
+2026-10-24 04:49:51 end cotracker3 rc=0
+2026-10-24 04:56:35 start raft
+2026-10-24 05:06:51 end raft rc=0
+2026-10-24 05:18:21 start opend4rt
+2026-10-24 09:56:04 end opend4rt rc=0
+2026-10-24 10:40:05 start da3
+2026-10-24 10:57:46 end da3 rc=0
+2026-10-24 11:00:46 start tc3r_gt
+2026-10-24 12:15:38 end tc3r_gt rc=0
+2026-10-24 12:21:20 start tc3r_da3
+2026-10-24 14:08:31 end tc3r_da3 rc=0
+2026-10-24 14:15:40 start tc3r_identity
+2026-10-24 14:26:15 end tc3r_identity rc=0
+2026-10-24 14:30:02 start cotracker3_sintel
+2026-10-25 02:22:01 end cotracker3_sintel rc=0
+units done 109 item errors 0
+2026-10-25 02:33:21 pipeline end

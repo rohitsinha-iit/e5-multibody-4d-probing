@@ -1,0 +1,969 @@
+[run_gpu] Monday 19 October 2026 09:19:09 AM IST GPU=3 pin=3 need=14 venv=4rc args=-m accelerate.commands.launch --num_processes 1 --main_process_port 29558 eval/relpose/launch.py --output_dir /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum/ --eval_dataset tum --checkpoint Luo-Yihang/4RC
+0, 34084 MiB, 14587 MiB
+1, 31499 MiB, 17171 MiB
+2, 20848 MiB, 27823 MiB
+3, 12228 MiB, 36443 MiB
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+[93mInitialized new /data1/rohit_sinha/.evo/settings.json[39m
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+using SwiGLU layer as FFN
+  0%|          | 0/8 [00:00<?, ?it/s]>> Loading a list of 90 images
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845948.911866.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.011787.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.115941.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.215795.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.315792.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.415733.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.515817.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.619753.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.719890.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.819784.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.920013.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.019789.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.124078.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.223782.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.323864.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.424265.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.523880.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.623823.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.756034.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.853851.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.953822.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.053777.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.153788.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.253677.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.353781.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.453714.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.557734.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.657740.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.757837.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.857655.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.957775.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.057894.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.157796.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.261888.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.361889.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.461990.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.561728.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.661822.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.761932.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.863153.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.962152.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.065883.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.165700.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.265747.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.365860.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.465793.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.565884.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.665877.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.769755.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.869932.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.969955.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.069971.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.169776.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.269821.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.370323.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.473700.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.574129.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.673990.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.779824.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.879857.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.979793.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.079963.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.179771.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.283796.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.383825.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.483775.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.583803.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.677690.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.777825.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.877977.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.981865.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.081817.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.181712.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.281792.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.381671.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.481751.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.581882.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.686207.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.785882.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.885848.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.985677.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.085894.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.185730.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.285979.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.385918.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.490017.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.589817.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.690210.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.790095.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.890302.png with resolution 640x480 --> 518x378
+ (Found 90 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_halfsphere/pred_traj.txt
+  0%|          | 0/8 [04:30<?, ?it/s]
+Traceback (most recent call last):
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/launch.py", line 267, in <module>
+    main()
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/launch.py", line 263, in main
+    eval_pose_estimation(args, model, save_dir=args.output_dir)
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/launch.py", line 248, in eval_pose_estimation
+    ate_mean, rpe_trans_mean, rpe_rot_mean = eval_pose_estimation_dist(
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/launch.py", line 220, in eval_pose_estimation_dist
+    raise e  # Rethrow if it's not an expected exception
+    ^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/launch.py", line 176, in eval_pose_estimation_dist
+    ate, rpe_trans, rpe_rot = eval_metrics(
+                              ^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/evo_utils.py", line 190, in eval_metrics
+    ate_result = main_ape.ape(
+                 ^^^^^^^^^^^^^
+TypeError: ape() got an unexpected keyword argument 'est_name'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/accelerate/commands/launch.py", line 1423, in <module>
+    main()
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/accelerate/commands/launch.py", line 1419, in main
+    launch_command(args)
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/accelerate/commands/launch.py", line 1413, in launch_command
+    simple_launcher(args)
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/accelerate/commands/launch.py", line 999, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/data2/DATA/rohit_sinha/e5/big/venvs/4rc/bin/python', 'eval/relpose/launch.py', '--output_dir', '/data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum/', '--eval_dataset', 'tum', '--checkpoint', 'Luo-Yihang/4RC']' returned non-zero exit status 1.
+Command exited with non-zero status 1
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/bin/python -m accelerate.commands.launch --num_processes 1 --main_process_port 29558 eval/relpose/launch.py --output_dir /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum/ --eval_dataset tum --checkpoint Luo-Yihang/4RC"
+	User time (seconds): 249.49
+	System time (seconds): 19.70
+	Percent of CPU this job got: 23%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 18:59.30
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 12605528
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3356
+	Minor (reclaiming a frame) page faults: 3305410
+	Voluntary context switches: 41844
+	Involuntary context switches: 6121
+	Swaps: 0
+	File system inputs: 11776008
+	File system outputs: 49680
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+[run_gpu] exit 1 Monday 19 October 2026 09:38:09 AM IST
+[run_gpu] Monday 19 October 2026 09:42:49 AM IST GPU=3 pin= need=14 venv=4rc args=-m accelerate.commands.launch --num_processes 1 --main_process_port 29558 eval/relpose/launch.py --output_dir /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum/ --eval_dataset tum --checkpoint Luo-Yihang/4RC
+0, 34146 MiB, 14525 MiB
+1, 34169 MiB, 14501 MiB
+2, 9613 MiB, 39058 MiB
+3, 9609 MiB, 39062 MiB
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+[93mUpdated outdated /data1/rohit_sinha/.evo/settings.json[39m
+using SwiGLU layer as FFN
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  0%|          | 0/8 [00:00<?, ?it/s]>> Loading a list of 90 images
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845948.911866.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.011787.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.115941.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.215795.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.315792.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.415733.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.515817.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.619753.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.719890.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.819784.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845949.920013.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.019789.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.124078.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.223782.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.323864.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.424265.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.523880.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.623823.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.756034.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.853851.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845950.953822.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.053777.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.153788.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.253677.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.353781.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.453714.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.557734.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.657740.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.757837.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.857655.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845951.957775.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.057894.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.157796.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.261888.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.361889.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.461990.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.561728.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.661822.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.761932.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.863153.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845952.962152.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.065883.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.165700.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.265747.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.365860.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.465793.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.565884.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.665877.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.769755.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.869932.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845953.969955.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.069971.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.169776.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.269821.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.370323.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.473700.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.574129.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.673990.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.779824.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.879857.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845954.979793.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.079963.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.179771.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.283796.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.383825.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.483775.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.583803.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.677690.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.777825.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.877977.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845955.981865.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.081817.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.181712.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.281792.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.381671.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.481751.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.581882.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.686207.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.785882.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.885848.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845956.985677.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.085894.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.185730.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.285979.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.385918.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.490017.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.589817.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.690210.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.790095.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_halfsphere/rgb_90/1341845957.890302.png with resolution 640x480 --> 518x378
+ (Found 90 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_halfsphere/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_halfsphere_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_halfsphere_traj_error.png
+ 12%|█▎        | 1/8 [03:31<24:43, 211.91s/it]>> Loading a list of 90 images
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846092.123884.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846092.227766.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846092.327827.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846092.428016.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846092.528072.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846092.628121.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846092.727906.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846092.827857.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846092.927920.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846093.027860.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846093.125933.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846093.225887.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846093.325795.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846093.425924.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846093.525871.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846093.625945.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846093.725842.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846093.829820.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846093.929912.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846094.029902.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846094.129856.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846094.229967.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846094.329846.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846094.429746.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846094.533970.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846094.633912.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846094.733999.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846094.833846.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846094.934109.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846095.034722.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846095.134021.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846095.233880.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846095.337767.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846095.437762.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846095.538219.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846095.637875.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846095.737902.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846095.838106.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846095.937932.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846096.041838.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846096.141944.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846096.241942.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846096.341861.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846096.441905.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846096.542063.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846096.641875.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846096.745991.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846096.845763.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846096.945914.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846097.045960.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846097.146138.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846097.246080.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846097.345922.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846097.445910.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846097.550048.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846097.649731.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846097.749749.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846097.849998.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846097.949812.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846098.050033.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846098.149904.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846098.253811.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846098.353827.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846098.453988.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846098.553851.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846098.653874.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846098.753828.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846098.853827.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846098.957887.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846099.058015.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846099.157775.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846099.264156.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846099.363831.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846099.463909.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846099.593832.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846099.693870.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846099.793945.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846099.894034.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846099.993861.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846100.099862.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846100.199801.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846100.299821.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846100.400000.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846100.503838.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846100.604545.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846100.704037.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846100.798442.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846100.897858.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846101.001817.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_rpy/rgb_90/1341846101.102829.png with resolution 640x480 --> 518x378
+ (Found 90 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_rpy/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_rpy_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_rpy_traj_error.png
+ 25%|██▌       | 2/8 [07:05<21:18, 213.03s/it]>> Loading a list of 90 images
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845688.697719.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845688.797687.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845688.898025.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845688.997750.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845689.097725.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845689.198264.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845689.297769.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845689.401592.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845689.501840.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845689.601682.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845689.701700.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845689.802003.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845689.901825.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845690.003830.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845690.106587.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845690.206103.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845690.306143.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845690.405976.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845690.505978.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845690.605848.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845690.706003.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845690.805715.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845690.909837.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845691.011558.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845691.109685.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845691.209644.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845691.310138.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845691.451922.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845691.545833.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845691.645632.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845691.746050.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845691.845603.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845691.945997.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845692.049676.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845692.149736.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845692.249828.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845692.349688.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845692.449672.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845692.549744.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845692.649770.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845692.749897.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845692.853833.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845692.953573.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845693.053684.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845693.153852.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845693.254518.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845693.353715.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845693.453700.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845693.557666.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845693.657659.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845693.757636.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845693.857724.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845693.957722.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845694.057728.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845694.157890.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845694.261793.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845694.361761.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845694.461731.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845694.561652.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845694.661659.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845694.767988.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845694.867728.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845694.967669.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845695.072465.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845695.172193.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845695.271738.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845695.371706.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845695.471720.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845695.603908.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845695.701693.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845695.801697.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845695.901827.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845696.001940.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845696.102048.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845696.201602.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845696.305713.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845696.406019.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845696.505801.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845696.611644.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845696.705640.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845696.805698.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845696.905693.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845697.009723.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845697.109770.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845697.209803.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845697.309575.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845697.409528.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845697.509822.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845697.609653.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_static/rgb_90/1341845697.713520.png with resolution 640x480 --> 518x378
+ (Found 90 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_static/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_static_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_static_traj_error.png
+ 38%|███▊      | 3/8 [10:40<17:48, 213.75s/it]>> Loading a list of 90 images
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845820.851997.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845820.955790.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845821.055706.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845821.155881.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845821.256005.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845821.355690.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845821.455778.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845821.555644.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845821.655725.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845821.755681.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845821.855574.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845821.955750.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845822.059759.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845822.159808.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845822.254004.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845822.353784.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845822.459970.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845822.559648.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845822.663716.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845822.763760.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845822.859721.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845822.957708.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845823.057775.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845823.157773.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845823.261842.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845823.361852.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845823.461869.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845823.561916.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845823.661750.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845823.761810.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845823.861808.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845823.961797.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845824.065768.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845824.165751.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845824.265800.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845824.365821.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845824.465921.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845824.565735.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845824.665789.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845824.769643.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845824.869926.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845824.969855.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845825.075793.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845825.175707.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845825.275795.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845825.379771.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845825.480278.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845825.579744.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845825.679708.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845825.779688.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845825.879767.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845825.979700.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845826.079731.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845826.183767.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845826.283763.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845826.383718.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845826.483677.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845826.583716.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845826.683753.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845826.783713.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845826.884460.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845826.981873.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845827.082458.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845827.182474.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845827.282532.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845827.381963.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845827.488394.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845827.623688.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845827.723697.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845827.823845.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845827.923824.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845828.023726.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845828.127612.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845828.227644.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845828.327803.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845828.427803.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845828.527686.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845828.654055.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845828.757706.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845828.857781.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845828.957606.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845829.063840.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845829.158048.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845829.257763.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845829.357901.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845829.461720.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845829.561864.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845829.661787.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845829.761817.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_sitting_xyz/rgb_90/1341845829.861640.png with resolution 640x480 --> 518x378
+ (Found 90 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_xyz/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_xyz_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_sitting_xyz_traj_error.png
+ 50%|█████     | 4/8 [14:19<14:23, 215.79s/it]>> Loading a list of 90 images
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846434.810024.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846434.914148.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846435.014019.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846435.113961.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846435.213955.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846435.319946.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846435.414309.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846435.513983.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846435.618180.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846435.717877.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846435.818082.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846435.918077.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846436.018119.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846436.118116.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846436.218096.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846436.318164.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846436.422052.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846436.522075.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846436.622042.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846436.722015.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846436.822079.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846436.922139.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846437.022352.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846437.126102.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846437.226114.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846437.326061.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846437.431962.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846437.536428.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846437.632742.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846437.739652.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846437.830422.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846437.930096.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846438.030032.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846438.130017.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846438.229906.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846438.329987.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846438.430136.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846438.530106.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846438.634113.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846438.734146.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846438.834118.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846438.934115.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846439.034612.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846439.134146.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846439.234198.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846439.338209.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846439.437979.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846439.538102.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846439.638201.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846439.737939.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846439.846398.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846439.938149.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846440.042214.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846440.142076.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846440.242218.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846440.341908.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846440.442063.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846440.542081.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846440.642042.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846440.742033.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846440.846329.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846440.952308.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846441.078163.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846441.178054.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846441.282130.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846441.382129.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846441.482023.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846441.582260.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846441.681977.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846441.781910.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846441.882149.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846441.986157.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846442.086050.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846442.186309.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846442.286112.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846442.386154.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846442.486191.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846442.585989.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846442.686166.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846442.790054.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846442.889944.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846442.989997.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846443.090123.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846443.190201.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846443.289997.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846443.390137.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846443.494173.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846443.594027.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846443.694065.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_halfsphere/rgb_90/1341846443.800403.png with resolution 640x480 --> 518x378
+ (Found 90 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_halfsphere/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_halfsphere_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_halfsphere_traj_error.png
+ 62%|██████▎   | 5/8 [17:58<10:50, 216.86s/it]>> Loading a list of 90 images
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846647.866652.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846647.970225.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846648.070164.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846648.170568.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846648.270152.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846648.370216.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846648.470076.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846648.570179.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846648.674053.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846648.774049.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846648.874088.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846648.974090.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846649.074128.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846649.174442.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846649.280075.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846649.383973.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846649.484154.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846649.616167.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846649.710937.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846649.810257.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846649.914184.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846650.014156.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846650.114215.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846650.214164.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846650.314158.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846650.414224.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846650.514091.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846650.618092.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846650.718110.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846650.818115.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846650.918288.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846651.018106.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846651.118423.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846651.218036.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846651.318309.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846651.422237.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846651.560316.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846651.654223.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846651.754212.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846651.858213.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846651.958047.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846652.058058.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846652.158232.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846652.258089.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846652.358184.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846652.458277.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846652.562089.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846652.662152.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846652.762129.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846652.862014.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846652.962213.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846653.062672.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846653.162620.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846653.262357.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846653.366319.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846653.466341.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846653.566601.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846653.666143.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846653.766275.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846653.866214.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846653.966155.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846654.070172.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846654.170244.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846654.270041.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846654.369979.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846654.470186.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846654.570053.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846654.670155.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846654.774056.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846654.874136.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846654.974334.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846655.074179.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846655.174000.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846655.274211.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846655.374134.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846655.474205.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846655.578132.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846655.678110.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846655.778076.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846655.910355.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846656.014188.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846656.114220.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846656.214132.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846656.314258.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846656.414253.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846656.519461.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846656.614195.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846656.714216.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846656.824388.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_rpy/rgb_90/1341846656.924099.png with resolution 640x480 --> 518x378
+ (Found 90 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_rpy/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_rpy_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_rpy_traj_error.png
+ 75%|███████▌  | 6/8 [21:38<07:16, 218.17s/it]>> Loading a list of 90 images
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846226.917980.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846227.017919.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846227.118052.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846227.218443.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846227.320064.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846227.418015.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846227.521976.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846227.622081.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846227.721966.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846227.821920.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846227.921967.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846228.021937.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846228.121845.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846228.225994.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846228.326018.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846228.426073.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846228.525907.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846228.626021.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846228.726069.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846228.825934.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846228.926548.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846229.029897.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846229.129930.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846229.229812.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846229.329933.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846229.430182.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846229.530149.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846229.630063.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846229.733828.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846229.833857.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846229.939857.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846230.033858.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846230.144719.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846230.271971.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846230.370031.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846230.469920.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846230.569803.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846230.670057.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846230.769960.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846230.869829.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846230.973933.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846231.074310.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846231.174011.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846231.273832.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846231.374263.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846231.484245.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846231.583898.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846231.683822.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846231.783993.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846231.883853.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846231.978027.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846232.077961.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846232.178314.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846232.283944.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846232.383877.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846232.484170.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846232.583846.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846232.688092.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846232.787894.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846232.887989.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846232.987965.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846233.087872.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846233.218177.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846233.317870.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846233.417990.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846233.517954.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846233.621898.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846233.721879.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846233.822009.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846233.922045.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846234.021936.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846234.121984.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846234.222130.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846234.321998.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846234.425915.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846234.525867.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846234.626439.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846234.725911.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846234.826106.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846234.926031.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846235.026311.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846235.130068.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846235.229939.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846235.329890.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846235.429943.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846235.529989.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846235.630160.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846235.730392.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846235.833964.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_static/rgb_90/1341846235.934106.png with resolution 640x480 --> 518x378
+ (Found 90 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_static/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_static_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_static_traj_error.png
+ 88%|████████▊ | 7/8 [25:09<03:35, 215.83s/it]>> Loading a list of 90 images
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846313.622103.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846313.721918.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846313.822075.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846313.922055.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846314.022042.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846314.122037.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846314.225969.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846314.325981.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846314.427905.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846314.526085.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846314.626096.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846314.725910.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846314.826092.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846314.925969.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846315.029900.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846315.129851.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846315.230076.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846315.329931.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846315.429923.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846315.530008.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846315.630109.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846315.733985.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846315.834140.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846315.936901.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846316.034204.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846316.134066.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846316.233979.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846316.334208.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846316.438069.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846316.537975.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846316.638009.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846316.738062.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846316.838029.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846316.937940.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846317.037936.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846317.137887.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846317.248131.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846317.348137.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846317.442569.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846317.542282.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846317.643553.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846317.741834.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846317.841886.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846317.946031.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846318.045949.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846318.145957.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846318.245970.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846318.345989.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846318.446035.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846318.546259.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846318.650038.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846318.749905.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846318.850072.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846318.950044.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846319.050745.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846319.150093.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846319.250034.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846319.350268.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846319.453961.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846319.554083.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846319.653962.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846319.754063.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846319.853917.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846319.953946.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846320.054177.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846320.157952.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846320.258015.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846320.357890.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846320.458122.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846320.558091.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846320.664916.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846320.763877.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846320.863887.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846320.967866.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846321.068047.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846321.167887.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846321.267939.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846321.367913.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846321.467946.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846321.568960.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846321.668306.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846321.771881.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846321.871882.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846322.004094.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846322.107979.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846322.202932.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846322.301996.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846322.402292.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846322.502433.png with resolution 640x480 --> 518x378
+ - adding data/tum/rgbd_dataset_freiburg3_walking_xyz/rgb_90/1341846322.601920.png with resolution 640x480 --> 518x378
+ (Found 90 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_xyz/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_xyz_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum//rgbd_dataset_freiburg3_walking_xyz_traj_error.png
+100%|██████████| 8/8 [28:42<00:00, 214.90s/it]100%|██████████| 8/8 [28:42<00:00, 215.33s/it]
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/bin/python -m accelerate.commands.launch --num_processes 1 --main_process_port 29558 eval/relpose/launch.py --output_dir /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/tum/ --eval_dataset tum --checkpoint Luo-Yihang/4RC"
+	User time (seconds): 1710.08
+	System time (seconds): 46.61
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 29:47.49
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 12603300
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 933
+	Minor (reclaiming a frame) page faults: 7334700
+	Voluntary context switches: 28565
+	Involuntary context switches: 14717
+	Swaps: 0
+	File system inputs: 1426168
+	File system outputs: 2552
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[run_gpu] exit 0 Monday 19 October 2026 10:12:37 AM IST

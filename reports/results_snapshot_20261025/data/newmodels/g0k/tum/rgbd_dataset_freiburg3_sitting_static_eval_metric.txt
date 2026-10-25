@@ -1,0 +1,34 @@
+Seq: rgbd_dataset_freiburg3_sitting_static 
+
+APE w.r.t. translation part (m)
+(with Sim(3) Umeyama alignment)
+
+       max	0.017812
+      mean	0.004069
+    median	0.003339
+       min	0.000583
+      rmse	0.004950
+       sse	0.002205
+       std	0.002819
+RPE w.r.t. rotation angle in degrees (deg)
+for delta = 1 (frames) using all pairs
+(with Sim(3) Umeyama alignment)
+
+       max	0.603914
+      mean	0.186897
+    median	0.166193
+       min	0.025651
+      rmse	0.222199
+       sse	4.394128
+       std	0.120174
+RPE w.r.t. translation part (m)
+for delta = 1 (frames) using all pairs
+(with Sim(3) Umeyama alignment)
+
+       max	0.019340
+      mean	0.003846
+    median	0.002972
+       min	0.000428
+      rmse	0.004815
+       sse	0.002064
+       std	0.002898

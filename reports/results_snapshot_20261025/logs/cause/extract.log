@@ -1,0 +1,42 @@
+clips 360 todo 360 dit dtype fp32
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 25.67it/s]
+0 0000_s1_000 (6300, 1536) 6.64s/clip mem 9.2GB
+10 0001_s2_000 (6300, 1536) 6.30s/clip mem 9.2GB
+20 0003_s1_050 (6300, 1536) 6.21s/clip mem 9.2GB
+30 0005_s1_000 (6300, 1536) 6.18s/clip mem 9.2GB
+40 0006_s2_000 (6300, 1536) 6.17s/clip mem 9.2GB
+50 0008_s1_050 (6300, 1536) 6.12s/clip mem 9.2GB
+60 0010_s1_000 (6300, 1536) 6.09s/clip mem 9.2GB
+70 0011_s2_000 (6300, 1536) 6.07s/clip mem 9.2GB
+80 0013_s1_050 (6300, 1536) 6.04s/clip mem 9.2GB
+90 0015_s1_000 (6300, 1536) 6.02s/clip mem 9.2GB
+100 0016_s2_000 (6300, 1536) 6.00s/clip mem 9.2GB
+110 0018_s1_050 (6300, 1536) 5.97s/clip mem 9.2GB
+120 0020_s1_000 (6300, 1536) 5.94s/clip mem 9.2GB
+130 0021_s2_000 (6300, 1536) 5.93s/clip mem 9.2GB
+140 0023_s1_050 (6300, 1536) 5.93s/clip mem 9.2GB
+150 0025_s1_000 (6300, 1536) 5.93s/clip mem 9.2GB
+160 0026_s2_000 (6300, 1536) 5.94s/clip mem 9.2GB
+170 0028_s1_050 (6300, 1536) 5.95s/clip mem 9.2GB
+180 0030_s1_000 (6300, 1536) 5.96s/clip mem 9.2GB
+190 0031_s2_000 (6300, 1536) 5.96s/clip mem 9.2GB
+200 0033_s1_050 (6300, 1536) 5.98s/clip mem 9.2GB
+210 0035_s1_000 (6300, 1536) 5.97s/clip mem 9.2GB
+220 0036_s2_000 (6300, 1536) 5.97s/clip mem 9.2GB
+230 0038_s1_050 (6300, 1536) 5.98s/clip mem 9.2GB
+240 0040_s1_000 (6300, 1536) 5.98s/clip mem 9.2GB
+250 0041_s2_000 (6300, 1536) 5.98s/clip mem 9.2GB
+260 0043_s1_050 (6300, 1536) 5.98s/clip mem 9.2GB
+270 0045_s1_000 (6300, 1536) 5.99s/clip mem 9.2GB
+280 0046_s2_000 (6300, 1536) 6.00s/clip mem 9.2GB
+290 0048_s1_050 (6300, 1536) 6.01s/clip mem 9.2GB
+300 0050_s1_000 (6300, 1536) 6.02s/clip mem 9.2GB
+310 0051_s2_000 (6300, 1536) 6.02s/clip mem 9.2GB
+320 0053_s1_050 (6300, 1536) 6.03s/clip mem 9.2GB
+330 0055_s1_000 (6300, 1536) 6.04s/clip mem 9.2GB
+340 0056_s2_000 (6300, 1536) 6.04s/clip mem 9.2GB
+350 0058_s1_050 (6300, 1536) 6.04s/clip mem 9.2GB
+EXTRACT_DONE 360 2178s
+clips 360 todo 0 dit dtype fp32
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.41s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.36it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.20it/s]
+EXTRACT_DONE 0 0s

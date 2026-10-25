@@ -1,0 +1,38 @@
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:18<00:18, 18.20s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  8.39s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.86s/it]
+vae 0000_s2_049 (1, 16, 7, 60, 60) 32.56
+vae 0002_s1_050 (1, 16, 7, 60, 60) 35.89
+vae 0004_s1_050 (1, 16, 7, 60, 60) 41.24
+vae 0010_s1_050 (1, 16, 7, 60, 60) 39.85
+vae 0015_s2_049 (1, 16, 7, 60, 60) 37.6
+vae 0018_s1_025 (1, 16, 7, 60, 60) 37.97
+vae 0030_s1_000 (1, 16, 7, 60, 60) 34.51
+vae 0037_s1_050 (1, 16, 7, 60, 60) 37.05
+vae 0048_s2_000 (1, 16, 7, 60, 60) 38.24
+vae 0049_s2_000 (1, 16, 7, 60, 60) 38.12
+There are modules in WanTransformer3DModel that should be kept in float32: ['time_embedder', 'scale_shift_table', 'norm1', 'norm2', 'norm3']. Casting directly with `to()` can lead to inconsistent results; set `torch_dtype` in `from_pretrained()` instead to keep these modules in float32.
+/data2/DATA/rohit_sinha/e5/big/models/src/Wan2.1/wan/modules/model.py:31: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @amp.autocast(enabled=False)
+/data2/DATA/rohit_sinha/e5/big/models/src/Wan2.1/wan/modules/model.py:42: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  @amp.autocast(enabled=False)
+/data2/DATA/rohit_sinha/e5/big/models/src/Wan2.1/wan/modules/model.py:546: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp.autocast(dtype=torch.float32):
+/data2/DATA/rohit_sinha/e5/big/models/src/Wan2.1/wan/modules/model.py:297: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp.autocast(dtype=torch.float32):
+/data2/DATA/rohit_sinha/e5/big/models/src/Wan2.1/wan/modules/model.py:305: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp.autocast(dtype=torch.float32):
+/data2/DATA/rohit_sinha/e5/big/models/src/Wan2.1/wan/modules/model.py:312: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp.autocast(dtype=torch.float32):
+/data2/DATA/rohit_sinha/e5/big/models/src/Wan2.1/wan/modules/model.py:344: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with amp.autocast(dtype=torch.float32):
+Traceback (most recent call last):
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/wan_feats.py", line 302, in <module>
+    main()
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/wan_feats.py", line 296, in main
+    gate_g0a(a)
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/wan_feats.py", line 246, in gate_g0a
+    rows = compare(res_d[(mode, n)], os_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/wan_feats.py", line 197, in compare
+    rows.append(dict(state=i, rel_err=float((a - b).norm() / b.norm()), cos=float(F.cosine_similarity(a, b, dim=0))))
+                                             ~~^~~
+RuntimeError: The size of tensor a (1536) must match the size of tensor b (9676800) at non-singleton dimension 0

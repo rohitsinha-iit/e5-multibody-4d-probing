@@ -1,0 +1,18 @@
+{
+ "item": "bamboo_2_0045",
+ "eval": "sintel",
+ "variant": "v",
+ "rows": {
+  "v": {
+   "r0": {
+    "slope": 1.0077264062101943,
+    "slope_inst_median": 0.44592615028611804,
+    "epe_static": 3.2253651272468877,
+    "epe_moving": 16.796261907149407,
+    "n_eval": 359560,
+    "n_moving_eval": 47214
+   }
+  }
+ },
+ "wall_s": 0.9
+}

@@ -1,0 +1,62 @@
+[run_gpu] Monday 19 October 2026 12:22:44 PM IST GPU=1 pin= need=20 venv=trackcraft3r args=/data2/DATA/rohit_sinha/e5/repo/src/attr/diag_tc3r.py
+0, 15 MiB, 48656 MiB
+1, 15 MiB, 48656 MiB
+2, 9613 MiB, 39058 MiB
+3, 9609 MiB, 39062 MiB
+/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/lib/python3.10/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+    model_name: wan_video_dit model_class: WanModel
+        This model is initialized with extra kwargs: {'has_image_input': False, 'patch_size': [1, 2, 2], 'in_dim': 16, 'dim': 1536, 'ffn_dim': 8960, 'freq_dim': 256, 'text_dim': 4096, 'out_dim': 16, 'num_heads': 12, 'num_layers': 30, 'eps': 1e-06}
+    The following models are loaded: ['wan_video_dit'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+    model_name: wan_video_vae model_class: WanVideoVAE
+    The following models are loaded: ['wan_video_vae'].
+No wan_video_text_encoder models available.
+Using wan_video_dit from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors.
+Using wan_video_vae from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth.
+No wan_video_image_encoder models available.
+No wan_video_motion_controller models available.
+No wan_video_vace models available.
+No wans2v_audio_encoder models available.
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+  LoRA injected: rank=1024, targets=q,k,v,o,ffn.0,ffn.2
+  patch_embedding expanded: 16->32 channels
+  DiT head expanded to 2x output (xyz | vis)
+  DiT loaded: 1425 keys (unexpected=0, missing=0)
+  VAE loaded: 194 keys
+  VAE_vis loaded: 194 keys
+  VAE_pj loaded: 194 keys
+WanSceneFlowPredictor loaded from /data2/DATA/rohit_sinha/e5/big/models/ckpt/trackcraft3r/model.safetensors
+n2_generic_s401 kubric12 {"epe_static": 9.431, "epe_moving": 13.852, "s_w": 0.638, "input_pointmap_proj_epe_static": 0.364, "t0_self_epe_static": 14.405, "static_track_drift_rel_depth": 0.024, "runtime_s": 14.066}
+n2_generic_s401 stride2 {"epe_static": 9.235, "epe_moving": 12.682, "s_w": 0.603, "input_pointmap_proj_epe_static": 0.369, "t0_self_epe_static": 14.073, "static_track_drift_rel_depth": 0.024, "runtime_s": 13.355}
+camrot_s305 kubric12 {"epe_static": 10.925, "epe_moving": 30.922, "s_w": 0.421, "input_pointmap_proj_epe_static": 0.422, "t0_self_epe_static": 13.482, "static_track_drift_rel_depth": 0.022, "runtime_s": 13.921}
+camrot_s305 stride2 {"epe_static": 11.173, "epe_moving": 27.482, "s_w": 0.395, "input_pointmap_proj_epe_static": 0.423, "t0_self_epe_static": 13.411, "static_track_drift_rel_depth": 0.022, "runtime_s": 13.969}
+n2_generic_s301 kubric12 {"epe_static": 15.003, "epe_moving": 29.932, "s_w": 0.918, "input_pointmap_proj_epe_static": 0.376, "t0_self_epe_static": 13.201, "static_track_drift_rel_depth": 0.034, "runtime_s": 13.467}
+n2_generic_s301 stride2 {"epe_static": 15.644, "epe_moving": 32.396, "s_w": 0.923, "input_pointmap_proj_epe_static": 0.38, "t0_self_epe_static": 13.389, "static_track_drift_rel_depth": 0.035, "runtime_s": 13.879}
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/bin/python /data2/DATA/rohit_sinha/e5/repo/src/attr/diag_tc3r.py"
+	User time (seconds): 269.02
+	System time (seconds): 57.31
+	Percent of CPU this job got: 149%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:37.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 13949192
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 10637
+	Minor (reclaiming a frame) page faults: 8437052
+	Voluntary context switches: 45207
+	Involuntary context switches: 4658
+	Swaps: 0
+	File system inputs: 2573144
+	File system outputs: 144
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[run_gpu] exit 0 Monday 19 October 2026 12:26:22 PM IST

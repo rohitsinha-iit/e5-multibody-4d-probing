@@ -1,0 +1,10 @@
+LOADER_BENCH {"batches": 20, "sec_per_batch": 5.397549426555633, "mb_per_batch": 163.46875, "mb_per_s": 30.285734706891823, "workers": 8, "preload": 0, "n_train_clips": 324}
+preload 0/324 0s
+preload 50/324 6s
+preload 100/324 11s
+preload 150/324 15s
+preload 200/324 19s
+preload 250/324 23s
+preload 300/324 28s
+preload done 324 clips 30s
+LOADER_BENCH {"batches": 37, "sec_per_batch": 0.053268007329992345, "mb_per_batch": 163.46875, "mb_per_s": 3068.7979181823, "workers": 8, "preload": 1, "n_train_clips": 324}

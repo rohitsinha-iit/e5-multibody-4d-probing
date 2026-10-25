@@ -1,0 +1,42 @@
+ + opencv-python-headless==5.0.0.93
+cv2 5.0.0
+Monday 19 October 2026 07:58:44 AM IST
+[07:58:46] downloading https://s3.eu-central-1.amazonaws.com/avg-kitti/data_scene_flow.zip (1681488619 bytes, have 0)
+[08:17:14] extracting sf
+[08:21:19] done sf
+[08:21:20] downloading https://s3.eu-central-1.amazonaws.com/avg-kitti/data_scene_flow_calib.zip (1631055 bytes, have 0)
+[08:21:35] extracting calib
+[08:21:35] done calib
+[08:21:36] downloading https://s3.eu-central-1.amazonaws.com/avg-kitti/data_scene_flow_multiview.zip (13433318588 bytes, have 0)
+[09:06:42] extracting mv
+[09:17:15] done mv
+[09:17:16] downloading https://files.is.tue.mpg.de/sintel/MPI-Sintel-complete.zip (5627783629 bytes, have 0)
+[09:35:46] extracting complete
+[09:40:25] done complete
+[09:40:26] downloading https://files.is.tue.mpg.de/jwulff/sintel/MPI-Sintel-depth-training-20150305.zip (1601251750 bytes, have 0)
+[09:48:11] extracting depth
+[09:48:38] done depth
+4.0K	/data2/DATA/rohit_sinha/e5/big/realdata/dl
+3.9G	/data2/DATA/rohit_sinha/e5/big/realdata/kitti15
+83G	/data2/DATA/rohit_sinha/e5/big/realdata/posesets
+7.1G	/data2/DATA/rohit_sinha/e5/big/realdata/sintel
+FETCH_RC 0
+Monday 19 October 2026 09:48:40 AM IST
+kitti15 samples 200 new 200 errors 0
+GT_KITTI_RC 0
+Monday 19 October 2026 09:51:04 AM IST
+sintel samples 256 new 256 errors 0
+GT_SINTEL_RC 0
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data2/DATA/rohit_sinha/e5/big/results/realdata_gt/gt_stats_kitti15.csv'
+samples 200 with moving instances 195 median bg residual px 0.033453876147802826
+samples 256 with moving instances 217 median bg residual px 0.0006173696400345186
+200
+256
+4.0K	/data2/DATA/rohit_sinha/e5/big/realdata/dl
+1.6G	/data2/DATA/rohit_sinha/e5/big/realdata/gt
+3.9G	/data2/DATA/rohit_sinha/e5/big/realdata/kitti15
+83G	/data2/DATA/rohit_sinha/e5/big/realdata/posesets
+7.1G	/data2/DATA/rohit_sinha/e5/big/realdata/sintel
+Monday 19 October 2026 09:52:44 AM IST
+REALDATA_DONE

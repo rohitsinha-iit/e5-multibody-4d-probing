@@ -1,0 +1,17 @@
+    from depth_anything_3.model.utils.gs_renderer import run_renderer_in_chunk_w_trj_mode
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/depth-anything-3/src/depth_anything_3/model/__init__.py", line 15, in <module>
+    from depth_anything_3.model.da3 import DepthAnything3Net, NestedDepthAnything3Net
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/depth-anything-3/src/depth_anything_3/model/da3.py", line 19, in <module>
+    from addict import Dict
+ModuleNotFoundError: No module named 'addict'
+None
+depth_anything_3-0.0.0.dist-info
+_editable_impl_depth_anything_3.pth
+functorch
+torch
+torch-2.5.1+cu121.dist-info
+torchgen
+torchvision
+torchvision-0.20.1+cu121.dist-info
+torchvision.libs
+xformers

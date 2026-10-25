@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/p3_train.py", line 274, in <module>
+    main()
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/p3_train.py", line 201, in main
+    dl = DataLoader(ds, batch_size=a.batch, shuffle=True, num_workers=a.workers, drop_last=True, prefetch_factor=4)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 383, in __init__
+    sampler = RandomSampler(dataset, generator=generator)  # type: ignore[arg-type]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/torch/utils/data/sampler.py", line 165, in __init__
+    raise ValueError(
+ValueError: num_samples should be a positive integer value, but got num_samples=0
+preload done 0 clips 0s
+Traceback (most recent call last):
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/p3_train.py", line 274, in <module>
+    main()
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/p3_train.py", line 201, in main
+    dl = DataLoader(ds, batch_size=a.batch, shuffle=True, num_workers=a.workers, drop_last=True, prefetch_factor=4)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 383, in __init__
+    sampler = RandomSampler(dataset, generator=generator)  # type: ignore[arg-type]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/torch/utils/data/sampler.py", line 165, in __init__
+    raise ValueError(
+ValueError: num_samples should be a positive integer value, but got num_samples=0

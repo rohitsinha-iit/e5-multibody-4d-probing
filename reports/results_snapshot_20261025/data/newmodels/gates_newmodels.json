@@ -1,0 +1,164 @@
+{
+ "G0d": {
+  "gate": "G0d",
+  "time": "2026-10-19 12:51:45",
+  "host": "aicoe-a6000",
+  "status": "fail",
+  "median_epe_static": 16.312684883813272,
+  "any4d_median_epe_static": 4.301561902162407,
+  "ratio": 3.7922701694965353,
+  "n_common_scenes": 10,
+  "n_required": 10,
+  "scenes": [
+   "camrot_s305",
+   "confound_glued_s469",
+   "confound_same_s451",
+   "epi_aligned_s435",
+   "n2_generic_s301",
+   "n2_generic_s302",
+   "n2_generic_s401",
+   "n3_generic_s303",
+   "n3_generic_s409",
+   "planar_s443"
+  ],
+  "median_runtime_s": 8.952394008636475,
+  "max_peak_reserved_gb": 17.365234375,
+  "criteria": "static EPE (median px at 512, frame 0 -> last) within 2x of Any4D on the same scenes",
+  "readouts_median_epe_static": {
+   "epe_static": 16.312684883813272,
+   "epe_static_x_r2_predK": 17.459040184613926,
+   "epe_static_x_r2_gtK": 17.384772842222706,
+   "epe_static_x_r4": 3.990714861869682
+  },
+  "primary_readout": "r1 (uv head); r4 uses GT cameras and is reported for information only",
+  "fallback_48CLIP": {
+   "median_epe_static": 34.365724070900356,
+   "any4d": 4.301561902162407,
+   "ratio": 7.989126938664909,
+   "n": 10,
+   "readouts_median_epe_static": {
+    "epe_static": 34.365724070900356,
+    "epe_static_x_r2_gtK": 36.12425832337903,
+    "epe_static_x_r4": 5.410902503355006
+   }
+  }
+ },
+ "G0g": {
+  "gate": "G0g",
+  "time": "2026-10-19 12:51:45",
+  "host": "aicoe-a6000",
+  "status": "pass",
+  "median_epe_static": 3.5175552081835084,
+  "any4d_median_epe_static": 4.301561902162407,
+  "ratio": 0.8177390650626749,
+  "n_common_scenes": 10,
+  "n_required": 5,
+  "scenes": [
+   "camrot_s305",
+   "confound_glued_s469",
+   "confound_same_s451",
+   "epi_aligned_s435",
+   "n2_generic_s301",
+   "n2_generic_s302",
+   "n2_generic_s401",
+   "n3_generic_s303",
+   "n3_generic_s409",
+   "planar_s443"
+  ],
+  "median_runtime_s": 1.3229173421859741,
+  "max_peak_reserved_gb": 14.6796875,
+  "criteria": "static EPE (median px at 512, frame 0 -> last) within 2x of Any4D on the same scenes"
+ },
+ "G0b": {
+  "gate": "G0b",
+  "time": "2026-10-19 12:51:45",
+  "host": "aicoe-a6000",
+  "status": "fail_pad_pass_stretch",
+  "median_epe_static": 10.269551626133222,
+  "n_scenes": 10,
+  "scenes": [
+   "camrot_s305",
+   "camrot_s306",
+   "confound_glued_s469",
+   "confound_same_s451",
+   "epi_aligned_s307",
+   "epi_aligned_s435",
+   "n2_generic_s301",
+   "n2_generic_s302",
+   "n2_generic_s401",
+   "n3_generic_s303"
+  ],
+  "median_runtime_s": 9.896543264389038,
+  "max_peak_reserved_gb": 15.876953125,
+  "criteria": "TrackCraft3R condition (i) GT depth + GT cameras, frames [0,2,...,20,23], median static EPE <= 10 px at 512 on 10 v2 scenes",
+  "variants": {
+   "stretch": {
+    "median_epe_static": 7.2154523972566125,
+    "median_epe_moving": 27.76964049751195,
+    "median_s_w": 0.5100037637827086,
+    "n": 10
+   },
+   "pad_reg": {
+    "median_epe_static": 6.931602603860216,
+    "median_epe_moving": 36.48739794559977,
+    "median_s_w": 0.5683396788984606,
+    "n": 10
+   },
+   "stretch_reg": {
+    "median_epe_static": 4.798246990369989,
+    "median_epe_moving": 30.56036649880012,
+    "median_s_w": 0.46925014111508806,
+    "n": 10
+   }
+  },
+  "decision": "plan setting (resize_mode pad) fails narrowly; the repo default resize_mode stretch passes; pad_reg/stretch_reg use the opt-in GT-free t0 re-registration (sensitivity only)"
+ },
+ "G0j": {
+  "gate": "G0j",
+  "time": "2026-10-19 12:51:45",
+  "host": "aicoe-a6000",
+  "status": "pass",
+  "criteria": "MoRe weights downloadable (gdown from the README Drive folder) and the full-attention model runs",
+  "load_info": {
+   "missing": 0,
+   "unexpected": 0
+  },
+  "median_epe_static_rigid": 44.42030272124828,
+  "n_scenes": 10
+ },
+ "G0k": {
+  "gate": "G0k",
+  "time": "2026-10-19 12:51:45",
+  "host": "aicoe-a6000",
+  "status": "pass",
+  "reference": "TUM-dynamics (substituted: 4RC reports no Sintel ATE)",
+  "reported": {
+   "ate": 0.01,
+   "rpe_t": 0.008,
+   "rpe_r": 0.314
+  },
+  "ours_tum": {
+   "ate": 0.01065,
+   "rpe_t": 0.00894,
+   "rpe_r": 0.31264
+  },
+  "ours_sintel": {
+   "ate": 0.13785,
+   "rpe_t": 0.05215,
+   "rpe_r": 0.42876
+  },
+  "pose_py_crosscheck": {
+   "tum": {
+    "mean_ate": 0.01064775750485042,
+    "mean_rpe_t": 0.008934939663802027,
+    "mean_rpe_r": 0.31264204292025893
+   },
+   "sintel": {
+    "mean_ate": 0.1378477055092539,
+    "mean_rpe_t": 0.05214856880463457,
+    "mean_rpe_r": 0.4287596068774696
+   }
+  },
+  "criteria": "4RC relpose evaluator (eval/relpose/launch.py, repo defaults, evo 1.28.0) reproduces 4RC's reported ATE within 10%"
+ }
+}

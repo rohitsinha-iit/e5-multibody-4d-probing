@@ -1,0 +1,14 @@
+Monday 19 October 2026 07:54:28 AM IST
+3 renders, 3 workers x 4 cores (['28-31', '32-35', '36-39'])
+{"ds": "v2", "scene": "n2_generic_s401", "v": "D", "status": "ok", "wall_s": 778.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s401_D.txt", "frame0_psnr": {}, "t": "2026-10-19 08:07:34"}
+{"ds": "v2", "scene": "confound_glued_s469", "v": "D", "status": "ok", "wall_s": 796.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s469_D.txt", "frame0_psnr": {}, "t": "2026-10-19 08:07:50"}
+{"ds": "v2", "scene": "camrot_s305", "v": "D", "status": "ok", "wall_s": 907.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s305_D.txt", "frame0_psnr": {}, "t": "2026-10-19 08:09:41"}
+RENDER_FACTORIAL_DONE
+Monday 19 October 2026 08:09:44 AM IST
+3 renders, 3 workers x 4 cores (['28-31', '32-35', '36-39'])
+{"ds": "v2", "scene": "n2_generic_s401", "v": "B", "status": "ok", "wall_s": 755.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s401_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity}, "t": "2026-10-19 08:22:40"}
+{"ds": "v2", "scene": "n2_generic_s401", "v": "A", "status": "ok", "wall_s": 755.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s401_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity}, "t": "2026-10-19 08:22:40"}
+{"ds": "v2", "scene": "n2_generic_s401", "v": "C", "status": "ok", "wall_s": 835.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s401_C.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 08:23:47"}
+RENDER_FACTORIAL_DONE
+Monday 19 October 2026 08:23:47 AM IST
+PILOT_DONE

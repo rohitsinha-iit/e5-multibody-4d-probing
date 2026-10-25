@@ -1,0 +1,17 @@
+/data2/DATA/rohit_sinha/e5/big/venvs/tools/lib/python3.13/site-packages/huggingface_hub/cli/download.py:158: UserWarning: Ignoring `--include` since filenames have been explicitly set.
+  warnings.warn("Ignoring `--include` since filenames have been explicitly set.")
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Still waiting to acquire lock on /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/.cache/huggingface/.gitignore.lock (elapsed: 0.1 seconds)
+Fetching 7 files:  14%|█▍        | 1/7 [00:00<00:02,  2.35it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 7 files:  29%|██▊       | 2/7 [00:00<00:01,  3.96it/s]Fetching 7 files:  43%|████▎     | 3/7 [00:00<00:00,  5.17it/s]Fetching 7 files:  57%|█████▋    | 4/7 [00:03<00:03,  1.11s/it]Fetching 7 files:  71%|███████▏  | 5/7 [00:04<00:02,  1.32s/it]Fetching 7 files:  86%|████████▌ | 6/7 [03:04<01:01, 61.95s/it]Fetching 7 files: 100%|██████████| 7/7 [12:34<00:00, 228.00s/it]Fetching 7 files: 100%|██████████| 7/7 [12:34<00:00, 107.79s/it]
+[32m✓ Downloaded[0m
+  path: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+DONE wan Monday 19 October 2026 08:07:53 AM IST
+12G	/data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+/data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B:
+config.json
+google
+models_t5_umt5-xxl-enc-bf16.pth
+Wan2.1_VAE.pth
+
+/data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/google:
+umt5-xxl

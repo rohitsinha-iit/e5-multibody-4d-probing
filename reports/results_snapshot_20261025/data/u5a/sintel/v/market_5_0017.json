@@ -1,0 +1,18 @@
+{
+ "item": "market_5_0017",
+ "eval": "sintel",
+ "variant": "v",
+ "rows": {
+  "v": {
+   "r0": {
+    "slope": 1.0661107254387094,
+    "slope_inst_median": 0.5104754292239104,
+    "epe_static": 7.410779488479244,
+    "epe_moving": 57.781547874507794,
+    "n_eval": 371142,
+    "n_moving_eval": 137542
+   }
+  }
+ },
+ "wall_s": 1.3
+}

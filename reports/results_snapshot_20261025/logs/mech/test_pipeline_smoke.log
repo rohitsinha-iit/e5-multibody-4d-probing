@@ -1,0 +1,30 @@
+[test_pipeline] 2026-10-23 23:46:20 start TAG=_smoke SCENES=v2_301,v2_303,v3float_531 LIMIT=2
+[test_pipeline] 2026-10-23 23:46:20 joint objall test k*=1
+[test_pipeline] 2026-10-23 23:47:40 joint cam test k*=20
+[test_pipeline] 2026-10-23 23:48:52 u5a all kubric test
+[test_pipeline] 2026-10-23 23:50:44 u5b kubric test
+[test_pipeline] 2026-10-24 00:02:40 u5b real
+[test_pipeline] 2026-10-24 00:08:08 joint cont test k*=20
+[test_pipeline] 2026-10-24 00:11:16 joint obj test k*=10
+[test_pipeline] 2026-10-24 00:13:49 necessity objall
+[test_pipeline] 2026-10-24 00:14:40 necessity cam
+[test_pipeline] 2026-10-24 00:15:19 necessity cont
+[test_pipeline] 2026-10-24 00:15:57 necessity obj
+[test_pipeline] 2026-10-24 00:16:36 u5a v kubric test
+[test_pipeline] 2026-10-24 00:17:17 joint objall transfer k*=1
+[test_pipeline] 2026-10-24 00:18:05 joint cam transfer k*=20
+[test_pipeline] 2026-10-24 00:18:54 joint cont transfer k*=20
+[test_pipeline] 2026-10-24 00:19:46 joint obj transfer k*=10
+[test_pipeline] 2026-10-24 00:20:36 u5a all kubric transfer
+[test_pipeline] 2026-10-24 00:21:40 u5a v kubric transfer
+[test_pipeline] 2026-10-24 00:22:05 u5a all kitti15 test
+[test_pipeline] 2026-10-24 00:23:28 u5a v kitti15 test
+[test_pipeline] 2026-10-24 00:23:52 u5a all sintel test
+[test_pipeline] 2026-10-24 00:25:43 u5a v sintel test
+[test_pipeline] 2026-10-24 00:26:08 camwarp test
+[test_pipeline] 2026-10-24 00:27:22 camwarp transfer
+[test_pipeline] 2026-10-24 00:28:14 probe eval test
+[test_pipeline] 2026-10-24 00:28:46 probe eval transfer
+[test_pipeline] 2026-10-24 00:29:13 objall screen test (H3 on test)
+[test_pipeline] 2026-10-24 00:33:52 done
+SMOKE2DONE

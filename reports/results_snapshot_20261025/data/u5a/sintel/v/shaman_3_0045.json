@@ -1,0 +1,18 @@
+{
+ "item": "shaman_3_0045",
+ "eval": "sintel",
+ "variant": "v",
+ "rows": {
+  "v": {
+   "r0": {
+    "slope": -0.32508424050956847,
+    "slope_inst_median": 0.06027624840429052,
+    "epe_static": 2.9253117989249633,
+    "epe_moving": 5.890113497348435,
+    "n_eval": 371902,
+    "n_moving_eval": 95100
+   }
+  }
+ },
+ "wall_s": 1.5
+}

@@ -1,0 +1,62 @@
+[run_mech_gpu] Saturday 24 October 2026 06:30:20 AM IST GPU=1 pin=1 need=14 venv=any4d args=/data2/DATA/rohit_sinha/e5/repo/src/attr/repair.py --mode u5a --variant v --eval kubric --split test --allow_test
+0, 17421 MiB, 31250 MiB, 100 %
+1, 15 MiB, 48656 MiB, 0 %
+2, 27979 MiB, 20691 MiB, 75 %
+3, 25615 MiB, 23055 MiB, 60 %
+[repair] mode=u5a variant=v eval=kubric split=test scenes=48
+Seed set to: 0
+Initializing <class 'any4d.models.any4d.model.Any4D'> with kwargs: {'torch_hub_force_reload': False, 'pretrained_checkpoint_path': None, 'load_specific_pretrained_submodules': False, 'specific_pretrained_submodules': [], 'name': 'any4d', 'encoder_config': {'encoder_str': 'dinov2', 'name': 'dinov2_large', 'data_norm_type': 'dinov2', 'size': 'large', 'with_registers': False, 'uses_torch_hub': False, 'gradient_checkpointing': False}, 'info_sharing_config': {'model_type': 'alternating_attention', 'model_return_type': 'intermediate_features', 'custom_positional_encoding': None, 'module_args': {'name': 'aat_24_layers_ifr', 'indices': [11, 17], 'norm_intermediate': True, 'size': '24_layers', 'depth': 24, 'distinguish_ref_and_non_ref_views': True, 'gradient_checkpointing': False}}, 'pred_head_config': {'adaptor_config': {'input_dim': 6, 'scene_rep_dim': 4, 'type': 'raydirs+depth+pose+confidence+mask', 'scene_rep_type': 'raydirs+depth+pose', 'dense_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}}, 'type': 'dpt+pose', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3], 'checkpoint_gradient': False}, 'regressor_head': {'output_dim': 6, 'checkpoint_gradient': False}, 'pose_head': {'num_resconv_block': 2, 'rot_representation_dim': 4}, 'scale_head': {'output_dim': 1}, 'adaptor_type': 'raydirs+depth+pose+confidence+mask', 'dpt_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}, 'gradient_checkpointing': False}, 'scene_flow_pred_head_config': {'adaptor_config': {'input_dim': 3, 'scene_rep_dim': 3, 'type': 'scene_flow', 'scene_rep_type': 'scene_flow', 'dense_pred_init_dict': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'type': 'dpt', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3]}, 'regressor_head': {'output_dim': 3}, 'adaptor_type': 'scene_flow', 'dpt_adaptor': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'geometric_input_config': {'ray_dirs_encoder_config': {'name': 'ray_dirs_encoder', 'in_chans': 3, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'depth_encoder_config': {'name': 'depth_encoder', 'in_chans': 1, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'cam_rot_encoder_config': {'name': 'cam_rot_quats_encoder', 'in_chans': 4, 'encoder_str': 'global_rep_encoder'}, 'cam_trans_encoder_config': {'name': 'cam_trans_encoder', 'in_chans': 3, 'encoder_str': 'global_rep_encoder'}, 'scale_encoder_config': {'name': 'scale_encoder', 'in_chans': 1, 'encoder_str': 'global_rep_encoder'}, 'scene_flow_encoder_config': {'name': 'scene_flow_encoder', 'in_chans': 3, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'images_prob': 1, 'overall_prob': 0, 'dropout_prob': 1, 'ray_dirs_prob': 0, 'depth_prob': 0, 'cam_prob': 0, 'sparse_depth_prob': 0, 'sparsification_removal_percent': 0, 'depth_scale_norm_all_prob': 0, 'pose_scale_norm_all_prob': 0, 'doppler_prob': 0, 'event_imgs_prob': 0}}
+Loading pretrained dinov2_vitl14 from torch hub
+Using cache found in /data2/DATA/rohit_sinha/e5/big/cache/torch/hub/facebookresearch_dinov2_main
+Loading model from:  /data2/DATA/rohit_sinha/e5/big/ft/runs/heads_sel/any4d_ft.pth
+<All keys matched successfully>
+[u5a] eval=kubric variant=v items=48 runs/item=1
+[u5a] kubric v2_301 v 2.3 s
+[u5a] kubric v2_303 v 1.3 s
+[u5a] kubric v2_305 v 1.3 s
+[u5a] kubric v2_307 v 1.2 s
+[u5a] kubric v2_309 v 1.3 s
+[u5a] kubric v2_311 v 1.3 s
+[u5a] kubric v2_313 v 1.2 s
+[u5a] kubric v2_401 v 1.3 s
+[u5a] kubric v2_403 v 1.3 s
+[u5a] kubric v2_405 v 1.3 s
+[u5a] kubric v2_407 v 1.3 s
+[u5a] kubric v2_409 v 1.3 s
+[u5a] kubric v2_411 v 1.3 s
+[u5a] kubric v2_413 v 1.2 s
+[u5a] kubric v2_415 v 1.3 s
+[u5a] kubric v2_417 v 1.3 s
+[u5a] kubric v2_419 v 1.3 s
+[u5a] kubric v2_421 v 1.3 s
+[u5a] kubric v2_423 v 1.3 s
+[u5a] kubric v2_425 v 1.3 s
+[u5a] kubric v2_427 v 1.3 s
+[u5a] kubric v2_429 v 1.4 s
+[u5a] kubric v2_431 v 1.3 s
+[u5a] kubric v2_433 v 1.3 s
+[u5a] kubric v2_435 v 1.3 s
+[u5a] kubric v2_437 v 1.5 s
+[u5a] kubric v2_439 v 1.3 s
+[u5a] kubric v2_441 v 1.4 s
+[u5a] kubric v2_443 v 1.3 s
+[u5a] kubric v2_445 v 1.5 s
+[u5a] kubric v2_447 v 1.4 s
+[u5a] kubric v2_449 v 1.3 s
+[u5a] kubric v2_451 v 1.3 s
+[u5a] kubric v2_453 v 1.3 s
+[u5a] kubric v2_455 v 1.4 s
+[u5a] kubric v2_457 v 1.2 s
+[u5a] kubric v2_459 v 0.9 s
+[u5a] kubric v2_461 v 1.2 s
+[u5a] kubric v2_463 v 1.3 s
+[u5a] kubric v2_465 v 1.3 s
+[u5a] kubric v2_467 v 1.3 s
+[u5a] kubric v2_469 v 1.0 s
+[u5a] kubric v2_473 v 1.3 s
+[u5a] kubric v2_475 v 1.3 s
+[u5a] kubric v2_479 v 1.3 s
+[u5a] kubric v2_481 v 1.3 s
+[u5a] kubric v2_483 v 0.7 s
+[u5a] kubric v2_485 v 0.7 s
+[run_mech_gpu] exit 0 Saturday 24 October 2026 06:32:00 AM IST

@@ -1,0 +1,13 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[32m✓ Downloaded[0m
+  path: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+total 17134432
+drwxrwxr-x 4 rohit_sinha rohit_sinha        4096 Oct 19 08:19 .
+drwxrwxr-x 3 rohit_sinha rohit_sinha        4096 Oct 19 07:55 ..
+drwxrwxr-x 3 rohit_sinha rohit_sinha        4096 Oct 19 07:55 .cache
+-rw-rw-r-- 1 rohit_sinha rohit_sinha         249 Oct 19 07:55 config.json
+-rw-rw-r-- 1 rohit_sinha rohit_sinha  5676070424 Oct 19 08:14 diffusion_pytorch_model.safetensors
+drwxrwxr-x 3 rohit_sinha rohit_sinha        4096 Oct 19 07:55 google
+-rw-rw-r-- 1 rohit_sinha rohit_sinha 11361920418 Oct 19 08:05 models_t5_umt5-xxl-enc-bf16.pth
+-rw-rw-r-- 1 rohit_sinha rohit_sinha   507609880 Oct 19 07:58 Wan2.1_VAE.pth
+WANDONE

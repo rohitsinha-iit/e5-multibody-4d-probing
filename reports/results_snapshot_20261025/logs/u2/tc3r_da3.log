@@ -1,0 +1,379 @@
+[2026-10-24 12:21:20] attempt 1: trackcraft3r u2_infer.py --model tc3r_da3 --kubric test:C,test:D,transfer:C,transfer:D,fit:C,fit:D --real kitti15:rgb:w12  (GPU 0 free 48656 MiB)
+/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/lib/python3.10/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+    model_name: wan_video_dit model_class: WanModel
+        This model is initialized with extra kwargs: {'has_image_input': False, 'patch_size': [1, 2, 2], 'in_dim': 16, 'dim': 1536, 'ffn_dim': 8960, 'freq_dim': 256, 'text_dim': 4096, 'out_dim': 16, 'num_heads': 12, 'num_layers': 30, 'eps': 1e-06}
+    The following models are loaded: ['wan_video_dit'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+    model_name: wan_video_vae model_class: WanVideoVAE
+    The following models are loaded: ['wan_video_vae'].
+No wan_video_text_encoder models available.
+Using wan_video_dit from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors.
+Using wan_video_vae from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth.
+No wan_video_image_encoder models available.
+No wan_video_motion_controller models available.
+No wan_video_vace models available.
+No wans2v_audio_encoder models available.
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+  LoRA injected: rank=1024, targets=q,k,v,o,ffn.0,ffn.2
+  patch_embedding expanded: 16->32 channels
+  DiT head expanded to 2x output (xyz | vis)
+  DiT loaded: 1425 keys (unexpected=0, missing=0)
+  VAE loaded: 194 keys
+  VAE_vis loaded: 194 keys
+  VAE_pj loaded: 194 keys
+WanSceneFlowPredictor loaded from /data2/DATA/rohit_sinha/e5/big/models/ckpt/trackcraft3r/model.safetensors
+loaded tc3r_da3 58s
+[12:22:31] tc3r_da3 test C 301 n2_generic_s301 rt=11.5s
+[12:22:42] tc3r_da3 test C 303 n3_generic_s303 rt=10.2s
+[12:22:53] tc3r_da3 test C 305 camrot_s305 rt=10.3s
+[12:23:07] tc3r_da3 test C 307 epi_aligned_s307 rt=12.5s
+[12:23:18] tc3r_da3 test C 309 planar_s309 rt=10.8s
+[12:23:31] tc3r_da3 test C 311 confound_same_s311 rt=11.4s
+[12:23:42] tc3r_da3 test C 313 confound_glued_s313 rt=10.7s
+[12:23:54] tc3r_da3 test C 401 n2_generic_s401 rt=10.8s
+[12:24:05] tc3r_da3 test C 403 n2_generic_s403 rt=10.6s
+[12:24:17] tc3r_da3 test C 405 n2_generic_s405 rt=11.2s
+[12:24:29] tc3r_da3 test C 407 n2_generic_s407 rt=11.3s
+[12:24:41] tc3r_da3 test C 409 n3_generic_s409 rt=11.0s
+[12:24:54] tc3r_da3 test C 411 n3_generic_s411 rt=11.9s
+[12:25:06] tc3r_da3 test C 413 n3_generic_s413 rt=10.7s
+[12:25:17] tc3r_da3 test C 415 n3_generic_s415 rt=11.0s
+[12:25:30] tc3r_da3 test C 417 n3_generic_s417 rt=11.1s
+[12:25:42] tc3r_da3 test C 419 n3_generic_s419 rt=11.9s
+[12:25:54] tc3r_da3 test C 421 n3_generic_s421 rt=10.7s
+[12:26:06] tc3r_da3 test C 423 n3_generic_s423 rt=10.9s
+[12:26:17] tc3r_da3 test C 425 n3_generic_s425 rt=10.5s
+[12:26:28] tc3r_da3 test C 427 camrot_s427 rt=10.8s
+[12:26:40] tc3r_da3 test C 429 camrot_s429 rt=11.0s
+[12:26:52] tc3r_da3 test C 431 camrot_s431 rt=10.7s
+[12:27:03] tc3r_da3 test C 433 camrot_s433 rt=10.3s
+[12:27:16] tc3r_da3 test C 435 epi_aligned_s435 rt=11.9s
+[12:27:27] tc3r_da3 test C 437 epi_aligned_s437 rt=10.1s
+[12:27:38] tc3r_da3 test C 439 epi_aligned_s439 rt=10.5s
+[12:27:50] tc3r_da3 test C 441 epi_aligned_s441 rt=10.4s
+[12:28:03] tc3r_da3 test C 443 planar_s443 rt=12.5s
+[12:28:14] tc3r_da3 test C 445 planar_s445 rt=10.1s
+[12:28:25] tc3r_da3 test C 447 planar_s447 rt=10.4s
+[12:28:36] tc3r_da3 test C 449 planar_s449 rt=10.3s
+[12:28:47] tc3r_da3 test C 451 confound_same_s451 rt=10.3s
+[12:28:59] tc3r_da3 test C 453 confound_same_s453 rt=11.1s
+[12:29:12] tc3r_da3 test C 455 confound_same_s455 rt=12.4s
+[12:29:25] tc3r_da3 test C 457 confound_same_s457 rt=12.3s
+[12:29:39] tc3r_da3 test C 459 confound_same_s459 rt=13.0s
+[12:29:52] tc3r_da3 test C 461 confound_same_s461 rt=12.2s
+[12:30:06] tc3r_da3 test C 463 confound_same_s463 rt=12.3s
+[12:30:18] tc3r_da3 test C 465 confound_same_s465 rt=11.3s
+[12:30:29] tc3r_da3 test C 467 confound_same_s467 rt=10.7s
+[12:30:42] tc3r_da3 test C 469 confound_glued_s469 rt=12.2s
+[12:30:55] tc3r_da3 test C 473 confound_glued_s473 rt=12.5s
+[12:31:07] tc3r_da3 test C 475 confound_glued_s475 rt=11.4s
+[12:31:19] tc3r_da3 test C 479 confound_glued_s479 rt=10.8s
+[12:31:32] tc3r_da3 test C 481 confound_glued_s481 rt=12.3s
+[12:31:44] tc3r_da3 test C 483 confound_glued_s483 rt=10.9s
+[12:31:56] tc3r_da3 test C 485 confound_glued_s485 rt=11.7s
+unit tc3r_da3 test C new 48 errors 0 have 48 of 48
+[12:32:08] tc3r_da3 test D 301 n2_generic_s301 rt=11.1s
+[12:32:21] tc3r_da3 test D 303 n3_generic_s303 rt=12.0s
+[12:32:35] tc3r_da3 test D 305 camrot_s305 rt=13.0s
+[12:32:49] tc3r_da3 test D 307 epi_aligned_s307 rt=12.7s
+[12:33:00] tc3r_da3 test D 309 planar_s309 rt=10.7s
+[12:33:12] tc3r_da3 test D 311 confound_same_s311 rt=10.9s
+[12:33:25] tc3r_da3 test D 313 confound_glued_s313 rt=12.8s
+[12:33:37] tc3r_da3 test D 401 n2_generic_s401 rt=10.6s
+[12:33:50] tc3r_da3 test D 403 n2_generic_s403 rt=12.0s
+[12:34:02] tc3r_da3 test D 405 n2_generic_s405 rt=11.5s
+[12:34:15] tc3r_da3 test D 407 n2_generic_s407 rt=11.9s
+[12:34:27] tc3r_da3 test D 409 n3_generic_s409 rt=11.3s
+[12:34:39] tc3r_da3 test D 411 n3_generic_s411 rt=11.5s
+[12:34:51] tc3r_da3 test D 413 n3_generic_s413 rt=11.0s
+[12:35:02] tc3r_da3 test D 415 n3_generic_s415 rt=10.5s
+[12:35:15] tc3r_da3 test D 417 n3_generic_s417 rt=12.5s
+[12:35:29] tc3r_da3 test D 419 n3_generic_s419 rt=12.6s
+[12:35:43] tc3r_da3 test D 421 n3_generic_s421 rt=12.6s
+[12:35:54] tc3r_da3 test D 423 n3_generic_s423 rt=10.9s
+[12:36:06] tc3r_da3 test D 425 n3_generic_s425 rt=10.8s
+[12:36:18] tc3r_da3 test D 427 camrot_s427 rt=11.2s
+[12:36:29] tc3r_da3 test D 429 camrot_s429 rt=10.5s
+[12:36:41] tc3r_da3 test D 431 camrot_s431 rt=11.0s
+[12:36:52] tc3r_da3 test D 433 camrot_s433 rt=10.7s
+[12:37:07] tc3r_da3 test D 435 epi_aligned_s435 rt=13.7s
+[12:37:21] tc3r_da3 test D 437 epi_aligned_s437 rt=13.6s
+[12:37:34] tc3r_da3 test D 439 epi_aligned_s439 rt=12.1s
+[12:37:46] tc3r_da3 test D 441 epi_aligned_s441 rt=11.0s
+[12:37:58] tc3r_da3 test D 443 planar_s443 rt=11.4s
+[12:38:12] tc3r_da3 test D 445 planar_s445 rt=12.7s
+[12:38:24] tc3r_da3 test D 447 planar_s447 rt=11.1s
+[12:38:38] tc3r_da3 test D 449 planar_s449 rt=12.9s
+[12:38:51] tc3r_da3 test D 451 confound_same_s451 rt=12.0s
+[12:39:02] tc3r_da3 test D 453 confound_same_s453 rt=10.8s
+[12:39:14] tc3r_da3 test D 455 confound_same_s455 rt=10.9s
+[12:39:25] tc3r_da3 test D 457 confound_same_s457 rt=10.6s
+[12:39:37] tc3r_da3 test D 459 confound_same_s459 rt=10.7s
+[12:39:48] tc3r_da3 test D 461 confound_same_s461 rt=10.9s
+[12:40:01] tc3r_da3 test D 463 confound_same_s463 rt=11.4s
+[12:40:12] tc3r_da3 test D 465 confound_same_s465 rt=10.8s
+[12:40:25] tc3r_da3 test D 467 confound_same_s467 rt=12.4s
+[12:40:37] tc3r_da3 test D 469 confound_glued_s469 rt=10.7s
+[12:40:49] tc3r_da3 test D 473 confound_glued_s473 rt=11.3s
+[12:41:02] tc3r_da3 test D 475 confound_glued_s475 rt=12.1s
+[12:41:15] tc3r_da3 test D 479 confound_glued_s479 rt=12.5s
+[12:41:27] tc3r_da3 test D 481 confound_glued_s481 rt=11.5s
+[12:41:39] tc3r_da3 test D 483 confound_glued_s483 rt=11.0s
+[12:41:52] tc3r_da3 test D 485 confound_glued_s485 rt=12.2s
+unit tc3r_da3 test D new 48 errors 0 have 48 of 48
+[12:42:05] tc3r_da3 transfer C 531 epi_aligned_s531 rt=12.6s
+[12:42:18] tc3r_da3 transfer C 532 epi_aligned_s532 rt=12.4s
+[12:42:30] tc3r_da3 transfer C 533 epi_aligned_s533 rt=11.6s
+[12:42:45] tc3r_da3 transfer C 534 epi_aligned_s534 rt=13.7s
+[12:42:58] tc3r_da3 transfer C 535 epi_aligned_s535 rt=12.7s
+[12:43:12] tc3r_da3 transfer C 536 epi_aligned_s536 rt=12.4s
+[12:43:25] tc3r_da3 transfer C 537 epi_aligned_s537 rt=12.5s
+[12:43:38] tc3r_da3 transfer C 538 epi_aligned_s538 rt=12.9s
+[12:43:50] tc3r_da3 transfer C 539 epi_aligned_s539 rt=11.0s
+[12:44:02] tc3r_da3 transfer C 540 epi_aligned_s540 rt=11.0s
+[12:44:13] tc3r_da3 transfer C 541 epi_aligned_s541 rt=10.7s
+[12:44:25] tc3r_da3 transfer C 542 epi_aligned_s542 rt=10.9s
+[12:44:37] tc3r_da3 transfer C 543 epi_aligned_s543 rt=11.8s
+[12:44:50] tc3r_da3 transfer C 544 epi_aligned_s544 rt=12.3s
+[12:45:03] tc3r_da3 transfer C 545 epi_aligned_s545 rt=11.9s
+[12:45:15] tc3r_da3 transfer C 546 epi_aligned_s546 rt=10.8s
+[12:45:27] tc3r_da3 transfer C 547 epi_aligned_s547 rt=11.6s
+[12:45:41] tc3r_da3 transfer C 548 epi_aligned_s548 rt=12.7s
+[12:45:53] tc3r_da3 transfer C 549 epi_aligned_s549 rt=11.8s
+[12:46:06] tc3r_da3 transfer C 550 epi_aligned_s550 rt=11.9s
+[12:46:20] tc3r_da3 transfer C 551 epi_aligned_s551 rt=13.0s
+[12:46:31] tc3r_da3 transfer C 552 epi_aligned_s552 rt=10.5s
+[12:46:44] tc3r_da3 transfer C 553 epi_aligned_s553 rt=12.5s
+[12:46:57] tc3r_da3 transfer C 554 epi_aligned_s554 rt=11.6s
+[12:47:08] tc3r_da3 transfer C 555 epi_aligned_s555 rt=11.1s
+[12:47:20] tc3r_da3 transfer C 556 epi_aligned_s556 rt=10.5s
+[12:47:31] tc3r_da3 transfer C 557 epi_aligned_s557 rt=10.6s
+[12:47:42] tc3r_da3 transfer C 558 epi_aligned_s558 rt=10.7s
+[12:47:55] tc3r_da3 transfer C 559 epi_aligned_s559 rt=11.4s
+[12:48:06] tc3r_da3 transfer C 560 epi_aligned_s560 rt=10.5s
+[12:48:17] tc3r_da3 transfer C 561 n2_generic_s561 rt=10.5s
+[12:48:29] tc3r_da3 transfer C 562 n2_generic_s562 rt=11.2s
+[12:48:41] tc3r_da3 transfer C 563 n2_generic_s563 rt=11.4s
+[12:48:54] tc3r_da3 transfer C 564 n2_generic_s564 rt=12.1s
+[12:49:05] tc3r_da3 transfer C 565 n2_generic_s565 rt=10.3s
+[12:49:17] tc3r_da3 transfer C 566 n2_generic_s566 rt=10.9s
+[12:49:28] tc3r_da3 transfer C 567 n2_generic_s567 rt=10.9s
+[12:49:41] tc3r_da3 transfer C 568 n2_generic_s568 rt=12.2s
+[12:49:53] tc3r_da3 transfer C 569 n2_generic_s569 rt=11.3s
+[12:50:05] tc3r_da3 transfer C 570 n2_generic_s570 rt=11.1s
+[12:50:18] tc3r_da3 transfer C 571 confound_same_s571 rt=12.4s
+[12:50:31] tc3r_da3 transfer C 572 confound_same_s572 rt=12.0s
+[12:50:42] tc3r_da3 transfer C 573 confound_same_s573 rt=10.8s
+[12:50:53] tc3r_da3 transfer C 574 confound_same_s574 rt=10.3s
+[12:51:04] tc3r_da3 transfer C 575 confound_same_s575 rt=10.3s
+[12:51:16] tc3r_da3 transfer C 576 confound_same_s576 rt=10.8s
+[12:51:28] tc3r_da3 transfer C 577 confound_same_s577 rt=11.8s
+[12:51:40] tc3r_da3 transfer C 578 confound_same_s578 rt=10.5s
+[12:51:52] tc3r_da3 transfer C 579 confound_same_s579 rt=11.3s
+[12:52:05] tc3r_da3 transfer C 580 confound_same_s580 rt=12.4s
+[12:52:16] tc3r_da3 transfer C 581 n3_generic_s581 rt=10.4s
+[12:52:28] tc3r_da3 transfer C 582 n3_generic_s582 rt=10.9s
+[12:52:41] tc3r_da3 transfer C 583 n3_generic_s583 rt=12.3s
+[12:52:53] tc3r_da3 transfer C 584 n3_generic_s584 rt=11.7s
+[12:53:05] tc3r_da3 transfer C 585 n3_generic_s585 rt=11.4s
+[12:53:16] tc3r_da3 transfer C 586 n3_generic_s586 rt=10.7s
+[12:53:28] tc3r_da3 transfer C 587 n3_generic_s587 rt=11.4s
+[12:53:41] tc3r_da3 transfer C 588 n3_generic_s588 rt=12.3s
+[12:53:53] tc3r_da3 transfer C 589 n3_generic_s589 rt=10.9s
+[12:54:05] tc3r_da3 transfer C 590 n3_generic_s590 rt=11.0s
+[12:54:16] tc3r_da3 transfer C 591 confound_glued_s591 rt=10.6s
+[12:54:28] tc3r_da3 transfer C 592 confound_glued_s592 rt=10.9s
+[12:54:39] tc3r_da3 transfer C 594 confound_glued_s594 rt=10.6s
+[12:54:52] tc3r_da3 transfer C 595 confound_glued_s595 rt=12.4s
+[12:55:04] tc3r_da3 transfer C 596 confound_glued_s596 rt=11.6s
+[12:55:15] tc3r_da3 transfer C 597 confound_glued_s597 rt=10.1s
+[12:55:26] tc3r_da3 transfer C 598 confound_glued_s598 rt=10.2s
+[12:55:37] tc3r_da3 transfer C 599 confound_glued_s599 rt=10.3s
+[12:55:49] tc3r_da3 transfer C 600 confound_glued_s600 rt=10.8s
+unit tc3r_da3 transfer C new 69 errors 0 have 69 of 69
+[12:56:01] tc3r_da3 transfer D 531 epi_aligned_s531 rt=12.0s
+[12:56:15] tc3r_da3 transfer D 532 epi_aligned_s532 rt=12.3s
+[12:56:27] tc3r_da3 transfer D 533 epi_aligned_s533 rt=11.5s
+[12:56:38] tc3r_da3 transfer D 534 epi_aligned_s534 rt=10.7s
+[12:56:50] tc3r_da3 transfer D 535 epi_aligned_s535 rt=10.9s
+[12:57:01] tc3r_da3 transfer D 536 epi_aligned_s536 rt=10.9s
+[12:57:13] tc3r_da3 transfer D 537 epi_aligned_s537 rt=10.7s
+[12:57:24] tc3r_da3 transfer D 538 epi_aligned_s538 rt=10.7s
+[12:57:36] tc3r_da3 transfer D 539 epi_aligned_s539 rt=10.7s
+[12:57:47] tc3r_da3 transfer D 540 epi_aligned_s540 rt=10.8s
+[12:57:59] tc3r_da3 transfer D 541 epi_aligned_s541 rt=11.5s
+[12:58:11] tc3r_da3 transfer D 542 epi_aligned_s542 rt=10.5s
+[12:58:22] tc3r_da3 transfer D 543 epi_aligned_s543 rt=10.3s
+[12:58:33] tc3r_da3 transfer D 544 epi_aligned_s544 rt=11.1s
+[12:58:46] tc3r_da3 transfer D 545 epi_aligned_s545 rt=11.5s
+[12:58:57] tc3r_da3 transfer D 546 epi_aligned_s546 rt=10.5s
+[12:59:08] tc3r_da3 transfer D 547 epi_aligned_s547 rt=10.9s
+[12:59:20] tc3r_da3 transfer D 548 epi_aligned_s548 rt=10.8s
+[12:59:33] tc3r_da3 transfer D 549 epi_aligned_s549 rt=12.5s
+[12:59:45] tc3r_da3 transfer D 550 epi_aligned_s550 rt=11.1s
+[12:59:58] tc3r_da3 transfer D 551 epi_aligned_s551 rt=11.6s
+[13:00:10] tc3r_da3 transfer D 552 epi_aligned_s552 rt=11.6s
+[13:00:23] tc3r_da3 transfer D 553 epi_aligned_s553 rt=12.4s
+[13:00:36] tc3r_da3 transfer D 554 epi_aligned_s554 rt=11.9s
+[13:00:47] tc3r_da3 transfer D 555 epi_aligned_s555 rt=10.6s
+[13:00:59] tc3r_da3 transfer D 556 epi_aligned_s556 rt=10.9s
+[13:01:11] tc3r_da3 transfer D 557 epi_aligned_s557 rt=11.3s
+[13:01:23] tc3r_da3 transfer D 558 epi_aligned_s558 rt=11.1s
+[13:01:36] tc3r_da3 transfer D 559 epi_aligned_s559 rt=11.9s
+[13:01:47] tc3r_da3 transfer D 560 epi_aligned_s560 rt=11.1s
+[13:01:59] tc3r_da3 transfer D 561 n2_generic_s561 rt=11.1s
+[13:02:11] tc3r_da3 transfer D 562 n2_generic_s562 rt=11.5s
+[13:02:23] tc3r_da3 transfer D 563 n2_generic_s563 rt=11.2s
+[13:02:35] tc3r_da3 transfer D 564 n2_generic_s564 rt=11.0s
+[13:02:47] tc3r_da3 transfer D 565 n2_generic_s565 rt=11.2s
+[13:03:00] tc3r_da3 transfer D 566 n2_generic_s566 rt=11.9s
+[13:03:12] tc3r_da3 transfer D 567 n2_generic_s567 rt=11.2s
+[13:03:23] tc3r_da3 transfer D 568 n2_generic_s568 rt=10.6s
+[13:03:34] tc3r_da3 transfer D 569 n2_generic_s569 rt=10.4s
+[13:03:45] tc3r_da3 transfer D 570 n2_generic_s570 rt=10.7s
+[13:03:57] tc3r_da3 transfer D 571 confound_same_s571 rt=10.5s
+[13:04:09] tc3r_da3 transfer D 572 confound_same_s572 rt=11.3s
+[13:04:20] tc3r_da3 transfer D 573 confound_same_s573 rt=10.5s
+[13:04:31] tc3r_da3 transfer D 574 confound_same_s574 rt=10.8s
+[13:04:43] tc3r_da3 transfer D 575 confound_same_s575 rt=10.6s
+[13:04:54] tc3r_da3 transfer D 576 confound_same_s576 rt=10.9s
+[13:05:05] tc3r_da3 transfer D 577 confound_same_s577 rt=10.7s
+[13:05:17] tc3r_da3 transfer D 578 confound_same_s578 rt=10.8s
+[13:05:28] tc3r_da3 transfer D 579 confound_same_s579 rt=10.5s
+[13:05:39] tc3r_da3 transfer D 580 confound_same_s580 rt=10.3s
+[13:05:50] tc3r_da3 transfer D 581 n3_generic_s581 rt=10.3s
+[13:06:02] tc3r_da3 transfer D 582 n3_generic_s582 rt=10.8s
+[13:06:13] tc3r_da3 transfer D 583 n3_generic_s583 rt=10.3s
+[13:06:24] tc3r_da3 transfer D 584 n3_generic_s584 rt=10.6s
+[13:06:35] tc3r_da3 transfer D 585 n3_generic_s585 rt=10.4s
+[13:06:47] tc3r_da3 transfer D 586 n3_generic_s586 rt=11.4s
+[13:07:00] tc3r_da3 transfer D 587 n3_generic_s587 rt=11.6s
+[13:07:11] tc3r_da3 transfer D 588 n3_generic_s588 rt=10.9s
+[13:07:23] tc3r_da3 transfer D 589 n3_generic_s589 rt=11.2s
+[13:07:35] tc3r_da3 transfer D 590 n3_generic_s590 rt=11.2s
+[13:07:47] tc3r_da3 transfer D 591 confound_glued_s591 rt=10.7s
+[13:07:59] tc3r_da3 transfer D 592 confound_glued_s592 rt=11.2s
+[13:08:11] tc3r_da3 transfer D 594 confound_glued_s594 rt=11.5s
+[13:08:23] tc3r_da3 transfer D 595 confound_glued_s595 rt=11.8s
+[13:08:36] tc3r_da3 transfer D 596 confound_glued_s596 rt=11.2s
+[13:08:47] tc3r_da3 transfer D 597 confound_glued_s597 rt=10.6s
+[13:08:59] tc3r_da3 transfer D 598 confound_glued_s598 rt=11.3s
+[13:09:11] tc3r_da3 transfer D 599 confound_glued_s599 rt=11.0s
+[13:09:23] tc3r_da3 transfer D 600 confound_glued_s600 rt=11.0s
+unit tc3r_da3 transfer D new 69 errors 0 have 69 of 69
+[13:09:35] tc3r_da3 fit C 302 n2_generic_s302 rt=11.0s
+[13:09:46] tc3r_da3 fit C 304 n3_generic_s304 rt=10.5s
+[13:09:57] tc3r_da3 fit C 306 camrot_s306 rt=10.1s
+[13:10:08] tc3r_da3 fit C 308 epi_aligned_s308 rt=10.5s
+[13:10:22] tc3r_da3 fit C 310 planar_s310 rt=12.9s
+[13:10:34] tc3r_da3 fit C 312 confound_same_s312 rt=11.2s
+[13:10:45] tc3r_da3 fit C 314 confound_glued_s314 rt=10.3s
+[13:10:57] tc3r_da3 fit C 402 n2_generic_s402 rt=11.0s
+[13:11:09] tc3r_da3 fit C 404 n2_generic_s404 rt=11.5s
+[13:11:20] tc3r_da3 fit C 406 n2_generic_s406 rt=10.6s
+[13:11:32] tc3r_da3 fit C 408 n2_generic_s408 rt=11.0s
+[13:11:44] tc3r_da3 fit C 410 n3_generic_s410 rt=10.6s
+[13:11:55] tc3r_da3 fit C 412 n3_generic_s412 rt=10.8s
+[13:12:07] tc3r_da3 fit C 414 n3_generic_s414 rt=10.8s
+[13:12:19] tc3r_da3 fit C 416 n3_generic_s416 rt=11.4s
+[13:12:31] tc3r_da3 fit C 418 n3_generic_s418 rt=11.1s
+[13:12:42] tc3r_da3 fit C 420 n3_generic_s420 rt=10.7s
+[13:12:54] tc3r_da3 fit C 422 n3_generic_s422 rt=11.2s
+[13:13:06] tc3r_da3 fit C 424 n3_generic_s424 rt=11.3s
+[13:13:17] tc3r_da3 fit C 426 n3_generic_s426 rt=10.3s
+[13:13:30] tc3r_da3 fit C 428 camrot_s428 rt=11.4s
+[13:13:42] tc3r_da3 fit C 430 camrot_s430 rt=11.7s
+[13:13:54] tc3r_da3 fit C 432 camrot_s432 rt=11.1s
+[13:14:05] tc3r_da3 fit C 434 camrot_s434 rt=10.4s
+[13:14:17] tc3r_da3 fit C 436 epi_aligned_s436 rt=11.4s
+[13:14:28] tc3r_da3 fit C 438 epi_aligned_s438 rt=10.4s
+[13:14:41] tc3r_da3 fit C 440 epi_aligned_s440 rt=11.8s
+[13:14:53] tc3r_da3 fit C 442 epi_aligned_s442 rt=11.1s
+[13:15:07] tc3r_da3 fit C 444 planar_s444 rt=12.7s
+[13:15:20] tc3r_da3 fit C 446 planar_s446 rt=11.8s
+[13:15:32] tc3r_da3 fit C 448 planar_s448 rt=11.6s
+[13:15:45] tc3r_da3 fit C 450 planar_s450 rt=12.2s
+[13:15:59] tc3r_da3 fit C 452 confound_same_s452 rt=13.0s
+[13:16:10] tc3r_da3 fit C 454 confound_same_s454 rt=10.8s
+[13:16:22] tc3r_da3 fit C 456 confound_same_s456 rt=10.3s
+[13:16:35] tc3r_da3 fit C 458 confound_same_s458 rt=13.0s
+[13:16:47] tc3r_da3 fit C 460 confound_same_s460 rt=11.2s
+[13:16:59] tc3r_da3 fit C 462 confound_same_s462 rt=10.9s
+[13:17:12] tc3r_da3 fit C 464 confound_same_s464 rt=12.3s
+[13:17:24] tc3r_da3 fit C 466 confound_same_s466 rt=11.2s
+[13:17:36] tc3r_da3 fit C 468 confound_same_s468 rt=11.0s
+[13:17:48] tc3r_da3 fit C 470 confound_glued_s470 rt=11.7s
+[13:18:02] tc3r_da3 fit C 472 confound_glued_s472 rt=12.9s
+[13:18:15] tc3r_da3 fit C 474 confound_glued_s474 rt=12.9s
+[13:18:28] tc3r_da3 fit C 476 confound_glued_s476 rt=12.0s
+[13:18:42] tc3r_da3 fit C 478 confound_glued_s478 rt=12.9s
+[13:18:55] tc3r_da3 fit C 480 confound_glued_s480 rt=12.0s
+[13:19:09] tc3r_da3 fit C 482 confound_glued_s482 rt=12.6s
+[13:19:23] tc3r_da3 fit C 484 confound_glued_s484 rt=12.9s
+[13:19:34] tc3r_da3 fit C 486 confound_glued_s486 rt=10.5s
+unit tc3r_da3 fit C new 50 errors 0 have 50 of 50
+[13:19:46] tc3r_da3 fit D 302 n2_generic_s302 rt=11.2s
+[13:19:57] tc3r_da3 fit D 304 n3_generic_s304 rt=10.5s
+[13:20:09] tc3r_da3 fit D 306 camrot_s306 rt=11.2s
+[13:20:21] tc3r_da3 fit D 308 epi_aligned_s308 rt=10.9s
+[13:20:33] tc3r_da3 fit D 310 planar_s310 rt=11.3s
+[13:20:44] tc3r_da3 fit D 312 confound_same_s312 rt=10.4s
+[13:20:55] tc3r_da3 fit D 314 confound_glued_s314 rt=10.4s
+[13:21:08] tc3r_da3 fit D 402 n2_generic_s402 rt=12.1s
+[13:21:21] tc3r_da3 fit D 404 n2_generic_s404 rt=11.8s
+[13:21:33] tc3r_da3 fit D 406 n2_generic_s406 rt=11.3s
+[13:21:44] tc3r_da3 fit D 408 n2_generic_s408 rt=10.3s
+[13:21:55] tc3r_da3 fit D 410 n3_generic_s410 rt=10.4s
+[13:22:06] tc3r_da3 fit D 412 n3_generic_s412 rt=10.3s
+[13:22:19] tc3r_da3 fit D 414 n3_generic_s414 rt=12.5s
+[13:22:31] tc3r_da3 fit D 416 n3_generic_s416 rt=10.9s
+[13:22:43] tc3r_da3 fit D 418 n3_generic_s418 rt=11.2s
+[13:22:55] tc3r_da3 fit D 420 n3_generic_s420 rt=11.5s
+[13:23:07] tc3r_da3 fit D 422 n3_generic_s422 rt=10.9s
+[13:23:18] tc3r_da3 fit D 424 n3_generic_s424 rt=10.6s
+[13:23:30] tc3r_da3 fit D 426 n3_generic_s426 rt=10.5s
+[13:23:41] tc3r_da3 fit D 428 camrot_s428 rt=10.9s
+[13:23:53] tc3r_da3 fit D 430 camrot_s430 rt=11.2s
+[13:24:05] tc3r_da3 fit D 432 camrot_s432 rt=11.3s
+[13:24:17] tc3r_da3 fit D 434 camrot_s434 rt=10.7s
+[13:24:29] tc3r_da3 fit D 436 epi_aligned_s436 rt=11.0s
+[13:24:40] tc3r_da3 fit D 438 epi_aligned_s438 rt=10.7s
+[13:24:51] tc3r_da3 fit D 440 epi_aligned_s440 rt=10.4s
+[13:25:03] tc3r_da3 fit D 442 epi_aligned_s442 rt=11.0s
+[13:25:16] tc3r_da3 fit D 444 planar_s444 rt=11.9s
+[13:25:27] tc3r_da3 fit D 446 planar_s446 rt=10.9s
+[13:25:39] tc3r_da3 fit D 448 planar_s448 rt=10.7s
+[13:25:51] tc3r_da3 fit D 450 planar_s450 rt=11.7s
+[13:26:03] tc3r_da3 fit D 452 confound_same_s452 rt=11.0s
+[13:26:14] tc3r_da3 fit D 454 confound_same_s454 rt=10.5s
+[13:26:26] tc3r_da3 fit D 456 confound_same_s456 rt=10.7s
+[13:26:38] tc3r_da3 fit D 458 confound_same_s458 rt=12.0s
+[13:26:50] tc3r_da3 fit D 460 confound_same_s460 rt=10.8s
+[13:27:02] tc3r_da3 fit D 462 confound_same_s462 rt=10.8s
+[13:27:13] tc3r_da3 fit D 464 confound_same_s464 rt=10.6s
+[13:27:26] tc3r_da3 fit D 466 confound_same_s466 rt=11.6s
+[13:27:39] tc3r_da3 fit D 468 confound_same_s468 rt=12.5s
+[13:27:50] tc3r_da3 fit D 470 confound_glued_s470 rt=10.4s
+[13:28:01] tc3r_da3 fit D 472 confound_glued_s472 rt=10.6s
+[13:28:12] tc3r_da3 fit D 474 confound_glued_s474 rt=10.3s
+[13:28:23] tc3r_da3 fit D 476 confound_glued_s476 rt=10.5s
+[13:28:35] tc3r_da3 fit D 478 confound_glued_s478 rt=10.5s
+[13:28:46] tc3r_da3 fit D 480 confound_glued_s480 rt=10.8s
+[13:28:58] tc3r_da3 fit D 482 confound_glued_s482 rt=10.5s
+[13:29:09] tc3r_da3 fit D 484 confound_glued_s484 rt=10.6s
+[13:29:21] tc3r_da3 fit D 486 confound_glued_s486 rt=10.8s
+unit tc3r_da3 fit D new 50 errors 0 have 50 of 50
+[13:29:32] tc3r_da3 kitti15_rgb_w12 000000 rt=11.1s
+[13:34:20] tc3r_da3 kitti15_rgb_w12 000025 rt=11.8s
+[13:39:05] tc3r_da3 kitti15_rgb_w12 000050 rt=10.9s
+[13:44:00] tc3r_da3 kitti15_rgb_w12 000075 rt=10.5s
+[13:48:51] tc3r_da3 kitti15_rgb_w12 000100 rt=11.1s
+[13:53:48] tc3r_da3 kitti15_rgb_w12 000125 rt=11.7s
+[13:58:52] tc3r_da3 kitti15_rgb_w12 000150 rt=11.8s
+[14:03:40] tc3r_da3 kitti15_rgb_w12 000175 rt=11.4s
+unit tc3r_da3 kitti15_rgb_w12 new 200 errors 0 skipped(missing frames) 0 have 200
+finished tc3r_da3 errors 0 6429s

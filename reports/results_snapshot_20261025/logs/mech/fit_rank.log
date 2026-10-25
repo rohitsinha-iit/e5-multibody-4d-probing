@@ -1,0 +1,24 @@
+[interchange] mode=rank screen=obj split=fit scenes=19
+/data2/DATA/rohit_sinha/e5/big/results/u4a/rank_obj.json {'b2h1': 25, 'b22h9': 165, 'b17h10': 5, 'b14h6': 287, 'b8h11': 10}
+[interchange] mode=rank screen=cam split=fit scenes=19
+/data2/DATA/rohit_sinha/e5/big/results/u4a/rank_cam.json {'b2h1': 223, 'b22h9': 19, 'b17h10': 12, 'b14h6': 281, 'b8h11': 81}
+[interchange] mode=rank screen=cont split=fit scenes=19
+/data2/DATA/rohit_sinha/e5/big/results/u4a/rank_cont.json {'b2h1': 3, 'b22h9': 94, 'b17h10': 96, 'b14h6': 107, 'b8h11': 1}
+[interchange] mode=rank screen=camwarp split=fit scenes=19
+/data2/DATA/rohit_sinha/e5/big/venvs/any4d/lib/python3.12/site-packages/numpy/lib/_nanfunctions_impl.py:1213: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+/data2/DATA/rohit_sinha/e5/big/results/u4a/rank_camwarp.json {'b2h1': None, 'b22h9': None, 'b17h10': None, 'b14h6': None, 'b8h11': None}
+[interchange] mode=rank screen=objall split=fit scenes=19
+/data2/DATA/rohit_sinha/e5/big/results/u4a/rank_objall.json {'b2h1': 5, 'b22h9': 3, 'b17h10': 2, 'b14h6': 14, 'b8h11': 31}
+[interchange] mode=rank screen=obj split=fit scenes=50
+/data2/DATA/rohit_sinha/e5/big/results/u4a/rank_obj.json {'b2h1': 11, 'b22h9': 155, 'b17h10': 5, 'b14h6': 287, 'b8h11': 12}
+[interchange] mode=rank screen=cam split=fit scenes=50
+/data2/DATA/rohit_sinha/e5/big/results/u4a/rank_cam.json {'b2h1': 263, 'b22h9': 28, 'b17h10': 13, 'b14h6': 281, 'b8h11': 118}
+[interchange] mode=rank screen=cont split=fit scenes=50
+/data2/DATA/rohit_sinha/e5/big/results/u4a/rank_cont.json {'b2h1': 4, 'b22h9': 120, 'b17h10': 116, 'b14h6': 22, 'b8h11': 1}
+[interchange] mode=rank screen=camwarp split=fit scenes=50
+/data2/DATA/rohit_sinha/e5/big/venvs/any4d/lib/python3.12/site-packages/numpy/lib/_nanfunctions_impl.py:1213: RuntimeWarning: Mean of empty slice
+  return np.nanmean(a, axis, out=out, keepdims=keepdims)
+/data2/DATA/rohit_sinha/e5/big/results/u4a/rank_camwarp.json {'b2h1': None, 'b22h9': None, 'b17h10': None, 'b14h6': None, 'b8h11': None}
+[interchange] mode=rank screen=objall split=fit scenes=50
+/data2/DATA/rohit_sinha/e5/big/results/u4a/rank_objall.json {'b2h1': 5, 'b22h9': 3, 'b17h10': 2, 'b14h6': 12, 'b8h11': 40}

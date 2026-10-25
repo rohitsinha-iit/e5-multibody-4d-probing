@@ -1,0 +1,18 @@
+{
+ "item": "temple_2_0005",
+ "eval": "sintel",
+ "variant": "v",
+ "rows": {
+  "v": {
+   "r0": {
+    "slope": 0.6670857013805088,
+    "slope_inst_median": 0.6905772627661265,
+    "epe_static": 4.360277139443504,
+    "epe_moving": 23.570278731207885,
+    "n_eval": 380390,
+    "n_moving_eval": 3844
+   }
+  }
+ },
+ "wall_s": 1.2
+}

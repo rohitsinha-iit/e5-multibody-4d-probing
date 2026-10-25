@@ -1,0 +1,10 @@
+remaining hardcoded path literals: 0
+ src/e5_probe_extract.py                   |   4 +-
+ src/e5_realdata_fetch.sh                  |   2 +-
+ 29 files changed, 432 insertions(+), 224 deletions(-)
+behind origin: 0
+cf3e539 A6000 bootstrap: E5_ROOT/E5_BIG path variables (src/e5_paths.py), queue port (parallel cap 2, GPU headroom and reservations, site env), path checker, env/a6000_setup.txt, migration notes
+5848c10 U2 new models: gate chain (G0b/G0d/G0g/G0j + Any4D reference), G0k relpose cross-check, one-GPU pinning, MoRe save_attn patch
+dc08758 U2 new models: OpenD4RT, TrackCraft3R, 4RC, MoRe, lifted-tracker adapters (w_disp); world_slope, pose, budget metrics; gate runner; repo patches
+?? results/attr_gates.json
+?? src/p3/

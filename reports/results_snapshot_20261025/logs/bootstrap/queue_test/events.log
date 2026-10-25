@@ -1,0 +1,12 @@
+2026-10-19 07:56:26  supervisor start pid 1757536 (max parallel 2)
+2026-10-19 07:56:28  start d1 pid 1757796 attempt 1 (1/2 running)
+2026-10-19 07:56:36  start d2 pid 1758420 attempt 1 (2/2 running)
+2026-10-19 07:56:55  done d1
+2026-10-19 07:56:56  push d1 not done (rc 3), will retry
+2026-10-19 07:56:57  start d3 pid 1759076 attempt 1 (2/2 running)
+2026-10-19 07:57:01  done d2
+2026-10-19 07:57:02  push d2 not done (rc 3), will retry
+2026-10-19 07:57:25  done d3
+2026-10-19 07:57:26  push d3 not done (rc 3), will retry
+2026-10-19 07:57:34  STOP file found, no new tasks; exiting when running tasks finish
+2026-10-19 07:57:34  STOP: all running tasks finished, exiting

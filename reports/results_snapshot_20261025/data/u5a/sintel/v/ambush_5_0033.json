@@ -1,0 +1,18 @@
+{
+ "item": "ambush_5_0033",
+ "eval": "sintel",
+ "variant": "v",
+ "rows": {
+  "v": {
+   "r0": {
+    "slope": 0.7452135403472123,
+    "slope_inst_median": 0.7452135403472123,
+    "epe_static": 8.521444280703626,
+    "epe_moving": 23.413293448238775,
+    "n_eval": 341500,
+    "n_moving_eval": 136100
+   }
+  }
+ },
+ "wall_s": 0.8
+}

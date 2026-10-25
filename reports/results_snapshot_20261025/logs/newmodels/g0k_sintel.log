@@ -1,0 +1,898 @@
+[run_gpu] Monday 19 October 2026 09:38:09 AM IST GPU=3 pin= need=14 venv=4rc args=-m accelerate.commands.launch --num_processes 1 --main_process_port 29558 eval/relpose/launch.py --output_dir /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel/ --eval_dataset sintel --checkpoint Luo-Yihang/4RC
+0, 34054 MiB, 14617 MiB
+1, 30944 MiB, 17727 MiB
+2, 23938 MiB, 24733 MiB
+3, 9609 MiB, 39062 MiB
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+using SwiGLU layer as FFN
+  0%|          | 0/14 [00:00<?, ?it/s]>> Loading a list of 50 images
+ - adding data/sintel/training/final/alley_2/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//alley_2/pred_traj.txt
+  0%|          | 0/14 [00:57<?, ?it/s]
+Traceback (most recent call last):
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/launch.py", line 267, in <module>
+    main()
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/launch.py", line 263, in main
+    eval_pose_estimation(args, model, save_dir=args.output_dir)
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/launch.py", line 248, in eval_pose_estimation
+    ate_mean, rpe_trans_mean, rpe_rot_mean = eval_pose_estimation_dist(
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/launch.py", line 220, in eval_pose_estimation_dist
+    raise e  # Rethrow if it's not an expected exception
+    ^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/launch.py", line 176, in eval_pose_estimation_dist
+    ate, rpe_trans, rpe_rot = eval_metrics(
+                              ^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/eval/relpose/evo_utils.py", line 184, in eval_metrics
+    gt_traj, pred_traj = sync.associate_trajectories(gt_traj, pred_traj)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/evo/core/sync.py", line 146, in associate_trajectories
+    matching_indices_short, matching_indices_long = matching_time_indices(
+                                                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/evo/core/sync.py", line 86, in matching_time_indices
+    index_2 = np.searchsorted(stamps_2, stamp_1, side="right")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/numpy/_core/fromnumeric.py", line 1501, in searchsorted
+    return _wrapfunc(a, 'searchsorted', v, side=side, sorter=sorter)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/numpy/_core/fromnumeric.py", line 54, in _wrapfunc
+    return bound(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^
+ValueError: object too deep for desired array
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/accelerate/commands/launch.py", line 1423, in <module>
+    main()
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/accelerate/commands/launch.py", line 1419, in main
+    launch_command(args)
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/accelerate/commands/launch.py", line 1413, in launch_command
+    simple_launcher(args)
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/lib/python3.11/site-packages/accelerate/commands/launch.py", line 999, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/data2/DATA/rohit_sinha/e5/big/venvs/4rc/bin/python', 'eval/relpose/launch.py', '--output_dir', '/data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel/', '--eval_dataset', 'sintel', '--checkpoint', 'Luo-Yihang/4RC']' returned non-zero exit status 1.
+Command exited with non-zero status 1
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/bin/python -m accelerate.commands.launch --num_processes 1 --main_process_port 29558 eval/relpose/launch.py --output_dir /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel/ --eval_dataset sintel --checkpoint Luo-Yihang/4RC"
+	User time (seconds): 61.43
+	System time (seconds): 10.96
+	Percent of CPU this job got: 52%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:18.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 12606948
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 468
+	Minor (reclaiming a frame) page faults: 2294256
+	Voluntary context switches: 2930
+	Involuntary context switches: 25054
+	Swaps: 0
+	File system inputs: 208696
+	File system outputs: 112
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+[run_gpu] exit 1 Monday 19 October 2026 09:40:28 AM IST
+[run_gpu] Monday 19 October 2026 10:12:37 AM IST GPU=3 pin= need=14 venv=4rc args=-m accelerate.commands.launch --num_processes 1 --main_process_port 29558 eval/relpose/launch.py --output_dir /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel/ --eval_dataset sintel --checkpoint Luo-Yihang/4RC
+0, 34992 MiB, 13678 MiB
+1, 34249 MiB, 14421 MiB
+2, 20730 MiB, 27941 MiB
+3, 9609 MiB, 39062 MiB
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+using SwiGLU layer as FFN
+  0%|          | 0/14 [00:00<?, ?it/s]>> Loading a list of 50 images
+ - adding data/sintel/training/final/alley_2/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/alley_2/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//alley_2/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//alley_2_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//alley_2_traj_error.png
+  7%|▋         | 1/14 [00:27<05:57, 27.52s/it]>> Loading a list of 33 images
+ - adding data/sintel/training/final/ambush_4/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_4/frame_0033.png with resolution 1024x436 --> 518x210
+ (Found 33 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//ambush_4/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//ambush_4_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//ambush_4_traj_error.png
+ 14%|█▍        | 2/14 [00:42<04:02, 20.17s/it]>> Loading a list of 50 images
+ - adding data/sintel/training/final/ambush_5/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_5/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//ambush_5/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//ambush_5_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//ambush_5_traj_error.png
+ 21%|██▏       | 3/14 [01:13<04:35, 25.08s/it]>> Loading a list of 20 images
+ - adding data/sintel/training/final/ambush_6/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/ambush_6/frame_0020.png with resolution 1024x436 --> 518x210
+ (Found 20 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//ambush_6/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//ambush_6_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//ambush_6_traj_error.png
+ 29%|██▊       | 4/14 [01:19<02:57, 17.73s/it]>> Loading a list of 50 images
+ - adding data/sintel/training/final/cave_2/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_2/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//cave_2/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//cave_2_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//cave_2_traj_error.png
+ 36%|███▌      | 5/14 [01:47<03:09, 21.10s/it]>> Loading a list of 50 images
+ - adding data/sintel/training/final/cave_4/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/cave_4/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//cave_4/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//cave_4_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//cave_4_traj_error.png
+ 43%|████▎     | 6/14 [02:16<03:12, 24.01s/it]>> Loading a list of 50 images
+ - adding data/sintel/training/final/market_2/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_2/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//market_2/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//market_2_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//market_2_traj_error.png
+ 50%|█████     | 7/14 [02:45<02:58, 25.56s/it]>> Loading a list of 50 images
+ - adding data/sintel/training/final/market_5/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_5/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//market_5/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//market_5_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//market_5_traj_error.png
+ 57%|█████▋    | 8/14 [03:14<02:40, 26.77s/it]>> Loading a list of 40 images
+ - adding data/sintel/training/final/market_6/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/market_6/frame_0040.png with resolution 1024x436 --> 518x210
+ (Found 40 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//market_6/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//market_6_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//market_6_traj_error.png
+ 64%|██████▍   | 9/14 [03:34<02:02, 24.41s/it]>> Loading a list of 50 images
+ - adding data/sintel/training/final/shaman_3/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/shaman_3/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//shaman_3/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//shaman_3_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//shaman_3_traj_error.png
+ 71%|███████▏  | 10/14 [04:00<01:40, 25.08s/it]>> Loading a list of 50 images
+ - adding data/sintel/training/final/sleeping_1/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_1/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//sleeping_1/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//sleeping_1_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//sleeping_1_traj_error.png
+ 79%|███████▊  | 11/14 [04:27<01:16, 25.50s/it]>> Loading a list of 50 images
+ - adding data/sintel/training/final/sleeping_2/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/sleeping_2/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//sleeping_2/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//sleeping_2_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//sleeping_2_traj_error.png
+ 86%|████████▌ | 12/14 [04:53<00:51, 25.82s/it]>> Loading a list of 50 images
+ - adding data/sintel/training/final/temple_2/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_2/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//temple_2/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//temple_2_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//temple_2_traj_error.png
+ 93%|█████████▎| 13/14 [05:19<00:25, 25.79s/it]>> Loading a list of 50 images
+ - adding data/sintel/training/final/temple_3/frame_0001.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0002.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0003.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0004.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0005.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0006.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0007.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0008.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0009.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0010.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0011.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0012.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0013.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0014.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0015.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0016.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0017.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0018.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0019.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0020.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0021.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0022.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0023.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0024.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0025.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0026.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0027.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0028.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0029.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0030.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0031.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0032.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0033.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0034.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0035.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0036.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0037.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0038.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0039.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0040.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0041.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0042.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0043.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0044.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0045.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0046.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0047.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0048.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0049.png with resolution 1024x436 --> 518x210
+ - adding data/sintel/training/final/temple_3/frame_0050.png with resolution 1024x436 --> 518x210
+ (Found 50 images)
+Warning: track not found in preds, using world_points instead
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//temple_3/pred_traj.txt
+Save results to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//temple_3_eval_metric.txt
+Saved trajectory to /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel//temple_3_traj_error.png
+100%|██████████| 14/14 [05:45<00:00, 25.89s/it]100%|██████████| 14/14 [05:45<00:00, 24.67s/it]
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/bin/python -m accelerate.commands.launch --num_processes 1 --main_process_port 29558 eval/relpose/launch.py --output_dir /data2/DATA/rohit_sinha/e5/big/results/newmodels/g0k/sintel/ --eval_dataset sintel --checkpoint Luo-Yihang/4RC"
+	User time (seconds): 348.34
+	System time (seconds): 21.48
+	Percent of CPU this job got: 91%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:44.90
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 12603940
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 5558
+	Minor (reclaiming a frame) page faults: 3637983
+	Voluntary context switches: 32529
+	Involuntary context switches: 7753
+	Swaps: 0
+	File system inputs: 3852792
+	File system outputs: 1712
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[run_gpu] exit 0 Monday 19 October 2026 10:19:22 AM IST

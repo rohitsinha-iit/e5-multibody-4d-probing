@@ -1,0 +1,34 @@
+Seq: sleeping_2 
+
+APE w.r.t. translation part (m)
+(with Sim(3) Umeyama alignment)
+
+       max	0.003730
+      mean	0.001529
+    median	0.001489
+       min	0.000340
+      rmse	0.001654
+       sse	0.000137
+       std	0.000631
+RPE w.r.t. rotation angle in degrees (deg)
+for delta = 1 (frames) using all pairs
+(with Sim(3) Umeyama alignment)
+
+       max	0.190762
+      mean	0.047793
+    median	0.041067
+       min	0.009561
+      rmse	0.056864
+       sse	0.158442
+       std	0.030812
+RPE w.r.t. translation part (m)
+for delta = 1 (frames) using all pairs
+(with Sim(3) Umeyama alignment)
+
+       max	0.003243
+      mean	0.001333
+    median	0.001236
+       min	0.000290
+      rmse	0.001467
+       sse	0.000105
+       std	0.000614

@@ -1,0 +1,33 @@
+{
+ "item": "v2_305",
+ "eval": "kubric",
+ "variant": "v",
+ "rows": {
+  "v": {
+   "r0": {
+    "alpha": NaN,
+    "beta": NaN,
+    "cond_AB": NaN,
+    "identifiable": false,
+    "s_w": NaN,
+    "static_residual": NaN,
+    "epe_moving": 94.57406808743238,
+    "epe_static": 2.6867706532482822,
+    "n_moving": 3,
+    "alpha_nb": 0.0467963716777519,
+    "beta_nb": 1.079576665915878,
+    "cond_AB_nb": 4.15356859509613,
+    "identifiable_nb": true,
+    "s_w_nb": 0.0010784227566531255,
+    "static_residual_nb": 0.0022935533355634904,
+    "epe_moving_nb": 39.27179493002586,
+    "epe_static_nb": 2.717067146323508,
+    "n_moving_nb": 285,
+    "rpe_t": 4.193703720245225e-15,
+    "rpe_r": 0.15355959513971548,
+    "ate": 1.8387040139585255e-15
+   }
+  }
+ },
+ "wall_s": 1.3
+}

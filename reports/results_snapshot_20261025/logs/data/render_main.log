@@ -1,0 +1,935 @@
+=== start Monday 19 October 2026 08:29:37 AM IST
+== phase 1: G0f gate scenes (10 base scenes x D,C,B,A) Monday 19 October 2026 08:29:37 AM IST
+28 renders, 3 workers x 4 cores (['28-31', '32-35', '36-39'])
+{"ds": "v2", "scene": "camrot_s305", "v": "D", "status": "skip", "frame0_psnr": {}, "t": "2026-10-19 08:29:42"}
+{"ds": "v2", "scene": "camrot_s305", "v": "C", "status": "ok", "wall_s": 798.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s305_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-19 08:43:03"}
+{"ds": "v2", "scene": "n2_generic_s401", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 08:43:03"}
+{"ds": "v2", "scene": "n2_generic_s401", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 08:43:03"}
+{"ds": "v2", "scene": "n2_generic_s401", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 08:43:03"}
+{"ds": "v2", "scene": "n2_generic_s401", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 08:43:03"}
+{"ds": "v2", "scene": "camrot_s305", "v": "B", "status": "ok", "wall_s": 811.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s305_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-19 08:43:14"}
+{"ds": "v2", "scene": "camrot_s305", "v": "A", "status": "ok", "wall_s": 907.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s305_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 08:44:49"}
+{"ds": "v2", "scene": "n3_generic_s409", "v": "D", "status": "ok", "wall_s": 709.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s409_D.txt", "frame0_psnr": {}, "t": "2026-10-19 08:54:49"}
+{"ds": "v2", "scene": "n3_generic_s409", "v": "C", "status": "ok", "wall_s": 697.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s409_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-19 08:54:51"}
+{"ds": "v2", "scene": "n3_generic_s409", "v": "B", "status": "ok", "wall_s": 792.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s409_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-19 08:58:04"}
+{"ds": "v2", "scene": "n3_generic_s409", "v": "A", "status": "ok", "wall_s": 732.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s409_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 09:07:01"}
+{"ds": "v2", "scene": "epi_aligned_s435", "v": "D", "status": "ok", "wall_s": 737.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s435_D.txt", "frame0_psnr": {}, "t": "2026-10-19 09:07:09"}
+{"ds": "v2", "scene": "epi_aligned_s435", "v": "C", "status": "ok", "wall_s": 810.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s435_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-19 09:11:35"}
+{"ds": "v2", "scene": "epi_aligned_s435", "v": "B", "status": "ok", "wall_s": 695.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s435_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-19 09:18:37"}
+{"ds": "v2", "scene": "epi_aligned_s435", "v": "A", "status": "ok", "wall_s": 691.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s435_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 09:18:40"}
+{"ds": "v2", "scene": "planar_s443", "v": "D", "status": "ok", "wall_s": 757.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s443_D.txt", "frame0_psnr": {}, "t": "2026-10-19 09:24:13"}
+{"ds": "v2", "scene": "planar_s443", "v": "C", "status": "ok", "wall_s": 660.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s443_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-19 09:29:39"}
+{"ds": "v2", "scene": "planar_s443", "v": "B", "status": "ok", "wall_s": 662.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s443_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-19 09:29:43"}
+{"ds": "v2", "scene": "planar_s443", "v": "A", "status": "ok", "wall_s": 737.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s443_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 09:36:31"}
+{"ds": "v2", "scene": "confound_same_s451", "v": "C", "status": "ok", "wall_s": 681.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s451_C.txt", "frame0_psnr": {}, "t": "2026-10-19 09:41:05"}
+{"ds": "v2", "scene": "confound_same_s451", "v": "D", "status": "ok", "wall_s": 699.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s451_D.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-19 09:41:18"}
+{"ds": "v2", "scene": "confound_glued_s469", "v": "D", "status": "skip", "frame0_psnr": {}, "t": "2026-10-19 09:41:18"}
+{"ds": "v2", "scene": "confound_same_s451", "v": "B", "status": "ok", "wall_s": 815.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s451_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-19 09:50:06"}
+{"ds": "v2", "scene": "confound_same_s451", "v": "A", "status": "ok", "wall_s": 739.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s451_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 09:53:24"}
+{"ds": "v2", "scene": "confound_glued_s469", "v": "C", "status": "ok", "wall_s": 764.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s469_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-19 09:54:03"}
+{"ds": "v2", "scene": "confound_glued_s469", "v": "B", "status": "ok", "wall_s": 775.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s469_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-19 10:03:02"}
+{"ds": "v2", "scene": "confound_glued_s469", "v": "A", "status": "ok", "wall_s": 667.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s469_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 10:04:31"}
+RENDER_FACTORIAL_DONE
+12 renders, 3 workers x 4 cores (['28-31', '32-35', '36-39'])
+{"ds": "v3float", "scene": "epi_aligned_s531", "v": "C", "status": "ok", "wall_s": 749.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s531_C.txt", "frame0_psnr": {}, "t": "2026-10-19 10:17:01"}
+{"ds": "v3float", "scene": "epi_aligned_s531", "v": "B", "status": "ok", "wall_s": 759.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s531_B.txt", "frame0_psnr": {}, "t": "2026-10-19 10:17:11"}
+{"ds": "v3float", "scene": "epi_aligned_s531", "v": "D", "status": "ok", "wall_s": 817.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s531_D.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-19 10:18:10"}
+{"ds": "v3float", "scene": "n2_generic_s561", "v": "D", "status": "ok", "wall_s": 680.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s561_D.txt", "frame0_psnr": {}, "t": "2026-10-19 10:28:32"}
+{"ds": "v3float", "scene": "epi_aligned_s531", "v": "A", "status": "ok", "wall_s": 721.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s531_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 10:29:03"}
+{"ds": "v3float", "scene": "n2_generic_s561", "v": "C", "status": "ok", "wall_s": 713.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s561_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-19 10:30:04"}
+{"ds": "v3float", "scene": "n2_generic_s561", "v": "B", "status": "ok", "wall_s": 647.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s561_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-19 10:39:20"}
+{"ds": "v3float", "scene": "n2_generic_s561", "v": "A", "status": "ok", "wall_s": 633.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s561_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 10:39:37"}
+{"ds": "v3float", "scene": "n3_generic_s581", "v": "D", "status": "ok", "wall_s": 674.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s581_D.txt", "frame0_psnr": {}, "t": "2026-10-19 10:41:18"}
+{"ds": "v3float", "scene": "n3_generic_s581", "v": "C", "status": "ok", "wall_s": 659.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s581_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-19 10:50:20"}
+{"ds": "v3float", "scene": "n3_generic_s581", "v": "B", "status": "ok", "wall_s": 651.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s581_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-19 10:50:29"}
+{"ds": "v3float", "scene": "n3_generic_s581", "v": "A", "status": "ok", "wall_s": 709.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s581_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 10:53:08"}
+RENDER_FACTORIAL_DONE
+gt v2 camrot 305 ['A', 'B', 'C', 'D']
+{"scene": "camrot_s305", "set": "v2", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 1, "D_median_A_px_t23": 53.55095772545885}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": true}}
+gt v2 n2_generic 401 ['A', 'B', 'C', 'D']
+{"scene": "n2_generic_s401", "set": "v2", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 1, "D_median_A_px_t23": 54.25754154171963}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": true}}
+gt v2 n3_generic 409 ['A', 'B', 'C', 'D']
+{"scene": "n3_generic_s409", "set": "v2", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 2, "D_median_A_px_t23": 55.77111874845666}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": true}}
+gt v2 epi_aligned 435 ['A', 'B', 'C', 'D']
+{"scene": "epi_aligned_s435", "set": "v2", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 1, "D_median_A_px_t23": 152.55764288802354}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": true}}
+gt v2 planar 443 ['A', 'B', 'C', 'D']
+{"scene": "planar_s443", "set": "v2", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 1, "D_median_A_px_t23": 87.00412962122475}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": true}}
+gt v2 confound_same 451 ['A', 'B', 'C', 'D']
+{"scene": "confound_same_s451", "set": "v2", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 1, "D_median_A_px_t23": 79.73553166789912}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": true}}
+gt v2 confound_glued 469 ['A', 'B', 'C', 'D']
+{"scene": "confound_glued_s469", "set": "v2", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 2, "D_median_A_px_t23": 104.04030006055774}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": true}}
+gt v3float epi_aligned 531 ['A', 'B', 'C', 'D']
+{"scene": "epi_aligned_s531", "set": "v3float", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 1, "D_median_A_px_t23": 137.55066935197846}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": true}}
+gt v3float n2_generic 561 ['A', 'B', 'C', 'D']
+{"scene": "n2_generic_s561", "set": "v3float", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 1, "D_median_A_px_t23": 52.46671694435707}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": true}}
+gt v3float n3_generic 581 ['A', 'B', 'C', 'D']
+{"scene": "n3_generic_s581", "set": "v3float", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 0.0}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 0.0, "max_abs_A_px": 0.0}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 2, "D_median_A_px_t23": 85.6826542497679}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": true}}
+G0f pass {'copy': True, 'psnr': True, 'cam_identity': True, 'obj_zero': True} inf
+G0f=pass Monday 19 October 2026 10:53:40 AM IST
+== phase 2a: all D re-renders (v2 out100, v3float, v4epi epi_accel/epi_const) Monday 19 October 2026 10:53:40 AM IST
+230 renders, 3 workers x 4 cores (['28-31', '32-35', '36-39'])
+{"ds": "v2", "scene": "n2_generic_s302", "v": "D", "status": "ok", "wall_s": 693.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s302_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:05:14"}
+{"ds": "v2", "scene": "n3_generic_s303", "v": "D", "status": "ok", "wall_s": 740.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s303_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:06:01"}
+{"ds": "v2", "scene": "camrot_s305", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 11:06:01"}
+{"ds": "v2", "scene": "n2_generic_s301", "v": "D", "status": "ok", "wall_s": 776.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s301_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:06:37"}
+{"ds": "v2", "scene": "n3_generic_s304", "v": "D", "status": "ok", "wall_s": 678.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s304_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:16:32"}
+{"ds": "v2", "scene": "camrot_s306", "v": "D", "status": "ok", "wall_s": 670.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s306_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:17:11"}
+{"ds": "v2", "scene": "epi_aligned_s307", "v": "D", "status": "ok", "wall_s": 673.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s307_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:17:50"}
+{"ds": "v2", "scene": "epi_aligned_s308", "v": "D", "status": "ok", "wall_s": 655.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s308_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:27:28"}
+{"ds": "v2", "scene": "planar_s309", "v": "D", "status": "ok", "wall_s": 662.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s309_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:28:14"}
+{"ds": "v2", "scene": "planar_s310", "v": "D", "status": "ok", "wall_s": 700.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s310_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:29:31"}
+{"ds": "v2", "scene": "confound_same_s312", "v": "D", "status": "ok", "wall_s": 638.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s312_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:38:52"}
+{"ds": "v2", "scene": "confound_same_s311", "v": "D", "status": "ok", "wall_s": 684.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s311_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:38:53"}
+{"ds": "v2", "scene": "n2_generic_s401", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 11:38:53"}
+{"ds": "v2", "scene": "confound_glued_s313", "v": "D", "status": "ok", "wall_s": 688.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s313_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:41:00"}
+{"ds": "v2", "scene": "confound_glued_s314", "v": "D", "status": "ok", "wall_s": 645.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s314_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:49:37"}
+{"ds": "v2", "scene": "n2_generic_s402", "v": "D", "status": "ok", "wall_s": 669.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s402_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:50:03"}
+{"ds": "v2", "scene": "n2_generic_s403", "v": "D", "status": "ok", "wall_s": 712.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s403_D.txt", "frame0_psnr": {}, "t": "2026-10-19 11:52:52"}
+{"ds": "v2", "scene": "n2_generic_s405", "v": "D", "status": "ok", "wall_s": 625.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s405_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:00:28"}
+{"ds": "v2", "scene": "n2_generic_s404", "v": "D", "status": "ok", "wall_s": 695.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s404_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:01:13"}
+{"ds": "v2", "scene": "n2_generic_s406", "v": "D", "status": "ok", "wall_s": 689.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s406_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:04:22"}
+{"ds": "v2", "scene": "n3_generic_s409", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 12:04:22"}
+{"ds": "v2", "scene": "n2_generic_s407", "v": "D", "status": "ok", "wall_s": 647.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s407_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:11:16"}
+{"ds": "v2", "scene": "n2_generic_s408", "v": "D", "status": "ok", "wall_s": 672.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s408_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:12:26"}
+{"ds": "v2", "scene": "n3_generic_s410", "v": "D", "status": "ok", "wall_s": 699.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s410_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:16:01"}
+{"ds": "v2", "scene": "n3_generic_s411", "v": "D", "status": "ok", "wall_s": 644.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s411_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:22:00"}
+{"ds": "v2", "scene": "n3_generic_s412", "v": "D", "status": "ok", "wall_s": 638.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s412_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:23:05"}
+{"ds": "v2", "scene": "n3_generic_s413", "v": "D", "status": "ok", "wall_s": 739.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s413_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:28:21"}
+{"ds": "v2", "scene": "n3_generic_s414", "v": "D", "status": "ok", "wall_s": 723.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s414_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:34:04"}
+{"ds": "v2", "scene": "n3_generic_s415", "v": "D", "status": "ok", "wall_s": 676.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s415_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:34:21"}
+{"ds": "v2", "scene": "n3_generic_s416", "v": "D", "status": "ok", "wall_s": 754.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s416_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:40:56"}
+{"ds": "v2", "scene": "n3_generic_s417", "v": "D", "status": "ok", "wall_s": 632.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s417_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:44:37"}
+{"ds": "v2", "scene": "n3_generic_s418", "v": "D", "status": "ok", "wall_s": 615.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s418_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:44:37"}
+{"ds": "v2", "scene": "n3_generic_s419", "v": "D", "status": "ok", "wall_s": 761.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s419_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:53:37"}
+{"ds": "v2", "scene": "n3_generic_s420", "v": "D", "status": "ok", "wall_s": 637.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s420_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:55:14"}
+{"ds": "v2", "scene": "n3_generic_s421", "v": "D", "status": "ok", "wall_s": 672.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s421_D.txt", "frame0_psnr": {}, "t": "2026-10-19 12:55:49"}
+{"ds": "v2", "scene": "n3_generic_s422", "v": "D", "status": "ok", "wall_s": 684.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s422_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:05:02"}
+{"ds": "v2", "scene": "n3_generic_s423", "v": "D", "status": "ok", "wall_s": 610.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s423_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:05:25"}
+{"ds": "v2", "scene": "n3_generic_s424", "v": "D", "status": "ok", "wall_s": 648.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s424_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:06:39"}
+{"ds": "v2", "scene": "n3_generic_s426", "v": "D", "status": "ok", "wall_s": 663.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s426_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:16:28"}
+{"ds": "v2", "scene": "n3_generic_s425", "v": "D", "status": "ok", "wall_s": 721.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s425_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:17:04"}
+{"ds": "v2", "scene": "camrot_s427", "v": "D", "status": "ok", "wall_s": 752.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s427_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:19:11"}
+{"ds": "v2", "scene": "camrot_s428", "v": "D", "status": "ok", "wall_s": 658.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s428_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:27:27"}
+{"ds": "v2", "scene": "camrot_s429", "v": "D", "status": "ok", "wall_s": 763.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s429_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:29:47"}
+{"ds": "v2", "scene": "camrot_s430", "v": "D", "status": "ok", "wall_s": 925.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s430_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:34:37"}
+{"ds": "v2", "scene": "camrot_s431", "v": "D", "status": "ok", "wall_s": 673.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s431_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:38:41"}
+{"ds": "v2", "scene": "camrot_s432", "v": "D", "status": "ok", "wall_s": 757.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s432_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:42:25"}
+{"ds": "v2", "scene": "epi_aligned_s435", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 13:42:25"}
+{"ds": "v2", "scene": "camrot_s433", "v": "D", "status": "ok", "wall_s": 913.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s433_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:49:51"}
+{"ds": "v2", "scene": "camrot_s434", "v": "D", "status": "ok", "wall_s": 680.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s434_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:50:01"}
+{"ds": "v2", "scene": "epi_aligned_s436", "v": "D", "status": "ok", "wall_s": 754.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s436_D.txt", "frame0_psnr": {}, "t": "2026-10-19 13:54:59"}
+{"ds": "v2", "scene": "epi_aligned_s438", "v": "D", "status": "ok", "wall_s": 669.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s438_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:01:10"}
+{"ds": "v2", "scene": "epi_aligned_s437", "v": "D", "status": "ok", "wall_s": 922.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s437_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:05:14"}
+{"ds": "v2", "scene": "epi_aligned_s439", "v": "D", "status": "ok", "wall_s": 701.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s439_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:06:41"}
+{"ds": "v2", "scene": "epi_aligned_s440", "v": "D", "status": "ok", "wall_s": 634.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s440_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:11:44"}
+{"ds": "v2", "scene": "planar_s443", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 14:11:44"}
+{"ds": "v2", "scene": "epi_aligned_s442", "v": "D", "status": "ok", "wall_s": 723.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s442_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:18:44"}
+{"ds": "v2", "scene": "epi_aligned_s441", "v": "D", "status": "ok", "wall_s": 990.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s441_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:21:44"}
+{"ds": "v2", "scene": "planar_s444", "v": "D", "status": "ok", "wall_s": 646.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s444_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:22:30"}
+{"ds": "v2", "scene": "planar_s445", "v": "D", "status": "ok", "wall_s": 708.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s445_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:30:32"}
+{"ds": "v2", "scene": "planar_s447", "v": "D", "status": "ok", "wall_s": 668.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s447_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:33:39"}
+{"ds": "v2", "scene": "planar_s446", "v": "D", "status": "ok", "wall_s": 908.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s446_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:36:53"}
+{"ds": "v2", "scene": "planar_s448", "v": "D", "status": "ok", "wall_s": 733.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s448_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:42:46"}
+{"ds": "v2", "scene": "confound_same_s451", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 14:42:46"}
+{"ds": "v2", "scene": "planar_s449", "v": "D", "status": "ok", "wall_s": 632.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s449_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:44:11"}
+{"ds": "v2", "scene": "planar_s450", "v": "D", "status": "ok", "wall_s": 922.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s450_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:52:15"}
+{"ds": "v2", "scene": "confound_same_s452", "v": "D", "status": "ok", "wall_s": 698.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s452_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:54:24"}
+{"ds": "v2", "scene": "confound_same_s453", "v": "D", "status": "ok", "wall_s": 671.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s453_D.txt", "frame0_psnr": {}, "t": "2026-10-19 14:55:23"}
+{"ds": "v2", "scene": "confound_same_s456", "v": "D", "status": "ok", "wall_s": 630.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s456_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:05:53"}
+{"ds": "v2", "scene": "confound_same_s454", "v": "D", "status": "ok", "wall_s": 872.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s454_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:06:48"}
+{"ds": "v2", "scene": "confound_same_s455", "v": "D", "status": "ok", "wall_s": 755.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s455_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:07:00"}
+{"ds": "v2", "scene": "confound_same_s457", "v": "D", "status": "ok", "wall_s": 664.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s457_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:16:57"}
+{"ds": "v2", "scene": "confound_same_s459", "v": "D", "status": "ok", "wall_s": 689.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s459_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:18:30"}
+{"ds": "v2", "scene": "confound_same_s458", "v": "D", "status": "ok", "wall_s": 910.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s458_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:21:58"}
+{"ds": "v2", "scene": "confound_same_s460", "v": "D", "status": "ok", "wall_s": 645.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s460_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:27:43"}
+{"ds": "v2", "scene": "confound_same_s461", "v": "D", "status": "ok", "wall_s": 777.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s461_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:31:27"}
+{"ds": "v2", "scene": "confound_same_s462", "v": "D", "status": "ok", "wall_s": 908.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s462_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:37:06"}
+{"ds": "v2", "scene": "confound_same_s463", "v": "D", "status": "ok", "wall_s": 696.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s463_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:39:19"}
+{"ds": "v2", "scene": "confound_same_s464", "v": "D", "status": "ok", "wall_s": 704.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s464_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:43:11"}
+{"ds": "v2", "scene": "confound_same_s466", "v": "D", "status": "ok", "wall_s": 714.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s466_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:51:13"}
+{"ds": "v2", "scene": "confound_same_s465", "v": "D", "status": "ok", "wall_s": 913.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s465_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:52:20"}
+{"ds": "v2", "scene": "confound_glued_s469", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 15:52:20"}
+{"ds": "v2", "scene": "confound_same_s467", "v": "D", "status": "ok", "wall_s": 707.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s467_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:54:59"}
+{"ds": "v2", "scene": "confound_glued_s471", "v": "D", "status": "FAILED rc=1", "wall_s": 50.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s471_D.txt", "frame0_psnr": {}, "t": "2026-10-19 15:55:50"}
+{"ds": "v2", "scene": "confound_same_s468", "v": "D", "status": "ok", "wall_s": 675.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s468_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:02:29"}
+{"ds": "v2", "scene": "confound_glued_s470", "v": "D", "status": "ok", "wall_s": 946.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s470_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:08:06"}
+{"ds": "v2", "scene": "confound_glued_s472", "v": "D", "status": "ok", "wall_s": 747.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s472_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:08:18"}
+{"ds": "v2", "scene": "confound_glued_s473", "v": "D", "status": "ok", "wall_s": 631.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s473_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:13:00"}
+{"ds": "v2", "scene": "confound_glued_s475", "v": "D", "status": "ok", "wall_s": 795.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s475_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:21:33"}
+{"ds": "v2", "scene": "confound_glued_s477", "v": "D", "status": "FAILED rc=1", "wall_s": 50.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s477_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:22:23"}
+{"ds": "v2", "scene": "confound_glued_s476", "v": "D", "status": "ok", "wall_s": 664.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s476_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:24:05"}
+{"ds": "v2", "scene": "confound_glued_s474", "v": "D", "status": "ok", "wall_s": 961.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s474_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:24:07"}
+{"ds": "v2", "scene": "confound_glued_s478", "v": "D", "status": "ok", "wall_s": 729.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s478_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:34:33"}
+{"ds": "v2", "scene": "confound_glued_s479", "v": "D", "status": "ok", "wall_s": 651.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s479_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:34:57"}
+{"ds": "v2", "scene": "confound_glued_s480", "v": "D", "status": "ok", "wall_s": 918.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s480_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:39:26"}
+{"ds": "v2", "scene": "confound_glued_s482", "v": "D", "status": "ok", "wall_s": 673.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s482_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:46:10"}
+{"ds": "v2", "scene": "confound_glued_s481", "v": "D", "status": "ok", "wall_s": 735.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s481_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:46:48"}
+{"ds": "v2", "scene": "confound_glued_s483", "v": "D", "status": "ok", "wall_s": 952.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s483_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:55:18"}
+{"ds": "v2", "scene": "confound_glued_s484", "v": "D", "status": "ok", "wall_s": 668.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s484_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:57:19"}
+{"ds": "v3float", "scene": "epi_aligned_s531", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 16:57:19"}
+{"ds": "v2", "scene": "confound_glued_s485", "v": "D", "status": "ok", "wall_s": 762.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s485_D.txt", "frame0_psnr": {}, "t": "2026-10-19 16:59:31"}
+{"ds": "v3float", "scene": "epi_aligned_s532", "v": "D", "status": "ok", "wall_s": 660.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s532_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:08:19"}
+{"ds": "v2", "scene": "confound_glued_s486", "v": "D", "status": "ok", "wall_s": 913.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s486_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:10:32"}
+{"ds": "v3float", "scene": "epi_aligned_s533", "v": "D", "status": "ok", "wall_s": 717.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s533_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:11:28"}
+{"ds": "v3float", "scene": "epi_aligned_s534", "v": "D", "status": "ok", "wall_s": 710.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s534_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:20:10"}
+{"ds": "v3float", "scene": "epi_aligned_s535", "v": "D", "status": "ok", "wall_s": 641.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s535_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:21:13"}
+{"ds": "v3float", "scene": "epi_aligned_s536", "v": "D", "status": "ok", "wall_s": 747.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s536_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:23:56"}
+{"ds": "v3float", "scene": "epi_aligned_s537", "v": "D", "status": "ok", "wall_s": 703.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s537_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:31:54"}
+{"ds": "v3float", "scene": "epi_aligned_s538", "v": "D", "status": "ok", "wall_s": 693.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s538_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:32:46"}
+{"ds": "v3float", "scene": "epi_aligned_s539", "v": "D", "status": "ok", "wall_s": 871.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s539_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:38:28"}
+{"ds": "v3float", "scene": "epi_aligned_s540", "v": "D", "status": "ok", "wall_s": 762.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s540_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:44:37"}
+{"ds": "v3float", "scene": "epi_aligned_s541", "v": "D", "status": "ok", "wall_s": 909.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s541_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:47:56"}
+{"ds": "v3float", "scene": "epi_aligned_s542", "v": "D", "status": "ok", "wall_s": 920.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s542_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:53:48"}
+{"ds": "v3float", "scene": "epi_aligned_s543", "v": "D", "status": "ok", "wall_s": 763.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s543_D.txt", "frame0_psnr": {}, "t": "2026-10-19 17:57:20"}
+{"ds": "v3float", "scene": "epi_aligned_s544", "v": "D", "status": "ok", "wall_s": 932.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s544_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:03:29"}
+{"ds": "v3float", "scene": "epi_aligned_s545", "v": "D", "status": "ok", "wall_s": 826.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s545_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:07:35"}
+{"ds": "v3float", "scene": "epi_aligned_s546", "v": "D", "status": "ok", "wall_s": 759.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s546_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:09:59"}
+{"ds": "v3float", "scene": "epi_aligned_s547", "v": "D", "status": "ok", "wall_s": 943.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s547_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:19:12"}
+{"ds": "v3float", "scene": "epi_aligned_s548", "v": "D", "status": "ok", "wall_s": 853.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s548_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:21:48"}
+{"ds": "v3float", "scene": "epi_aligned_s549", "v": "D", "status": "ok", "wall_s": 761.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s549_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:22:41"}
+{"ds": "v3float", "scene": "epi_aligned_s550", "v": "D", "status": "ok", "wall_s": 926.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s550_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:34:39"}
+{"ds": "v3float", "scene": "epi_aligned_s552", "v": "D", "status": "ok", "wall_s": 739.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s552_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:35:01"}
+{"ds": "v3float", "scene": "epi_aligned_s551", "v": "D", "status": "ok", "wall_s": 926.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s551_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:37:14"}
+{"ds": "v3float", "scene": "epi_aligned_s554", "v": "D", "status": "ok", "wall_s": 724.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s554_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:47:06"}
+{"ds": "v3float", "scene": "epi_aligned_s553", "v": "D", "status": "ok", "wall_s": 967.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s553_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:50:46"}
+{"ds": "v3float", "scene": "epi_aligned_s555", "v": "D", "status": "ok", "wall_s": 856.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s555_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:51:31"}
+{"ds": "v3float", "scene": "epi_aligned_s556", "v": "D", "status": "ok", "wall_s": 714.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s556_D.txt", "frame0_psnr": {}, "t": "2026-10-19 18:59:00"}
+{"ds": "v3float", "scene": "epi_aligned_s558", "v": "D", "status": "ok", "wall_s": 749.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s558_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:04:01"}
+{"ds": "v3float", "scene": "epi_aligned_s557", "v": "D", "status": "ok", "wall_s": 896.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s557_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:05:43"}
+{"ds": "v3float", "scene": "n2_generic_s561", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 19:05:43"}
+{"ds": "v3float", "scene": "epi_aligned_s559", "v": "D", "status": "ok", "wall_s": 678.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s559_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:10:18"}
+{"ds": "v3float", "scene": "epi_aligned_s560", "v": "D", "status": "ok", "wall_s": 782.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s560_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:17:03"}
+{"ds": "v3float", "scene": "n2_generic_s562", "v": "D", "status": "ok", "wall_s": 919.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s562_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:21:03"}
+{"ds": "v3float", "scene": "n2_generic_s563", "v": "D", "status": "ok", "wall_s": 763.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s563_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:23:02"}
+{"ds": "v3float", "scene": "n2_generic_s564", "v": "D", "status": "ok", "wall_s": 765.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s564_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:29:48"}
+{"ds": "v3float", "scene": "n2_generic_s566", "v": "D", "status": "ok", "wall_s": 644.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s566_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:33:46"}
+{"ds": "v3float", "scene": "n2_generic_s565", "v": "D", "status": "ok", "wall_s": 923.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s565_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:36:26"}
+{"ds": "v3float", "scene": "n2_generic_s567", "v": "D", "status": "ok", "wall_s": 719.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s567_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:41:48"}
+{"ds": "v3float", "scene": "n2_generic_s568", "v": "D", "status": "ok", "wall_s": 652.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s568_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:44:39"}
+{"ds": "v3float", "scene": "n2_generic_s569", "v": "D", "status": "ok", "wall_s": 941.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s569_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:52:07"}
+{"ds": "v3float", "scene": "n2_generic_s570", "v": "D", "status": "ok", "wall_s": 828.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s570_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:55:36"}
+{"ds": "v3float", "scene": "confound_same_s571", "v": "D", "status": "ok", "wall_s": 762.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s571_D.txt", "frame0_psnr": {}, "t": "2026-10-19 19:57:21"}
+{"ds": "v3float", "scene": "confound_same_s572", "v": "D", "status": "ok", "wall_s": 937.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s572_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:07:45"}
+{"ds": "v3float", "scene": "confound_same_s573", "v": "D", "status": "ok", "wall_s": 734.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s573_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:07:50"}
+{"ds": "v3float", "scene": "confound_same_s574", "v": "D", "status": "ok", "wall_s": 671.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s574_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:08:33"}
+{"ds": "v3float", "scene": "confound_same_s576", "v": "D", "status": "ok", "wall_s": 680.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s576_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:19:11"}
+{"ds": "v3float", "scene": "confound_same_s577", "v": "D", "status": "ok", "wall_s": 654.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s577_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:19:27"}
+{"ds": "v3float", "scene": "confound_same_s575", "v": "D", "status": "ok", "wall_s": 906.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s575_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:22:51"}
+{"ds": "v3float", "scene": "confound_same_s579", "v": "D", "status": "ok", "wall_s": 681.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s579_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:30:49"}
+{"ds": "v3float", "scene": "n3_generic_s581", "v": "D", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-19 20:30:49"}
+{"ds": "v3float", "scene": "confound_same_s578", "v": "D", "status": "ok", "wall_s": 709.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s578_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:31:00"}
+{"ds": "v3float", "scene": "confound_same_s580", "v": "D", "status": "ok", "wall_s": 899.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s580_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:37:51"}
+{"ds": "v3float", "scene": "n3_generic_s582", "v": "D", "status": "ok", "wall_s": 714.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s582_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:42:44"}
+{"ds": "v3float", "scene": "n3_generic_s583", "v": "D", "status": "ok", "wall_s": 757.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s583_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:43:38"}
+{"ds": "v3float", "scene": "n3_generic_s584", "v": "D", "status": "ok", "wall_s": 937.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s584_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:53:29"}
+{"ds": "v3float", "scene": "n3_generic_s585", "v": "D", "status": "ok", "wall_s": 666.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s585_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:53:50"}
+{"ds": "v3float", "scene": "n3_generic_s586", "v": "D", "status": "ok", "wall_s": 741.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s586_D.txt", "frame0_psnr": {}, "t": "2026-10-19 20:56:00"}
+{"ds": "v3float", "scene": "n3_generic_s588", "v": "D", "status": "ok", "wall_s": 673.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s588_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:05:04"}
+{"ds": "v3float", "scene": "n3_generic_s589", "v": "D", "status": "ok", "wall_s": 722.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s589_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:08:03"}
+{"ds": "v3float", "scene": "n3_generic_s587", "v": "D", "status": "ok", "wall_s": 959.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s587_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:09:29"}
+{"ds": "v3float", "scene": "n3_generic_s590", "v": "D", "status": "ok", "wall_s": 686.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s590_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:16:30"}
+{"ds": "v3float", "scene": "confound_glued_s593", "v": "D", "status": "FAILED rc=1", "wall_s": 55.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s593_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:17:25"}
+{"ds": "v3float", "scene": "confound_glued_s591", "v": "D", "status": "ok", "wall_s": 715.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s591_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:19:58"}
+{"ds": "v3float", "scene": "confound_glued_s592", "v": "D", "status": "ok", "wall_s": 935.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s592_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:25:04"}
+{"ds": "v3float", "scene": "confound_glued_s594", "v": "D", "status": "ok", "wall_s": 659.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s594_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:28:25"}
+{"ds": "v3float", "scene": "confound_glued_s595", "v": "D", "status": "ok", "wall_s": 721.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s595_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:32:00"}
+{"ds": "v3float", "scene": "confound_glued_s596", "v": "D", "status": "ok", "wall_s": 873.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s596_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:39:37"}
+{"ds": "v3float", "scene": "confound_glued_s597", "v": "D", "status": "ok", "wall_s": 693.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s597_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:39:58"}
+{"ds": "v3float", "scene": "confound_glued_s598", "v": "D", "status": "ok", "wall_s": 749.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s598_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:44:29"}
+{"ds": "v3float", "scene": "confound_glued_s600", "v": "D", "status": "ok", "wall_s": 703.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s600_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:51:41"}
+{"ds": "v3float", "scene": "confound_glued_s599", "v": "D", "status": "ok", "wall_s": 965.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s599_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:55:42"}
+{"ds": "v4epi", "scene": "epi_accel_s801", "v": "D", "status": "ok", "wall_s": 691.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s801_D.txt", "frame0_psnr": {}, "t": "2026-10-19 21:56:00"}
+{"ds": "v4epi", "scene": "epi_const_s801", "v": "D", "status": "ok", "wall_s": 629.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s801_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:02:11"}
+{"ds": "v4epi", "scene": "epi_const_s802", "v": "D", "status": "ok", "wall_s": 718.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s802_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:07:59"}
+{"ds": "v4epi", "scene": "epi_accel_s802", "v": "D", "status": "ok", "wall_s": 896.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s802_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:10:39"}
+{"ds": "v4epi", "scene": "epi_accel_s803", "v": "D", "status": "ok", "wall_s": 658.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s803_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:13:10"}
+{"ds": "v4epi", "scene": "epi_const_s803", "v": "D", "status": "ok", "wall_s": 704.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s803_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:19:43"}
+{"ds": "v4epi", "scene": "epi_const_s804", "v": "D", "status": "ok", "wall_s": 665.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s804_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:24:15"}
+{"ds": "v4epi", "scene": "epi_accel_s804", "v": "D", "status": "ok", "wall_s": 907.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s804_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:25:46"}
+{"ds": "v4epi", "scene": "epi_accel_s805", "v": "D", "status": "ok", "wall_s": 694.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s805_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:31:18"}
+{"ds": "v4epi", "scene": "epi_const_s805", "v": "D", "status": "ok", "wall_s": 643.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s805_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:34:59"}
+{"ds": "v4epi", "scene": "epi_accel_s806", "v": "D", "status": "ok", "wall_s": 890.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s806_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:40:37"}
+{"ds": "v4epi", "scene": "epi_const_s806", "v": "D", "status": "ok", "wall_s": 690.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s806_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:42:48"}
+{"ds": "v4epi", "scene": "epi_accel_s807", "v": "D", "status": "ok", "wall_s": 643.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s807_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:45:43"}
+{"ds": "v4epi", "scene": "epi_accel_s808", "v": "D", "status": "ok", "wall_s": 708.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s808_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:54:37"}
+{"ds": "v4epi", "scene": "epi_const_s807", "v": "D", "status": "ok", "wall_s": 884.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s807_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:55:21"}
+{"ds": "v4epi", "scene": "epi_const_s808", "v": "D", "status": "ok", "wall_s": 660.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s808_D.txt", "frame0_psnr": {}, "t": "2026-10-19 22:56:43"}
+{"ds": "v4epi", "scene": "epi_accel_s809", "v": "D", "status": "ok", "wall_s": 672.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s809_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:05:50"}
+{"ds": "v4epi", "scene": "epi_accel_s810", "v": "D", "status": "ok", "wall_s": 640.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s810_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:07:24"}
+{"ds": "v4epi", "scene": "epi_const_s809", "v": "D", "status": "ok", "wall_s": 855.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s809_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:09:37"}
+{"ds": "v4epi", "scene": "epi_const_s810", "v": "D", "status": "ok", "wall_s": 689.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s810_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:17:19"}
+{"ds": "v4epi", "scene": "epi_accel_s811", "v": "D", "status": "ok", "wall_s": 669.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s811_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:18:34"}
+{"ds": "v4epi", "scene": "epi_const_s811", "v": "D", "status": "ok", "wall_s": 914.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s811_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:24:51"}
+{"ds": "v4epi", "scene": "epi_accel_s812", "v": "D", "status": "ok", "wall_s": 708.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s812_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:29:07"}
+{"ds": "v4epi", "scene": "epi_const_s812", "v": "D", "status": "ok", "wall_s": 656.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s812_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:29:30"}
+{"ds": "v4epi", "scene": "epi_accel_s813", "v": "D", "status": "ok", "wall_s": 869.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s813_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:39:21"}
+{"ds": "v4epi", "scene": "epi_accel_s814", "v": "D", "status": "ok", "wall_s": 665.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s814_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:40:36"}
+{"ds": "v4epi", "scene": "epi_const_s813", "v": "D", "status": "ok", "wall_s": 692.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s813_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:40:39"}
+{"ds": "v4epi", "scene": "epi_accel_s815", "v": "D", "status": "ok", "wall_s": 648.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s815_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:51:25"}
+{"ds": "v4epi", "scene": "epi_const_s815", "v": "D", "status": "ok", "wall_s": 711.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s815_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:52:30"}
+{"ds": "v4epi", "scene": "epi_const_s814", "v": "D", "status": "ok", "wall_s": 906.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s814_D.txt", "frame0_psnr": {}, "t": "2026-10-19 23:54:27"}
+{"ds": "v4epi", "scene": "epi_accel_s816", "v": "D", "status": "ok", "wall_s": 1960.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s816_D.txt", "frame0_psnr": {}, "t": "2026-10-20 00:24:06"}
+{"ds": "v4epi", "scene": "epi_const_s816", "v": "D", "status": "ok", "wall_s": 1916.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s816_D.txt", "frame0_psnr": {}, "t": "2026-10-20 00:24:27"}
+{"ds": "v4epi", "scene": "epi_accel_s817", "v": "D", "status": "ok", "wall_s": 2005.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s817_D.txt", "frame0_psnr": {}, "t": "2026-10-20 00:27:53"}
+{"ds": "v4epi", "scene": "epi_accel_s818", "v": "D", "status": "ok", "wall_s": 678.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s818_D.txt", "frame0_psnr": {}, "t": "2026-10-20 00:35:46"}
+{"ds": "v4epi", "scene": "epi_const_s817", "v": "D", "status": "ok", "wall_s": 703.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s817_D.txt", "frame0_psnr": {}, "t": "2026-10-20 00:35:50"}
+{"ds": "v4epi", "scene": "epi_const_s818", "v": "D", "status": "ok", "wall_s": 620.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s818_D.txt", "frame0_psnr": {}, "t": "2026-10-20 00:38:13"}
+{"ds": "v4epi", "scene": "epi_const_s819", "v": "D", "status": "ok", "wall_s": 692.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s819_D.txt", "frame0_psnr": {}, "t": "2026-10-20 00:47:23"}
+{"ds": "v4epi", "scene": "epi_accel_s819", "v": "D", "status": "ok", "wall_s": 723.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s819_D.txt", "frame0_psnr": {}, "t": "2026-10-20 00:47:50"}
+{"ds": "v4epi", "scene": "epi_accel_s820", "v": "D", "status": "ok", "wall_s": 791.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s820_D.txt", "frame0_psnr": {}, "t": "2026-10-20 00:51:25"}
+{"ds": "v4epi", "scene": "epi_const_s820", "v": "D", "status": "ok", "wall_s": 864.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s820_D.txt", "frame0_psnr": {}, "t": "2026-10-20 01:01:49"}
+{"ds": "v4epi", "scene": "epi_accel_s821", "v": "D", "status": "ok", "wall_s": 890.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s821_D.txt", "frame0_psnr": {}, "t": "2026-10-20 01:02:40"}
+{"ds": "v4epi", "scene": "epi_const_s821", "v": "D", "status": "ok", "wall_s": 945.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s821_D.txt", "frame0_psnr": {}, "t": "2026-10-20 01:07:11"}
+{"ds": "v4epi", "scene": "epi_const_s822", "v": "D", "status": "ok", "wall_s": 1418.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s822_D.txt", "frame0_psnr": {}, "t": "2026-10-20 01:26:20"}
+{"ds": "v4epi", "scene": "epi_accel_s822", "v": "D", "status": "ok", "wall_s": 1470.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s822_D.txt", "frame0_psnr": {}, "t": "2026-10-20 01:26:20"}
+{"ds": "v4epi", "scene": "epi_accel_s823", "v": "D", "status": "ok", "wall_s": 1171.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s823_D.txt", "frame0_psnr": {}, "t": "2026-10-20 01:26:42"}
+{"ds": "v4epi", "scene": "epi_accel_s824", "v": "D", "status": "ok", "wall_s": 1081.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s824_D.txt", "frame0_psnr": {}, "t": "2026-10-20 01:44:21"}
+{"ds": "v4epi", "scene": "epi_const_s824", "v": "D", "status": "ok", "wall_s": 1242.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s824_D.txt", "frame0_psnr": {}, "t": "2026-10-20 01:47:24"}
+{"ds": "v4epi", "scene": "epi_const_s823", "v": "D", "status": "ok", "wall_s": 1343.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s823_D.txt", "frame0_psnr": {}, "t": "2026-10-20 01:48:43"}
+{"ds": "v4epi", "scene": "epi_accel_s825", "v": "D", "status": "ok", "wall_s": 1697.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s825_D.txt", "frame0_psnr": {}, "t": "2026-10-20 02:12:57"}
+{"ds": "v4epi", "scene": "epi_const_s825", "v": "D", "status": "ok", "wall_s": 1813.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s825_D.txt", "frame0_psnr": {}, "t": "2026-10-20 02:17:40"}
+{"ds": "v4epi", "scene": "epi_accel_s826", "v": "D", "status": "ok", "wall_s": 2513.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s826_D.txt", "frame0_psnr": {}, "t": "2026-10-20 02:30:37"}
+{"ds": "v4epi", "scene": "epi_accel_s827", "v": "D", "status": "ok", "wall_s": 1065.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s827_D.txt", "frame0_psnr": {}, "t": "2026-10-20 02:35:26"}
+{"ds": "v4epi", "scene": "epi_const_s826", "v": "D", "status": "ok", "wall_s": 1348.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s826_D.txt", "frame0_psnr": {}, "t": "2026-10-20 02:35:26"}
+{"ds": "v4epi", "scene": "epi_const_s827", "v": "D", "status": "ok", "wall_s": 1086.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s827_D.txt", "frame0_psnr": {}, "t": "2026-10-20 02:48:43"}
+{"ds": "v4epi", "scene": "epi_const_s828", "v": "D", "status": "ok", "wall_s": 1235.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s828_D.txt", "frame0_psnr": {}, "t": "2026-10-20 02:56:01"}
+{"ds": "v4epi", "scene": "epi_accel_s828", "v": "D", "status": "ok", "wall_s": 1235.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s828_D.txt", "frame0_psnr": {}, "t": "2026-10-20 02:56:01"}
+{"ds": "v4epi", "scene": "epi_accel_s829", "v": "D", "status": "ok", "wall_s": 1056.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s829_D.txt", "frame0_psnr": {}, "t": "2026-10-20 03:06:20"}
+{"ds": "v4epi", "scene": "epi_accel_s830", "v": "D", "status": "ok", "wall_s": 1314.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_accel_s830_D.txt", "frame0_psnr": {}, "t": "2026-10-20 03:17:56"}
+{"ds": "v4epi", "scene": "epi_const_s829", "v": "D", "status": "ok", "wall_s": 1314.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s829_D.txt", "frame0_psnr": {}, "t": "2026-10-20 03:17:56"}
+{"ds": "v4epi", "scene": "epi_const_s830", "v": "D", "status": "ok", "wall_s": 2231.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v4epi/epi_const_s830_D.txt", "frame0_psnr": {}, "t": "2026-10-20 03:43:34"}
+RENDER_FACTORIAL_DONE
+== phase 2b: A/B/C for 170 base scenes Tuesday 20 October 2026 03:43:43 AM IST
+510 renders, 3 workers x 4 cores (['28-31', '32-35', '36-39'])
+{"ds": "v2", "scene": "n2_generic_s301", "v": "A", "status": "ok", "wall_s": 963.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s301_A.txt", "frame0_psnr": {"A": Infinity}, "t": "2026-10-20 03:59:49"}
+{"ds": "v2", "scene": "n2_generic_s302", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 03:59:49"}
+{"ds": "v2", "scene": "n2_generic_s302", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 03:59:49"}
+{"ds": "v2", "scene": "n2_generic_s302", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 03:59:49"}
+{"ds": "v2", "scene": "n2_generic_s301", "v": "B", "status": "ok", "wall_s": 968.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s301_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity}, "t": "2026-10-20 03:59:53"}
+{"ds": "v2", "scene": "n2_generic_s301", "v": "C", "status": "ok", "wall_s": 991.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s301_C.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:00:16"}
+{"ds": "v2", "scene": "n3_generic_s303", "v": "B", "status": "ok", "wall_s": 801.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s303_B.txt", "frame0_psnr": {"B": Infinity}, "t": "2026-10-20 04:13:15"}
+{"ds": "v2", "scene": "n3_generic_s304", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:13:15"}
+{"ds": "v2", "scene": "n3_generic_s304", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:13:15"}
+{"ds": "v2", "scene": "n3_generic_s304", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:13:15"}
+{"ds": "v2", "scene": "camrot_s305", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:13:15"}
+{"ds": "v2", "scene": "camrot_s305", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:13:15"}
+{"ds": "v2", "scene": "camrot_s305", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:13:15"}
+{"ds": "v2", "scene": "camrot_s306", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:13:15"}
+{"ds": "v2", "scene": "camrot_s306", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:13:15"}
+{"ds": "v2", "scene": "camrot_s306", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:13:15"}
+{"ds": "v2", "scene": "n3_generic_s303", "v": "C", "status": "ok", "wall_s": 807.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s303_C.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 04:13:16"}
+{"ds": "v2", "scene": "n3_generic_s303", "v": "A", "status": "ok", "wall_s": 834.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s303_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:14:11"}
+{"ds": "v2", "scene": "epi_aligned_s307", "v": "C", "status": "ok", "wall_s": 650.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s307_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 04:24:05"}
+{"ds": "v2", "scene": "epi_aligned_s308", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:24:05"}
+{"ds": "v2", "scene": "epi_aligned_s308", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:24:05"}
+{"ds": "v2", "scene": "epi_aligned_s308", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:24:05"}
+{"ds": "v2", "scene": "epi_aligned_s307", "v": "B", "status": "ok", "wall_s": 654.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s307_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 04:24:10"}
+{"ds": "v2", "scene": "epi_aligned_s307", "v": "A", "status": "ok", "wall_s": 695.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s307_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:25:47"}
+{"ds": "v2", "scene": "planar_s309", "v": "C", "status": "ok", "wall_s": 650.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s309_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 04:34:56"}
+{"ds": "v2", "scene": "planar_s310", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:34:56"}
+{"ds": "v2", "scene": "planar_s310", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:34:56"}
+{"ds": "v2", "scene": "planar_s310", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:34:56"}
+{"ds": "v2", "scene": "planar_s309", "v": "B", "status": "ok", "wall_s": 656.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s309_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 04:35:07"}
+{"ds": "v2", "scene": "planar_s309", "v": "A", "status": "ok", "wall_s": 674.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s309_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:37:01"}
+{"ds": "v2", "scene": "confound_same_s311", "v": "C", "status": "ok", "wall_s": 689.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s311_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 04:46:25"}
+{"ds": "v2", "scene": "confound_same_s312", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:46:25"}
+{"ds": "v2", "scene": "confound_same_s312", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:46:25"}
+{"ds": "v2", "scene": "confound_same_s312", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:46:25"}
+{"ds": "v2", "scene": "confound_same_s311", "v": "B", "status": "ok", "wall_s": 702.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s311_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 04:46:49"}
+{"ds": "v2", "scene": "confound_same_s311", "v": "A", "status": "ok", "wall_s": 706.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s311_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:48:47"}
+{"ds": "v2", "scene": "confound_glued_s313", "v": "C", "status": "ok", "wall_s": 642.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s313_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 04:57:08"}
+{"ds": "v2", "scene": "confound_glued_s314", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:57:08"}
+{"ds": "v2", "scene": "confound_glued_s314", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:57:08"}
+{"ds": "v2", "scene": "confound_glued_s314", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:57:08"}
+{"ds": "v2", "scene": "n2_generic_s401", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:57:08"}
+{"ds": "v2", "scene": "n2_generic_s401", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:57:08"}
+{"ds": "v2", "scene": "n2_generic_s401", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:57:08"}
+{"ds": "v2", "scene": "n2_generic_s402", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:57:08"}
+{"ds": "v2", "scene": "n2_generic_s402", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:57:08"}
+{"ds": "v2", "scene": "n2_generic_s402", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:57:08"}
+{"ds": "v2", "scene": "confound_glued_s313", "v": "B", "status": "ok", "wall_s": 649.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s313_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 04:57:39"}
+{"ds": "v2", "scene": "confound_glued_s313", "v": "A", "status": "ok", "wall_s": 650.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s313_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 04:59:38"}
+{"ds": "v2", "scene": "n2_generic_s403", "v": "C", "status": "ok", "wall_s": 651.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s403_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 05:07:59"}
+{"ds": "v2", "scene": "n2_generic_s404", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:07:59"}
+{"ds": "v2", "scene": "n2_generic_s404", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:07:59"}
+{"ds": "v2", "scene": "n2_generic_s404", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:07:59"}
+{"ds": "v2", "scene": "n2_generic_s403", "v": "B", "status": "ok", "wall_s": 662.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s403_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 05:08:41"}
+{"ds": "v2", "scene": "n2_generic_s403", "v": "A", "status": "ok", "wall_s": 663.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s403_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:10:41"}
+{"ds": "v2", "scene": "n2_generic_s405", "v": "C", "status": "ok", "wall_s": 615.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s405_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 05:18:15"}
+{"ds": "v2", "scene": "n2_generic_s406", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:18:15"}
+{"ds": "v2", "scene": "n2_generic_s406", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:18:15"}
+{"ds": "v2", "scene": "n2_generic_s406", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:18:15"}
+{"ds": "v2", "scene": "n2_generic_s405", "v": "B", "status": "ok", "wall_s": 625.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s405_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 05:19:07"}
+{"ds": "v2", "scene": "n2_generic_s405", "v": "A", "status": "ok", "wall_s": 651.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s405_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:21:33"}
+{"ds": "v2", "scene": "n2_generic_s407", "v": "C", "status": "ok", "wall_s": 636.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s407_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 05:28:52"}
+{"ds": "v2", "scene": "n2_generic_s408", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:28:52"}
+{"ds": "v2", "scene": "n2_generic_s408", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:28:52"}
+{"ds": "v2", "scene": "n2_generic_s408", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:28:52"}
+{"ds": "v2", "scene": "n3_generic_s409", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:28:52"}
+{"ds": "v2", "scene": "n3_generic_s409", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:28:52"}
+{"ds": "v2", "scene": "n3_generic_s409", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:28:52"}
+{"ds": "v2", "scene": "n3_generic_s410", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:28:52"}
+{"ds": "v2", "scene": "n3_generic_s410", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:28:52"}
+{"ds": "v2", "scene": "n3_generic_s410", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:28:52"}
+{"ds": "v2", "scene": "n2_generic_s407", "v": "B", "status": "ok", "wall_s": 652.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s407_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 05:29:59"}
+{"ds": "v2", "scene": "n2_generic_s407", "v": "A", "status": "ok", "wall_s": 646.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n2_generic_s407_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:32:19"}
+{"ds": "v2", "scene": "n3_generic_s411", "v": "C", "status": "ok", "wall_s": 632.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s411_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 05:39:25"}
+{"ds": "v2", "scene": "n3_generic_s412", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:39:25"}
+{"ds": "v2", "scene": "n3_generic_s412", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:39:25"}
+{"ds": "v2", "scene": "n3_generic_s412", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:39:25"}
+{"ds": "v2", "scene": "n3_generic_s411", "v": "B", "status": "ok", "wall_s": 639.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s411_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 05:40:39"}
+{"ds": "v2", "scene": "n3_generic_s411", "v": "A", "status": "ok", "wall_s": 651.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s411_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:43:11"}
+{"ds": "v2", "scene": "n3_generic_s413", "v": "C", "status": "ok", "wall_s": 673.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s413_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 05:50:38"}
+{"ds": "v2", "scene": "n3_generic_s414", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:50:38"}
+{"ds": "v2", "scene": "n3_generic_s414", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:50:38"}
+{"ds": "v2", "scene": "n3_generic_s414", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:50:38"}
+{"ds": "v2", "scene": "n3_generic_s413", "v": "B", "status": "ok", "wall_s": 683.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s413_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 05:52:02"}
+{"ds": "v2", "scene": "n3_generic_s413", "v": "A", "status": "ok", "wall_s": 681.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s413_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 05:54:32"}
+{"ds": "v2", "scene": "n3_generic_s415", "v": "C", "status": "ok", "wall_s": 648.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s415_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 06:01:26"}
+{"ds": "v2", "scene": "n3_generic_s416", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:01:26"}
+{"ds": "v2", "scene": "n3_generic_s416", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:01:26"}
+{"ds": "v2", "scene": "n3_generic_s416", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:01:26"}
+{"ds": "v2", "scene": "n3_generic_s415", "v": "B", "status": "ok", "wall_s": 656.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s415_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 06:02:59"}
+{"ds": "v2", "scene": "n3_generic_s415", "v": "A", "status": "ok", "wall_s": 658.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s415_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:05:31"}
+{"ds": "v2", "scene": "n3_generic_s417", "v": "C", "status": "ok", "wall_s": 613.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s417_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 06:11:40"}
+{"ds": "v2", "scene": "n3_generic_s418", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:11:40"}
+{"ds": "v2", "scene": "n3_generic_s418", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:11:40"}
+{"ds": "v2", "scene": "n3_generic_s418", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:11:40"}
+{"ds": "v2", "scene": "n3_generic_s417", "v": "B", "status": "ok", "wall_s": 620.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s417_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 06:13:20"}
+{"ds": "v2", "scene": "n3_generic_s417", "v": "A", "status": "ok", "wall_s": 620.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s417_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:15:52"}
+{"ds": "v2", "scene": "n3_generic_s419", "v": "C", "status": "ok", "wall_s": 683.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s419_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 06:23:03"}
+{"ds": "v2", "scene": "n3_generic_s420", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:23:03"}
+{"ds": "v2", "scene": "n3_generic_s420", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:23:03"}
+{"ds": "v2", "scene": "n3_generic_s420", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:23:03"}
+{"ds": "v2", "scene": "n3_generic_s419", "v": "B", "status": "ok", "wall_s": 696.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s419_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 06:24:56"}
+{"ds": "v2", "scene": "n3_generic_s419", "v": "A", "status": "ok", "wall_s": 700.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s419_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:27:33"}
+{"ds": "v2", "scene": "n3_generic_s421", "v": "C", "status": "ok", "wall_s": 659.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s421_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 06:34:02"}
+{"ds": "v2", "scene": "n3_generic_s422", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:34:02"}
+{"ds": "v2", "scene": "n3_generic_s422", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:34:02"}
+{"ds": "v2", "scene": "n3_generic_s422", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:34:02"}
+{"ds": "v2", "scene": "n3_generic_s421", "v": "B", "status": "ok", "wall_s": 663.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s421_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 06:35:59"}
+{"ds": "v2", "scene": "n3_generic_s421", "v": "A", "status": "ok", "wall_s": 686.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s421_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:38:59"}
+{"ds": "v2", "scene": "n3_generic_s423", "v": "C", "status": "ok", "wall_s": 593.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s423_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 06:43:56"}
+{"ds": "v2", "scene": "n3_generic_s424", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:43:56"}
+{"ds": "v2", "scene": "n3_generic_s424", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:43:56"}
+{"ds": "v2", "scene": "n3_generic_s424", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:43:56"}
+{"ds": "v2", "scene": "n3_generic_s423", "v": "B", "status": "ok", "wall_s": 603.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s423_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 06:46:03"}
+{"ds": "v2", "scene": "n3_generic_s423", "v": "A", "status": "ok", "wall_s": 592.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s423_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:48:52"}
+{"ds": "v2", "scene": "n3_generic_s425", "v": "C", "status": "ok", "wall_s": 661.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s425_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 06:54:57"}
+{"ds": "v2", "scene": "n3_generic_s426", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:54:57"}
+{"ds": "v2", "scene": "n3_generic_s426", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:54:57"}
+{"ds": "v2", "scene": "n3_generic_s426", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 06:54:57"}
+{"ds": "v2", "scene": "n3_generic_s425", "v": "B", "status": "ok", "wall_s": 671.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s425_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 06:57:15"}
+{"ds": "v2", "scene": "n3_generic_s425", "v": "A", "status": "ok", "wall_s": 681.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/n3_generic_s425_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:00:14"}
+{"ds": "v2", "scene": "camrot_s427", "v": "C", "status": "ok", "wall_s": 645.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s427_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 07:05:42"}
+{"ds": "v2", "scene": "camrot_s428", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:05:42"}
+{"ds": "v2", "scene": "camrot_s428", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:05:42"}
+{"ds": "v2", "scene": "camrot_s428", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:05:42"}
+{"ds": "v2", "scene": "camrot_s427", "v": "B", "status": "ok", "wall_s": 651.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s427_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 07:08:07"}
+{"ds": "v2", "scene": "camrot_s427", "v": "A", "status": "ok", "wall_s": 653.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s427_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:11:08"}
+{"ds": "v2", "scene": "camrot_s429", "v": "C", "status": "ok", "wall_s": 660.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s429_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 07:16:42"}
+{"ds": "v2", "scene": "camrot_s430", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:16:42"}
+{"ds": "v2", "scene": "camrot_s430", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:16:42"}
+{"ds": "v2", "scene": "camrot_s430", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:16:42"}
+{"ds": "v2", "scene": "camrot_s429", "v": "B", "status": "ok", "wall_s": 671.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s429_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 07:19:18"}
+{"ds": "v2", "scene": "camrot_s429", "v": "A", "status": "ok", "wall_s": 678.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s429_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:22:27"}
+{"ds": "v2", "scene": "camrot_s431", "v": "C", "status": "ok", "wall_s": 644.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s431_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 07:27:27"}
+{"ds": "v2", "scene": "camrot_s432", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:27:27"}
+{"ds": "v2", "scene": "camrot_s432", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:27:27"}
+{"ds": "v2", "scene": "camrot_s432", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:27:27"}
+{"ds": "v2", "scene": "camrot_s431", "v": "B", "status": "ok", "wall_s": 661.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s431_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 07:30:20"}
+{"ds": "v2", "scene": "camrot_s431", "v": "A", "status": "ok", "wall_s": 675.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s431_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:33:42"}
+{"ds": "v2", "scene": "camrot_s433", "v": "C", "status": "ok", "wall_s": 651.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s433_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 07:38:18"}
+{"ds": "v2", "scene": "camrot_s434", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:38:18"}
+{"ds": "v2", "scene": "camrot_s434", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:38:18"}
+{"ds": "v2", "scene": "camrot_s434", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:38:18"}
+{"ds": "v2", "scene": "epi_aligned_s435", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:38:18"}
+{"ds": "v2", "scene": "epi_aligned_s435", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:38:18"}
+{"ds": "v2", "scene": "epi_aligned_s435", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:38:18"}
+{"ds": "v2", "scene": "epi_aligned_s436", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:38:18"}
+{"ds": "v2", "scene": "epi_aligned_s436", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:38:18"}
+{"ds": "v2", "scene": "epi_aligned_s436", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:38:18"}
+{"ds": "v2", "scene": "camrot_s433", "v": "B", "status": "ok", "wall_s": 662.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s433_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 07:41:22"}
+{"ds": "v2", "scene": "camrot_s433", "v": "A", "status": "ok", "wall_s": 678.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/camrot_s433_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:45:01"}
+{"ds": "v2", "scene": "epi_aligned_s437", "v": "C", "status": "ok", "wall_s": 650.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s437_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 07:49:09"}
+{"ds": "v2", "scene": "epi_aligned_s438", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:49:09"}
+{"ds": "v2", "scene": "epi_aligned_s438", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:49:09"}
+{"ds": "v2", "scene": "epi_aligned_s438", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:49:09"}
+{"ds": "v2", "scene": "epi_aligned_s437", "v": "B", "status": "ok", "wall_s": 655.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s437_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 07:52:18"}
+{"ds": "v2", "scene": "epi_aligned_s437", "v": "A", "status": "ok", "wall_s": 662.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s437_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:56:03"}
+{"ds": "v2", "scene": "epi_aligned_s439", "v": "C", "status": "ok", "wall_s": 619.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s439_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 07:59:28"}
+{"ds": "v2", "scene": "epi_aligned_s440", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:59:28"}
+{"ds": "v2", "scene": "epi_aligned_s440", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:59:28"}
+{"ds": "v2", "scene": "epi_aligned_s440", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 07:59:28"}
+{"ds": "v2", "scene": "epi_aligned_s439", "v": "B", "status": "ok", "wall_s": 630.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s439_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 08:02:48"}
+{"ds": "v2", "scene": "epi_aligned_s439", "v": "A", "status": "ok", "wall_s": 630.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s439_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:06:33"}
+{"ds": "v2", "scene": "epi_aligned_s441", "v": "C", "status": "ok", "wall_s": 697.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s441_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 08:11:06"}
+{"ds": "v2", "scene": "epi_aligned_s442", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:11:06"}
+{"ds": "v2", "scene": "epi_aligned_s442", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:11:06"}
+{"ds": "v2", "scene": "epi_aligned_s442", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:11:06"}
+{"ds": "v2", "scene": "planar_s443", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:11:06"}
+{"ds": "v2", "scene": "planar_s443", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:11:06"}
+{"ds": "v2", "scene": "planar_s443", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:11:06"}
+{"ds": "v2", "scene": "planar_s444", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:11:06"}
+{"ds": "v2", "scene": "planar_s444", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:11:06"}
+{"ds": "v2", "scene": "planar_s444", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:11:06"}
+{"ds": "v2", "scene": "epi_aligned_s441", "v": "B", "status": "ok", "wall_s": 703.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s441_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 08:14:32"}
+{"ds": "v2", "scene": "epi_aligned_s441", "v": "A", "status": "ok", "wall_s": 712.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/epi_aligned_s441_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:18:26"}
+{"ds": "v2", "scene": "planar_s445", "v": "C", "status": "ok", "wall_s": 622.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s445_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 08:21:28"}
+{"ds": "v2", "scene": "planar_s446", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:21:28"}
+{"ds": "v2", "scene": "planar_s446", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:21:28"}
+{"ds": "v2", "scene": "planar_s446", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:21:28"}
+{"ds": "v2", "scene": "planar_s445", "v": "B", "status": "ok", "wall_s": 634.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s445_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 08:25:06"}
+{"ds": "v2", "scene": "planar_s445", "v": "A", "status": "ok", "wall_s": 635.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s445_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:29:01"}
+{"ds": "v2", "scene": "planar_s447", "v": "C", "status": "ok", "wall_s": 656.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s447_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 08:32:24"}
+{"ds": "v2", "scene": "planar_s448", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:32:24"}
+{"ds": "v2", "scene": "planar_s448", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:32:24"}
+{"ds": "v2", "scene": "planar_s448", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:32:24"}
+{"ds": "v2", "scene": "planar_s447", "v": "B", "status": "ok", "wall_s": 659.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s447_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 08:36:06"}
+{"ds": "v2", "scene": "planar_s447", "v": "A", "status": "ok", "wall_s": 677.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s447_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:40:18"}
+{"ds": "v2", "scene": "planar_s449", "v": "C", "status": "ok", "wall_s": 603.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s449_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 08:42:28"}
+{"ds": "v2", "scene": "planar_s450", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:42:28"}
+{"ds": "v2", "scene": "planar_s450", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:42:28"}
+{"ds": "v2", "scene": "planar_s450", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:42:28"}
+{"ds": "v2", "scene": "confound_same_s451", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:42:28"}
+{"ds": "v2", "scene": "confound_same_s451", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:42:28"}
+{"ds": "v2", "scene": "confound_same_s451", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:42:28"}
+{"ds": "v2", "scene": "confound_same_s452", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:42:28"}
+{"ds": "v2", "scene": "confound_same_s452", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:42:28"}
+{"ds": "v2", "scene": "confound_same_s452", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:42:28"}
+{"ds": "v2", "scene": "planar_s449", "v": "B", "status": "ok", "wall_s": 611.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s449_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 08:46:17"}
+{"ds": "v2", "scene": "planar_s449", "v": "A", "status": "ok", "wall_s": 622.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/planar_s449_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:50:41"}
+{"ds": "v2", "scene": "confound_same_s453", "v": "C", "status": "ok", "wall_s": 657.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s453_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 08:53:25"}
+{"ds": "v2", "scene": "confound_same_s454", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:53:25"}
+{"ds": "v2", "scene": "confound_same_s454", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:53:25"}
+{"ds": "v2", "scene": "confound_same_s454", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 08:53:25"}
+{"ds": "v2", "scene": "confound_same_s453", "v": "B", "status": "ok", "wall_s": 660.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s453_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 08:57:18"}
+{"ds": "v2", "scene": "confound_same_s453", "v": "A", "status": "ok", "wall_s": 657.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s453_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:01:38"}
+{"ds": "v2", "scene": "confound_same_s455", "v": "C", "status": "ok", "wall_s": 656.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s455_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 09:04:22"}
+{"ds": "v2", "scene": "confound_same_s456", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:04:22"}
+{"ds": "v2", "scene": "confound_same_s456", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:04:22"}
+{"ds": "v2", "scene": "confound_same_s456", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:04:22"}
+{"ds": "v2", "scene": "confound_same_s455", "v": "B", "status": "ok", "wall_s": 666.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s455_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 09:08:24"}
+{"ds": "v2", "scene": "confound_same_s455", "v": "A", "status": "ok", "wall_s": 677.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s455_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:12:56"}
+{"ds": "v2", "scene": "confound_same_s457", "v": "C", "status": "ok", "wall_s": 640.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s457_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 09:15:02"}
+{"ds": "v2", "scene": "confound_same_s458", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:15:02"}
+{"ds": "v2", "scene": "confound_same_s458", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:15:02"}
+{"ds": "v2", "scene": "confound_same_s458", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:15:02"}
+{"ds": "v2", "scene": "confound_same_s457", "v": "B", "status": "ok", "wall_s": 651.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s457_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 09:19:15"}
+{"ds": "v2", "scene": "confound_same_s457", "v": "A", "status": "ok", "wall_s": 658.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s457_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:23:54"}
+{"ds": "v2", "scene": "confound_same_s459", "v": "C", "status": "ok", "wall_s": 701.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s459_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 09:26:43"}
+{"ds": "v2", "scene": "confound_same_s460", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:26:43"}
+{"ds": "v2", "scene": "confound_same_s460", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:26:43"}
+{"ds": "v2", "scene": "confound_same_s460", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:26:43"}
+{"ds": "v2", "scene": "confound_same_s459", "v": "B", "status": "ok", "wall_s": 620.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s459_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 09:29:35"}
+{"ds": "v2", "scene": "confound_same_s459", "v": "A", "status": "ok", "wall_s": 636.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s459_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:34:30"}
+{"ds": "v2", "scene": "confound_same_s461", "v": "C", "status": "ok", "wall_s": 653.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s461_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 09:37:37"}
+{"ds": "v2", "scene": "confound_same_s462", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:37:37"}
+{"ds": "v2", "scene": "confound_same_s462", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:37:37"}
+{"ds": "v2", "scene": "confound_same_s462", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:37:37"}
+{"ds": "v2", "scene": "confound_same_s461", "v": "B", "status": "ok", "wall_s": 677.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s461_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 09:40:52"}
+{"ds": "v2", "scene": "confound_same_s461", "v": "A", "status": "ok", "wall_s": 711.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s461_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:46:22"}
+{"ds": "v2", "scene": "confound_same_s463", "v": "C", "status": "ok", "wall_s": 680.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s463_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 09:48:57"}
+{"ds": "v2", "scene": "confound_same_s464", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:48:57"}
+{"ds": "v2", "scene": "confound_same_s464", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:48:57"}
+{"ds": "v2", "scene": "confound_same_s464", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:48:57"}
+{"ds": "v2", "scene": "confound_same_s463", "v": "B", "status": "ok", "wall_s": 684.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s463_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 09:52:16"}
+{"ds": "v2", "scene": "confound_same_s463", "v": "A", "status": "ok", "wall_s": 686.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s463_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:57:48"}
+{"ds": "v2", "scene": "confound_same_s465", "v": "C", "status": "ok", "wall_s": 648.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s465_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 09:59:45"}
+{"ds": "v2", "scene": "confound_same_s466", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:59:45"}
+{"ds": "v2", "scene": "confound_same_s466", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:59:45"}
+{"ds": "v2", "scene": "confound_same_s466", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 09:59:45"}
+{"ds": "v2", "scene": "confound_same_s465", "v": "B", "status": "ok", "wall_s": 661.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s465_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 10:03:18"}
+{"ds": "v2", "scene": "confound_same_s465", "v": "A", "status": "ok", "wall_s": 674.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s465_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:09:03"}
+{"ds": "v2", "scene": "confound_same_s467", "v": "C", "status": "ok", "wall_s": 625.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s467_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 10:10:10"}
+{"ds": "v2", "scene": "confound_same_s468", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:10:10"}
+{"ds": "v2", "scene": "confound_same_s468", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:10:10"}
+{"ds": "v2", "scene": "confound_same_s468", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:10:10"}
+{"ds": "v2", "scene": "confound_glued_s469", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:10:10"}
+{"ds": "v2", "scene": "confound_glued_s469", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:10:10"}
+{"ds": "v2", "scene": "confound_glued_s469", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:10:10"}
+{"ds": "v2", "scene": "confound_glued_s470", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:10:10"}
+{"ds": "v2", "scene": "confound_glued_s470", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:10:10"}
+{"ds": "v2", "scene": "confound_glued_s470", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:10:10"}
+{"ds": "v2", "scene": "confound_glued_s471", "v": "C", "status": "FAILED rc=1", "wall_s": 57.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s471_C.txt", "frame0_psnr": {}, "t": "2026-10-20 10:11:08"}
+{"ds": "v2", "scene": "confound_glued_s471", "v": "B", "status": "FAILED rc=1", "wall_s": 53.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s471_B.txt", "frame0_psnr": {}, "t": "2026-10-20 10:12:01"}
+{"ds": "v2", "scene": "confound_glued_s471", "v": "A", "status": "FAILED rc=1", "wall_s": 53.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s471_A.txt", "frame0_psnr": {}, "t": "2026-10-20 10:12:54"}
+{"ds": "v2", "scene": "confound_glued_s472", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:12:54"}
+{"ds": "v2", "scene": "confound_glued_s472", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:12:54"}
+{"ds": "v2", "scene": "confound_glued_s472", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:12:54"}
+{"ds": "v2", "scene": "confound_same_s467", "v": "B", "status": "ok", "wall_s": 632.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s467_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 10:13:50"}
+{"ds": "v2", "scene": "confound_same_s467", "v": "A", "status": "ok", "wall_s": 637.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_same_s467_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:19:40"}
+{"ds": "v2", "scene": "confound_glued_s473", "v": "C", "status": "ok", "wall_s": 610.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s473_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 10:23:05"}
+{"ds": "v2", "scene": "confound_glued_s474", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:23:05"}
+{"ds": "v2", "scene": "confound_glued_s474", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:23:05"}
+{"ds": "v2", "scene": "confound_glued_s474", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:23:05"}
+{"ds": "v2", "scene": "confound_glued_s473", "v": "B", "status": "ok", "wall_s": 624.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s473_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 10:24:14"}
+{"ds": "v2", "scene": "confound_glued_s473", "v": "A", "status": "ok", "wall_s": 642.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s473_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:30:23"}
+{"ds": "v2", "scene": "confound_glued_s475", "v": "C", "status": "ok", "wall_s": 692.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s475_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 10:34:37"}
+{"ds": "v2", "scene": "confound_glued_s476", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:34:37"}
+{"ds": "v2", "scene": "confound_glued_s476", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:34:37"}
+{"ds": "v2", "scene": "confound_glued_s476", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:34:37"}
+{"ds": "v2", "scene": "confound_glued_s477", "v": "C", "status": "FAILED rc=1", "wall_s": 50.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s477_C.txt", "frame0_psnr": {}, "t": "2026-10-20 10:35:28"}
+{"ds": "v2", "scene": "confound_glued_s475", "v": "B", "status": "ok", "wall_s": 698.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s475_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 10:35:53"}
+{"ds": "v2", "scene": "confound_glued_s477", "v": "B", "status": "FAILED rc=1", "wall_s": 48.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s477_B.txt", "frame0_psnr": {}, "t": "2026-10-20 10:36:16"}
+{"ds": "v2", "scene": "confound_glued_s478", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:36:16"}
+{"ds": "v2", "scene": "confound_glued_s478", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:36:16"}
+{"ds": "v2", "scene": "confound_glued_s478", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:36:16"}
+{"ds": "v2", "scene": "confound_glued_s477", "v": "A", "status": "FAILED rc=1", "wall_s": 50.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s477_A.txt", "frame0_psnr": {}, "t": "2026-10-20 10:36:43"}
+{"ds": "v2", "scene": "confound_glued_s475", "v": "A", "status": "ok", "wall_s": 692.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s475_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:41:56"}
+{"ds": "v2", "scene": "confound_glued_s479", "v": "C", "status": "ok", "wall_s": 629.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s479_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 10:46:46"}
+{"ds": "v2", "scene": "confound_glued_s480", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:46:46"}
+{"ds": "v2", "scene": "confound_glued_s480", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:46:46"}
+{"ds": "v2", "scene": "confound_glued_s480", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:46:46"}
+{"ds": "v2", "scene": "confound_glued_s479", "v": "B", "status": "ok", "wall_s": 641.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s479_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 10:47:25"}
+{"ds": "v2", "scene": "confound_glued_s479", "v": "A", "status": "ok", "wall_s": 659.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s479_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:52:56"}
+{"ds": "v2", "scene": "confound_glued_s481", "v": "C", "status": "ok", "wall_s": 642.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s481_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 10:57:28"}
+{"ds": "v2", "scene": "confound_glued_s482", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:57:29"}
+{"ds": "v2", "scene": "confound_glued_s482", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:57:29"}
+{"ds": "v2", "scene": "confound_glued_s482", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 10:57:29"}
+{"ds": "v2", "scene": "confound_glued_s481", "v": "B", "status": "ok", "wall_s": 652.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s481_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 10:58:18"}
+{"ds": "v2", "scene": "confound_glued_s481", "v": "A", "status": "ok", "wall_s": 664.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s481_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:04:00"}
+{"ds": "v2", "scene": "confound_glued_s483", "v": "C", "status": "ok", "wall_s": 690.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s483_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 11:08:59"}
+{"ds": "v2", "scene": "confound_glued_s484", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:08:59"}
+{"ds": "v2", "scene": "confound_glued_s484", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:08:59"}
+{"ds": "v2", "scene": "confound_glued_s484", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:08:59"}
+{"ds": "v2", "scene": "confound_glued_s483", "v": "B", "status": "ok", "wall_s": 699.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s483_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 11:09:57"}
+{"ds": "v2", "scene": "confound_glued_s483", "v": "A", "status": "ok", "wall_s": 716.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s483_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:15:57"}
+{"ds": "v2", "scene": "confound_glued_s485", "v": "C", "status": "ok", "wall_s": 673.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s485_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 11:20:12"}
+{"ds": "v2", "scene": "confound_glued_s486", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:20:12"}
+{"ds": "v2", "scene": "confound_glued_s486", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:20:12"}
+{"ds": "v2", "scene": "confound_glued_s486", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:20:12"}
+{"ds": "v3float", "scene": "epi_aligned_s531", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:20:12"}
+{"ds": "v3float", "scene": "epi_aligned_s531", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:20:12"}
+{"ds": "v3float", "scene": "epi_aligned_s531", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:20:12"}
+{"ds": "v2", "scene": "confound_glued_s485", "v": "B", "status": "ok", "wall_s": 685.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s485_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 11:21:23"}
+{"ds": "v2", "scene": "confound_glued_s485", "v": "A", "status": "ok", "wall_s": 703.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v2/confound_glued_s485_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:27:40"}
+{"ds": "v3float", "scene": "epi_aligned_s532", "v": "C", "status": "ok", "wall_s": 647.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s532_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 11:31:00"}
+{"ds": "v3float", "scene": "epi_aligned_s532", "v": "B", "status": "ok", "wall_s": 639.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s532_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 11:32:02"}
+{"ds": "v3float", "scene": "epi_aligned_s533", "v": "C", "status": "ok", "wall_s": 633.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s533_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 11:41:33"}
+{"ds": "v3float", "scene": "epi_aligned_s533", "v": "B", "status": "ok", "wall_s": 625.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s533_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 11:42:27"}
+{"ds": "v3float", "scene": "epi_aligned_s532", "v": "A", "status": "ok", "wall_s": 890.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s532_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:42:31"}
+{"ds": "v3float", "scene": "epi_aligned_s533", "v": "A", "status": "ok", "wall_s": 617.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s533_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 11:51:50"}
+{"ds": "v3float", "scene": "epi_aligned_s534", "v": "C", "status": "ok", "wall_s": 659.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s534_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 11:53:27"}
+{"ds": "v3float", "scene": "epi_aligned_s534", "v": "B", "status": "ok", "wall_s": 695.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s534_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 11:54:06"}
+{"ds": "v3float", "scene": "epi_aligned_s534", "v": "A", "status": "ok", "wall_s": 655.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s534_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 12:02:46"}
+{"ds": "v3float", "scene": "epi_aligned_s535", "v": "C", "status": "ok", "wall_s": 638.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s535_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 12:04:05"}
+{"ds": "v3float", "scene": "epi_aligned_s535", "v": "B", "status": "ok", "wall_s": 678.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s535_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 12:05:25"}
+{"ds": "v3float", "scene": "epi_aligned_s535", "v": "A", "status": "ok", "wall_s": 633.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s535_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 12:13:19"}
+{"ds": "v3float", "scene": "epi_aligned_s536", "v": "C", "status": "ok", "wall_s": 674.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s536_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 12:15:19"}
+{"ds": "v3float", "scene": "epi_aligned_s536", "v": "B", "status": "ok", "wall_s": 712.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s536_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 12:17:17"}
+{"ds": "v3float", "scene": "epi_aligned_s536", "v": "A", "status": "ok", "wall_s": 676.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s536_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 12:24:35"}
+{"ds": "v3float", "scene": "epi_aligned_s537", "v": "C", "status": "ok", "wall_s": 661.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s537_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 12:26:21"}
+{"ds": "v3float", "scene": "epi_aligned_s537", "v": "B", "status": "ok", "wall_s": 698.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s537_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 12:28:56"}
+{"ds": "v3float", "scene": "epi_aligned_s537", "v": "A", "status": "ok", "wall_s": 645.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s537_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 12:35:21"}
+{"ds": "v3float", "scene": "epi_aligned_s538", "v": "C", "status": "ok", "wall_s": 618.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s538_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 12:36:40"}
+{"ds": "v3float", "scene": "epi_aligned_s538", "v": "B", "status": "ok", "wall_s": 661.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s538_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 12:39:58"}
+{"ds": "v3float", "scene": "epi_aligned_s538", "v": "A", "status": "ok", "wall_s": 620.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s538_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 12:45:42"}
+{"ds": "v3float", "scene": "epi_aligned_s539", "v": "C", "status": "ok", "wall_s": 685.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s539_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 12:48:05"}
+{"ds": "v3float", "scene": "epi_aligned_s539", "v": "B", "status": "ok", "wall_s": 729.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s539_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 12:52:07"}
+{"ds": "v3float", "scene": "epi_aligned_s539", "v": "A", "status": "ok", "wall_s": 694.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s539_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 12:57:16"}
+{"ds": "v3float", "scene": "epi_aligned_s540", "v": "C", "status": "ok", "wall_s": 675.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s540_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 12:59:21"}
+{"ds": "v3float", "scene": "epi_aligned_s540", "v": "B", "status": "ok", "wall_s": 721.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s540_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 13:04:09"}
+{"ds": "v3float", "scene": "epi_aligned_s540", "v": "A", "status": "ok", "wall_s": 676.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s540_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 13:08:33"}
+{"ds": "v3float", "scene": "epi_aligned_s541", "v": "C", "status": "ok", "wall_s": 642.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s541_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 13:10:04"}
+{"ds": "v3float", "scene": "epi_aligned_s541", "v": "B", "status": "ok", "wall_s": 680.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s541_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 13:15:29"}
+{"ds": "v3float", "scene": "epi_aligned_s541", "v": "A", "status": "ok", "wall_s": 643.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s541_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 13:19:16"}
+{"ds": "v3float", "scene": "epi_aligned_s542", "v": "C", "status": "ok", "wall_s": 695.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s542_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 13:21:39"}
+{"ds": "v3float", "scene": "epi_aligned_s542", "v": "B", "status": "ok", "wall_s": 729.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s542_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 13:27:39"}
+{"ds": "v3float", "scene": "epi_aligned_s542", "v": "A", "status": "ok", "wall_s": 687.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s542_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 13:30:43"}
+{"ds": "v3float", "scene": "epi_aligned_s543", "v": "C", "status": "ok", "wall_s": 658.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s543_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 13:32:37"}
+{"ds": "v3float", "scene": "epi_aligned_s543", "v": "B", "status": "ok", "wall_s": 696.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s543_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 13:39:16"}
+{"ds": "v3float", "scene": "epi_aligned_s543", "v": "A", "status": "ok", "wall_s": 667.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s543_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 13:41:51"}
+{"ds": "v3float", "scene": "epi_aligned_s544", "v": "C", "status": "ok", "wall_s": 635.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s544_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 13:43:13"}
+{"ds": "v3float", "scene": "epi_aligned_s544", "v": "B", "status": "ok", "wall_s": 686.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s544_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 13:50:42"}
+{"ds": "v3float", "scene": "epi_aligned_s544", "v": "A", "status": "ok", "wall_s": 635.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s544_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 13:52:26"}
+{"ds": "v3float", "scene": "epi_aligned_s545", "v": "C", "status": "ok", "wall_s": 645.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s545_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 13:53:59"}
+{"ds": "v3float", "scene": "epi_aligned_s545", "v": "B", "status": "ok", "wall_s": 688.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s545_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 14:02:11"}
+{"ds": "v3float", "scene": "epi_aligned_s545", "v": "A", "status": "ok", "wall_s": 641.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s545_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 14:03:08"}
+{"ds": "v3float", "scene": "epi_aligned_s546", "v": "C", "status": "ok", "wall_s": 669.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s546_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 14:05:08"}
+{"ds": "v3float", "scene": "epi_aligned_s546", "v": "B", "status": "ok", "wall_s": 710.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s546_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 14:14:01"}
+{"ds": "v3float", "scene": "epi_aligned_s546", "v": "A", "status": "ok", "wall_s": 678.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s546_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 14:14:26"}
+{"ds": "v3float", "scene": "epi_aligned_s547", "v": "C", "status": "ok", "wall_s": 659.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s547_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 14:16:07"}
+{"ds": "v3float", "scene": "epi_aligned_s547", "v": "A", "status": "ok", "wall_s": 659.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s547_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 14:25:26"}
+{"ds": "v3float", "scene": "epi_aligned_s547", "v": "B", "status": "ok", "wall_s": 694.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s547_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 14:25:36"}
+{"ds": "v3float", "scene": "epi_aligned_s548", "v": "C", "status": "ok", "wall_s": 643.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s548_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 14:26:50"}
+{"ds": "v3float", "scene": "epi_aligned_s548", "v": "B", "status": "ok", "wall_s": 657.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s548_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 14:36:23"}
+{"ds": "v3float", "scene": "epi_aligned_s548", "v": "A", "status": "ok", "wall_s": 676.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s548_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 14:36:53"}
+{"ds": "v3float", "scene": "epi_aligned_s549", "v": "C", "status": "ok", "wall_s": 660.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s549_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 14:37:51"}
+{"ds": "v3float", "scene": "epi_aligned_s549", "v": "B", "status": "ok", "wall_s": 674.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s549_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 14:47:38"}
+{"ds": "v3float", "scene": "epi_aligned_s549", "v": "A", "status": "ok", "wall_s": 694.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s549_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 14:48:28"}
+{"ds": "v3float", "scene": "epi_aligned_s550", "v": "C", "status": "ok", "wall_s": 642.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s550_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 14:48:33"}
+{"ds": "v3float", "scene": "epi_aligned_s550", "v": "B", "status": "ok", "wall_s": 663.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s550_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 14:58:41"}
+{"ds": "v3float", "scene": "epi_aligned_s550", "v": "A", "status": "ok", "wall_s": 675.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s550_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 14:59:44"}
+{"ds": "v3float", "scene": "epi_aligned_s551", "v": "C", "status": "ok", "wall_s": 681.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s551_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 14:59:58"}
+{"ds": "v3float", "scene": "epi_aligned_s551", "v": "B", "status": "ok", "wall_s": 688.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s551_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 15:10:10"}
+{"ds": "v3float", "scene": "epi_aligned_s552", "v": "C", "status": "ok", "wall_s": 668.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s552_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 15:11:05"}
+{"ds": "v3float", "scene": "epi_aligned_s551", "v": "A", "status": "ok", "wall_s": 714.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s551_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 15:11:38"}
+{"ds": "v3float", "scene": "epi_aligned_s552", "v": "B", "status": "ok", "wall_s": 668.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s552_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 15:21:18"}
+{"ds": "v3float", "scene": "epi_aligned_s552", "v": "A", "status": "ok", "wall_s": 662.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s552_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 15:22:08"}
+{"ds": "v3float", "scene": "epi_aligned_s553", "v": "C", "status": "ok", "wall_s": 704.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s553_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 15:23:23"}
+{"ds": "v3float", "scene": "epi_aligned_s553", "v": "B", "status": "ok", "wall_s": 678.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s553_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 15:32:37"}
+{"ds": "v3float", "scene": "epi_aligned_s553", "v": "A", "status": "ok", "wall_s": 680.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s553_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 15:33:28"}
+{"ds": "v3float", "scene": "epi_aligned_s554", "v": "C", "status": "ok", "wall_s": 676.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s554_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 15:34:39"}
+{"ds": "v3float", "scene": "epi_aligned_s554", "v": "B", "status": "ok", "wall_s": 646.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s554_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 15:43:23"}
+{"ds": "v3float", "scene": "epi_aligned_s554", "v": "A", "status": "ok", "wall_s": 635.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s554_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 15:44:04"}
+{"ds": "v3float", "scene": "epi_aligned_s555", "v": "C", "status": "ok", "wall_s": 660.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s555_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 15:45:40"}
+{"ds": "v3float", "scene": "epi_aligned_s555", "v": "B", "status": "ok", "wall_s": 651.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s555_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 15:54:15"}
+{"ds": "v3float", "scene": "epi_aligned_s555", "v": "A", "status": "ok", "wall_s": 644.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s555_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 15:54:48"}
+{"ds": "v3float", "scene": "epi_aligned_s556", "v": "C", "status": "ok", "wall_s": 698.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s556_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 15:57:19"}
+{"ds": "v3float", "scene": "epi_aligned_s556", "v": "B", "status": "ok", "wall_s": 678.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s556_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 16:05:33"}
+{"ds": "v3float", "scene": "epi_aligned_s556", "v": "A", "status": "ok", "wall_s": 671.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s556_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 16:06:00"}
+{"ds": "v3float", "scene": "epi_aligned_s557", "v": "C", "status": "ok", "wall_s": 680.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s557_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 16:08:39"}
+{"ds": "v3float", "scene": "epi_aligned_s557", "v": "B", "status": "ok", "wall_s": 645.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s557_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 16:16:19"}
+{"ds": "v3float", "scene": "epi_aligned_s557", "v": "A", "status": "ok", "wall_s": 638.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s557_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 16:16:39"}
+{"ds": "v3float", "scene": "epi_aligned_s558", "v": "C", "status": "ok", "wall_s": 687.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s558_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 16:20:07"}
+{"ds": "v3float", "scene": "epi_aligned_s558", "v": "B", "status": "ok", "wall_s": 658.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s558_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 16:27:17"}
+{"ds": "v3float", "scene": "epi_aligned_s558", "v": "A", "status": "ok", "wall_s": 647.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s558_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 16:27:27"}
+{"ds": "v3float", "scene": "epi_aligned_s559", "v": "C", "status": "ok", "wall_s": 681.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s559_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 16:31:29"}
+{"ds": "v3float", "scene": "epi_aligned_s559", "v": "B", "status": "ok", "wall_s": 655.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s559_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 16:38:13"}
+{"ds": "v3float", "scene": "epi_aligned_s559", "v": "A", "status": "ok", "wall_s": 654.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s559_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 16:38:21"}
+{"ds": "v3float", "scene": "epi_aligned_s560", "v": "C", "status": "ok", "wall_s": 705.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s560_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 16:43:15"}
+{"ds": "v3float", "scene": "n2_generic_s561", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 16:43:15"}
+{"ds": "v3float", "scene": "n2_generic_s561", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 16:43:15"}
+{"ds": "v3float", "scene": "n2_generic_s561", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 16:43:15"}
+{"ds": "v3float", "scene": "epi_aligned_s560", "v": "B", "status": "ok", "wall_s": 673.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s560_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 16:49:27"}
+{"ds": "v3float", "scene": "epi_aligned_s560", "v": "A", "status": "ok", "wall_s": 668.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/epi_aligned_s560_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 16:49:29"}
+{"ds": "v3float", "scene": "n2_generic_s562", "v": "C", "status": "ok", "wall_s": 681.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s562_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 16:54:36"}
+{"ds": "v3float", "scene": "n2_generic_s562", "v": "A", "status": "ok", "wall_s": 657.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s562_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 17:00:27"}
+{"ds": "v3float", "scene": "n2_generic_s562", "v": "B", "status": "ok", "wall_s": 671.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s562_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 17:00:38"}
+{"ds": "v3float", "scene": "n2_generic_s563", "v": "C", "status": "ok", "wall_s": 723.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s563_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 17:06:39"}
+{"ds": "v3float", "scene": "n2_generic_s563", "v": "A", "status": "ok", "wall_s": 676.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s563_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 17:11:55"}
+{"ds": "v3float", "scene": "n2_generic_s563", "v": "B", "status": "ok", "wall_s": 694.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s563_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 17:12:01"}
+{"ds": "v3float", "scene": "n2_generic_s564", "v": "C", "status": "ok", "wall_s": 702.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s564_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 17:18:22"}
+{"ds": "v3float", "scene": "n2_generic_s564", "v": "A", "status": "ok", "wall_s": 670.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s564_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 17:23:11"}
+{"ds": "v3float", "scene": "n2_generic_s564", "v": "B", "status": "ok", "wall_s": 686.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s564_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 17:23:22"}
+{"ds": "v3float", "scene": "n2_generic_s565", "v": "C", "status": "ok", "wall_s": 707.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s565_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 17:30:09"}
+{"ds": "v3float", "scene": "n2_generic_s565", "v": "B", "status": "ok", "wall_s": 686.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s565_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 17:34:38"}
+{"ds": "v3float", "scene": "n2_generic_s565", "v": "A", "status": "ok", "wall_s": 680.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s565_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 17:34:42"}
+{"ds": "v3float", "scene": "n2_generic_s566", "v": "C", "status": "ok", "wall_s": 658.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s566_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 17:41:08"}
+{"ds": "v3float", "scene": "n2_generic_s566", "v": "A", "status": "ok", "wall_s": 630.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s566_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 17:45:12"}
+{"ds": "v3float", "scene": "n2_generic_s566", "v": "B", "status": "ok", "wall_s": 638.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s566_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 17:45:17"}
+{"ds": "v3float", "scene": "n2_generic_s567", "v": "C", "status": "ok", "wall_s": 672.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s567_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 17:52:20"}
+{"ds": "v3float", "scene": "n2_generic_s567", "v": "A", "status": "ok", "wall_s": 647.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s567_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 17:56:04"}
+{"ds": "v3float", "scene": "n2_generic_s567", "v": "B", "status": "ok", "wall_s": 662.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s567_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 17:56:15"}
+{"ds": "v3float", "scene": "n2_generic_s568", "v": "C", "status": "ok", "wall_s": 667.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s568_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 18:03:29"}
+{"ds": "v3float", "scene": "n2_generic_s568", "v": "A", "status": "ok", "wall_s": 634.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s568_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 18:06:49"}
+{"ds": "v3float", "scene": "n2_generic_s568", "v": "B", "status": "ok", "wall_s": 648.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s568_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 18:06:52"}
+{"ds": "v3float", "scene": "n2_generic_s569", "v": "C", "status": "ok", "wall_s": 698.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s569_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 18:15:08"}
+{"ds": "v3float", "scene": "n2_generic_s569", "v": "A", "status": "ok", "wall_s": 674.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s569_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 18:18:06"}
+{"ds": "v3float", "scene": "n2_generic_s569", "v": "B", "status": "ok", "wall_s": 678.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s569_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 18:18:08"}
+{"ds": "v3float", "scene": "n2_generic_s570", "v": "C", "status": "ok", "wall_s": 704.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s570_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 18:26:53"}
+{"ds": "v3float", "scene": "n2_generic_s570", "v": "A", "status": "ok", "wall_s": 678.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s570_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 18:29:26"}
+{"ds": "v3float", "scene": "n2_generic_s570", "v": "B", "status": "ok", "wall_s": 691.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n2_generic_s570_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 18:29:38"}
+{"ds": "v3float", "scene": "confound_same_s571", "v": "C", "status": "ok", "wall_s": 711.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s571_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 18:38:44"}
+{"ds": "v3float", "scene": "confound_same_s571", "v": "B", "status": "ok", "wall_s": 682.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s571_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 18:40:48"}
+{"ds": "v3float", "scene": "confound_same_s571", "v": "A", "status": "ok", "wall_s": 677.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s571_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 18:40:55"}
+{"ds": "v3float", "scene": "confound_same_s572", "v": "C", "status": "ok", "wall_s": 695.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s572_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 18:50:20"}
+{"ds": "v3float", "scene": "confound_same_s572", "v": "A", "status": "ok", "wall_s": 662.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s572_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 18:51:57"}
+{"ds": "v3float", "scene": "confound_same_s572", "v": "B", "status": "ok", "wall_s": 678.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s572_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 18:52:07"}
+{"ds": "v3float", "scene": "confound_same_s573", "v": "C", "status": "ok", "wall_s": 702.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s573_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 19:02:02"}
+{"ds": "v3float", "scene": "confound_same_s573", "v": "B", "status": "ok", "wall_s": 676.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s573_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 19:03:14"}
+{"ds": "v3float", "scene": "confound_same_s573", "v": "A", "status": "ok", "wall_s": 670.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s573_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 19:03:18"}
+{"ds": "v3float", "scene": "confound_same_s574", "v": "C", "status": "ok", "wall_s": 695.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s574_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 19:13:37"}
+{"ds": "v3float", "scene": "confound_same_s574", "v": "A", "status": "ok", "wall_s": 659.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s574_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 19:14:18"}
+{"ds": "v3float", "scene": "confound_same_s574", "v": "B", "status": "ok", "wall_s": 666.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s574_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 19:14:20"}
+{"ds": "v3float", "scene": "confound_same_s575", "v": "C", "status": "ok", "wall_s": 684.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s575_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 19:25:02"}
+{"ds": "v3float", "scene": "confound_same_s575", "v": "A", "status": "ok", "wall_s": 660.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s575_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 19:25:21"}
+{"ds": "v3float", "scene": "confound_same_s575", "v": "B", "status": "ok", "wall_s": 667.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s575_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 19:25:25"}
+{"ds": "v3float", "scene": "confound_same_s576", "v": "C", "status": "ok", "wall_s": 642.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s576_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 19:35:44"}
+{"ds": "v3float", "scene": "confound_same_s576", "v": "A", "status": "ok", "wall_s": 619.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s576_A.txt", "frame0_psnr": {"A": Infinity, "C": Infinity}, "t": "2026-10-20 19:35:45"}
+{"ds": "v3float", "scene": "confound_same_s576", "v": "B", "status": "ok", "wall_s": 634.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s576_B.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 19:35:55"}
+{"ds": "v3float", "scene": "confound_same_s577", "v": "B", "status": "ok", "wall_s": 645.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s577_B.txt", "frame0_psnr": {"B": Infinity}, "t": "2026-10-20 19:46:30"}
+{"ds": "v3float", "scene": "confound_same_s577", "v": "A", "status": "ok", "wall_s": 640.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s577_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity}, "t": "2026-10-20 19:46:36"}
+{"ds": "v3float", "scene": "confound_same_s577", "v": "C", "status": "ok", "wall_s": 674.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s577_C.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 19:46:58"}
+{"ds": "v3float", "scene": "confound_same_s578", "v": "C", "status": "ok", "wall_s": 647.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s578_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 19:57:18"}
+{"ds": "v3float", "scene": "confound_same_s578", "v": "B", "status": "ok", "wall_s": 657.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s578_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 19:57:33"}
+{"ds": "v3float", "scene": "confound_same_s578", "v": "A", "status": "ok", "wall_s": 674.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s578_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 19:58:13"}
+{"ds": "v3float", "scene": "confound_same_s579", "v": "C", "status": "ok", "wall_s": 661.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s579_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 20:08:20"}
+{"ds": "v3float", "scene": "confound_same_s579", "v": "B", "status": "ok", "wall_s": 678.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s579_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 20:08:51"}
+{"ds": "v3float", "scene": "confound_same_s579", "v": "A", "status": "ok", "wall_s": 697.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s579_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 20:09:50"}
+{"ds": "v3float", "scene": "confound_same_s580", "v": "C", "status": "ok", "wall_s": 639.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s580_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 20:18:59"}
+{"ds": "v3float", "scene": "n3_generic_s581", "v": "C", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 20:18:59"}
+{"ds": "v3float", "scene": "n3_generic_s581", "v": "B", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 20:18:59"}
+{"ds": "v3float", "scene": "n3_generic_s581", "v": "A", "status": "skip", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 20:18:59"}
+{"ds": "v3float", "scene": "confound_same_s580", "v": "B", "status": "ok", "wall_s": 647.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s580_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 20:19:39"}
+{"ds": "v3float", "scene": "confound_same_s580", "v": "A", "status": "ok", "wall_s": 659.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_same_s580_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 20:20:49"}
+{"ds": "v3float", "scene": "n3_generic_s582", "v": "C", "status": "ok", "wall_s": 706.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s582_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 20:30:46"}
+{"ds": "v3float", "scene": "n3_generic_s582", "v": "B", "status": "ok", "wall_s": 708.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s582_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 20:31:27"}
+{"ds": "v3float", "scene": "n3_generic_s582", "v": "A", "status": "ok", "wall_s": 742.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s582_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 20:33:12"}
+{"ds": "v3float", "scene": "n3_generic_s583", "v": "C", "status": "ok", "wall_s": 703.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s583_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 20:42:30"}
+{"ds": "v3float", "scene": "n3_generic_s583", "v": "B", "status": "ok", "wall_s": 708.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s583_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 20:43:16"}
+{"ds": "v3float", "scene": "n3_generic_s583", "v": "A", "status": "ok", "wall_s": 737.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s583_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 20:45:29"}
+{"ds": "v3float", "scene": "n3_generic_s584", "v": "C", "status": "ok", "wall_s": 672.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s584_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 20:53:42"}
+{"ds": "v3float", "scene": "n3_generic_s584", "v": "B", "status": "ok", "wall_s": 676.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s584_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 20:54:32"}
+{"ds": "v3float", "scene": "n3_generic_s584", "v": "A", "status": "ok", "wall_s": 717.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s584_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 20:57:27"}
+{"ds": "v3float", "scene": "n3_generic_s585", "v": "C", "status": "ok", "wall_s": 659.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s585_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 21:04:42"}
+{"ds": "v3float", "scene": "n3_generic_s585", "v": "B", "status": "ok", "wall_s": 668.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s585_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 21:05:41"}
+{"ds": "v3float", "scene": "n3_generic_s585", "v": "A", "status": "ok", "wall_s": 697.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s585_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 21:09:04"}
+{"ds": "v3float", "scene": "n3_generic_s586", "v": "C", "status": "ok", "wall_s": 676.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s586_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 21:15:58"}
+{"ds": "v3float", "scene": "n3_generic_s586", "v": "B", "status": "ok", "wall_s": 692.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s586_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 21:17:13"}
+{"ds": "v3float", "scene": "n3_generic_s586", "v": "A", "status": "ok", "wall_s": 714.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s586_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 21:20:59"}
+{"ds": "v3float", "scene": "n3_generic_s587", "v": "C", "status": "ok", "wall_s": 686.9, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s587_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 21:27:25"}
+{"ds": "v3float", "scene": "n3_generic_s587", "v": "B", "status": "ok", "wall_s": 699.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s587_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 21:28:52"}
+{"ds": "v3float", "scene": "n3_generic_s587", "v": "A", "status": "ok", "wall_s": 733.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s587_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 21:33:12"}
+{"ds": "v3float", "scene": "n3_generic_s588", "v": "C", "status": "ok", "wall_s": 667.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s588_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 21:38:32"}
+{"ds": "v3float", "scene": "n3_generic_s588", "v": "B", "status": "ok", "wall_s": 672.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s588_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 21:40:05"}
+{"ds": "v3float", "scene": "n3_generic_s588", "v": "A", "status": "ok", "wall_s": 710.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s588_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 21:45:03"}
+{"ds": "v3float", "scene": "n3_generic_s589", "v": "C", "status": "ok", "wall_s": 656.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s589_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 21:49:29"}
+{"ds": "v3float", "scene": "n3_generic_s589", "v": "B", "status": "ok", "wall_s": 668.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s589_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 21:51:14"}
+{"ds": "v3float", "scene": "n3_generic_s589", "v": "A", "status": "ok", "wall_s": 679.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s589_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 21:56:23"}
+{"ds": "v3float", "scene": "n3_generic_s590", "v": "C", "status": "ok", "wall_s": 678.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s590_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 22:00:48"}
+{"ds": "v3float", "scene": "n3_generic_s590", "v": "B", "status": "ok", "wall_s": 694.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s590_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 22:02:48"}
+{"ds": "v3float", "scene": "n3_generic_s590", "v": "A", "status": "ok", "wall_s": 711.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/n3_generic_s590_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 22:08:15"}
+{"ds": "v3float", "scene": "confound_glued_s591", "v": "C", "status": "ok", "wall_s": 650.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s591_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 22:11:38"}
+{"ds": "v3float", "scene": "confound_glued_s591", "v": "B", "status": "ok", "wall_s": 657.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s591_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 22:13:45"}
+{"ds": "v3float", "scene": "confound_glued_s591", "v": "A", "status": "ok", "wall_s": 686.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s591_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 22:19:41"}
+{"ds": "v3float", "scene": "confound_glued_s592", "v": "C", "status": "ok", "wall_s": 673.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s592_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 22:22:51"}
+{"ds": "v3float", "scene": "confound_glued_s593", "v": "C", "status": "FAILED rc=1", "wall_s": 51.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s593_C.txt", "frame0_psnr": {}, "t": "2026-10-20 22:23:43"}
+{"ds": "v3float", "scene": "confound_glued_s593", "v": "B", "status": "FAILED rc=1", "wall_s": 48.1, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s593_B.txt", "frame0_psnr": {}, "t": "2026-10-20 22:24:31"}
+{"ds": "v3float", "scene": "confound_glued_s592", "v": "B", "status": "ok", "wall_s": 683.3, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s592_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 22:25:09"}
+{"ds": "v3float", "scene": "confound_glued_s593", "v": "A", "status": "FAILED rc=1", "wall_s": 49.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s593_A.txt", "frame0_psnr": {}, "t": "2026-10-20 22:25:21"}
+{"ds": "v3float", "scene": "confound_glued_s592", "v": "A", "status": "ok", "wall_s": 705.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s592_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 22:31:26"}
+{"ds": "v3float", "scene": "confound_glued_s594", "v": "C", "status": "ok", "wall_s": 647.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s594_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 22:35:57"}
+{"ds": "v3float", "scene": "confound_glued_s594", "v": "B", "status": "ok", "wall_s": 653.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s594_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 22:36:14"}
+{"ds": "v3float", "scene": "confound_glued_s594", "v": "A", "status": "ok", "wall_s": 677.5, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s594_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 22:42:44"}
+{"ds": "v3float", "scene": "confound_glued_s595", "v": "C", "status": "ok", "wall_s": 649.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s595_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 22:46:48"}
+{"ds": "v3float", "scene": "confound_glued_s595", "v": "B", "status": "ok", "wall_s": 658.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s595_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 22:47:13"}
+{"ds": "v3float", "scene": "confound_glued_s596", "v": "C", "status": "ok", "wall_s": 626.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s596_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 22:57:13"}
+{"ds": "v3float", "scene": "confound_glued_s596", "v": "B", "status": "ok", "wall_s": 634.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s596_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 22:57:48"}
+{"ds": "v3float", "scene": "confound_glued_s595", "v": "A", "status": "ok", "wall_s": 1006.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s595_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 22:59:30"}
+{"ds": "v3float", "scene": "confound_glued_s596", "v": "A", "status": "ok", "wall_s": 624.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s596_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 23:07:37"}
+{"ds": "v3float", "scene": "confound_glued_s597", "v": "C", "status": "ok", "wall_s": 675.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s597_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 23:09:03"}
+{"ds": "v3float", "scene": "confound_glued_s597", "v": "B", "status": "ok", "wall_s": 733.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s597_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 23:11:44"}
+{"ds": "v3float", "scene": "confound_glued_s597", "v": "A", "status": "ok", "wall_s": 675.2, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s597_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 23:18:52"}
+{"ds": "v3float", "scene": "confound_glued_s598", "v": "C", "status": "ok", "wall_s": 663.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s598_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 23:20:06"}
+{"ds": "v3float", "scene": "confound_glued_s598", "v": "B", "status": "ok", "wall_s": 706.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s598_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 23:23:31"}
+{"ds": "v3float", "scene": "confound_glued_s598", "v": "A", "status": "ok", "wall_s": 671.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s598_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 23:30:04"}
+{"ds": "v3float", "scene": "confound_glued_s599", "v": "C", "status": "ok", "wall_s": 703.8, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s599_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 23:31:50"}
+{"ds": "v3float", "scene": "confound_glued_s599", "v": "B", "status": "ok", "wall_s": 752.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s599_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 23:36:03"}
+{"ds": "v3float", "scene": "confound_glued_s599", "v": "A", "status": "ok", "wall_s": 700.4, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s599_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 23:41:44"}
+{"ds": "v3float", "scene": "confound_glued_s600", "v": "C", "status": "ok", "wall_s": 697.7, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s600_C.txt", "frame0_psnr": {"C": Infinity}, "t": "2026-10-20 23:43:28"}
+{"ds": "v3float", "scene": "confound_glued_s600", "v": "B", "status": "ok", "wall_s": 743.0, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s600_B.txt", "frame0_psnr": {"B": Infinity, "C": Infinity}, "t": "2026-10-20 23:48:26"}
+{"ds": "v3float", "scene": "confound_glued_s600", "v": "A", "status": "ok", "wall_s": 692.6, "log": "/data2/DATA/rohit_sinha/e5/big/logs/data/render/v3float/confound_glued_s600_A.txt", "frame0_psnr": {"A": Infinity, "B": Infinity, "C": Infinity}, "t": "2026-10-20 23:53:18"}
+RENDER_FACTORIAL_DONE
+== phase 3: GT export, post (scene_summary), comparison with 4090 Tuesday 20 October 2026 11:53:44 PM IST
+gt v2 n2_generic 301 ['A', 'B', 'C', 'D']
+gt v2 n3_generic 303 ['A', 'B', 'C', 'D']
+gt v2 epi_aligned 307 ['A', 'B', 'C', 'D']
+gt v2 planar 309 ['A', 'B', 'C', 'D']
+gt v2 confound_same 311 ['A', 'B', 'C', 'D']
+gt v2 confound_glued 313 ['A', 'B', 'C', 'D']
+gt v2 n2_generic 403 ['A', 'B', 'C', 'D']
+gt v2 n2_generic 405 ['A', 'B', 'C', 'D']
+gt v2 n2_generic 407 ['A', 'B', 'C', 'D']
+gt v2 n3_generic 411 ['A', 'B', 'C', 'D']
+gt v2 n3_generic 413 ['A', 'B', 'C', 'D']
+gt v2 n3_generic 415 ['A', 'B', 'C', 'D']
+gt v2 n3_generic 417 ['A', 'B', 'C', 'D']
+gt v2 n3_generic 419 ['A', 'B', 'C', 'D']
+gt v2 n3_generic 421 ['A', 'B', 'C', 'D']
+gt v2 n3_generic 423 ['A', 'B', 'C', 'D']
+gt v2 n3_generic 425 ['A', 'B', 'C', 'D']
+gt v2 camrot 427 ['A', 'B', 'C', 'D']
+gt v2 camrot 429 ['A', 'B', 'C', 'D']
+gt v2 camrot 431 ['A', 'B', 'C', 'D']
+gt v2 camrot 433 ['A', 'B', 'C', 'D']
+gt v2 epi_aligned 437 ['A', 'B', 'C', 'D']
+gt v2 epi_aligned 439 ['A', 'B', 'C', 'D']
+gt v2 epi_aligned 441 ['A', 'B', 'C', 'D']
+gt v2 planar 445 ['A', 'B', 'C', 'D']
+gt v2 planar 447 ['A', 'B', 'C', 'D']
+gt v2 planar 449 ['A', 'B', 'C', 'D']
+gt v2 confound_same 453 ['A', 'B', 'C', 'D']
+gt v2 confound_same 455 ['A', 'B', 'C', 'D']
+gt v2 confound_same 457 ['A', 'B', 'C', 'D']
+gt v2 confound_same 459 ['A', 'B', 'C', 'D']
+gt v2 confound_same 461 ['A', 'B', 'C', 'D']
+gt v2 confound_same 463 ['A', 'B', 'C', 'D']
+gt v2 confound_same 465 ['A', 'B', 'C', 'D']
+gt v2 confound_same 467 ['A', 'B', 'C', 'D']
+skip (no D) v2 confound_glued 471
+gt v2 confound_glued 473 ['A', 'B', 'C', 'D']
+gt v2 confound_glued 475 ['A', 'B', 'C', 'D']
+skip (no D) v2 confound_glued 477
+gt v2 confound_glued 479 ['A', 'B', 'C', 'D']
+gt v2 confound_glued 481 ['A', 'B', 'C', 'D']
+gt v2 confound_glued 483 ['A', 'B', 'C', 'D']
+gt v2 confound_glued 485 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 532 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 533 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 534 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 535 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 536 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 537 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 538 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 539 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 540 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 541 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 542 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 543 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 544 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 545 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 546 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 547 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 548 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 549 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 550 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 551 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 552 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 553 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 554 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 555 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 556 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 557 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 558 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 559 ['A', 'B', 'C', 'D']
+gt v3float epi_aligned 560 ['A', 'B', 'C', 'D']
+gt v3float n2_generic 562 ['A', 'B', 'C', 'D']
+gt v3float n2_generic 563 ['A', 'B', 'C', 'D']
+gt v3float n2_generic 564 ['A', 'B', 'C', 'D']
+gt v3float n2_generic 565 ['A', 'B', 'C', 'D']
+gt v3float n2_generic 566 ['A', 'B', 'C', 'D']
+gt v3float n2_generic 567 ['A', 'B', 'C', 'D']
+gt v3float n2_generic 568 ['A', 'B', 'C', 'D']
+gt v3float n2_generic 569 ['A', 'B', 'C', 'D']
+gt v3float n2_generic 570 ['A', 'B', 'C', 'D']
+gt v3float confound_same 571 ['A', 'B', 'C', 'D']
+gt v3float confound_same 572 ['A', 'B', 'C', 'D']
+gt v3float confound_same 573 ['A', 'B', 'C', 'D']
+gt v3float confound_same 574 ['A', 'B', 'C', 'D']
+gt v3float confound_same 575 ['A', 'B', 'C', 'D']
+gt v3float confound_same 576 ['A', 'B', 'C', 'D']
+gt v3float confound_same 577 ['A', 'B', 'C', 'D']
+gt v3float confound_same 578 ['A', 'B', 'C', 'D']
+gt v3float confound_same 579 ['A', 'B', 'C', 'D']
+gt v3float confound_same 580 ['A', 'B', 'C', 'D']
+gt v3float n3_generic 582 ['A', 'B', 'C', 'D']
+gt v3float n3_generic 583 ['A', 'B', 'C', 'D']
+gt v3float n3_generic 584 ['A', 'B', 'C', 'D']
+gt v3float n3_generic 585 ['A', 'B', 'C', 'D']
+gt v3float n3_generic 586 ['A', 'B', 'C', 'D']
+gt v3float n3_generic 587 ['A', 'B', 'C', 'D']
+gt v3float n3_generic 588 ['A', 'B', 'C', 'D']
+gt v3float n3_generic 589 ['A', 'B', 'C', 'D']
+gt v3float n3_generic 590 ['A', 'B', 'C', 'D']
+gt v3float confound_glued 591 ['A', 'B', 'C', 'D']
+gt v3float confound_glued 592 ['A', 'B', 'C', 'D']
+skip (no D) v3float confound_glued 593
+gt v3float confound_glued 594 ['A', 'B', 'C', 'D']
+gt v3float confound_glued 595 ['A', 'B', 'C', 'D']
+gt v3float confound_glued 596 ['A', 'B', 'C', 'D']
+gt v3float confound_glued 597 ['A', 'B', 'C', 'D']
+gt v3float confound_glued 598 ['A', 'B', 'C', 'D']
+gt v3float confound_glued 599 ['A', 'B', 'C', 'D']
+gt v3float confound_glued 600 ['A', 'B', 'C', 'D']
+planar_s449 EPE 0.00 sep 28.4 snr1 20.1
+planar_s450 EPE 0.00 sep 24.3 snr1 17.2
+n3_generic_s589 EPE 0.00 sep 21.3 snr1 15.1
+n3_generic_s590 EPE 0.00 sep 32.7 snr1 23.1
+epi_const_s829 EPE 0.00 sep 0.0 snr1 0.0
+epi_const_s830 EPE 0.00 sep 0.0 snr1 0.0
+v2 {'n_ref': 120, 'n_new': 100, 'n_common': 98, 'max_abs_d_median_flow_px': 0.17980820750308268, 'n_median_flow_within_0p01px': 95, 'all_gt_motions_equal': True, 'all_n_groups_equal': True}
+v3float {'n_ref': 70, 'n_new': 70, 'n_common': 69, 'max_abs_d_median_flow_px': 2.0232356783722594e-05, 'n_median_flow_within_0p01px': 69, 'all_gt_motions_equal': True, 'all_n_groups_equal': True}
+v4epi {'n_ref': 120, 'n_new': 60, 'n_common': 60, 'max_abs_d_median_flow_px': 4.278312668581918e-06, 'n_median_flow_within_0p01px': 60, 'all_gt_motions_equal': True, 'all_n_groups_equal': True}
+=== RENDER_MAIN_DONE Wednesday 21 October 2026 12:14:21 AM IST

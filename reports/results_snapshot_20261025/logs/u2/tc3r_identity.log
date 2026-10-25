@@ -1,0 +1,79 @@
+[2026-10-24 14:15:40] attempt 1: trackcraft3r u2_infer.py --model tc3r_identity --kubric test:D  (GPU 0 free 48656 MiB)
+/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/lib/python3.10/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+    model_name: wan_video_dit model_class: WanModel
+        This model is initialized with extra kwargs: {'has_image_input': False, 'patch_size': [1, 2, 2], 'in_dim': 16, 'dim': 1536, 'ffn_dim': 8960, 'freq_dim': 256, 'text_dim': 4096, 'out_dim': 16, 'num_heads': 12, 'num_layers': 30, 'eps': 1e-06}
+    The following models are loaded: ['wan_video_dit'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+    model_name: wan_video_vae model_class: WanVideoVAE
+    The following models are loaded: ['wan_video_vae'].
+No wan_video_text_encoder models available.
+Using wan_video_dit from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors.
+Using wan_video_vae from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth.
+No wan_video_image_encoder models available.
+No wan_video_motion_controller models available.
+No wan_video_vace models available.
+No wans2v_audio_encoder models available.
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+  LoRA injected: rank=1024, targets=q,k,v,o,ffn.0,ffn.2
+  patch_embedding expanded: 16->32 channels
+  DiT head expanded to 2x output (xyz | vis)
+  DiT loaded: 1425 keys (unexpected=0, missing=0)
+  VAE loaded: 194 keys
+  VAE_vis loaded: 194 keys
+  VAE_pj loaded: 194 keys
+WanSceneFlowPredictor loaded from /data2/DATA/rohit_sinha/e5/big/models/ckpt/trackcraft3r/model.safetensors
+loaded tc3r_identity 43s
+[14:16:41] tc3r_identity test D 301 n2_generic_s301 rt=17.3s
+[14:16:54] tc3r_identity test D 303 n3_generic_s303 rt=11.4s
+[14:17:06] tc3r_identity test D 305 camrot_s305 rt=11.2s
+[14:17:20] tc3r_identity test D 307 epi_aligned_s307 rt=13.5s
+[14:17:32] tc3r_identity test D 309 planar_s309 rt=11.0s
+[14:17:44] tc3r_identity test D 311 confound_same_s311 rt=11.1s
+[14:17:56] tc3r_identity test D 313 confound_glued_s313 rt=10.5s
+[14:18:07] tc3r_identity test D 401 n2_generic_s401 rt=10.4s
+[14:18:18] tc3r_identity test D 403 n2_generic_s403 rt=10.4s
+[14:18:29] tc3r_identity test D 405 n2_generic_s405 rt=10.3s
+[14:18:41] tc3r_identity test D 407 n2_generic_s407 rt=10.5s
+[14:18:52] tc3r_identity test D 409 n3_generic_s409 rt=10.6s
+[14:19:04] tc3r_identity test D 411 n3_generic_s411 rt=10.4s
+[14:19:19] tc3r_identity test D 413 n3_generic_s413 rt=14.3s
+[14:19:30] tc3r_identity test D 415 n3_generic_s415 rt=10.7s
+[14:19:42] tc3r_identity test D 417 n3_generic_s417 rt=10.8s
+[14:19:53] tc3r_identity test D 419 n3_generic_s419 rt=10.5s
+[14:20:06] tc3r_identity test D 421 n3_generic_s421 rt=11.7s
+[14:20:17] tc3r_identity test D 423 n3_generic_s423 rt=10.4s
+[14:20:31] tc3r_identity test D 425 n3_generic_s425 rt=12.0s
+[14:20:47] tc3r_identity test D 427 camrot_s427 rt=15.1s
+[14:21:03] tc3r_identity test D 429 camrot_s429 rt=14.4s
+[14:21:15] tc3r_identity test D 431 camrot_s431 rt=11.8s
+[14:21:28] tc3r_identity test D 433 camrot_s433 rt=11.5s
+[14:21:40] tc3r_identity test D 435 epi_aligned_s435 rt=10.9s
+[14:21:51] tc3r_identity test D 437 epi_aligned_s437 rt=10.4s
+[14:22:02] tc3r_identity test D 439 epi_aligned_s439 rt=10.5s
+[14:22:13] tc3r_identity test D 441 epi_aligned_s441 rt=10.3s
+[14:22:33] tc3r_identity test D 443 planar_s443 rt=18.0s
+[14:22:51] tc3r_identity test D 445 planar_s445 rt=16.7s
+[14:23:02] tc3r_identity test D 447 planar_s447 rt=10.1s
+[14:23:13] tc3r_identity test D 449 planar_s449 rt=10.3s
+[14:23:24] tc3r_identity test D 451 confound_same_s451 rt=10.3s
+[14:23:35] tc3r_identity test D 453 confound_same_s453 rt=10.2s
+[14:23:46] tc3r_identity test D 455 confound_same_s455 rt=10.2s
+[14:23:57] tc3r_identity test D 457 confound_same_s457 rt=10.3s
+[14:24:09] tc3r_identity test D 459 confound_same_s459 rt=10.4s
+[14:24:20] tc3r_identity test D 461 confound_same_s461 rt=10.4s
+[14:24:33] tc3r_identity test D 463 confound_same_s463 rt=12.0s
+[14:24:44] tc3r_identity test D 465 confound_same_s465 rt=10.4s
+[14:24:55] tc3r_identity test D 467 confound_same_s467 rt=10.4s
+[14:25:06] tc3r_identity test D 469 confound_glued_s469 rt=10.2s
+[14:25:17] tc3r_identity test D 473 confound_glued_s473 rt=10.1s
+[14:25:28] tc3r_identity test D 475 confound_glued_s475 rt=10.5s
+[14:25:39] tc3r_identity test D 479 confound_glued_s479 rt=10.1s
+[14:25:51] tc3r_identity test D 481 confound_glued_s481 rt=10.5s
+[14:26:02] tc3r_identity test D 483 confound_glued_s483 rt=10.1s
+[14:26:13] tc3r_identity test D 485 confound_glued_s485 rt=10.5s
+unit tc3r_identity test D new 48 errors 0 have 48 of 48
+finished tc3r_identity errors 0 633s

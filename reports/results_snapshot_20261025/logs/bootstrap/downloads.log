@@ -1,0 +1,50 @@
+=== downloads start Monday 19 October 2026 07:48:29 AM IST
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+transformers 4.57.1 requires huggingface-hub<1.0,>=0.34.0, but you have huggingface-hub 2.2.0 which is incompatible.
+tokenizers 0.22.1 requires huggingface-hub<2.0,>=0.16.4, but you have huggingface-hub 2.2.0 which is incompatible.
+diffusers 0.37.0 requires huggingface-hub<2.0,>=0.34.0, but you have huggingface-hub 2.2.0 which is incompatible.
+datasets 4.7.0 requires fsspec[http]<=2026.2.0,>=2023.1.0, but you have fsspec 2026.9.0 which is incompatible.
+datasets 4.7.0 requires huggingface-hub<2.0,>=0.25.0, but you have huggingface-hub 2.2.0 which is incompatible.
+huggingface_hub 2.2.0 python 3.13.5
+[07:49:33] INFO facebook/VGGT-1B 860abec7 files 5 GB 10.05
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 5 files:  20%|██        | 1/5 [00:00<00:03,  1.21it/s]Fetching 5 files:  80%|████████  | 4/5 [05:21<01:26, 86.76s/it]Fetching 5 files: 100%|██████████| 5/5 [05:49<00:00, 70.48s/it]Fetching 5 files: 100%|██████████| 5/5 [05:49<00:00, 69.92s/it]
+[07:55:23] WEIGHTS_OK facebook/VGGT-1B 860abec7937da0a4c03c41d3c269c366e82abdf9 /data2/DATA/rohit_sinha/e5/big/models/hf/hub/models--facebook--VGGT-1B/snapshots/860abec7937da0a4c03c41d3c269c366e82abdf9
+[07:55:24] INFO facebook/VGGT_tracker_fixed 4d9d9494 files 4 GB 10.05
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:   0%|          | 0/4 [09:30<?, ?it/s]
+[08:04:55] WEIGHTS_FAIL facebook/VGGT_tracker_fixed 4d9d9494b2211c90ab9cd3c8c6aa188fe363103d TypeError Decompressor.decompress() got an unexpected keyword argument 'output_buffer_limit'
+[08:04:55] INFO facebook/cotracker3 bf55ea50 files 6 GB 0.41
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files:  17%|█▋        | 1/6 [00:00<00:03,  1.34it/s]Fetching 6 files:  33%|███▎      | 2/6 [00:00<00:01,  2.68it/s]Fetching 6 files:  50%|█████     | 3/6 [00:10<00:13,  4.60s/it]Fetching 6 files:  67%|██████▋   | 4/6 [00:12<00:07,  3.65s/it]Fetching 6 files:  83%|████████▎ | 5/6 [00:14<00:02,  2.83s/it]Fetching 6 files: 100%|██████████| 6/6 [00:15<00:00,  2.20s/it]Fetching 6 files: 100%|██████████| 6/6 [00:15<00:00,  2.51s/it]
+[08:05:11] WEIGHTS_OK facebook/cotracker3 bf55ea50d4390e1820a267f131cd6587240fb2c5 /data2/DATA/rohit_sinha/e5/big/models/hf/hub/models--facebook--cotracker3/snapshots/bf55ea50d4390e1820a267f131cd6587240fb2c5
+[08:05:11] INFO facebook/map-anything 6f3a25bf files 4 GB 2.25
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:   0%|          | 0/4 [01:44<?, ?it/s]
+[08:06:56] WEIGHTS_FAIL facebook/map-anything 6f3a25bfbb8fcc799176bb01e9d07dfb49d5416a TypeError Decompressor.decompress() got an unexpected keyword argument 'output_buffer_limit'
+[08:06:56] INFO facebook/map-anything a1d87e90 files 4 GB 4.91
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:00<00:02,  1.43it/s]Fetching 4 files:  50%|█████     | 2/4 [00:00<00:00,  2.54it/s]Fetching 4 files:  75%|███████▌  | 3/4 [00:01<00:00,  3.25it/s]Fetching 4 files: 100%|██████████| 4/4 [03:02<00:00, 71.80s/it]Fetching 4 files: 100%|██████████| 4/4 [03:02<00:00, 45.62s/it]
+[08:09:59] WEIGHTS_OK facebook/map-anything a1d87e9086706fb9974f3be5a3e3a0ca5401c5aa /data2/DATA/rohit_sinha/e5/big/models/hf/hub/models--facebook--map-anything/snapshots/a1d87e9086706fb9974f3be5a3e3a0ca5401c5aa
+[08:10:00] INFO zhouk777/PAGE4D 69c86f89 files 3 GB 13.56
+Fetching 3 files:   0%|          | 0/3 [00:00<?, ?it/s]Fetching 3 files:   0%|          | 0/3 [13:36<?, ?it/s]
+[08:23:36] WEIGHTS_FAIL zhouk777/PAGE4D 69c86f898829ae9365469aa8e9f34b386844a4b5 TypeError Decompressor.decompress() got an unexpected keyword argument 'output_buffer_limit'
+[08:23:37] any4d files ['.gitattributes', 'any4d_4v_combined.pth']
+[08:33:53] ANY4D_CKPT_OK /data2/DATA/rohit_sinha/e5/big/models/ckpt/any4d/any4d_4v_combined.pth 7727258559
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files:  20%|██        | 1/5 [00:00<00:02,  1.65it/s]Fetching 5 files:  60%|██████    | 3/5 [00:00<00:00,  4.62it/s]Fetching 5 files:  80%|████████  | 4/5 [00:10<00:03,  3.48s/it]Fetching 5 files: 100%|██████████| 5/5 [04:28<00:00, 87.61s/it]Fetching 5 files: 100%|██████████| 5/5 [04:28<00:00, 53.64s/it]
+[08:38:23] LORA_DL_OK /data2/DATA/rohit_sinha/e5/big/ft/hf_stage ['.cache', '.gitattributes', 'README.md', 'SHA256SUMS', 'ft_runs_heads_ctrl.tar.part000', 'ft_runs_heads_ctrl.tar.part001']
+total 5301788
+drwxrwxr-x 3 rohit_sinha rohit_sinha       4096 Oct 19 08:38 .
+drwxrwxr-x 4 rohit_sinha rohit_sinha       4096 Oct 19 07:48 ..
+drwxrwxr-x 3 rohit_sinha rohit_sinha       4096 Oct 19 08:33 .cache
+-rw-rw-r-- 1 rohit_sinha rohit_sinha 5368709120 Oct 19 08:35 ft_runs_heads_ctrl.tar.part000
+-rw-rw-r-- 1 rohit_sinha rohit_sinha   60282880 Oct 19 08:34 ft_runs_heads_ctrl.tar.part001
+-rw-rw-r-- 1 rohit_sinha rohit_sinha       2504 Oct 19 08:33 .gitattributes
+-rw-rw-r-- 1 rohit_sinha rohit_sinha        801 Oct 19 08:33 README.md
+-rw-rw-r-- 1 rohit_sinha rohit_sinha        194 Oct 19 08:33 SHA256SUMS
+ft_runs_heads_ctrl.tar.part000: OK
+ft_runs_heads_ctrl.tar.part001: OK
+SHA_OK
+EXTRACT_OK
+-rw-rw---- 1 rohit_sinha rohit_sinha 2713290374 Oct 17 22:31 /data2/DATA/rohit_sinha/e5/big/ft/runs/heads_sel/any4d_ft.pth
+-rw-rw---- 1 rohit_sinha rohit_sinha 2713290374 Oct 18 00:05 /data2/DATA/rohit_sinha/e5/big/ft/runs/ctrl_sel/any4d_ft.pth
+81G	/data2/DATA/rohit_sinha/e5/big/models/hf
+61G	/data2/DATA/rohit_sinha/e5/big/models/ckpt
+11G	/data2/DATA/rohit_sinha/e5/big/ft
+=== downloads end Monday 19 October 2026 08:40:24 AM IST

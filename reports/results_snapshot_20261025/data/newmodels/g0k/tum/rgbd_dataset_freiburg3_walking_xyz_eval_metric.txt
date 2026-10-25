@@ -1,0 +1,34 @@
+Seq: rgbd_dataset_freiburg3_walking_xyz 
+
+APE w.r.t. translation part (m)
+(with Sim(3) Umeyama alignment)
+
+       max	0.032385
+      mean	0.011044
+    median	0.009588
+       min	0.000361
+      rmse	0.012765
+       sse	0.014665
+       std	0.006400
+RPE w.r.t. rotation angle in degrees (deg)
+for delta = 1 (frames) using all pairs
+(with Sim(3) Umeyama alignment)
+
+       max	0.604070
+      mean	0.266952
+    median	0.238332
+       min	0.062044
+      rmse	0.293114
+       sse	7.646489
+       std	0.121045
+RPE w.r.t. translation part (m)
+for delta = 1 (frames) using all pairs
+(with Sim(3) Umeyama alignment)
+
+       max	0.033847
+      mean	0.010456
+    median	0.008814
+       min	0.001540
+      rmse	0.012314
+       sse	0.013495
+       std	0.006504

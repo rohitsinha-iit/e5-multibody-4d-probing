@@ -1,0 +1,51 @@
+[2026-10-24 14:30:02] attempt 1: xm u2_infer.py --model cotracker3 --real sintel:final:2v,sintel:clean:2v,sintel:final:mv4,sintel:clean:mv4  (GPU 0 free 48656 MiB)
+loaded cotracker3 5s
+[14:30:39] cotracker3 sintel_final_2v alley_1_0001 rt=30.1s
+[14:42:51] cotracker3 sintel_final_2v ambush_2_0005 rt=28.1s
+[14:54:28] cotracker3 sintel_final_2v ambush_6_0005 rt=27.9s
+[15:06:45] cotracker3 sintel_final_2v bamboo_1_0037 rt=29.0s
+[15:18:43] cotracker3 sintel_final_2v bandage_1_0041 rt=28.6s
+[15:30:30] cotracker3 sintel_final_2v cave_2_0045 rt=28.1s
+[15:42:08] cotracker3 sintel_final_2v market_5_0001 rt=28.8s
+[15:54:07] cotracker3 sintel_final_2v mountain_1_0013 rt=29.8s
+[16:06:14] cotracker3 sintel_final_2v shaman_3_0017 rt=29.4s
+[16:18:40] cotracker3 sintel_final_2v sleeping_2_0021 rt=29.9s
+[16:30:52] cotracker3 sintel_final_2v temple_3_0025 rt=27.7s
+unit cotracker3 sintel_final_2v new 256 errors 0 skipped(missing frames) 0 have 256
+[16:33:37] cotracker3 sintel_clean_2v alley_1_0001 rt=28.8s
+[16:45:48] cotracker3 sintel_clean_2v ambush_2_0005 rt=28.1s
+[16:57:22] cotracker3 sintel_clean_2v ambush_6_0005 rt=27.8s
+[17:09:36] cotracker3 sintel_clean_2v bamboo_1_0037 rt=29.0s
+[17:21:33] cotracker3 sintel_clean_2v bandage_1_0041 rt=28.5s
+[17:33:19] cotracker3 sintel_clean_2v cave_2_0045 rt=28.1s
+[17:44:57] cotracker3 sintel_clean_2v market_5_0001 rt=28.7s
+[17:56:55] cotracker3 sintel_clean_2v mountain_1_0013 rt=29.7s
+[18:09:01] cotracker3 sintel_clean_2v shaman_3_0017 rt=29.3s
+[18:21:26] cotracker3 sintel_clean_2v sleeping_2_0021 rt=29.9s
+[18:33:37] cotracker3 sintel_clean_2v temple_3_0025 rt=27.7s
+unit cotracker3 sintel_clean_2v new 256 errors 0 skipped(missing frames) 0 have 256
+[18:36:48] cotracker3 sintel_final_mv4 alley_1_0001 rt=54.8s
+[18:59:55] cotracker3 sintel_final_mv4 ambush_2_0005 rt=53.4s
+[19:21:54] cotracker3 sintel_final_mv4 ambush_6_0005 rt=52.9s
+[19:45:08] cotracker3 sintel_final_mv4 bamboo_1_0037 rt=55.2s
+[20:07:50] cotracker3 sintel_final_mv4 bandage_1_0041 rt=54.2s
+[20:30:11] cotracker3 sintel_final_mv4 cave_2_0045 rt=53.4s
+[20:52:14] cotracker3 sintel_final_mv4 market_5_0001 rt=54.7s
+[21:14:58] cotracker3 sintel_final_mv4 mountain_1_0013 rt=56.7s
+[21:37:56] cotracker3 sintel_final_mv4 shaman_3_0017 rt=55.8s
+[22:01:31] cotracker3 sintel_final_mv4 sleeping_2_0021 rt=57.0s
+[22:24:39] cotracker3 sintel_final_mv4 temple_3_0025 rt=52.7s
+unit cotracker3 sintel_final_mv4 new 256 errors 0 skipped(missing frames) 0 have 256
+[22:29:51] cotracker3 sintel_clean_mv4 alley_1_0001 rt=54.8s
+[22:52:59] cotracker3 sintel_clean_mv4 ambush_2_0005 rt=53.5s
+[23:14:58] cotracker3 sintel_clean_mv4 ambush_6_0005 rt=52.9s
+[23:38:11] cotracker3 sintel_clean_mv4 bamboo_1_0037 rt=55.1s
+[00:00:53] cotracker3 sintel_clean_mv4 bandage_1_0041 rt=54.2s
+[00:23:13] cotracker3 sintel_clean_mv4 cave_2_0045 rt=53.5s
+[00:45:17] cotracker3 sintel_clean_mv4 market_5_0001 rt=54.7s
+[01:08:01] cotracker3 sintel_clean_mv4 mountain_1_0013 rt=56.7s
+[01:30:59] cotracker3 sintel_clean_mv4 shaman_3_0017 rt=56.0s
+[01:54:35] cotracker3 sintel_clean_mv4 sleeping_2_0021 rt=56.9s
+[02:17:43] cotracker3 sintel_clean_mv4 temple_3_0025 rt=52.8s
+unit cotracker3 sintel_clean_mv4 new 256 errors 0 skipped(missing frames) 0 have 256
+finished cotracker3 errors 0 42717s

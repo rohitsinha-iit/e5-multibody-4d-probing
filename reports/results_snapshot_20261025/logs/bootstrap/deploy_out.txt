@@ -1,0 +1,61 @@
+22:POLL = int(os.environ.get("E5_POLL_S", "30"))
+SUP_COMPILES
+total 68
+drwxrwxr-x  6 rohit_sinha rohit_sinha  4096 Oct 19 07:56 .
+drwxrwxr-x 15 rohit_sinha rohit_sinha  4096 Oct 19 07:56 ..
+drwxrwxr-x  2 rohit_sinha rohit_sinha  4096 Oct 19 07:56 approvals
+-rw-rw-r--  1 rohit_sinha rohit_sinha    53 Oct 19 07:56 dashboard_python
+-rw-rw-r--  1 rohit_sinha rohit_sinha  1489 Oct 19 07:56 enqueue.py
+drwxrwxr-x  2 rohit_sinha rohit_sinha  4096 Oct 19 07:56 logs
+-rw-rw-r--  1 rohit_sinha rohit_sinha  2250 Oct 19 07:56 push.sh
+-rw-r--r--  1 rohit_sinha rohit_sinha  3054 Oct 19 07:56 README_A6000.md
+-rw-rw-r--  1 rohit_sinha rohit_sinha   840 Oct 19 07:56 README.md
+drwxrwxr-x  2 rohit_sinha rohit_sinha  4096 Oct 19 07:56 results
+-rw-rw-r--  1 rohit_sinha rohit_sinha   972 Oct 19 07:56 site_env.sh
+lrwxrwxrwx  1 rohit_sinha rohit_sinha    35 Oct 19 07:56 src -> /data2/DATA/rohit_sinha/e5/repo/src
+-rw-rw-r--  1 rohit_sinha rohit_sinha 12460 Oct 19 07:56 supervisor.py
+lrwxrwxrwx  1 rohit_sinha rohit_sinha    55 Oct 19 07:56 task_defs -> /data2/DATA/rohit_sinha/e5/repo/scripts/queue/task_defs
+lrwxrwxrwx  1 rohit_sinha rohit_sinha    51 Oct 19 07:56 tasks -> /data2/DATA/rohit_sinha/e5/repo/scripts/queue/tasks
+-rw-rw-r--  1 rohit_sinha rohit_sinha     3 Oct 19 07:56 tasks.json
+drwxrwxr-x  2 rohit_sinha rohit_sinha  4096 Oct 19 07:56 work
+total 20
+drwxrwxr-x  5 rohit_sinha rohit_sinha 4096 Oct 19 07:56 .
+drwxr-xr-x  5 rohit_sinha rohit_sinha 4096 Oct 19 07:38 ..
+lrwxrwxrwx  1 rohit_sinha rohit_sinha   47 Oct 19 07:53 Any4D -> /data2/DATA/rohit_sinha/e5/big/models/src/Any4D
+drwxrwxr-x 15 rohit_sinha rohit_sinha 4096 Oct 19 07:56 big
+drwxrwxr-x  9 rohit_sinha rohit_sinha 4096 Oct 19 07:47 cache
+lrwxrwxrwx  1 rohit_sinha rohit_sinha   35 Oct 19 07:53 data -> /data2/DATA/rohit_sinha/e5/big/data
+lrwxrwxrwx  1 rohit_sinha rohit_sinha   36 Oct 19 07:56 queue -> /data2/DATA/rohit_sinha/e5/big/queue
+drwxrwxr-x 12 rohit_sinha rohit_sinha 4096 Oct 19 07:54 repo
+== events
+2026-10-19 07:56:26  supervisor start pid 1757536 (max parallel 2)
+2026-10-19 07:56:28  start d1 pid 1757796 attempt 1 (1/2 running)
+2026-10-19 07:56:36  start d2 pid 1758420 attempt 1 (2/2 running)
+2026-10-19 07:56:55  done d1
+2026-10-19 07:56:56  push d1 not done (rc 3), will retry
+2026-10-19 07:56:57  start d3 pid 1759076 attempt 1 (2/2 running)
+2026-10-19 07:57:01  done d2
+2026-10-19 07:57:02  push d2 not done (rc 3), will retry
+2026-10-19 07:57:25  done d3
+2026-10-19 07:57:26  push d3 not done (rc 3), will retry
+2026-10-19 07:57:34  STOP file found, no new tasks; exiting when running tasks finish
+2026-10-19 07:57:34  STOP: all running tasks finished, exiting
+== logs
+===== 2026-10-19 07:56:27 attempt 1
+[07:56:27] start d1 BIG=/data2/DATA/rohit_sinha/e5/big E5=/data2/DATA/rohit_sinha/e5 threads=12 headroom=4
+[07:56:28] d1 picked GPU 3
+3_1757797.resv
+[07:56:53] end d1
+===== 2026-10-19 07:56:36 attempt 1
+[07:56:36] start d2 BIG=/data2/DATA/rohit_sinha/e5/big E5=/data2/DATA/rohit_sinha/e5 threads=12 headroom=4
+[07:56:36] d2 picked GPU 2
+2_1758421.resv
+3_1757797.resv
+[07:57:01] end d2
+===== 2026-10-19 07:56:57 attempt 1
+[07:56:57] start d3 BIG=/data2/DATA/rohit_sinha/e5/big E5=/data2/DATA/rohit_sinha/e5 threads=12 headroom=4
+[07:56:57] d3 picked GPU 3
+2_1758421.resv
+3_1759077.resv
+[07:57:22] end d3
+{'d1': 'done', 'd2': 'done', 'd3': 'done'}

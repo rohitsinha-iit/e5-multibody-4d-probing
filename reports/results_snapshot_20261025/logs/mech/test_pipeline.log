@@ -1,0 +1,35 @@
+[test_pipeline] 2026-10-24 03:01:23 start TAG= SCENES= LIMIT=
+[test_pipeline] 2026-10-24 03:01:23 joint objall test k*=1
+[test_pipeline] 2026-10-24 03:23:19 joint cam test k*=20
+[test_pipeline] 2026-10-24 03:42:12 u5a all kubric test
+[test_pipeline] 2026-10-24 04:12:02 u5b kubric test
+[test_pipeline] 2026-10-24 04:31:10 u5b real
+[test_pipeline] 2026-10-24 05:32:18 joint cont test k*=20
+[test_pipeline] 2026-10-24 05:52:25 joint obj test k*=10
+[test_pipeline] 2026-10-24 06:09:52 necessity objall
+[test_pipeline] 2026-10-24 06:14:59 necessity cam
+[test_pipeline] 2026-10-24 06:20:07 necessity cont
+[test_pipeline] 2026-10-24 06:25:12 necessity obj
+[test_pipeline] 2026-10-24 06:30:19 u5a v kubric test
+[test_pipeline] 2026-10-24 06:32:00 joint objall transfer k*=1
+[test_pipeline] 2026-10-24 06:56:38 joint cam transfer k*=20
+[test_pipeline] 2026-10-24 07:21:28 joint cont transfer k*=20
+[test_pipeline] 2026-10-24 07:49:39 joint obj transfer k*=10
+[test_pipeline] 2026-10-24 08:14:34 u5a all kubric transfer
+[test_pipeline] 2026-10-24 08:56:02 u5a v kubric transfer
+[test_pipeline] 2026-10-24 08:57:45 u5a all kitti15 test
+[test_pipeline] 2026-10-24 10:55:56 u5a v kitti15 test
+[test_pipeline] 2026-10-24 10:58:29 u5a all sintel test
+[test_pipeline] 2026-10-24 13:56:13 u5a v sintel test
+[test_pipeline] 2026-10-24 14:00:29 camwarp test
+[test_pipeline] 2026-10-24 14:23:32 camwarp transfer
+[test_pipeline] 2026-10-24 14:51:48 probe eval test
+[test_pipeline] 2026-10-24 14:53:30 probe eval transfer
+[test_pipeline] 2026-10-24 14:55:48 objall screen test (H3 on test)
+[test_pipeline] 2026-10-24 16:36:42 summary
+/data2/DATA/rohit_sinha/e5/repo/src/attr/u4u5_summary.py:144: RuntimeWarning: Mean of empty slice
+  d = {k: float(np.nanmean([r[k] - b[k] for r in rr.values()])) for k in keys if k in b}
+/data2/DATA/rohit_sinha/e5/repo/src/attr/u4u5_summary.py:183: RuntimeWarning: Mean of empty slice
+  d_epe_moving=np.nanmean([x["epe_moving"] - bD["epe_moving"] for x in ee]),
+{"written": "2026-10-24 16:36:42 IST", "note": "raw one-sided p-values; Holm is applied by the lead over the full family", "T9": {"p": 0.024390243902439025, "status": "ok", "confirmatory": false, "note": "k* is None for a screen: computed at k_used (fallback k = 20), descriptive (risk 4)", "passes_success_rule": true, "k_used": [1, 20], "n_scenes": [48, 48]}, "T5p": {"p": 0.0004997501249375312, "mean_d": 0.10516424660805275, "ci": [0.07331999216264261, 0.1385960428482941], "n": 39, "g2_secondary": {"mean": 0.12145688770973806, "lo": 0.06342328492073011, "hi": 0.18053452643926657, "n": 39, "p_gt0": 0.0004997501249375312, "definition": "d_s = d alpha (i) - mean_r d alpha (iii); one-sided p for mean d > 0"}}, "T10": {"k_used": 20, "confirmatory_as_specified": false, "note": "k* is None (no k in the grid reaches 80% scene-median completeness on fit): fallback k = 20, statistics at this k are descriptive (plan section 11, risk 4)", "p": 0.18140929535232383, "mean_d": 0.004578282462883304, "ci": [-0.005037089875910204, 0.014142832024509876], "n_windows": 230}}
+[test_pipeline] 2026-10-24 16:36:53 done

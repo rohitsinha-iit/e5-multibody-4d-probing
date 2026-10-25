@@ -1,0 +1,47 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792472754.328558  376841 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792472756.059541  376841 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+INFO:kubric.utils:{ 'far_hi': 3.2,
+  'far_lo': 2.4,
+  'far_px': 0.22,
+  'float_height': 0.0,
+  'frame_end': 24,
+  'frame_rate': 12,
+  'frame_start': 1,
+  'freeze_camera': 1,
+  'freeze_objects': 1,
+  'grounded': 1,
+  'gso_assets': 'gs://kubric-public/assets/GSO/GSO.json',
+  'hdri_assets': 'gs://kubric-public/assets/HDRI_haven/HDRI_haven.json',
+  'job_dir': '/data2/DATA/rohit_sinha/e5/big/attr/factorial/v2/477/A.partial',
+  'kubasic_assets': 'gs://kubric-public/assets/KuBasic/KuBasic.json',
+  'logging_level': 'INFO',
+  'min_sep_px': 25.0,
+  'motion_scale_cam': 1.0,
+  'motion_scale_obj': 1.0,
+  'no_shadows': 0,
+  'resolution': '512x512',
+  'samples': 32,
+  'scratch_dir': '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s477_A',
+  'seed': 477,
+  'size_hi': 2.2,
+  'size_lo': 1.4,
+  'split': 'confound_glued',
+  'step_rate': 240}
+INFO:root:Using scratch directory: /data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s477_A
+INFO:root:Using output directory: /data2/DATA/rohit_sinha/e5/big/attr/factorial/v2/477/A.partial
+INFO:root:Created AssetSource 'KuBasic' with '15' assets at URI='gs://kubric-public/assets/KuBasic'
+INFO:root:Created AssetSource 'GSO' with '1033' assets at URI='gs://kubric-public/assets/GSO'
+INFO:root:Created AssetSource 'HDRI_haven' with '509' assets at URI='gs://kubric-public/assets/HDRI_haven'
+Traceback (most recent call last):
+  File "/data2/DATA/rohit_sinha/e5/repo/src/attr/kubric_e5_scene_factorial.py", line 447, in <module>
+    motions[1] = add_moving([(oA, aA, sA, off, False), (oB, aB, sB, -off, False)], 1)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/repo/src/attr/kubric_e5_scene_factorial.py", line 404, in add_moving
+    trajs, params = kinematics(members, kind)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/repo/src/attr/kubric_e5_scene_factorial.py", line 318, in kinematics
+    raise RuntimeError("could not place moving body")
+RuntimeError: could not place moving body
+Error: Not freed memory blocks: 1, total unfreed memory 0.001335 MB

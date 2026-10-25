@@ -1,0 +1,33 @@
+{
+ "item": "v3float_556",
+ "eval": "kubric",
+ "variant": "v",
+ "rows": {
+  "v": {
+   "r0": {
+    "alpha": NaN,
+    "beta": NaN,
+    "cond_AB": NaN,
+    "identifiable": false,
+    "s_w": NaN,
+    "static_residual": NaN,
+    "epe_moving": NaN,
+    "epe_static": 7.7876844708531845,
+    "n_moving": 0,
+    "alpha_nb": NaN,
+    "beta_nb": NaN,
+    "cond_AB_nb": NaN,
+    "identifiable_nb": false,
+    "s_w_nb": NaN,
+    "static_residual_nb": NaN,
+    "epe_moving_nb": NaN,
+    "epe_static_nb": 7.7876844708531845,
+    "n_moving_nb": 0,
+    "rpe_t": 0.03941229087786436,
+    "rpe_r": 0.11422345040505681,
+    "ate": 0.034769379098154855
+   }
+  }
+ },
+ "wall_s": 1.3
+}

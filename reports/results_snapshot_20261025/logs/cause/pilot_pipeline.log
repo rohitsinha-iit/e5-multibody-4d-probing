@@ -1,0 +1,28 @@
+[2026-10-19 09:00:03] setup done
+[2026-10-19 09:00:04] ctx on GPU 2
+[2026-10-19 09:21:08] ctx exit 0
+[2026-10-19 09:21:08] g0a on GPU 2
+[2026-10-19 09:22:36] g0a exit 1
+[2026-10-19 09:22:36] extract pass 1 on GPU 2
+[2026-10-19 09:22:58] features done: 0 clips
+[2026-10-19 09:23:09] loader bench done
+[2026-10-19 09:23:09] pilot P-abs L3D (8000 steps) on GPU 3
+[2026-10-19 09:23:17] pilot exit 1
+PIPELINE_DONE
+[2026-10-19 09:24:34] setup done
+[2026-10-19 09:24:34] g0a on GPU 2
+[2026-10-19 09:42:35] g0a exit 1
+[2026-10-19 09:42:35] extract pass 1 on GPU 3
+[2026-10-19 09:43:35] extract failed
+[2026-10-19 09:44:15] setup done
+[2026-10-19 09:44:15] g0a on GPU 2
+[2026-10-19 09:47:20] g0a exit 0
+[2026-10-19 09:47:20] extract pass 1 on GPU 2
+[2026-10-19 10:00:49] extract failed
+[2026-10-19 10:01:24] setup done
+[2026-10-19 10:01:24] extract pass 1 on GPU 2
+[2026-10-19 10:38:47] features done: 360 clips
+[2026-10-19 10:41:42] loader bench done
+[2026-10-19 10:41:42] pilot P-abs L3D (8000 steps) on GPU 1
+[2026-10-19 11:05:00] pilot exit 0
+PIPELINE_DONE

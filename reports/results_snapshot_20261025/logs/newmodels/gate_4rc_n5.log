@@ -1,0 +1,37 @@
+[run_gpu] Monday 19 October 2026 10:13:34 AM IST GPU=3 pin=3 need=14 venv=4rc args=/data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py --model 4rc --data /data2/DATA/rohit_sinha/e5/big/data/v2/out --n 5 --out /data2/DATA/rohit_sinha/e5/big/results/newmodels/gate_4rc_n5.json
+0, 34076 MiB, 14595 MiB
+1, 30841 MiB, 17829 MiB
+2, 20730 MiB, 27941 MiB
+3, 15782 MiB, 32889 MiB
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+using SwiGLU layer as FFN
+{"scene": "camrot_s305", "runtime_s": 6.426999092102051, "peak_alloc_gb": 11.659044742584229, "peak_reserved_gb": 14.6796875, "epe_static": 2.338135183279462, "epe_moving": 21.37496410133348, "n_static": 134073, "n_moving": 285, "frac_inside": 0.9776417266107618, "w_s_w": 0.8215056111423656, "w_static_residual": 0.011618550508878056, "w_scale": 21.096160496521048, "w_n_moving": 285, "w_n_static": 134073, "pose_ate": 1.4228185043501699e-15, "pose_rpe_t": 2.098659026546437e-15, "pose_rpe_r": 0.08724015081658436}
+{"scene": "confound_glued_s469", "runtime_s": 4.541693925857544, "peak_alloc_gb": 11.656759262084961, "peak_reserved_gb": 14.6796875, "epe_static": 3.5920332063878915, "epe_moving": 8.71360340650666, "n_static": 133710, "n_moving": 9486, "frac_inside": 0.979101209699491, "w_s_w": 0.9859443176948156, "w_static_residual": 0.006285566226992019, "w_scale": 20.00072190898421, "w_n_moving": 9486, "w_n_static": 133710, "pose_ate": 0.011691602377327689, "pose_rpe_t": 0.013349154536509353, "pose_rpe_r": 0.0382049116506079}
+{"scene": "confound_same_s451", "runtime_s": 3.912071466445923, "peak_alloc_gb": 11.656759262084961, "peak_reserved_gb": 14.6796875, "epe_static": 9.614715069984952, "epe_moving": 7.386870956290309, "n_static": 111217, "n_moving": 8832, "frac_inside": 0.9806674600562125, "w_s_w": 0.980675463654556, "w_static_residual": 0.011769955772121836, "w_scale": 23.86390276204553, "w_n_moving": 8832, "w_n_static": 111217, "pose_ate": 0.013520972040156471, "pose_rpe_t": 0.02110055858230914, "pose_rpe_r": 0.10031358384197314}
+{"scene": "epi_aligned_s435", "runtime_s": 4.515557050704956, "peak_alloc_gb": 11.656759262084961, "peak_reserved_gb": 14.6796875, "epe_static": 0.5857080199966418, "epe_moving": 18.477956549273785, "n_static": 90951, "n_moving": 1907, "frac_inside": 0.9798997141730731, "w_s_w": 1.0255936258018865, "w_static_residual": 0.007167274367051132, "w_scale": 21.639539602295937, "w_n_moving": 1907, "w_n_static": 90951, "pose_ate": 0.005956485170455895, "pose_rpe_t": 0.009575583702565062, "pose_rpe_r": 0.07792471472103159}
+{"scene": "n2_generic_s401", "runtime_s": 4.4411139488220215, "peak_alloc_gb": 11.656759262084961, "peak_reserved_gb": 14.6796875, "epe_static": 6.874966947355153, "epe_moving": 6.351482879829382, "n_static": 138098, "n_moving": 2772, "frac_inside": 0.9801326037233272, "w_s_w": 0.9327176214406553, "w_static_residual": 0.009260972183541348, "w_scale": 21.440191925982532, "w_n_moving": 2772, "w_n_static": 138098, "pose_ate": 0.011734131509571132, "pose_rpe_t": 0.015514161712945567, "pose_rpe_r": 0.08585719788349978}
+WROTE /data2/DATA/rohit_sinha/e5/big/results/newmodels/gate_4rc_n5.json
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/4rc/bin/python /data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py --model 4rc --data /data2/DATA/rohit_sinha/e5/big/data/v2/out --n 5 --out /data2/DATA/rohit_sinha/e5/big/results/newmodels/gate_4rc_n5.json"
+	User time (seconds): 73.13
+	System time (seconds): 13.38
+	Percent of CPU this job got: 123%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:09.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 12523276
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 174
+	Minor (reclaiming a frame) page faults: 3598537
+	Voluntary context switches: 2066
+	Involuntary context switches: 215665
+	Swaps: 0
+	File system inputs: 263184
+	File system outputs: 80
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[run_gpu] exit 0 Monday 19 October 2026 10:14:44 AM IST

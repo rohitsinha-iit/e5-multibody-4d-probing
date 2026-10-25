@@ -1,0 +1,22 @@
+preload 0/324 4s
+preload 50/324 61s
+preload 100/324 97s
+preload 150/324 118s
+preload 200/324 129s
+preload 250/324 140s
+preload 300/324 158s
+preload done 324 clips 166s
+LOADER_BENCH {"batches": 37, "sec_per_batch": 0.20951903832925334, "mb_per_batch": 163.46875, "mb_per_s": 780.209527991024, "workers": 8, "preload": 1, "n_train_clips": 324}
+params 14.83M train clips 324 val clips 36
+preload 0/324 0s
+preload 50/324 9s
+preload 100/324 16s
+preload 150/324 23s
+preload 200/324 32s
+preload 250/324 70s
+preload 300/324 163s
+preload done 324 clips 184s
+eval 300 {'epe_static': 41.31403806699632, 'epe_moving': 60.350873475244185, 'l3d': 0.39165597781538963}
+final eval 300 {'epe_static': 41.31403806699632, 'epe_moving': 60.350873475244185, 'l3d': 0.39165597781538963}
+DONE 300
+EXIT 0

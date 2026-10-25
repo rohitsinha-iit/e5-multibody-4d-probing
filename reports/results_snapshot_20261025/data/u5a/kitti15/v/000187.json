@@ -1,0 +1,18 @@
+{
+ "item": "000187",
+ "eval": "kitti15",
+ "variant": "v",
+ "rows": {
+  "v": {
+   "r0": {
+    "slope": 0.8983568089342883,
+    "slope_inst_median": 0.8983568089342883,
+    "epe_static": 5.026439383467208,
+    "epe_moving": 7.968181001625897,
+    "n_eval": 74606,
+    "n_moving_eval": 3880
+   }
+  }
+ },
+ "wall_s": 0.5
+}

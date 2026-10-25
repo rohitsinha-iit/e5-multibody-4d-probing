@@ -1,0 +1,155 @@
+[run_gpu] Monday 19 October 2026 08:40:02 AM IST GPU=3 need=20 venv=trackcraft3r args=/data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py --model trackcraft3r --smoke_dir /data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm --out /data2/DATA/rohit_sinha/e5/big/results/newmodels/smoke_tc3r.json --save_npz /data2/DATA/rohit_sinha/e5/big/results/newmodels/smoke_tc3r.npz
+0, 33724 MiB, 14947 MiB
+1, 33935 MiB, 14736 MiB
+2, 9613 MiB, 39058 MiB
+3, 9609 MiB, 39062 MiB
+/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/lib/python3.10/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+    model_name: wan_video_dit model_class: WanModel
+        This model is initialized with extra kwargs: {'has_image_input': False, 'patch_size': [1, 2, 2], 'in_dim': 16, 'dim': 1536, 'ffn_dim': 8960, 'freq_dim': 256, 'text_dim': 4096, 'out_dim': 16, 'num_heads': 12, 'num_layers': 30, 'eps': 1e-06}
+    The following models are loaded: ['wan_video_dit'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/models_t5_umt5-xxl-enc-bf16.pth
+    model_name: wan_video_text_encoder model_class: WanTextEncoder
+    The following models are loaded: ['wan_video_text_encoder'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+    model_name: wan_video_vae model_class: WanVideoVAE
+    The following models are loaded: ['wan_video_vae'].
+Using wan_video_text_encoder from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/models_t5_umt5-xxl-enc-bf16.pth.
+Using wan_video_dit from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors.
+Using wan_video_vae from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth.
+No wan_video_image_encoder models available.
+No wan_video_motion_controller models available.
+No wan_video_vace models available.
+No wans2v_audio_encoder models available.
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+  LoRA injected: rank=1024, targets=q,k,v,o,ffn.0,ffn.2
+  patch_embedding expanded: 16->32 channels
+  DiT head expanded to 2x output (xyz | vis)
+  DiT loaded: 1425 keys (unexpected=0, missing=0)
+  VAE loaded: 194 keys
+  VAE_vis loaded: 194 keys
+  VAE_pj loaded: 194 keys
+WanSceneFlowPredictor loaded from /data2/DATA/rohit_sinha/e5/big/models/ckpt/trackcraft3r/model.safetensors
+/data2/DATA/rohit_sinha/e5/big/models/src/depth-anything-3/src/depth_anything_3/cfg.py:25: UserWarning: register_new_resolver() is deprecated and will be removed in a future release.
+Use register_resolver() instead.
+See https://github.com/hydra-ecosystem/omegaconf/issues/426 for migration instructions.
+
+  OmegaConf.register_new_resolver("eval", eval)
+Failed to import depth_anything_3. Either pass --da3_root <path-to-repo>
+or `pip install -e .` from the Depth-Anything-V3 repo.
+Traceback (most recent call last):
+  File "/data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py", line 182, in <module>
+    if args.model == "trackcraft3r":
+  File "/data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py", line 142, in main
+    ap.add_argument("--model", required=True); ap.add_argument("--data"); ap.add_argument("--smoke_dir")
+  File "/data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py", line 52, in run_model
+  File "/data2/DATA/rohit_sinha/e5/repo/src/e5_models.py", line 421, in run_da3
+    subprocess.run(cmd, check=True, env=env)
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/data2/DATA/rohit_sinha/e5/big/venvs/da3/bin/python', '/data2/DATA/rohit_sinha/e5/big/models/src/TrackCraft3r/scripts/preprocess_da3.py', '--frame_dir', '/tmp/da3_9qr6qw9j', '--output_dir', '/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/000_da3', '--da3_root', '/data2/DATA/rohit_sinha/e5/big/models/src/depth-anything-3', '--model_name', 'depth-anything/DA3NESTED-GIANT-LARGE']' returned non-zero exit status 1.
+Command exited with non-zero status 1
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/bin/python /data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py --model trackcraft3r --smoke_dir /data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm --out /data2/DATA/rohit_sinha/e5/big/results/newmodels/smoke_tc3r.json --save_npz /data2/DATA/rohit_sinha/e5/big/results/newmodels/smoke_tc3r.npz"
+	User time (seconds): 800.74
+	System time (seconds): 121.03
+	Percent of CPU this job got: 53%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 28:44.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 39092260
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 18726
+	Minor (reclaiming a frame) page faults: 25453339
+	Voluntary context switches: 123689
+	Involuntary context switches: 164180
+	Swaps: 0
+	File system inputs: 47846792
+	File system outputs: 42256
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
+[run_gpu] Monday 19 October 2026 09:18:28 AM IST GPU=3 pin= need=20 venv=trackcraft3r args=/data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py --model trackcraft3r --smoke_dir /data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm --out /data2/DATA/rohit_sinha/e5/big/results/newmodels/smoke_tc3r.json --save_npz /data2/DATA/rohit_sinha/e5/big/results/newmodels/smoke_tc3r.npz
+0, 32464 MiB, 16207 MiB
+1, 35245 MiB, 13425 MiB
+2, 20778 MiB, 27893 MiB
+3, 12228 MiB, 36443 MiB
+/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/lib/python3.10/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+    model_name: wan_video_dit model_class: WanModel
+        This model is initialized with extra kwargs: {'has_image_input': False, 'patch_size': [1, 2, 2], 'in_dim': 16, 'dim': 1536, 'ffn_dim': 8960, 'freq_dim': 256, 'text_dim': 4096, 'out_dim': 16, 'num_heads': 12, 'num_layers': 30, 'eps': 1e-06}
+    The following models are loaded: ['wan_video_dit'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+    model_name: wan_video_vae model_class: WanVideoVAE
+    The following models are loaded: ['wan_video_vae'].
+No wan_video_text_encoder models available.
+Using wan_video_dit from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors.
+Using wan_video_vae from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth.
+No wan_video_image_encoder models available.
+No wan_video_motion_controller models available.
+No wan_video_vace models available.
+No wans2v_audio_encoder models available.
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+  LoRA injected: rank=1024, targets=q,k,v,o,ffn.0,ffn.2
+  patch_embedding expanded: 16->32 channels
+  DiT head expanded to 2x output (xyz | vis)
+  DiT loaded: 1425 keys (unexpected=0, missing=0)
+  VAE loaded: 194 keys
+  VAE_vis loaded: 194 keys
+  VAE_pj loaded: 194 keys
+WanSceneFlowPredictor loaded from /data2/DATA/rohit_sinha/e5/big/models/ckpt/trackcraft3r/model.safetensors
+/data2/DATA/rohit_sinha/e5/big/models/src/depth-anything-3/src/depth_anything_3/cfg.py:25: UserWarning: register_new_resolver() is deprecated and will be removed in a future release.
+Use register_resolver() instead.
+See https://github.com/hydra-ecosystem/omegaconf/issues/426 for migration instructions.
+
+  OmegaConf.register_new_resolver("eval", eval)
+[93m[WARN ] Dependency `gsplat` is required for rendering 3DGS. Install via: pip install git+https://github.com/nerfstudio-project/gsplat.git@0b4dddf04cb687367602c01196913cde6a743d70[0m
+  12 frames at 1280x720
+  loading depth-anything/DA3NESTED-GIANT-LARGE on cuda...
+[97m[INFO ] using SwiGLU layer as FFN[0m
+[97m[INFO ] using MLP layer as FFN[0m
+  running inference (process_res=504)...
+[97m[INFO ] Processed Images Done taking 0.7513360977172852 seconds. Shape:  torch.Size([12, 3, 280, 504])[0m
+[97m[INFO ] Selecting reference view using strategy: saddle_balanced[0m
+[97m[INFO ] Model Forward Pass Done. Time: 59.46496820449829 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.17293429374694824 seconds[0m
+  wrote /data2/DATA/rohit_sinha/e5/big/results/newmodels/da3/789743f125f9/{depth,extrinsics,intrinsics}.npy
+    depth shape:  (12, 720, 1280)  (z-depth)
+    extrinsics:   (12, 4, 4)    (W2C, raw — frame-0 not normalized)
+    intrinsics:   (12, 3, 3)    (rescaled to 1280x720)
+    fx_fy_cx_cy[0]: [963.12, 976.23, 640.00, 360.00]
+WROTE /data2/DATA/rohit_sinha/e5/big/results/newmodels/smoke_tc3r.json
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/bin/python /data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py --model trackcraft3r --smoke_dir /data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm --out /data2/DATA/rohit_sinha/e5/big/results/newmodels/smoke_tc3r.json --save_npz /data2/DATA/rohit_sinha/e5/big/results/newmodels/smoke_tc3r.npz"
+	User time (seconds): 323.16
+	System time (seconds): 62.88
+	Percent of CPU this job got: 42%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 15:17.92
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 14198304
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 12645
+	Minor (reclaiming a frame) page faults: 14374882
+	Voluntary context switches: 78964
+	Involuntary context switches: 44341
+	Swaps: 0
+	File system inputs: 19542368
+	File system outputs: 435984
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[run_gpu] exit 0 Monday 19 October 2026 09:33:46 AM IST

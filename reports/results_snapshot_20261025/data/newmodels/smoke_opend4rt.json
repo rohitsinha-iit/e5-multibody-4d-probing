@@ -1,0 +1,164 @@
+{
+ "model": "opend4rt",
+ "load_s": 780.7264177799225,
+ "gate": "G0d: median static EPE <= 2x Any4D on the same scenes",
+ "load_info": {
+  "missing": 0,
+  "unexpected": 0
+ },
+ "gpu_after_load_gb": 4.4112162590026855,
+ "rows": [],
+ "smoke": {
+  "paths": [
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/000.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/001.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/002.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/003.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/004.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/005.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/006.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/007.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/008.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/009.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/010.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/011.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/012.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/013.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/014.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/015.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/016.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/017.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/018.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/019.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/020.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/021.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/022.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/023.jpg"
+  ],
+  "keys": {
+   "pts3d_0": {
+    "shape": [
+     256,
+     256,
+     3
+    ],
+    "finite": 1.0
+   },
+   "scene_flow": {
+    "shape": [
+     24,
+     256,
+     256,
+     3
+    ],
+    "finite": 1.0
+   },
+   "w_disp": {
+    "shape": [
+     24,
+     256,
+     256,
+     3
+    ],
+    "finite": 1.0
+   },
+   "cam_pose": {
+    "shape": [
+     24,
+     4,
+     4
+    ],
+    "finite": 1.0
+   },
+   "K": {
+    "shape": [
+     24,
+     3,
+     3
+    ],
+    "finite": 1.0
+   },
+   "conf_0": {
+    "shape": [
+     256,
+     256
+    ],
+    "finite": 1.0
+   },
+   "x_pred": {
+    "shape": [
+     24,
+     256,
+     256,
+     2
+    ],
+    "finite": 1.0
+   },
+   "x_r1": {
+    "shape": [
+     24,
+     256,
+     256,
+     2
+    ],
+    "finite": 1.0
+   },
+   "x_r2_predK": {
+    "shape": [
+     24,
+     256,
+     256,
+     2
+    ],
+    "finite": 1.0
+   },
+   "xyz_local": {
+    "shape": [
+     24,
+     256,
+     256,
+     3
+    ],
+    "finite": 1.0
+   },
+   "xyz_ref0": {
+    "shape": [
+     24,
+     256,
+     256,
+     3
+    ],
+    "finite": 1.0
+   },
+   "vis": {
+    "shape": [
+     24,
+     256,
+     256
+    ],
+    "finite": 1.0
+   },
+   "conf": {
+    "shape": [
+     24,
+     256,
+     256
+    ],
+    "finite": 1.0
+   },
+   "targets": {
+    "shape": [
+     24
+    ],
+    "finite": 1.0
+   },
+   "dense_stride": 1,
+   "_runtime_s": 226.43782997131348
+  },
+  "runtime_s": 226.43782997131348,
+  "gpu": {
+   "peak_alloc_gb": 16.758880615234375,
+   "peak_reserved_gb": 17.361328125
+  }
+ }
+}

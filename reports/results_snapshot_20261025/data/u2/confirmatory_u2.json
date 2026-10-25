@@ -1,0 +1,433 @@
+{
+ "written": "2026-10-25 02:33:17",
+ "preregistration_sha256": "69bdf0169ebb714823618665255db27c2747c0a28ecfe11af5842438df489af0",
+ "boundary": "excl8 (primary); none in *_noboundary",
+ "bootstrap": {
+  "resamples": 2000,
+  "seed": 0,
+  "stat": "scene mean"
+ },
+ "note": "raw p-values; Holm over the full family by the lead",
+ "T1a": {
+  "model": "opend4rt",
+  "readout": "r3 world displacement",
+  "H1": "mean s_w < 0.9",
+  "sides": "one-sided",
+  "scenes": "v2 test + v3float transfer (pooled, as frozen)",
+  "s_w": {
+   "n": 103,
+   "est": 0.8040853135922331,
+   "lo": 0.7492800414077672,
+   "hi": 0.8557961950485435
+  },
+  "p": 0.0004997501249375312,
+  "test_only": {
+   "s_w": {
+    "n": 45,
+    "est": 0.8978864222222221,
+    "lo": 0.8588398855555553,
+    "hi": 0.9326237855555555
+   },
+   "p": 0.46326836581709147
+  },
+  "transfer_only": {
+   "s_w": {
+    "n": 58,
+    "est": 0.7313085913793104,
+    "lo": 0.6526394704741378,
+    "hi": 0.8093710012499999
+   },
+   "p": 0.0004997501249375312
+  }
+ },
+ "T1b": {
+  "model": "tc3r_da3",
+  "readout": "condition (ii) DA3 inputs, stretch, no t0 registration",
+  "H1": "mean s_w < 0.9",
+  "sides": "one-sided",
+  "scenes": "v2 test + v3float transfer (pooled, as frozen)",
+  "s_w": {
+   "n": 103,
+   "est": 0.48636884951456305,
+   "lo": 0.426051030315534,
+   "hi": 0.5537138123058253
+  },
+  "p": 0.0004997501249375312,
+  "test_only": {
+   "s_w": {
+    "n": 45,
+    "est": 0.5935243644444446,
+    "lo": 0.4991011846111111,
+    "hi": 0.6960873040555555
+   },
+   "p": 0.0004997501249375312
+  },
+  "transfer_only": {
+   "s_w": {
+    "n": 58,
+    "est": 0.40323095,
+    "lo": 0.3355836187068965,
+    "hi": 0.47775844568965514
+   },
+   "p": 0.0004997501249375312
+  }
+ },
+ "T1_validity": {
+  "rule": "lifted CoTracker3 and lifted RAFT s_w >= 0.9 for T1 to be read (RAFT primary = chained)",
+  "lifted": {
+   "cotracker3:s_w": {
+    "s_w": {
+     "n": 103,
+     "est": 0.9921571747572815,
+     "lo": 0.9828705470873785,
+     "hi": 0.9994884398058252
+    },
+    "passes": true,
+    "test_only": {
+     "n": 45,
+     "est": 0.9871656666666665,
+     "lo": 0.967814811111111,
+     "hi": 1.0022369838888887
+    }
+   },
+   "raft:s_w": {
+    "s_w": {
+     "n": 103,
+     "est": 0.9816141165048542,
+     "lo": 0.9630538143203883,
+     "hi": 0.9986473055825243
+    },
+    "passes": true,
+    "test_only": {
+     "n": 45,
+     "est": 0.9770869777777778,
+     "lo": 0.9460557266666665,
+     "hi": 1.0016235011111112
+    }
+   },
+   "raft:direct_s_w": {
+    "s_w": {
+     "n": 103,
+     "est": 0.6157304504854367,
+     "lo": 0.46174605339805824,
+     "hi": 0.7540249139320386
+    },
+    "passes": false,
+    "test_only": {
+     "n": 45,
+     "est": 0.6644600311111111,
+     "lo": 0.5027521589444445,
+     "hi": 0.8087772814999998
+    }
+   }
+  },
+  "T1_readable": true
+ },
+ "T7": {
+  "model": "any4d",
+  "I": "alpha_D - alpha_C, test scenes identifiable in D",
+  "I_stat": {
+   "n": 39,
+   "est": -0.0983728948717949,
+   "lo": -0.17324216794871794,
+   "hi": -0.022983657564102655
+  },
+  "p_two_sided": 0.0079960019990005,
+  "decision": "inconclusive",
+  "account_hint": "",
+  "s_w_repeat": {
+   "I_sw": {
+    "n": 44,
+    "est": -0.07564154772727272,
+    "lo": -0.12587088960227272,
+    "hi": -0.02713970659090911
+   },
+   "p_two_sided": 0.001999000499750125
+  }
+ },
+ "T8": {
+  "model": "any4d",
+  "stat": "dRPE-R = RPE-R(D) - RPE-R(B), deg",
+  "H1": "mean > 0",
+  "dRPE_R": {
+   "n": 48,
+   "est": 0.008312583333333333,
+   "lo": 0.002043644791666669,
+   "hi": 0.014588902604166662
+  },
+  "p_one_sided": 0.0034982508745627187,
+  "role": "confirmatory"
+ },
+ "T8_vggt": {
+  "model": "vggt",
+  "stat": "dRPE-R = RPE-R(D) - RPE-R(B), deg",
+  "H1": "mean > 0",
+  "dRPE_R": {
+   "n": 48,
+   "est": -0.0010720208333333335,
+   "lo": -0.005408366614583332,
+   "hi": 0.003446260729166665
+  },
+  "p_one_sided": 0.6756621689155422,
+  "role": "descriptive"
+ },
+ "T7_transfer_descriptive": {
+  "model": "any4d",
+  "I": "alpha_D - alpha_C, test scenes identifiable in D",
+  "I_stat": {
+   "n": 31,
+   "est": -0.06975945161290326,
+   "lo": -0.13187758548387102,
+   "hi": -0.01509267903225808
+  },
+  "p_two_sided": 0.012993503248375811,
+  "decision": "inconclusive",
+  "account_hint": "",
+  "s_w_repeat": {
+   "I_sw": {
+    "n": 56,
+    "est": -0.04958042678571429,
+    "lo": -0.10842139736607144,
+    "hi": 0.004914376339285693
+   },
+   "p_two_sided": 0.08495752123938032
+  }
+ },
+ "T8_transfer": {
+  "model": "any4d",
+  "stat": "dRPE-R = RPE-R(D) - RPE-R(B), deg",
+  "H1": "mean > 0",
+  "dRPE_R": {
+   "n": 69,
+   "est": 0.006916294202898554,
+   "lo": 0.002478834782608697,
+   "hi": 0.011481205434782609
+  },
+  "p_one_sided": 0.0014992503748125937,
+  "role": "descriptive"
+ },
+ "T8_vggt_transfer": {
+  "model": "vggt",
+  "stat": "dRPE-R = RPE-R(D) - RPE-R(B), deg",
+  "H1": "mean > 0",
+  "dRPE_R": {
+   "n": 69,
+   "est": -0.0012067492753623176,
+   "lo": -0.00752181699275362,
+   "hi": 0.006088750760869558
+  },
+  "p_one_sided": 0.6616691654172914,
+  "role": "descriptive"
+ },
+ "T1a_noboundary": {
+  "model": "opend4rt",
+  "readout": "r3 world displacement",
+  "H1": "mean s_w < 0.9",
+  "sides": "one-sided",
+  "scenes": "v2 test + v3float transfer (pooled, as frozen)",
+  "s_w": {
+   "n": 112,
+   "est": 0.7341720687499999,
+   "lo": 0.6826051493080357,
+   "hi": 0.7815526380133929
+  },
+  "p": 0.0004997501249375312,
+  "test_only": {
+   "s_w": {
+    "n": 47,
+    "est": 0.8373352978723403,
+    "lo": 0.7960322776595744,
+    "hi": 0.8751297015957445
+   },
+   "p": 0.001999000499750125
+  },
+  "transfer_only": {
+   "s_w": {
+    "n": 65,
+    "est": 0.6595771184615384,
+    "lo": 0.5819588751153845,
+    "hi": 0.7329657980769229
+   },
+   "p": 0.0004997501249375312
+  }
+ },
+ "T1b_noboundary": {
+  "model": "tc3r_da3",
+  "readout": "condition (ii) DA3 inputs, stretch, no t0 registration",
+  "H1": "mean s_w < 0.9",
+  "sides": "one-sided",
+  "scenes": "v2 test + v3float transfer (pooled, as frozen)",
+  "s_w": {
+   "n": 112,
+   "est": 0.4475428446428572,
+   "lo": 0.3935094818080357,
+   "hi": 0.5031449776339286
+  },
+  "p": 0.0004997501249375312,
+  "test_only": {
+   "s_w": {
+    "n": 47,
+    "est": 0.5676140531914893,
+    "lo": 0.48889762819148935,
+    "hi": 0.6557232013297871
+   },
+   "p": 0.0004997501249375312
+  },
+  "transfer_only": {
+   "s_w": {
+    "n": 65,
+    "est": 0.36072212461538455,
+    "lo": 0.2992228859230769,
+    "hi": 0.42426827219230767
+   },
+   "p": 0.0004997501249375312
+  }
+ },
+ "T1_validity_noboundary": {
+  "rule": "lifted CoTracker3 and lifted RAFT s_w >= 0.9 for T1 to be read (RAFT primary = chained)",
+  "lifted": {
+   "cotracker3:s_w": {
+    "s_w": {
+     "n": 112,
+     "est": 0.9505615982142857,
+     "lo": 0.9303781709821429,
+     "hi": 0.9671950924107143
+    },
+    "passes": true,
+    "test_only": {
+     "n": 47,
+     "est": 0.9372606595744681,
+     "lo": 0.8951412904255319,
+     "hi": 0.9651121781914898
+    }
+   },
+   "raft:s_w": {
+    "s_w": {
+     "n": 112,
+     "est": 0.8717764732142858,
+     "lo": 0.8422114508928572,
+     "hi": 0.9003114236607144
+    },
+    "passes": false,
+    "test_only": {
+     "n": 47,
+     "est": 0.8711760638297872,
+     "lo": 0.821525834574468,
+     "hi": 0.9105157776595746
+    }
+   },
+   "raft:direct_s_w": {
+    "s_w": {
+     "n": 112,
+     "est": 0.5221757392857143,
+     "lo": 0.3708107597767857,
+     "hi": 0.6644553247544642
+    },
+    "passes": false,
+    "test_only": {
+     "n": 47,
+     "est": 0.5946179957446808,
+     "lo": 0.4392317005851064,
+     "hi": 0.7255717781914892
+    }
+   }
+  },
+  "T1_readable": false
+ },
+ "T7_noboundary": {
+  "model": "any4d",
+  "I": "alpha_D - alpha_C, test scenes identifiable in D",
+  "I_stat": {
+   "n": 41,
+   "est": -0.12266910731707317,
+   "lo": -0.1899467218292683,
+   "hi": -0.06086016512195136
+  },
+  "p_two_sided": 0.0009995002498750624,
+  "decision": "effect",
+  "account_hint": "K",
+  "s_w_repeat": {
+   "I_sw": {
+    "n": 46,
+    "est": -0.08654135869565219,
+    "lo": -0.12599102010869567,
+    "hi": -0.048107671739130456
+   },
+   "p_two_sided": 0.0009995002498750624
+  }
+ },
+ "T8_noboundary": {
+  "model": "any4d",
+  "stat": "dRPE-R = RPE-R(D) - RPE-R(B), deg",
+  "H1": "mean > 0",
+  "dRPE_R": {
+   "n": 48,
+   "est": 0.008312583333333333,
+   "lo": 0.002043644791666669,
+   "hi": 0.014588902604166662
+  },
+  "p_one_sided": 0.0034982508745627187,
+  "role": "confirmatory"
+ },
+ "T8_vggt_noboundary": {
+  "model": "vggt",
+  "stat": "dRPE-R = RPE-R(D) - RPE-R(B), deg",
+  "H1": "mean > 0",
+  "dRPE_R": {
+   "n": 48,
+   "est": -0.0010720208333333335,
+   "lo": -0.005408366614583332,
+   "hi": 0.003446260729166665
+  },
+  "p_one_sided": 0.6756621689155422,
+  "role": "descriptive"
+ },
+ "T7_transfer_descriptive_noboundary": {
+  "model": "any4d",
+  "I": "alpha_D - alpha_C, test scenes identifiable in D",
+  "I_stat": {
+   "n": 35,
+   "est": -0.06192322285714288,
+   "lo": -0.1190017262857143,
+   "hi": -0.007054698857142895
+  },
+  "p_two_sided": 0.02798600699650175,
+  "decision": "inconclusive",
+  "account_hint": "",
+  "s_w_repeat": {
+   "I_sw": {
+    "n": 62,
+    "est": -0.04506635322580644,
+    "lo": -0.09333270592741935,
+    "hi": 0.0024853866532256884
+   },
+   "p_two_sided": 0.06196901549225387
+  }
+ },
+ "T8_transfer_noboundary": {
+  "model": "any4d",
+  "stat": "dRPE-R = RPE-R(D) - RPE-R(B), deg",
+  "H1": "mean > 0",
+  "dRPE_R": {
+   "n": 69,
+   "est": 0.006916294202898554,
+   "lo": 0.002478834782608697,
+   "hi": 0.011481205434782609
+  },
+  "p_one_sided": 0.0014992503748125937,
+  "role": "descriptive"
+ },
+ "T8_vggt_transfer_noboundary": {
+  "model": "vggt",
+  "stat": "dRPE-R = RPE-R(D) - RPE-R(B), deg",
+  "H1": "mean > 0",
+  "dRPE_R": {
+   "n": 69,
+   "est": -0.0012067492753623176,
+   "lo": -0.00752181699275362,
+   "hi": 0.006088750760869558
+  },
+  "p_one_sided": 0.6616691654172914,
+  "role": "descriptive"
+ }
+}

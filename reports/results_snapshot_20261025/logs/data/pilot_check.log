@@ -1,0 +1,25 @@
+RENDER_FACTORIAL_DONE
+Monday 19 October 2026 08:23:47 AM IST
+PILOT_DONE
+n2_generic_s401 | files 24 ['depth', 'forward_flow', 'segmentation'] {'depth': (24, 512, 512, 1), 'segmentation': (24, 512, 512, 1), 'forward_flow': (24, 512, 512, 2)} (24, 512, 512, 3)
+   new : n_corr 172695 flow_epe 7.3e-05 yx median_flow 8.0334 median_disp_px {'0': 148.268, '1': 64.81} assets ['D_ROSE_773_II_hvInJwJ5HUD', 'Craftsman_Grip_Screwdriver_Phillips_Cushion', 'SLACK_CRUISER', 'FAIRY_TALE_BLOCKS'] hdri studio_garden
+   4090: n_corr 172695 flow_epe 7.1982192489459e-05 yx median_flow 8.033370540346576 median_disp_px {'0': 146.33891377177696, '1': 64.9765041788286} n_pts {'0': 400, '1': 400}
+camrot_s305 | files 24 ['depth', 'forward_flow', 'segmentation'] {'depth': (24, 512, 512, 1), 'segmentation': (24, 512, 512, 1), 'forward_flow': (24, 512, 512, 2)} (24, 512, 512, 3)
+   new : n_corr 181141 flow_epe 0.000112 yx median_flow 6.0803 median_disp_px {'0': 136.117, '1': 188.161} assets ['Pokmon_Conquest_Nintendo_DS_Game', 'Calphalon_Kitchen_Essentials_12_Cast_Iron_Fry_Pan_Black', 'PEEKABOO_ROLLER', 'TWISTED_PUZZLE_twb4AyFtu8Q'] hdri venice_dawn_1
+   4090: n_corr 181141 flow_epe 0.0001372071465735188 yx median_flow 6.080264986101473 median_disp_px {'0': 133.02811198502826, '1': 188.1610869432764} n_pts {'0': 400, '1': 285}
+confound_glued_s469 | files 24 ['depth', 'forward_flow', 'segmentation'] {'depth': (24, 512, 512, 1), 'segmentation': (24, 512, 512, 1), 'forward_flow': (24, 512, 512, 2)} (24, 512, 512, 3)
+   new : n_corr 182690 flow_epe 3.9e-05 yx median_flow 5.7265 median_disp_px {'0': 119.321, '1': 91.905} assets ['Focus_8643_Lime_Squeezer_10x35x188_Enamelled_Aluminum_Light', 'Ecoforms_Planter_Pot_QP6Ebony', 'Tieks_Ballet_Flats_Diamond_White_Croc', 'Wilton_Pearlized_Sugar_Sprinkles_525_oz_Gold'] hdri quarry_01
+   4090: n_corr 182690 flow_epe 9.321429817743005e-05 yx median_flow 5.7264548669495134 median_disp_px {'0': 119.01330272835087, '1': 92.9969692680859} n_pts {'0': 400, '1': 400}
+gt v2 n2_generic 401 ['A', 'B', 'C', 'D']
+{"scene": "n2_generic_s401", "set": "v2", "copy_done": true, "psnr_db": {"A": Infinity, "B": Infinity, "C": Infinity}, "frozen_camera": {"A": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 2.220446049250313e-16}, "C": {"max_abs_c2w_minus_c2w0": 0.0, "max_abs_rel_minus_I": 2.220446049250313e-16}}, "frozen_objects": {"A": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 4.440892098500626e-16, "max_abs_A_px": 5.684341886080802e-14}, "B": {"max_abs_objpose_minus_pose0": 0.0, "max_abs_world_disp": 4.440892098500626e-16, "max_abs_A_px": 1.1368683772161603e-13}}, "same_scene": {"assets_equal": true, "B_cam_vs_D": 0.0, "C_obj_vs_D": 0.0, "frame0_pose_vs_D": 0.0, "frame0_obj_vs_D": 0.0, "frame0_depth_max_abs_vs_D": 0.0, "D_moving_objects": 1, "D_median_A_px_t23": 54.25754154171963}, "pass": {"copy": true, "psnr": true, "cam_identity": true, "obj_zero": false}}
+{'K': (3, 3), 'frames': (24,), 'c2w_blender': (24, 4, 4), 'w2c_cv': (24, 4, 4), 'rel_w2c_cv_to0': (24, 4, 4), 'obj_pose': (4, 24, 4, 4), 'obj_group': (4,), 'obj_disp': (4, 24, 4, 4), 'pts0': (512, 512, 3), 'group0': (512, 512), 'moving_mask': (24, 512, 512), 'q_pix': (2446, 2), 'q_group': (2446,), 'target_views': (6,), 'x1': (2446, 2), 'x_true': (6, 2446, 2), 'x_static': (6, 2446, 2), 'A': (6, 2446, 2), 'B': (6, 2446, 2), 'world_disp': (6, 2446, 3), 'vis': (6, 2446), 'variant': (), 'scene': ()}
+saved /data2/DATA/rohit_sinha/e5/big/results/attr_pilot/factorial_pilot_n2_generic_s401.png (1190, 1116)
+65M	/data2/DATA/rohit_sinha/e5/big/data/v2/out/camrot_s305
+64M	/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469
+68M	/data2/DATA/rohit_sinha/e5/big/data/v2/out/n2_generic_s401
+37M	/data2/DATA/rohit_sinha/e5/big/attr/factorial/v2/401/A
+72M	/data2/DATA/rohit_sinha/e5/big/attr/factorial/v2/401/B
+38M	/data2/DATA/rohit_sinha/e5/big/attr/factorial/v2/401/C
+0	/data2/DATA/rohit_sinha/e5/big/attr/factorial/v2/401/D
+3.7M	/data2/DATA/rohit_sinha/e5/big/attr/factorial/v2/401/D_gt
+CHECK_DONE

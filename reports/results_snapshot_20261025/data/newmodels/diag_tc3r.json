@@ -1,0 +1,56 @@
+{
+ "n2_generic_s401/kubric12": {
+  "epe_static": 9.430785577261044,
+  "epe_moving": 13.851730293110297,
+  "s_w": 0.6384921188586774,
+  "input_pointmap_proj_epe_static": 0.3643158034727033,
+  "t0_self_epe_static": 14.404858992836921,
+  "static_track_drift_rel_depth": 0.023535706102848053,
+  "runtime_s": 14.065755128860474
+ },
+ "n2_generic_s401/stride2": {
+  "epe_static": 9.234525370534284,
+  "epe_moving": 12.681784594375493,
+  "s_w": 0.6029068964433784,
+  "input_pointmap_proj_epe_static": 0.3686905741820005,
+  "t0_self_epe_static": 14.073491537477459,
+  "static_track_drift_rel_depth": 0.023593386635184288,
+  "runtime_s": 13.354691743850708
+ },
+ "camrot_s305/kubric12": {
+  "epe_static": 10.924623022013645,
+  "epe_moving": 30.922370919682677,
+  "s_w": 0.4205922549468067,
+  "input_pointmap_proj_epe_static": 0.4222741236308857,
+  "t0_self_epe_static": 13.48197522603536,
+  "static_track_drift_rel_depth": 0.021518133580684662,
+  "runtime_s": 13.920639514923096
+ },
+ "camrot_s305/stride2": {
+  "epe_static": 11.172534380935193,
+  "epe_moving": 27.482058414941573,
+  "s_w": 0.39529458865701445,
+  "input_pointmap_proj_epe_static": 0.4225146422848157,
+  "t0_self_epe_static": 13.41142370016076,
+  "static_track_drift_rel_depth": 0.021980993449687958,
+  "runtime_s": 13.968783140182495
+ },
+ "n2_generic_s301/kubric12": {
+  "epe_static": 15.003337912020157,
+  "epe_moving": 29.931653003223524,
+  "s_w": 0.9179901066782032,
+  "input_pointmap_proj_epe_static": 0.37595754736599896,
+  "t0_self_epe_static": 13.200923915850675,
+  "static_track_drift_rel_depth": 0.03391580656170845,
+  "runtime_s": 13.467034816741943
+ },
+ "n2_generic_s301/stride2": {
+  "epe_static": 15.643870250704925,
+  "epe_moving": 32.39555775224218,
+  "s_w": 0.9225883721527094,
+  "input_pointmap_proj_epe_static": 0.3797246284363853,
+  "t0_self_epe_static": 13.389359848266931,
+  "static_track_drift_rel_depth": 0.03473886474967003,
+  "runtime_s": 13.87935185432434
+ }
+}

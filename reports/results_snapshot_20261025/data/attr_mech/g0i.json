@@ -1,0 +1,103 @@
+{
+ "scene": "/data2/DATA/rohit_sinha/e5/big/attr/factorial/v2/469",
+ "host": "aicoe-a6000",
+ "gpu": "0",
+ "load_s": 104.0,
+ "time": "2026-10-19 12:32:28",
+ "G0i_fp32": {
+  "D": {
+   "patched_all_vs_base": {
+    "pts3d_0": 0.0,
+    "scene_flow": 0.0,
+    "cam_pose": 0.0
+   },
+   "repeat_vs_base": {
+    "pts3d_0": 0.0,
+    "scene_flow": 0.0,
+    "cam_pose": 0.0
+   },
+   "max": 0.0,
+   "single_component_max": 0.0,
+   "n_single": 48
+  },
+  "B": {
+   "patched_all_vs_base": {
+    "pts3d_0": 0.0,
+    "scene_flow": 0.0,
+    "cam_pose": 0.0
+   },
+   "repeat_vs_base": {
+    "pts3d_0": 0.0,
+    "scene_flow": 0.0,
+    "cam_pose": 0.0
+   },
+   "max": 0.0
+  }
+ },
+ "positive_control_resid_B_into_D": {
+  "sf_dist_to_B": 4.897480266663479e-06,
+  "sf_dist_to_D": 0.015201682224869728,
+  "sf_dist_D_B": 0.015201486647129059
+ },
+ "amp_repeat_vs_base": {
+  "pts3d_0": 0.0,
+  "scene_flow": 0.0,
+  "cam_pose": 0.0
+ },
+ "amp_patched_all_vs_base": {
+  "pts3d_0": 0.0,
+  "scene_flow": 0.0,
+  "cam_pose": 0.0
+ },
+ "mask_empty_vs_base": {
+  "pts3d_0": 0.0,
+  "scene_flow": 0.0,
+  "cam_pose": 0.0
+ },
+ "mask_effects": {
+  "b10h3": {
+   "pts3d_0": 0.02215099334716797,
+   "scene_flow": 0.05358833074569702,
+   "cam_pose": 0.0013070106506347656
+  },
+  "b10_all12": {
+   "pts3d_0": 0.4286632537841797,
+   "scene_flow": 0.5392482876777649,
+   "cam_pose": 0.04387927055358887
+  },
+  "all288": {
+   "pts3d_0": 0.6971511840820312,
+   "scene_flow": 0.6749053597450256,
+   "cam_pose": 0.04886914789676666
+  },
+  "n_flagged_tokens": 566,
+  "frac_flagged": 0.05906292423605919
+ },
+ "timing_s": {
+  "capture": 0.52,
+  "base": 0.396,
+  "patch_all": 0.489,
+  "patch_one_head_view0": 0.397,
+  "mask_empty": 0.395,
+  "mask_1head": 0.5,
+  "mask_12heads_1block": 0.439,
+  "mask_all288": 1.223
+ },
+ "memory_gb": {
+  "peak_capture_amp": 8.9,
+  "peak_mask_all": 9.1,
+  "cache_gb_amp": 1.06,
+  "cache_dtype_amp": "torch.bfloat16"
+ },
+ "G0i": {
+  "gate": "G0i",
+  "status": "pass",
+  "max_abs_diff_D": 0.0,
+  "max_abs_diff_B": 0.0,
+  "single_component_max": 0.0,
+  "criteria": "fp32, all 288 heads + 24 residual states patched at all positions, D->D and B->B; max abs diff of pts3d_0, scene_flow, cam_pose <= 1e-4",
+  "time": "2026-10-19 12:32:28",
+  "host": "aicoe-a6000",
+  "scene": "/data2/DATA/rohit_sinha/e5/big/attr/factorial/v2/469"
+ }
+}

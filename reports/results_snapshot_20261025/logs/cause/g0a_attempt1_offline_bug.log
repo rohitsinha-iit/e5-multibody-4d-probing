@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/wan_feats.py", line 292, in <module>
+    main()
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/wan_feats.py", line 286, in main
+    gate_g0a(a)
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/wan_feats.py", line 206, in gate_g0a
+    wf = WanFeat(dev, dtype=torch.float32)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/repo/src/p3/wan_feats.py", line 96, in __init__
+    self.dit = WanTransformer3DModel.from_pretrained(REPO, subfolder="transformer", torch_dtype=dtype).to(self.dev).eval()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/diffusers/models/modeling_utils.py", line 1253, in from_pretrained
+    resolved_model_file, sharded_metadata = _get_checkpoint_shard_files(
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/diffusers/utils/hub_utils.py", line 427, in _get_checkpoint_shard_files
+    model_files_info = model_info(pretrained_model_name_or_path, revision=revision, token=token)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/huggingface_hub/hf_api.py", line 2660, in model_info
+    r = get_session().get(path, headers=headers, timeout=timeout, params=params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/requests/sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data2/DATA/rohit_sinha/e5/big/venvs/p3-wan/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 107, in send
+    raise OfflineModeIsEnabled(
+huggingface_hub.errors.OfflineModeIsEnabled: Cannot reach https://huggingface.co/api/models/Wan-AI/Wan2.1-T2V-1.3B-Diffusers: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.

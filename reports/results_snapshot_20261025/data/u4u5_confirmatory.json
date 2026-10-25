@@ -1,0 +1,48 @@
+{
+ "written": "2026-10-24 16:36:42 IST",
+ "note": "raw one-sided p-values; Holm is applied by the lead over the full family",
+ "T9": {
+  "p": 0.024390243902439025,
+  "status": "ok",
+  "confirmatory": false,
+  "note": "k* is None for a screen: computed at k_used (fallback k = 20), descriptive (risk 4)",
+  "passes_success_rule": true,
+  "k_used": [
+   1,
+   20
+  ],
+  "n_scenes": [
+   48,
+   48
+  ]
+ },
+ "T5p": {
+  "p": 0.0004997501249375312,
+  "mean_d": 0.10516424660805275,
+  "ci": [
+   0.07331999216264261,
+   0.1385960428482941
+  ],
+  "n": 39,
+  "g2_secondary": {
+   "mean": 0.12145688770973806,
+   "lo": 0.06342328492073011,
+   "hi": 0.18053452643926657,
+   "n": 39,
+   "p_gt0": 0.0004997501249375312,
+   "definition": "d_s = d alpha (i) - mean_r d alpha (iii); one-sided p for mean d > 0"
+  }
+ },
+ "T10": {
+  "k_used": 20,
+  "confirmatory_as_specified": false,
+  "note": "k* is None (no k in the grid reaches 80% scene-median completeness on fit): fallback k = 20, statistics at this k are descriptive (plan section 11, risk 4)",
+  "p": 0.18140929535232383,
+  "mean_d": 0.004578282462883304,
+  "ci": [
+   -0.005037089875910204,
+   0.014142832024509876
+  ],
+  "n_windows": 230
+ }
+}

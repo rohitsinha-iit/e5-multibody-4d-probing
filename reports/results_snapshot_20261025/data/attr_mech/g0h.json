@@ -1,0 +1,24 @@
+{
+ "gate": "G0h",
+ "status": "pass",
+ "patch_start_idx": 5,
+ "tokens_per_frame": 1374,
+ "camera_token_index": 0,
+ "identity_cam_DtoD_max": {
+  "pose_enc": 0.0,
+  "depth": 0.0,
+  "world_points": 0.0
+ },
+ "identity_reg_DtoD_max": {
+  "pose_enc": 0.0,
+  "depth": 0.0,
+  "world_points": 0.0
+ },
+ "final_cam_tokens_CtoD_vs_C_pose_enc_max": 0.0,
+ "pose_enc_D_vs_C_max": 0.20557019114494324,
+ "criteria": "fp32; camera-token (index 0 per frame) patch D->D at all 48 blocks (heads + residuals) equals base to 1e-5; final frame+global camera tokens C->D reproduce C pose_enc to 1e-4",
+ "scene": "/data2/DATA/rohit_sinha/e5/big/attr/factorial/v2/469",
+ "time": "2026-10-19 12:59:38",
+ "wall_s": 92.2,
+ "peak_gpu_gb": 15.34
+}

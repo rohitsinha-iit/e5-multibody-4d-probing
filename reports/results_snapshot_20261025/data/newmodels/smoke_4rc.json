@@ -1,0 +1,122 @@
+{
+ "model": "4rc",
+ "load_s": 532.194765329361,
+ "gate": "G0g: output keys found (pts, track, extrinsic, intrinsic) and static EPE <= 2x Any4D",
+ "load_info": null,
+ "gpu_after_load_gb": 5.72573709487915,
+ "rows": [],
+ "smoke": {
+  "paths": [
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/000.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/005.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/010.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/014.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/019.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/024.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/029.jpg"
+  ],
+  "keys": {
+   "pts3d_0": {
+    "shape": [
+     280,
+     504,
+     3
+    ],
+    "finite": 1.0
+   },
+   "scene_flow": {
+    "shape": [
+     7,
+     280,
+     504,
+     3
+    ],
+    "finite": 1.0
+   },
+   "cam_pose": {
+    "shape": [
+     7,
+     4,
+     4
+    ],
+    "finite": 1.0
+   },
+   "K": {
+    "shape": [
+     7,
+     3,
+     3
+    ],
+    "finite": 1.0
+   },
+   "track_world": {
+    "shape": [
+     7,
+     280,
+     504,
+     3
+    ],
+    "finite": 1.0
+   },
+   "pts_world": {
+    "shape": [
+     7,
+     280,
+     504,
+     3
+    ],
+    "finite": 1.0
+   },
+   "conf_0": {
+    "shape": [
+     280,
+     504
+    ],
+    "finite": 1.0
+   },
+   "conf_track": {
+    "shape": [
+     7,
+     280,
+     504
+    ],
+    "finite": 1.0
+   },
+   "w_disp": {
+    "shape": [
+     7,
+     280,
+     504,
+     3
+    ],
+    "finite": 1.0
+   },
+   "x_pred": {
+    "shape": [
+     7,
+     280,
+     504,
+     2
+    ],
+    "finite": 1.0
+   },
+   "_runtime_s": 134.71422362327576
+  },
+  "runtime_s": 134.71422362327576,
+  "gpu": {
+   "peak_alloc_gb": 10.123905658721924,
+   "peak_reserved_gb": 11.76171875
+  },
+  "output_keys": [
+   "conf",
+   "conf_track",
+   "conf_track_multi",
+   "extrinsic",
+   "intrinsic",
+   "pts",
+   "track",
+   "track_multi",
+   "track_query_idx"
+  ]
+ }
+}

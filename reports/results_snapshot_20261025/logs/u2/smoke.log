@@ -1,0 +1,284 @@
+=== 22:44:25 10 any4d u2_infer.py --model any4d --kubric test:A,test:B,test:C,test:D --scenes 301,303 --real kitti15:rgb:2v:wide,sintel:final:2v:wide --pose --limit 2
+[2026-10-23 22:44:25] attempt 1: any4d u2_infer.py --model any4d --kubric test:A,test:B,test:C,test:D --scenes 301,303 --real kitti15:rgb:2v:wide,sintel:final:2v:wide --pose --limit 2  (GPU 0 free 39681 MiB)
+Seed set to: 0
+Initializing <class 'any4d.models.any4d.model.Any4D'> with kwargs: {'torch_hub_force_reload': False, 'pretrained_checkpoint_path': None, 'load_specific_pretrained_submodules': False, 'specific_pretrained_submodules': [], 'name': 'any4d', 'encoder_config': {'encoder_str': 'dinov2', 'name': 'dinov2_large', 'data_norm_type': 'dinov2', 'size': 'large', 'with_registers': False, 'uses_torch_hub': False, 'gradient_checkpointing': False}, 'info_sharing_config': {'model_type': 'alternating_attention', 'model_return_type': 'intermediate_features', 'custom_positional_encoding': None, 'module_args': {'name': 'aat_24_layers_ifr', 'indices': [11, 17], 'norm_intermediate': True, 'size': '24_layers', 'depth': 24, 'distinguish_ref_and_non_ref_views': True, 'gradient_checkpointing': False}}, 'pred_head_config': {'adaptor_config': {'input_dim': 6, 'scene_rep_dim': 4, 'type': 'raydirs+depth+pose+confidence+mask', 'scene_rep_type': 'raydirs+depth+pose', 'dense_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_pred_init_dict': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}}, 'type': 'dpt+pose', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3], 'checkpoint_gradient': False}, 'regressor_head': {'output_dim': 6, 'checkpoint_gradient': False}, 'pose_head': {'num_resconv_block': 2, 'rot_representation_dim': 4}, 'scale_head': {'output_dim': 1}, 'adaptor_type': 'raydirs+depth+pose+confidence+mask', 'dpt_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'ray_directions_mode': 'linear', 'ray_directions_normalize_to_unit_sphere': True, 'ray_directions_normalize_to_unit_image_plane': False, 'ray_directions_vmin': -inf, 'ray_directions_vmax': inf, 'ray_directions_clamp_min_of_z_dir': False, 'ray_directions_z_dir_min': -inf, 'depth_mode': 'exp', 'depth_vmin': 0, 'depth_vmax': inf, 'confidence_type': 'exp', 'confidence_vmin': 1, 'confidence_vmax': inf}, 'pose_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'cam_trans_mode': 'linear', 'cam_trans_vmin': -inf, 'cam_trans_vmax': inf, 'quaternions_mode': 'linear', 'quaternions_normalize': True, 'quaternions_vmin': -inf, 'quaternions_vmax': inf}, 'scale_adaptor': {'name': 'raydirs+depth+pose+confidence+mask+scale', 'mode': 'exp', 'vmin': 1e-08, 'vmax': inf}, 'gradient_checkpointing': False}, 'scene_flow_pred_head_config': {'adaptor_config': {'input_dim': 3, 'scene_rep_dim': 3, 'type': 'scene_flow', 'scene_rep_type': 'scene_flow', 'dense_pred_init_dict': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'type': 'dpt', 'feature_head': {'feature_dim': 256, 'hooks': [0, 1, 2, 3]}, 'regressor_head': {'output_dim': 3}, 'adaptor_type': 'scene_flow', 'dpt_adaptor': {'name': 'scene_flow', 'mode': 'linear', 'vmin': -inf, 'vmax': inf}}, 'geometric_input_config': {'ray_dirs_encoder_config': {'name': 'ray_dirs_encoder', 'in_chans': 3, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'depth_encoder_config': {'name': 'depth_encoder', 'in_chans': 1, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'cam_rot_encoder_config': {'name': 'cam_rot_quats_encoder', 'in_chans': 4, 'encoder_str': 'global_rep_encoder'}, 'cam_trans_encoder_config': {'name': 'cam_trans_encoder', 'in_chans': 3, 'encoder_str': 'global_rep_encoder'}, 'scale_encoder_config': {'name': 'scale_encoder', 'in_chans': 1, 'encoder_str': 'global_rep_encoder'}, 'scene_flow_encoder_config': {'name': 'scene_flow_encoder', 'in_chans': 3, 'encoder_str': 'dense_rep_encoder', 'apply_pe': False}, 'images_prob': 1, 'overall_prob': 0, 'dropout_prob': 1, 'ray_dirs_prob': 0, 'depth_prob': 0, 'cam_prob': 0, 'sparse_depth_prob': 0, 'sparsification_removal_percent': 0, 'depth_scale_norm_all_prob': 0, 'pose_scale_norm_all_prob': 0, 'doppler_prob': 0, 'event_imgs_prob': 0}}
+Loading pretrained dinov2_vitl14 from torch hub
+Using cache found in /data2/DATA/rohit_sinha/e5/big/cache/torch/hub/facebookresearch_dinov2_main
+Loading model from:  /data2/DATA/rohit_sinha/e5/big/models/ckpt/any4d/any4d_4v_combined.pth
+_IncompatibleKeys(missing_keys=[], unexpected_keys=['event_encoder.pos_embed', 'event_encoder.conv_in.weight', 'event_encoder.conv_in.bias', 'event_encoder.encoder.0.conv1.weight', 'event_encoder.encoder.0.conv1.bias', 'event_encoder.encoder.0.conv2.weight', 'event_encoder.encoder.0.conv2.bias', 'event_encoder.encoder.0.shortcut.weight', 'event_encoder.encoder.0.shortcut.bias', 'event_encoder.encoder.1.conv1.weight', 'event_encoder.encoder.1.conv1.bias', 'event_encoder.encoder.1.conv2.weight', 'event_encoder.encoder.1.conv2.bias', 'event_encoder.encoder.1.shortcut.weight', 'event_encoder.encoder.1.shortcut.bias', 'event_encoder.encoder.2.weight', 'event_encoder.encoder.2.bias', 'event_encoder.norm_layer.weight', 'event_encoder.norm_layer.bias', 'event_encoder.post_pe_norm.weight', 'event_encoder.post_pe_norm.bias', 'scene_flow_encoder.pos_embed', 'scene_flow_encoder.post_pe_norm.weight', 'scene_flow_encoder.post_pe_norm.bias'])
+loaded any4d 51s
+[22:45:26] any4d test A 301 n2_generic_s301 rt=8.8s
+[22:45:28] any4d test A 303 n3_generic_s303 rt=1.9s
+unit any4d test A new 2 errors 0 have 2 of 2
+[22:45:30] any4d test B 301 n2_generic_s301 rt=1.7s
+[22:45:32] any4d test B 303 n3_generic_s303 rt=2.0s
+unit any4d test B new 2 errors 0 have 2 of 2
+[22:45:34] any4d test C 301 n2_generic_s301 rt=2.0s
+[22:45:35] any4d test C 303 n3_generic_s303 rt=1.6s
+unit any4d test C new 2 errors 0 have 2 of 2
+[22:45:37] any4d test D 301 n2_generic_s301 rt=1.5s
+[22:45:38] any4d test D 303 n3_generic_s303 rt=1.1s
+unit any4d test D new 2 errors 0 have 2 of 2
+[22:45:39] any4d kitti15_rgb_2v_wide 000000 rt=0.6s
+unit any4d kitti15_rgb_2v_wide new 2 errors 0 skipped(missing frames) 0 have 2
+[22:45:40] any4d sintel_final_2v_wide alley_1_0001 rt=0.5s
+unit any4d sintel_final_2v_wide new 2 errors 0 skipped(missing frames) 0 have 2
+unit any4d pose new 2 errors 0 have 2 of 2
+finished any4d errors 0 79s
+=== 22:45:47 16 xm u2_infer.py --model vggt --kubric test:A,test:B,test:C,test:D --scenes 301,303 --real kitti15:rgb:2v,sintel:final:2v --pose --limit 2
+[2026-10-23 22:45:47] waiting for GPU 0: free 9405 MiB < 20480 MiB
+[2026-10-23 22:47:47] waiting for GPU 0: free 1397 MiB < 20480 MiB
+[2026-10-23 22:49:47] waiting for GPU 0: free 15841 MiB < 20480 MiB
+[2026-10-23 22:51:47] attempt 1: xm u2_infer.py --model vggt --kubric test:A,test:B,test:C,test:D --scenes 301,303 --real kitti15:rgb:2v,sintel:final:2v --pose --limit 2  (GPU 0 free 48656 MiB)
+loaded vggt 98s
+[22:53:33] vggt test A 301 n2_generic_s301 rt=7.5s
+[22:53:35] vggt test A 303 n3_generic_s303 rt=2.6s
+unit vggt test A new 2 errors 0 have 2 of 2
+[22:53:38] vggt test B 301 n2_generic_s301 rt=2.5s
+[22:53:40] vggt test B 303 n3_generic_s303 rt=2.3s
+unit vggt test B new 2 errors 0 have 2 of 2
+[22:53:42] vggt test C 301 n2_generic_s301 rt=2.3s
+[22:53:45] vggt test C 303 n3_generic_s303 rt=2.3s
+unit vggt test C new 2 errors 0 have 2 of 2
+[22:53:47] vggt test D 301 n2_generic_s301 rt=2.2s
+[22:53:50] vggt test D 303 n3_generic_s303 rt=2.7s
+unit vggt test D new 2 errors 0 have 2 of 2
+[22:53:57] vggt kitti15_rgb_2v 000000 rt=6.9s
+unit vggt kitti15_rgb_2v new 2 errors 0 skipped(missing frames) 0 have 2
+[22:54:16] vggt sintel_final_2v alley_1_0001 rt=11.7s
+unit vggt sintel_final_2v new 2 errors 0 skipped(missing frames) 0 have 2
+unit vggt pose new 2 errors 0 have 2 of 2
+finished vggt errors 0 162s
+=== 22:54:31 15 4rc u2_infer.py --model 4rc --kubric test:A,test:B,test:C,test:D --scenes 301,303 --real kitti15:rgb:2v,sintel:final:2v --pose --limit 2
+[2026-10-23 22:54:31] attempt 1: 4rc u2_infer.py --model 4rc --kubric test:A,test:B,test:C,test:D --scenes 301,303 --real kitti15:rgb:2v,sintel:final:2v --pose --limit 2  (GPU 0 free 48656 MiB)
+using SwiGLU layer as FFN
+loaded 4rc 122s
+[22:56:44] 4rc test A 301 n2_generic_s301 rt=9.6s
+[22:56:46] 4rc test A 303 n3_generic_s303 rt=1.5s
+unit 4rc test A new 2 errors 0 have 2 of 2
+[22:56:50] 4rc test B 301 n2_generic_s301 rt=1.7s
+[22:56:52] 4rc test B 303 n3_generic_s303 rt=1.5s
+unit 4rc test B new 2 errors 0 have 2 of 2
+[22:56:53] 4rc test C 301 n2_generic_s301 rt=1.4s
+[22:56:56] 4rc test C 303 n3_generic_s303 rt=1.7s
+unit 4rc test C new 2 errors 0 have 2 of 2
+[22:56:58] 4rc test D 301 n2_generic_s301 rt=1.4s
+[22:57:00] 4rc test D 303 n3_generic_s303 rt=1.4s
+unit 4rc test D new 2 errors 0 have 2 of 2
+[22:57:01] 4rc kitti15_rgb_2v 000000 rt=0.8s
+unit 4rc kitti15_rgb_2v new 2 errors 0 skipped(missing frames) 0 have 2
+[22:57:02] 4rc sintel_final_2v alley_1_0001 rt=0.5s
+unit 4rc sintel_final_2v new 2 errors 0 skipped(missing frames) 0 have 2
+unit 4rc pose new 2 errors 0 have 2 of 2
+finished 4rc errors 0 154s
+=== 22:57:11 12 more u2_infer.py --model more --kubric test:B,test:D --scenes 301,303 --pose --limit 2
+[2026-10-23 22:57:11] attempt 1: more u2_infer.py --model more --kubric test:B,test:D --scenes 301,303 --pose --limit 2  (GPU 0 free 39681 MiB)
+loaded more 75s
+  with torch.no_grad(), torch.cuda.amp.autocast(dtype=self.dtype):
+[22:58:31] more test B 301 n2_generic_s301 rt=3.2s
+[22:58:32] more test B 303 n3_generic_s303 rt=0.5s
+unit more test B new 2 errors 0 have 2 of 2
+[22:58:33] more test D 301 n2_generic_s301 rt=0.5s
+[22:58:34] more test D 303 n3_generic_s303 rt=0.5s
+unit more test D new 2 errors 0 have 2 of 2
+unit more pose new 2 errors 0 have 2 of 2
+finished more errors 0 84s
+=== 22:58:39 8 xm u2_infer.py --model cotracker3 --kubric test:C,test:D --scenes 301,303 --real kitti15:rgb:2v,kitti15:rgb:mv7,sintel:final:2v --limit 2
+[2026-10-23 22:58:39] attempt 1: xm u2_infer.py --model cotracker3 --kubric test:C,test:D --scenes 301,303 --real kitti15:rgb:2v,kitti15:rgb:mv7,sintel:final:2v --limit 2  (GPU 0 free 48656 MiB)
+loaded cotracker3 6s
+[22:58:47] cotracker3 test C 301 n2_generic_s301 rt=2.1s
+[22:58:49] cotracker3 test C 303 n3_generic_s303 rt=1.6s
+unit cotracker3 test C new 2 errors 0 have 2 of 2
+[22:58:50] cotracker3 test D 301 n2_generic_s301 rt=0.9s
+[22:58:51] cotracker3 test D 303 n3_generic_s303 rt=1.0s
+unit cotracker3 test D new 2 errors 0 have 2 of 2
+[22:58:57] cotracker3 kitti15_rgb_2v 000000 rt=5.9s
+unit cotracker3 kitti15_rgb_2v new 2 errors 0 skipped(missing frames) 0 have 2
+[22:59:21] cotracker3 kitti15_rgb_mv7 000000 rt=17.4s
+unit cotracker3 kitti15_rgb_mv7 new 2 errors 0 skipped(missing frames) 0 have 2
+[23:00:13] cotracker3 sintel_final_2v alley_1_0001 rt=28.8s
+unit cotracker3 sintel_final_2v new 2 errors 0 skipped(missing frames) 0 have 2
+finished cotracker3 errors 0 121s
+=== 23:00:41 8 xm u2_infer.py --model raft --kubric test:C,test:D --scenes 301,303 --real kitti15:rgb:2v,sintel:final:2v --limit 2
+[2026-10-23 23:00:41] attempt 1: xm u2_infer.py --model raft --kubric test:C,test:D --scenes 301,303 --real kitti15:rgb:2v,sintel:final:2v --limit 2  (GPU 0 free 48656 MiB)
+Downloading: "https://download.pytorch.org/models/raft_large_C_T_V2-1bb1363a.pth" to /data2/DATA/rohit_sinha/e5/big/cache/torch/hub/checkpoints/raft_large_C_T_V2-1bb1363a.pth
+loaded raft 11s
+[23:00:53] raft test C 301 n2_generic_s301 rt=1.5s
+[23:00:54] raft test C 303 n3_generic_s303 rt=1.0s
+unit raft test C new 2 errors 0 have 2 of 2
+[23:00:55] raft test D 301 n2_generic_s301 rt=0.8s
+[23:00:56] raft test D 303 n3_generic_s303 rt=1.0s
+unit raft test D new 2 errors 0 have 2 of 2
+[23:00:57] raft kitti15_rgb_2v 000000 rt=0.2s
+unit raft kitti15_rgb_2v new 2 errors 0 skipped(missing frames) 0 have 2
+[23:00:57] raft sintel_final_2v alley_1_0001 rt=0.2s
+unit raft sintel_final_2v new 2 errors 0 skipped(missing frames) 0 have 2
+finished raft errors 0 16s
+=== 23:00:58 18 opend4rt u2_infer.py --model opend4rt --kubric test:A,test:B,test:C,test:D --scenes 301,303 --real kitti15:rgb:2v,sintel:final:2v --pose --limit 2
+[2026-10-23 23:00:58] attempt 1: opend4rt u2_infer.py --model opend4rt --kubric test:A,test:B,test:C,test:D --scenes 301,303 --real kitti15:rgb:2v,sintel:final:2v --pose --limit 2  (GPU 0 free 48656 MiB)
+loaded opend4rt 101s
+[23:02:55] opend4rt test A 301 n2_generic_s301 rt=12.0s
+[23:03:07] opend4rt test A 303 n3_generic_s303 rt=11.0s
+unit opend4rt test A new 2 errors 0 have 2 of 2
+[23:03:19] opend4rt test B 301 n2_generic_s301 rt=10.8s
+[23:03:31] opend4rt test B 303 n3_generic_s303 rt=11.0s
+unit opend4rt test B new 2 errors 0 have 2 of 2
+[23:03:43] opend4rt test C 301 n2_generic_s301 rt=11.0s
+[23:03:55] opend4rt test C 303 n3_generic_s303 rt=11.1s
+unit opend4rt test C new 2 errors 0 have 2 of 2
+[23:04:07] opend4rt test D 301 n2_generic_s301 rt=10.9s
+[23:04:19] opend4rt test D 303 n3_generic_s303 rt=11.0s
+unit opend4rt test D new 2 errors 0 have 2 of 2
+[23:04:29] opend4rt kitti15_rgb_2v 000000 rt=9.8s
+unit opend4rt kitti15_rgb_2v new 2 errors 0 skipped(missing frames) 0 have 2
+[23:04:48] opend4rt sintel_final_2v alley_1_0001 rt=9.6s
+unit opend4rt sintel_final_2v new 2 errors 0 skipped(missing frames) 0 have 2
+unit opend4rt pose new 2 errors 0 have 2 of 2
+finished opend4rt errors 0 250s
+=== 23:05:10 12 da3 u2_da3_batch.py --kubric test:C,test:D --scenes 301,303 --real kitti15:rgb:w12 --limit 2
+[2026-10-23 23:05:10] attempt 1: da3 u2_da3_batch.py --kubric test:C,test:D --scenes 301,303 --real kitti15:rgb:w12 --limit 2  (GPU 0 free 48656 MiB)
+DA3 jobs to run 6
+Use register_resolver() instead.
+See https://github.com/hydra-ecosystem/omegaconf/issues/426 for migration instructions.
+
+  OmegaConf.register_new_resolver("eval", eval)
+[97m[INFO ] using SwiGLU layer as FFN[0m
+[97m[INFO ] using MLP layer as FFN[0m
+[97m[INFO ] Processed Images Done taking 0.27816271781921387 seconds. Shape:  torch.Size([12, 3, 504, 504])[0m
+[97m[INFO ] Selecting reference view using strategy: saddle_balanced[0m
+[97m[INFO ] Model Forward Pass Done. Time: 6.444581985473633 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.03419947624206543 seconds[0m
+[7s] 1/6 /data2/DATA/rohit_sinha/e5/big/results/u2_smoke/da3/v2/301/C
+[97m[INFO ] Processed Images Done taking 0.14166545867919922 seconds. Shape:  torch.Size([12, 3, 504, 504])[0m
+[97m[INFO ] Selecting reference view using strategy: saddle_balanced[0m
+[97m[INFO ] Model Forward Pass Done. Time: 2.563823938369751 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.016680479049682617 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.15219902992248535 seconds. Shape:  torch.Size([12, 3, 504, 504])[0m
+[97m[INFO ] Selecting reference view using strategy: saddle_balanced[0m
+[97m[INFO ] Model Forward Pass Done. Time: 1.4395830631256104 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0072803497314453125 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.13535189628601074 seconds. Shape:  torch.Size([12, 3, 504, 504])[0m
+[97m[INFO ] Selecting reference view using strategy: saddle_balanced[0m
+[97m[INFO ] Model Forward Pass Done. Time: 1.431150197982788 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.008899450302124023 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.22753691673278809 seconds. Shape:  torch.Size([12, 3, 154, 504])[0m
+[97m[INFO ] Selecting reference view using strategy: saddle_balanced[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.5378601551055908 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.003819704055786133 seconds[0m
+[97m[INFO ] Processed Images Done taking 0.12877750396728516 seconds. Shape:  torch.Size([12, 3, 154, 504])[0m
+[97m[INFO ] Selecting reference view using strategy: saddle_balanced[0m
+[97m[INFO ] Model Forward Pass Done. Time: 0.43052077293395996 seconds[0m
+[97m[INFO ] Conversion to Prediction Done. Time: 0.0022325515747070312 seconds[0m
+DA3 done 6 16s
+=== 23:07:26 20 trackcraft3r u2_infer.py --model tc3r_gt --kubric test:C,test:D --scenes 301,303
+[2026-10-23 23:07:26] attempt 1: trackcraft3r u2_infer.py --model tc3r_gt --kubric test:C,test:D --scenes 301,303  (GPU 0 free 48656 MiB)
+  import pynvml  # type: ignore[import]
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+    model_name: wan_video_dit model_class: WanModel
+        This model is initialized with extra kwargs: {'has_image_input': False, 'patch_size': [1, 2, 2], 'in_dim': 16, 'dim': 1536, 'ffn_dim': 8960, 'freq_dim': 256, 'text_dim': 4096, 'out_dim': 16, 'num_heads': 12, 'num_layers': 30, 'eps': 1e-06}
+    The following models are loaded: ['wan_video_dit'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+    model_name: wan_video_vae model_class: WanVideoVAE
+    The following models are loaded: ['wan_video_vae'].
+No wan_video_text_encoder models available.
+Using wan_video_dit from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors.
+Using wan_video_vae from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth.
+No wan_video_image_encoder models available.
+No wan_video_motion_controller models available.
+No wan_video_vace models available.
+No wans2v_audio_encoder models available.
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+  LoRA injected: rank=1024, targets=q,k,v,o,ffn.0,ffn.2
+  patch_embedding expanded: 16->32 channels
+  DiT head expanded to 2x output (xyz | vis)
+  DiT loaded: 1425 keys (unexpected=0, missing=0)
+  VAE loaded: 194 keys
+  VAE_vis loaded: 194 keys
+  VAE_pj loaded: 194 keys
+WanSceneFlowPredictor loaded from /data2/DATA/rohit_sinha/e5/big/models/ckpt/trackcraft3r/model.safetensors
+loaded tc3r_gt 193s
+[23:10:52] tc3r_gt test C 301 n2_generic_s301 rt=11.4s
+[23:11:03] tc3r_gt test C 303 n3_generic_s303 rt=9.8s
+unit tc3r_gt test C new 2 errors 0 have 2 of 2
+[23:11:14] tc3r_gt test D 301 n2_generic_s301 rt=10.1s
+[23:11:25] tc3r_gt test D 303 n3_generic_s303 rt=10.3s
+unit tc3r_gt test D new 2 errors 0 have 2 of 2
+finished tc3r_gt errors 0 238s
+=== 23:11:27 20 trackcraft3r u2_infer.py --model tc3r_da3 --kubric test:C,test:D --scenes 301,303 --real kitti15:rgb:w12 --limit 2
+[2026-10-23 23:11:27] attempt 1: trackcraft3r u2_infer.py --model tc3r_da3 --kubric test:C,test:D --scenes 301,303 --real kitti15:rgb:w12 --limit 2  (GPU 0 free 48656 MiB)
+  import pynvml  # type: ignore[import]
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+    model_name: wan_video_dit model_class: WanModel
+        This model is initialized with extra kwargs: {'has_image_input': False, 'patch_size': [1, 2, 2], 'in_dim': 16, 'dim': 1536, 'ffn_dim': 8960, 'freq_dim': 256, 'text_dim': 4096, 'out_dim': 16, 'num_heads': 12, 'num_layers': 30, 'eps': 1e-06}
+    The following models are loaded: ['wan_video_dit'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+    model_name: wan_video_vae model_class: WanVideoVAE
+    The following models are loaded: ['wan_video_vae'].
+No wan_video_text_encoder models available.
+Using wan_video_dit from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors.
+Using wan_video_vae from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth.
+No wan_video_image_encoder models available.
+No wan_video_motion_controller models available.
+No wan_video_vace models available.
+No wans2v_audio_encoder models available.
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+  LoRA injected: rank=1024, targets=q,k,v,o,ffn.0,ffn.2
+  patch_embedding expanded: 16->32 channels
+  DiT head expanded to 2x output (xyz | vis)
+  DiT loaded: 1425 keys (unexpected=0, missing=0)
+  VAE loaded: 194 keys
+  VAE_vis loaded: 194 keys
+  VAE_pj loaded: 194 keys
+WanSceneFlowPredictor loaded from /data2/DATA/rohit_sinha/e5/big/models/ckpt/trackcraft3r/model.safetensors
+loaded tc3r_da3 48s
+[23:12:27] tc3r_da3 test C 301 n2_generic_s301 rt=11.7s
+[23:12:39] tc3r_da3 test C 303 n3_generic_s303 rt=11.1s
+unit tc3r_da3 test C new 2 errors 0 have 2 of 2
+[23:12:52] tc3r_da3 test D 301 n2_generic_s301 rt=12.2s
+[23:13:04] tc3r_da3 test D 303 n3_generic_s303 rt=11.5s
+unit tc3r_da3 test D new 2 errors 0 have 2 of 2
+[23:13:16] tc3r_da3 kitti15_rgb_w12 000000 rt=11.9s
+unit tc3r_da3 kitti15_rgb_w12 new 2 errors 0 skipped(missing frames) 0 have 2
+finished tc3r_da3 errors 0 121s
+=== 23:13:30 20 trackcraft3r u2_infer.py --model tc3r_identity --kubric test:D --scenes 301,303
+[2026-10-23 23:13:30] attempt 1: trackcraft3r u2_infer.py --model tc3r_identity --kubric test:D --scenes 301,303  (GPU 0 free 48656 MiB)
+  import pynvml  # type: ignore[import]
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+    model_name: wan_video_dit model_class: WanModel
+        This model is initialized with extra kwargs: {'has_image_input': False, 'patch_size': [1, 2, 2], 'in_dim': 16, 'dim': 1536, 'ffn_dim': 8960, 'freq_dim': 256, 'text_dim': 4096, 'out_dim': 16, 'num_heads': 12, 'num_layers': 30, 'eps': 1e-06}
+    The following models are loaded: ['wan_video_dit'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+    model_name: wan_video_vae model_class: WanVideoVAE
+    The following models are loaded: ['wan_video_vae'].
+No wan_video_text_encoder models available.
+Using wan_video_dit from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors.
+Using wan_video_vae from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth.
+No wan_video_image_encoder models available.
+No wan_video_motion_controller models available.
+No wan_video_vace models available.
+No wans2v_audio_encoder models available.
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+  LoRA injected: rank=1024, targets=q,k,v,o,ffn.0,ffn.2
+  patch_embedding expanded: 16->32 channels
+  DiT head expanded to 2x output (xyz | vis)
+  DiT loaded: 1425 keys (unexpected=0, missing=0)
+  VAE loaded: 194 keys
+  VAE_vis loaded: 194 keys
+  VAE_pj loaded: 194 keys
+WanSceneFlowPredictor loaded from /data2/DATA/rohit_sinha/e5/big/models/ckpt/trackcraft3r/model.safetensors
+loaded tc3r_identity 48s
+[23:14:31] tc3r_identity test D 301 n2_generic_s301 rt=11.9s
+[23:14:43] tc3r_identity test D 303 n3_generic_s303 rt=10.7s
+unit tc3r_identity test D new 2 errors 0 have 2 of 2
+finished tc3r_identity errors 0 72s
+=== 23:14:45 scoring
+kubric {'items': 54, 'rows': 108, 'errors': 0} 4s
+real {'items': 28, 'rows': 28, 'errors': 0} 5s
+pose {'items': 10, 'rows': 10, 'errors': 0} 5s
+=== SMOKE DONE 2026-10-23 23:14:50

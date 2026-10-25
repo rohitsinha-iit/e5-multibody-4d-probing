@@ -1,0 +1,18 @@
+{
+ "item": "alley_1_0021",
+ "eval": "sintel",
+ "variant": "v",
+ "rows": {
+  "v": {
+   "r0": {
+    "slope": 0.3203490979227039,
+    "slope_inst_median": 0.3203490979227039,
+    "epe_static": 2.7627617483318154,
+    "epe_moving": 9.499200207560875,
+    "n_eval": 366571,
+    "n_moving_eval": 87209
+   }
+  }
+ },
+ "wall_s": 0.8
+}

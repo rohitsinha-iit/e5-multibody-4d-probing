@@ -1,0 +1,18 @@
+{
+ "item": "bandage_1_0001",
+ "eval": "sintel",
+ "variant": "v",
+ "rows": {
+  "v": {
+   "r0": {
+    "slope": 0.2480746442022137,
+    "slope_inst_median": 0.7493149203193322,
+    "epe_static": 4.755396883596312,
+    "epe_moving": 6.095673130580382,
+    "n_eval": 364915,
+    "n_moving_eval": 210824
+   }
+  }
+ },
+ "wall_s": 1.1
+}

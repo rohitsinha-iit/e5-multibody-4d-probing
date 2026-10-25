@@ -1,0 +1,87 @@
+{
+ "model": "more",
+ "load_s": 194.07373118400574,
+ "gate": "G0j: weights load and the full model runs",
+ "load_info": {
+  "missing": 0,
+  "unexpected": 0
+ },
+ "gpu_after_load_gb": 4.5611419677734375,
+ "rows": [],
+ "smoke": {
+  "paths": [
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/000.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/005.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/010.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/014.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/019.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/024.jpg",
+   "/data2/DATA/rohit_sinha/e5/big/models/src/4RC/examples/robot_arm/029.jpg"
+  ],
+  "keys": {
+   "pts3d_0": {
+    "shape": [
+     294,
+     518,
+     3
+    ],
+    "finite": 1.0
+   },
+   "pts_world": {
+    "shape": [
+     7,
+     294,
+     518,
+     3
+    ],
+    "finite": 1.0
+   },
+   "depth": {
+    "shape": [
+     7,
+     294,
+     518
+    ],
+    "finite": 1.0
+   },
+   "depth_conf": {
+    "shape": [
+     7,
+     294,
+     518
+    ],
+    "finite": 1.0
+   },
+   "cam_pose": {
+    "shape": [
+     7,
+     4,
+     4
+    ],
+    "finite": 1.0
+   },
+   "K": {
+    "shape": [
+     7,
+     3,
+     3
+    ],
+    "finite": 1.0
+   },
+   "motion": {
+    "shape": [
+     7,
+     294,
+     518
+    ],
+    "finite": 1.0
+   },
+   "_runtime_s": 25.33142924308777
+  },
+  "runtime_s": 25.33142924308777,
+  "gpu": {
+   "peak_alloc_gb": 8.094114303588867,
+   "peak_reserved_gb": 9.12109375
+  }
+ }
+}

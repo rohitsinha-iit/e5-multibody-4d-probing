@@ -1,0 +1,30 @@
+[
+ {
+  "model": "more",
+  "split": "transfer",
+  "set": "v3float",
+  "seed": 534,
+  "scene": "epi_aligned_s534",
+  "variant": "D",
+  "boundary": "excl8",
+  "pose_ate": 0.01700148697621946,
+  "pose_rpe_t": 0.029630948313314562,
+  "pose_rpe_r": 0.1495570307037929,
+  "runtime_s": 0.5506923198699951,
+  "peak_reserved_gb": 9.568359375
+ },
+ {
+  "model": "more",
+  "split": "transfer",
+  "set": "v3float",
+  "seed": 534,
+  "scene": "epi_aligned_s534",
+  "variant": "D",
+  "boundary": "none",
+  "pose_ate": 0.01700148697621946,
+  "pose_rpe_t": 0.029630948313314562,
+  "pose_rpe_r": 0.1495570307037929,
+  "runtime_s": 0.5506923198699951,
+  "peak_reserved_gb": 9.568359375
+ }
+]

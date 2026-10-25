@@ -1,0 +1,67 @@
+[run_gpu] Monday 19 October 2026 11:15:41 AM IST GPU=1 pin= need=22 venv=trackcraft3r args=/data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py --model trackcraft3r --cond gt --data /data2/DATA/rohit_sinha/e5/big/data/v2/out --n 10 --out /data2/DATA/rohit_sinha/e5/big/results/newmodels/gate_trackcraft3r.json
+0, 15 MiB, 48656 MiB
+1, 15 MiB, 48656 MiB
+2, 9613 MiB, 39058 MiB
+3, 9609 MiB, 39062 MiB
+/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/lib/python3.10/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+    model_name: wan_video_dit model_class: WanModel
+        This model is initialized with extra kwargs: {'has_image_input': False, 'patch_size': [1, 2, 2], 'in_dim': 16, 'dim': 1536, 'ffn_dim': 8960, 'freq_dim': 256, 'text_dim': 4096, 'out_dim': 16, 'num_heads': 12, 'num_layers': 30, 'eps': 1e-06}
+    The following models are loaded: ['wan_video_dit'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+    model_name: wan_video_vae model_class: WanVideoVAE
+    The following models are loaded: ['wan_video_vae'].
+No wan_video_text_encoder models available.
+Using wan_video_dit from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors.
+Using wan_video_vae from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth.
+No wan_video_image_encoder models available.
+No wan_video_motion_controller models available.
+No wan_video_vace models available.
+No wans2v_audio_encoder models available.
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+  LoRA injected: rank=1024, targets=q,k,v,o,ffn.0,ffn.2
+  patch_embedding expanded: 16->32 channels
+  DiT head expanded to 2x output (xyz | vis)
+  DiT loaded: 1425 keys (unexpected=0, missing=0)
+  VAE loaded: 194 keys
+  VAE_vis loaded: 194 keys
+  VAE_pj loaded: 194 keys
+WanSceneFlowPredictor loaded from /data2/DATA/rohit_sinha/e5/big/models/ckpt/trackcraft3r/model.safetensors
+{"scene": "camrot_s305", "runtime_s": 12.176340579986572, "peak_alloc_gb": 9.347525596618652, "peak_reserved_gb": 11.44140625, "epe_static": 10.88459854707218, "epe_moving": 31.000874991586027, "n_static": 136404, "n_moving": 285, "frac_inside": 1.0, "w_s_w": 0.41871671967779206, "w_static_residual": 0.09236204276828282, "w_scale": 0.9999999999527265, "w_n_moving": 285, "w_n_static": 136404, "pose_ate": 1.1991124626309637e-30, "pose_rpe_t": 7.695782257646579e-31, "pose_rpe_r": 0.0}
+{"scene": "camrot_s306", "runtime_s": 10.805675268173218, "peak_alloc_gb": 10.204217910766602, "peak_reserved_gb": 15.591796875, "epe_static": 10.188995784140252, "epe_moving": 15.780966592520379, "n_static": 126381, "n_moving": 2818, "frac_inside": 1.0, "w_s_w": 0.7054359280988959, "w_static_residual": 0.04474439034710692, "w_scale": 1.0000000000590676, "w_n_moving": 2818, "w_n_static": 126381, "pose_ate": 8.220269302366199e-31, "pose_rpe_t": 7.1207668239228185e-31, "pose_rpe_r": 5.14844880092756e-07}
+{"scene": "confound_glued_s469", "runtime_s": 10.093360662460327, "peak_alloc_gb": 10.20393180847168, "peak_reserved_gb": 15.7265625, "epe_static": 10.192828815051847, "epe_moving": 44.791826311246524, "n_static": 136059, "n_moving": 9486, "frac_inside": 1.0, "w_s_w": 0.9212825283038171, "w_static_residual": 0.056564097437160406, "w_scale": 1.000000000113582, "w_n_moving": 9486, "w_n_static": 136059, "pose_ate": 1.1651176125322669e-15, "pose_rpe_t": 1.0201202872592415e-15, "pose_rpe_r": 3.6405030597276273e-07}
+{"scene": "confound_same_s451", "runtime_s": 9.804327011108398, "peak_alloc_gb": 10.203836441040039, "peak_reserved_gb": 15.744140625, "epe_static": 10.933467009442593, "epe_moving": 20.18950910187141, "n_static": 113092, "n_moving": 8832, "frac_inside": 1.0, "w_s_w": 0.8301373457551285, "w_static_residual": 0.08649157077641645, "w_scale": 1.0000000002294733, "w_n_moving": 8832, "w_n_static": 113092, "pose_ate": 8.552657138152963e-16, "pose_rpe_t": 1.306552433518756e-15, "pose_rpe_r": 0.0}
+{"scene": "epi_aligned_s307", "runtime_s": 9.715196132659912, "peak_alloc_gb": 10.203836441040039, "peak_reserved_gb": 15.634765625, "epe_static": 10.346274437214598, "epe_moving": 97.66183197646747, "n_static": 99469, "n_moving": 411, "frac_inside": 1.0, "w_s_w": 0.3288871969302105, "w_static_residual": 0.04547968080870794, "w_scale": 1.0000000001254532, "w_n_moving": 411, "w_n_static": 99469, "pose_ate": 2.272313896792332e-12, "pose_rpe_t": 2.198387547989698e-16, "pose_rpe_r": 0.0}
+{"scene": "epi_aligned_s435", "runtime_s": 9.808396816253662, "peak_alloc_gb": 10.20350456237793, "peak_reserved_gb": 15.693359375, "epe_static": 10.125164028292613, "epe_moving": 116.59401517986556, "n_static": 92207, "n_moving": 1907, "frac_inside": 1.0, "w_s_w": 0.3173102963097448, "w_static_residual": 0.057382685686325985, "w_scale": 0.9999999996323566, "w_n_moving": 1907, "w_n_static": 92207, "pose_ate": 1.2926693224761624e-11, "pose_rpe_t": 3.0394630733313365e-16, "pose_rpe_r": 0.0}
+{"scene": "n2_generic_s301", "runtime_s": 9.782277822494507, "peak_alloc_gb": 10.202585220336914, "peak_reserved_gb": 15.583984375, "epe_static": 14.988992625196499, "epe_moving": 29.967997170681947, "n_static": 127165, "n_moving": 13525, "frac_inside": 1.0, "w_s_w": 0.9176686988823455, "w_static_residual": 0.048754028063950336, "w_scale": 1.0000000000910985, "w_n_moving": 13525, "w_n_static": 127165, "pose_ate": 7.635516390770755e-16, "pose_rpe_t": 7.153582933985042e-16, "pose_rpe_r": 8.140412313846951e-07}
+{"scene": "n2_generic_s302", "runtime_s": 10.081615209579468, "peak_alloc_gb": 10.203439712524414, "peak_reserved_gb": 15.876953125, "epe_static": 10.07894360244362, "epe_moving": 26.76819508837339, "n_static": 139719, "n_moving": 1144, "frac_inside": 1.0, "w_s_w": 0.578924435198618, "w_static_residual": 0.049253449595485534, "w_scale": 0.9999999997015669, "w_n_moving": 1144, "w_n_static": 139719, "pose_ate": 4.117755828610659e-16, "pose_rpe_t": 8.301077386699519e-16, "pose_rpe_r": 3.6405030597276273e-07}
+{"scene": "n2_generic_s401", "runtime_s": 9.984689712524414, "peak_alloc_gb": 10.203866958618164, "peak_reserved_gb": 15.58203125, "epe_static": 9.507902039575, "epe_moving": 14.455461505617762, "n_static": 140342, "n_moving": 2772, "frac_inside": 1.0, "w_s_w": 0.6448537744204547, "w_static_residual": 0.07122136138583676, "w_scale": 0.9999999999354421, "w_n_moving": 2772, "w_n_static": 140342, "pose_ate": 7.762664681816537e-16, "pose_rpe_t": 7.254681661151738e-16, "pose_rpe_r": 5.14844880092756e-07}
+{"scene": "n3_generic_s303", "runtime_s": 9.68916130065918, "peak_alloc_gb": 10.202680587768555, "peak_reserved_gb": 15.654296875, "epe_static": 12.71840829892956, "epe_moving": 38.0756451351949, "n_static": 133217, "n_moving": 4283, "frac_inside": 1.0, "w_s_w": 0.8544426806472345, "w_static_residual": 0.06299175274900913, "w_scale": 0.9999999999547649, "w_n_moving": 4283, "w_n_static": 133217, "pose_ate": 6.75431057470372e-16, "pose_rpe_t": 4.7011022565656905e-16, "pose_rpe_r": 5.14844880092756e-07}
+WROTE /data2/DATA/rohit_sinha/e5/big/results/newmodels/gate_trackcraft3r.json
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/bin/python /data2/DATA/rohit_sinha/e5/repo/src/attr/gate_newmodels.py --model trackcraft3r --cond gt --data /data2/DATA/rohit_sinha/e5/big/data/v2/out --n 10 --out /data2/DATA/rohit_sinha/e5/big/results/newmodels/gate_trackcraft3r.json"
+	User time (seconds): 302.55
+	System time (seconds): 59.98
+	Percent of CPU this job got: 123%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:54.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 13730564
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 15785
+	Minor (reclaiming a frame) page faults: 7294908
+	Voluntary context switches: 90172
+	Involuntary context switches: 2971
+	Swaps: 0
+	File system inputs: 20722656
+	File system outputs: 264
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[run_gpu] exit 0 Monday 19 October 2026 11:20:35 AM IST

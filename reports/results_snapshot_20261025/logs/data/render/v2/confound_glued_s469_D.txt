@@ -1,0 +1,88 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792376687.215025 1743290 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792376697.751875 1743290 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+INFO:kubric.utils:{ 'far_hi': 3.2,
+  'far_lo': 2.4,
+  'far_px': 0.22,
+  'float_height': 0.0,
+  'frame_end': 24,
+  'frame_rate': 12,
+  'frame_start': 1,
+  'grounded': 1,
+  'gso_assets': 'gs://kubric-public/assets/GSO/GSO.json',
+  'hdri_assets': 'gs://kubric-public/assets/HDRI_haven/HDRI_haven.json',
+  'job_dir': '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial',
+  'kubasic_assets': 'gs://kubric-public/assets/KuBasic/KuBasic.json',
+  'logging_level': 'INFO',
+  'min_sep_px': 25.0,
+  'no_shadows': 0,
+  'resolution': '512x512',
+  'samples': 32,
+  'scratch_dir': '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D',
+  'seed': 469,
+  'size_hi': 2.2,
+  'size_lo': 1.4,
+  'split': 'confound_glued',
+  'step_rate': 240}
+INFO:root:Using scratch directory: /data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D
+INFO:root:Using output directory: /data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial
+INFO:root:Created AssetSource 'KuBasic' with '15' assets at URI='gs://kubric-public/assets/KuBasic'
+INFO:root:Created AssetSource 'GSO' with '1033' assets at URI='gs://kubric-public/assets/GSO'
+INFO:root:Created AssetSource 'HDRI_haven' with '509' assets at URI='gs://kubric-public/assets/HDRI_haven'
+Loaded image from: '/data2/DATA/rohit_sinha/e5/cache/tmp/GSO91njgsyc/Focus_8643_Lime_Squeezer_10x35x188_Enamelled_Aluminum_Light/texture.png'
+Loaded image from: '/data2/DATA/rohit_sinha/e5/cache/tmp/GSO91njgsyc/Ecoforms_Planter_Pot_QP6Ebony/texture.png'
+Loaded image from: '/data2/DATA/rohit_sinha/e5/cache/tmp/GSO91njgsyc/Tieks_Ballet_Flats_Diamond_White_Croc/texture.png'
+Loaded image from: '/data2/DATA/rohit_sinha/e5/cache/tmp/GSO91njgsyc/Wilton_Pearlized_Sugar_Sprinkles_525_oz_Gold/texture.png'
+INFO:kubric.renderer.blender:Using scratch rendering folder: '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0001.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0002.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0003.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0004.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0005.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0006.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0007.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0008.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0009.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0010.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0011.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0012.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0013.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0014.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0015.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0016.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0017.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0018.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0019.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0020.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0021.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0022.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0023.png'
+INFO:kubric.renderer.blender:Rendered frame '/data2/DATA/rohit_sinha/e5/big/scratch/kubric/v2_confound_glued_s469_D/images/frame_0024.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00000.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00003.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00002.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00004.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00005.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00006.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00009.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00001.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00007.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00010.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00008.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00011.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00012.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00013.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00014.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00015.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00016.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00017.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00018.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00019.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00020.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00021.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00022.png'
+INFO:root:Writing to '/data2/DATA/rohit_sinha/e5/big/data/v2/out/confound_glued_s469.partial/rgba_00023.png'
+INFO:root:Done!
+INFO:root:kb.done(): ignored No module named 'hypertune'
+Error: Not freed memory blocks: 1, total unfreed memory 0.001335 MB

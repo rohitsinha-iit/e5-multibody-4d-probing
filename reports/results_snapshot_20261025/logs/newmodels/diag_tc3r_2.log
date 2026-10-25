@@ -1,0 +1,62 @@
+[run_gpu] Monday 19 October 2026 12:27:52 PM IST GPU=1 pin=1 need=20 venv=trackcraft3r args=/data2/DATA/rohit_sinha/e5/repo/src/attr/diag_tc3r_2.py
+0, 396 MiB, 48275 MiB
+1, 15 MiB, 48656 MiB
+2, 9613 MiB, 39058 MiB
+3, 9609 MiB, 39062 MiB
+/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/lib/python3.10/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors
+    model_name: wan_video_dit model_class: WanModel
+        This model is initialized with extra kwargs: {'has_image_input': False, 'patch_size': [1, 2, 2], 'in_dim': 16, 'dim': 1536, 'ffn_dim': 8960, 'freq_dim': 256, 'text_dim': 4096, 'out_dim': 16, 'num_heads': 12, 'num_layers': 30, 'eps': 1e-06}
+    The following models are loaded: ['wan_video_dit'].
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+Loading models from: /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth
+    model_name: wan_video_vae model_class: WanVideoVAE
+    The following models are loaded: ['wan_video_vae'].
+No wan_video_text_encoder models available.
+Using wan_video_dit from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/diffusion_pytorch_model.safetensors.
+Using wan_video_vae from /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B/Wan2.1_VAE.pth.
+No wan_video_image_encoder models available.
+No wan_video_motion_controller models available.
+No wan_video_vace models available.
+No wans2v_audio_encoder models available.
+  [skip download] 1 file(s) found in /data2/DATA/rohit_sinha/e5/big/models/ckpt/wan_models/Wan-AI/Wan2.1-T2V-1.3B
+  LoRA injected: rank=1024, targets=q,k,v,o,ffn.0,ffn.2
+  patch_embedding expanded: 16->32 channels
+  DiT head expanded to 2x output (xyz | vis)
+  DiT loaded: 1425 keys (unexpected=0, missing=0)
+  VAE loaded: 194 keys
+  VAE_vis loaded: 194 keys
+  VAE_pj loaded: 194 keys
+WanSceneFlowPredictor loaded from /data2/DATA/rohit_sinha/e5/big/models/ckpt/trackcraft3r/model.safetensors
+n2_generic_s401 pad {"epe_static": 9.51, "epe_moving": 14.46, "s_w": 0.64, "t0_self_epe": 14.35, "t0_dx_med": 11.19, "t0_dy_med": 7.87, "t0_dx_left": 8.17, "t0_dx_right": 13.98, "t0_dy_top": 4.29, "t0_dy_bottom": 9.72, "runtime_s": 33.25}
+n2_generic_s401 stretch {"epe_static": 7.19, "epe_moving": 23.33, "s_w": 0.45, "t0_self_epe": 9.6, "t0_dx_med": 8.08, "t0_dy_med": 4.12, "t0_dx_left": 6.51, "t0_dx_right": 9.58, "t0_dy_top": 3.25, "t0_dy_bottom": 4.75, "runtime_s": 30.83}
+camrot_s305 pad {"epe_static": 10.88, "epe_moving": 31.0, "s_w": 0.42, "t0_self_epe": 13.36, "t0_dx_med": 10.12, "t0_dy_med": 7.57, "t0_dx_left": 7.98, "t0_dx_right": 11.16, "t0_dy_top": 3.43, "t0_dy_bottom": 9.74, "runtime_s": 21.29}
+camrot_s305 stretch {"epe_static": 7.34, "epe_moving": 24.2, "s_w": 0.36, "t0_self_epe": 8.37, "t0_dx_med": 6.71, "t0_dy_med": 3.92, "t0_dx_left": 4.94, "t0_dx_right": 7.49, "t0_dy_top": 2.1, "t0_dy_bottom": 5.29, "runtime_s": 10.08}
+n2_generic_s301 pad {"epe_static": 14.99, "epe_moving": 29.97, "s_w": 0.92, "t0_self_epe": 13.27, "t0_dx_med": 8.55, "t0_dy_med": 9.2, "t0_dx_left": 8.23, "t0_dx_right": 8.82, "t0_dy_top": 5.32, "t0_dy_bottom": 10.29, "runtime_s": 9.75}
+n2_generic_s301 stretch {"epe_static": 11.4, "epe_moving": 24.86, "s_w": 0.75, "t0_self_epe": 8.92, "t0_dx_med": 5.93, "t0_dy_med": 5.77, "t0_dx_left": 5.85, "t0_dx_right": 5.99, "t0_dy_top": 4.19, "t0_dy_bottom": 6.34, "runtime_s": 9.78}
+	Command being timed: "/data2/DATA/rohit_sinha/e5/big/venvs/trackcraft3r/bin/python /data2/DATA/rohit_sinha/e5/repo/src/attr/diag_tc3r_2.py"
+	User time (seconds): 286.51
+	System time (seconds): 88.88
+	Percent of CPU this job got: 118%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:17.92
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 13978948
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 8546
+	Minor (reclaiming a frame) page faults: 8615487
+	Voluntary context switches: 47910
+	Involuntary context switches: 21910
+	Swaps: 0
+	File system inputs: 4154832
+	File system outputs: 232
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[run_gpu] exit 0 Monday 19 October 2026 12:33:10 PM IST

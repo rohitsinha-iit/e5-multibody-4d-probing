@@ -1,0 +1,14 @@
+[fit_pipeline] 2026-10-23 22:53:56 start
+[fit_pipeline] 2026-10-23 22:53:56 joint fit objall
+[fit_pipeline] 2026-10-23 22:59:52 joint fit cam
+[fit_pipeline] 2026-10-23 23:05:20 joint fit cont
+[fit_pipeline] 2026-10-23 23:10:19 joint fit obj
+[fit_pipeline] 2026-10-23 23:15:16 necessity fit objall
+[fit_pipeline] 2026-10-23 23:20:12 necessity fit cam
+[fit_pipeline] 2026-10-23 23:26:02 necessity fit cont
+[fit_pipeline] 2026-10-23 23:31:42 necessity fit obj
+[fit_pipeline] 2026-10-23 23:37:18 probe
+[fit_pipeline] 2026-10-23 23:40:22 dirs P_obj=b14h5
+[fit_pipeline] 2026-10-23 23:43:16 freeze
+[freeze] wrote /data2/DATA/rohit_sinha/e5/big/results/u4a/fit_derived_values.json k*: {'objall': 1, 'cam': None, 'cont': None, 'obj': 10}
+[fit_pipeline] 2026-10-23 23:43:19 done
